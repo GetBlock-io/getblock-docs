@@ -1,0 +1,70 @@
+---
+description: >-
+  Example code for the eth_getBlockByNumber json-rpc method. Сomplete guide on
+  how to use eth_getBlockByNumber json-rpc in GetBlock.io Web3 documentation.
+---
+
+# eth\_getBlockByNumber - Rootstock
+
+#### Parameters
+
+`QUANTITY|TAG` - integer or string
+
+block number or "latest", "earliest" or "pending"
+
+`Boolean` - Boolean
+
+If true it returns the full transaction objects, if false only the hashes of the transactions.
+
+#### Request
+
+```java
+wscat -c wss://rsk.getblock.io/YOUR-API-KEY/mainnet/ 
+# wait for connection and send the request body 
+{"jsonrpc": "2.0",
+"method": "eth_getBlockByNumber",
+"params": ["latest", false],
+"id": "getblock.io"}
+```
+
+#### Response
+
+```java
+{
+    "id": "getblock.io",
+    "jsonrpc": "2.0",
+    "result": {
+        "bitcoinMergedMiningCoinbaseTransaction": "0x00000000000000807b02dd1f8f86518e0753f3ce89adea5c5c4867c79d876e037b8a92b887f70618c501000000000000ffffffff030131ba26000000001976a914536ffa992491508dca0354e52f32a3a7a679a53a88ac00000000000000002b6a2952534b424c4f434b3aa200a22c1dca73692918e194a6bc097f416f904fb0fcc6ff5ea9082200526f5e0000000000000000266a24aa21a9ed80b926a302d67cc3e48a14296b19b76ce9a8b327fcab89f9f47b4657fe87791300000000",
+        "bitcoinMergedMiningHeader": "0x00004027bea28c30ec6dc3eb2b9f4e1b7f2bc94b25c1582c9f26010000000000000000007124bae44340e48f21b12709731b03406aa3b387dc874bdf5f772658a74f4565dd7690646d60051702149da6",
+        "bitcoinMergedMiningMerkleProof": "0xcb31ef257ca70983d6407cbc55acdb58fbdd3aef8c91a1b61291fc91f77b8717a65040e205dcea6022e0c48c7b201fe72e9efb7db5189fe2bb8d760ece0c3b30c76bb47984325db66331ec49313e86911ce5165d43c3268c8f6552c2644bad67c72906444b743c39fd97acd0e82b7c3777c819323cb6b4642bce5fd510b2d201a972e282cdc3e27ee2bb744e46e088b2fd4ea0d6cfedbca3fb486b79c1f2c9ec3533c0666a71a8dfcf74b08d14eddf04950169320a66a71a90c9db230b09a7cf9ce51321f3b36adccaa2b56d82739296e112786ac91383ae8eb11a2320db6d479e9d6bdaab04dea7e1524cac235c2fdf90f942ad6a2355253610d0fa7ad35e7eeef1d8ed76309567a9311e82fcbd59907e9e21d04fc29d9b99d18e88ee80fc52419fa842d63852532f2b9616a98db42971d7366c044c8f176a756c0518c70264fb541c08867a63818a8f98d6b8db6bd11f5a7b1ccfb881a01a67bae4c43c38003709a9ad2aefeef46ab39614a20be9baf72708390029848e25e5431c3924f345",
+        "cumulativeDifficulty": "0x84e7364a63d2217126",
+        "difficulty": "0x84e7364a63d2217126",
+        "extraData": "0xcd018b484f502d61316532363036",
+        "gasLimit": "0x67c280",
+        "gasUsed": "0x5388f",
+        "hash": "0x41b823bebbf0106fa664f8bdec4074a7edbb62c0cfc79d83fef84a169ad4d05c",
+        "hashForMergedMining": "0xa200a22c1dca73692918e194a6bc097f416f904fb0fcc6ff5ea9082200526f5e",
+        "logsBloom": "0x0000400000000000000010100000000902000000000000000200000000000000002040000001000000000000000000000000000001000000000880000000000000000000008000000000000000000000000000000000000000000200400000000001000000000000004000000000000000000000000000000010000000000000000000000000000100000000000400000000000000000000000000002008000000000000020010002000000000000000008000000000008200100002000000000000000104000000000000000000800000002000010000000020000010000000000000000000000000200000008010000002040000000000a000200000000000",
+        "miner": "0x8afad2f417e5132ee983b74d28600c0dedcc3e07",
+        "minimumGasPrice": "0x387ee40",
+        "number": "0x526f5e",
+        "paidFees": "0x14503e83f2f0",
+        "parentHash": "0x655abe8bc2abfcfde655098e6252ae382519e427325e1e507d16cf80cabcb1d6",
+        "receiptsRoot": "0xc30455de14e30fccd59fc4d3df551b9c47d56a31f6fd13fb1f8739fe2216a5b3",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0xe0f",
+        "stateRoot": "0x495bba6a71afce0ca92a780308680dd54803b759160391297492cd647ea59959",
+        "timestamp": "0x649076cd",
+        "totalDifficulty": "0x219e28335af4e56bf0338718",
+        "transactions": [
+            "0x0574007fab723ab2d4c642ad3c453c5200a90eb860847a8af6e552046cabbdf6",
+            "0x8796d5c6b3979791252fd33416002c06e8730244180188b2eb8cd4ae275dee63",
+            "0x6b9ef530e7da502a32e2d5d00ae17716ee84352e8ddabb6da6bda318da024d9d",
+            "0x7e691dff7ae07727f80c722e61e31c76fd6b1fc233bcb8d7b2b67eebd9ed82fc",
+            "0xb068225042c92e150638ca1997f5d067fd9f5b74e1cdd0ab20359ba06ce5ebe4"
+        ],
+        "transactionsRoot": "0x118c6ed270cf291df4977e155ca5d9e9d925c4645fdd12c91106c5cc7006fa5b",
+        "uncles": []
+    }
+}
+```

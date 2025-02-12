@@ -1,0 +1,149 @@
+---
+description: >-
+  Example code for the getblocktemplate json-rpc method. Сomplete guide on how
+  to use getblocktemplate json-rpc in GetBlock.io Web3 documentation.
+---
+
+# getblocktemplate - Dash
+
+#### Parameters
+
+`Request` - object
+
+A JSON request object
+
+#### Request
+
+```java
+curl --location --request POST 'https://dash.getblock.io/mainnet/' 
+--header 'x-api-key: YOUR-API-KEY' 
+--header 'Content-Type: application/json' 
+--data-raw '{"jsonrpc": "2.0",
+"method": "getblocktemplate",
+"params": [null],
+"id": "getblock.io"}'
+```
+
+#### Response
+
+```java
+{
+    "error": null,
+    "id": "getblock.io",
+    "result": {
+        "bits": "192b230b",
+        "capabilities": [
+            "proposal"
+        ],
+        "coinbase_payload": "0200ab6f1700973e02e3fdd32004b07e99b97c632c04e2b1fe58d9ca62083fda1a8cbcda4b64e508e518875ba433c75e557dba8a373b738d124f68152307c6e5805cb4c10c03",
+        "coinbaseaux": {
+            "flags": ""
+        },
+        "coinbasevalue": 268135206,
+        "curtime": 1631268203,
+        "height": 1535915,
+        "longpollid": "0000000000000019cd3a50eedc418372f7aa9060d6ded56a769a51a93dfe0e4a836",
+        "masternode": [
+            {
+                "amount": 144793011,
+                "payee": "XshfZjCw2Ar1vT7uSpHWCmtF1pE7pvJt4c",
+                "script": "76a914baa1fbb7462cacb7c512baa05bd45946d843f36b88ac"
+            }
+        ],
+        "masternode_payments_enforced": true,
+        "masternode_payments_started": true,
+        "mintime": 1631267278,
+        "mutable": [
+            "time",
+            "transactions",
+            "prevblock"
+        ],
+        "noncerange": "00000000ffffffff",
+        "previousbits": "19296a3a",
+        "previousblockhash": "0000000000000019cd3a50eedc418372f7aa9060d6ded56a769a51a93dfe0e4a",
+        "rules": [
+            "csv",
+            "dip0001",
+            "bip147",
+            "dip0003",
+            "dip0008",
+            "realloc",
+            "dip0020"
+        ],
+        "sigoplimit": 40000,
+        "sizelimit": 2000000,
+        "superblock": [],
+        "superblocks_enabled": true,
+        "superblocks_started": true,
+        "target": "000000000000002b230b00000000000000000000000000000000000000000000",
+        "transactions": [
+            {
+                "data": "03000600000000000000fd49010100ab6f1700010001d2c75cd00702717fb6d812b15448a6c9896adb46fcdf4d0b140000000000000032ffffffbfffff0332ffffffbfffff0308a284641d10512458491745ea9054819414ed1e145e685295606f034578b550e70e59d41822751adba0e7532ad13cbae3512f49efac45c8516ed8238578ebbb8c9f17da3e981f4761e06117f5618f618e22eb7b75b7affaca1554db11a47d0bcfcc91f765a6534db8d77733a2cb0c9916937773ce946796cbd58028af0661870743804c90c9125bb8e451e5df4135afb93db9b042555a867b0c1e7f2f1ab2b188542fdf39a887d795b788558e211807146839669c642896f4f7cb43676845979c1ce9284b56fe37fe433fa9f7d498eef6a548666cb969c6685d659ea56dcedf0c70742ffd05124252797555b126d8e9d82753b8613d816c6393a1303b4281227d4f4540e8bf69aa08182950154fe73a",
+                "depends": [],
+                "fee": 0,
+                "hash": "c53f24225255e5a05ec1eb0b9de24d029de6c59f84be2facdd2bffdc694f3f4c",
+                "sigops": 0
+            },
+            {
+                "data": "03000600000000000000fd55010100ab6f1700010004d2c75cd00702717fb6d812b15448a6c9896adb46fcdf4d0b140000000000000064ffffffffffffffffffffffff0f64ffffffffffffffffffffffff0f8ec37da223f445283d4e37d3d2a507a32bc893e3f9ac70214193c06a266eb506d65bab01246788a6bd0538d47c32d82a3f69845caa09b28fd1910d8c5569a91bf335a649cc41747ede938825bb32e7370913d2b1cb81e8bd67d8abc768f730f0f00d7c448af7e9c265b8cc86d9aee9bc4e6a8221db0e7bfdfa2d7bac34e5d1b70dc36965cf7059369e7939b5e93053877e4524b83d3c81e08fb9e264d14f2d012a046a29e5fe673f7429c663f5f78249802fc33817dbca4f5f6b27d5398261f8355868fc2580866cecbe596db8a3a78ab0d00721e4bd780ce70a9877e21ff8bc14bf071b3db389d38b3706bb3bcaff7467b33fb853262d64cb71ac615ed41b80f9b881756745eed16eecd815466dd107",
+                "depends": [],
+                "fee": 0,
+                "hash": "9cc01042d9cc8354d51895a91f665e88c0b43a83c107b7db556a90e1d3bf4326",
+                "sigops": 0
+            },
+            {
+                "data": "010000000336afa65abe86a0276ae84558cc32612a235a88d6ebed966bc3d65fb7bdd95a06040000006b483045022100d3101de76524ad163745c8e4a0d9dc38504a31859e1033499778a5d44449ed430220674f71c3668f5652b0e8adc829c64b6379da6d629c42a3cdc4739df577c82674012103c140b7a1ab24d84dc4632e4d556b1d3b88bbcd90e977de274c34263053b16f72ffffffff2a8729c8f34e47abf185d3a1ee85429c339f15ff7d4b8c560676780576568eaa000000006b483045022100d0aff1573e1816340d70f9960d8c3ec19ba86cf3c1fc7d3aacdb23b7f441a0e50220079d73c01819b806f7ad7c20d478b29191a67324f11e6c5824689b1cb017348e0121034035f18d9f24ee99a329e40bf27ac7e1ecfda94fb5a9d952812bd781e473106dffffffffea3f0d767d1544474e10c47729fdb9aa0c2d0b16f8afc0a7277f4676d3530b3a010000006a47304402203b79bd1de9326d1721e37bb8d77b2c8e8e71e9648b1228c3306906954d1c01de02207beb7df0acd951e12d6fb6081a955dc9b0b41fe6a3c7b5ce5ce03d0718e24c6a012102a0fd08fad84650eecd8fd34c2bf43caae19e53e7e0cf655ff135a1c66c6fcbeaffffffff09923d8000000000001976a914bb0255e931061f37b645dc8fcf64b18740db8b2588ac434a9100000000001976a914126b559a687e833115b7c03cf68d847b27cbcfbb88ac022a1600000000001976a914b74f74bd81a58ebd5283fc3ed587a24bb39b299e88ac77787900000000001976a914be8661176a1146055d131234fbe3a0a12349e7f488acd2c04100000000001976a914a90f38f37bfe2461f7216eb162d0b9f55afc1a6c88ac1ae97500000000001976a9147405339cc8f7dd4903d217c4ebc9a8f39bd518db88ac9b7b8000000000001976a914f413d7bc77a19112ac08d7487d5f20c9d321600088ac2dff9300000000001976a914e3d43761d55c8b78587014544106c3b6884e2bce88acb31c3009000000001976a9148b667916d789c08343f4c6bbfb559ffb4fafdadf88ac00000000",
+                "depends": [],
+                "fee": 240000,
+                "hash": "2e61113910ab9a3a7730298b571efcadcffd4155e46125a9cb91589c046901b9",
+                "sigops": 9
+            },
+            {
+                "data": "01000000016e9135bc289ac2f966aae82c3433b01f8a698f7430faf8515878b32e18021a04000000006b483045022100913fbb04ca430d9bd6170f4252fa20e1a162d0652d1d616c173df480d02ea5b402202780b3f4d0d70c607352bb39fcf6a706081ddeec1037c2a94257da38c51aec3b01210372b66981da0341650281f5fed19ff5512d9e7e9262763f6a55044aaa3dc88bdaffffffff029dcb5e8e030000001976a9143db285bd12ad51c28c501ffaddab8eb4533a347388ac9cce931a000000001976a9148f90d8314ff13f6816ca1b598b34ee6e7ba1984788ac00000000",
+                "depends": [],
+                "fee": 19200,
+                "hash": "88cd24bdee7d901c56a730a4d70a7ff3a5d4f26a448134d52149dd7058f924cf",
+                "sigops": 2
+            },
+            {
+                "data": "010000000152b9baeb7b1d9d362b8858b1d9494f8ebc9f3f8939649de7af9b49695ad25e4f120300006a47304402206cbe24d923ad3aabc91842cf3ab49cac570b9c3bd0cd99d1226df61f93566cfc0220565b22ea3d0a5a3a214809fa2b2e19bbeb62a618c087e176dc12abbfeae67e6d0121035896ad54d378aebf92192fbc585049ba601b58bc40ed1200113b95945cfc7765feffffff01a78e2e00000000001976a9144c8dcd85b07e3f3410183a8a5287528a4989447f88ac00000000",
+                "depends": [],
+                "fee": 4800,
+                "hash": "9f0d976dd36bc43c4700b5b74f51185767a340086883bf9bfea5d27343530fe0",
+                "sigops": 1
+            },
+            {
+                "data": "010000000180f4d7f6022e89fabc307511a8af8f52cefda2f822e480b5904045541e6e52b7010000006b483045022100bb912c9c5802f2742e412131d7a8897550093ef58185550d61d2f7430ca6557e02205b8b3b9fc812ad298f316b736b736c9dd1eba89074ea25c150d10d34381fc70f0121034aaa390cacbce5a484de520afa357529e1ea4848ffb73d6d070b4dac63f6ab92ffffffff0245124a23000000001976a914682a050bd8b8923ab550fa29f5a6346f7b1c9de888acddd0ce2f2b0000001976a9149b56420ba788b5489145bd264dffb9048c7cbc9f88ac00000000",
+                "depends": [],
+                "fee": 2280,
+                "hash": "a217e6d9bf24a38b1489e997b8d9ac324b4227d10b5939e9a893de1ce2bd0fec",
+                "sigops": 2
+            },
+            {
+                "data": "030000000127a4867503ccc4548fdd973c7c0115e07c6718b80d8041138e38c58f731cd11f000000006b483045022100dc6a3720b8716ce2177fa621c64daec89ab9d5071a1cc2b1d7aa100351b6df1c02206546b11c492945cb019005ec571325e7a5fc87ed9d04f9c488d1fb0f2993d0000121027a74686469a6dbbb4f27c16533a94024ea718d68a9f3d9070c2ebe27be5140faffffffff02d476b917000000001976a9142674a7600ac14aa8195006d6091c0cc66eb3027888ac68ad5d03000000001976a914e18fe1eb84ebdc47a6e4c3935eb02e2ec287af9d88ac00000000",
+                "depends": [],
+                "fee": 1004,
+                "hash": "8a57b01925276252aa7fb66aad31d85c8d8e24f27b14fa51eb065424b0e1df55",
+                "sigops": 2
+            },
+            {
+                "data": "0200000002a569bc9201976ddd859925e084d122865d5d73d5e758917d987b3486b826b5b8000000006a47304402202fdf3c1a386849c7dddacd52b76b39108ecf5c727fd640e9895537ef9e5d81e702202acc4b3cc6d28ce60ca4a155bb3b50dcd83c9cad63f21142403de0ab783965b101210241f1fc378d8736ad9cb492544aeceaf444d9528523b740f387dd5f8ba5a48f58feffffff9b3f784da7263ec250dbed993a9e52d4d40a1db8774df19d3859ddc081d0b0dd000000006a47304402204d63a031b7ce38f649f688c3ed0d31347474ee68cb389ad49d80f2d61060629d0220144d205e20d324dfdf9fd5e235c82285c20c2a9ff74fb4672d3b22d60bf9e0f1012102591d742fbef823b8ff5d0277a617d32a7e4bf2843f8f1db0c7fe5d9800a388b7feffffff02d14f1400000000001976a91423e3604716300450131acbb96186fb1124870e1d88ac701a3500000000001976a91439f80770759fa33f038a4391c6676f8052c0a67388acaa6f1700",
+                "depends": [],
+                "fee": 374,
+                "hash": "2243ac2ae1273de4275157c1607261f939374e323339512d0ff8f7408fe4309b",
+                "sigops": 2
+            },
+            {
+                "data": "0200000001b677ccf7abc2713bdd2b5a806156cf0ad9c14d4cf1f8614ea4ba052401bcf879010000006a47304402207a37be63cc43c41f53440e2d948c5bf4a88273e22ca0aef290522103943c2c8702207768c9adf22c5bbc32b6c81a68ab8eadccc9eeed509f09f35ea9dec9113ec42c01210231f3bce7d8b1087e4922422dd3b6695e504daa3faeffba5dc2bf55f8dfc2d435feffffff02a7dd6400000000001976a914f389a94324aaadcd84101b915bcaaaca8fb4ae2d88ac88fade02000000001976a914c15a324f58aad1f45508173bd16328c17a7339c288aca96f1700",
+                "depends": [],
+                "fee": 226,
+                "hash": "ae7069fc93af340c5a40191bac5104ba7dbe241dbeda118e7054ee7d81ab47a9",
+                "sigops": 2
+            }
+        ],
+        "vbavailable": {},
+        "vbrequired": 0,
+        "version": 536870912
+    }
+}
+```

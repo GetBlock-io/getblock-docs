@@ -1,0 +1,2 @@
+# Ethereum Classic (ETC)
+

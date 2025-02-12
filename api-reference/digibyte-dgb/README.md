@@ -1,0 +1,2 @@
+# DigiByte (DGB)
+

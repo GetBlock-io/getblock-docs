@@ -1,0 +1,2 @@
+# KuCoin Community Chain (KCC)
+

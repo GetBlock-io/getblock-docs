@@ -1,0 +1,97 @@
+---
+description: >-
+  Example code for the eth_getBlockByHash json-rpc method. Сomplete guide on how
+  to use eth_getBlockByHash json-rpc in GetBlock.io Web3 documentation.
+---
+
+# eth\_getBlockByHash - Huobi ECO Chain
+
+#### Parameters
+
+`DATA` - string
+
+Hash of a block.
+
+`Boolean` - Boolean
+
+If true it returns the full transaction objects, if false only the hashes of the transactions.
+
+#### Request
+
+```java
+curl --location --request POST 'https://heco.getblock.io/mainnet/' 
+--header 'x-api-key: YOUR-API-KEY' 
+--header 'Content-Type: application/json' 
+--data-raw '{"jsonrpc": "2.0",
+"method": "eth_getBlockByHash",
+"params": ["0x779f94a2fad68383ed932e9f8fd04234a92b85f9d849bec2188c675dcdb0f16d", false],
+"id": "getblock.io"}'
+```
+
+#### Response
+
+```java
+{
+    "id": "getblock.io",
+    "jsonrpc": "2.0",
+    "result": {
+        "difficulty": "0x2",
+        "extraData": "0xd883010101846765746888676f312e31332e34856c696e7578000000000000004525254aaeda959630f52bb9252b30567f1adeffc0d4ee364158dd6a03e85915625ed4171eae813ba142b68644a4ecf964aa2c1689a3c87f14382a29925c717300",
+        "gasLimit": "0x1c9c380",
+        "gasUsed": "0x153d948",
+        "hash": "0x779f94a2fad68383ed932e9f8fd04234a92b85f9d849bec2188c675dcdb0f16d",
+        "logsBloom": "0x40650280062110054dba28009051b1510088820c67128341099280050aa820108204500065c120c0020604a1043128204a0501a80c1210008000090201270082104c0041a12108101610881b02800226420e20348804909c0088492a90900938158410080200d84069810a010c884800480403005410202018248e701818024000306020a000010800010540a005050011221d814003b10920448e408403282192d010211180400020238000528a2904284244e003bc00012503502081580000218414171407026bae0400e00049300a01588002c8000050868466001233605000100808a0004000003100808429840104054214ea8104404a040880a6605440",
+        "miner": "0xb0660a58f97733636b7555162b62e0e83786f79c",
+        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x0000000000000000",
+        "number": "0x62ccd5",
+        "parentHash": "0x6fbea6f86d1a7eb969a86c174b1afa75969e7e6fc881d9331af3639381657b0e",
+        "receiptsRoot": "0x90f0ed1e74878312a8590c022d113e4b4548b367754d1cff784f6f01537cdca1",
+        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "size": "0x2dc8",
+        "stateRoot": "0x99ea48cf581d54bb7494ba1b93819e45ba6fdacc5b64b884b747aa0ca5c04a0f",
+        "timestamp": "0x60efa733",
+        "totalDifficulty": "0xc572e5",
+        "transactions": [
+            "0xf32e8f9bbaaac3cc64cfd8547033435a56e830165c53369d9af9a205101f503b",
+            "0xdae61f6b7cf8474fcaf8a17cffe29ae28662a069478ec3a9d3a681b461bd004d",
+            "0x857191bdbd57e6829875f32f4ecb4614466aaa1732572e506d95f6a1955f88df",
+            "0x82e37c00a2f680e1f4af2b8acef9da25dc21406ed46750e2fbc17305f84ed90d",
+            "0xba5b4934c4d40342c24e508d05fcf25192d6748628ee0658724d650ff4fb6693",
+            "0x1a4b97cd578b3b7520e10f00dea29ea4963286cc0355263e03bf4f5c5f0823d8",
+            "0xb675f5f34413861f4fc2b91c49d0e3822fae240dcb7fe8916cd2c2501a5b6ef2",
+            "0x66bad79af234ce9a950d2c46d5bbf4fad6f3e82c35078a2db4a564e3e0748bcf",
+            "0x7e514492aa0d677a70733ff773772649684b17bb4d35c523084d8c4bdb2f4c23",
+            "0x3e8ef9538264cd7bbfa3115e715fd811e97c2b25406b0bc5a5a52bc8dbaef0ca",
+            "0xc3501c98cfbb7f486870c30474d038c58f04cb99379a7c710926f0d1622f3a5f",
+            "0xf8a0d02f346b5158117510b0a6698d0a08222aec9c9c433b55e02255edf3baa8",
+            "0xaac5dfcb671fb486e4bf4159d0528226420e58bd163acf942e2c9c309f14dd71",
+            "0x05580895e17a0bc423850767c21ac8a054fc88edff55c875597b968e9632da0e",
+            "0xa670f43815f8656e1e348aeb4001a135957b3f1a6925c420bf2f0877a20286f3",
+            "0xb9d7067a263eb0e606cbf49983848c31d87eccc2cda7b2b583dec0385f8330e1",
+            "0x75fa6131b92227386f9bde52f20b9fcd29349e4da639461a787ea7d18b91d8b9",
+            "0x04c1ad8dd0b2e2a6893f746ffb51425f973913c7fcf2b8635ee53cace972fdce",
+            "0xf4504fe4422b774bc00290a050a141d941ffb0f3fe8222bfbd1131627ccd912c",
+            "0xaabc4e2b0871d928599988c7d9726e0f458f9c06ce5d57a6996ba8bd050313e4",
+            "0x7974a93009d79bb04b11bb8956f9f355dee3f590313c2bf88cee95892d4b1da5",
+            "0x50da88a7ea24f6fa367531d2ac7cc68f260cf164929fb749cb149be973b52a67",
+            "0x3254628bd0b93a113a8f1de8260290be1675a49cab9991b4d758a92f419a81b6",
+            "0xf1cf5342a3c7963ae8b0406702c29332796f1bdb0f0fae2ddd87cb5d86a742fd",
+            "0xda25e85775df4048fd0303e4d3b25432a6aee2ae567a1e8b479c8e3c326ce48a",
+            "0x30fe8b6b8fa69fc26ef7c72352800bf23d389208e7e28b6bb5ea4731f9ff4506",
+            "0x79f6f2538397002632ce4ae600ebf5b35afad7945bc960852ff20169326e9638",
+            "0x9c1e49209579fbbadbbec3154b3b68490b4bcc39a6cba9364af9d57ab0c4b435",
+            "0x8dc3cad360fd62e1c46b5a1f32b546128c75d563ca2b675357c219c32fe4f074",
+            "0xde11e682220075e2fea5579b56d9394eda375b4e5b2c37d7d35d5bff1a2ab9fe",
+            "0x8f7a3b12522141d8797a8d5ca83fa4d7a24aff5fab3b60531f9f2aac4681f7ae",
+            "0xb5f83d19acb7a6b8eb3acd7a2d47ffcb3baa088bd46d2fc145551ec6b07324e0",
+            "0xa2bd7f86d8d04dd24dee50e73197f63a3dfebf0fe7efabb3e0944784a2dc5b18",
+            "0xf28381e870e0dd4e207ee4b8f485a16b00f35972f2d08c6ea7c082e1db13f23a",
+            "0x5036c369210a03101f630340becc670209681eff046f955a113cfac0b02556d3",
+            "0x156fec81a67ccba2fe252e3868ae3332b3b92441371968ccd1469cdc41a364f9"
+        ],
+        "transactionsRoot": "0xcd5df05251ee48dafeb5a87ab223589925b0e8ddfbd46e49f4b733fa2635dd45",
+        "uncles": []
+    }
+}
+```

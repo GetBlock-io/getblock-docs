@@ -1,0 +1,71 @@
+---
+description: >-
+  Example code for the eth_getUncleByBlockNumberAndIndex json-rpc method.
+  Сomplete guide on how to use eth_getUncleByBlockNumberAndIndex json-rpc in
+  GetBlock.io Web3 documentation.
+---
+
+# eth\_getUncleByBlockNumberAndIndex - Rootstock
+
+#### Parameters
+
+`QUANTITY|TAG` - integer or string
+
+block number or "latest", "earliest" or "pending"
+
+`QUANTITY` - string
+
+the uncle’s index position.
+
+#### Request
+
+```java
+wscat -c wss://rsk.getblock.io/YOUR-API-KEY/mainnet/ 
+# wait for connection and send the request body 
+{"jsonrpc": "2.0",
+"method": "eth_getUncleByBlockNumberAndIndex",
+"params": ["latest", "0x0"],
+"id": "getblock.io"}
+```
+
+#### Response
+
+```java
+{
+    "id": "getblock.io",
+    "jsonrpc": "2.0",
+    "result": {
+        "bitcoinMergedMiningCoinbaseTransaction": "0x0000000000000140848490e257ea221d388f86b9ab6d65913bb41f6afc76d71bf4f836baeaa9b75b2952534b424c4f434b3a153e547846e305096486a3b443445c8de0843db5b0fcc6ff5ea9082300526f5d269b3a3f",
+        "bitcoinMergedMiningHeader": "0x00205a27bea28c30ec6dc3eb2b9f4e1b7f2bc94b25c1582c9f2601000000000000000000e874001dfcc7e9c1325064d4c2d76f4371050171cfefeee93758b34f2bd92d0eb37690646d6005176570f1c0",
+        "bitcoinMergedMiningMerkleProof": "0x35b240e43d3a89f02e94448969f9d682c619237fe2d869e145532a69c3432dd037fd31d4efbe1c2d6c4f1b5b878139129c2d5e68564f6841acbcecbfb3db79ddb1012e26e20287cd83285f64fb3ad5db9977b909c70025633daaf3cd9bd513ae3caa21913fd8593c045dc4194168b231e2f004e4a2e36fe690968e9338ff2b9b90ea444c681d373f10db0848b8a0fde804acf4fdb8b1369e234c1450f0996ef907e96117c5d00bedeb672f60486cb66a1ff35c4ba30eb5d166c309b505c2b84784eb6d309cc882161a237fd956399b0d607b57f8e65c0982147385989204a21b3a92de91854a718fbe078dc41b77139f2fb7178388edab4fe8c62a9ab26f47a663358dfb0a9e5703faa46d41e04e77baff70da5ef5793d7d1c4727f3a070f5e559dc9a97ae8f749e9a7ff607e5f9b2fb87db13bdea39454b8eccfdbc84595a6a497f185711d35a800a01dd0d55ec6a46c424e85196f11568d1c322815b472924e22870f422d7cfe21416c7c02c13729df8666310605403d1c6e4084735c30b9e",
+        "cumulativeDifficulty": "0x18fb5e04eb75205c212",
+        "difficulty": "0x853c7bb84a6826a89c",
+        "extraData": "0xcd018b484f502d65616638653539",
+        "gasLimit": "0x67c280",
+        "gasUsed": "0x375f5",
+        "hash": "0x8d5eb6f5d66086e9aa08ae0c0293e0320a1f6c79ab228be7bed903bf3ad7e490",
+        "hashForMergedMining": "0x153e547846e305096486a3b443445c8de0843db5b0fcc6ff5ea9082300526f5d",
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000010000000000000000000000100000000000000000000000000000000000000000080000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000",
+        "miner": "0x12d3178a62ef1f520944534ed04504609f7307a1",
+        "minimumGasPrice": "0x37ee430",
+        "number": "0x526f5d",
+        "paidFees": "0xd712019b060",
+        "parentHash": "0x91e4a62319b7b4ccbcd84c45c7f611fe50a0e2509abd2103721c23245def181c",
+        "receiptsRoot": "0x6c8b6572ed4d3eb02e429ab6846d151393439265ed9f91a81abf423d1913cb83",
+        "sha3Uncles": "0x61b1148ff1ea50c46a041b6c7656a5ba10d82446caf6bfa41b9c9a184642a8f3",
+        "size": "0xd74",
+        "stateRoot": "0x58eb6c23e82731576261ccfbe844b2bd19ce12554f1e615c96fc5eb6de082f22",
+        "timestamp": "0x649076a0",
+        "totalDifficulty": "0x219e27ae73be9b081e1215f2",
+        "transactions": [
+            "0xaad4abc4e705f8baa06ad8e8ab0df28773ad887004d3e9d0f2e089761cb11e70",
+            "0x478272239d79f0ddfb48fcb837359e5b275c6ea0110aa95ee3f48676a06f4225"
+        ],
+        "transactionsRoot": "0x3f239abf645c934a9ba3b0392da25f4cbe7d895ebeec63a87527b0871c2aff9b",
+        "uncles": [
+            "0x614457e94ed6d25d20f98ec575992fe0f9195fac6e2e8427cca05b1613cc8ee6",
+            "0x878432d38a0e920896bbf8e3d86c4da63a1fd8ebf5b802fb9e979c33682cad77"
+        ]
+    }
+}
+```
