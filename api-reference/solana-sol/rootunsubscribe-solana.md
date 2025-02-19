@@ -1,0 +1,146 @@
+---
+description: >-
+  The rootUnsubscribe JSON-RPC method enables clients to unsubscribe from
+  notifications about new root slots set by the Solana validator.
+---
+
+# rootUnsubscribe – Solana
+
+{% hint style="success" %}
+The rootUnsubscribe RPC Solana method cancels an existing subscription to root notifications using a subscription ID.&#x20;
+{% endhint %}
+
+This helps Web3 applications reduce unnecessary traffic and maintain efficiency.
+
+### Supported Networks
+
+* Mainnet
+* Devnet
+
+### Parameters
+
+#### Required Parameter
+
+* number (required): The subscription ID to cancel.
+
+### Result
+
+The response returns a boolean value indicating the status of the unsubscribe operation.
+
+#### Result Format
+
+* bool: true if the unsubscribe was successful; otherwise, false.
+
+### Request Example
+
+#### API Endpoints
+
+```json
+wss://go.getblock.io/<ACCESS-TOKEN>/
+```
+
+#### JSON-RPC Request
+
+{% tabs %}
+{% tab title="wss" %}
+```json
+wscat -c "wss://go.getblock.io/<ACCESS-TOKEN>/" --exec '{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "rootUnsubscribe",
+  "params": [0]
+}'
+```
+{% endtab %}
+{% endtabs %}
+
+### Response
+
+A successful request returns a boolean value.
+
+#### Example Response
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": true,
+  "id": 1
+}
+```
+
+In this response:
+
+* result: true indicates the unsubscribe operation was successful.
+
+### Error Handling
+
+Common rootUnsubscribe error scenarios:
+
+* Invalid subscription ID: The provided ID does not match an active subscription.
+* Network issues: Problems with the Solana JSON-RPC API endpoints.
+
+#### Example Error Response
+
+```json
+{
+  "jsonrpc": "2.0",
+  "error": {
+    "code": -32602,
+    "message": "Invalid subscription ID"
+  },
+  "id": 1
+}
+```
+
+### Use Cases
+
+The Solana rootUnsubscribe method is essential for:
+
+* Managing network resources by terminating unnecessary subscriptions.
+* Optimizing dApp performance.
+* Reducing network bandwidth consumption.
+
+### Code Example – Web3 rootUnsubscribe Integration
+
+{% tabs %}
+{% tab title="JavaScript" %}
+```json
+const WebSocket = require('ws');
+
+const url = "wss://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  jsonrpc: "2.0",
+  id: 1,
+  method: "rootUnsubscribe",
+  params: [0]
+};
+
+const ws = new WebSocket(url);
+
+ws.on('open', () => {
+  ws.send(JSON.stringify(payload));
+});
+
+ws.on('message', (data) => {
+  console.log("Unsubscribe Response:", JSON.parse(data));
+});
+
+ws.on('error', (error) => {
+  console.error("WebSocket error:", error.message);
+});
+
+ws.on('close', () => {
+  console.log("WebSocket connection closed");
+});
+```
+{% endtab %}
+{% endtabs %}
+
+### Integration with Web3
+
+By integrating rootUnsubscribe into Solana's Core API, developers can:
+
+* Manage subscriptions more effectively.
+* Reduce network congestion.
+
+Optimize application performance.
