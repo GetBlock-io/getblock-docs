@@ -158,7 +158,7 @@ The Solana logsSubscribe method is essential for:
 * Detecting errors during transaction execution.
 * Real-time event streaming.
 
-### Code Example – Web3 logsSubscribe Integration
+### Code logsSubscribe  Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -203,7 +203,7 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-Integrating logsSubscribe into Solana's Core API allows developers to:
+Integrating Web3 logsSubscribe into Solana's Core API allows developers to:
 
 * Track real-time logs for transactions.
 * Monitor specific account activity.

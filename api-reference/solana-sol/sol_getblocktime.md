@@ -100,7 +100,7 @@ Errors with the getBlockTime method may occur under the following conditions:
 }
 ```
 
-### Code Example
+### Code getBlockTime Example
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -145,4 +145,4 @@ fetchBlockTime();
 
 ### Integration with Web3
 
-The getBlockTime method is a powerful JSON-RPC tool for accessing time-based data in Solana. By querying the block parameter, developers can map slot numbers to approximate timestamps, making it easier to correlate blockchain activity with real-world events. This method is commonly used in Web3 applications for tasks such as historical data analysis, transaction time tracking, and building time-sensitive features.
+The Web3 getBlockTime method is a powerful JSON-RPC tool for accessing time-based data in Solana. By querying the block parameter, developers can map slot numbers to approximate timestamps, making it easier to correlate blockchain activity with real-world events. This method is commonly used in Web3 applications for tasks such as historical data analysis, transaction time tracking, and building time-sensitive features.

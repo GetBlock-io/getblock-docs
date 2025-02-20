@@ -97,7 +97,7 @@ The Solana getMaxRetransmitSlot method is useful for:
 * Web3 analytics tools: Tracking real-time slot dissemination.
 * Blockchain infrastructure: Understanding slot propagation trends to optimize network performance.
 
-### Code Example – Web3 getMaxRetransmitSlot Integration
+### Code getMaxRetransmitSlot Example – Web3 Integration
 
 
 
@@ -137,6 +137,6 @@ fetchMaxRetransmitSlot();
 
 ### Integration with Web3
 
-By integrating getMaxRetransmitSlot into Solana’s Core API, developers can track network slot propagation, monitor block dissemination, and improve transaction confirmation strategies. The JSON-RPC request structure allows seamless retrieval of retransmit slot data, ensuring efficient blockchain operations for dApps, validators, and infrastructure providers.
+By integrating Web3 getMaxRetransmitSlot into Solana’s Core API, developers can track network slot propagation, monitor block dissemination, and improve transaction confirmation strategies. The JSON-RPC request structure allows seamless retrieval of retransmit slot data, ensuring efficient blockchain operations for dApps, validators, and infrastructure providers.
 
 \

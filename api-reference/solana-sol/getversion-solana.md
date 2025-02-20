@@ -106,7 +106,7 @@ The Solana getVersion method is useful for:
 * Blockchain monitoring tools: Displaying the node version.
 * Development environments: Verifying the correct version of the node.
 
-### Code Example – Web3 getVersion Integration
+### Code getVersion Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -148,7 +148,7 @@ fetchSolanaVersion();
 
 ### Integration with Web3
 
-By integrating getVersion into Solana’s Core API, developers can monitor node software versions, ensure compatibility, and debug API-related issues. This JSON-RPC method is essential for applications that depend on specific feature sets.
+By integrating Web3 getVersion into Solana’s Core API, developers can monitor node software versions, ensure compatibility, and debug API-related issues. This JSON-RPC method is essential for applications that depend on specific feature sets.
 
 ### Additional Notes
 

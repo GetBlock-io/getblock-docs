@@ -117,7 +117,7 @@ Errors with the getBlocks method may occur under the following conditions:
 }
 ```
 
-### Code Example
+### Code getBlocks Example
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -156,4 +156,4 @@ fetchBlocks();
 
 ### Integration with Web3
 
-The getBlocks method is an excellent tool for Web3 developers who need to retrieve a range of blocks quickly and efficiently. By querying a specified slot range, developers can track multiple blocks at once, which is essential for building applications that require historical block data, batch block processing, or blockchain analysis.
+The Web3 getBlocks method is an excellent tool for Web3 developers who need to retrieve a range of blocks quickly and efficiently. By querying a specified slot range, developers can track multiple blocks at once, which is essential for building applications that require historical block data, batch block processing, or blockchain analysis.

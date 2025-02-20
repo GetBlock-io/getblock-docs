@@ -100,7 +100,7 @@ The Solana rootUnsubscribe method is essential for:
 * Optimizing dApp performance.
 * Reducing network bandwidth consumption.
 
-### Code Example – Web3 rootUnsubscribe Integration
+### Code rootUnsubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -138,7 +138,7 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating rootUnsubscribe into Solana's Core API, developers can:
+By integrating Web3 rootUnsubscribe into Solana's Core API, developers can:
 
 * Manage subscriptions more effectively.
 * Reduce network congestion.

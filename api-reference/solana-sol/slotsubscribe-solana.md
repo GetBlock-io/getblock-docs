@@ -20,7 +20,7 @@ This is particularly useful for applications that require **live updates** on th
 ### Parameters
 
 {% hint style="info" %}
-None
+None: This method does not require any parameters.
 {% endhint %}
 
 ### Result
@@ -128,7 +128,7 @@ The **Solana slotSubscribe** method is essential for:
 * **Keeping applications in sync** with the Solana blockchain.
 * **Enhancing dApps** by ensuring **transaction validation** and **block consistency**.
 
-### Code Example – Web3 slotSubscribe Integration
+### Code slotSubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -164,7 +164,7 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating **slotSubscribe** into **Solana's Core API**, developers can:
+By integrating Web3 **slotSubscribe** into **Solana's Core API**, developers can:
 
 * **Monitor slot progression in real-time**.
 * **Enhance dApps with live updates**.

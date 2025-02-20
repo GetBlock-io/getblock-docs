@@ -102,7 +102,7 @@ The Solana accountUnsubscribe method is essential for:
 * Optimizing dApp performance.
 * Reducing network bandwidth consumption.
 
-### Code Example – Web3 accountUnsubscribe Integration
+### Code accountUnsubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -140,6 +140,6 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating accountUnsubscribe into Solana's Core API, developers can efficiently manage subscription lifecycles, improve dApp performance, and optimize network resource utilization.
+By integrating Web3 accountUnsubscribe into Solana's Core API, developers can efficiently manage subscription lifecycles, improve dApp performance, and optimize network resource utilization.
 
 \

@@ -150,7 +150,7 @@ By simulating transactions, developers can reduce errors, optimize costs, and en
 
 ***
 
-### Code Example (JavaScript) – Web3 simulateTransaction Integration
+### Code simulateTransaction Example  – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -203,6 +203,6 @@ simulateTransaction();
 
 ### Integration with Web3
 
-Integrate the simulateTransaction RPC method into Web3 applications to validate and debug transactions before submission. By leveraging Core API parameters like sigVerify and accounts, developers ensure reliable and efficient transaction processing for wallets, dApps, and enterprise solutions.
+Integrate the Web3 simulateTransaction RPC method into Web3 applications to validate and debug transactions before submission. By leveraging Core API parameters like sigVerify and accounts, developers ensure reliable and efficient transaction processing for wallets, dApps, and enterprise solutions.
 
 \

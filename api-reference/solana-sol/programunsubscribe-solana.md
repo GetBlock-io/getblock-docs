@@ -100,7 +100,7 @@ The Solana programUnsubscribe method is essential for:
 * Optimizing dApp performance.
 * Reducing network bandwidth consumption.
 
-### Code Example – Web3 programUnsubscribe Integration
+### Code programUnsubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -138,4 +138,4 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating programUnsubscribe into Solana's Core API, developers can efficiently manage subscription lifecycles, improve dApp performance, and optimize network resource utilization.
+By integrating Web3 programUnsubscribe into Solana's Core API, developers can efficiently manage subscription lifecycles, improve dApp performance, and optimize network resource utilization.

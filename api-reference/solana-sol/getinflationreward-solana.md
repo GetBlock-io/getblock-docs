@@ -119,7 +119,7 @@ The Solana getInflationReward method is essential for:
 * Web3 applications: Providing insights into validator performance.
 * Analytics platforms: Aggregating staking data for economic modeling.
 
-### Code Example – Web3 getInflationReward Integration
+### Code getInflationReward Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -173,6 +173,6 @@ fetchInflationReward();
 
 ### Integration with Web3
 
-Integrate the getInflationReward API with Solana’s Core API to track staking rewards dynamically. By leveraging JSON-RPC parameters and endpoints, developers can efficiently monitor staking performance, validator commissions, and epoch-based reward distributions.
+Integrate the Web3 getInflationReward API with Solana’s Core API to track staking rewards dynamically. By leveraging JSON-RPC parameters and endpoints, developers can efficiently monitor staking performance, validator commissions, and epoch-based reward distributions.
 
 \

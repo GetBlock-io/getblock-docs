@@ -123,7 +123,7 @@ The Solana getSupply method is useful for:
 * Web3 analytics tools: Analyzing supply trends and distributions.
 * Blockchain explorers: Displaying real-time supply statistics.
 
-### Code Example – Web3 getSupply Integration
+### Code getSupply Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -166,6 +166,6 @@ fetchSupplyInfo();
 
 ### Integration with Web3
 
-By integrating getSupply into Solana’s Core API, developers can track blockchain supply metrics, analyze transaction activity, and monitor circulating and non-circulating supply dynamics. This JSON-RPC method is essential for applications that need accurate supply information for financial reporting and analytics.
+By integrating Web3 getSupply into Solana’s Core API, developers can track blockchain supply metrics, analyze transaction activity, and monitor circulating and non-circulating supply dynamics. This JSON-RPC method is essential for applications that need accurate supply information for financial reporting and analytics.
 
 \

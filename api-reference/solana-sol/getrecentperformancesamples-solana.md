@@ -140,7 +140,7 @@ The Solana getRecentPerformanceSamples method is useful for:
 * dApp developers: Tracking performance trends to optimize transaction handling.
 * Web3 analytics tools: Analyzing historical network efficiency and congestion.
 
-### Code Example – Web3 getRecentPerformanceSamples Integration
+### Code getRecentPerformanceSamples Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -189,6 +189,6 @@ fetchRecentPerformanceSamples();
 
 ### Integration with Web3
 
-By integrating getRecentPerformanceSamples into Solana’s Core API, developers can track block processing rates, monitor network congestion, and optimize transaction execution strategies. The JSON-RPC request provides real-time insights into Solana’s performance, making it a valuable tool for dApps, validators, and analytics platforms.
+By integrating Web3 getRecentPerformanceSamples into Solana’s Core API, developers can track block processing rates, monitor network congestion, and optimize transaction execution strategies. The JSON-RPC request provides real-time insights into Solana’s performance, making it a valuable tool for dApps, validators, and analytics platforms.
 
 \

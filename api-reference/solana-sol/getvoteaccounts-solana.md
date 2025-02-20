@@ -124,7 +124,7 @@ The  Solana getVoteAccounts method powers:
 
 By filtering with votePubkey or analyzing epochCredits, developers build applications that enhance transparency in Solana’s block production ecosystem.
 
-### Code Example (JavaScript) – Web3 Integration
+### Code getVoteAccounts Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}

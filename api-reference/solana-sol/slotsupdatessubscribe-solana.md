@@ -20,7 +20,7 @@ The **slotsUpdatesSubscribe** method provides a WebSocket-based **subscription**
 ### Parameters
 
 {% hint style="info" %}
-**None**
+None: This method does not require any parameters.
 {% endhint %}
 
 ### Result
@@ -143,7 +143,7 @@ The **Solana slotsUpdatesSubscribe** method is essential for:
 * **Keeping applications in sync** with the latest slot updates.
 * **Improving dApp responsiveness by reacting to slot changes.**
 
-### Code Example – Web3 slotsUpdatesSubscribe Integration
+### Code slotsUpdatesSubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -178,7 +178,7 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating **slotsUpdatesSubscribe** into **Solana's Core API**, developers can:
+By integrating Web3 **slotsUpdatesSubscribe** into **Solana's Core API**, developers can:
 
 * **Monitor slot progression in real-time**.
 * **Enhance dApps with live updates**.

@@ -144,7 +144,7 @@ The Solana getTokenLargestAccounts method is useful for:
 * Web3 analytics tools: Displaying token holder rankings.
 * Wallet applications: Providing users insights into major token holders.
 
-### Code Example – Web3 getTokenLargestAccounts Integration
+### Code getTokenLargestAccounts Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -195,6 +195,6 @@ fetchTokenLargestAccounts();
 
 ### Integration with Web3
 
-By integrating getTokenLargestAccounts into Solana’s Core API, developers can efficiently analyze token distributions, monitor account balances, and provide insights into transaction activity. This JSON-RPC method is a key tool for applications dealing with token analytics and blockchain monitoring.
+By integrating Web3 getTokenLargestAccounts into Solana’s Core API, developers can efficiently analyze token distributions, monitor account balances, and provide insights into transaction activity. This JSON-RPC method is a key tool for applications dealing with token analytics and blockchain monitoring.
 
 \

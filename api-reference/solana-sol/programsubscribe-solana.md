@@ -232,7 +232,7 @@ The Solana programSubscribe method is essential for:
 * Tracking data changes for real-time analytics.
 * Building dashboards for account state tracking.
 
-### Code Example – Web3 programSubscribe Integration
+### Code programSubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -276,7 +276,7 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-Integrating programSubscribe into Solana's Core API allows developers to:
+Integrating Web3 programSubscribe into Solana's Core API allows developers to:
 
 * Receive real-time account updates.
 * Filter notifications based on custom criteria.

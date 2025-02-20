@@ -109,7 +109,7 @@ The Solana getStakeMinimumDelegation method is useful for:
 * Wallet applications: Displaying the minimum stake requirement to users.
 * Web3 analytics tools: Analyzing staking activity and requirements.
 
-### Code Example – Web3 getStakeMinimumDelegation Integration
+### Code getStakeMinimumDelegation Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -148,6 +148,6 @@ fetchStakeMinimumDelegation();
 
 ### Integration with Web3
 
-By integrating getStakeMinimumDelegation into Solana’s Core API, developers can manage staking operations, query the blockchain for current transaction requirements, and provide stake-related information to users efficiently. This JSON-RPC method ensures accurate and up-to-date insights into stake requirements for validators and delegators.
+By integrating Web3 getStakeMinimumDelegation into Solana’s Core API, developers can manage staking operations, query the blockchain for current transaction requirements, and provide stake-related information to users efficiently. This JSON-RPC method ensures accurate and up-to-date insights into stake requirements for validators and delegators.
 
 \

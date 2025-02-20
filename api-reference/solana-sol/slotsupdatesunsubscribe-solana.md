@@ -98,7 +98,7 @@ The **Solana slotsUpdatesUnsubscribe** method is useful for:
 * Reducing unnecessary WebSocket traffic.
 * Optimizing application performance by removing redundant slot update notifications.
 
-#### Code Example – Web3 slotsUpdatesUnsubscribe Integration
+#### Code slotsUpdatesUnsubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -134,7 +134,7 @@ ws.on('close', () => {
 
 #### Integration with Web3
 
-By integrating **slotsUpdatesUnsubscribe** into Solana's Core API, developers can:
+By integrating Web3 **slotsUpdatesUnsubscribe** into Solana's Core API, developers can:
 
 * Optimize WebSocket communication.
 * Free up resources by unsubscribing from unnecessary updates.

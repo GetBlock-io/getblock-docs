@@ -144,7 +144,7 @@ The Solana blockSubscribe method is essential for:
 * Blockchain explorers tracking new blocks.
 * Performance analytics.
 
-### Code Example – Web3 blockSubscribe Integration
+### Code blockSubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -193,7 +193,7 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-Integrating blockSubscribe into Solana's Core API allows developers to:
+Integrating Web3 blockSubscribe into Solana's Core API allows developers to:
 
 * Receive block notifications for all blocks or specific accounts/programs.
 * Enhance real-time monitoring in blockchain applications.

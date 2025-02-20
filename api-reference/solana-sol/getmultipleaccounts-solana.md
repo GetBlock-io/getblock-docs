@@ -148,7 +148,7 @@ The Solana getMultipleAccounts method is useful for:
 * Blockchain explorers: Displaying batch account data efficiently.
 * Validators and node operators: Monitoring multiple accounts in real time.
 
-### Code Example – Web3 getMultipleAccounts Integration
+### Code getMultipleAccounts Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -205,6 +205,6 @@ fetchMultipleAccounts();
 
 ### Integration with Web3
 
-By integrating getMultipleAccounts into Solana’s Core API, developers can retrieve multiple transaction and block details in a single request, optimizing performance for dApps, analytics platforms, and infrastructure services. The JSON-RPC request allows efficient bulk account queries, making it an essential tool for Solana applications.
+By integrating Web3 getMultipleAccounts into Solana’s Core API, developers can retrieve multiple transaction and block details in a single request, optimizing performance for dApps, analytics platforms, and infrastructure services. The JSON-RPC request allows efficient bulk account queries, making it an essential tool for Solana applications.
 
 \

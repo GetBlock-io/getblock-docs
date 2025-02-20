@@ -151,7 +151,7 @@ The Solana simulateTransaction method is useful for:
 * Validating transactions before submission.
 * Debugging failed transactions with detailed logs.
 
-### Code Example – Web3 simulateTransaction Integration
+### Code simulateTransaction Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -193,4 +193,4 @@ simulateTransaction();
 
 ### Integration with Web3
 
-By integrating simulateTransaction into Solana’s Core API, developers can test transactions, analyze logs, and validate execution paths without committing state changes. This JSON-RPC method is essential for debugging and optimizing blockchain applications.
+By integrating Web3 simulateTransaction into Solana’s Core API, developers can test transactions, analyze logs, and validate execution paths without committing state changes. This JSON-RPC method is essential for debugging and optimizing blockchain applications.

@@ -93,7 +93,7 @@ Errors with the getBlocksWithLimit method can occur if:
 * The commitment level "processed" is specified (this is unsupported).
 * The API key is missing or invalid.
 
-Example getBlocksWithLimit error Response:
+getBlocksWithLimit example error Response:
 
 ```json
 {
@@ -160,7 +160,7 @@ axios.post(url, payload, { headers })
 
 ### Integration with Web3
 
-The getBlocksWithLimit method is a powerful tool for Web3 getBlocksWithLimit applications interacting with Solana's Core API. By enabling efficient retrieval of block numbers, it supports various use cases such as block exploration, transaction monitoring, and network analysis. With support for parameters like start\_slot, end\_slot, and commitment, developers can tailor requests to meet their specific needs.
+The Web3 getBlocksWithLimit method is a powerful tool for Web3 getBlocksWithLimit applications interacting with Solana's Core API. By enabling efficient retrieval of block numbers, it supports various use cases such as block exploration, transaction monitoring, and network analysis. With support for parameters like start\_slot, end\_slot, and commitment, developers can tailor requests to meet their specific needs.
 
 Integrating the getBlocksWithLimit JSON-RPC method into applications provides seamless access to Solana block data, making it a cornerstone for blockchain-based solutions.
 

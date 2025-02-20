@@ -98,7 +98,7 @@ The **Solana voteUnsubscribe** method is useful for:
 * Optimizing blockchain tracking by focusing only on required updates.
 * Ensuring that applications remain within API rate limits by properly managing subscriptions.
 
-#### Code Example – Web3 voteUnsubscribe Integration
+#### Code voteUnsubscribe Example – Web3 Integration
 
 
 
@@ -136,7 +136,7 @@ ws.on('close', () => {
 
 #### Integration with Web3
 
-By integrating **voteUnsubscribe** into Solana's Core API, developers can:
+By integrating Web3 **voteUnsubscribe** into Solana's Core API, developers can:
 
 * Optimize WebSocket communication by reducing unnecessary updates.
 * Improve efficiency by selectively managing vote subscriptions.

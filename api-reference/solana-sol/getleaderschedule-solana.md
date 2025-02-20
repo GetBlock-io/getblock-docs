@@ -110,7 +110,7 @@ The Solana getLeaderSchedule method is essential for:
 * Web3 applications: Ensuring efficient transaction scheduling.
 * Analytics platforms: Tracking validator slot performance.
 
-### Code Example – Web3 getLeaderSchedule Integration
+### Code getLeaderSchedule Example – Web3 Integration
 
 
 
@@ -154,6 +154,6 @@ fetchLeaderSchedule();
 
 ### Integration with Web3
 
-Integrate the getLeaderSchedule API with Solana’s Core API to retrieve real-time leader schedules. By leveraging JSON-RPC parameters and endpoints, developers can optimize transaction execution and validator slot assignments, ensuring maximum efficiency in blockchain operations.
+Integrate the Web3 getLeaderSchedule API with Solana’s Core API to retrieve real-time leader schedules. By leveraging JSON-RPC parameters and endpoints, developers can optimize transaction execution and validator slot assignments, ensuring maximum efficiency in blockchain operations.
 
 \

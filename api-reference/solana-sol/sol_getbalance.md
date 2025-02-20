@@ -84,7 +84,7 @@ A successful response will contain the account’s balance and additional contex
 
 The getBalance method is highly useful in Web3 development, particularly for applications that require real-time information about an account’s balance. It can be used in wallet applications to show the user’s current balance, in block explorers to display account details, or by developers analyzing the state of a Solana account for transaction processing.
 
-### Code Example
+### Code getBalance Example
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -128,4 +128,4 @@ This example demonstrates how to query an account's balance programmatically usi
 
 ### Integration with Web3
 
-The getBalance method is an essential tool for interacting with the Solana blockchain through the JSON-RPC interface. By using this method, developers can easily fetch real-time balance information for accounts on Solana, which is vital for building decentralized applications, wallets, and other Web3 tools. The flexible request parameters allow for tailored queries, ensuring that developers can balance the need for accuracy and performance.
+The Web3 getBalance method is an essential tool for interacting with the Solana blockchain through the JSON-RPC interface. By using this method, developers can easily fetch real-time balance information for accounts on Solana, which is vital for building decentralized applications, wallets, and other Web3 tools. The flexible request parameters allow for tailored queries, ensuring that developers can balance the need for accuracy and performance.

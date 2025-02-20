@@ -175,7 +175,7 @@ The Solana getTokenAccountsByDelegate method is useful for:
 * DeFi applications: Auditing token delegation activity.
 * Blockchain explorers: Displaying delegated accounts in real-time.
 
-### Code Example – Web3 getTokenAccountsByDelegate Integration
+### Code getTokenAccountsByDelegate Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -230,4 +230,4 @@ fetchTokenAccountsByDelegate();
 
 ### Integration with Web3
 
-By integrating getTokenAccountsByDelegate into Solana’s Core API, developers can efficiently track delegated token accounts, monitor transaction activity, and manage account state. This JSON-RPC method is essential for applications that handle SPL Token delegations in Web3 environments.
+By integrating Web3 getTokenAccountsByDelegate into Solana’s Core API, developers can efficiently track delegated token accounts, monitor transaction activity, and manage account state. This JSON-RPC method is essential for applications that handle SPL Token delegations in Web3 environments.

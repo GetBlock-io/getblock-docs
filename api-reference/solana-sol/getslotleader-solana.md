@@ -100,7 +100,7 @@ The Solana getSlotLeader method is useful for:
 * Blockchain explorers: Displaying the current slot leader for real-time network analysis.
 * dApp developers: Tracking validator performance for strategic transaction planning.
 
-### Code Example – Web3 getSlotLeader Integration
+### Code getSlotLeader Example – Web3 Integration
 
 {% tabs %}
 {% tab title="curl" %}
@@ -138,6 +138,6 @@ fetchSlotLeader();
 
 ### Integration with Web3
 
-By integrating getSlotLeader into Solana’s Core API, developers can track block production leadership, analyze transaction distribution, and optimize request performance. This JSON-RPC method is essential for applications that rely on real-time validator information and network monitoring.
+By integrating Web3 getSlotLeader into Solana’s Core API, developers can track block production leadership, analyze transaction distribution, and optimize request performance. This JSON-RPC method is essential for applications that rely on real-time validator information and network monitoring.
 
 \

@@ -75,7 +75,7 @@ A successful response provides the commitment information for the requested bloc
 
 The getBlockCommitment method is essential for applications needing to track the commitment status of blocks in the Solana network. For example, block explorers can use this method to analyze the validation status of blocks, while other Web3 applications might use it to track transaction finalization or staking information associated with blocks. By using this method, developers can better understand the behavior of transactions and blocks in the Solana network.
 
-### Code Example
+### Code getBlockCommitment Example
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -112,8 +112,8 @@ fetchBlockCommitment();
 {% endtab %}
 {% endtabs %}
 
-This example demonstrates how to query the commitment information for a specific block using the getBlockCommitment method, offering insights into its validation status and associated stake.
+This getBlockCommitment example demonstrates how to query the commitment information for a specific block using the getBlockCommitment method, offering insights into its validation status and associated stake.
 
 ### Integration with Web3
 
-The getBlockCommitment method is integral to the Solana Core API, providing detailed commitment and stake data for blocks. By integrating this method into your Web3 applications, you can easily retrieve block-related information, such as transaction finalization and network commitment. This method enhances the functionality of explorers, wallets, and other blockchain-based applications that rely on accurate and real-time block data.
+The Web3 getBlockCommitment method is integral to the Solana Core API, providing detailed commitment and stake data for blocks. By integrating this method into your Web3 applications, you can easily retrieve block-related information, such as transaction finalization and network commitment. This method enhances the functionality of explorers, wallets, and other blockchain-based applications that rely on accurate and real-time block data.

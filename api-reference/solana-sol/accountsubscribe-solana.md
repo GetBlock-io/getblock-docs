@@ -181,7 +181,7 @@ The Solana accountSubscribe method is essential for:
 * Tracking smart contract state changes.
 * Enabling event-driven dApp functionality.
 
-### Code Example – Web3 accountSubscribe Integration
+### Code accountSubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -222,4 +222,4 @@ axios.post(url, payload, { headers })
 
 ### Integration with Web3
 
-By integrating accountSubscribe into Solana's Core API, developers can monitor account changes, optimize dApp performance, and enable responsive features. This method is vital for Web3 applications that depend on real-time data updates.
+By integrating Web3 accountSubscribe into Solana's Core API, developers can monitor account changes, optimize dApp performance, and enable responsive features. This method is vital for Web3 applications that depend on real-time data updates.

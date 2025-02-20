@@ -141,7 +141,7 @@ The Solana getSignatureStatuses method is useful for:
 * Validators and node operators: Checking the status of processed transactions.
 * Blockchain explorers: Displaying transaction history and confirmations.
 
-### Code Example – Web3 getSignatureStatuses Integration
+### Code getSignatureStatuses Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -196,6 +196,6 @@ fetchSignatureStatuses();
 
 ### Integration with Web3
 
-By integrating getSignatureStatuses into Solana’s Core API, developers can verify transaction statuses in real time, track block confirmations, and ensure efficient request handling. This JSON-RPC method is essential for decentralized applications, validators, and blockchain explorers that require up-to-date transaction insights.
+By integrating Web3 getSignatureStatuses into Solana’s Core API, developers can verify transaction statuses in real time, track block confirmations, and ensure efficient request handling. This JSON-RPC method is essential for decentralized applications, validators, and blockchain explorers that require up-to-date transaction insights.
 
 \

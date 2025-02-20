@@ -101,7 +101,7 @@ The Solana signatureUnsubscribe method is essential for:
 * Optimizing dApp performance.
 * Reducing network bandwidth consumption.
 
-### Code Example – Web3 signatureUnsubscribe Integration
+### Code signatureUnsubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -139,7 +139,7 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating signatureUnsubscribe into Solana's Core API, developers can:
+By integrating Web3 signatureUnsubscribe into Solana's Core API, developers can:
 
 * Manage subscriptions more effectively.
 * Reduce network congestion.

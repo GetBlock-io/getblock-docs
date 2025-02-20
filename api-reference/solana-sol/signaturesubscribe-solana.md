@@ -155,7 +155,7 @@ The Solana signatureSubscribe method is essential for:
 * Tracking real-time application interactions.
 * Enhancing user experience in Web3 applications.
 
-### Code Example – Web3 signatureSubscribe Integration
+### Code signatureSubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="wss" %}
@@ -200,7 +200,7 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating signatureSubscribe into Solana's Core API, developers can:
+By integrating Web3 signatureSubscribe into Solana's Core API, developers can:
 
 * Track transaction status in real-time.
 * Respond to user actions more effectively.

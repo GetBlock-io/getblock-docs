@@ -16,16 +16,12 @@ It is a vital JSON-RPC method for accessing blocks efficiently, making it partic
 
 The getBlocksWithLimit method is an essential feature of Solana's Core API. It allows developers to specify parameters such as the starting slot (start\_slot) and optionally define an ending slot or commitment level to fine-tune the request. By leveraging the flexibility of this method, developers can easily retrieve and analyze transaction data from multiple blocks in one request.
 
-***
-
 #### Supported Networks
 
 The getBlocksWithLimit RPC Solana method supports the following network types:
 
 * Mainnet
 * Devnet
-
-***
 
 #### Parameters
 
@@ -37,8 +33,6 @@ The getBlocksWithLimit RPC Solana method supports the following network types:
    * Specifies the desired level of commitment. Options include:
      * "finalized": Ensures the block data is fully confirmed and immutable.
      * "processed" is not supported for this method. If not provided, the default commitment is "finalized".
-
-***
 
 #### Request
 
@@ -67,10 +61,7 @@ curl --location "https://go.getblock.io/api-key" -XPOST \
 {% endtab %}
 {% endtabs %}
 
-\
 
-
-***
 
 ### Response
 
@@ -108,8 +99,6 @@ Example Response:
 3. result:
    * An array of block numbers retrieved between the start\_slot and end\_slot values.
 
-***
-
 #### Error Handling
 
 Errors with the getBlocksWithLimit method can occur if:
@@ -131,8 +120,6 @@ Example getBlocksWithLimit error Response:
 }
 ```
 
-***
-
 ### Use Case
 
 The getBlocksWithLimit method is ideal for applications requiring a sequential range of blocks for analysis or processing. For instance:
@@ -143,9 +130,7 @@ The getBlocksWithLimit method is ideal for applications requiring a sequential r
 
 By specifying parameters like start\_slot and end\_slot, developers can retrieve only the required block data, optimizing their applications for performance and efficiency.
 
-***
-
-### Code Example
+### Code getBlocksWithLimit Example
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -188,8 +173,6 @@ fetchBlocksWithLimit();
 ```
 {% endtab %}
 {% endtabs %}
-
-***
 
 #### Integration with Web3
 

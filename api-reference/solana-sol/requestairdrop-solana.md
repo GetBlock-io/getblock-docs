@@ -114,7 +114,7 @@ The Solana requestAirdrop method is useful for:
 * Blockchain education: Demonstrating transactions without using real funds.
 * Web3 applications: Simulating transaction activity.
 
-### Code Example – Web3 requestAirdrop Integration
+### Code requestAirdrop Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -155,4 +155,4 @@ requestAirdrop();
 
 ### Integration with Web3
 
-By integrating requestAirdrop into Solana’s Core API, developers can fund test accounts, simulate transactions, and build reliable dApps without relying on real funds. This JSON-RPC method is essential for blockchain development on Solana Devnet.
+By integrating Web3 requestAirdrop into Solana’s Core API, developers can fund test accounts, simulate transactions, and build reliable dApps without relying on real funds. This JSON-RPC method is essential for blockchain development on Solana Devnet.

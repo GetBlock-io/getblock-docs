@@ -121,7 +121,7 @@ The Solana isBlockhashValid method is useful for:
 * Blockchain monitoring: Validating blockhashes across Web3 applications.
 * API reliability: Reducing transaction failures due to expired blockhashes.
 
-### Code Example – Web3 isBlockhashValid Integration
+### Code isBlockhashValid Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -163,6 +163,6 @@ checkBlockhashValidity();
 
 ### Integration with Web3
 
-By integrating isBlockhashValid into Solana’s Core API, developers can ensure transaction reliability, optimize network performance, and reduce failed transactions due to expired blockhashes. This JSON-RPC method plays a critical role in transaction lifecycle management.
+By integrating Web3 isBlockhashValid into Solana’s Core API, developers can ensure transaction reliability, optimize network performance, and reduce failed transactions due to expired blockhashes. This JSON-RPC method plays a critical role in transaction lifecycle management.
 
 \

@@ -99,7 +99,7 @@ The Solana getSlot method is useful for:
 * Blockchain explorers: Displaying real-time network slot data.
 * dApp developers: Monitoring slot progression to optimize transaction timing.
 
-### Code Example – Web3 getSlot Integration
+### Code getSlot Example – Web3 Integration
 
 {% tabs %}
 {% tab title="curl" %}
@@ -138,6 +138,6 @@ fetchCurrentSlot();
 
 ### Integration with Web3
 
-By integrating getSlot into Solana’s Core API, developers can efficiently track block progress, monitor transaction confirmation times, and ensure real-time request handling. This JSON-RPC method is essential for building responsive blockchain applications and infrastructure services.
+By integrating Web3 getSlot into Solana’s Core API, developers can efficiently track block progress, monitor transaction confirmation times, and ensure real-time request handling. This JSON-RPC method is essential for building responsive blockchain applications and infrastructure services.
 
 \

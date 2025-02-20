@@ -128,7 +128,7 @@ The Solana getTokenAccountBalance method is useful for:
 * DeFi applications: Calculating token holdings for smart contracts.
 * Blockchain explorers: Displaying account balances.
 
-### Code Example – Web3 getTokenAccountBalance Integration
+### Code getTokenAccountBalance Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -175,6 +175,6 @@ fetchTokenAccountBalance();
 
 ### Integration with Web3
 
-By integrating getTokenAccountBalance into Solana’s Core API, developers can easily query token balances, track account activity, and analyze transaction flows. This JSON-RPC method is essential for applications requiring accurate and up-to-date token balance information.
+By integrating Web3 getTokenAccountBalance into Solana’s Core API, developers can easily query token balances, track account activity, and analyze transaction flows. This JSON-RPC method is essential for applications requiring accurate and up-to-date token balance information.
 
 \

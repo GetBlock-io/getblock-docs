@@ -167,7 +167,7 @@ The Solana getTokenAccountsByOwner method is useful for:
 * DeFi applications: Analyzing token holdings and transfers.
 * Blockchain explorers: Displaying token account information in real-time.
 
-### Code Example – Web3 getTokenAccountsByOwner Integration
+### Code getTokenAccountsByOwner Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -224,4 +224,4 @@ fetchTokenAccountsByOwner();
 
 ### Integration with Web3
 
-By integrating getTokenAccountsByOwner into Solana’s Core API, developers can efficiently track token accounts, monitor transaction activity, and manage account state. This JSON-RPC method is essential for applications that handle SPL Token balances and ownership records in Web3 environments.
+By integrating Web3 getTokenAccountsByOwner into Solana’s Core API, developers can efficiently track token accounts, monitor transaction activity, and manage account state. This JSON-RPC method is essential for applications that handle SPL Token balances and ownership records in Web3 environments.

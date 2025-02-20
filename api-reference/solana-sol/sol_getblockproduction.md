@@ -145,7 +145,7 @@ Errors with the getBlockProduction method may occur under the following conditio
 }
 ```
 
-### Code Example
+### Code getBlockProduction Example
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -184,5 +184,5 @@ fetchBlockProduction();
 
 ### Integration with Web3
 
-The getBlockProduction method is a powerful tool for developers building Web3 applications that need to track validator performance or analyze block production patterns. By utilizing this method, developers can easily access data about how many blocks each validator has produced within a specified slot range, making it a valuable resource for improving the efficiency and transparency of Solana’s blockchain.
+The Web3 getBlockProduction method is a powerful tool for developers building Web3 applications that need to track validator performance or analyze block production patterns. By utilizing this method, developers can easily access data about how many blocks each validator has produced within a specified slot range, making it a valuable resource for improving the efficiency and transparency of Solana’s blockchain.
 

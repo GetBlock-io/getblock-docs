@@ -127,7 +127,7 @@ The Solana getRecentPrioritizationFees method is useful for:
 * Blockchain explorers: Displaying historical prioritization fee data.
 * Validators and node operators: Monitoring network fee dynamics and congestion levels.
 
-### Code Example – Web3 getRecentPrioritizationFees Integration
+### Code getRecentPrioritizationFees Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -177,6 +177,6 @@ java
 
 ### Integration with Web3
 
-By integrating getRecentPrioritizationFees into Solana’s Core API, developers can optimize transaction execution strategies by analyzing recent prioritization transaction fees. The JSON-RPC request provides valuable insights into the dynamic fee structure, helping dApps, validators, and infrastructure services efficiently navigate Solana’s network conditions.
+By integrating Web3 getRecentPrioritizationFees into Solana’s Core API, developers can optimize transaction execution strategies by analyzing recent prioritization transaction fees. The JSON-RPC request provides valuable insights into the dynamic fee structure, helping dApps, validators, and infrastructure services efficiently navigate Solana’s network conditions.
 
 \

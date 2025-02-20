@@ -95,7 +95,7 @@ Example Error Response:
 }
 ```
 
-#### Code Example
+#### Code getFirstAvailableBlock Example
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -135,6 +135,6 @@ fetchFirstAvailableBlock();
 
 #### Integration with Web3
 
-The getFirstAvailableBlock method is a useful tool for Web3 applications that need to query data starting from the first available block. By utilizing this method, developers can ensure their applications handle block data consistently and without gaps, making it essential for projects that require precise synchronization with Solana’s blockchain.
+The Web3 getFirstAvailableBlock method is a useful tool for Web3 applications that need to query data starting from the first available block. By utilizing this method, developers can ensure their applications handle block data consistently and without gaps, making it essential for projects that require precise synchronization with Solana’s blockchain.
 
 \

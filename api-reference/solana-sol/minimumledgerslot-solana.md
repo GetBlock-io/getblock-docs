@@ -103,7 +103,7 @@ The Solana minimumLedgerSlot method is useful for:
 * Blockchain synchronization: Aligning data queries with available ledger history.
 * Analytics tools: Calculating ledger size and data retention periods.
 
-### Code Example – Web3 minimumLedgerSlot Integration
+### Code minimumLedgerSlot Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -140,4 +140,4 @@ fetchMinimumLedgerSlot();
 
 ### Integration with Web3
 
-By integrating minimumLedgerSlot into Solana’s Core API, developers can accurately track ledger history, analyze block availability, and ensure compatibility with blockchain applications that depend on historical data.
+By integrating Web3 minimumLedgerSlot into Solana’s Core API, developers can accurately track ledger history, analyze block availability, and ensure compatibility with blockchain applications that depend on historical data.

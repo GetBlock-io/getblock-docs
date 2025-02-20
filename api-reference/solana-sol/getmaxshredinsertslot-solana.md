@@ -95,7 +95,7 @@ The Solana getMaxShredInsertSlot method is useful for:
 * Web3 analytics tools: Tracking real-time data insertion trends.
 * Blockchain infrastructure: Understanding shred propagation trends to optimize network performance.
 
-### Code Example – Web3 getMaxShredInsertSlot Integration
+### Code getMaxShredInsertSlot Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -133,6 +133,6 @@ fetchMaxShredInsertSlot();
 
 ### Integration with Web3
 
-By integrating getMaxShredInsertSlot into Solana’s Core API, developers can track shred insertion status, monitor block finalization, and improve transaction data flow. The JSON-RPC request structure allows seamless retrieval of slot insertion data, ensuring efficient blockchain operations for dApps, validators, and infrastructure providers.
+By integrating Web3 getMaxShredInsertSlot into Solana’s Core API, developers can track shred insertion status, monitor block finalization, and improve transaction data flow. The JSON-RPC request structure allows seamless retrieval of slot insertion data, ensuring efficient blockchain operations for dApps, validators, and infrastructure providers.
 
 \

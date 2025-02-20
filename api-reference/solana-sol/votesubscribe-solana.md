@@ -22,7 +22,7 @@ This subscription is **unstable** and only available if the validator was starte
 #### Parameters
 
 {% hint style="info" %}
-**None**
+None: This method does not require any parameters.
 {% endhint %}
 
 #### Result
@@ -133,7 +133,7 @@ The **Solana voteSubscribe** method is useful for:
 * Building dApps that require real-time voting updates.
 * Ensuring applications stay in sync with validator activities.
 
-#### Code Example – Web3 voteSubscribe Integration
+#### Code voteSubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -168,7 +168,7 @@ ws.on('close', () => {
 
 #### Integration with Web3
 
-By integrating **voteSubscribe** into Solana's Core API, developers can:
+By integrating Web3 **voteSubscribe** into Solana's Core API, developers can:
 
 * Monitor validator votes in real-time.
 * Improve blockchain tracking systems.

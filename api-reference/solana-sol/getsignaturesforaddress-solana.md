@@ -132,7 +132,7 @@ The Solana getSignaturesForAddress method is useful for:
 * Blockchain explorers: Displaying past transactions for a given account.
 * Validators and node operators: Monitoring transaction confirmations.
 
-### Code Example – Web3 getSignaturesForAddress Integration
+### Code getSignaturesForAddress Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -186,6 +186,6 @@ fetchSignaturesForAddress();
 
 ### Integration with Web3
 
-By integrating getSignaturesForAddress into Solana’s Core API, developers can efficiently query transaction records linked to an address, retrieve block confirmations, and optimize request performance. This JSON-RPC method is a powerful tool for tracking transaction histories in decentralized applications and blockchain infrastructure.
+By integrating Web3 getSignaturesForAddress into Solana’s Core API, developers can efficiently query transaction records linked to an address, retrieve block confirmations, and optimize request performance. This JSON-RPC method is a powerful tool for tracking transaction histories in decentralized applications and blockchain infrastructure.
 
 \

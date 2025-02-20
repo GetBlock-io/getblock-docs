@@ -104,7 +104,7 @@ The Solana getMinimumBalanceForRentExemption method is useful for:
 * Web3 analytics tools: Estimating storage costs for Solana-based applications.
 * Validators and infrastructure providers: Monitoring rent-exempt accounts and optimizing network resources.
 
-### Code Example – Web3 getMinimumBalanceForRentExemption Integration
+### Code getMinimumBalanceForRentExemption Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -143,6 +143,6 @@ fetchMinimumBalanceForRentExemption();
 
 ### Integration with Web3
 
-By integrating getMinimumBalanceForRentExemption into Solana’s Core API, developers can manage account rent requirements efficiently, optimize block storage, and ensure smooth transaction execution. The JSON-RPC request allows easy retrieval of rent-exemption values, making it a key component in decentralized applications, wallets, and staking infrastructure.
+By integrating Web3 getMinimumBalanceForRentExemption into Solana’s Core API, developers can manage account rent requirements efficiently, optimize block storage, and ensure smooth transaction execution. The JSON-RPC request allows easy retrieval of rent-exemption values, making it a key component in decentralized applications, wallets, and staking infrastructure.
 
 \

@@ -149,7 +149,7 @@ A successful response contains detailed information about the block, including t
 
 The getBlock method is highly beneficial for developers working on blockchain analytics, block explorers, or any Solana-based decentralized applications (dApps) that require detailed information about specific blocks. It allows the retrieval of transaction data, reward information, and other block-related details in real time, which is essential for building rich user experiences.
 
-### Code Example
+### Code getBlock Example
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -195,4 +195,4 @@ This code example demonstrates how to make a request to the getBlock method, fet
 
 ### Integration with Web3
 
-The getBlock method is an essential tool for retrieving block information from the Solana blockchain. By querying a block by its slot, developers can gain detailed insights into blockchain activity, including transaction data and rewards. The method’s flexibility in configuring encoding and transaction details makes it an important tool for building sophisticated Web3 applications and blockchain analytics solutions.
+The Web3 getBlock method is an essential tool for retrieving block information from the Solana blockchain. By querying a block by its slot, developers can gain detailed insights into blockchain activity, including transaction data and rewards. The method’s flexibility in configuring encoding and transaction details makes it an important tool for building sophisticated Web3 applications and blockchain analytics solutions.

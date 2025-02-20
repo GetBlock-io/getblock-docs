@@ -73,7 +73,7 @@ The getBlockHeight method is useful for applications that need to monitor or dis
 * Wallets or staking platforms to show the latest blockchain status.
 * Node operators for synchronization or tracking the progress of the network.
 
-### Code Example
+### Code getBlockHeight  Example
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -115,4 +115,4 @@ This example demonstrates how to query the current block height using the getBlo
 
 ### Integration with Web3
 
-The getBlockHeight method is a core part of Solana's Web3 functionality. It allows developers to track the current block height in real-time. This method is essential for applications such as block explorers, wallets, and any Solana-based project that needs to monitor blockchain progress or synchronize with the network. By using this method, developers can stay up to date with the latest block data.
+The Web3 getBlockHeight method is a core part of Solana's Web3 functionality. It allows developers to track the current block height in real-time. This method is essential for applications such as block explorers, wallets, and any Solana-based project that needs to monitor blockchain progress or synchronize with the network. By using this method, developers can stay up to date with the latest block data.

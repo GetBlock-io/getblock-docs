@@ -4,7 +4,7 @@ description: >-
   notifications when a new root slot is set by the Solana validator.
 ---
 
-# rootSubscribe RPC Method – Solana
+# rootSubscribe – Solana
 
 {% hint style="success" %}
 The rootSubscribe RPC Solana method provides real-time notifications whenever the root slot changes.
@@ -116,7 +116,7 @@ The Solana rootSubscribe method is essential for:
 * Ensuring application state consistency.
 * Developing real-time analytics tools.
 
-### Code Example – Web3 rootSubscribe Integration
+### Code rootSubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -153,7 +153,7 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating rootSubscribe into Solana's Core API, developers can:
+By integrating Web3 rootSubscribe into Solana's Core API, developers can:
 
 * Monitor root slot changes in real-time.
 * Optimize resource usage.

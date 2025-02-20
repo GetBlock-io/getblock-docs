@@ -129,7 +129,7 @@ The Solana getTokenSupply method is useful for:
 * Web3 analytics tools: Displaying token metrics to users.
 * Wallet applications: Providing token supply information for users.
 
-### Code Example – Web3 getTokenSupply Integration
+### Code getTokenSupply Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -175,6 +175,6 @@ fetchTokenSupply();
 
 ### Integration with Web3
 
-By integrating getTokenSupply into Solana’s Core API, developers can efficiently track token supply, analyze token metrics, and provide real-time token data for Web3 applications. This JSON-RPC method is crucial for applications that require accurate supply information for tokens on the Solana network.")}
+By integrating Web3 getTokenSupply into Solana’s Core API, developers can efficiently track token supply, analyze token metrics, and provide real-time token data for Web3 applications. This JSON-RPC method is crucial for applications that require accurate supply information for tokens on the Solana network.")}
 
 \

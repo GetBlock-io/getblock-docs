@@ -151,7 +151,7 @@ The Solana getProgramAccounts method is useful for:
 * Blockchain explorers: Displaying program-related account data efficiently.
 * Validators and node operators: Monitoring program accounts in real time.
 
-### Code Example – Web3 getProgramAccounts Integration
+### Code getProgramAccounts Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -217,6 +217,6 @@ fetchProgramAccounts();
 
 ### Integration with Web3
 
-By integrating getProgramAccounts into Solana’s Core API, developers can efficiently track program-owned accounts, retrieve transaction and block details, and optimize decentralized applications. The JSON-RPC request structure allows streamlined account queries, making it an essential tool for Solana-based services.
+By integrating Web3 getProgramAccounts into Solana’s Core API, developers can efficiently track program-owned accounts, retrieve transaction and block details, and optimize decentralized applications. The JSON-RPC request structure allows streamlined account queries, making it an essential tool for Solana-based services.
 
 \

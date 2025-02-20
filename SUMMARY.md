@@ -2581,7 +2581,7 @@
   * [logsUnsubscribe – Solana](api-reference/solana-sol/logsunsubscribe-solana.md)
   * [programSubscribe – Solana](api-reference/solana-sol/programsubscribe-solana.md)
   * [programUnsubscribe – Solana](api-reference/solana-sol/programunsubscribe-solana.md)
-  * [rootSubscribe RPC Method – Solana](api-reference/solana-sol/rootsubscribe-rpc-method-solana.md)
+  * [rootSubscribe – Solana](api-reference/solana-sol/rootsubscribe-solana.md)
   * [rootUnsubscribe – Solana](api-reference/solana-sol/rootunsubscribe-solana.md)
   * [signatureSubscribe – Solana](api-reference/solana-sol/signaturesubscribe-solana.md)
   * [signatureUnsubscribe – Solana](api-reference/solana-sol/signatureunsubscribe-solana.md)
