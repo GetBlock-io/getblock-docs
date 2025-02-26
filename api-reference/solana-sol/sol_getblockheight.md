@@ -35,7 +35,7 @@ URL(Endpoints)
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "https://go.getblock.io/api-key" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header "Content-Type: application/json" \
 --data '{
     "jsonrpc": "2.0",
@@ -80,7 +80,7 @@ The getBlockHeight method is useful for applications that need to monitor or dis
 ```javascript
 const axios = require('axios');
 
-const url = "https://sol.getblock.io/YOUR-API-KEY/mainnet";
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const headers = { "Content-Type": "application/json" };
 
 const payload = {

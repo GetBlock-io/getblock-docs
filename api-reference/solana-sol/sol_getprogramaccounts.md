@@ -51,7 +51,7 @@ URL(Endpoints)
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "https://go.getblock.io/api-key" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header "Content-Type: application/json" \
 --data '{
     "jsonrpc": "2.0",
@@ -113,12 +113,12 @@ The getMultipleAccounts method in Solana allows developers to retrieve data for 
 ```javascript
 const axios = require('axios');
 
-const url = "https://go.getblock.io/api-key"; // Исправленный эндпоинт
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/"; 
 const headers = { "Content-Type": "application/json" };
 
 const payload = {
     jsonrpc: "2.0",
-    id: 1, // Приводим к единому стилю
+    id: 1, 
     method: "getProgramAccounts",
     params: [
         "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",

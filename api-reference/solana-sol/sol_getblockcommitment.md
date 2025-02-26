@@ -36,7 +36,7 @@ URL(Endpoints)
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "https://go.getblock.io/api-key" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header "Content-Type: application/json" \
 --data '{
     "jsonrpc": "2.0",
@@ -82,12 +82,12 @@ The getBlockCommitment method is essential for applications needing to track the
 ```javascript
 const axios = require('axios');
 
-const url = "https://sol.getblock.io/YOUR-API-KEY/mainnet";
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const headers = { "Content-Type": "application/json" };
 
 const payload = {
     jsonrpc: "2.0",
-    id: 1, // Приводим к единому стилю
+    id: 1, 
     method: "getBlockCommitment",
     params: [122791192]
 };

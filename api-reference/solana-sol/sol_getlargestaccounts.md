@@ -16,7 +16,7 @@ Configuration object containing the following optional fields: - commitment: obj
 
 #### Request
 
-```java
+```json
 ```
 
 #### Response

@@ -69,7 +69,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "https://go.getblock.io/api-key" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header "Content-Type: application/json" \
 --data '{
     "jsonrpc": "2.0",
@@ -158,7 +158,7 @@ The Solana getProgramAccounts method is useful for:
 ```javascript
 const axios = require('axios');
 
-const url = "https://go.getblock.io/api-key"; 
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/"; 
 const headers = { "Content-Type": "application/json" };
 
 const payload = {

@@ -120,7 +120,7 @@ The Solana rootSubscribe method is essential for:
 
 {% tabs %}
 {% tab title="JavaScript" %}
-```json
+```javascript
 const WebSocket = require('ws');
 
 const url = "wss://go.getblock.io/<ACCESS-TOKEN>/";

@@ -44,12 +44,10 @@ https://sol.getblock.io/mainnet
 
 Example (cURL):
 
-
-
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "https://go.getblock.io/api-key" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header "Content-Type: application/json" \
 --data '{
     "jsonrpc": "2.0",
@@ -60,8 +58,6 @@ curl --location "https://go.getblock.io/api-key" -XPOST \
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ### Response
 
@@ -138,7 +134,7 @@ By specifying parameters like start\_slot and end\_slot, developers can retrieve
 const axios = require('axios');
 
 
-const url = "https://go.getblock.io/api-key"; 
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/"; 
 const headers = { "Content-Type": "application/json" };
 
 

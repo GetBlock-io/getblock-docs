@@ -33,14 +33,16 @@ Access this method via Solana API Endpoints:
 
 #### API Endpoint:
 
-https://sol.getblock.io/mainnet
+```json
+https://go.getblock.io/<ACCESS-TOKEN>/
+```
 
 #### Example (cURL) – getLatestBlockhash example:
 
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "https://go.getblock.io/api-key" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header "Content-Type: application/json" \
 --data '{
    "jsonrpc": "2.0",
@@ -118,7 +120,7 @@ By referencing a valid blockhash, developers prevent transaction failures and im
 const axios = require('axios');
 
 
-const url = "https://go.getblock.io/api-key"; 
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/"; 
 const headers = { "Content-Type": "application/json" };
 
 

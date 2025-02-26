@@ -44,7 +44,7 @@ URL(Endpoints)
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "https://sol.getblock.io/mainnet" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header "Content-Type: application/json" \
 --data '{
     "jsonrpc": "2.0",
@@ -123,14 +123,12 @@ By specifying parameters like start\_slot and end\_slot, developers can retrieve
 ```javascript
 const axios = require('axios');
 
-// Define the API URL and headers
-const url = "https://sol.getblock.io/mainnet";
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const headers = { 
     "Content-Type": "application/json", 
     "x-api-key": "YOUR-API-KEY" 
 };
 
-// Prepare the request payload
 const payload = {
     jsonrpc: "2.0",
     method: "getBlocksWithLimit",
@@ -138,15 +136,12 @@ const payload = {
     id: "getblock.io"
 };
 
-// Send the POST request
 axios.post(url, payload, { headers })
     .then(response => {
         if (response.status === 200) {
-            // Extract block numbers from the response
             const blockNumbers = response.data.result;
             console.log("Block Numbers:", blockNumbers);
         } else {
-            // Handle unexpected HTTP statuses
             console.error("Error:", response.status, response.statusText);
         }
     })

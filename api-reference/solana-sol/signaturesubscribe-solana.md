@@ -158,8 +158,8 @@ The Solana signatureSubscribe method is essential for:
 ### Code signatureSubscribe Example – Web3 Integration
 
 {% tabs %}
-{% tab title="wss" %}
-```json
+{% tab title="JavaScript" %}
+```javascript
 const WebSocket = require('ws');
 
 const url = "wss://go.getblock.io/<ACCESS-TOKEN>/";

@@ -42,7 +42,7 @@ URL(Endpoints)
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "https://go.getblock.io/api-key" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -91,7 +91,7 @@ The getBalance method is highly useful in Web3 development, particularly for app
 ```javascript
 const axios = require('axios');
 
-const url = "https://go.getblock.io/YOUR-API-KEY";
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const headers = { "Content-Type": "application/json" };
 
 const payload = {

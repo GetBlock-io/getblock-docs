@@ -41,7 +41,7 @@ URL(Endpoints)
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "https://go.getblock.io/api-key" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header "Content-Type: application/json" \
 --data '{
     "jsonrpc": "2.0",
@@ -106,12 +106,12 @@ Errors with the getFirstAvailableBlock method may occur in the following scenari
 ```javascript
 const axios = require('axios');
 
-const url = "https://go.getblock.io/api-key"; // Исправленный эндпоинт
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/"; 
 const headers = { "Content-Type": "application/json" };
 
 const payload = {
     jsonrpc: "2.0",
-    id: 1, // Приводим к единому стилю
+    id: 1, 
     method: "getFirstAvailableBlock",
     params: []
 };

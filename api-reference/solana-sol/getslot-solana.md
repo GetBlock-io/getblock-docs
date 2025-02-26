@@ -37,7 +37,7 @@ The response returns a u64 value, representing the current slot number.
 
 #### API Endpoints
 
-```
+```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
@@ -45,8 +45,8 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 {% tabs %}
 {% tab title="curl" %}
-```
-curl --location "https://go.getblock.io/api-key" -XPOST \
+```json
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header "Content-Type: application/json" \
 --data '{
     "jsonrpc": "2.0",
@@ -63,7 +63,7 @@ A successful request returns the latest slot number.
 
 #### Example Response
 
-```
+```json
 {
   "jsonrpc": "2.0",
   "result": 1234,
@@ -80,7 +80,7 @@ Common getSlot error scenarios:
 
 #### Example Error Response
 
-```
+```json
 {
   "jsonrpc": "2.0",
   "error": {
@@ -102,11 +102,11 @@ The Solana getSlot method is useful for:
 ### Code getSlot Example – Web3 Integration
 
 {% tabs %}
-{% tab title="curl" %}
-```
+{% tab title="JavaScript" %}
+```javascript
 const axios = require('axios');
 
-const url = "https://go.getblock.io/api-key"; 
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/"; 
 const headers = { "Content-Type": "application/json" };
 
 

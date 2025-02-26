@@ -109,7 +109,7 @@ The getTransactionCount RPC method is ideal for:
 const axios = require('axios');
 
 
-const url = "https://go.getblock.io/api-key"; 
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/"; 
 const headers = { "Content-Type": "application/json" };
 
 
