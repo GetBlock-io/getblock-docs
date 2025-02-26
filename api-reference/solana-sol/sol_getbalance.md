@@ -2,7 +2,7 @@
 description: >-
   The getBalance method retrieves the balance of a Solana account in lamports
   (the smallest unit of SOL). It’s essential for wallets, explorers, and
-  analytics tools to fetch real-time balance data.Examp
+  analytics tools to fetch real-time balance data.
 ---
 
 # getBalance - Solana
@@ -24,7 +24,12 @@ The getBalance RPC Solana method supports the following network types:
 
 ### Parameters
 
+**Required Parameters**
+
 * Pubkey (string, required): The base-58 encoded public key of the account to query. This parameter is required to specify the account whose balance is being retrieved.
+
+**Optional Parameters**
+
 * Commitment (object, optional): Defines the level of commitment required for the requested transaction data. Possible values include:
   * "processed": the most recent block data, not finalized.
   * "confirmed": a more reliable but potentially slower confirmation level.
@@ -80,7 +85,7 @@ A successful response will contain the account’s balance and additional contex
     * slot: The current slot number for the requested balance.
   * value: The account balance in lamports.
 
-### Use Case
+### Use Cases
 
 The getBalance method is highly useful in Web3 development, particularly for applications that require real-time information about an account’s balance. It can be used in wallet applications to show the user’s current balance, in block explorers to display account details, or by developers analyzing the state of a Solana account for transaction processing.
 
