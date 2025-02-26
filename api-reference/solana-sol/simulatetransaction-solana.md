@@ -6,7 +6,7 @@ description: >-
 
 # simulateTransaction – Solana
 
-{% hint style="info" %}
+{% hint style="success" %}
 The simulateTransaction RPC Solana method executes a transaction in a simulated environment.&#x20;
 {% endhint %}
 

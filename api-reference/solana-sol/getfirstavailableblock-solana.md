@@ -6,7 +6,7 @@ description: >-
 
 # getFirstAvailableBlock - Solana
 
-{% hint style="info" %}
+{% hint style="success" %}
 The getFirstAvailableBlock method in Solana provides the first available block from the blockchain, allowing developers to retrieve the earliest block that can be queried.&#x20;
 {% endhint %}
 

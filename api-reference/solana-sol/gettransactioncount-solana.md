@@ -10,8 +10,6 @@ description: >-
 The Solana getTransactionCount RPC method returns the total count of transactions processed by the network, reflecting its growth and activity. As part of Solana’s Core API, it is critical for developers building network explorers, performance trackers, or applications requiring block-level analytics.
 {% endhint %}
 
-The method normally returns confirmed transaction counts, but can be extended to include pending transactions by using a specific call to getTransactionCount pending.
-
 This method supports commitment parameters to determine data finality. Unlike Ethereum’s eth\_getTransactionCount (which may trigger errors like AttributeError: 'Eth' object has no attribute 'gettransactioncount'), Solana’s implementation focuses on network-wide totals rather than per-account transactions.
 
 ### Supported Networks
@@ -23,10 +21,11 @@ This method is accessible via Solana API endpoints:
 
 ### Parameters
 
-* commitment (object, optional): Specifies the confirmation level. Supported options:
-  * finalized (default): Returns the count of transactions in finalized blocks.
+* **commitment** (string, optional): Specifies the confirmation level. Supported values:
+  * finalized (default): Returns data from fully confirmed blocks.
   * confirmed: Uses the latest confirmed block.
   * processed: Not supported for this method.
+* **minContextSlot** (number, optional): The minimum slot at which the request can be evaluated. This ensures that data is only considered if the node has reached the specified slot.
 
 ### Request
 
@@ -101,7 +100,7 @@ The getTransactionCount RPC method is ideal for:
 * Developers monitoring blockchain health and activity.
 * Auditors verifying historical block data completeness.
 
-### Code Example (JavaScript) – Web3 Integration
+### Code getTransactionCount Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}

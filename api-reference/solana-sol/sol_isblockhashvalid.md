@@ -109,7 +109,7 @@ The isBlockhashValid RPC Solana method is ideal for:
 
 By verifying blockhash validity, developers prevent transaction failures and improve user experiences.
 
-#### Code Example (JavaScript) – Web3 isBlockhashValid Integration:
+#### Code isBlockhashValid Example – Web3 Integration:
 
 {% tabs %}
 {% tab title="JavaScript" %}
