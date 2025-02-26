@@ -46,7 +46,7 @@ wss://go.getblock.io/<ACCESS-TOKEN>/
 {% tabs %}
 {% tab title="wss" %}
 ```json
-wscat -c "wss://go.getblock.io/api-key" -x '{
+wscat -c "wss://go.getblock.io/<ACCESS-TOKEN>/" -x '{
     "jsonrpc": "2.0",
     "id": 1,
     "method": "accountUnsubscribe",
@@ -109,7 +109,7 @@ The Solana accountUnsubscribe method is essential for:
 ```javascript
 const WebSocket = require('ws');
 
-const url = "wss://go.getblock.io/api-key";
+const url = "wss://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   jsonrpc: "2.0",
   id: 1,
