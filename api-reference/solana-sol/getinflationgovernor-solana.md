@@ -10,11 +10,7 @@ description: >-
 The getInflationGovernor RPC Solana method returns details about the blockchain’s inflation governance, including initial and terminal inflation rates, tapering rates, and the percentage allocated to the foundation.&#x20;
 {% endhint %}
 
-This data is critical for understanding Solana’s economic model and how inflation decreases over time.
-
-The request supports an optional parameter:
-
-* commitment (string, optional): Defines the finality level of the retrieved inflation governor parameters.
+The getInflationGovernor method retrieves the inflation governance parameters of the Solana network. It provides details on inflation scheduling, including initial and terminal rates, annual reductions, and staking reward distribution, allowing developers and validators to understand the network’s long-term economic model.
 
 ### Supported Networks
 

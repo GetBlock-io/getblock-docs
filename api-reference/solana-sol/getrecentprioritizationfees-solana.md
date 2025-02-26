@@ -10,9 +10,7 @@ description: >-
 The getRecentPrioritizationFees RPC Solana method provides insight into the dynamic fee market within the Solana blockchain.&#x20;
 {% endhint %}
 
-It helps developers assess the cost required for prioritizing transactions in recent blocks, ensuring timely transaction execution in high-traffic conditions.
-
-By providing an optional parameters array of account addresses, the response can reflect the estimated fee for a transaction that locks all specified accounts as writable. This feature enhances the flexibility of Solana’s Core API for advanced fee calculations.
+The getRecentPrioritizationFees method retrieves recent prioritization fees paid by transactions in the Solana blockchain. It provides insight into the dynamic fee market, helping developers estimate the cost of prioritizing transactions for faster processing. This method is useful for optimizing transaction fees and improving the efficiency of fee-based strategies in Solana applications.
 
 ### Supported Networks
 

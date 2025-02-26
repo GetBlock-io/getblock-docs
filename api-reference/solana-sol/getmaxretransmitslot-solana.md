@@ -10,9 +10,7 @@ description: >-
 The getMaxRetransmitSlot RPC Solana method provides insight into the highest slot number seen during the retransmit stage.&#x20;
 {% endhint %}
 
-This method is particularly useful for tracking network-wide slot dissemination and understanding how blocks and transactions are propagated within the network.
-
-Unlike transaction or block retrieval methods, this RPC focuses on slot retransmission, which is vital for ensuring proper data flow in Solana’s Core API. Developers use this method to assess slot propagation delays, optimize node configurations, and troubleshoot data availability issues.
+The getMaxRetransmitSlot method returns the highest slot that the node has retransmitted to the network. It helps developers monitor node behavior, assess data propagation, and analyze the effectiveness of Solana’s block transmission process.
 
 ### Supported Networks
 

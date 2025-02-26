@@ -6,11 +6,11 @@ description: >-
 
 # accountUnsubscribe – Solana
 
-{% hint style="info" %}
-The accountUnsubscribe RPC Solana method is part of the Solana JSON-RPC API.&#x20;
+{% hint style="success" %}
+The accountUnsubscribe method stops real-time updates for a subscribed account in Solana’s WebSocket API.
 {% endhint %}
 
-It cancels an active account subscription using its subscription ID. Once unsubscribed, the client will no longer receive notifications related to that account.
+The accountUnsubscribe method is part of Solana’s WebSocket API, allowing clients to stop receiving real-time updates for a previously subscribed account. This method is essential for managing WebSocket connections efficiently, preventing unnecessary data flow, and optimizing resource usage in applications that track on-chain account changes. By calling this method, developers can unsubscribe from updates associated with a specific subscription ID.
 
 ### Supported Networks
 

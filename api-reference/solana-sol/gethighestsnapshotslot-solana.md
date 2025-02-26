@@ -12,11 +12,6 @@ This method is only available in solana-core v1.9 or newer. For solana-core v1.8
 
 The getHighestSnapshotSlot RPC Solana method returns the highest full snapshot slot and, if available, the highest incremental snapshot slot based on the full snapshot slot. This allows validators and nodes to determine the most recent snapshot they can use for ledger restoration and fast bootstrapping.
 
-The response includes:
-
-* full (u64): The highest full snapshot slot available.
-* incremental (u64|null): The highest incremental snapshot slot based on the full snapshot slot.
-
 ### Supported Networks
 
 This method is accessible through Solana API endpoints:
@@ -57,6 +52,11 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 ### Response
 
 A successful getHighestSnapshotSlot example response returns the highest snapshot slots available on the node.
+
+The response includes:
+
+* full (u64): The highest full snapshot slot available.
+* incremental (u64|null): The highest incremental snapshot slot based on the full snapshot slot.
 
 #### Example Response (when a snapshot exists)
 

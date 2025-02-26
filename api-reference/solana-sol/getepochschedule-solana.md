@@ -10,15 +10,7 @@ description: >-
 The getEpochSchedule RPC Solana method provides essential details about the structure of epochs in the Solana network.
 {% endhint %}
 
-&#x20;It helps developers and validators understand the number of slots per epoch, leader schedule offsets, and how epochs evolve over time.
-
-The response includes:
-
-* slotsPerEpoch (u64): The maximum number of slots in each epoch.
-* leaderScheduleSlotOffset (u64): Number of slots before an epoch starts to calculate its leader schedule.
-* warmup (bool): Whether epochs start with fewer slots and increase over time.
-* firstNormalEpoch (u64): The first epoch with a standard length.
-* firstNormalSlot (u64): The first slot of the normal-length epoch.
+It helps developers and validators understand the number of slots per epoch, leader schedule offsets, and how epochs evolve over time.
 
 ### Supported Networks
 

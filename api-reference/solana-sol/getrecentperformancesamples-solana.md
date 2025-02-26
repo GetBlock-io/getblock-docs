@@ -10,9 +10,7 @@ description: >-
 The getRecentPerformanceSamples RPC Solana method enables developers to access recent performance data related to block and transaction processing.
 {% endhint %}
 
-Performance samples include information about the number of slots and transactions processed in a given time period, helping validators, developers, and network analysts gain insights into Solana’s efficiency.
-
-The method supports an optional parameters field that allows users to specify the number of samples to retrieve, up to a maximum of 720. This flexibility makes it an essential tool for tracking performance trends within Solana’s Core API.
+The getRecentPerformanceSamples method retrieves recent performance metrics of the Solana network, including transaction processing rates and slot progression. It helps developers analyze network performance trends, monitor congestion, and optimize application behavior based on real-time blockchain activity.
 
 ### Supported Networks
 

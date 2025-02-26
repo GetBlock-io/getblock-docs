@@ -10,7 +10,7 @@ description: >-
 The getLeaderSchedule RPC Solana method provides the leader schedule for an epoch, mapping validator identities to their assigned slots. If no epoch is specified, the Solana getLeaderSchedule API returns the schedule for the current epoch.
 {% endhint %}
 
-This method can also be filtered by validator identity to obtain the schedule of a specific validator. If the requested epoch is not found, the response returns null. Otherwise, it returns a dictionary where each validator's public key maps to an array of slot indices.
+The getLeaderSchedule method retrieves the leader schedule for a given epoch, showing the order in which validators are assigned to produce blocks. It helps developers and validators analyze network consensus, optimize transaction processing strategies, and monitor validator performance in the Solana blockchain.
 
 ### Supported Networks
 

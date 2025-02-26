@@ -10,9 +10,7 @@ description: >-
 The getMultipleAccounts RPC Solana method provides details about multiple accounts specified by their Pubkeys.
 {% endhint %}
 
-This method is particularly useful for dApps, blockchain explorers, and financial analytics tools that need to track multiple accounts efficiently.
-
-The request supports additional parameters such as encoding format, data slicing, and commitment level to refine the results. This method integrates seamlessly with Solana’s Core API, enabling efficient batch retrieval of account states.
+The getMultipleAccounts method retrieves information about multiple specified accounts in a single request. It is useful for efficiently accessing account data, reducing network requests, and improving performance when working with multiple on-chain accounts in Solana-based applications.
 
 ### Supported Networks
 

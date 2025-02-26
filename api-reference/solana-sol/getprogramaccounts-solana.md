@@ -10,9 +10,7 @@ description: >-
 The getProgramAccounts RPC Solana method allows developers to query multiple accounts belonging to a specific program Pubkey.
 {% endhint %}
 
-It is particularly useful for decentralized applications (dApps), blockchain explorers, and analytics tools that need to track program-specific accounts.
-
-By supporting additional parameters such as encoding format, filters, and data slicing, this method enhances Solana’s Core API capabilities. Developers can optimize their request by filtering accounts based on size, memory comparison, and other criteria.
+The getProgramAccounts method retrieves all accounts associated with a specific program on the Solana blockchain. It allows developers to efficiently query and filter on-chain data, making it essential for interacting with smart contracts, indexing program-related accounts, and analyzing decentralized application (dApp) states.
 
 ### Supported Networks
 

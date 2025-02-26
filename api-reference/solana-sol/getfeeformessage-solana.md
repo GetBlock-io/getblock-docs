@@ -11,12 +11,7 @@ description: >-
 This method is only available in solana-core v1.9 or newer. For solana-core v1.8 and below, use the getFees method instead.
 {% endhint %}
 
-The getFeeForMessage RPC Solana method calculates the fee corresponding to a given Base-64 encoded Message at a specific blockhash. This allows developers to determine the transaction cost for their operations before submitting them to the network.
-
-The request supports optional parameters for defining the level of commitment and the minimum evaluation slot:
-
-* commitment (string): Specifies the confirmation level for fee calculation.
-* minContextSlot (number): Ensures the request is evaluated at or after a specified slot.
+The getFeeForMessage method calculates the transaction fee for a given Base-64 encoded message at a specific blockhash. It helps developers estimate the cost of executing transactions before submission, ensuring better fee management and optimization within the Solana network.
 
 ### Supported Networks
 

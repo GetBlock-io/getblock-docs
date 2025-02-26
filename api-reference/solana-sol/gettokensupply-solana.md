@@ -6,7 +6,7 @@ description: >-
 
 # getTokenSupply – Solana
 
-{% hint style="info" %}
+{% hint style="success" %}
 The getTokenSupply RPC Solana method returns the total supply of an SPL Token for a given token Mint address.&#x20;
 {% endhint %}
 
@@ -175,6 +175,6 @@ fetchTokenSupply();
 
 ### Integration with Web3
 
-By integrating Web3 getTokenSupply into Solana’s Core API, developers can efficiently track token supply, analyze token metrics, and provide real-time token data for Web3 applications. This JSON-RPC method is crucial for applications that require accurate supply information for tokens on the Solana network.")}
+By integrating Web3 getTokenSupply into Solana’s Core API, developers can efficiently track token supply, analyze token metrics, and provide real-time token data for Web3 applications. This JSON-RPC method is crucial for applications that require accurate supply information for tokens on the Solana network.
 
 \

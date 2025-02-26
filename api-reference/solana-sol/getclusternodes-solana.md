@@ -12,16 +12,6 @@ The getClusterNodes RPC Solana method returns an array of JSON objects containin
 
 The returned data includes the node’s public key, network addresses, software version, feature set, and shred version. This information is crucial for developers, validators, and network analysts to assess node distribution, connectivity, and operational details.
 
-The response includes:
-
-* pubkey (string): Base-58 encoded node public key.
-* gossip (string|null): Gossip network address of the node.
-* tpu (string|null): TPU network address of the node.
-* rpc (string|null): JSON-RPC network address (if the node has an active RPC service).
-* version (string|null): Software version running on the node.
-* featureSet (u32|null): Unique identifier for the node's feature set.
-* shredVersion (u16|null): Shred version configured for the node.
-
 ### Supported Networks
 
 This method is accessible through Solana API endpoints:
@@ -62,6 +52,16 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 ### Response
 
 A successful getClusterNodes example response returns an array of objects detailing each node in the cluster.
+
+The response includes:
+
+* pubkey (string): Base-58 encoded node public key.
+* gossip (string|null): Gossip network address of the node.
+* tpu (string|null): TPU network address of the node.
+* rpc (string|null): JSON-RPC network address (if the node has an active RPC service).
+* version (string|null): Software version running on the node.
+* featureSet (u32|null): Unique identifier for the node's feature set.
+* shredVersion (u16|null): Shred version configured for the node.
 
 #### Example Response
 

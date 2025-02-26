@@ -10,9 +10,7 @@ description: >-
 The getSignaturesForAddress RPC Solana method returns transaction signatures from the most recent confirmed block, moving backwards in time.
 {% endhint %}
 
-Developers can filter results using optional parameters such as limits, starting and ending signatures, and confirmation levels. This allows efficient querying of historical transaction records using Solana’s Core API.
-
-The response provides an ordered array of transaction signatures with associated metadata such as slot, error status, memo, estimated block time, and confirmation status.
+The getSignaturesForAddress method retrieves a list of transaction signatures associated with a specific account. It provides historical transaction data, including relevant metadata, allowing developers to track activity and analyze past transactions on the Solana blockchain.
 
 ### Supported Networks
 

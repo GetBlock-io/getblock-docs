@@ -10,9 +10,7 @@ description: >-
 The getMinimumBalanceForRentExemption RPC Solana method calculates the minimum required balance for a given account size to avoid rent collection.
 {% endhint %}
 
-This is particularly useful for developers managing account storage and optimizing block and transaction processing in Solana's Core API.
-
-This method allows specifying an account’s data length and optional configuration parameters to determine the required lamports accurately. Ensuring accounts have the correct minimum balance is crucial for maintaining uninterrupted operations on the Solana blockchain.
+The getMinimumBalanceForRentExemption method returns the minimum SOL balance required to make an account rent-exempt based on its data size. This ensures that the account remains active without needing periodic rent payments, making it essential for managing account storage on the Solana blockchain.
 
 ### Supported Networks
 

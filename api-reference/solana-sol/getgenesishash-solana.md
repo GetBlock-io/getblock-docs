@@ -10,9 +10,7 @@ description: >-
 The getGenesisHash RPC Solana method returns the base-58 encoded hash of the genesis block, which is the first block of the blockchain.
 {% endhint %}
 
-This hash uniquely identifies the blockchain instance, distinguishing between networks such as Mainnet and Devnet.
-
-This method does not require any parameters and simply returns the genesis hash.
+The getGenesisHash method returns the genesis hash of the Solana blockchain. This unique identifier helps verify network consistency, distinguish between different Solana clusters (such as Mainnet, Testnet, and Devnet), and ensure clients are connected to the correct network.
 
 ### Supported Networks
 

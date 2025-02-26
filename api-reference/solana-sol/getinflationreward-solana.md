@@ -10,14 +10,7 @@ description: >-
 The getInflationReward RPC Solana method provides reward distribution details for validators and stakers, including reward amount, effective slot, post-reward balance, and commission percentage (if applicable).&#x20;
 {% endhint %}
 
-This helps users and applications track staking performance and expected earnings from network participation.
-
-This method supports optional parameters:
-
-* addresses (array, optional): A list of base-58 encoded addresses to check for rewards.
-* commitment (string, optional): Specifies the level of data finality.
-* epoch (u64, optional): The epoch for which the reward occurred. If omitted, the previous epoch is used.
-* minContextSlot (number, optional): The minimum slot at which the request should be evaluated.
+The getInflationReward method retrieves inflation rewards earned by one or more validator accounts for a given epoch. It provides insights into staking rewards, helping delegators and validators track earnings and assess the impact of inflation-based incentives on the Solana network.
 
 ### Supported Networks
 
