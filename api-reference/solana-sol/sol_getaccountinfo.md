@@ -45,7 +45,7 @@ URL(Endpoints)
 {% tabs %}
 {% tab title="curl" %}
 ```json
-curl --location "<ENDPOINT>" -XPOST \
+curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -99,7 +99,7 @@ The getAccountInfo method is ideal for applications needing detailed information
 ```javascript
 const axios = require('axios');
 
-const url = "https://go.getblock.io/c8de489a140b4b80a0ed13f264cc4f65/mainnet";
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const headers = { "Content-Type": "application/json" };
 
 const payload = {

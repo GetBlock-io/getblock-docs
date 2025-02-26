@@ -186,36 +186,37 @@ The Solana accountSubscribe method is essential for:
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+const WebSocket = require('ws');
 
+const ws = new WebSocket("wss://go.getblock.io/<ACCESS-TOKEN>/");
 
-const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const headers = {
-  "Content-Type": "application/json"
-};
+ws.on('open', () => {
+  const payload = {
+    jsonrpc: "2.0",
+    id: 1,
+    method: "accountSubscribe",
+    params: [
+      "CM78CPUeXjn8o3yroDHxUtKsZZgoy4GPkPPXfouKNH12",
+      {
+        encoding: "jsonParsed",
+        commitment: "finalized"
+      }
+    ]
+  };
+  ws.send(JSON.stringify(payload));
+});
 
+ws.on('message', (data) => {
+  console.log("Subscription Update:", JSON.parse(data));
+});
 
-const payload = {
-  jsonrpc: "2.0",
-  id: 1,
-  method: "accountSubscribe",
-  params: [
-    "CM78CPUeXjn8o3yroDHxUtKsZZgoy4GPkPPXfouKNH12",
-    {
-      "encoding": "jsonParsed",
-      "commitment": "finalized"
-    }
-  ]
-};
+ws.on('error', (error) => {
+  console.error("WebSocket error:", error.message);
+});
 
-
-axios.post(url, payload, { headers })
-  .then(response => {
-    console.log("Subscription ID:", response.data.result);
-  })
-  .catch(error => {
-    console.error("accountSubscribe error:", error.response?.data || error.message);
-  });
+ws.on('close', () => {
+  console.log("WebSocket connection closed");
+});
 ```
 {% endtab %}
 {% endtabs %}
