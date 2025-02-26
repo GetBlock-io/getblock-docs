@@ -11,18 +11,16 @@ description: >-
 The getAccountInfo RPC Solana method returns all metadata associated with an account, such as lamports (balance), owner, data, and rentEpoch.
 {% endhint %}
 
-&#x20;As part of Solana’s Core API, it is critical for applications requiring real-time account state analysis, such as Web3 wallets or decentralized exchanges.
+The getAccountInfo method is an essential part of Solana’s Core API, enabling applications to retrieve detailed information about on-chain accounts. It is crucial for real-time account state analysis, making it valuable for Web3 wallets, decentralized exchanges, and other blockchain-based applications.
 
-This method supports optional parameters like encoding (to specify the data format) and dataSlice (to retrieve partial account data). It is a foundational tool for building blockchain-based applications that interact with on-chain accounts.
-
-#### Supported Networks
+### Supported Networks
 
 Access this method via Solana API Endpoints:
 
 * Mainnet
 * Devnet
 
-#### Parameters
+### Parameters
 
 Pubkey (string, required):\
 The account’s public key as a base-58 encoded string.
@@ -39,7 +37,7 @@ Customize the request with the following fields:
 * minContextSlot (number, optional):\
   The minimum slot at which the account data should be evaluated.
 
-#### Request
+### Request
 
 API Endpoints:
 
@@ -47,7 +45,7 @@ API Endpoints:
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
-**Example (cURL) – getAccountInfo example:**
+### **Example (cURL) – getAccountInfo example:**
 
 {% tabs %}
 {% tab title="curl" %}
@@ -67,7 +65,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 {% endtab %}
 {% endtabs %}
 
-#### Response
+### Response
 
 A successful response returns account metadata, including balance, owner, and data. If the account doesn’t exist, value is null.
 
@@ -121,7 +119,7 @@ Common getAccountInfo error scenarios include:
 }
 ```
 
-#### Use Case
+### Use Case
 
 The getAccountInfo RPC Solana method is ideal for:
 
@@ -132,7 +130,7 @@ The getAccountInfo RPC Solana method is ideal for:
 
 By using jsonParsed encoding, developers simplify parsing program-specific account data, enhancing Web3 integrations.
 
-#### Code Example (JavaScript) – Web3 getAccountInfo Integration 
+### Code Example (JavaScript) – Web3 getAccountInfo Integration 
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -181,7 +179,7 @@ fetchAccountInfo();
 {% endtab %}
 {% endtabs %}
 
-#### Integration with Web3
+### Integration with Web3
 
 Integrate the getAccountInfo RPC Solana method into Web3 applications to enable real-time account state tracking and analysis. By leveraging Core API parameters like encoding and dataSlice, developers can retrieve precise account data for wallets, dApps, and enterprise solutions.
 

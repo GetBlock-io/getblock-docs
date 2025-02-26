@@ -10,27 +10,30 @@ description: >-
 The getFirstAvailableBlock method in Solana provides the first available block from the blockchain, allowing developers to retrieve the earliest block that can be queried.&#x20;
 {% endhint %}
 
-This method is essential for applications that need to synchronize or analyze blockchain data starting from the earliest possible block. It is part of Solana's Core API and can be used to ensure that applications begin processing from the first available block, regardless of the current block height or availability status.
+The getFirstAvailableBlock method provides information about the earliest available block in the Solana blockchain. It is used for data synchronization and analysis, allowing applications to start processing from the first accessible block. This method is part of Solana's Core API and ensures the proper operation of services that rely on historical blockchain data.
 
-This Web3 method is a simple call with no required parameters and is highly useful in various use cases, especially when working with blockchain explorers, transaction analyzers, or developers who need to start data processing from the earliest available block.
+### Supported Networks
 
-The getFirstAvailableBlock method is a vital tool for retrieving blockchain data in Solana and plays an important role in handling errors and ensuring smooth operations. The getFirstAvailableBlock error response is generally triggered when there’s an issue with data retrieval, such as an unavailable block or an API key problem.
+Access this method via Solana API Endpoints:
 
-#### Parameters
+* Mainnet
+* Devnet
+
+### Parameters
 
 {% hint style="info" %}
 No parameters are required for this method.
 {% endhint %}
 
-#### Request
+## Request
 
-Endpoint URL:&#x20;
+#### Endpoint URL:&#x20;
 
 ```
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
-Example Request (cURL):
+#### Example Request (cURL):
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,11 +50,11 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 {% endtab %}
 {% endtabs %}
 
-#### Response
+### Response
 
 The response contains the block number of the first available block.
 
-Example Response:
+#### Example Response:
 
 ```json
 {
@@ -61,13 +64,13 @@ Example Response:
 }
 ```
 
-Response Parameters:
+#### Response Parameters:
 
 * id: A unique identifier for the request, matching the ID sent in the request body.
 * jsonrpc: Specifies the use of JSON-RPC version 2.0.
 * result: The block number of the first available block in the blockchain.
 
-#### Use Cases
+### Use Cases
 
 The getFirstAvailableBlock method is valuable in a range of applications, including:
 
@@ -95,7 +98,7 @@ Example Error Response:
 }
 ```
 
-#### Code getFirstAvailableBlock Example
+### Code getFirstAvailableBlock Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -133,7 +136,7 @@ fetchFirstAvailableBlock();
 {% endtab %}
 {% endtabs %}
 
-#### Integration with Web3
+### Integration with Web3
 
 The Web3 getFirstAvailableBlock method is a useful tool for Web3 applications that need to query data starting from the first available block. By utilizing this method, developers can ensure their applications handle block data consistently and without gaps, making it essential for projects that require precise synchronization with Solana’s blockchain.
 

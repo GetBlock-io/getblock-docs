@@ -6,7 +6,7 @@ description: >-
 
 # getLeaderSchedule – Solana
 
-{% hint style="info" %}
+{% hint style="success" %}
 The getLeaderSchedule RPC Solana method provides the leader schedule for an epoch, mapping validator identities to their assigned slots. If no epoch is specified, the Solana getLeaderSchedule API returns the schedule for the current epoch.
 {% endhint %}
 

@@ -12,18 +12,16 @@ The getBlocksWithLimit RPC Solana method in Solana allows developers to retrieve
 {% endhint %}
 
 \
-It is a vital JSON-RPC method for accessing blocks efficiently, making it particularly useful for applications that need to fetch transaction data, analyze blockchain activity, or monitor network performance. This Web3 method simplifies interaction with the Solana blockchain by providing a clear structure for block retrieval. The getBlocksWithLimit RPC Solana method supports multiple networks like Mainnet and Devnet.
+The getBlocksWithLimit method is a key JSON-RPC method in Solana's Core API, enabling efficient block retrieval. It is particularly useful for fetching transaction data, analyzing blockchain activity, and monitoring network performance. This method supports multiple networks, including Mainnet and Devnet, and allows developers to retrieve multiple blocks in a single request by specifying a starting slot and an optional limit or commitment level.
 
-The getBlocksWithLimit method is an essential feature of Solana's Core API. It allows developers to specify parameters such as the starting slot (start\_slot) and optionally define an ending slot or commitment level to fine-tune the request. By leveraging the flexibility of this method, developers can easily retrieve and analyze transaction data from multiple blocks in one request.
-
-#### Supported Networks
+### Supported Networks
 
 The getBlocksWithLimit RPC Solana method supports the following network types:
 
 * Mainnet
 * Devnet
 
-#### Parameters
+### Parameters
 
 1. start\_slot (u64, required):
    * The first slot to query, provided as a 64-bit unsigned integer.
@@ -34,15 +32,15 @@ The getBlocksWithLimit RPC Solana method supports the following network types:
      * "finalized": Ensures the block data is fully confirmed and immutable.
      * "processed" is not supported for this method. If not provided, the default commitment is "finalized".
 
-#### Request
+### Request
 
-URL (Endpoints):
+#### URL (Endpoints):
 
+```json
+https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-https://sol.getblock.io/mainnet
-```
 
-Example (cURL):
+#### Example (cURL):
 
 {% tabs %}
 {% tab title="curl" %}
@@ -86,7 +84,7 @@ Example Response:
 
 ***
 
-### Response Parameters
+#### Response Parameters
 
 1. id:
    * A unique identifier for the request, matching the ID sent in the request body.
@@ -95,7 +93,7 @@ Example Response:
 3. result:
    * An array of block numbers retrieved between the start\_slot and end\_slot values.
 
-#### Error Handling
+### Error Handling
 
 Errors with the getBlocksWithLimit method can occur if:
 
@@ -126,7 +124,7 @@ The getBlocksWithLimit method is ideal for applications requiring a sequential r
 
 By specifying parameters like start\_slot and end\_slot, developers can retrieve only the required block data, optimizing their applications for performance and efficiency.
 
-### Code getBlocksWithLimit Example
+### Code getBlocksWithLimit Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -170,7 +168,7 @@ fetchBlocksWithLimit();
 {% endtab %}
 {% endtabs %}
 
-#### Integration with Web3
+### Integration with Web3
 
 The getBlocksWithLimit method is a powerful tool for Web3 getBlocksWithLimit applications interacting with Solana's Core API. By enabling efficient retrieval of block numbers, it supports various use cases such as block exploration, transaction monitoring, and network analysis. With support for parameters like start\_slot, end\_slot, and commitment, developers can tailor requests to meet their specific needs.
 
