@@ -10,10 +10,7 @@ description: >-
 The getBlockTime method in Solana retrieves the estimated production time of a specific block, identified by its slot.&#x20;
 {% endhint %}
 
-This method is a key feature of Solana’s Core API, enabling developers to associate blocks with their approximate timestamps. It is essential for applications requiring time-based analysis of blockchain events, transaction tracking, or monitoring network activity.
-
-This Web3 method offers a simple and efficient way to retrieve time-related data for blocks on the Solana blockchain by providing a single parameter, the block (slot number).\
-The getBlockTime method is a crucial part of the Solana getBlockTime RPC in the Core API. Developers can use this method to obtain the block time associated with a specific block. The getBlockTime error response is typically returned when the block is not available or when there’s a mismatch in the parameters.
+The getBlockTime method is an essential part of Solana’s Core API, enabling developers to retrieve the approximate timestamp of a specific block. It is particularly useful for applications that require time-based blockchain analysis, transaction tracking, and network activity monitoring. By associating blocks with their timestamps, this method helps streamline historical data analysis and enhances the accuracy of event sequencing on the Solana blockchain.
 
 ### **Supported Networks**
 
@@ -100,7 +97,7 @@ Errors with the getBlockTime method may occur under the following conditions:
 }
 ```
 
-### Code getBlockTime Example
+### Code getBlockTime Example -  Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}

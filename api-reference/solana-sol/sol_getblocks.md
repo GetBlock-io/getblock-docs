@@ -117,7 +117,7 @@ Errors with the getBlocks method may occur under the following conditions:
 }
 ```
 
-### Code getBlocks Example
+### Code getBlocks Example - Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}

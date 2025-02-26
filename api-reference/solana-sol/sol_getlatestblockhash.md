@@ -112,7 +112,7 @@ The getLatestBlockhash RPC Solana method is ideal for:
 
 By referencing a valid blockhash, developers prevent transaction failures and improve user experiences.
 
-### Code Example (JavaScript) – Web3 getLatestBlockhash Integration
+### Code getLatestBlockhash Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}

@@ -145,7 +145,7 @@ Errors with the getBlockProduction method may occur under the following conditio
 }
 ```
 
-### Code getBlockProduction Example
+### Code getBlockProduction Example - Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}

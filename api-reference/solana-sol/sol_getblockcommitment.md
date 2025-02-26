@@ -75,7 +75,7 @@ A successful response provides the commitment information for the requested bloc
 
 The getBlockCommitment method is essential for applications needing to track the commitment status of blocks in the Solana network. For example, block explorers can use this method to analyze the validation status of blocks, while other Web3 applications might use it to track transaction finalization or staking information associated with blocks. By using this method, developers can better understand the behavior of transactions and blocks in the Solana network.
 
-### Code getBlockCommitment Example
+### Code getBlockCommitment Example - Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
