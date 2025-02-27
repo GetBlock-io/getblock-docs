@@ -22,8 +22,13 @@ The getBlock RPC Solana method supports the following networks:
 
 ### Parameters
 
-* Slot (u64, required): The slot number of the block you want to query. It should be passed as a 64-bit unsigned integer.
-* Config (optional, object): Configuration object that provides additional options for the block query:
+#### **Required Parameters**
+
+* **slot** (u64, required): The slot number of the block you want to query. It should be passed as a 64-bit unsigned integer.
+
+#### **Optional Parameters**
+
+* **config** (optional, object): Configuration object that provides additional options for the block query:
   * encoding: The encoding for account data. Can be one of the following:
     * "base58": Slow, suitable for small Account data.
     * "base64": Standard encoding for Account data of any size.
@@ -36,15 +41,16 @@ The getBlock RPC Solana method supports the following networks:
     * "none": Does not include transaction details.
   * field will fall back to regular JSON encoding for accounts, data, and programIdIndex fields.
   * transactionDetails: Level of transaction detail to return. Options are:
-  * rewards: A boolean indicating whether to include rewards data in the response. Defaults to true.
-  * commitment: Defines the level of commitment for the block query, with the default set to "finalized".
+    * rewards: A boolean indicating whether to include rewards data in the response. Defaults to true.
+    * commitment: Defines the level of commitment for the block query, with the default set to "finalized".
 
 ### Request
 
 URL(Endpoints)
 
-<pre class="language-json" data-full-width="false"><code class="lang-json"><strong>https://go.getblock.io/&#x3C;ACCESS-TOKEN>/
-</strong></code></pre>
+```json
+https://go.getblock.io/<ACCESS-TOKEN>/
+```
 
 ### Example (cURL):
 
@@ -145,11 +151,11 @@ A successful response contains detailed information about the block, including t
   * rewards: An array of reward details for the block, including the lamports earned and the account that received them.
   * transactions: An array of transactions included in the block, each with metadata and transaction details.
 
-### Use Case
+### Use Cases
 
 The getBlock method is highly beneficial for developers working on blockchain analytics, block explorers, or any Solana-based decentralized applications (dApps) that require detailed information about specific blocks. It allows the retrieval of transaction data, reward information, and other block-related details in real time, which is essential for building rich user experiences.
 
-### Code getBlock Example
+### Code getBlock Example - Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
