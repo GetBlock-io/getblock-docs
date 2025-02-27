@@ -21,11 +21,11 @@ The getTransaction RPC Solana method supports the following network types:
 
 ### Parameters
 
-**signature: string (required)**
+1. **signature: string (required)**
 
 The transaction signature encoded in base-58.
 
-**Config: object (optional)**
+2. **config: object (optional)**
 
 A configuration object with additional parameters:
 
@@ -34,14 +34,16 @@ A configuration object with additional parameters:
   * "jsonParsed": Parses instructions into a more readable format. Defaults to "json" if a parser is unavailable.
   * "base58": Encodes raw transaction data in base-58. Slower than other formats.
   * "base64": Encodes raw transaction data in base-64.
-* commitment: Specifies the desired state of the Solana network. Possible values: "finalized": Default value. Returns only finalized transactions.
+* commitment: Specifies the desired state of the Solana network.&#x20;
+  * Possible values: "finalized": Default value. Returns only finalized transactions.
 
 ### Request
 
 URL(Endpoints)
 
-<pre class="language-json" data-full-width="false"><code class="lang-json"><strong>https://go.getblock.io/&#x3C;ACCESS-TOKEN>/
-</strong></code></pre>
+```json
+https://go.getblock.io/<ACCESS-TOKEN>/
+```
 
 ### Example (cURL):
 
@@ -130,7 +132,9 @@ Successful Response:
 
 ### Use Case
 
-The getTransaction method is used to retrieve detailed information about a confirmed transaction on the Solana blockchain by its signature. This method allows developers to integrate transaction lookup functionality into applications such as blockchain explorers, analytics tools, and decentralized apps. For example, a user inputs a transaction signature, and the application sends a request to the server to fetch data about account balances before and after the transaction, instructions executed, fees, and any potential errors. This enables the display of complete transaction details, enhancing user interaction.
+The getTransaction method is used to retrieve detailed information about a confirmed transaction on the Solana blockchain by its signature. This method allows developers to integrate transaction lookup functionality into applications such as blockchain explorers, analytics tools, and decentralized apps.&#x20;
+
+For example, a user inputs a transaction signature, and the application sends a request to the server to fetch data about account balances before and after the transaction, instructions executed, fees, and any potential errors. This enables the display of complete transaction details, enhancing user interaction.
 
 ### Code getTransaction Example - Web3 Integration
 
