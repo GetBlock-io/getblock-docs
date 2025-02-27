@@ -1,3 +1,9 @@
+---
+description: >-
+  The getBlockProduction method in Solana retrieves information about block
+  production within a specified range of slots.
+---
+
 # getBlockProduction - Solana
 
 {% hint style="success" %}
@@ -47,13 +53,14 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 --data '{
     "jsonrpc": "2.0",
     "id": 1,
-    "method": "getAccountInfo",
-    "params": [
-        "vines1vzrYbzLMRdu58ou5XTby4qAqVRLmqo36NKPTg",
-        {
-            "encoding": "base58"
+    "method": "getBlockProduction",
+    "params": [{
+        "commitment": "finalized",
+        "range": {
+            "firstSlot": 100000,
+            "lastSlot": 100100
         }
-    ]
+    }]
 }'
 ```
 {% endtab %}

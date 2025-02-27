@@ -1,7 +1,8 @@
 ---
 description: >-
-  Example code for the getTransaction json-rpc method. Сomplete guide on how to
-  use getTransaction json-rpc in GetBlock.io Web3 documentation.
+  The getTransaction method in Solana retrieves detailed information about a
+  specific transaction using its signature. The response includes metadata,
+  status, block confirmations, fee details, and trans
 ---
 
 # getTransaction - Solana
@@ -12,20 +13,20 @@ The getTransaction method in JSON-RPC is used to fetch details of a confirmed tr
 
 The getTransaction method is a crucial part of Solana’s Core API, allowing developers to retrieve detailed information about a specific transaction. It provides essential data, including transaction status, block confirmations, signatures, and executed instructions. This method is particularly useful for transaction tracking, debugging, and blockchain activity analysis, making it a key tool for explorers, wallets, and other blockchain-based applications.
 
-### **Supported Networks**
+#### **Supported Networks** <a href="#supported-networks" id="supported-networks"></a>
 
 The getTransaction RPC Solana method supports the following network types:
 
 * Mainnet
 * Devnet
 
-### Parameters
+#### Parameters <a href="#parameters" id="parameters"></a>
 
 1. **signature: string (required)**
 
 The transaction signature encoded in base-58.
 
-2. **config: object (optional)**
+1. **config: object (optional)**
 
 A configuration object with additional parameters:
 
@@ -34,18 +35,18 @@ A configuration object with additional parameters:
   * "jsonParsed": Parses instructions into a more readable format. Defaults to "json" if a parser is unavailable.
   * "base58": Encodes raw transaction data in base-58. Slower than other formats.
   * "base64": Encodes raw transaction data in base-64.
-* commitment: Specifies the desired state of the Solana network.&#x20;
+* commitment: Specifies the desired state of the Solana network.
   * Possible values: "finalized": Default value. Returns only finalized transactions.
 
-### Request
+#### Request <a href="#request" id="request"></a>
 
 URL(Endpoints)
 
-```json
+```
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
-### Example (cURL):
+#### Example (cURL): <a href="#example-curl" id="example-curl"></a>
 
 {% tabs %}
 {% tab title="curl" %}
@@ -65,7 +66,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response <a href="#response" id="response"></a>
 
 Successful Response:
 
@@ -110,7 +111,6 @@ Successful Response:
         }
     }
 }
-
 ```
 
 **Response Parameters**
@@ -130,13 +130,13 @@ Successful Response:
 * preBalances: Account balances before the transaction.
 * postBalances: Account balances after the transaction.
 
-### Use Case
+#### Use Case <a href="#use-case" id="use-case"></a>
 
-The getTransaction method is used to retrieve detailed information about a confirmed transaction on the Solana blockchain by its signature. This method allows developers to integrate transaction lookup functionality into applications such as blockchain explorers, analytics tools, and decentralized apps.&#x20;
+The getTransaction method is used to retrieve detailed information about a confirmed transaction on the Solana blockchain by its signature. This method allows developers to integrate transaction lookup functionality into applications such as blockchain explorers, analytics tools, and decentralized apps.
 
 For example, a user inputs a transaction signature, and the application sends a request to the server to fetch data about account balances before and after the transaction, instructions executed, fees, and any potential errors. This enables the display of complete transaction details, enhancing user interaction.
 
-### Code getTransaction Example - Web3 Integration
+#### Code getTransaction Example - Web3 Integration <a href="#code-gettransaction-example-web3-integration" id="code-gettransaction-example-web3-integration"></a>
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -176,7 +176,7 @@ fetchTransaction();
 {% endtab %}
 {% endtabs %}
 
-### Error Handling
+#### Error Handling <a href="#error-handling" id="error-handling"></a>
 
 When using the getTransaction method, errors may occur due to incorrect signatures, unsupported configurations, or network issues. For reliable application performance, consider:
 
@@ -184,6 +184,6 @@ When using the getTransaction method, errors may occur due to incorrect signatur
 * Retrying requests with corrected parameters in case of errors.
 * Validating the transaction signature and encoding parameters before sending the request.
 
-### Integration
+#### Integration <a href="#integration" id="integration"></a>
 
 The getTransaction method enables developers to retrieve essential transaction details, which can be utilized in blockchain explorers, analytical tools, and decentralized applications. Use this Solana JSON-RPC method for accurate and reliable data retrieval.

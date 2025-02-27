@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the getBlocksWithLimit json-rpc method. Сomplete guide on how
-  to use getBlocksWithLimit json-rpc in GetBlock.io Web3 documentation.
+  The getBlocksWithLimit method in Solana retrieves a list of confirmed blocks
+  within a specified range, starting from a given block slot.
 ---
 
 # getBlocksWithLimit - Solana

@@ -47,7 +47,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 {% tab title="curl" %}
 ```json
 curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
---header "Content-Type: "application/json" \
+--header "Content-Type: application/json" \
 --data '{
     "jsonrpc": "2.0",
     "id": 1,

@@ -1,7 +1,8 @@
 ---
 description: >-
-  Retrieve the first available block in Solana's blockchain for precise
-  synchronization and data analysis. No parameters required.
+  The getFirstAvailableBlock method retrieves the earliest available block in
+  the Solana blockchain. This block represents the oldest historical data that
+  can be accessed via the node.
 ---
 
 # getFirstAvailableBlock - Solana

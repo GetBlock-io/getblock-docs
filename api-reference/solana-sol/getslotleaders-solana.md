@@ -4,9 +4,9 @@ description: >-
   slot range in the Solana blockchain.
 ---
 
-# getSlotLeaders RPC Method – Solana
+# getSlotLeaders – Solana
 
-{% hint style="info" %}
+{% hint style="success" %}
 The getSlotLeaders RPC Solana method provides an array of node identity public keys corresponding to the leaders for a given slot range.&#x20;
 {% endhint %}
 
