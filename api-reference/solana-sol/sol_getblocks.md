@@ -10,7 +10,7 @@ description: >-
 The getBlocks method in Solana allows developers to retrieve a range of blocks, specified by the starting and optionally ending slot numbers.
 {% endhint %}
 
-&#x20;This method is vital for querying multiple consecutive blocks, making it essential for tasks like batch processing, block data analysis, and historical block retrieval. The getBlocks method is part of Solana's Core API and provides efficient access to block data, enabling applications to track blockchain progress or to verify a series of blocks for various purposes.
+This method is vital for querying multiple consecutive blocks, making it essential for tasks like batch processing, block data analysis, and historical block retrieval. The getBlocks method is part of Solana's Core API and provides efficient access to block data, enabling applications to track blockchain progress or to verify a series of blocks for various purposes.
 
 ### **Supported Networks**
 
@@ -21,8 +21,13 @@ The getBlocks RPC Solana method supports the following network types:
 
 ### Parameters
 
+**Required Parameters**
+
 * start\_slot (u64, required):\
   The first slot to query, represented as a 64-bit unsigned integer. This is the starting point for retrieving block data.
+
+**Optional Parameters**
+
 * end\_slot (u64, optional):\
   The last slot to query, represented as a 64-bit unsigned integer. If not provided, the method will retrieve blocks up to the latest available slot.
 * commitment (object, optional):\
@@ -34,8 +39,9 @@ The getBlocks RPC Solana method supports the following network types:
 
 URL(Endpoints)
 
-<pre class="language-json" data-full-width="false"><code class="lang-json"><strong>https://go.getblock.io/&#x3C;ACCESS-TOKEN>/
-</strong></code></pre>
+```json
+https://go.getblock.io/<ACCESS-TOKEN>/
+```
 
 ### Example (cURL):
 
@@ -88,7 +94,7 @@ The response contains a list of blocks within the specified range of slots.
 * result:\
   An array of block slot numbers within the specified range.
 
-### Use Case
+### Use Cases
 
 The getBlocks method is helpful in various scenarios, such as:
 
