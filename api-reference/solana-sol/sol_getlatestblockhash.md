@@ -24,7 +24,6 @@ Access this method via Solana API Endpoints:
 ### Parameters
 
 * commitment (object, optional): Specifies the confirmation level for retrieving the blockhash. Supported options:
-*
   * finalized (default): The blockhash is confirmed and immutable.
   * confirmed: The blockhash is confirmed but may still be reorganized.
   * processed: Not supported for this method.
@@ -101,7 +100,7 @@ Common getLatestBlockhash error scenarios include:
 }
 ```
 
-### Use Case
+### Use Cases
 
 The getLatestBlockhash RPC Solana method is ideal for:
 
