@@ -77,7 +77,11 @@ A successful response returns the transaction signature. If the blockhash is exp
    "result": "2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv",
    "id": "getblock.io"
 }
-Example Error Response (sendTransaction error):
+```
+
+**Example Error Response** (sendTransaction error):
+
+```json
 {
    "jsonrpc": "2.0",
    "error": {
@@ -100,7 +104,7 @@ Common sendTransaction error scenarios include:
 
 Retry with maxRetries or a fresh blockhash to resolve transient errors.
 
-### Use Case
+### Use Cases
 
 The sendTransaction RPC Solana method is ideal for:
 
