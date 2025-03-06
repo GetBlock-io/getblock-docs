@@ -1,6 +1,12 @@
+---
+description: >-
+  This Ethereum API Reference provides everything you need to interact with
+  Ethereum nodes using GetBlock’s infrastructure.
+---
+
 # Ethereum (ETH)
 
-This Ethereum API Reference provides everything you need to interact with Ethereum nodes using GetBlock’s infrastructure.GetBlock provides RPC endpoints that implement the Ethereum JSON-RPC API standard. These methods are core functionalities for interacting with Ethereum nodes.Many Ethereum-compatible blockchains (EVM chains) – such as BNB Chain, Polygon, Linea, Base, Optimism, and Arbitrum – also adopt this standard, making it applicable across various ecosystems.
+GetBlock provides RPC endpoints that implement the Ethereum JSON-RPC API standard. These methods are core functionalities for interacting with Ethereum nodes. Many Ethereum-compatible blockchains (EVM chains) – such as BNB Chain, Polygon, Linea, Base, Optimism, and Arbitrum – also adopt this standard, making it applicable across various ecosystems.
 
 **Overview of Ethereum Network Methods**
 
