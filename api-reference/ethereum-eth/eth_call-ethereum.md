@@ -127,7 +127,7 @@ Below is a Python **`eth_call`** example using the requests library to send a JS
 ```python
 import requests
 import json
-url = "https://go.getblock.io/c8de489a140b4b80a0ed13f264cc4f65/"
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
