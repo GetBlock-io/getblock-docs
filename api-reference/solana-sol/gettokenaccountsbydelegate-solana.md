@@ -7,10 +7,10 @@ description: >-
 # getTokenAccountsByDelegate – Solana
 
 {% hint style="success" %}
-The getTokenAccountsByDelegate RPC Solana method allows developers to query SPL Token accounts where the provided account Pubkey has been designated as a delegate.&#x20;
+The **getTokenAccountsByDelegate** RPC Solana method allows developers to query SPL Token accounts where the provided account Pubkey has been designated as a delegate.&#x20;
 {% endhint %}
 
-The method supports filtering by mint or programId and can return data in various encoding formats, making it a flexible tool for account tracking and analysis in Solana’s Core API.
+The method supports filtering by mint or programId and can return data in various encoding formats, making it a flexible tool for **account tracking and analysis** in Solana’s Core API.
 
 ### Supported Networks
 
@@ -23,38 +23,38 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* string (required): The Pubkey of the delegate account to query, as a base-58 encoded string.
+* **`string`** (required): The Pubkey of the delegate account to query, as a base-58 encoded string.
 
 #### Optional Parameters
 
-* object (optional): A JSON object containing one of the following fields:
-  * mint (string): The Pubkey of a specific token Mint to filter accounts.
-  * programId (string): The Pubkey of the Token Program that owns the accounts.
-* object (optional): A configuration object containing:
-  * commitment (string): The level of commitment for the request.
-  * minContextSlot (number): The minimum slot at which the request can be evaluated.
-  * dataSlice (object): Requests a slice of the account’s data.
-    * length (usize): Number of bytes to return.
-    * offset (usize): Byte offset from which to start reading.
-  * encoding (string): Thencoding format for the account data.
-    * Supported values: base58, base64, base64+zstd, jsonParsed.
+* **`object`** (optional): A JSON object containing one of the following fields:
+  * `mint` (`string`): The Pubkey of a specific token Mint to filter accounts.
+  * `programId` (`string`): The Pubkey of the Token Program that owns the accounts.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`): The level of commitment for the request.
+  * **minContextSlot** (`number`): The minimum slot at which the request can be evaluated.
+  * **dataSlice** (`object`): Requests a slice of the account’s data.
+    * `length` (`usize`): Number of bytes to return.
+    * `offset` (`usize`): Byte offset from which to start reading.
+  * **encoding** (`string`): The encoding format for the account data.
+    * Supported values: `base58`, `base64`, `base64+zstd`, `jsonParsed`.
 
 ### Result
 
 The response is an RpcResponse JSON object containing:
 
-* context (object): Provides contextual information about the slot.
-  * slot (u64): The slot number when the data was retrieved.
-* value (array): An array of JSON objects representing the token accounts.
+* **`context`** (`object`): Provides contextual information about the slot.
+  * `slot` (`u64`): The slot number when the data was retrieved.
+* **`value`** (`array`): An array of JSON objects representing the token accounts.
   * Each object includes:
-    * pubkey (string): The account Pubkey in base-58 encoding.
-    * account (object):
-      * lamports (u64): Number of lamports in the account.
-      * owner (string): The Pubkey of the program owning the account.
-      * data (object): Encoded account data or parsed JSON representation.
-      * executable (bool): Whether the account contains a program.
-      * rentEpoch (u64): The epoch at which the account will next owe rent.
-      * space (u64): The data size of the account.
+    * `pubkey` (`string`): The account Pubkey in base-58 encoding.
+    * `account` (`object`):
+      * `lamports` (`u64`): Number of lamports in the account.
+      * `owner` (`string`): The Pubkey of the program owning the account.
+      * `data` (`object`): Encoded account data or parsed JSON representation.
+      * `executable` (`bool`): Whether the account contains a program.
+      * `rentEpoch` (`u64`): The epoch at which the account will next owe rent.
+      * `space` (`u64`): The data size of the account.
 
 ### Request Example
 
@@ -168,12 +168,12 @@ Common getTokenAccountsByDelegate error scenarios:
 
 ### Use Cases
 
-The Solana getTokenAccountsByDelegate method is useful for:
+The Solana **getTokenAccountsByDelegate** method is useful for:
 
-* Wallet applications: Tracking delegated SPL Tokens for user accounts.
-* Web3 analytics tools: Monitoring token delegations across multiple accounts.
-* DeFi applications: Auditing token delegation activity.
-* Blockchain explorers: Displaying delegated accounts in real-time.
+* **Wallet applications**: Tracking delegated SPL Tokens for user accounts;
+* **Web3 analytics tools**: Monitoring token delegations across multiple accounts;
+* **DeFi applications**: Auditing token delegation activity;
+* **Blockchain explorers**: Displaying delegated accounts in real-time.
 
 ### Code getTokenAccountsByDelegate Example – Web3 Integration
 
@@ -230,4 +230,4 @@ fetchTokenAccountsByDelegate();
 
 ### Integration with Web3
 
-By integrating Web3 getTokenAccountsByDelegate into Solana’s Core API, developers can efficiently track delegated token accounts, monitor transaction activity, and manage account state. This JSON-RPC method is essential for applications that handle SPL Token delegations in Web3 environments.
+By integrating Web3 **getTokenAccountsByDelegate** into Solana’s Core API, developers can efficiently track delegated token accounts, monitor transaction activity, and manage account state. This JSON-RPC method is essential for applications that handle SPL Token delegations in Web3 environments.

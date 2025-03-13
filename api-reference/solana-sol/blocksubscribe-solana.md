@@ -1,6 +1,6 @@
 ---
 description: >-
-  The blockSubscribe JSON-RPC method allows clients to subscribe to block
+  The blockSubscribe JSON-RPC method allows clients to subscribe to Solana block
   notifications. This method triggers a notification whenever a new block is
   confirmed or finalized.
 ---
@@ -10,10 +10,10 @@ description: >-
 {% hint style="danger" %}
 #### Unstable Method
 
-This method is considered unstable and requires the validator to be started with the --rpc-pubsub-enable-block-subscription flag. Future changes to this method's format are possible.
+This method is considered unstable and requires the validator to be started with the `--rpc-pubsub-enable-block-subscription` flag. Future changes to this method's format are possible.
 {% endhint %}
 
-The blockSubscribe RPC Solana method provides real-time block notifications based on specified filters. Developers can track all transactions or only those related to a specific account or program.
+The **blockSubscribe** RPC Solana method provides real-time block notifications based on specified filters. Developers can track all transactions or only those related to a specific account or program.
 
 ### Supported Networks
 
@@ -24,25 +24,25 @@ The blockSubscribe RPC Solana method provides real-time block notifications base
 
 #### Required Parameters
 
-* filter (string | object): Defines filter criteria for the notifications:
-  * string: all – Receive notifications for all blocks.
-  * object: A JSON object containing:
-    * mentionsAccountOrProgram: A base-58 encoded string of an account or program.
+* **filter** (`string` | `object`): Defines filter criteria for the notifications:
+  * `string`: `all` – Receive notifications for all blocks.
+  * `object`: A JSON object containing:
+    * `mentionsAccountOrProgram`: A base-58 encoded string of an account or program.
 
 #### Optional Parameters
 
-* object (optional): Configuration object containing:
-  * commitment (string): Commitment level for block finality.
-    * Default: finalized
-  * encoding (string): Transaction encoding format.
-    * Default: json
-    * Supported: json, jsonParsed, base58, base64
-  * transactionDetails (string): Level of transaction detail.
-    * Default: full
-    * Supported: full, accounts, signatures, none
-  * maxSupportedTransactionVersion (number): The maximum transaction version to return.
-  * showRewards (bool): Include block rewards.
-    * Default: true
+* **`object`** (optional): Configuration object containing:
+  * **commitment** (`string`): Commitment level for block finality.
+    * Default: `finalized`
+  * **encoding** (`string`): Transaction encoding format.
+    * Default: `json`
+    * Supported: `json`, `jsonParsed`, `base58`, `base64`
+  * **transactionDetails** (`string`): Level of transaction detail.
+    * Default: `full`
+    * Supported: `full`, `accounts`, `signatures`, `none`
+  * **maxSupportedTransactionVersion** (`number`): The maximum transaction version to return.
+  * **showRewards** (`bool`): Include block rewards.
+    * Default: `true`
 
 ### Result
 
@@ -50,7 +50,7 @@ The response returns a subscription ID.
 
 #### Result Format
 
-* integer: The subscription ID.
+* `integer`: The subscription ID.
 
 ### Request Examples
 
@@ -112,7 +112,7 @@ A successful request returns the subscription ID.
 
 In this response:
 
-* result: The subscription ID.
+* `result`: The subscription ID.
 
 ### Error Handling
 
@@ -139,9 +139,9 @@ Common blockSubscribe error scenarios:
 
 The Solana blockSubscribe method is essential for:
 
-* Real-time block monitoring.
-* dApps requiring live transaction data.
-* Blockchain explorers tracking new blocks.
+* Real-time block monitoring;
+* dApps requiring live transaction data;
+* Blockchain explorers tracking new blocks;
 * Performance analytics.
 
 ### Code blockSubscribe Example – Web3 Integration
@@ -151,7 +151,7 @@ The Solana blockSubscribe method is essential for:
 ```json
 const WebSocket = require('ws');
 
-const url = "Endpoint";
+const url = "wss://go.getblock.io/<ACCESS-TOKEN>";
 const payload = {
   jsonrpc: "2.0",
   id: "1",

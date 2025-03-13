@@ -7,10 +7,10 @@ description: >-
 # getInflationGovernor – Solana
 
 {% hint style="success" %}
-The getInflationGovernor RPC Solana method returns details about the blockchain’s inflation governance, including initial and terminal inflation rates, tapering rates, and the percentage allocated to the foundation.&#x20;
+The **getInflationGovernor** RPC Solana method returns details about the blockchain’s inflation governance, including initial and terminal inflation rates, tapering rates, and the percentage allocated to the foundation.&#x20;
 {% endhint %}
 
-The getInflationGovernor method retrieves the inflation governance parameters of the Solana network. It provides details on inflation scheduling, including initial and terminal rates, annual reductions, and staking reward distribution, allowing developers and validators to understand the network’s long-term economic model.
+The getInflationGovernor method retrieves the **inflation governance parameters** of the Solana network. It provides details on **inflation scheduling**, including initial and terminal rates, annual reductions, and staking reward distribution, allowing developers and validators to understand the network’s long-term economic model.
 
 ### Supported Networks
 
@@ -23,7 +23,8 @@ This method is accessible through Solana API endpoints:
 
 #### Optional Parameters
 
-* commitment (string): Specifies the finality level of the response.
+* **`object` (optional)** wit&#x68;**:**
+  * **commitment** (`string`): Specifies the finality level of the response (`finalized`, `confirmed`, `processed`).
 
 ### Request Example
 
@@ -51,7 +52,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 
 ### Response
 
-A successful getInflationGovernor example response returns the inflation governance parameters.
+A successful getInflationGovernor example response returns the **inflation governance parameters**.
 
 #### Example Response
 
@@ -68,6 +69,14 @@ A successful getInflationGovernor example response returns the inflation governa
   "id": 1
 }
 ```
+
+#### Response fields:
+
+* `foundation` (`f64`): The fraction of total inflation allocated to the Solana Foundation, expressed as a decimal (e.g.,`0.05`= 5%).
+* `foundationTerm` (`u64`): The duration (in years) over which the foundation portion is allocated.
+* `initial` (`f64`): The initial inflation rate at the start of the inflation schedule (e.g., `0.15` = initial 15% inflation rate).
+* `taper` (`f64`): The rate at which inflation decreases each year until it reaches the terminal rate, expressed as a decimal (e.g., `0.15`).
+* `terminal` (`f64`): The final, long-term inflation rate after all annual tapering, expressed as a decimal (e.g., `0.015` means a final inflation rate of 1.5%).
 
 ### Error Handling
 
@@ -92,12 +101,12 @@ Common getInflationGovernor error scenarios:
 
 ### Use Cases
 
-The Solana getInflationGovernor method is essential for:
+The Solana **getInflationGovernor** method is essential for:
 
-* Validators: Understanding how inflation affects staking rewards.
-* Blockchain explorers: Displaying real-time inflation parameters.
-* Web3 applications: Adjusting economic models based on inflation governance.
-* Analytics platforms: Monitoring inflation trends and economic sustainability.
+* **Validators**: Understanding how inflation affects staking rewards:
+* **Blockchain explorers**: Displaying real-time inflation parameters;
+* **Web3 applications**: Adjusting economic models based on inflation governance;
+* **Analytics platforms**: Monitoring inflation trends and economic sustainability.
 
 ### Code Example – Web3 getInflationGovernor Integration
 
@@ -137,6 +146,6 @@ fetchInflationGovernor();
 
 ### Integration with Web3
 
-Integrate the getInflationGovernor API with Solana’s Core API to retrieve inflation governance data dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate tracking of inflation adjustments, staking rewards, and overall network economics.
+Integrate the **getInflationGovernor** API with Solana’s Core API to retrieve inflation governance data dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate tracking of inflation adjustments, staking rewards, and overall network economics.
 
 \

@@ -7,7 +7,7 @@ description: >-
 # blockUnsubscribe – Solana
 
 {% hint style="info" %}
-The blockUnsubscribe RPC Solana method cancels an active block subscription using its subscription ID.
+The **blockUnsubscribe** RPC Solana method cancels an active block subscription using its subscription ID.
 {% endhint %}
 
 Once unsubscribed, the client will no longer receive notifications about block confirmations or finalizations.
@@ -21,7 +21,7 @@ Once unsubscribed, the client will no longer receive notifications about block c
 
 #### Required Parameter
 
-* integer (required): The subscription ID for the block subscription to cancel.
+* **`integer`** (required): The subscription ID for the block subscription to cancel.
 
 ### Result
 
@@ -29,7 +29,7 @@ The response returns a boolean value indicating whether the unsubscribe operatio
 
 #### Result Format
 
-* bool: true if the unsubscribe was successful; otherwise, false.
+* `bool`: `true` if the unsubscribe was successful; otherwise, `false`.
 
 ### Request Example
 
@@ -70,7 +70,7 @@ A successful request returns a boolean value.
 
 In this response:
 
-* result: true indicates the unsubscribe operation was successful.
+* `result`: `true` indicates the unsubscribe operation was successful.
 
 ### Error Handling
 
@@ -96,8 +96,8 @@ Common blockUnsubscribe error scenarios:
 
 The Solana blockUnsubscribe method is essential for:
 
-* Managing network resources by terminating unused subscriptions.
-* Optimizing dApp performance.
+* Managing network resources by terminating unused subscriptions;
+* Optimizing dApp performance;
 * Reducing network bandwidth consumption.
 
 ### Code blockUnsubscribe Example – Web3 Integration
@@ -138,4 +138,4 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating Web3 blockUnsubscribe into Solana's Core API, developers can efficiently manage subscription lifecycles, improve dApp performance, and optimize network resource utilization.
+By integrating Web3 **blockUnsubscribe** into Solana's Core API, developers can efficiently manage subscription lifecycles, improve dApp performance, and optimize network resource utilization.

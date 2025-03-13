@@ -23,22 +23,22 @@ This method is available on the following API endpoints:
 
 #### Optional Parameters
 
-* limit (usize, optional): The number of recent performance samples to return.
+* **limit** (`usize`, optional): The number of recent performance samples to return.
   * Maximum: 720
 
 ### Result
 
-The response returns an array of RpcPerfSample objects, each containing:
+The response returns an array of `RpcPerfSample` objects, each containing:
 
-* slot (u64): The slot in which the sample was taken.
-* numTransactions (u64): The number of transactions processed during the sample period.
-* numSlots (u64): The number of slots completed during the sample period.
-* samplePeriodSecs (u16): The duration of the sample window in seconds (typically 60 seconds).
-* numNonVoteTransactions (u64): The number of non-vote transactions processed during the sample period. (Available in Solana v1.15 and later.)
+* `slot` (`u64`): The slot in which the sample was taken.
+* `numTransactions` (`u64`): The number of transactions processed during the sample period.
+* `numSlots` (`u64`): The number of slots completed during the sample period.
+* `samplePeriodSecs` (`u16`): The duration of the sample window in seconds (typically 60 seconds).
+* `numNonVoteTransactions` (`u64`): The number of non-vote transactions processed during the sample period. (Available in Solana v1.15 and later.)
 
 To calculate the number of vote transactions, use the formula:
 
-numTransactions - numNonVoteTransactions
+`numTransactions - numNonVoteTransactions`
 
 ### Request Example
 
@@ -131,12 +131,12 @@ Common getRecentPerformanceSamples error scenarios:
 
 ### Use Cases
 
-The Solana getRecentPerformanceSamples method is useful for:
+The Solana **getRecentPerformanceSamples** method is useful for:
 
-* Validators and node operators: Monitoring transaction and slot processing performance.
-* Blockchain explorers: Displaying real-time network statistics.
-* dApp developers: Tracking performance trends to optimize transaction handling.
-* Web3 analytics tools: Analyzing historical network efficiency and congestion.
+* **Validators and node operators**: Monitoring transaction and slot processing performance;
+* **Blockchain explorers**: Displaying real-time network statistics;
+* **dApp developers**: Tracking performance trends to optimize transaction handling;
+* **Web3 analytics tools**: Analyzing historical network efficiency and congestion.
 
 ### Code getRecentPerformanceSamples Example – Web3 Integration
 
@@ -187,6 +187,6 @@ fetchRecentPerformanceSamples();
 
 ### Integration with Web3
 
-By integrating Web3 getRecentPerformanceSamples into Solana’s Core API, developers can track block processing rates, monitor network congestion, and optimize transaction execution strategies. The JSON-RPC request provides real-time insights into Solana’s performance, making it a valuable tool for dApps, validators, and analytics platforms.
+By integrating Web3 **getRecentPerformanceSamples** into Solana’s Core API, developers can track block processing rates, monitor network congestion, and optimize transaction execution strategies. The JSON-RPC request provides real-time insights into Solana’s performance, making it a valuable tool for dApps, validators, and analytics platforms.
 
 \

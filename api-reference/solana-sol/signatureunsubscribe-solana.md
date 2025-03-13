@@ -7,7 +7,7 @@ description: >-
 # signatureUnsubscribe – Solana
 
 {% hint style="success" %}
-The signatureUnsubscribe RPC Solana method is used to cancel an active signature subscription.&#x20;
+The **signatureUnsubscribe** RPC Solana method is used to cancel an active signature subscription.&#x20;
 {% endhint %}
 
 When a subscription ID is provided, the server will stop sending notifications for the corresponding transaction signature.
@@ -21,7 +21,7 @@ When a subscription ID is provided, the server will stop sending notifications f
 
 #### Required Parameter
 
-* number: The subscription ID to cancel.
+* **`number`**: The subscription ID to cancel.
 
 ### Result
 
@@ -29,7 +29,7 @@ The response returns a boolean value indicating the status of the unsubscribe op
 
 #### Result Format
 
-* bool: true if the unsubscribe was successful; otherwise, false.
+* `bool`: `true` if the unsubscribe was successful; otherwise, `false`.
 
 ### Request Example
 
@@ -70,15 +70,15 @@ A successful request returns a boolean value.
 
 In this response:
 
-* result: true indicates the unsubscribe operation was successful.
+* `result`: `true` indicates the unsubscribe operation was successful.
 
 ### Error Handling
 
 Common signatureUnsubscribe error scenarios:
 
-* Invalid subscription ID: The provided ID does not match an active subscription.
-* Network issues: Problems with the Solana JSON-RPC API endpoints.
-* signatureunsubscribe error: invalid subscription id: This error occurs if an invalid ID is passed to the RPC call.
+* **Invalid subscription ID**: The provided ID does not match an active subscription.
+* **Network issues**: Problems with the Solana JSON-RPC API endpoints.
+* **signatureunsubscribe error:** invalid subscription id. This error occurs if an invalid ID is passed to the RPC call.
 
 #### Example Error Response
 

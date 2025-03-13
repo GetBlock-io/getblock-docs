@@ -21,7 +21,7 @@ Once unsubscribed, the client will no longer receive notifications about transac
 
 #### Required Parameter
 
-* integer (required): The subscription ID for the logs subscription to cancel.
+* **`integer`** (required): The subscription ID for the logs subscription to cancel.
 
 ### Result
 
@@ -29,7 +29,7 @@ The response returns a boolean value indicating whether the unsubscribe operatio
 
 #### Result Format
 
-* bool: true if the unsubscribe was successful; otherwise, false.
+* `bool`: `true` if the unsubscribe was successful; otherwise, `false`.
 
 ### Request Example
 
@@ -70,14 +70,14 @@ A successful request returns a boolean value.
 
 In this response:
 
-* result: true indicates the unsubscribe operation was successful.
+* `result`: `true` indicates the unsubscribe operation was successful.
 
 ### Error Handling
 
-Common logsUnsubscribe error scenarios:
+Common **logsUnsubscribe error** scenarios:
 
-* Invalid subscription ID: The provided ID does not correspond to an active subscription.
-* Network issues: Problems with the Solana JSON-RPC API endpoints.
+* **Invalid subscription ID**: The provided ID does not correspond to an active subscription.
+* **Network issues**: Problems with the Solana JSON-RPC API endpoints.
 
 #### Example Error Response
 

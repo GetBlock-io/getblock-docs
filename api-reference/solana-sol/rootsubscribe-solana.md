@@ -7,10 +7,10 @@ description: >-
 # rootSubscribe – Solana
 
 {% hint style="success" %}
-The rootSubscribe RPC Solana method provides real-time notifications whenever the root slot changes.
+The **rootSubscribe** RPC Solana method provides real-time notifications whenever the root slot changes.
 {% endhint %}
 
-In Solana's blockchain architecture, the root slot represents the most recent finalized block. This information helps applications maintain up-to-date state without polling the network.
+In Solana's blockchain architecture, the **root slot** represents the most recent finalized block. This information helps applications maintain up-to-date state without polling the network.
 
 ### Supported Networks
 
@@ -29,7 +29,7 @@ The response returns an integer value that serves as the subscription ID.
 
 #### Result Format
 
-* integer: The subscription ID to be used for unsubscribing.
+* `integer`: The subscription ID to be used for unsubscribing.
 
 ### Request Example
 
@@ -69,7 +69,7 @@ A successful request returns the subscription ID.
 
 In this response:
 
-* result: The subscription ID.
+* `result`: The subscription ID.
 
 ### Notification Format
 

@@ -21,18 +21,18 @@ Developers can track all transactions, vote transactions, or transactions mentio
 
 #### Required Parameters
 
-* filter (string | object): Defines filter criteria for transaction logs.
-  * string: One of the following:
-    * all: All transactions excluding vote transactions.
-    * allWithVotes: All transactions including vote transactions.
-  * object: A JSON object with:
-    * mentions: An array containing a single Pubkey (as a base-58 encoded string).
+* **`filter`** (`string` | `object`): Defines filter criteria for transaction logs.
+  * `string`: One of the following:
+    * `all`: All transactions excluding vote transactions.
+    * `allWithVotes`: All transactions including vote transactions.
+  * `object`: A JSON object with:
+    * `mentions`: An array containing a single Pubkey (as a base-58 encoded string).
       * Note: Only one Pubkey is supported; multiple Pubkeys will cause an error.
 
 #### Optional Parameters
 
-* object (optional): Configuration object containing:
-  * commitment (string): Commitment level for transaction log subscription.
+* **`object`** (optional): Configuration object containing:
+  * `commitment` (`string`): Commitment level for transaction log subscription.
 
 ### Result
 
@@ -40,7 +40,7 @@ The response returns a subscription ID.
 
 #### Result Format
 
-* integer: The subscription ID.
+* `integer`: The subscription ID.
 
 ### Request Examples
 
@@ -98,7 +98,7 @@ A successful request returns the subscription ID.
 
 In this response:
 
-* result: The subscription ID.
+* `result`: The subscription ID.
 
 ### Notification Format
 
@@ -130,11 +130,11 @@ Notifications are sent as JSON-RPC responses containing transaction log details.
 
 ### Error Handling
 
-Common logsSubscribe error scenarios:
+Common **logsSubscribe error** scenarios:
 
-* Invalid filter: Incorrect filter string or JSON object.
-* Unsupported Pubkey array: More than one Pubkey specified.
-* Network issues: Problems with the Solana JSON-RPC API endpoints.
+* **Invalid filter**: Incorrect filter string or JSON object.
+* **Unsupported Pubkey array**: More than one Pubkey specified.
+* **Network issues**: Problems with the Solana JSON-RPC API endpoints.
 
 #### Example Error Response
 
@@ -151,7 +151,7 @@ Common logsSubscribe error scenarios:
 
 ### Use Cases
 
-The Solana logsSubscribe method is essential for:
+The Solana **logsSubscribe** method is essential for:
 
 * Monitoring smart contract activity.
 * Tracking transactions mentioning specific accounts.

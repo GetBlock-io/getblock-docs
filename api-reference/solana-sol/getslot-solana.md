@@ -7,10 +7,10 @@ description: >-
 # getSlot – Solana
 
 {% hint style="info" %}
-The getSlot RPC Solana method allows developers to retrieve the most recent slot number that has been confirmed based on the specified commitment level.
+The **getSlot** RPC Solana method allows developers to retrieve the most recent slot number that has been confirmed based on the specified commitment level.
 {% endhint %}
 
-Slots represent points in time within Solana’s block production mechanism, making this method essential for real-time block and transaction monitoring in Solana’s Core API.
+Slots represent points in time within Solana’s block production mechanism, making this method essential for **real-time block and transaction monitoring** in Solana’s Core API.
 
 The method also supports an optional parameters object to refine results based on the commitment level and minimum evaluation slot.
 
@@ -25,13 +25,13 @@ This method is available on the following API endpoints:
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string, optional): Defines the level of finality for the query.
-  * minContextSlot (number, optional): The minimum slot at which the request can be evaluated.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`, optional): Defines the level of finality for the query.
+  * **minContextSlot** (`number`, optional): The minimum slot at which the request can be evaluated.
 
 ### Result
 
-The response returns a u64 value, representing the current slot number.
+The response returns a `u64` value, representing **the current slot number**.
 
 ### Request Example
 
@@ -95,9 +95,9 @@ Common getSlot error scenarios:
 
 The Solana getSlot method is useful for:
 
-* Validators and node operators: Tracking the latest slot to ensure synchronization.
-* Blockchain explorers: Displaying real-time network slot data.
-* dApp developers: Monitoring slot progression to optimize transaction timing.
+* **Validators and node operators**: Tracking the latest slot to ensure synchronization;
+* **Blockchain explorers**: Displaying real-time network slot data;
+* **dApp developers**: Monitoring slot progression to optimize transaction timing.
 
 ### Code getSlot Example – Web3 Integration
 
@@ -138,6 +138,6 @@ fetchCurrentSlot();
 
 ### Integration with Web3
 
-By integrating Web3 getSlot into Solana’s Core API, developers can efficiently track block progress, monitor transaction confirmation times, and ensure real-time request handling. This JSON-RPC method is essential for building responsive blockchain applications and infrastructure services.
+By integrating Web3 **getSlot** into Solana’s Core API, developers can efficiently track block progress, monitor transaction confirmation times, and ensure real-time request handling. This JSON-RPC method is essential for building responsive blockchain applications and infrastructure services.
 
 \

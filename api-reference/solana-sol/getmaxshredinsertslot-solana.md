@@ -7,12 +7,12 @@ description: >-
 # getMaxShredInsertSlot – Solana
 
 {% hint style="success" %}
-The getMaxShredInsertSlot RPC Solana method provides insight into the highest slot number observed after shred insert.&#x20;
+The **getMaxShredInsertSlot** RPC Solana method provides insight into the highest slot number observed after shred insert.&#x20;
 {% endhint %}
 
-This method is particularly useful for tracking data propagation and block finalization within the network.
+This method is particularly useful for **tracking data propagation and block finalization** within the network.
 
-Unlike other block or transaction retrieval methods, this RPC focuses on the point at which shreds (block data fragments) are fully inserted. Developers use this method to assess slot finalization efficiency, optimize node configurations, and troubleshoot data insertion issues in Core API implementations.
+Unlike other block or transaction retrieval methods, this RPC focuses on the point at which **shreds** **(block data fragments) are fully inserted**. Developers use this method to assess slot finalization efficiency, optimize node configurations, and troubleshoot data insertion issues in Core API implementations.
 
 ### Supported Networks
 
@@ -23,11 +23,13 @@ This method is available on the following API endpoints:
 
 ### Parameters
 
+{% hint style="info" %}
 The getMaxShredInsertSlot request does not require any parameters.
+{% endhint %}
 
 ### Result
 
-The response returns a single u64 value, representing the maximum slot seen after shred insertion.
+The response returns a single `u64` value, representing **the maximum slot seen after shred insertion**.
 
 ### Request Example
 
@@ -89,11 +91,11 @@ Common getMaxShredInsertSlot error scenarios:
 
 ### Use Cases
 
-The Solana getMaxShredInsertSlot method is useful for:
+The Solana **getMaxShredInsertSlot** method is useful for:
 
-* Validators and nodes: Monitoring the shred insert process for block finalization efficiency.
-* Web3 analytics tools: Tracking real-time data insertion trends.
-* Blockchain infrastructure: Understanding shred propagation trends to optimize network performance.
+* **Validators and nodes**: Monitoring the shred insert process for block finalization efficiency;
+* **Web3 analytics tools**: Tracking real-time data insertion trends;
+* **Blockchain infrastructure**: Understanding shred propagation trends to optimize network performance.
 
 ### Code getMaxShredInsertSlot Example – Web3 Integration
 
@@ -133,6 +135,6 @@ fetchMaxShredInsertSlot();
 
 ### Integration with Web3
 
-By integrating Web3 getMaxShredInsertSlot into Solana’s Core API, developers can track shred insertion status, monitor block finalization, and improve transaction data flow. The JSON-RPC request structure allows seamless retrieval of slot insertion data, ensuring efficient blockchain operations for dApps, validators, and infrastructure providers.
+By integrating Web3 **getMaxShredInsertSlot** into Solana’s Core API, developers can track shred insertion status, monitor block finalization, and improve transaction data flow. The JSON-RPC request structure allows seamless retrieval of slot insertion data, ensuring efficient blockchain operations for dApps, validators, and infrastructure providers.
 
 \

@@ -21,18 +21,18 @@ Notifications are sent whenever account information is updated.
 
 #### Required Parameters
 
-* string (required): Pubkey of the program ID (base-58 encoded).
+* **`string`** (required): Pubkey of the program ID (base-58 encoded).
 
 #### Optional Parameters
 
-* object (optional): Configuration object containing:
-  * commitment (string): Commitment level.
-    * Default: finalized
-  * filters (array): An array of filter objects for account data.
-    * dataSize: Filter accounts with data size in bytes.
-    * memcmp: Filter accounts by matching data at a specific offset.
-  * encoding (string): Account data encoding format.
-    * Supported values: base58, base64, base64+zstd, jsonParsed.
+* **`object`** (optional): Configuration object containing:
+  * `commitment` (`string`): Commitment level.
+    * Default: `finalized`
+  * `filters` (`array`): An array of filter objects for account data.
+    * `dataSize`: Filter accounts with data size in bytes.
+    * `memcmp`: Filter accounts by matching data at a specific offset.
+  * `encoding` (`string`): Account data encoding format.
+    * Supported values: `base58`, `base64`, `base64+zstd`, `jsonParsed`.
 
 ### Result
 
@@ -40,7 +40,7 @@ The response returns a subscription ID.
 
 #### Result Format
 
-* integer: The subscription ID.
+* `integer`: The subscription ID.
 
 ### Request Examples
 
@@ -124,7 +124,7 @@ A successful request returns the subscription ID.
 
 In this response:
 
-* result: The subscription ID.
+* `result`: The subscription ID.
 
 ### Notification Format
 
@@ -207,9 +207,9 @@ Notifications are sent as JSON-RPC responses containing account data.
 
 Common programSubscribe error scenarios:
 
-* Invalid program ID: Incorrect Pubkey.
-* Unsupported encoding: Invalid encoding type.
-* Filter misconfiguration: Incorrect filter definitions.
+* **Invalid program ID**: Incorrect Pubkey.
+* **Unsupported encoding**: Invalid encoding type.
+* **Filter misconfiguration**: Incorrect filter definitions.
 
 #### Example Error Response
 

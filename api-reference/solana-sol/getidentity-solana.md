@@ -7,10 +7,10 @@ description: >-
 # getIdentity – Solana
 
 {% hint style="success" %}
-The getIdentity RPC Solana method returns the identity pubkey of the node as a base-58 encoded string.&#x20;
+The **getIdentity** RPC Solana method returns the identity pubkey of the node as a base-58 encoded string.&#x20;
 {% endhint %}
 
-The getIdentity method returns the public key of the node making the request. It is useful for identifying the RPC node in use, verifying network connections, and debugging interactions with different Solana validators.
+The getIdentity method returns the **public key of the node making the request**. It is useful for identifying the RPC node in use, verifying network connections, and debugging interactions with different Solana validators.
 
 ### Supported Networks
 
@@ -51,7 +51,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 
 ### Response
 
-A successful getIdentity example response returns the identity pubkey of the node.
+A successful getIdentity example response returns the **identity pubkey** **of the node** in base-58 format.
 
 #### Example Response
 
@@ -71,7 +71,7 @@ Common getIdentity error scenarios:
 
 * Node misconfiguration: The node is not properly set up with an identity keypair.
 * Network connectivity issues: The request fails due to API unavailability.
-* zend\_auth::getinstance()->getidentity() error: This error can occur in PHP-based authentication systems and should be resolved by checking user session state.
+* `zend_auth::getinstance()->getidentity()` error: This error can occur in PHP-based authentication systems and should be resolved by checking user session state.
 
 #### Example Error Response
 
@@ -88,13 +88,14 @@ Common getIdentity error scenarios:
 
 ### Use Cases
 
-The Solana getIdentity method is essential for:
+The Solana **getIdentity** method is essential for:
 
-* Validators: Verifying their own identity and confirming their presence in the cluster.
-* Blockchain explorers: Displaying node identity data for transparency.
-* Web3 applications: Ensuring correct node authentication and connection.
-* Network security: Checking whether a node is authorized to participate in the cluster.
-* getIdentity for network Solana: Ensuring that nodes querying the blockchain are identified properly.
+* **Validators**: Verifying their own identity and confirming their presence in the cluster;
+* **Blockchain explorers**: Displaying node identity data for transparency;
+* **Web3 applications**: Ensuring correct node authentication and connection;
+* **Network security**: Checking whether a node is authorized to participate in the cluster.
+
+**getIdentity** for network Solana ensures that nodes querying the blockchain are identified properly.
 
 ### Code Example – Web3 getIdentity Integration
 
@@ -134,6 +135,6 @@ fetchNodeIdentity();
 
 ### Integration with Web3
 
-Integrate the getIdentity API with Solana’s Core API to retrieve node identity information dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate authentication and network monitoring, supporting security and stability in blockchain infrastructure.
+Integrate the **getIdentity** API with Solana’s Core API to retrieve node identity information dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate authentication and network monitoring, supporting security and stability in blockchain infrastructure.
 
 \

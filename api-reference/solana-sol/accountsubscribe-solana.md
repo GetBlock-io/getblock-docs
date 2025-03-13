@@ -7,7 +7,7 @@ description: >-
 # accountSubscribe – Solana
 
 {% hint style="success" %}
-The accountSubscribe RPC Solana method is often used in dApps to track account balance changes and state modifications.&#x20;
+The **accountSubscribe** RPC Solana method is often used in dApps to track account balance changes and state modifications.&#x20;
 {% endhint %}
 
 It provides a subscription ID that can be used to unsubscribe later. The notification format is similar to the getAccountInfo method's response.
@@ -21,14 +21,14 @@ It provides a subscription ID that can be used to unsubscribe later. The notific
 
 #### Required Parameters
 
-* string (required): The account Pubkey as a base-58 encoded string.
+* **`string`** (required): The account Pubkey as a base-58 encoded string.
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string): Commitment level to observe.
-  * encoding (string): The encoding format for the account data.
-    * Supported: base58, base64, base64+zstd, jsonParsed.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`): Commitment level to observe.
+  * **encoding** (`string`): The encoding format for the account data.
+    * Supported: `base58`, `base64`, `base64+zstd`, `jsonParsed`.
 
 ### Result
 
@@ -36,7 +36,7 @@ The response returns a subscription ID required to unsubscribe from the account 
 
 #### Result Format
 
-* number: The subscription ID.
+* `number`: The subscription ID.
 
 ### Request Example
 
@@ -84,7 +84,7 @@ A successful request returns a subscription ID.
 
 In this response:
 
-* result: The subscription ID assigned to this account.
+* `result`: The subscription ID assigned to this account.
 
 ### Notification Formats
 
@@ -177,9 +177,9 @@ Common accountSubscribe error scenarios:
 
 The Solana accountSubscribe method is essential for:
 
-* Real-time account balance monitoring.
-* Tracking smart contract state changes.
-* Enabling event-driven dApp functionality.
+* Real-time account balance monitoring;
+* Tracking smart contract state changes;
+* Enabling event-driven dApp functionality;
 
 ### Code accountSubscribe Example – Web3 Integration
 
@@ -223,4 +223,4 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating Web3 accountSubscribe into Solana's Core API, developers can monitor account changes, optimize dApp performance, and enable responsive features. This method is vital for Web3 applications that depend on real-time data updates.
+By integrating Web3 **accountSubscribe** into Solana's Core API, developers can monitor account changes, optimize dApp performance, and enable responsive features. This method is vital for Web3 applications that depend on real-time data updates.

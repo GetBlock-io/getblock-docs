@@ -124,8 +124,8 @@ print(json.dumps(response_data, indent=4))
 ```javascript
 const axios = require('axios');
 
-// Replace YOUR-API-KEY with your actual API key
-const url = 'https://go.getblock.io/YOUR-API-KEY/';
+// Replace <ACCESS-TOKEN> with your actual Access Token
+const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 
 // Request payload
 const payload = {

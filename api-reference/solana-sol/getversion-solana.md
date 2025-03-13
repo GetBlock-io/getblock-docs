@@ -29,8 +29,8 @@ This method does not require any parameters.
 
 The response contains a JSON object with the following fields:
 
-* solana-core (string): The software version of Solana Core.
-* feature-set (u32): A unique identifier of the software's feature set.
+* `solana-core` (`string`): The software version of Solana Core.
+* `feature-set` (`u32`): A unique identifier of the software's feature set.
 
 ### Request Example
 
@@ -75,15 +75,15 @@ A successful request returns the Solana version and the feature set.
 
 In this response:
 
-* solana-core: The version is 1.16.7.
-* feature-set: The unique feature set ID is 2891131721.
+* `solana-core`: The version is 1.16.7.
+* `feature-set`: The unique feature set ID is 2891131721.
 
 ### Error Handling
 
 Common getVersion error scenarios:
 
-* Network issues: Connectivity problems with the Solana JSON-RPC API endpoints.
-* Invalid request format: Incorrect JSON structure.
+* **Network issues**: Connectivity problems with the Solana JSON-RPC API endpoints.
+* **Invalid request format**: Incorrect JSON structure.
 
 #### Example Error Response
 
@@ -102,9 +102,9 @@ Common getVersion error scenarios:
 
 The Solana getVersion method is useful for:
 
-* Web3 applications: Ensuring compatibility with the Solana Core API.
-* Blockchain monitoring tools: Displaying the node version.
-* Development environments: Verifying the correct version of the node.
+* **Web3 applications**: Ensuring compatibility with the Solana Core API.
+* **Blockchain monitoring tools**: Displaying the node version.
+* **Development environments**: Verifying the correct version of the node.
 
 ### Code getVersion Example – Web3 Integration
 

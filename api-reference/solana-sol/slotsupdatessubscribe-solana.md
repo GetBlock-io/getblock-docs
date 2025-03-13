@@ -14,8 +14,8 @@ The **slotsUpdatesSubscribe** method provides a WebSocket-based **subscription**
 
 ### Supported Networks
 
-* **Mainnet**
-* **Devnet**
+* Mainnet
+* Devnet
 
 ### Parameters
 
@@ -29,7 +29,7 @@ Returns a **subscription ID**, which is required for **unsubscribing** from noti
 
 #### Result Format
 
-* **integer**: The **subscription ID** needed to **unsubscribe**.
+* **`integer`**: The **subscription ID** needed to **unsubscribe**.
 
 ### Request Example
 
@@ -69,7 +69,7 @@ A successful **request** returns a **subscription ID**.
 
 In this response:
 
-* **result**: **0** represents the assigned **subscription ID**.
+* **`result`**: **`0`** represents the assigned **subscription ID**.
 
 ### Notification Format
 
@@ -95,10 +95,10 @@ Upon slot updates, clients receive notifications containing slot details.
 
 #### Notification Fields
 
-* **parent** _(optional)_: The **parent slot** (present for "createdBank" events).
-* **slot**: The **updated slot**.
-* **timestamp**: Unix timestamp (milliseconds) of the update.
-* **type**: Update type, which can be one of:
+* **`parent`** _(optional)_: The **parent slot** (present for "createdBank" events).
+* **`slot`**: The **updated slot**.
+* **`timestamp`**: Unix timestamp (milliseconds) of the update.
+* **`type`**: Update type, which can be one of:
   * `firstShredReceived`
   * `completed`
   * `createdBank`
@@ -106,12 +106,12 @@ Upon slot updates, clients receive notifications containing slot details.
   * `dead`
   * `optimisticConfirmation`
   * `root`
-* **stats** _(optional)_: Present for "frozen" updates, containing transaction statistics:
+* **`stats`** _(optional)_: Present for "frozen" updates, containing transaction statistics:
   * `maxTransactionsPerEntry`
   * `numFailedTransactions`
   * `numSuccessfulTransactions`
   * `numTransactionEntries`
-* **err** _(optional)_: Error message, only for "dead" updates.
+* **`err`** _(optional)_: Error message, only for "dead" updates.
 
 ### Error Handling
 

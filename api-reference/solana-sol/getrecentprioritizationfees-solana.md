@@ -7,10 +7,10 @@ description: >-
 # getRecentPrioritizationFees – Solana
 
 {% hint style="success" %}
-The getRecentPrioritizationFees RPC Solana method provides insight into the dynamic fee market within the Solana blockchain.&#x20;
+The **getRecentPrioritizationFees** RPC Solana method provides insight into the dynamic fee market within the Solana blockchain.&#x20;
 {% endhint %}
 
-The getRecentPrioritizationFees method retrieves recent prioritization fees paid by transactions in the Solana blockchain. It provides insight into the dynamic fee market, helping developers estimate the cost of prioritizing transactions for faster processing. This method is useful for optimizing transaction fees and improving the efficiency of fee-based strategies in Solana applications.
+The getRecentPrioritizationFees method retrieves **recent prioritization fees** paid by transactions in the Solana blockchain. It provides insight into the dynamic fee market, helping developers **estimate the cost of prioritizing transactions** for faster processing. This method is useful for optimizing transaction fees and improving the efficiency of fee-based strategies in Solana applications.
 
 ### Supported Networks
 
@@ -23,15 +23,15 @@ This method is available on the following API endpoints:
 
 #### Optional Parameters
 
-* array (optional): An array of up to 128 account addresses, provided as base-58 encoded strings.
+* **`array`** (optional): An array of up to 128 account addresses, provided as base-58 encoded strings.
   * If provided, the response reflects the fee required for a transaction locking all specified accounts as writable.
 
 ### Result
 
-The response returns an array of RpcPrioritizationFee objects, each containing:
+The response returns an array of `RpcPrioritizationFee` objects, each containing:
 
-* slot (u64): The slot in which the prioritization fee was observed.
-* prioritizationFee (u64): The per-compute-unit fee paid by at least one successfully landed transaction, measured in micro-lamports (0.000001 lamports).
+* `slot` (`u64`): The slot in which the prioritization fee was observed.
+* `prioritizationFee` (`u64`): The per-compute-unit fee paid by at least one successfully landed transaction, measured in micro-lamports (0.000001 lamports).
 
 ### Request Example
 
@@ -62,7 +62,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 
 ### Response
 
-A successful request returns an array of recent prioritization fees for the specified accounts (or general network fees if no accounts are provided).
+A successful request returns an `array` of **recent prioritization fees** for the specified accounts (or general network fees if no accounts are provided).
 
 #### Example Response
 
@@ -118,12 +118,12 @@ Common getRecentPrioritizationFees error scenarios:
 
 ### Use Cases
 
-The Solana getRecentPrioritizationFees method is useful for:
+The Solana **getRecentPrioritizationFees** method is useful for:
 
-* dApp developers: Estimating transaction prioritization fees for faster execution.
-* Web3 analytics tools: Tracking fee trends over recent blocks.
-* Blockchain explorers: Displaying historical prioritization fee data.
-* Validators and node operators: Monitoring network fee dynamics and congestion levels.
+* **dApp developers**: Estimating transaction prioritization fees for faster execution;
+* **Web3 analytics tools**: Tracking fee trends over recent blocks;
+* **Blockchain explorers**: Displaying historical prioritization fee data;
+* **Validators and node operators**: Monitoring network fee dynamics and congestion levels.
 
 ### Code getRecentPrioritizationFees Example – Web3 Integration
 
@@ -175,6 +175,6 @@ java
 
 ### Integration with Web3
 
-By integrating Web3 getRecentPrioritizationFees into Solana’s Core API, developers can optimize transaction execution strategies by analyzing recent prioritization transaction fees. The JSON-RPC request provides valuable insights into the dynamic fee structure, helping dApps, validators, and infrastructure services efficiently navigate Solana’s network conditions.
+By integrating Web3 **getRecentPrioritizationFees** into Solana’s Core API, developers can optimize transaction execution strategies by analyzing recent prioritization transaction fees. The JSON-RPC request provides valuable insights into the dynamic fee structure, helping dApps, validators, and infrastructure services efficiently navigate Solana’s network conditions.
 
 \

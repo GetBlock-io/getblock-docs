@@ -126,7 +126,6 @@ print(json.dumps(response_data, indent=4))
 ```javascript
 const axios = require('axios');
 
-// Замените <ACCESS-TOKEN> на ваш токен доступа
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 const headers = {
   'Content-Type': 'application/json'
@@ -141,13 +140,12 @@ const data = {
   id: 'getblock.io'
 };
 
-// Отправка POST-запроса с использованием axios
 axios.post(url, data, { headers })
   .then(response => {
-    console.log('Ответ:', response.data);
+    console.log('Response:', response.data);
   })
   .catch(error => {
-    console.error('Ошибка:', error.message);
+    console.error('Error:', error.message);
   });
 ```
 {% endtab %}

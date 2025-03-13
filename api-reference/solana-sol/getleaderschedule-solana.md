@@ -7,10 +7,10 @@ description: >-
 # getLeaderSchedule – Solana
 
 {% hint style="success" %}
-The getLeaderSchedule RPC Solana method provides the leader schedule for an epoch, mapping validator identities to their assigned slots. If no epoch is specified, the Solana getLeaderSchedule API returns the schedule for the current epoch.
+The **getLeaderSchedule** RPC Solana method provides the leader schedule for an epoch, mapping validator identities to their assigned slots. If no epoch is specified, the Solana getLeaderSchedule API returns the schedule for the current epoch.
 {% endhint %}
 
-The getLeaderSchedule method retrieves the leader schedule for a given epoch, showing the order in which validators are assigned to produce blocks. It helps developers and validators analyze network consensus, optimize transaction processing strategies, and monitor validator performance in the Solana blockchain.
+The getLeaderSchedule method retrieves **the leader schedule for a given epoch**, showing the order in which validators are assigned to produce blocks. It helps developers and validators analyze network consensus, optimize transaction processing strategies, and monitor validator performance in the Solana blockchain.
 
 ### Supported Networks
 
@@ -23,9 +23,15 @@ Access this method via Solana API Endpoints:
 
 #### Optional Parameters
 
-* epoch (u64, optional) – The epoch to retrieve the leader schedule for. If omitted, the current epoch is used.
-* commitment (string, optional) – Commitment level of the request.
-* identity (string, optional) – Validator identity (Base-58 encoded) to filter the response.
+* **epoch** (`u64`, optional) – The epoch to retrieve the leader schedule for. If omitted, the current epoch is used.
+* **`object`** (optional):
+  * **commitment** (`string`, optional) – Commitment level of the request.
+  * **identity** (`string`, optional) – Validator identity (Base-58 encoded) to filter the response.
+
+### Result
+
+* `null` : the requested epoch is not found.
+* `object`: A dictionary (key-value pairs) where each **key** is a validator identity (Base-58 encoded string) and each **value** is an array of slot indices (relative to the first slot in the requested epoch).
 
 ### getLeaderSchedule Example
 
@@ -103,16 +109,14 @@ Common getLeaderSchedule error scenarios:
 
 ### Use Cases
 
-The Solana getLeaderSchedule method is essential for:
+The Solana **getLeaderSchedule** method is essential for:
 
-* Validators: Predicting assigned slots for upcoming epochs.
-* Blockchain explorers: Displaying leader schedules in real-time.
-* Web3 applications: Ensuring efficient transaction scheduling.
-* Analytics platforms: Tracking validator slot performance.
+* **Validators**: Predicting assigned slots for upcoming epochs;
+* **Blockchain explorers**: Displaying leader schedules in real-time;
+* **Web3 applications**: Ensuring efficient transaction scheduling;
+* **Analytics platforms**: Tracking validator slot performance.
 
 ### Code getLeaderSchedule Example – Web3 Integration
-
-
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -154,6 +158,6 @@ fetchLeaderSchedule();
 
 ### Integration with Web3
 
-Integrate the Web3 getLeaderSchedule API with Solana’s Core API to retrieve real-time leader schedules. By leveraging JSON-RPC parameters and endpoints, developers can optimize transaction execution and validator slot assignments, ensuring maximum efficiency in blockchain operations.
+Integrate the Web3 **getLeaderSchedule** API with Solana’s Core API to retrieve real-time leader schedules. By leveraging JSON-RPC parameters and endpoints, developers can optimize transaction execution and validator slot assignments, ensuring maximum efficiency in blockchain operations.
 
 \

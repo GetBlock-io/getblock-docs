@@ -7,10 +7,10 @@ description: >-
 # getTokenLargestAccounts – Solana
 
 {% hint style="success" %}
-The getTokenLargestAccounts RPC Solana method returns a list of the 20 largest token accounts associated with a specific token Mint address.&#x20;
+The **getTokenLargestAccounts** RPC Solana method returns a list of the 20 largest token accounts associated with a specific token Mint address.&#x20;
 {% endhint %}
 
-This information helps developers analyze token distribution patterns and track high-value accounts using the Core API.
+This information helps developers **analyze token distribution patterns** and **track high-value accounts** using the Core API.
 
 The response includes account addresses, raw balances, and formatted balances with decimals applied, which can be displayed in user-friendly interfaces.
 
@@ -25,26 +25,26 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* string (required): The Pubkey of the token Mint to query, provided as a base-58 encoded string.
+* **`string`** (required): The Pubkey of the token Mint to query, provided as a base-58 encoded string.
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string): Defines the level of finality for the request.
+* **`object`** (optional): A configuration object containing:
+  * `commitment` (string): Defines the level of finality for the request.
 
 ### Result
 
 The response returns an RpcResponse object containing:
 
-* context (object): Provides contextual information about the slot.
-  * slot (u64): The slot number when the largest token accounts were retrieved.
-* value (array): An array of JSON objects representing the largest token accounts.
+* **`context`** (`object`): Provides contextual information about the slot.
+  * **`slot`** (u64): The slot number when the largest token accounts were retrieved.
+* **`value`** (`array`): An array of JSON objects representing the largest token accounts.
   * Each object includes:
-    * address (string): The Pubkey of the token account.
-    * amount (string): The raw token balance (without decimals).
-    * decimals (u8): The number of decimal places for the token balance.
-    * uiAmount (number|null): The token balance with decimals applied. (Deprecated)
-    * uiAmountString (string): The token balance as a string with decimals applied.
+    * `address` (`string`): The Pubkey of the token account.
+    * `amount` (`string`): The raw token balance (without decimals).
+    * `decimals` (u8`)`: The number of decimal places for the token balance.
+    * `uiAmount` (`number`|`null`): The token balance with decimals applied. (Deprecated)
+    * `uiAmountString` (`string`): The token balance as a string with decimals applied.
 
 ### Request Example
 
@@ -109,10 +109,10 @@ A successful request returns the largest token accounts with their balances.
 
 In this response:
 
-* Address: The Pubkey of each token account.
-* Amount: The raw balance in lamports.
-* Decimals: The number of decimal places.
-* uiAmountString: The formatted balance as a string.
+* `address`: The Pubkey of each token account.
+* `amount`: The raw balance in lamports.
+* `decimals`: The number of decimal places.
+* `uiAmountString`: The formatted balance as a string.
 
 ### Error Handling
 
@@ -137,12 +137,12 @@ Common getTokenLargestAccounts error scenarios:
 
 ### Use Cases
 
-The Solana getTokenLargestAccounts method is useful for:
+The Solana **getTokenLargestAccounts** method is useful for:
 
-* Token distribution analysis: Identifying whale accounts holding significant token amounts.
-* DeFi applications: Tracking liquidity pool balances.
-* Web3 analytics tools: Displaying token holder rankings.
-* Wallet applications: Providing users insights into major token holders.
+* **Token distribution analysis**: Identifying whale accounts holding significant token amounts;
+* **DeFi applications**: Tracking liquidity pool balances;
+* **Web3 analytics tools**: Displaying token holder rankings;
+* **Wallet applications**: Providing users insights into major token holders.
 
 ### Code getTokenLargestAccounts Example – Web3 Integration
 
@@ -195,6 +195,6 @@ fetchTokenLargestAccounts();
 
 ### Integration with Web3
 
-By integrating Web3 getTokenLargestAccounts into Solana’s Core API, developers can efficiently analyze token distributions, monitor account balances, and provide insights into transaction activity. This JSON-RPC method is a key tool for applications dealing with token analytics and blockchain monitoring.
+By integrating Web3 **getTokenLargestAccounts** into Solana’s Core API, developers can efficiently analyze token distributions, monitor account balances, and provide insights into transaction activity. This JSON-RPC method is a key tool for applications dealing with token analytics and blockchain monitoring.
 
 \

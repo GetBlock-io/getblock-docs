@@ -7,10 +7,10 @@ description: >-
 # getMultipleAccounts – Solana
 
 {% hint style="success" %}
-The getMultipleAccounts RPC Solana method provides details about multiple accounts specified by their Pubkeys.
+The **getMultipleAccounts** RPC Solana method provides details about multiple accounts specified by their Pubkeys.
 {% endhint %}
 
-The getMultipleAccounts method retrieves information about multiple specified accounts in a single request. It is useful for efficiently accessing account data, reducing network requests, and improving performance when working with multiple on-chain accounts in Solana-based applications.
+The getMultipleAccounts method retrieves **information about multiple specified accounts in a single request**. It is useful for efficiently accessing account data, reducing network requests, and improving performance when working with multiple on-chain accounts in Solana-based applications.
 
 ### Supported Networks
 
@@ -23,32 +23,32 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* array (required): An array of up to 100 Pubkeys, provided as base-58 encoded strings.
+* **`array`** (required): An array of up to 100 Pubkeys, provided as base-58 encoded strings.
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string, optional): Defines the level of finality for the query.
-  * minContextSlot (number, optional): The minimum slot at which the request can be evaluated.
-  * dataSlice (object, optional): Specifies a portion of account data to return.
-    * length (usize): Number of bytes to return.
-    * offset (usize): Byte offset from which to start reading.
-  * encoding (string, optional): Specifies the encoding format for the returned account data.
-    * Default: base64
-    * Supported values: jsonParsed, base58, base64, base64+zstd.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`, optional): Defines the level of finality for the query.
+  * **minContextSlot** (`number`, optional): The minimum slot at which the request can be evaluated.
+  * **dataSlice** (`object`, optional): Specifies a portion of account data to return.
+    * `length` (`usize`): Number of bytes to return.
+    * `offset` (`usize`): Byte offset from which to start reading.
+  * **encoding** (`string`, optional): Specifies the encoding format for the returned account data.
+    * Default: `base64`
+    * Supported values: `jsonParsed`, `base58`, `base64`, `base64+zstd`.
 
 ### Result
 
 The response is a JSON object with value equal to an array of:
 
-* null: If the account at the provided Pubkey does not exist.
-* object: A JSON object containing:
-  * lamports (u64): Number of lamports assigned to this account.
-  * owner (string): Base-58 encoded Pubkey of the program assigned to the account.
-  * data (\[string, encoding]|object): Account data, either as encoded binary data or JSON format.
-  * executable (bool): Indicates if the account contains a program.
-  * rentEpoch (u64): The epoch at which this account will next owe rent.
-  * space (u64): The data size of the account.
+* `null`: If the account at the provided Pubkey does not exist.
+* `object`: A JSON object containing:
+  * `lamports` (`u64`): Number of lamports assigned to this account.
+  * `owner` (`string`): Base-58 encoded Pubkey of the program assigned to the account.
+  * `data` (`[string, encoding]|object`): Account data, either as encoded binary data or JSON format.
+  * `executable` (`bool`): Indicates if the account contains a program.
+  * `rentEpoch` (`u64`): The epoch at which this account will next owe rent.
+  * `space` (`u64`): The data size of the account.
 
 ### Request Example
 
@@ -85,7 +85,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 
 ### Response
 
-A successful request returns account information for the queried Pubkeys.
+A successful request returns **account information for the queried Pubkeys**.
 
 #### Example Response
 
@@ -140,11 +140,11 @@ Common getMultipleAccounts error scenarios:
 
 ### Use Cases
 
-The Solana getMultipleAccounts method is useful for:
+The Solana **getMultipleAccounts** method is useful for:
 
-* Web3 wallets: Fetching balances and ownership details for multiple accounts.
-* Blockchain explorers: Displaying batch account data efficiently.
-* Validators and node operators: Monitoring multiple accounts in real time.
+* **Web3 wallets**: Fetching balances and ownership details for multiple accounts;
+* **Blockchain explorers**: Displaying batch account data efficiently;
+* **Validators and node operators**: Monitoring multiple accounts in real time.
 
 ### Code getMultipleAccounts Example – Web3 Integration
 
@@ -203,6 +203,6 @@ fetchMultipleAccounts();
 
 ### Integration with Web3
 
-By integrating Web3 getMultipleAccounts into Solana’s Core API, developers can retrieve multiple transaction and block details in a single request, optimizing performance for dApps, analytics platforms, and infrastructure services. The JSON-RPC request allows efficient bulk account queries, making it an essential tool for Solana applications.
+By integrating Web3 **getMultipleAccounts** into Solana’s Core API, developers can retrieve multiple transaction and block details in a single request, optimizing performance for dApps, analytics platforms, and infrastructure services. The JSON-RPC request allows efficient bulk account queries, making it an essential tool for Solana applications.
 
 \

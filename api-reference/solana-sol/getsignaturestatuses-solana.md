@@ -10,7 +10,7 @@ description: >-
 The getSignatureStatuses RPC Solana method checks the status of a list of transaction signatures (txid).&#x20;
 {% endhint %}
 
-By default, it only searches the recent status cache, which includes all active slots plus MAX\_RECENT\_BLOCKHASHES rooted slots. However, enabling the searchTransactionHistory parameter allows a deeper search in the node's ledger.
+By default, it only searches **the recent status cache**, which includes all active slots plus `MAX_RECENT_BLOCKHASHES` rooted slots. However, enabling the **searchTransactionHistory** parameter allows a deeper search in the node's ledger.
 
 This method is valuable for applications that need to verify whether a block contains a given transaction and determine its confirmation level using Solana’s Core API.
 
@@ -25,29 +25,29 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* array (required): An array of transaction signatures, provided as base-58 encoded strings.
+* **`array`** (required): An array of transaction signatures, provided as base-58 encoded strings.
   * Maximum: 256 signatures.
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * searchTransactionHistory (bool, optional): If true, searches the node's ledger for signatures not found in the recent status cache.
+* **`object`** (optional): A configuration object containing:
+  * **searchTransactionHistory** (`bool`, optional): If `true`, searches the node's ledger for signatures not found in the recent status cache.
 
 ### Result
 
 The response returns an array of RpcResponse objects, each containing:
 
-* null: If the transaction is unknown.
-* object:
-  * slot (u64): The slot in which the transaction was processed.
-  * confirmations (usize|null): The number of blocks since the transaction was confirmed.
-    * null if finalized by the supermajority.
-  * err (object|null): If the transaction failed, contains an error object. Otherwise, null.
-  * confirmationStatus (string|null): The transaction’s cluster confirmation status.
-    * Possible value: processed, confirmed, finalized.
-  * DEPRECATED: status (object):
-    * { "Ok": null } if the transaction was successful.
-    * { "Err": \<ERR> } if the transaction failed with an error.
+* `null`: If the transaction is unknown.
+* `object`:
+  * `slot` (`u64`): The slot in which the transaction was processed.
+  * `confirmations` (`usize`|`null`): The number of blocks since the transaction was confirmed.
+    * `null` if finalized by the supermajority.
+  * `err` (`object`|`null`): If the transaction failed, contains an error object. Otherwise, null.
+  * `confirmationStatus` (`string`|`null`): The transaction’s cluster confirmation status.
+    * Possible value: `processed`, `confirmed`, `finalized`.
+  * DEPRECATED: `status` (`object`):
+    * { `"Ok": null` } if the transaction was successful.
+    * { `"Err": <ERR>` } if the transaction failed with an error.
 
 ### Request Example
 
@@ -134,12 +134,12 @@ Common getSignatureStatuses error scenarios:
 
 ### Use Cases
 
-The Solana getSignatureStatuses method is useful for:
+The Solana **getSignatureStatuses** method is useful for:
 
-* dApp developers: Monitoring transaction confirmations and finality.
-* Web3 analytics tools: Tracking transaction status trends.
-* Validators and node operators: Checking the status of processed transactions.
-* Blockchain explorers: Displaying transaction history and confirmations.
+* **dApp developers**: Monitoring transaction confirmations and finality;
+* **Web3 analytics tools**: Tracking transaction status trends;
+* **Validators and node operators**: Checking the status of processed transactions;
+* **Blockchain explorers**: Displaying transaction history and confirmations.
 
 ### Code getSignatureStatuses Example – Web3 Integration
 
@@ -196,6 +196,6 @@ fetchSignatureStatuses();
 
 ### Integration with Web3
 
-By integrating Web3 getSignatureStatuses into Solana’s Core API, developers can verify transaction statuses in real time, track block confirmations, and ensure efficient request handling. This JSON-RPC method is essential for decentralized applications, validators, and blockchain explorers that require up-to-date transaction insights.
+By integrating Web3 **getSignatureStatuses** into Solana’s Core API, developers can verify transaction statuses in real time, track block confirmations, and ensure efficient request handling. This JSON-RPC method is essential for decentralized applications, validators, and blockchain explorers that require up-to-date transaction insights.
 
 \

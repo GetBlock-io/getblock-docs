@@ -8,10 +8,10 @@ description: >-
 # getVoteAccounts - Solana
 
 {% hint style="success" %}
-The getVoteAccounts RPC method returns a list of active vote accounts, highlighting key parameters such as activatedStake, commission, and epochCredits.
+The **getVoteAccounts** RPC method returns a list of active vote accounts, highlighting key parameters such as activatedStake, commission, and epochCredits.
 {% endhint %}
 
-As part of Solana’s Core API, it enables developers to monitor validator health, track decentralization metrics, and analyze governance-related value distributions.
+As part of Solana’s Core API, it enables developers to **monitor validator health**, **track decentralization metrics**, and **analyze governance-related value distributions**.
 
 getVoteAccounts RPC Solana method supports optional filters like votePubkey (to target specific validators) and keepUnstakedDelinquents (to include inactive validators). By leveraging these parameters, Web3 applications can tailor data retrieval for staking analytics or real-time network audits.
 
@@ -24,14 +24,14 @@ Access this method via Solana API endpoints:
 
 ### Parameters
 
-#### Config (object, optional)
+#### Config (`object`, optional)
 
 Customize the request with these fields:
 
-* commitment (string, optional): Confirmation level: finalized (default), confirmed, or processed.
-* votePubkey (string, optional): Filter results to a specific validator’s vote address (Base58-encoded).
-* keepUnstakedDelinquents (bool, optional): Include delinquent validators with no active stake (default: false).
-* delinquentSlotDistance (u64, optional): Define the slot distance threshold for marking validators as delinquent.
+* **commitment** (`string`, optional): Confirmation level: `finalized` (default), `confirmed`, or `processed`.
+* **votePubkey** (`string`, optional): Filter results to a specific validator’s vote address (Base58-encoded).
+* **keepUnstakedDelinquents** (`bool`, optional): Include delinquent validators with no active stake (default: `false`).
+* **delinquentSlotDistance** (`u64`, optional): Define the slot distance threshold for marking validators as delinquent. Overriding the default is not recommende&#x64;_._
 
 ### Request
 
@@ -60,7 +60,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 
 ### Response
 
-A successful response returns two lists: current (active validators) and delinquent (underperforming validators). Each entry includes metrics like stake, commission, and voting history.
+A successful response returns two lists: `current` (active validators) and `delinquent` (underperforming validators). Each entry includes metrics like stake, commission, and voting history.
 
 #### &#x20;getVoteAccounts example Response
 
@@ -87,17 +87,17 @@ A successful response returns two lists: current (active validators) and delinqu
 
 #### Key Response Fields
 
-* activatedStake: Stake delegated to the validator (in lamports).
-* commission: Validator’s fee percentage.
-* epochCredits: Voting credits earned per epoch.
-* lastVote: Slot of the validator’s latest vote.
+* `activatedStake`: Stake delegated to the validator (in lamports).
+* `commission`: Validator’s fee percentage.
+* `epochCredits`: Voting credits earned per epoch.
+* `lastVote`: Slot of the validator’s latest vote.
 
 ### Error Handling
 
 Common getVoteAccounts error scenarios include:
 
 * Invalid votePubkey format.
-* Unsupported parameters (e.g., delinquentSlotDistance with non-standard values).
+* Unsupported parameters (e.g., `delinquentSlotDistance` with non-standard values).
 * Missing API key or incorrect endpoint.
 
 #### Error Response Example
@@ -115,14 +115,14 @@ Common getVoteAccounts error scenarios include:
 
 ### Use Case
 
-The  Solana getVoteAccounts method powers:
+The Solana getVoteAccounts method powers:
 
-* Staking platforms evaluating validator performance.
-* Governance dashboards tracking voting participation.
-* Analytics tools calculating network decentralization metrics.
+* Staking platforms evaluating validator performance;
+* Governance dashboards tracking voting participation;
+* Analytics tools calculating network decentralization metrics;
 * Block explorers displaying validator-specific transaction histories.
 
-By filtering with votePubkey or analyzing epochCredits, developers build applications that enhance transparency in Solana’s block production ecosystem.
+By filtering with `votePubkey` or analyzing `epochCredits`, developers build applications that enhance transparency in Solana’s block production ecosystem.
 
 ### Code getVoteAccounts Example – Web3 Integration
 
@@ -189,6 +189,6 @@ fetchVoteAccounts();
 
 ### Integration with Web3
 
-Integrate the Web3 getVoteAccounts RPC method into Web3 applications to monitor validator networks, optimize staking strategies, and ensure compliance with governance standards. By leveraging Core API parameters like commitment and votePubkey, developers deliver real-time insights into Solana’s decentralized value ecosystem.
+Integrate the Web3 getVoteAccounts RPC method into Web3 applications to monitor validator networks, optimize staking strategies, and ensure compliance with governance standards. By leveraging Core API parameters like `commitment` and `votePubkey`, developers deliver real-time insights into Solana’s decentralized value ecosystem.
 
 \

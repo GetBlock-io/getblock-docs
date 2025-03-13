@@ -7,10 +7,10 @@ description: >-
 # getTransactionCount - Solana
 
 {% hint style="success" %}
-The Solana getTransactionCount RPC method returns the total count of transactions processed by the network, reflecting its growth and activity. As part of Solana’s Core API, it is critical for developers building network explorers, performance trackers, or applications requiring block-level analytics.
+The Solana **getTransactionCount** RPC method returns the total count of transactions processed by the network, reflecting its growth and activity. As part of Solana’s Core API, it is critical for developers building network explorers, performance trackers, or applications requiring block-level analytics.
 {% endhint %}
 
-This method supports commitment parameters to determine data finality. Unlike Ethereum’s eth\_getTransactionCount (which may trigger errors like AttributeError: 'Eth' object has no attribute 'gettransactioncount'), Solana’s implementation focuses on network-wide totals rather than per-account transactions.
+This method supports commitment parameters to determine data finality. Unlike Ethereum’s `eth_getTransactionCount` (which may trigger errors like `AttributeError: 'Eth' object has no attribute 'gettransactioncount'`), Solana’s implementation focuses on network-wide totals rather than per-account transactions.
 
 ### Supported Networks
 
@@ -21,11 +21,11 @@ This method is accessible via Solana API endpoints:
 
 ### Parameters
 
-* **commitment** (string, optional): Specifies the confirmation level. Supported values:
-  * finalized (default): Returns data from fully confirmed blocks.
-  * confirmed: Uses the latest confirmed block.
-  * processed: Not supported for this method.
-* **minContextSlot** (number, optional): The minimum slot at which the request can be evaluated. This ensures that data is only considered if the node has reached the specified slot.
+* **commitment** (`string`, optional): Specifies the confirmation level. Supported values:
+  * `finalized` (default): Returns data from fully confirmed blocks.
+  * `confirmed`: Uses the latest confirmed block.
+  * `processed`: Not supported for this method.
+* **minContextSlot** (`number`, optional): The minimum slot at which the request can be evaluated. This ensures that data is only considered if the node has reached the specified slot.
 
 ### Request
 
@@ -68,13 +68,13 @@ A successful response returns the total transaction count as an integer value.
 
 #### Response Parameters:
 
-* result: Total number of transactions confirmed up to the specified block.
+* `result`: Total number of transactions confirmed up to the specified block.
 
 ### Error Handling
 
 Common getTransactionCount error scenarios include:
 
-* Using unsupported commitment levels like processed.
+* Using unsupported commitment levels like `processed`.
 * Invalid API key or incorrect endpoints.
 * Ethereum-specific errors (e.g., AttributeError: 'Eth' object has no attribute 'gettransactioncount' when using the Solana API).
 
@@ -95,9 +95,9 @@ Common getTransactionCount error scenarios include:
 
 The getTransactionCount RPC method is ideal for:
 
-* Network dashboards displaying real-time transaction throughput.
-* Analytics platforms calculating TPS (transactions per second).
-* Developers monitoring blockchain health and activity.
+* Network dashboards displaying real-time transaction throughput;
+* Analytics platforms calculating TPS (transactions per second);
+* Developers monitoring blockchain health and activity;
 * Auditors verifying historical block data completeness.
 
 ### Code getTransactionCount Example – Web3 Integration
@@ -143,6 +143,6 @@ fetchTransactionCount();
 
 ### Integration with Web3
 
-Integrate the getTransactionCount RPC Solana method into Web3 applications to track network scalability and performance metrics. By combining this method with block or transaction-specific queries, developers gain holistic insights into Solana’s value as a high-throughput blockchain.
+Integrate the **getTransactionCount** RPC Solana method into Web3 applications to track network scalability and performance metrics. By combining this method with block or transaction-specific queries, developers gain holistic insights into Solana’s value as a high-throughput blockchain.
 
 \

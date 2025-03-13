@@ -1,13 +1,13 @@
 ---
 description: >-
   The accountUnsubscribe JSON-RPC method allows clients to unsubscribe from
-  receiving account change notifications.
+  receiving Solana account change notifications.
 ---
 
 # accountUnsubscribe – Solana
 
 {% hint style="success" %}
-The accountUnsubscribe method stops real-time updates for a subscribed account in Solana’s WebSocket API.
+The **accountUnsubscribe** method stops real-time updates for a subscribed account in Solana’s WebSocket API.
 {% endhint %}
 
 The accountUnsubscribe method is part of Solana’s WebSocket API, allowing clients to stop receiving real-time updates for a previously subscribed account. This method is essential for managing WebSocket connections efficiently, preventing unnecessary data flow, and optimizing resource usage in applications that track on-chain account changes. By calling this method, developers can unsubscribe from updates associated with a specific subscription ID.
@@ -23,7 +23,7 @@ This method is accessible via the following API endpoints:
 
 #### Required Parameter
 
-* number (required): The subscription ID of the account to unsubscribe.
+* **`number`** (required): The subscription ID of the account to unsubscribe.
 
 ### Result
 
@@ -31,7 +31,7 @@ The response returns a boolean value indicating whether the unsubscribe operatio
 
 #### Result Format
 
-* bool: true if the unsubscribe was successful; otherwise, false.
+* `bool`: `true` if the unsubscribe was successful; otherwise, `false`.
 
 ### Request Example
 
@@ -72,7 +72,7 @@ A successful request returns a boolean value.
 
 In this response:
 
-* result: true indicates the unsubscribe operation was successful.
+* `result`: `true` indicates the unsubscribe operation was successful.
 
 ### Error Handling
 
@@ -98,8 +98,8 @@ Common accountUnsubscribe error scenarios:
 
 The Solana accountUnsubscribe method is essential for:
 
-* Managing network resources by terminating unused subscriptions.
-* Optimizing dApp performance.
+* Managing network resources by terminating unused subscriptions;
+* Optimizing dApp performance;
 * Reducing network bandwidth consumption.
 
 ### Code accountUnsubscribe Example – Web3 Integration
@@ -140,6 +140,6 @@ ws.on('close', () => {
 
 ### Integration with Web3
 
-By integrating Web3 accountUnsubscribe into Solana's Core API, developers can efficiently manage subscription lifecycles, improve dApp performance, and optimize network resource utilization.
+By integrating Web3 **accountUnsubscribe** into Solana's Core API, developers can efficiently manage subscription lifecycles, improve dApp performance, and optimize network resource utilization.
 
 \

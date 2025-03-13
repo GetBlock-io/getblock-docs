@@ -7,7 +7,7 @@ description: >-
 # programUnsubscribe – Solana
 
 {% hint style="success" %}
-The programUnsubscribe RPC Solana method stops notifications for program-owned accounts by using a subscription ID.&#x20;
+The **programUnsubscribe** RPC Solana method stops notifications for program-owned accounts by using a subscription ID.&#x20;
 {% endhint %}
 
 It is crucial for Web3 applications that handle dynamic data streams and need efficient resource management.
@@ -21,7 +21,7 @@ It is crucial for Web3 applications that handle dynamic data streams and need ef
 
 #### Required Parameter
 
-* number (required): The subscription ID of the program-owned account to unsubscribe.
+* **`number`** (required): The subscription ID of the program-owned account to unsubscribe.
 
 ### Result
 
@@ -29,7 +29,7 @@ The response returns a boolean value indicating whether the unsubscribe operatio
 
 #### Result Format
 
-* bool: true if the unsubscribe was successful; otherwise, false.
+* `bool`: `true` if the unsubscribe was successful; otherwise, `false`.
 
 ### Request Example
 
@@ -70,14 +70,14 @@ A successful request returns a boolean value.
 
 In this response:
 
-* result: true indicates the unsubscribe operation was successful.
+* `result`: `true` indicates the unsubscribe operation was successful.
 
 ### Error Handling
 
 Common programUnsubscribe error scenarios:
 
-* Invalid subscription ID: The provided ID does not correspond to an active subscription.
-* Network issues: Problems with the Solana JSON-RPC API endpoints.
+* **Invalid subscription ID**: The provided ID does not correspond to an active subscription.
+* **Network issues**: Problems with the Solana JSON-RPC API endpoints.
 
 #### Example Error Response
 

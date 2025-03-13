@@ -183,13 +183,13 @@ const data = {
   id: 'getblock.io'
 };
 
-// Отправка POST-запроса с использованием axios
+
 axios.post(url, data, { headers })
   .then(response => {
-    console.log('Ответ:', response.data);
+    console.log('Response:', response.data);
   })
   .catch(error => {
-    console.error('Ошибка:', error.message);
+    console.error('Error:', error.message);
   });
 ```
 {% endtab %}

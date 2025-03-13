@@ -7,7 +7,7 @@ description: >-
 # rootUnsubscribe – Solana
 
 {% hint style="success" %}
-The rootUnsubscribe RPC Solana method cancels an existing subscription to root notifications using a subscription ID.&#x20;
+The **rootUnsubscribe** RPC Solana method cancels an existing subscription to root notifications using a subscription ID.&#x20;
 {% endhint %}
 
 This helps Web3 applications reduce unnecessary traffic and maintain efficiency.
@@ -21,7 +21,7 @@ This helps Web3 applications reduce unnecessary traffic and maintain efficiency.
 
 #### Required Parameter
 
-* number (required): The subscription ID to cancel.
+* **`number`** (required): The subscription ID to cancel.
 
 ### Result
 
@@ -29,7 +29,7 @@ The response returns a boolean value indicating the status of the unsubscribe op
 
 #### Result Format
 
-* bool: true if the unsubscribe was successful; otherwise, false.
+* `bool`: `true` if the unsubscribe was successful; otherwise, `false`.
 
 ### Request Example
 
@@ -70,14 +70,14 @@ A successful request returns a boolean value.
 
 In this response:
 
-* result: true indicates the unsubscribe operation was successful.
+* `result`: `true` indicates the unsubscribe operation was successful.
 
 ### Error Handling
 
 Common rootUnsubscribe error scenarios:
 
-* Invalid subscription ID: The provided ID does not match an active subscription.
-* Network issues: Problems with the Solana JSON-RPC API endpoints.
+* **Invalid subscription ID**: The provided ID does not match an active subscription.
+* **Network issues**: Problems with the Solana JSON-RPC API endpoints.
 
 #### Example Error Response
 

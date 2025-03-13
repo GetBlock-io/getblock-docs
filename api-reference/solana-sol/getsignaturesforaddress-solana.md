@@ -7,10 +7,10 @@ description: >-
 # getSignaturesForAddress – Solana
 
 {% hint style="success" %}
-The getSignaturesForAddress RPC Solana method returns transaction signatures from the most recent confirmed block, moving backwards in time.
+The **getSignaturesForAddress** RPC Solana method returns transaction signatures from the most recent confirmed block, moving backwards in time.
 {% endhint %}
 
-The getSignaturesForAddress method retrieves a list of transaction signatures associated with a specific account. It provides historical transaction data, including relevant metadata, allowing developers to track activity and analyze past transactions on the Solana blockchain.
+The getSignaturesForAddress method retrieves a **list of transaction signatures associated with a specific account**. It provides historical transaction data, including relevant metadata, allowing developers to **track activity and analyze past transactions** on the Solana blockchain.
 
 ### Supported Networks
 
@@ -23,30 +23,30 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* string (required): The account address, provided as a base-58 encoded string.
+* **`string`** (required): The account address, provided as a base-58 encoded string.
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string, optional): Defines the level of finality for the query.
-  * minContextSlot (number, optional): The minimum slot at which the request can be evaluated.
-  * limit (number, optional, default: 1000): The maximum number of transaction signatures to return.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`, optional): Defines the level of finality for the query.
+  * **minContextSlot** (`number`, optional): The minimum slot at which the request can be evaluated.
+  * **limit** (`number`, optional, default: `1000`): The maximum number of transaction signatures to return.
     * Must be between 1 and 1,000.
-  * before (string, optional): Start searching backwards from this transaction signature.
-  * until (string, optional): Stop searching when this transaction signature is reached (if found before reaching the limit).
+  * **before** (`string`, optional): Start searching backwards from this transaction signature.
+  * **until** (`string`, optional): Stop searching when this transaction signature is reached (if found before reaching the limit).
 
 ### Result
 
 The response returns an ordered array (from newest to oldest) of transaction signatures, each containing:
 
-* signature (string): The transaction signature, base-58 encoded.
-* slot (u64): The slot containing the block with the transaction.
-* err (object|null): If the transaction failed, this field contains an error object; otherwise, it is null.
-* memo (string|null): Any memo associated with the transaction (if present).
-* blockTime (i64|null): The estimated Unix timestamp of the transaction’s processing time.
-  * null if unavailable.
-* confirmationStatus (string|null): The confirmation status of the transaction.
-  * Possible value: processed, confirmed, finalized.
+* `signature` (`string`): The transaction signature, base-58 encoded.
+* `slot` (`u64`): The slot containing the block with the transaction.
+* `err` (`object`|`null`): If the transaction failed, this field contains an error object; otherwise, it is null.
+* `memo` (`string`|`null`): Any memo associated with the transaction (if present).
+* `blockTime` (`i64`|`null`): The estimated Unix timestamp of the transaction’s processing time.
+  * `null` if unavailable.
+* `confirmationStatus` (`string`|`null`): The confirmation status of the transaction.
+  * Possible value: `processed`, `confirmed`, `finalized`.
 
 ### Request Example
 
@@ -123,12 +123,12 @@ Common getSignaturesForAddress error scenarios:
 
 ### Use Cases
 
-The Solana getSignaturesForAddress method is useful for:
+The Solana **getSignaturesForAddress** method is useful for:
 
-* dApp developers: Retrieving transaction history for user accounts.
-* Web3 analytics tools: Tracking transaction patterns and account activity.
-* Blockchain explorers: Displaying past transactions for a given account.
-* Validators and node operators: Monitoring transaction confirmations.
+* **dApp developers**: Retrieving transaction history for user accounts;
+* **Web3 analytics tools**: Tracking transaction patterns and account activity;
+* **Blockchain explorers**: Displaying past transactions for a given account;
+* **Validators and node operators**: Monitoring transaction confirmations.
 
 ### Code getSignaturesForAddress Example – Web3 Integration
 
@@ -184,6 +184,6 @@ fetchSignaturesForAddress();
 
 ### Integration with Web3
 
-By integrating Web3 getSignaturesForAddress into Solana’s Core API, developers can efficiently query transaction records linked to an address, retrieve block confirmations, and optimize request performance. This JSON-RPC method is a powerful tool for tracking transaction histories in decentralized applications and blockchain infrastructure.
+By integrating Web3 **getSignaturesForAddress** into Solana’s Core API, developers can efficiently query transaction records linked to an address, retrieve block confirmations, and optimize request performance. This JSON-RPC method is a powerful tool for tracking transaction histories in decentralized applications and blockchain infrastructure.
 
 \

@@ -7,17 +7,17 @@ description: >-
 # voteSubscribe – Solana
 
 {% hint style="success" %}
-&#x20;These votes are **pre-consensus**, meaning there is no guarantee they will enter the ledger. This method enables real-time monitoring of voting activity on the Solana network, making it useful for tracking validator behavior and network governance.
+These votes are **pre-consensus**, meaning there is no guarantee they will enter the ledger. This method enables real-time monitoring of voting activity on the Solana network, making it useful for tracking validator behavior and network governance.
 {% endhint %}
 
 #### Unstable Method
 
-This subscription is **unstable** and only available if the validator was started with the --rpc-pubsub-enable-vote-subscription flag. The format of this subscription may change in future Solana updates.
+This subscription is **unstable** and only available if the validator was started with the `--rpc-pubsub-enable-vote-subscription` flag. The format of this subscription may change in future Solana updates.
 
 #### Supported Networks
 
-* **Mainnet**
-* **Devnet**
+* Mainnet
+* Devnet
 
 #### Parameters
 
@@ -31,7 +31,7 @@ Returns an integer representing the subscription ID, which is required for unsub
 
 **Result Format**
 
-* **integer**: The subscription ID.
+* **`integer`**: The subscription ID.
 
 #### Request Example
 
@@ -96,11 +96,11 @@ Upon vote updates, clients receive notifications containing vote details.
 
 #### Notification Fields
 
-* **hash** (_string_): The vote hash.
-* **slots** (_array_): The slots covered by the vote, represented as an array of `u64` integers.
-* **timestamp** (_i64|null_): The timestamp of the vote. It may be `null` if unavailable.
-* **signature** (_string_): The signature of the transaction that contained this vote.
-* **votePubkey** (_string_): The public key of the vote account, encoded in base-58.
+* **`hash`** (_string_): The vote hash.
+* **`slots`** (_array_): The slots covered by the vote, represented as an array of `u64` integers.
+* **`timestamp`** (_i64|null_): The timestamp of the vote. It may be `null` if unavailable.
+* **`signature`** (_string_): The signature of the transaction that contained this vote.
+* **`votePubkey`** (_string_): The public key of the vote account, encoded in base-58.
 
 #### Error Handling
 

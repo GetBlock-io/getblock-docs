@@ -10,16 +10,16 @@ description: >-
 &#x20;This method is essential for managing WebSocket subscriptions efficiently, ensuring that applications do not receive unnecessary updates once they are no longer needed.
 {% endhint %}
 
-By using **slotsUpdatesUnsubscribe**, applications can prevent redundant data from being processed, reducing network traffic and improving performance. This is particularly useful in scenarios where real-time monitoring of blockchain slots is needed for analytics, transaction tracking, or validator operations.
+By using **slotsUpdatesUnsubscribe**, applications can prevent redundant data from being processed, reducing network traffic and improving performance. This is particularly useful in scenarios where **real-time monitoring of blockchain slots** is needed for analytics, transaction tracking, or validator operations.
 
 #### Supported Networks
 
-* **Mainnet**
-* **Devnet**
+* Mainnet
+* Devnet
 
 #### Parameters
 
-* **number (required)**: The subscription ID to cancel.
+* **`number` (required)**: The subscription ID to cancel.
 
 #### Result
 
@@ -27,7 +27,7 @@ Returns a boolean value indicating whether the unsubscription was successful.
 
 **Result Format**
 
-* **bool**: `true` if successfully unsubscribed, `false` otherwise.
+* **`bool`**: `true` if successfully unsubscribed, `false` otherwise.
 
 #### Request Example
 

@@ -14,8 +14,8 @@ This is particularly useful for applications that require **live updates** on th
 
 ### Supported Networks
 
-* **Mainnet**
-* **Devnet**
+* Mainnet
+* Devnet
 
 ### Parameters
 
@@ -29,7 +29,7 @@ Returns a **subscription ID**, which is required for **unsubscribing** from noti
 
 #### Result Format
 
-* **integer**: The **subscription ID** needed to **unsubscribe**.
+* **`integer`**: The **subscription ID** needed to **unsubscribe**.
 
 ### Request Example
 
@@ -70,7 +70,7 @@ A successful **request** returns a **subscription ID**.
 
 In this response:
 
-* **result**: **0** represents the assigned **subscription ID**.
+* **result**: **`0`** represents the assigned **subscription ID**.
 
 ### Notification Format
 
@@ -95,9 +95,9 @@ Upon slot updates, clients receive notifications containing slot details.
 
 #### Notification Fields
 
-* **parent**: The **parent slot**.
-* **root**: The **current root slot**.
-* **slot**: The **newly set slot value**.
+* **`parent`**: The **parent slot**.
+* **`root`**: The **current root slot**.
+* **`slot`**: The **newly set slot value**.
 
 ### Error Handling
 

@@ -22,12 +22,12 @@ This is crucial for dApps and Web3 applications that need real-time transaction 
 
 #### Required Parameter
 
-* string: Transaction signature (Base-58 encoded). This must be the first signature from the transaction.
+* **`string`**: Transaction signature (Base-58 encoded). This must be the first signature from the transaction.
 
 #### Optional Parameter
 
-* commitment (string): Defines the commitment level (finalized, confirmed, processed).
-* enableReceivedNotification (bool): If true, notifications will be sent when signatures are received.
+* **`commitment`** (`string`): Defines the commitment level (`finalized`, `confirmed`, `processed`).
+* **`enableReceivedNotification`** (`bool`): If `true`, notifications will be sent when signatures are received.
 
 ### Result
 
@@ -35,7 +35,7 @@ The response returns an integer value which serves as the subscription ID.
 
 #### Result Format
 
-* integer: The subscription ID required for unsubscribing.
+* `integer`: The subscription ID required for unsubscribing.
 
 ### Request Example
 
@@ -82,7 +82,7 @@ A successful request returns the subscription ID.
 
 In this response:
 
-* result: The subscription ID.
+* `result`: The subscription ID.
 
 ### Notification Format
 

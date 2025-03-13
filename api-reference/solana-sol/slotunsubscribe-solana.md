@@ -15,21 +15,21 @@ It is used to optimize resource consumption by **removing unnecessary data strea
 
 ### Supported Networks
 
-* **Mainnet**
-* **Devnet**
+* Mainnet
+* Devnet
 
 ### Parameters
 
-* **integer required**: The **subscription ID** to cancel.
+* **`integer`** (required): The **subscription ID** to cancel.
 
 ### Result
 
-Returns a **boolean value** indicating whether the **unsubscribe request** was successful.
+Returns a **`boolean` value** indicating whether the **unsubscribe request** was successful.
 
 #### Result Format
 
-* **true**: Successfully unsubscribed.
-* **false**: Unsubscription failed.
+* **`true`**: Successfully unsubscribed.
+* **`false`**: Unsubscription failed.
 
 ### Request Example
 
@@ -70,7 +70,7 @@ A successful **request** returns a **confirmation message**.
 
 In this response:
 
-* **result**: **true** confirms that the **subscription was successfully removed**.
+* **`result`**: **`true`** confirms that the **subscription was successfully removed**.
 
 ### Error Handling
 

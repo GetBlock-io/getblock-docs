@@ -12,12 +12,12 @@ This method is useful for efficiently managing WebSocket subscriptions and preve
 
 #### Supported Networks
 
-* **Mainnet**
-* **Devnet**
+* Mainnet
+* Devnet
 
 #### Parameters
 
-* **integer (required)**: The subscription ID to cancel. This ID is obtained from a previously established subscription and is necessary to identify which subscription should be removed.
+* **`integer` (required)**: The subscription ID to cancel. This ID is obtained from a previously established subscription and is necessary to identify which subscription should be removed.
 
 #### Result
 
@@ -25,7 +25,7 @@ Returns a boolean value indicating whether the unsubscription was successful.
 
 **Result Format**
 
-* **bool**: `true` if successfully unsubscribed, `false` otherwise.
+* **`bool`**: `true` if successfully unsubscribed, `false` otherwise.
 
 #### Request Example
 

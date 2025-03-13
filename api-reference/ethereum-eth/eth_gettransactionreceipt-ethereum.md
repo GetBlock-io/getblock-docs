@@ -211,8 +211,8 @@ print(json.dumps(response_data, indent=4))
 ```javascript
 const axios = require('axios');
 
-// Replace YOUR-API-KEY with your actual API key
-const url = 'https://go.getblock.io/YOUR-API-KEY/';
+// Replace <ACCESS_TOKEN> with your actual Access Token
+const url = 'https://go.getblock.io/<ACCESS_TOKEN>/';
 
 // Request payload
 const payload = {
@@ -242,6 +242,8 @@ axios
 {% endtab %}
 {% endtabs %}
 
-This Python script sends a request to the eth\_getTransactionReceipt method and prints the returned transaction receipt information. Make sure to replace \<ACCESS-TOKEN> with your actual API token. The eth\_getTransactionReceipt method can also be used in Web3 libraries for Ethereum, providing an interface to access transaction receipt data for various use cases, including auditing, debugging, and verifying contract behavior.
+This Python script sends a request to the **eth\_getTransactionReceipt** method and prints the returned transaction receipt information. Make sure to replace \<ACCESS-TOKEN> with your actual API token.&#x20;
 
-The Web3 eth\_getTransactionReceipt method is also available in Web3 libraries, enabling developers to easily access and interact with Ethereum transaction receipts. The Ethereum eth\_getTransactionReceipt method provides detailed insights into transaction execution, making it an essential tool for developers working with Ethereum's JSON RPC API and Core API Endpoints.
+The eth\_getTransactionReceipt method can also be used in Web3 libraries for Ethereum, providing an interface to access transaction receipt data for various use cases, including auditing, debugging, and verifying contract behavior.
+
+The Ethereum eth\_getTransactionReceipt method provides detailed insights into transaction execution, making it an essential tool for developers working with Ethereum's JSON RPC API and Core API Endpoints.

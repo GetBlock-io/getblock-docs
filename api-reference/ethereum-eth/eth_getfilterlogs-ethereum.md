@@ -113,7 +113,7 @@ response = requests.post(url, headers=headers, data=json.dumps(payload))
 if response.status_code == 200:
     print(response.json())
 else:
-    print(f"Ошибка: {response.status_code}", response.text)
+    print(f"Error: {response.status_code}", response.text)
 ```
 {% endtab %}
 

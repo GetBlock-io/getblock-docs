@@ -8,10 +8,10 @@ description: >-
 # getSlotLeader – Solana
 
 {% hint style="info" %}
-The getSlotLeader RPC Solana method returns the node identity Pubkey of the validator currently leading the network’s block production.
+The **getSlotLeader** RPC Solana method returns the node identity Pubkey of the validator currently leading the network’s block production.
 {% endhint %}
 
-Knowing the slot leader helps developers track block production, identify high-performing validators, and optimize network performance using Solana’s Core API.
+Knowing the slot leader helps developers **track block production**, **identify high-performing validators**, and **optimize network performance** using Solana’s Core API.
 
 This method supports an optional parameters object to customize the query with different commitment levels and minimum evaluation slots.
 
@@ -26,13 +26,13 @@ This method is available on the following API endpoints:
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string, optional): Defines the level of finality for the query.
-  * minContextSlot (number, optional): The minimum slot at which the request can be evaluated.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`, optional): Defines the level of finality for the query.
+  * **minContextSlot** (`number`, optional): The minimum slot at which the request can be evaluated.
 
 ### Result
 
-The response returns a string representing the node identity Pubkey of the current slot leader, encoded in base-58.
+The response returns a `string` representing the node identity Pubkey of **the current slot leader**, encoded in base-58.
 
 ### Request Example
 
@@ -96,9 +96,9 @@ Common getSlotLeader error scenarios:
 
 The Solana getSlotLeader method is useful for:
 
-* Validators and node operators: Identifying the current slot leader to monitor network leadership distribution.
-* Blockchain explorers: Displaying the current slot leader for real-time network analysis.
-* dApp developers: Tracking validator performance for strategic transaction planning.
+* **Validators and node operators**: Identifying the current slot leader to monitor network leadership distribution;
+* **Blockchain explorers**: Displaying the current slot leader for real-time network analysis;
+* **dApp developers**: Tracking validator performance for strategic transaction planning.
 
 ### Code getSlotLeader Example – Web3 Integration
 
@@ -138,6 +138,6 @@ fetchSlotLeader();
 
 ### Integration with Web3
 
-By integrating Web3 getSlotLeader into Solana’s Core API, developers can track block production leadership, analyze transaction distribution, and optimize request performance. This JSON-RPC method is essential for applications that rely on real-time validator information and network monitoring.
+By integrating Web3 **getSlotLeader** into Solana’s Core API, developers can track block production leadership, analyze transaction distribution, and optimize request performance. This JSON-RPC method is essential for applications that rely on real-time validator information and network monitoring.
 
 \

@@ -7,10 +7,10 @@ description: >-
 # getInflationRate – Solana
 
 {% hint style="success" %}
-The getInflationRate RPC Solana method provides real-time inflation data for the current epoch, including the total inflation percentage, the amount allocated to validators, and the portion allocated to the foundation.&#x20;
+The **getInflationRate** RPC Solana method provides real-time inflation data for the current epoch, including the total inflation percentage, the amount allocated to validators, and the portion allocated to the foundation.&#x20;
 {% endhint %}
 
-The getInflationRate method returns the current inflation rate parameters of the Solana network. It provides information on the expected annual inflation rate, staking rewards distribution, and total token supply adjustments, helping users and validators understand the network’s monetary policy.
+The getInflationRate method returns **the current inflation rate parameters** of the Solana network. It provides information on the expected annual inflation rate, staking rewards distribution, and total token supply adjustments, helping users and validators understand the network’s monetary policy.
 
 ### Supported Networks
 
@@ -51,7 +51,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 
 ### Response
 
-A successful getInflationRate example response returns the inflation rate breakdown for the current epoch.
+A successful getInflationRate example response returns the **inflation rate breakdown** for the current epoch.
 
 #### Example Response
 
@@ -67,6 +67,13 @@ A successful getInflationRate example response returns the inflation rate breakd
   "id": 1
 }
 ```
+
+#### In this response:
+
+* `epoch` (`u64`): The epoch number for which the inflation rates are being reported.
+* `foundation` (`f64`): The fraction of the total inflation allocated to the Solana Foundation. Typically expressed as a decimal (e.g., `0.001` = 0.1%).
+* `total` (`f64`): The overall inflation rate for the network, expressed as a decimal (e.g., `0.149` = 14.9%).
+* `validator` (`f64`): The fraction of the total inflation allocated to validators, also expressed as a decimal (e.g., `0.148` = 14.8%).
 
 ### Error Handling
 
@@ -91,12 +98,12 @@ Common getInflationRate error scenarios:
 
 ### Use Cases
 
-The Solana getInflationRate method is essential for:
+The Solana **getInflationRate** method is essential for:
 
-* Validators: Monitoring expected staking rewards from inflation.
-* Blockchain explorers: Displaying real-time inflation data for each epoch.
-* Web3 applications: Adjusting economic models based on inflation distribution.
-* Analytics platforms: Tracking inflation trends and network sustainability.
+* **Validators**: Monitoring expected staking rewards from inflation;
+* **Blockchain explorers**: Displaying real-time inflation data for each epoch;
+* **Web3 applications**: Adjusting economic models based on inflation distribution;
+* **Analytics platforms**: Tracking inflation trends and network sustainability.
 
 ### Code Example – Web3 getInflationRate Integration
 
@@ -141,6 +148,6 @@ fetchInflationRate();
 
 ### Integration with Web3
 
-Integrate the getInflationRate API with Solana’s Core API to retrieve real-time inflation rate data dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate tracking of staking rewards, inflation changes, and the impact of network economics on the Solana ecosystem.
+Integrate the **getInflationRate** API with Solana’s Core API to retrieve real-time inflation rate data dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate tracking of staking rewards, inflation changes, and the impact of network economics on the Solana ecosystem.
 
 \

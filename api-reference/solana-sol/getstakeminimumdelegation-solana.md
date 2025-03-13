@@ -7,12 +7,12 @@ description: >-
 # getStakeMinimumDelegation – Solana
 
 {% hint style="success" %}
-The getStakeMinimumDelegation RPC Solana method provides the minimum stake amount necessary to delegate stake to a validator.&#x20;
+The **getStakeMinimumDelegation** RPC Solana method provides the minimum stake amount necessary to delegate stake to a validator.&#x20;
 {% endhint %}
 
 This value is denominated in lamports, Solana's smallest currency unit. The method supports an optional parameters object to specify commitment levels for data accuracy.
 
-The Core API uses this method to help validators, dApps, and wallet applications manage stake operations effectively.
+The Core API uses this method to help **validators**, **dApps**, and **wallet applications** manage stake operations effectively.
 
 ### Supported Networks
 
@@ -25,16 +25,16 @@ This method is available on the following API endpoints:
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string, optional): Defines the level of finality for the request.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`, optional): Defines the level of finality for the request.
 
 ### Result
 
 The response returns an RpcResponse object containing:
 
-* context (object): Provides contextual information about the slot in which the value was retrieved.
-  * slot (u64): The slot number of the data.
-* value (u64): The stake minimum delegation amount in lamports.
+* **`context`** (`object`): Provides contextual information about the slot in which the value was retrieved.
+  * `slot` (`u64`): The slot number of the data.
+* **`value`** (`u64`): The stake minimum delegation amount in lamports.
 
 ### Request Example
 
@@ -103,11 +103,11 @@ Common getStakeMinimumDelegation error scenarios:
 
 ### Use Cases
 
-The Solana getStakeMinimumDelegation method is useful for:
+The Solana **getStakeMinimumDelegation** method is useful for:
 
-* Validators and node operators: Understanding the minimum stake required for delegation.
-* Wallet applications: Displaying the minimum stake requirement to users.
-* Web3 analytics tools: Analyzing staking activity and requirements.
+* **Validators and node operators**: Understanding the minimum stake required for delegation;
+* **Wallet applications**: Displaying the minimum stake requirement to users;
+* **Web3 analytics tools**: Analyzing staking activity and requirements.
 
 ### Code getStakeMinimumDelegation Example – Web3 Integration
 
@@ -148,6 +148,6 @@ fetchStakeMinimumDelegation();
 
 ### Integration with Web3
 
-By integrating Web3 getStakeMinimumDelegation into Solana’s Core API, developers can manage staking operations, query the blockchain for current transaction requirements, and provide stake-related information to users efficiently. This JSON-RPC method ensures accurate and up-to-date insights into stake requirements for validators and delegators.
+By integrating Web3 **getStakeMinimumDelegation** into Solana’s Core API, developers can manage staking operations, query the blockchain for current transaction requirements, and provide stake-related information to users efficiently. This JSON-RPC method ensures accurate and up-to-date insights into stake requirements for validators and delegators.
 
 \

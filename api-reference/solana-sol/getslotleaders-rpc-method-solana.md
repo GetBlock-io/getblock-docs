@@ -7,10 +7,10 @@ description: >-
 # getSlotLeaders – Solana
 
 {% hint style="success" %}
-The getSlotLeaders RPC Solana method provides an array of node identity public keys corresponding to the leaders for a given slot range.&#x20;
+The **getSlotLeaders** RPC Solana method provides an array of node identity public keys corresponding to the leaders for a given slot range.&#x20;
 {% endhint %}
 
-This information is crucial for understanding block production patterns and identifying potential network performance issues.
+This information is crucial for **understanding** **block production patterns** and **identifying potential network performance issues**.
 
 This method requires specifying a start slot and a limit to define the range. The limit can be set between 1 and 5,000, offering flexibility in tracking block leadership across various time intervals.
 
@@ -25,8 +25,8 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* u64 (optional): The start slot from which to retrieve the slot leaders.
-* u64 (optional): The limit specifying how many slot leaders to return.
+* **`u64`** (optional): The start slot from which to retrieve the slot leaders.
+* **`u64`** (optional): The limit specifying how many slot leaders to return.
   * Must be between 1 and 5,000.
 
 ### Result
@@ -110,10 +110,10 @@ Common getSlotLeaders error scenarios:
 
 The Solana getSlotLeaders method is useful for:
 
-* dApp developers: Analyzing slot leader distribution for optimizing transaction performance.
-* Web3 analytics tools: Tracking validator performance over time.
-* Blockchain explorers: Displaying current and historical slot leaders.
-* Validators and node operators: Monitoring block production patterns.
+* **dApp developers**: Analyzing slot leader distribution for optimizing transaction performance;
+* **Web3 analytics tools**: Tracking validator performance over time;
+* **Blockchain explorers**: Displaying current and historical slot leaders;
+* **Validators and node operators**: Monitoring block production patterns.
 
 ### Code getSlotLeaders Example – Web3 Integration
 
@@ -161,6 +161,6 @@ fetchSlotLeaders();
 
 ### Integration with Web3
 
-By integrating Web3 getSlotLeaders into Solana’s Core API, developers can track block production trends, monitor transaction performance, and analyze slot leadership across specified ranges. This JSON-RPC method plays a crucial role in maintaining network visibility and performance optimization.
+By integrating Web3 **getSlotLeaders** into Solana’s Core API, developers can track block production trends, monitor transaction performance, and analyze slot leadership across specified ranges. This JSON-RPC method plays a crucial role in maintaining network visibility and performance optimization.
 
 \

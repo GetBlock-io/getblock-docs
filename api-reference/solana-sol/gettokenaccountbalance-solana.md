@@ -7,10 +7,10 @@ description: >-
 # getTokenAccountBalance – Solana
 
 {% hint style="info" %}
-The getTokenAccountBalance RPC Solana method provides the balance of an SPL Token account using a given Pubkey.
+The **getTokenAccountBalance** RPC Solana method provides the balance of an SPL Token account using a given Pubkey.
 {% endhint %}
 
-The response includes the raw balance, the number of decimal places, and formatted balances. This method is particularly useful in dApps, wallets, and financial applications using the Solana Core API.
+The response includes the raw balance, the number of decimal places, and formatted balances. This method is particularly useful in **dApps**, **wallets**, and **financial applications** using the Solana Core API.
 
 ### Supported Networks
 
@@ -23,24 +23,24 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* string (required): The Pubkey of the Token account to query, provided as a base-58 encoded string.
+* **`string`** (required): The Pubkey of the Token account to query, provided as a base-58 encoded string.
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string, optional): Defines the level of finality for the request.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`, optional): Defines the level of finality for the request.
 
 ### Result
 
 The response returns an RpcResponse object containing:
 
-* context (object): Contextual information about the slot.
-  * slot (u64): The slot number when the balance was retrieved.
-* value (object):
-  * amount (string): The raw balance without decimals (string representation of u64).
-  * decimals (u8): The number of base 10 digits to the right of the decimal point.
-  * uiAmount (number|null): The balance with decimals applied. (Deprecated)
-  * uiAmountString (string): The balance formatted as a string with decimals applied.
+* **`context`** (`object`): Contextual information about the slot.
+  * `slot` (`u64`): The slot number when the balance was retrieved.
+* **`value`** (`object`):
+  * `amount` (`string`): The raw balance without decimals (string representation of u64).
+  * `decimals` (`u8`): The number of base 10 digits to the right of the decimal point.
+  * `uiAmount` (`number`|`null`): The balance with decimals applied. (Deprecated)
+  * `uiAmountString` (`string`): The balance formatted as a string with decimals applied.
 
 ### Request Example
 
@@ -123,10 +123,10 @@ Common getTokenAccountBalance error scenarios:
 
 The Solana getTokenAccountBalance method is useful for:
 
-* Wallet applications: Displaying users' token balances.
-* Web3 analytics tools: Monitoring token balances across accounts.
-* DeFi applications: Calculating token holdings for smart contracts.
-* Blockchain explorers: Displaying account balances.
+* **Wallet applications**: Displaying users' token balances;
+* **Web3 analytics tools**: Monitoring token balances across accounts;
+* **DeFi applications**: Calculating token holdings for smart contracts;
+* **Blockchain explorers**: Displaying account balances.
 
 ### Code getTokenAccountBalance Example – Web3 Integration
 
@@ -175,6 +175,6 @@ fetchTokenAccountBalance();
 
 ### Integration with Web3
 
-By integrating Web3 getTokenAccountBalance into Solana’s Core API, developers can easily query token balances, track account activity, and analyze transaction flows. This JSON-RPC method is essential for applications requiring accurate and up-to-date token balance information.
+By integrating Web3 **getTokenAccountBalance** into Solana’s Core API, developers can easily query token balances, track account activity, and analyze transaction flows. This JSON-RPC method is essential for applications requiring accurate and up-to-date token balance information.
 
 \

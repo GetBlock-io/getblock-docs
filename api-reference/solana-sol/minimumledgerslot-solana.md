@@ -7,7 +7,7 @@ description: >-
 # minimumLedgerSlot – Solana
 
 {% hint style="success" %}
-The minimumLedgerSlot RPC Solana method is used in Web3 minimumLedgerSlot applications to determine the starting point of available ledger data.&#x20;
+The **minimumLedgerSlot** RPC Solana method is used in Web3 minimumLedgerSlot applications to determine the starting point of available ledger data.&#x20;
 {% endhint %}
 
 This is essential for tasks that require historical transaction data.
@@ -31,7 +31,7 @@ The response returns a u64 integer indicating the minimum ledger slot that the S
 
 #### Result Format
 
-* u64: The lowest slot number in the ledger.
+* `u64`: The lowest slot number in the ledger.
 
 ### Request Example
 
@@ -73,14 +73,14 @@ A successful request returns the minimum ledger slot.
 
 In this response:
 
-* result: The minimum ledger slot is 1234.
+* `result`: The minimum ledger slot is 1234.
 
 ### Error Handling
 
 Common minimumLedgerSlot error scenarios:
 
-* Network issues: Connectivity problems with the Solana JSON-RPC API endpoints.
-* Invalid request format: Incorrect JSON structure.
+* **Network issues:** Connectivity problems with the Solana JSON-RPC API endpoints.
+* **Invalid request format**: Incorrect JSON structure.
 
 #### Example Error Response
 
@@ -99,9 +99,9 @@ Common minimumLedgerSlot error scenarios:
 
 The Solana minimumLedgerSlot method is useful for:
 
-* Historical data retrieval: Determining the earliest available slot.
-* Blockchain synchronization: Aligning data queries with available ledger history.
-* Analytics tools: Calculating ledger size and data retention periods.
+* **Historical data retrieval**: Determining the earliest available slot;
+* **Blockchain synchronization**: Aligning data queries with available ledger history;
+* **Analytics tools**: Calculating ledger size and data retention periods.
 
 ### Code minimumLedgerSlot Example – Web3 Integration
 
@@ -140,4 +140,4 @@ fetchMinimumLedgerSlot();
 
 ### Integration with Web3
 
-By integrating Web3 minimumLedgerSlot into Solana’s Core API, developers can accurately track ledger history, analyze block availability, and ensure compatibility with blockchain applications that depend on historical data.
+By integrating Web3 **minimumLedgerSlot** into Solana’s Core API, developers can accurately track ledger history, analyze block availability, and ensure compatibility with blockchain applications that depend on historical data.

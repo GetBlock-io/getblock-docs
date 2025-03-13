@@ -7,10 +7,10 @@ description: >-
 # getProgramAccounts – Solana
 
 {% hint style="success" %}
-The getProgramAccounts RPC Solana method allows developers to query multiple accounts belonging to a specific program Pubkey.
+The **getProgramAccounts** RPC Solana method allows developers to query multiple accounts belonging to a specific program Pubkey.
 {% endhint %}
 
-The getProgramAccounts method retrieves all accounts associated with a specific program on the Solana blockchain. It allows developers to efficiently query and filter on-chain data, making it essential for interacting with smart contracts, indexing program-related accounts, and analyzing decentralized application (dApp) states.
+The getProgramAccounts method retrieves **all accounts associated with a specific program** on the Solana blockchain. It allows developers to efficiently query and filter on-chain data, making it essential for interacting with smart contracts, indexing program-related accounts, and analyzing decentralized application (dApp) states.
 
 ### Supported Networks
 
@@ -23,36 +23,36 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* string (required): The Pubkey of the program, provided as a base-58 encoded string.
+* **`string`** (required): The Pubkey of the program, provided as a base-58 encoded string.
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string, optional): Defines the level of finality for the query.
-  * minContextSlot (number, optional): The minimum slot at which the request can be evaluated.
-  * withContext (bool, optional): Wraps the result in an RpcResponse JSON object.
-  * encoding (string, optional): Specifies the encoding format for the returned account data.
-    * Default: json
-    * Supported values: jsonParsed, base58, base64, base64+zstd.
-  * dataSlice (object, optional): Specifies a portion of account data to return.
-    * length (usize): Number of bytes to return.
-    * offset (usize): Byte offset from which to start reading.
-  * filters (array, optional): Allows filtering results using up to 4 filter objects. The resultant accounts must meet all filter criteria.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`, optional): Defines the level of finality for the query.
+  * **minContextSlot** (`number`, optional): The minimum slot at which the request can be evaluated.
+  * **withContext** (`bool`, optional): Wraps the result in an RpcResponse JSON object.
+  * **encoding** (`string`, optional): Specifies the encoding format for the returned account data.
+    * Default: `json`
+    * Supported values: `jsonParsed`, `base58`, `base64`, `base64+zstd`.
+  * **dataSlice** (`object`, optional): Specifies a portion of account data to return.
+    * `length` (`usize`): Number of bytes to return.
+    * `offset` (`usize`): Byte offset from which to start reading.
+  * **filters** (`array`, optional): Allows filtering results using up to 4 filter objects. The resultant accounts must meet all filter criteria.
 
 ### Result
 
-By default, the response contains an array of JSON objects. If the withContext flag is set, the array is wrapped in an RpcResponse JSON object.
+By default, the response contains an array of JSON objects. If the `withContext` flag is set, the array is wrapped in an `RpcResponse` JSON object.
 
 Each result object contains:
 
-* pubkey (string): The account Pubkey, base-58 encoded.
-* account (object):
-  * lamports (u64): Number of lamports assigned to this account.
-  * owner (string): Base-58 encoded Pubkey of the program that owns this account.
-  * data (\[string, encoding]|object): Account data, either as encoded binary data or JSON format.
-  * executable (bool): Indicates if the account contains a program.
-  * rentEpoch (u64): The epoch at which this account will next owe rent.
-  * space (u64): The data size of the account.
+* `pubkey` (`string`): The account Pubkey, base-58 encoded.
+* `account` (`object`):
+  * `lamports` (`u64`): Number of lamports assigned to this account.
+  * `owner` (`string`): Base-58 encoded Pubkey of the program that owns this account.
+  * `data` (`[string, encoding]|object`): Account data, either as encoded binary data or JSON format.
+  * `executable` (`bool`): Indicates if the account contains a program.
+  * `rentEpoch` (`u64`): The epoch at which this account will next owe rent.
+  * `space` (`u64`): The data size of the account.
 
 ### Request Example
 
@@ -96,7 +96,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 
 ### Response
 
-A successful request returns an array of accounts owned by the specified program Pubkey.
+A successful request returns an array of **accounts owned by the specified program Pubkey**.
 
 #### Example Response
 
@@ -143,11 +143,11 @@ Common getProgramAccounts error scenarios:
 
 ### Use Cases
 
-The Solana getProgramAccounts method is useful for:
+The Solana **getProgramAccounts** method is useful for:
 
-* dApp developers: Fetching all accounts managed by a specific program.
-* Blockchain explorers: Displaying program-related account data efficiently.
-* Validators and node operators: Monitoring program accounts in real time.
+* **dApp developers**: Fetching all accounts managed by a specific program;
+* **Blockchain explorers**: Displaying program-related account data efficiently;
+* **Validators and node operators**: Monitoring program accounts in real time.
 
 ### Code getProgramAccounts Example – Web3 Integration
 
@@ -215,6 +215,6 @@ fetchProgramAccounts();
 
 ### Integration with Web3
 
-By integrating Web3 getProgramAccounts into Solana’s Core API, developers can efficiently track program-owned accounts, retrieve transaction and block details, and optimize decentralized applications. The JSON-RPC request structure allows streamlined account queries, making it an essential tool for Solana-based services.
+By integrating Web3 **getProgramAccounts** into Solana’s Core API, developers can efficiently track program-owned accounts, retrieve transaction and block details, and optimize decentralized applications. The JSON-RPC request structure allows streamlined account queries, making it an essential tool for Solana-based services.
 
 \

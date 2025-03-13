@@ -7,7 +7,7 @@ description: >-
 # getTokenSupply – Solana
 
 {% hint style="success" %}
-The getTokenSupply RPC Solana method returns the total supply of an SPL Token for a given token Mint address.&#x20;
+The **getTokenSupply** RPC Solana method returns the total supply of an SPL Token for a given token Mint address.&#x20;
 {% endhint %}
 
 The response includes both the raw token supply and the formatted supply using mint-prescribed decimals. This method helps developers monitor token metrics via Solana’s Core API.
@@ -23,24 +23,24 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* string (required): The Pubkey of the token Mint to query, provided as a base-58 encoded string.
+* **`string`** (required): The Pubkey of the token Mint to query, provided as a base-58 encoded string.
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string): Defines the level of finality for the request.
+* **`object`** (optional): A configuration object containing:
+  * **commitment** (`string`): Defines the level of finality for the request.
 
 ### Result
 
 The response returns an RpcResponse object containing:
 
-* context (object): Provides contextual information about the slot.
-  * slot (u64): The slot number when the token supply was retrieved.
-* value (object):
-  * amount (string): The raw total supply (without decimals) as a string.
-  * decimals (u8): The number of decimal places for the token.
-  * uiAmount (number|null): The formatted token supply with decimals applied (Deprecated).
-  * uiAmountString (string): The formatted token supply as a string.
+* **`context`** (`object`): Provides contextual information about the slot.
+  * `slot` (`u64`): The slot number when the token supply was retrieved.
+* **`value`** (`object`):
+  * `amount` (`string`): The raw total supply (without decimals) as a string.
+  * `decimals` (`u8`): The number of decimal places for the token.
+  * `uiAmount` (`number`|`null`): The formatted token supply with decimals applied (Deprecated).
+  * `uiAmountString` (`string`): The formatted token supply as a string.
 
 ### Request Example
 
@@ -95,9 +95,9 @@ A successful request returns the total token supply.
 
 In this response:
 
-* amount: The raw supply as a string.
-* decimals: The number of decimal places.
-* uiAmountString: The formatted supply as a string.
+* `amount`: The raw supply as a string.
+* `decimals`: The number of decimal places.
+* `uiAmountString`: The formatted supply as a string.
 
 ### Error Handling
 
@@ -122,12 +122,12 @@ Common getTokenSupply error scenarios:
 
 ### Use Cases
 
-The Solana getTokenSupply method is useful for:
+The Solana **getTokenSupply** method is useful for:
 
-* Token analytics: Tracking token supply changes.
-* DeFi applications: Monitoring liquidity pool supply.
-* Web3 analytics tools: Displaying token metrics to users.
-* Wallet applications: Providing token supply information for users.
+* **Token analytics**: Tracking token supply changes;
+* **DeFi applications**: Monitoring liquidity pool supply;
+* **Web3 analytics tools**: Displaying token metrics to users;
+* **Wallet applications**: Providing token supply information for users.
 
 ### Code getTokenSupply Example – Web3 Integration
 
@@ -175,6 +175,6 @@ fetchTokenSupply();
 
 ### Integration with Web3
 
-By integrating Web3 getTokenSupply into Solana’s Core API, developers can efficiently track token supply, analyze token metrics, and provide real-time token data for Web3 applications. This JSON-RPC method is crucial for applications that require accurate supply information for tokens on the Solana network.
+By integrating Web3 **getTokenSupply** into Solana’s Core API, developers can efficiently track token supply, analyze token metrics, and provide real-time token data for Web3 applications. This JSON-RPC method is crucial for applications that require accurate supply information for tokens on the Solana network.
 
 \

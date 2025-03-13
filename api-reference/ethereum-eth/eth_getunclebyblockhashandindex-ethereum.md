@@ -166,8 +166,8 @@ print(json.dumps(response_data, indent=4))
 ```javascript
 const axios = require('axios');
 
-// Replace YOUR-API-KEY with your actual API key
-const url = 'https://go.getblock.io/YOUR-API-KEY/';
+// Replace <ACCESS_TOKEN> with your actual Access Token
+const url = 'https://go.getblock.io/<ACCESS_TOKEN>/';
 
 // Request payload
 const payload = {
@@ -196,6 +196,8 @@ axios
 {% endtab %}
 {% endtabs %}
 
-This Python script sends a request to the eth\_getUncleByBlockHashAndIndex method and prints the returned uncle block information. Make sure to replace \<ACCESS-TOKEN> with your actual API token. The eth\_getUncleByBlockHashAndIndex method can also be used in Web3 libraries for Ethereum, providing an interface to access uncle block data for various use cases, including network analysis and blockchain research.
+This Python script sends a request to the **eth\_getUncleByBlockHashAndIndex** method and prints the returned uncle block information. Make sure to replace \<ACCESS-TOKEN> with your actual API token.&#x20;
 
-The Web3 eth\_getUncleByBlockHashAndIndex method is also available in Web3 libraries, allowing developers to interact with uncle block data programmatically. The Ethereum eth\_getUncleByBlockHashAndIndex method is an important tool for understanding the structure of uncle blocks, making it a valuable feature of the Ethereum JSON RPC API and Core API Endpoints.
+The eth\_getUncleByBlockHashAndIndex method can also be used in Web3 libraries for Ethereum, providing an interface to access uncle block data for various use cases, including network analysis and blockchain research.
+
+The Ethereum eth\_getUncleByBlockHashAndIndex method is an important tool for understanding the structure of uncle blocks, making it a valuable feature of the Ethereum JSON RPC API and Core API Endpoints.

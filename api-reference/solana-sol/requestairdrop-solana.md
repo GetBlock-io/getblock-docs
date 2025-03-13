@@ -7,7 +7,7 @@ description: >-
 # requestAirdrop – Solana
 
 {% hint style="success" %}
-The requestAirdrop RPC Solana method facilitates funding test accounts with lamports.&#x20;
+The **requestAirdrop** RPC Solana method facilitates funding test accounts with lamports.&#x20;
 {% endhint %}
 
 This is essential for developers building and testing applications on Solana Devnet without requiring real funds. The airdrop is sent as a transaction to the provided account.
@@ -23,13 +23,13 @@ This method is available on the following API endpoints:
 
 #### Required Parameters
 
-* string (required): The Pubkey of the account to receive the airdrop. This should be a base-58 encoded string.
-* integer (required): The number of lamports to airdrop, provided as a u64 integer.
+* **`string`** (required): The Pubkey of the account to receive the airdrop. This should be a base-58 encoded string.
+* **`integer`** (required): The number of lamports to airdrop, provided as a u64 integer.
 
 #### Optional Parameters
 
-* object (optional): A configuration object containing:
-  * commitment (string): Defines the level of finality for the request.
+* **`object`** (optional): A configuration object containing:
+  * `commitment` (`string`): Defines the level of finality for the request.
 
 ### Result
 
@@ -37,7 +37,7 @@ The response returns a transaction signature of the airdrop.
 
 #### Result Format
 
-* string: The transaction signature as a base-58 encoded string.
+* `string`: The transaction signature as a base-58 encoded string.
 
 ### Request Example
 
@@ -83,7 +83,7 @@ A successful request returns the transaction signature of the airdrop.
 
 In this response:
 
-* result: The transaction signature confirming the airdrop.
+* `result`: The transaction signature confirming the airdrop.
 
 ### Error Handling
 
@@ -110,9 +110,9 @@ Common requestAirdrop error scenarios:
 
 The Solana requestAirdrop method is useful for:
 
-* Development environments: Funding test accounts on Devnet.
-* Blockchain education: Demonstrating transactions without using real funds.
-* Web3 applications: Simulating transaction activity.
+* **Development environments**: Funding test accounts on Devnet.
+* **Blockchain education**: Demonstrating transactions without using real funds.
+* **Web3 applications**: Simulating transaction activity.
 
 ### Code requestAirdrop Example – Web3 Integration
 
@@ -155,4 +155,4 @@ requestAirdrop();
 
 ### Integration with Web3
 
-By integrating Web3 requestAirdrop into Solana’s Core API, developers can fund test accounts, simulate transactions, and build reliable dApps without relying on real funds. This JSON-RPC method is essential for blockchain development on Solana Devnet.
+By integrating Web3 **requestAirdrop** into Solana’s Core API, developers can fund test accounts, simulate transactions, and build reliable dApps without relying on real funds. This JSON-RPC method is essential for blockchain development on Solana Devnet.
