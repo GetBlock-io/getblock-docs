@@ -98,7 +98,7 @@ Here’s a Python example using the eth\_blockNumber method to get the current c
 import requests
 import json
 
-url = "https://go.getblock.io/c8de489a140b4b80a0ed13f264cc4f65/"
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
@@ -127,7 +127,7 @@ else:
 const axios = require('axios');
 
 // Define the API URL and headers
-const url = "https://go.getblock.io/c8de489a140b4b80a0ed13f264cc4f65/";
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const headers = { "Content-Type": "application/json" };
 
 // Prepare the request payload
