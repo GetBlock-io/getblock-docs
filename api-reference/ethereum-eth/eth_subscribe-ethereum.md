@@ -44,7 +44,7 @@ To interact with the Ethereum eth\_subscribe endpoint using WebSocket, use the f
 {% tabs %}
 {% tab title="ws" %}
 ```json
-wscat -c wss://eth.getblock.io/YOUR-API-KEY/ 
+wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/ 
 # wait for connection and send the request body 
 {"jsonrpc": "2.0",
 "method": "eth_subscribe",

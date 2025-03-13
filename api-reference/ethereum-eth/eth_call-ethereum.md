@@ -79,7 +79,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 {% tab title="wss" %}
 ```json
-wscat -c wss://eth.getblock.io/YOUR-API-KEY/ 
+wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
 {"jsonrpc": "2.0",
 "method": "eth_call",
 "params": [{"to": "0x69498dd54bd25aa0c886cf1f8b8ae0856d55ff13", "value": "0x1"}, "latest"],
