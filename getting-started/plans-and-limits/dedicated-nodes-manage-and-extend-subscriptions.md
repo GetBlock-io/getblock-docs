@@ -7,9 +7,9 @@ description: Track and extend your dedicated node subscriptions on GetBlock.
 This page explains how to manage your **dedicated node subscriptions**, including checking their status and extending the service duration—all from your user account.
 
 {% hint style="success" %}
-### Important update on Dedicated Node pricing
+### Update on Dedicated Node pricing
 
-GetBlock is introducing an advanced Dedicated Node service with updated pricing. Here’s what this means for you:
+GetBlock is introducing an advanced Dedicated Node service with updated pricing:
 
 * **Existing users** can extend their subscriptions at the old pricing until **May 1, 2025**.
 * **New users** can purchase new subscriptions at the current pricing until the service upgrade begins on **March 25, 2025**.
