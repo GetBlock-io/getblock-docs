@@ -12,7 +12,7 @@ Users can pay for subscriptions using traditional fiat currency via **Paddle**.
 
 * **Recurring payments enabled by default**: Payment is automatically deducted on the billing date.
 * **Fees**: VAT is applied to Paddle payments and varies depending on your region
-* **If the card balance is insufficient**: GetBlock will retry the payment after three days. If the retry fails, requests will be frozen until the payment is resolved.
+* **If the card balance is insufficient**: GetBlock will retry the payment after three days. If the retry fails, the plan will be frozen until the payment is resolved.
 
 <figure><img src="../../.gitbook/assets/Docs_fiat_payment.svg" alt="How to pay with fiat on GetBlock"><figcaption><p>Selecting fiat as a payment method</p></figcaption></figure>
 
@@ -24,7 +24,7 @@ Please, account for VAT when planning your payments.
 
 To update your payment information while you have an active subscription:
 
-1. Go to Account Settings → Manage Subscriptions.
+1. Go to **Pricing** → **Manage Plans**.
 2. Click ‘Edit Payment Method’.
 3. Enter your updated payment details and save the changes.
 
