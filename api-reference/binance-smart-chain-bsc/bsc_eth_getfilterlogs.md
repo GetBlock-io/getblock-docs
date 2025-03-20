@@ -15,9 +15,8 @@ Filter ID.
 #### Request
 
 ```java
-curl --location --request POST 'https://bsc.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getFilterLogs",
 "params": ["0x5ace5de3985749b6a1b2b0d3f3e1fb69"],
