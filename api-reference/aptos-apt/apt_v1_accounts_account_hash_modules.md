@@ -24,9 +24,8 @@ Optional cursor specifying pagination start. You can call this endpoint once wit
 #### Request
 
 ```java
-curl --location --request GET 'https://apt.getblock.io/v1/accounts/0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255/modules?limit=10' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/v1/accounts/0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255/modules?limit=10' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

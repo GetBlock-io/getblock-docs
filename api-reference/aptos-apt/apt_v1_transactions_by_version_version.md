@@ -14,9 +14,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://apt.getblock.io/v1/transactions/by_version/147811396?' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/v1/transactions/by_version/147811396' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

@@ -15,9 +15,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://apt.getblock.io/v1/transactions/by_hash/0x0137b99014705df2077763263f170ebef40fc88006d09da3b9139a32d761b554?' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/v1/transactions/by_hash/0x0137b99014705df2077763263f170ebef40fc88006d09da3b9139a32d761b554' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

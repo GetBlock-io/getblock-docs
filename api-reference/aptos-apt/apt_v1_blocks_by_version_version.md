@@ -16,9 +16,8 @@ Includes transactions in the block if true. Defaults to false.
 #### Request
 
 ```java
-curl --location --request GET 'https://apt.getblock.io/v1/blocks/by_version/147811395?with_transactions=true' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/v1/blocks/by_version/147811395?with_transactions=true' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

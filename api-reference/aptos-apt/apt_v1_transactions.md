@@ -19,9 +19,8 @@ Optional starting sequence number of events. Defaults to the latest transactions
 #### Request
 
 ```java
-curl --location --request GET 'https://apt.getblock.io/v1/transactions?limit=3' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/v1/transactions?limit=3' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response
