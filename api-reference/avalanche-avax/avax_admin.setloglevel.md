@@ -16,13 +16,14 @@ level is the log level to be set.
 #### Request
 
 ```java
-curl --location --request POST 'https://avax.getblock.io/mainnet/ext/bc/C/rpc' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "admin.setLogLevel",
-"params": ["info"],
-"id": "getblock.io"}'
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/avax/mainnet/ext/bc/C/rpc' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "jsonrpc": "2.0",
+  "method": "admin.setLogLevel",
+  "params": ["info"],
+  "id": "getblock.io"
+}'
 ```
 
 #### Response

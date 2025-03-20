@@ -19,13 +19,17 @@ If true it returns the full transaction objects, if false only the hashes of the
 #### Request
 
 ```java
-curl --location --request POST 'https://avax.getblock.io/mainnet/ext/bc/C/rpc' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_getBlockByHash",
-"params": ["0x3e56c97d34f03b1369c351fa6c9f57c8bfa987c7da40964fab981303e0ef5849", false],
-"id": "getblock.io"}'
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/mainnet/ext/bc/C/rpc' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "jsonrpc": "2.0",
+  "method": "eth_getBlockByHash",
+  "params": [
+    "0x3e56c97d34f03b1369c351fa6c9f57c8bfa987c7da40964fab981303e0ef5849",
+    false
+  ],
+  "id": "getblock.io"
+}'
 ```
 
 #### Response

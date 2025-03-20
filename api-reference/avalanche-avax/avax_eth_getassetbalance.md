@@ -24,13 +24,18 @@ id of the asset for which the balance is requested
 #### Request
 
 ```java
-curl --location --request POST 'https://avax.getblock.io/mainnet/ext/bc/C/rpc' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_getAssetBalance",
-"params": ["0x8723e5773847A4Eb5FeEDabD9320802c5c812F46", "latest", "3RvKBAmQnfYionFXMfW5P8TDZgZiogKbHjM8cjpu16LKAgF5T"],
-"id": "getblock.io"}'
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/mainnet/ext/bc/C/rpc' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "jsonrpc": "2.0",
+  "method": "eth_getAssetBalance",
+  "params": [
+    "0x8723e5773847A4Eb5FeEDabD9320802c5c812F46",
+    "latest",
+    "3RvKBAmQnfYionFXMfW5P8TDZgZiogKbHjM8cjpu16LKAgF5T"
+  ],
+  "id": "getblock.io"
+}'
 ```
 
 #### Response

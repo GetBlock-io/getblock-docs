@@ -16,13 +16,14 @@ Hash of a transaction.
 #### Request
 
 ```java
-curl --location --request POST 'https://avax.getblock.io/mainnet/ext/bc/C/rpc' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_getTransactionByHash",
-"params": ["0x3dee39f608a0da41254143baf1d709ff1fae84150b57b3e037d206946826161e"],
-"id": "getblock.io"}'
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/ext/bc/C/rpc' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "jsonrpc": "2.0",
+  "method": "eth_getTransactionByHash",
+  "params": ["0x3dee39f608a0da41254143baf1d709ff1fae84150b57b3e037d206946826161e"],
+  "id": "getblock.io"
+}'
 ```
 
 #### Response
