@@ -16,13 +16,9 @@ Hash of a transaction.
 #### Request
 
 ```java
-curl --location --request POST 'https://arbitrum.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_getTransactionByHash",
-"params": ["0xfd11ef35c7179439723e026cb7857ea5a2e48a19257bec00b0ed26672f632181"],
-"id": "getblock.io"}'
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/mainnet/' \
+--header 'Content-Type: application/json' \
+--data-raw '{"jsonrpc": "2.0", "method": "eth_getTransactionByHash", "params": ["0xfd11ef35c7179439723e026cb7857ea5a2e48a19257bec00b0ed26672f632181"], "id": "getblock.io"}'
 ```
 
 #### Response

@@ -13,13 +13,10 @@ description: >-
 #### Request
 
 ```java
-curl --location --request POST 'https://arbitrum.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_accounts",
-"params": [],
-"id": "getblock.io"}'
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/mainnet/' \
+--header 'Content-Type: application/json' \
+--data-raw '{"jsonrpc": "2.0", "method": "eth_accounts", "params": [], "id": "getblock.io"}'
+
 ```
 
 #### Response
