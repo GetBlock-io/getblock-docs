@@ -1,2 +1,0 @@
-# Huobi ECO Chain (HECO)
-
