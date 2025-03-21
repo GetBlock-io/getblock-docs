@@ -19,8 +19,7 @@ true for a json object, false for the hex-encoded data
 #### Request
 
 ```java
-curl --location --request POST 'https://btc.getblock.io/mainnet/' \
---header 'x-api-key: YOUR-API-KEY' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "getblockheader",
