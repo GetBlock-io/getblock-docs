@@ -27,9 +27,8 @@ This boolean should reflect whether the transaction has inputs (e.g. fully valid
 #### Request
 
 ```java
-curl --location --request POST 'https://bch.getblock.io/mainnet/' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "decoderawtransaction",
 "params": ["hexstring", null],

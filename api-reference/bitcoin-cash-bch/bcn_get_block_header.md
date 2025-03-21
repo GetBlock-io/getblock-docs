@@ -23,9 +23,8 @@ Height or depth of a block to get. -1 get the last block.
 #### Request
 
 ```java
-curl --location --request POST 'https://bcn.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "get_block_header",
 "params": {"height_or_depth": -1},
