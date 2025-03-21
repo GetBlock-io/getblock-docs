@@ -12,15 +12,13 @@ description: >-
 
 #### Request
 
-```java
-curl --location --request POST 'https://bsc.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+<pre class="language-java"><code class="lang-java"><strong>curl --location --request POST 'https://go.getblock.io/&#x3C;ACCESS-TOKEN>/v1/mainnet/' \
+</strong>--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "txpool_status",
 "params": [],
 "id": "getblock.io"}'
-```
+</code></pre>
 
 #### Response
 
