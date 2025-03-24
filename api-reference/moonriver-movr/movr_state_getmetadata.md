@@ -15,9 +15,8 @@ block hash
 #### Request
 
 ```java
-curl --location --request POST 'https://movr.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "state_getMetadata",
 "params": ["0x7e8691febbd7deeebcc48e4cdff335ce7c73c825b45661400fd9fea2fadee9b9"],
