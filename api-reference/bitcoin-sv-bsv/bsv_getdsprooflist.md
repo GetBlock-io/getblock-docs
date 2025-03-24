@@ -20,9 +20,8 @@ If true, then also include double-spend proofs that we know about but which are 
 #### Request
 
 ```java
-curl --location --request POST 'https://bsv.getblock.io/mainnet/' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "getdsprooflist",
 "params": [null, null],

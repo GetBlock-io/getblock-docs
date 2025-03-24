@@ -15,9 +15,8 @@ the hash of the block to mark as precious
 #### Request
 
 ```java
-curl --location --request POST 'https://bsv.getblock.io/mainnet/' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "preciousblock",
 "params": ["000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428"],

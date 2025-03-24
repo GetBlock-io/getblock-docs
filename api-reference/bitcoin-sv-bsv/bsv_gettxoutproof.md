@@ -19,9 +19,8 @@ If specified, looks for txid in the block with this hash
 #### Request
 
 ```java
-curl --location --request POST 'https://bsv.getblock.io/mainnet/' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "gettxoutproof",
 "params": [["ee652f0b40209bd02468de0c6336854f5efdd79fb865560aef2c46f4fa0b4a07", "cee11bc3bb3d9db8c4813ed2072a14369a15fcfb9e6bc5cb37a0b5bcc6aa59aa"], null],

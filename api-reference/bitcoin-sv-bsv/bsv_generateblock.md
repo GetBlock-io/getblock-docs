@@ -24,8 +24,7 @@ All transactions must be valid and in valid order, otherwise the block will be r
 #### Request
 
 ```java
-curl --location --request POST 'https://bsv.getblock.io/mainnet/' \
---header 'x-api-key: YOUR-API-KEY' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "generateblock",

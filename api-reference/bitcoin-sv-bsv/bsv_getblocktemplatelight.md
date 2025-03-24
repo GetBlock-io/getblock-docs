@@ -20,9 +20,8 @@ Hex encoded transactions to add to the block (each tx must be unique and valid)
 #### Request
 
 ```java
-curl --location --request POST 'https://bsv.getblock.io/mainnet/' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "getblocktemplatelight",
 "params": [null, null],

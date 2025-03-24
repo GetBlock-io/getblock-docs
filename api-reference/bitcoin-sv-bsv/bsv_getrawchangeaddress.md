@@ -16,9 +16,8 @@ The address type to use. Options are “legacy”, “p2sh-segwit”, and “bec
 #### Request
 
 ```java
-curl --location --request POST 'https://bsv.getblock.io/mainnet/' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "getrawchangeaddress",
 "params": [null],
