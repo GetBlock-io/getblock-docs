@@ -16,9 +16,8 @@ Optional, list of transactions IDs to flush from pool (all tx ids flushed if emp
 #### Request
 
 ```java
-curl --location --request POST 'https://xmr.getblock.io/mainnet/json_rpc' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "flush_txpool",
 "params": {"txids": "dc16fa8eaffe1484ca9014ea050e13131d3acf23b419f33bb4cc0b32b6c49308"},

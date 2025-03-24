@@ -13,8 +13,7 @@ description: >-
 #### Request
 
 ```java
-curl --location --request POST 'https://xmr.getblock.io/mainnet/json_rpc' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "get_block_count",

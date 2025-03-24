@@ -19,9 +19,8 @@ block number or "latest", "earliest" or "pending"
 #### Request
 
 ```java
-curl --location --request POST 'https://glmr.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getBalance",
 "params": ["0xbec4e80531dad6a9989828d174cc2878b1e3123d", "latest"],

@@ -25,9 +25,8 @@ amounts to look for
 #### Request
 
 ```java
-curl --location --request POST 'https://xmr.getblock.io/mainnet/json_rpc' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "get_output_distribution",
 "params": {"amounts": 628780000, "from_height": 1462078},

@@ -19,9 +19,8 @@ Reserve size.
 #### Request
 
 ```java
-curl --location --request POST 'https://xmr.getblock.io/mainnet/json_rpc' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "get_block_template",
 "params": {"wallet_address": "44GBHzv6ZyQdJkjqZje6KLZ3xSyN1hBSFAnLP6EAqJtCRVzMzZmeXTC2AHKDS9aEDTRKmo6a6o9r9j86pYfhCWDkKjbtcns", "reserve_size": 60},

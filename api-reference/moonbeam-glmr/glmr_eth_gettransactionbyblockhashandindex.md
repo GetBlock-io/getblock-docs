@@ -20,9 +20,8 @@ Transaction index position.
 #### Request
 
 ```java
-curl --location --request POST 'https://glmr.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getTransactionByBlockHashAndIndex",
 "params": ["0xd630e02dd2ee043d4ca55399582db9a5313a2cb6a1c66c949ea470a9fe5673e3", "0x0"],

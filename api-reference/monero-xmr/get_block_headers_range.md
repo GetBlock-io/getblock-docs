@@ -20,9 +20,8 @@ The ending block's height.
 #### Request
 
 ```java
-curl --location --request POST 'https://xmr.getblock.io/mainnet/json_rpc' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "get_block_headers_range",
 "params": {"start_height": 1545999, "end_height": 1546000},

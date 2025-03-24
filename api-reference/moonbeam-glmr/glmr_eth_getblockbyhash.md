@@ -19,9 +19,8 @@ If true it returns the full transaction objects, if false only the hashes of the
 #### Request
 
 ```java
-curl --location --request POST 'https://glmr.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getBlockByHash",
 "params": ["0xe21d18d5b511b13c66b4d162111b5d41646782378ee35eb208b62be36942a859", false],
