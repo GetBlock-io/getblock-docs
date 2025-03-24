@@ -16,9 +16,8 @@ Decimal index of the starting block to fix. If left empty, the head block is use
 #### Request
 
 ```java
-curl --location --request POST 'https://etc.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "admin_logsRepairCache",
 "params": [null],

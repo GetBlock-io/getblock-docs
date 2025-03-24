@@ -20,9 +20,8 @@ list of tracing options; tracing options are trace, vmTrace, and stateDiff. Spec
 #### Request
 
 ```java
-curl --location --request POST 'https://etc.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "trace_replayBlockTransactions",
 "params": ["latest", ["trace", "vmTrace", "vmTrace"]],
