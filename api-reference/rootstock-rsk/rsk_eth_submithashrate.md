@@ -20,7 +20,7 @@ Random hexadecimal ID identifying the client.
 #### Request
 
 ```java
-wscat -c wss://rsk.getblock.io/YOUR-API-KEY/mainnet/ 
+wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/ 
 # wait for connection and send the request body 
 {"jsonrpc": "2.0",
 "method": "eth_submitHashrate",

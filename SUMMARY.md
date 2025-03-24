@@ -2452,7 +2452,6 @@
   * [web3\_clientVersion - Polygon](api-reference/polygon-matic/matic_web3_clientversion.md)
   * [web3\_sha3 - Polygon](api-reference/polygon-matic/matic_web3_sha3.md)
 * [Rootstock (RSK)](api-reference/rootstock-rsk/README.md)
-  * [db\_getHex {disallowed} - Rootstock](api-reference/rootstock-rsk/rsk_db_gethex.md)
   * [db\_getString {disallowed} - Rootstock](api-reference/rootstock-rsk/rsk_db_getstring.md)
   * [db\_putHex {disallowed} - Rootstock](api-reference/rootstock-rsk/rsk_db_puthex.md)
   * [db\_putString {disallowed} - Rootstock](api-reference/rootstock-rsk/rsk_db_putstring.md)
