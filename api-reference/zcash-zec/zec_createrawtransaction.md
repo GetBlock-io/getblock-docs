@@ -37,9 +37,8 @@ Expiry height of transaction (if Overwinter is active).
 #### Request
 
 ```java
-curl --location --request POST 'https://zec.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "createrawtransaction",
 "params": [[{"txid": "5db76e43724d980e05b5b98c9a83ba2d7fa565b3aa22bc3c5728ea56d0ed7cee", "vout": 123, "secuence": 123456789}], [{"t1L2rjgGrvEqfrA5zqUca4GGxAeQg47CTpG": 1234}], null, null],

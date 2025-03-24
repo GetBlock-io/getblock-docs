@@ -15,9 +15,8 @@ The block hash
 #### Request
 
 ```java
-curl --location --request POST 'https://theta.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "theta.GetBlock",
 "params": {"hash": "0x571e11a52a269f2f3f6eae033a8889c66f77a9855fb52bc5a89d05b13f8fd77c"},

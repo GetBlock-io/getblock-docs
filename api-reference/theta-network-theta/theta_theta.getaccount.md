@@ -15,9 +15,8 @@ the address of the account.
 #### Request
 
 ```java
-curl --location --request POST 'https://theta.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "theta.GetAccount",
 "params": {"address": "0x4b80a68a8469d33449eb101082e5500b932a23ce"},

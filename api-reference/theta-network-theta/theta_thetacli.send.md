@@ -43,9 +43,8 @@ If async is set to false, the RPC call will wait until the transaction has been 
 #### Request
 
 ```java
-curl --location --request POST 'https://theta.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "thetacli.Send",
 "params": {"chain_id": "privatenet", "from": "0x2E833968E5bB786Ae419c4d13189fB081Cc43bab", "to": "0xA47B89c94a50C32CEACE9cF64340C4Dce6E5EcC6", "thetawei": "99000000000000000000", "tfuelwei": "88000000000000000000", "fee": "1000000000000", "sequence": "6", "async": true},

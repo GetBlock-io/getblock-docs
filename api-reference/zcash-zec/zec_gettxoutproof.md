@@ -21,9 +21,8 @@ If specified, looks for txid in the block with this hash.
 #### Request
 
 ```java
-curl --location --request POST 'https://zec.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "gettxoutproof",
 "params": [["5db76e43724d980e01b5b98c9a83ba2d7fa565b3aa22bb3c5728ea56d0ed7cee", "62e278ff6a763a7adfbeb53689fab7bad235fa49eee746ddfbbc7453e8f6fc2e", "57682c60f21522665473f5c230636cf2fbe4c173a66e4216bb16e3753ba50711"], null],
