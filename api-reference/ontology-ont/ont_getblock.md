@@ -19,9 +19,8 @@ block hash or height.
 #### Request
 
 ```java
-curl --location --request POST 'https://ont.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "getblock",
 "params": ["b4553dd4a5b3255aa78d20b2f2f0ec9d3a52d6ef2c99bfa23fd1f67001d9dd8b", 1],

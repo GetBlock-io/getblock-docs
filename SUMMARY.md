@@ -2100,7 +2100,6 @@
   * [tx - NEAR Protocol](api-reference/near-protocol-near/near_tx.md)
   * [validators - NEAR Protocol](api-reference/near-protocol-near/near_validators.md)
 * [NEM (XEM)](api-reference/nem-xem/README.md)
-  * [/account/generate {disallowed} - NEM](api-reference/nem-xem/xem_account_generatedisallowed_.md)
   * [/account/get - NEM](api-reference/nem-xem/xem_account_get.md)
   * [/account/get/forwarded - NEM](api-reference/nem-xem/xem_account_get_forwarded.md)
   * [/account/get/forwarded/from-public-key - NEM](api-reference/nem-xem/xem_account_get_forwarded_from-public-key.md)

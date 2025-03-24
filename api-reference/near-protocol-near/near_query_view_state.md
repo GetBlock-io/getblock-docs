@@ -35,9 +35,8 @@ prefix
 #### Request
 
 ```java
-curl --location --request POST 'https://near.getblock.io/mainnet' \ 
---header 'x-api-key: YOUR-API-KEY' \ 
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "query",
 "params": {"request_type": "view_state", "finality": "final", "account_id": "staked.poolv1.near""prefix_base64": ""},

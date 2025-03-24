@@ -19,9 +19,8 @@ contract address
 #### Request
 
 ```java
-curl --location --request POST 'https://ont.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "getcontractstate",
 "params": ["b0ea7e9e379c64efb5976f8d12d63398d9de10d5", 1],

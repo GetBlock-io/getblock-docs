@@ -21,9 +21,8 @@ The storage key is a hexadecimal string.
 #### Request
 
 ```java
-curl --location --request POST 'https://ont.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "getstorage",
 "params": ["03febccf81ac85e3d795bc5cbd4e84e907812aa3", "5065746572"],
