@@ -39,9 +39,8 @@ If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "setban",
 "params": [null, null, null, null],

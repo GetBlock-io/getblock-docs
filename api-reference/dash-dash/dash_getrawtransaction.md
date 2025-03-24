@@ -31,9 +31,8 @@ The hash of the block in which to look for the transaction.
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "getrawtransaction",
 "params": ["83dc6c8e03026c0317885f62a7072dfde10014967f59477a0f7b5fc52f44a784", false, null],

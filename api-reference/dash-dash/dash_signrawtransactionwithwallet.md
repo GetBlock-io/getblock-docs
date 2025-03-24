@@ -28,9 +28,8 @@ You must use separate calls to the signrawtransactionwithwallet RPC if you want 
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "signrawtransactionwithwallet",
 "params": [null, [{"name": "Output", "type": "object", "description": ["Optional.", "An output being spent."], "value": [{"name": "txid", "type": "string (hex)", "description": ["The TXID of the transaction the output appeared in. The TXID must be encoded in hex in RPC byte order."], "value": null}, {"name": "vout", "type": "number (int)", "description": ["The index number of the output (vout) as it appeared in its transaction, with the first output being 0."], "value": null}, {"name": "scriptPubKey", "type": "string (hex)", "description": ["The output's pubkey script encoded as hex."], "value": null}, {"name": "redeemScript", "type": "string (hex)", "description": ["Optional.", "If the pubkey script was a script hash, this must be the corresponding redeem script."], "value": null}, {"name": "amount", "type": "numeric", "description": ["The amount of Dash spent"], "value": null}]}], null],

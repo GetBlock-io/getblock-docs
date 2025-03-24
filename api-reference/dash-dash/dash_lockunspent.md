@@ -26,9 +26,8 @@ An array of outputs to lock or unlock.
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "lockunspent",
 "params": [null, [{"name": "Output", "type": "object", "description": ["An object describing a particular output."], "value": [{"name": "txid", "type": "string", "description": ["The TXID of the transaction containing the output to lock or unlock, encoded as hex in internal byte order."], "value": null}, {"name": "vout", "type": "number (int)", "description": ["The output index number (vout) of the output to lock or unlock. The first output in a transaction has an index of 0."], "value": null}]}]],

@@ -21,9 +21,8 @@ Set to true to get json objects describing each transaction in the memory pool; 
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "getmempooldescendants",
 "params": ["dc63e7f6929658feade06fec1eeaf43b", false],

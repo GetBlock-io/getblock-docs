@@ -70,9 +70,8 @@ If true (default), the resulting transaction is sent to the network.
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "protx",
 "params": ["register_prepare", null, null, null, null, null, null, null, null, null, null],

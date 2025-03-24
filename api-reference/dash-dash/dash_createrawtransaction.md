@@ -27,9 +27,8 @@ Indicates the earliest time a transaction can be added to the block chain.
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "createrawtransaction",
 "params": [[{"txid": "061ec99eb641ffdeaa05a1a724a255103bebc445b15c6c8c028b19c08608496b", "vout": 1}], [{"ySutkc49Khpz1HQN8AfWNitVBLwqtyaxvv": 800}, {"yY6AmGopsZS31wy1JLHR9P6AC6owFaXwuh": 74.99}], 0],

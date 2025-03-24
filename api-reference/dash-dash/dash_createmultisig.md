@@ -20,9 +20,8 @@ An array of strings with each string being a public key.
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "createmultisig",
 "params": [null, [{"name": "key", "type": "string", "description": ["A public key against which signatures will be checked. There must be at least as many keys as specified by the Required parameter, and there may be more keys."], "value": null}]],

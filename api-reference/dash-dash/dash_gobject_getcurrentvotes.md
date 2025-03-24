@@ -20,9 +20,8 @@ The hash of a governance object.
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "gobject",
 "params": ["getcurrentvotes", "1f8ae9f6e435a22ce74139997bad70384a84452f95c5054a2c76602609ddc700"],

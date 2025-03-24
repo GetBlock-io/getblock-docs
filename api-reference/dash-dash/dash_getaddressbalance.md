@@ -16,9 +16,8 @@ An array of P2PKH or P2SH Dash address(es).
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "getaddressbalance",
 "params": [[{"name": "address", "type": "string (base58)", "description": ["The base58check encoded address."], "value": null}]],

@@ -58,9 +58,8 @@ The fee estimate mode, must be one of: UNSET, ECONOMICAL, CONSERVATIVE. Default:
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "sendtoaddress",
 "params": [null, null, null, [{"name": "Address", "type": "string (base58)", "description": ["Optional.", "An address previously listed as one of the recipients."], "value": null}], null, null, null, null],

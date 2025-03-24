@@ -42,9 +42,8 @@ JSON with query options. Available options: - minimumAmount: Minimum value of ea
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "None",
 "params": [null, null, [{"name": "address", "type": "string (base58)", "description": ["A P2PKH or P2SH address"], "value": null}], null, null],

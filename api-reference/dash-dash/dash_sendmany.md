@@ -75,9 +75,8 @@ The fee estimate mode, must be one of: UNSET, ECONOMICAL, CONSERVATIVE. Default:
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "sendmany",
 "params": [null, [{"name": "Address/Amount", "type": "string (base58) : number (dash)", "description": ["A key/value pair with a base58check-encoded string containing the P2PKH or P2SH address to pay as the key, and an amount of dash to pay as the value."], "value": null}], null, null, null, [{"name": "Address", "type": "string (base58)", "description": ["Optional.", "An address previously listed as one of the recipients."], "value": null}], null, null, null, null],
