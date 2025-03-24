@@ -16,9 +16,8 @@ How many addresses to return. Limited to the smaller of 2500 or 23% of all known
 #### Request
 
 ```java
-curl --location --request POST 'https://dgb.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "getnodeaddresses",
 "params": [null],

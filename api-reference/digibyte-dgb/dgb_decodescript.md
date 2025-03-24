@@ -15,9 +15,8 @@ the hex-encoded script
 #### Request
 
 ```java
-curl --location --request POST 'https://dgb.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "decodescript",
 "params": ["76a9146f5cf1be10f3ad794eca67821fb280305b2900a188ac"],

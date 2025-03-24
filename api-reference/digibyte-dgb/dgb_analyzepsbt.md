@@ -15,9 +15,8 @@ A base64 string of a PSBT
 #### Request
 
 ```java
-curl --location --request POST 'https://dgb.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "analyzepsbt",
 "params": ["psbt"],

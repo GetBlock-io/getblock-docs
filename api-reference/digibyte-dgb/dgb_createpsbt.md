@@ -27,9 +27,8 @@ Marks this transaction as BIP125 replaceable.
 #### Request
 
 ```java
-curl --location --request POST 'https://dgb.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "createpsbt",
 "params": [[{"txid": "myid", "vout": 0}], [{"data": "00010203"}], null, null],

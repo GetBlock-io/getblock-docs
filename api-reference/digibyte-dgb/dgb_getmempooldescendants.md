@@ -19,9 +19,8 @@ True for a json object, false for array of transaction ids
 #### Request
 
 ```java
-curl --location --request POST 'https://dgb.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "getmempooldescendants",
 "params": ["b63e5ee86d5407718083f2642bd6ca8d6425de315e3cbbc7e478c99f9b295056", false],
