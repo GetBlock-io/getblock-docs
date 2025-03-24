@@ -16,9 +16,8 @@ Hash of a transaction.
 #### Request
 
 ```java
-curl --location --request POST 'https://fuse.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getTransactionByHash",
 "params": ["0x2a0a813a6e9be82009ff572656cf8bc04fad290405aa70fd18fd101b303911fd"],

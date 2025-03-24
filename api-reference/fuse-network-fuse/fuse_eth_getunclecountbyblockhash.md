@@ -16,9 +16,8 @@ hash of the block.
 #### Request
 
 ```java
-curl --location --request POST 'https://fuse.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getUncleCountByBlockHash",
 "params": ["0x360c79467da57c8db35624484cabbca4d9fc7a7813f194f5391639d2e2c39023"],
