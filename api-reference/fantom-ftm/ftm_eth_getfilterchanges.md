@@ -15,9 +15,8 @@ Filter ID.
 #### Request
 
 ```java
-curl --location --request POST 'https://ftm.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getFilterChanges",
 "params": ["0x7c3173bd21b6fd2ad8be24c9aa40e8d9"],

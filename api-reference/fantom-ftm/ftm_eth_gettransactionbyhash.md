@@ -16,9 +16,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request POST 'https://ftm.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getTransactionByHash",
 "params": ["0xd3a7420982975e8b161e7a049c582ee20900762f6c005dcccfd55d33a94d9b5f"],

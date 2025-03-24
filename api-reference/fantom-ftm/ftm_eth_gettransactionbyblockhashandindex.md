@@ -20,9 +20,8 @@ Integer representing the transaction index position.
 #### Request
 
 ```java
-curl --location --request POST 'https://ftm.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getTransactionByBlockHashAndIndex",
 "params": ["0x00033bca0000046700d44a27301783f44016362a31ee066aa2a3ff82350783a9", "0x2"],

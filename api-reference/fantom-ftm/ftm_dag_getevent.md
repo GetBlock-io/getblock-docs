@@ -15,9 +15,8 @@ Hexadecimal event ID.
 #### Request
 
 ```java
-curl --location --request POST 'https://ftm.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "dag_getEvent",
 "params": ["0x00033bbf00000719167a3b2c445bd3e53e9c35d16cf52ac24852317b9605d07e"],
