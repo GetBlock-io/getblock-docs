@@ -23,9 +23,8 @@ Whether to include the mempool. Note that an unspent output that is spent in the
 #### Request
 
 ```java
-curl --location --request POST 'https://btg.getblock.io/mainnet' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "gettxout",
 "params": ["451f2875c30e80c3c0bbdef1089425d9547ae85eb1300b43a343f1075b98312a", 1, null],
