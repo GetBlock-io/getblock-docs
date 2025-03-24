@@ -26,9 +26,8 @@ A label to assign the addresses to.
 #### Request
 
 ```java
-curl --location --request POST 'https://dash.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "addmultisigaddress",
 "params": [null, [{"name": "Key Or Address", "type": "string", "description": ["A public key against which signatures will be checked. Alternatively, this may be a P2PKH address belonging to the wallet---the corresponding public key will be substituted. There must be at least as many keys as specified by the Required parameter, and there may be more keys."], "value": null}], null],
