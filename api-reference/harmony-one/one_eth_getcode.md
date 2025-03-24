@@ -19,9 +19,8 @@ Integer representing a block number or one of the string tags latest, earliest, 
 #### Request
 
 ```java
-curl --location --request POST 'https://one.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getCode",
 "params": ["0x3df33217f0f82c99ff3ff448512f22cef39cc208", "latest"],

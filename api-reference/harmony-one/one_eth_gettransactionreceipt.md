@@ -16,9 +16,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request POST 'https://one.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getTransactionReceipt",
 "params": ["0x48a4124c61f3e81f8a3fe7b885a6705e8096343ece3bac530dc88a864c9c0439"],

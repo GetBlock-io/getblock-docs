@@ -19,9 +19,8 @@ Optional args struct in json format (can be used just with { }). Has "fullTx" to
 #### Request
 
 ```java
-curl --location --request POST 'https://one.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "hmyv2_getBlockByNumber",
 "params": ["0x8252EC", {"fullTx": true, "inclTx": true, "withSigners": true}],

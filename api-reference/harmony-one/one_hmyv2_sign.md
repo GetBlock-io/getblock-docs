@@ -20,9 +20,8 @@ N Bytes - message to sign
 #### Request
 
 ```java
-curl --location --request POST 'https://one.getblock.io/mainnet/' 
---header 'x-api-key: YOUR-API-KEY' 
---header 'Content-Type: application/json' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "hmyv2_sign",
 "params": ["0x227f6757289a86c13eee2e91c2e6eb03f2ed11a6", "0xbcda"],
