@@ -19,7 +19,7 @@ message to sign.
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/YOUR-ACCESS-TOKEN/mainnet/' \
+curl --location --request POST 'https://go.getblock.io/YOUR-ACCESS-TOKEN' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "eth_sign", "params": ["0x9b956e3d318625be2686ae7268d81777c462d41f", "0xdeadbeaf"], "id": "getblock.io"}'
 ```

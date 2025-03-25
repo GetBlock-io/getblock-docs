@@ -14,7 +14,7 @@ description: >-
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/arbitrum/mainnet/' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "jsonrpc": "2.0",

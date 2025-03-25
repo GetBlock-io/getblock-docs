@@ -10,12 +10,27 @@ description: >-
 
 `data` - hex string
 
-A subscription ID previously generated with eth\_subscribe method.
+A subscription ID previously generated with `eth_subscribe` method.
 
 #### Request
 
+
+
+{% tabs %}
+{% tab title="ws" %}
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/arbitrum/mainnet/' \
+wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/ -x '{ 
+  "jsonrpc": "2.0", 
+  "id": "getblock.io", 
+  "method": "eth_unsubscribe", 
+  "params": ["<SUBSCRIPTION_ID>"] 
+}'
+```
+{% endtab %}
+
+{% tab title="curl" %}
+```java
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "jsonrpc": "2.0",
@@ -24,16 +39,15 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/arbitru
   "id": "getblock.io"
 }'
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Response
 
 ```java
 {
-    "error": {
-        "code": -32000,
-        "message": "subscription not found"
-    },
-    "id": "getblock.io",
-    "jsonrpc": "2.0"
+    "jsonrpc":"2.0",
+    "id":"getblock.io",
+    "result":true
 }
 ```

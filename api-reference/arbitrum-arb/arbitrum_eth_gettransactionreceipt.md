@@ -15,11 +15,10 @@ Hash of a transaction.
 
 #### Request
 
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/mainnet/' \
---header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0", "method": "eth_getTransactionReceipt", "params": ["0x21be7a93a4531a76b1e15d14059582e6b6f9e36cbdc7a85c23667808f4c78b2c"], "id": "getblock.io"}'
-```
+<pre class="language-java"><code class="lang-java">curl --location --request POST 'https://go.getblock.io/&#x3C;ACCESS-TOKEN>' \
+<strong>--header 'Content-Type: application/json' \
+</strong>--data-raw '{"jsonrpc": "2.0", "method": "eth_getTransactionReceipt", "params": ["0x21be7a93a4531a76b1e15d14059582e6b6f9e36cbdc7a85c23667808f4c78b2c"], "id": "getblock.io"}'
+</code></pre>
 
 #### Response
 

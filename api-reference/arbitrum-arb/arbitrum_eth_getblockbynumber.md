@@ -19,7 +19,7 @@ If true it returns the full transaction objects, if false only the hashes of the
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/mainnet/' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "eth_getBlockByNumber", "params": ["latest", false], "id": "getblock.io"}'
 ```

@@ -15,16 +15,15 @@ the address of the new identiy.
 
 #### Request
 
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/arbitrum/mainnet/' \
---header 'Content-Type: application/json' \
---data-raw '{
+<pre class="language-java"><code class="lang-java">curl --location --request POST 'https://go.getblock.io/&#x3C;ACCESS-TOKEN>' \
+<strong>--header 'Content-Type: application/json' \
+</strong>--data-raw '{
   "jsonrpc": "2.0",
   "method": "shh_hasIdentity",
   "params": [null],
   "id": "getblock.io"
 }'
-```
+</code></pre>
 
 #### Response
 

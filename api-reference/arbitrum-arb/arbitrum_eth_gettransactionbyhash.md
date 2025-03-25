@@ -16,7 +16,7 @@ Hash of a transaction.
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/mainnet/' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "eth_getTransactionByHash", "params": ["0xfd11ef35c7179439723e026cb7857ea5a2e48a19257bec00b0ed26672f632181"], "id": "getblock.io"}'
 ```
