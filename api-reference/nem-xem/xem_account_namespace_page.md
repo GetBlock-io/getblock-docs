@@ -27,9 +27,8 @@ The (optional) number of namespaces to be returned.
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/account/namespace/page?address=NC4T246ALCPNBTAOCSC5EAVFMDFBOACSQAF6WKHV&pageSize=5'
- --header 'x-api-key:YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/account/namespace/page?address=NC4T246ALCPNBTAOCSC5EAVFMDFBOACSQAF6WKHV&pageSize=5' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

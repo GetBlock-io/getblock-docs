@@ -18,9 +18,13 @@ example: { "value": "68e4f79f886927de698df4f857de2aada41ccca6617e56bb0d61623b35b
 #### Request
 
 ```java
-curl --location --request POST 'https://xem.getblock.io/local/account/transfers/incoming' 
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request POST 'https://go.getblock.io/YOUR-ACCESS-TOKEN/local/account/transfers/incoming' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "account": "YOUR_ACCOUNT_ADDRESS",
+    "pageSize": 10,
+    "id": "optional-request-id"
+}'
 ```
 
 #### Response

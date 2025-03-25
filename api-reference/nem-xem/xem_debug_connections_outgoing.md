@@ -14,9 +14,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/debug/connections/outgoing' 
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/YOUR-ACCESS-TOKEN/debug/connections/outgoing' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

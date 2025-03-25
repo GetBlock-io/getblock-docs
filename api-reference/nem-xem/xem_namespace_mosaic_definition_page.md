@@ -24,9 +24,8 @@ The number of mosaic definition objects to be returned for each request. The par
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/namespace/mosaic/definition/page?namespace=cactus&pagesize=5}'
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/YOUR-ACCESS-TOKEN/namespace/mosaic/definition/page?namespace=cactus&pageSize=5' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

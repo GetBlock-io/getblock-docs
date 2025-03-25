@@ -14,9 +14,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/node/active-peers/max-chain-height' 
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/YOUR-ACCESS-TOKEN/node/active-peers/max-chain-height' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

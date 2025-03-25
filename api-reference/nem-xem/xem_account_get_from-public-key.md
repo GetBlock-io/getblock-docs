@@ -16,9 +16,8 @@ The public key of the account as hex string.
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/account/get/from-public-key?publicKey=107051c28a2c009a83ae0861cdbff7c1cbab387c964cc433f7d191d9c3115ed7'
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/account/get/from-public-key?publicKey=107051c28a2c009a83ae0861cdbff7c1cbab387c964cc433f7d191d9c3115ed7' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

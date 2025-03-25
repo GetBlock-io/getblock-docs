@@ -15,9 +15,8 @@ The namespace id.
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/namespace?namespace=cactus'  
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/YOUR-ACCESS-TOKEN/namespace?namespace=cactus' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

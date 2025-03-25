@@ -14,9 +14,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request POST 'https://xem.getblock.io/account/unlocked/info' 
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/account/unlocked/info' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

@@ -16,10 +16,12 @@ A RequestPrepareAnnounce JSON object. A RequestPrepareAnnounce object is used to
 #### Request
 
 ```java
-curl --location --request POST 'https://xem.getblock.io/transaction/prepare-announce'
- --header 'x-api-key: YOUR-API-KEY'
- --header 'Content-Type: application/json'
- --data-raw '{requestPrepareAnnounce':{'transaction': None, 'timeStamp': 9111526, 'amount': 1000000000, 'fee': 50000, 'recipient': 'TDGIMREMR5NSRFUOMPI5OOHLDATCABNPC5ID2SVA', 'type': 257, 'deadline': 9154726, 'message': {'payload': '74657374207472616e73616374696f6e', 'type': 1}, 'version': -1744830463, 'signer': 'a1aaca6c17a24252e674d155713cdf55996ad00175be4af02a20c67b59f9fe8a', 'privateKey': '68e4f79f886927de698df4f857de2aada41ccca6617e56bb0d61623b35b08cc0'}'
+curl --location --request POST 'https://go.getblock.io/YOUR-ACCESS-TOKEN/transaction/announce' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "data": "010100000100000000000000200000002b76078fa709bbe6752222b215abc7ec0152ffe831fb4f9aed3e7749a425900a00093d0000000000000000002800000054444e46555946584f5353334e4e4c4f35465a5348535a49354c33374b4e5149454850554d584c54c0d45407000000000b00000001000000030000000c3215",
+  "signature": "db2473513c7f0ce9f8de6345f0fbe773dc687eb571123d08eab4d98f96849eaeb63fa8756fb6c59d9b9d0e551537c1cdad4a564747ff9291db4a88b65c97c10d"
+}'
 ```
 
 #### Response

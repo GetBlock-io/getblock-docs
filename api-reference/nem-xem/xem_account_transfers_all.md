@@ -25,9 +25,8 @@ The transaction id up to which transactions are returned. The parameter is optio
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/account/transfers/all?address=NCXIQA4FF5JB6AMQ53NQ3ZMRD3X3PJEWDJJJIGHT&id=10919973'
- --header 'x-api-key:YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/account/transfers/all?address=NCXIQA4FF5JB6AMQ53NQ3ZMRD3X3PJEWDJJJIGHT&id=10919973' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

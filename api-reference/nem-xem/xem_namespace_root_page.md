@@ -19,9 +19,8 @@ The number of namespace objects to be returned for each request. The parameter i
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io//namespace/root/page?id=26754&pagesize=5'
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/YOUR-ACCESS-TOKEN/namespace/root/page?id=26754&pageSize=5' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

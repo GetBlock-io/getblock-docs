@@ -14,9 +14,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/debug/time-synchronization' 
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/YOUR-ACCESS-TOKEN/debug/time-synchronization' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

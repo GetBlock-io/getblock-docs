@@ -15,9 +15,8 @@ The address of the account.
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/account/get?address=NC4T246ALCPNBTAOCSC5EAVFMDFBOACSQAF6WKHV'
- --header 'x-api-key: YOUR-API-KEY'
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/account/get?address=NC4T246ALCPNBTAOCSC5EAVFMDFBOACSQAF6WKHV' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

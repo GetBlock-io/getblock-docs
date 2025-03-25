@@ -15,9 +15,8 @@ A BootNodeRequest JSON object. The BootNodeRequest JSNON object is used to trans
 #### Request
 
 ```java
-curl --location --request POST 'https://xem.getblock.io/node/boot' 
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request POST 'https://go.getblock.io/YOUR-ACCESS-TOKEN/node/boot' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

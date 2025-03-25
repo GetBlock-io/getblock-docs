@@ -13,9 +13,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/chain/score' 
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/chain/score' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response

@@ -16,9 +16,8 @@ The address of the account.
 #### Request
 
 ```java
-curl --location --request GET 'https://xem.getblock.io/account/unconfirmedTransactions?address=NCXIQA4FF5JB6AMQ53NQ3ZMRD3X3PJEWDJJJIGHT'
- --header 'x-api-key: YOUR-API-KEY' 
- --header 'Content-Type: application/json'
+curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/account/unconfirmedTransactions?address=NCXIQA4FF5JB6AMQ53NQ3ZMRD3X3PJEWDJJJIGHT' \
+--header 'Content-Type: application/json'
 ```
 
 #### Response
