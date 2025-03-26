@@ -20,8 +20,8 @@ request options (all optional and default to false)
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "debug_traceBlockByNumber",
 "params": ["0xA1", {"tracer": "callTracer"}],

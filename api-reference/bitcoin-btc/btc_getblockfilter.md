@@ -19,8 +19,8 @@ The block hash
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "getblockfilter",
 "params": ["00000000000000000007b64dcabbbe56375885a17e619b1c2f7a9a0f77e7ba9b", null],

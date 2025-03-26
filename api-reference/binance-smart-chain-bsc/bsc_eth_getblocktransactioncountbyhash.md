@@ -16,8 +16,8 @@ description: >-
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getBlockTransactionCountByHash",
 "params": ["0x51da5dc897ffaa4754e2cd84b59c4701abbef43d66abac1fc5c9a2bcaf3455f3"],

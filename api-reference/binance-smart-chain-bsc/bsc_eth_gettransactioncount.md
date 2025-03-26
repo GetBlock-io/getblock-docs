@@ -20,8 +20,8 @@ Integer representing a block number or one of the string tags latest, earliest, 
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getTransactionCount",
 "params": ["0xc94770007dda54cF92009BFF0dE90c06F603a09f", "latest"],

@@ -15,8 +15,8 @@ The btc address to validate
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "validateaddress",
 "params": ["bc1q09vm5lfy0j5reeulh4x5752q25uqqvz34hufdl"],

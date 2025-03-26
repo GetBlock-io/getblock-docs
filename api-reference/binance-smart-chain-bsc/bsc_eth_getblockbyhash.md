@@ -19,8 +19,8 @@ If true, returns the full transaction objects; if false, returns the transaction
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "eth_getBlockByHash",
 "params": ["0x1ed2922c46eaa5f285612e39d1a4e0fea317cddb3a18177c3359982587e28c3b", false],

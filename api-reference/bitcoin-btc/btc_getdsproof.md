@@ -24,8 +24,8 @@ If doing a lookup by txid, then search for a double-spend proof for all in-mempo
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "getdsproof",
 "params": ["fb5ae5344cb6995e529201fe24247ac38452f4e5ab5669b649e935853a7a180a", null, null],
