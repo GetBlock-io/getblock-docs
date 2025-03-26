@@ -20,8 +20,8 @@ Optional encoding parameter to specify the format for the returned transaction. 
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/ext/bc/C/rpc' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{
   "jsonrpc": "2.0",
   "method": "avax.getAtomicTx",
