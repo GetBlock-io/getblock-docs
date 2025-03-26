@@ -23,8 +23,8 @@ The block in which to look for the transaction
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "getrawtransaction",
 "params": ["10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642", null, null],

@@ -15,8 +15,8 @@ The transaction id (musFot be in mempool)
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "getmempoolentry",
 "params": ["b241c93650f94a28901fca79e03d322508b3c17b266c5424cc8dc3f65256e504"],

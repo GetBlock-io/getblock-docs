@@ -21,8 +21,8 @@ If true, adds Signature objects to the response.
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "get_raw_transaction",
 "params": {"hash": "89eb3525d61f10dc868e0b23151b27aee14808c75417dc43dff7d22aed1f7f16"},

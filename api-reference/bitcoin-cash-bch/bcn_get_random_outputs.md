@@ -27,8 +27,8 @@ Positive values are read as height, negative values are read as depth\*, 0 is ge
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "get_random_outputs",
 "params": {"amounts": [100, 200], "output_count": 2, "confirmed_height_or_depth": -1},

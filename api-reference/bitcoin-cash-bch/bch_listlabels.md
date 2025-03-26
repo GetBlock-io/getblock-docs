@@ -16,8 +16,8 @@ Address purpose to list labels for (‘send’,’receive’). An empty string i
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \ 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "listlabels",
 "params": [null],

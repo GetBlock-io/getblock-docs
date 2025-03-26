@@ -29,8 +29,8 @@ Maximum number of blocks to return.
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/v1/mainnet/' \
---header 'Content-Type: application/json' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+--header 'Content-Type: application/json' 
 --data-raw '{"jsonrpc": "2.0",
 "method": "sync_blocks",
 "params": {"sparse_chain": ["856c8547ad1864cc08664df8b41ebdd6ab8a01dd7ba04cbc06a428d64cd7e844"], "max_count": 2},
