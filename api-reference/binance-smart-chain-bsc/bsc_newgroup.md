@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the newGroup {disallowed} JSON-RPC method. Complete guide on
+  how to use newGroup {disallowed} JSON-RPC in GetBlock.io Web3 documentation.
+---
+
 # bsc\_newGroup
 
 ***

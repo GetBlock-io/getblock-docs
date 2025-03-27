@@ -1,4 +1,8 @@
 ---
+description: >-
+  GetBlock offers scalable plans tailored to developers and businesses,
+  providing flexible solutions for both small projects and high-traffic
+  platforms.
 icon: box-dollar
 ---
 
