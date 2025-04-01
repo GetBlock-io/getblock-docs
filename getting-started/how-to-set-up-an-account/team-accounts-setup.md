@@ -22,7 +22,7 @@ A **team account user** is a regular GetBlock user. When invited to a team, they
 
 This part covers a step-by-step guide to setting up your team workspace.
 
-1. Sign in to your GetBlock account. If you don’t have a user account yet, create one following [this guide](./).&#x20;
+1. Sign in to your GetBlock account. If you don’t have a user account yet, create one following [this guide](../how-to-set-up-an-account.md).&#x20;
 2. Click on the **profile icon** in the bottom-left corner of the sidebar. Select "**Create new team**" from the dropdown menu.
 
 <figure><img src="../../.gitbook/assets/TeamAcc_Create_1.svg" alt="How to create a team account on GetBlock"><figcaption></figcaption></figure>

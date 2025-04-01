@@ -34,7 +34,7 @@ Click 'Get' and have the endpoint URL with an access token generated.
 
 <figure><img src="../../.gitbook/assets/Docs_endpoint_setup.svg" alt="How to create a node endpoint for blockchain API access"><figcaption><p>How to generate an access token</p></figcaption></figure>
 
-Generate and add as many access tokens as required for this protocol. Each token is a unique endpoint for you and your application to interact with the blockchain.
+Generate and add as many [access tokens](../../getting-started/authentication-with-access-tokens.md) as required for this protocol. Each token is a unique endpoint for you and your application to interact with the blockchain.
 
 ### Viewing and managing access tokens
 

@@ -5,9 +5,9 @@ description: >-
 icon: key
 ---
 
-# Access Token management
+# Access token management
 
-Every endpoint you create is assigned a unique access token:
+Every [endpoint](../guides/endpoint-setup/) you create is assigned a unique access token:
 
 ```
 https://go.getblock.io/<ACCESS_TOKEN>/
