@@ -38,16 +38,16 @@ During registration, you will be asked to accept our [Terms of Service](https://
 {% endstep %}
 {% endstepper %}
 
-<figure><img src="../.gitbook/assets/Docs_Signup_bl.svg" alt="How to create an account on GetBlock"><figcaption><p>GetBlock's Sign-Up page, where users can register to access blockchain services</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Docs_Signup_bl.svg" alt="How to create an account on GetBlock"><figcaption><p>GetBlock's Sign-Up page, where users can register to access blockchain services</p></figcaption></figure>
 
 ### Access the dashboard
 
 Once you've created an account and signed in, you'll be directed to the GetBlock **Dashboard**. Here, you can create endpoints, monitor your usage plan, and access statistics.
 
-<figure><img src="../.gitbook/assets/Docs_user_dashboard.svg" alt="GetBlock user dashboard for managing blockchain node access"><figcaption><p>GetBlock user Dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Docs_user_dashboard.svg" alt="GetBlock user dashboard for managing blockchain node access"><figcaption><p>GetBlock user Dashboard</p></figcaption></figure>
 
 ### Check your User ID
 
 Find your user ID located in the ‘Account Settings’ section. Please use it when contacting GetBlock’s team so we can identify your account and help you faster.
 
-<figure><img src="../.gitbook/assets/Docs_UserID.svg" alt="How to find GetBlock user ID"><figcaption><p>Find the user ID</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Docs_UserID.svg" alt="How to find GetBlock user ID"><figcaption><p>Find the user ID</p></figcaption></figure>

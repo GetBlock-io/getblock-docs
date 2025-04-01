@@ -4,7 +4,8 @@
 
 ## GETTING STARTED
 
-* [How to set up an account](getting-started/how-to-set-up-an-account.md)
+* [How to set up an account](getting-started/how-to-set-up-an-account/README.md)
+  * [Team accounts setup](getting-started/how-to-set-up-an-account/team-accounts-setup.md)
 * [Access Token management](getting-started/authentication-with-access-tokens.md)
 * [Plans and limits](getting-started/plans-and-limits/README.md)
   * [Choosing your plan](getting-started/plans-and-limits/choosing-your-plan.md)
