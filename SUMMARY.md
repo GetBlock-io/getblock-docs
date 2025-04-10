@@ -9,11 +9,11 @@
 * [Access token management](getting-started/authentication-with-access-tokens.md)
 * [Plans and limits](getting-started/plans-and-limits/README.md)
   * [Choosing your plan](getting-started/plans-and-limits/choosing-your-plan.md)
-  * [Payment methods](getting-started/plans-and-limits/payment-methods.md)
   * [Dedicated nodes: Manage & extend subscriptions](getting-started/plans-and-limits/dedicated-nodes-manage-and-extend-subscriptions.md)
-  * [Request and rate limits](getting-started/plans-and-limits/request-and-rate-limits.md)
-  * [Top up requests and boost RPS](getting-started/plans-and-limits/top-up-requests-and-boost-rps.md)
-  * [What counts as a request](getting-started/plans-and-limits/what-counts-as-a-request.md)
+  * [CU and rate limits](getting-started/plans-and-limits/request-and-rate-limits.md)
+  * [Top up CUs and boost limits](getting-started/plans-and-limits/top-up-requests-and-boost-rps.md)
+  * [What counts as a CU](getting-started/plans-and-limits/what-counts-as-a-request.md)
+  * [Payment methods](getting-started/plans-and-limits/payment-methods.md)
 * [Monitoring and analytics](getting-started/monitoring-and-analytics.md)
 
 ## GUIDES

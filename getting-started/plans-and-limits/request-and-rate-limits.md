@@ -1,75 +1,111 @@
 ---
 description: >-
-  GetBlock provides access to over 50 blockchains. Request and rate limits
-  depend on the selected plan.
+  GetBlock provides access to over 50 blockchains. CU and rate limits depend on
+  the selected plan.
 ---
 
-# Request and rate limits
+# CU and rate limits
 
-<figure><img src="../../.gitbook/assets/Docs_Plan_Comparison.svg" alt="Comparison table of GetBlock&#x27;s shared vs dedicated nodes"><figcaption><p>Feature comparison of shared nodes vs dedicated nodes</p></figcaption></figure>
+This guide explains how limits work across all available plans, helping you understand what’s included and how to choose the option that best fits your current workload and future growth.
 
-To see the full comparison table, navigate to [https://getblock.io/pricing/](https://getblock.io/pricing/).
+{% hint style="info" %}
+* **Shared Nodes** operate on a system of limits defined by Compute Units (**CUs**) and Requests Per Second (**RPS**). Each plan also determines how many access tokens you can generate.
+* With **Dedicated Nodes**, you’re not limited by CUs or RPS.
+{% endhint %}
 
 ***
 
 ### Shared node limits
 
-<figure><img src="../../.gitbook/assets/Docs_shared_limits(new).svg" alt="Shared RPC node plans and options"><figcaption><p>Shared node plans</p></figcaption></figure>
+GetBlock’s shared node service is subject to several usage limits. These are the key limits that directly affect costs and performance:
+
+* **CU (Compute Units)**: Measures the computational effort required to process requests. Different shared node plans include a varying number of CUs that you can use in a month.
+* **RPS (Requests Per Second)**: Each plan enforces a maximum number of requests you can send every second. While you’re not billed per request, staying within this limit is critical to maintaining optimal service quality.
+* **Access Tokens:** Access tokens are unique identifiers used to authenticate your connection to GetBlock’s node infrastructure, generated when you create an endpoint. The limitation on your plan determines how many of these access tokens (and therefore endpoints) you can create.
+
+<table><thead><tr><th width="183.06640625">Plan</th><th>Free</th><th>Starter</th><th>Pro</th><th>Enterprise</th></tr></thead><tbody><tr><td><a data-footnote-ref href="#user-content-fn-1">Price/month</a></td><td>$0</td><td>$49</td><td>$499</td><td>from $999</td></tr><tr><td>CU Allocation</td><td>50k/day</td><td>50M/month</td><td>600M/month</td><td>Custom</td></tr><tr><td>RPS Limit</td><td>5 RPS</td><td>25 RPS</td><td>200 RPS</td><td>Custom </td></tr><tr><td>Access Tokens</td><td>2</td><td>10</td><td>50</td><td>Custom</td></tr><tr><td>Extra CU Purchase</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
+
+To see the full comparison table, navigate to [https://getblock.io/pricing/](https://getblock.io/pricing/).
+
+{% hint style="info" %}
+Your **balance of CUs for Shared Nodes** is distributed on **all endpoints** added under the ‘Shared nodes’ tab.
+{% endhint %}
 
 #### 1) Free plan
 
-* Requests: 5,000 per day per account.
-* Rate: 5 requests per second (RPS).
+The plan is ideal if you’re just starting out and do not have complex calls or large request volumes.&#x20;
 
-{% hint style="info" %}
-Requests are renewed daily, but unused requests cannot be transferred to the next day.
+<figure><img src="../../.gitbook/assets/Free_widget.svg" alt="Shared RPC node plans and options"><figcaption></figcaption></figure>
+
+* **CU**: 50,000/day&#x20;
+* **Rate**: 5 requests per second (RPS)
+* **Access Tokens**: 2&#x20;
+
+{% hint style="warning" %}
+**Compute Units** are **renewed daily**, but unused CUs cannot be transferred to the next day.
 {% endhint %}
 
 Clients who want to increase their usage limits can choose between the options below.
 
-#### 2) Start plan
+#### 2) Starter plan
 
-This is a monthly subscription based on the number of requests you need.
+This is a monthly subscription designed for use cases that are growing beyond the free tier. It offers a significant increase in CU compared to the Free plan.
 
-* Requests: from 5 to 100 million per month.
-* Rate: 200 requests per second (RPS).
-* You can buy extra request packages if needed.
+<figure><img src="../../.gitbook/assets/Starter_widget.svg" alt="Start RPC node plan limits"><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-If you don’t use all your allocated requests within a month, the unused requests will carry over to the next month as long as your subscription is active and renewed.
+* **CU**: 50M per month (\~1.6M/day)
+* **Rate**: 25 requests per second (RPS)
+* **Access Tokens**: 10
+* Additional CU packages can be purchased as needed.
+
+#### 3) Pro plan
+
+The Pro Plan is the perfect middle ground before going custom. It's built for applications that need higher throughput and increased resource availability.
+
+<figure><img src="../../.gitbook/assets/Pro_widget.svg" alt="RPC node with unlimited access"><figcaption></figcaption></figure>
+
+* **CU**: 600M per month (\~20M/day)
+* **Rate**: 200 requests per second (RPS)
+* **Access Tokens**: 50
+* Purchase additional CU packages when required
+
+#### 4) Enterprise plan
+
+The Enterprise plan is fully customizable with tailored CU allocations, rate limits, and access tokens to meet exceptionally high call volumes and performance requirements.&#x20;
+
+<figure><img src="../../.gitbook/assets/Enterprise_widget.svg" alt="GetBlock&#x27;s Enterprise plan with custom usage limit settings"><figcaption></figcaption></figure>
+
+* **CU**: Custom monthly allocation based on your demands
+* **Rate limit**: Custom
+* **Access Tokens**: Custom&#x20;
+* Additional CU packages can be purchased on demand.
+
+***
+
+#### Managing unused & extra CUs
+
+If you don’t use all your allocated CUs within a month, the unused amount **will carry over to the next month as long as your subscription is** **active and renewed**. If your subscription expires or is not renewed on time, the remaining CUs will be lost.
+
+{% hint style="success" %}
+If your demand exceeds the included limits, you can **purchase extra CU packages**. This means that even within a given plan, there’s room for scaling without an immediate need to move to a higher tier.
+
+* [Top up CUs and boost limits](top-up-requests-and-boost-rps.md)
 {% endhint %}
-
-<figure><img src="../../.gitbook/assets/Shared_limits_Start.jpg" alt="Start RPC node plan limits"><figcaption><p>Start plan user dashboard</p></figcaption></figure>
-
-> If Alice subscribes to a one-month plan with 50 million requests starting on November 10, the plan will expire on December 10. Any unused requests will be available again only after she renews her subscription for the next period.
->
-> Additionally, if Alice finds that 50 million requests are insufficient for her needs, she can purchase additional request packages directly from her dashboard.
-
-Here is the calculation that helps to determine the time during which the whole amount of requests from the “Start” subscription will be spent at a maximum capacity set to 200 requests per second (RpS):
-
-* 5,000,000 requests / (200 RpS \* 60 sec) = 416 min (or 6 hrs 57 min);
-* 10,000,000 requests / (200 RpS \* 60 sec) = 833 min (or 13 hrs 53 min);
-* 50,000,000 requests / (200 RpS \* 60 sec) = 4166 min (or 69 hrs 27 min);
-* 100,000,000 requests / (200 RpS \* 60 sec) = 8332 min (or 138 hrs 54 min).
-
-{% hint style="info" %}
-Your balance of requests for shared nodes is distributed on all endpoints added under the ‘Shared nodes’ tab.
-{% endhint %}
-
-#### 3) Unlimited plan
-
-<figure><img src="../../.gitbook/assets/Docs_unlim_dashboard.jpg" alt="RPC node with unlimited access"><figcaption><p>Unlimited plan user dashboard</p></figcaption></figure>
-
-This is a monthly subscription with no limit on the number of requests on all shared nodes for 1, 3, 6, 9, or 12 months.
-
-* Requests: unlimited.
-* Default rate: 300 requests per second (RPS).
 
 ***
 
 ### Dedicated node limits
 
-<figure><img src="../../.gitbook/assets/Docs_dedic_limits.jpg" alt="Dedicated node for scalable and unlimited RPC node access"><figcaption><p>Dedicated node features</p></figcaption></figure>
+Our Dedicated Node service is perfect for teams and projects that demand absolute freedom from rate limits and CU monitoring.
 
-* Requests: unlimited
-* Rate: unlimited (1000+ requests/sec depending on a blockchain).
+<figure><img src="../../.gitbook/assets/Dedic_widget.svg" alt="Dedicated node for scalable and unlimited RPC node access"><figcaption></figcaption></figure>
+
+* **CU**: Unlimited
+* **Rate**: Unlimited
+
+***
+
+If you’re unsure which plan best fits your needs, our team is ready to help! [Contact our support team](https://getblock.io/contact/) or visit our [Choosing your plan](choosing-your-plan.md) page for more information.\
+
+
+[^1]: Prices are based on monthly billing. Opt for **annual subscriptions** to save up to **$100 per month**.
