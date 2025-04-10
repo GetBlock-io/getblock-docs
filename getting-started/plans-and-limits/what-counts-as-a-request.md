@@ -101,7 +101,7 @@ Tracking and pricing requests based on how “heavy” they are:
 
 A simple per-request pricing model would charge the same for all methods, which isn’t scalable or logical. The CU model fixes this imbalance.
 
-#### ⚙️ To h**elps developers build smarter**&#x20;
+#### ⚙️ To h**elp developers build smarter**&#x20;
 
 Because each API call has a clear CU cost, you can spot inefficiencies quickly (e.g. which parts of your dApp consume the most), making it easier to fine-tune performance.
 

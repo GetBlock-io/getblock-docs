@@ -8,7 +8,7 @@ description: >-
 
 This guide explains how limits work across all available plans, helping you understand what’s included and how to choose the option that best fits your current workload and future growth.
 
-{% hint style="info" %}
+{% hint style="success" %}
 * **Shared Nodes** operate on a system of limits defined by Compute Units (**CUs**) and Requests Per Second (**RPS**). Each plan also determines how many access tokens you can generate.
 * With **Dedicated Nodes**, you’re not limited by CUs or RPS.
 {% endhint %}
