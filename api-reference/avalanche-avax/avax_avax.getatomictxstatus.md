@@ -15,16 +15,15 @@ id of the transaction
 
 #### Request
 
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
---header 'Content-Type: application/json' 
+<pre class="language-java"><code class="lang-java"><strong>curl --location --request POST 'https://go.getblock.io/&#x3C;ACCESS-TOKEN>/ext/bc/C/rpc' \
+</strong>--header 'Content-Type: application/json' \ 
 --data-raw '{
   "jsonrpc": "2.0",
   "method": "avax.getAtomicTxStatus",
   "params": [null],
   "id": "getblock.io"
 }'
-```
+</code></pre>
 
 #### Response
 

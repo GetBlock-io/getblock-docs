@@ -15,7 +15,7 @@ The filter id.
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc' \
 --header 'Content-Type: application/json' 
 --data-raw '{
   "jsonrpc": "2.0",
