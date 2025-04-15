@@ -31,11 +31,11 @@ To see the full comparison table, navigate to [https://getblock.io/pricing/](htt
 Your **balance of CUs for Shared Nodes** is distributed on **all endpoints** added under the ‘Shared nodes’ tab.
 {% endhint %}
 
-#### 1) Free plan
+{% tabs %}
+{% tab title="1) Free plan" %}
+The plan is ideal if you’re **just starting out** and do not have complex calls or large request volumes.&#x20;
 
-The plan is ideal if you’re just starting out and do not have complex calls or large request volumes.&#x20;
-
-<figure><img src="../../.gitbook/assets/Free_widget.svg" alt="Shared RPC node plans and options"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Free_widget.svg" alt="GetBlock&#x27;s free RPC node plan limits"><figcaption></figcaption></figure>
 
 * **CU**: 50,000/day&#x20;
 * **Rate**: 5 requests per second (RPS)
@@ -45,51 +45,53 @@ The plan is ideal if you’re just starting out and do not have complex calls or
 **Compute Units** are **renewed daily**, but unused CUs cannot be transferred to the next day.
 {% endhint %}
 
-Clients who want to increase their usage limits can choose between the options below.
+Clients who want to increase their usage limits can choose between the higher-tier options.
+{% endtab %}
 
-#### 2) Starter plan
+{% tab title="2) Starter plan" %}
+This is a monthly subscription designed for use cases that are growing beyond the free tier. It offers a **significant increase in CU** compared to the Free plan.
 
-This is a monthly subscription designed for use cases that are growing beyond the free tier. It offers a significant increase in CU compared to the Free plan.
-
-<figure><img src="../../.gitbook/assets/Starter_widget.svg" alt="Start RPC node plan limits"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Starter_widget.svg" alt="Starter plan limits for Shared RPC nodes by GetBlock "><figcaption></figcaption></figure>
 
 * **CU**: 50M per month (\~1.6M/day)
 * **Rate**: 25 requests per second (RPS)
 * **Access Tokens**: 10
 * Additional CU packages can be purchased as needed.
+{% endtab %}
 
-#### 3) Pro plan
+{% tab title="3) Pro plan" %}
+The Pro Plan is the perfect middle ground before going custom. It's built for applications that need **higher throughput** and **increased resource availability**.
 
-The Pro Plan is the perfect middle ground before going custom. It's built for applications that need higher throughput and increased resource availability.
-
-<figure><img src="../../.gitbook/assets/Pro_widget.svg" alt="RPC node with unlimited access"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Pro_widget.svg" alt="RPC node with higher-limit access"><figcaption></figcaption></figure>
 
 * **CU**: 600M per month (\~20M/day)
 * **Rate**: 200 requests per second (RPS)
 * **Access Tokens**: 50
 * Purchase additional CU packages when required
+{% endtab %}
 
-#### 4) Enterprise plan
-
-The Enterprise plan is fully customizable with tailored CU allocations, rate limits, and access tokens to meet exceptionally high call volumes and performance requirements.&#x20;
+{% tab title="4) Enterprise plan" %}
+The Enterprise plan is **fully customizable** with tailored CU allocations, rate limits, and access tokens to meet exceptionally high call volumes and performance requirements.&#x20;
 
 <figure><img src="../../.gitbook/assets/Enterprise_widget.svg" alt="GetBlock&#x27;s Enterprise plan with custom usage limit settings"><figcaption></figcaption></figure>
 
 * **CU**: Custom monthly allocation based on your demands
 * **Rate limit**: Custom
 * **Access Tokens**: Custom&#x20;
-* Additional CU packages can be purchased on demand.
+* Additional CU packages can be purchased on demand
+{% endtab %}
+{% endtabs %}
 
 ***
 
 #### Managing unused & extra CUs
 
-If you don’t use all your allocated CUs within a month, the unused amount **will carry over to the next month as long as your subscription is** **active and renewed**. If your subscription expires or is not renewed on time, the remaining CUs will be lost.
+If you don’t use all your allocated CUs within a month, the unused amount **will carry over to the next month** as long as **your subscription is** **active and renewed**. If your subscription expires or is not renewed on time, the remaining CUs will be lost.
 
 {% hint style="success" %}
 If your demand exceeds the included limits, you can **purchase extra CU packages**. This means that even within a given plan, there’s room for scaling without an immediate need to move to a higher tier.
 
-* [Top up CUs and boost limits](top-up-requests-and-boost-rps.md)
+* [Top up CUs and boost limits](top-up-cus-and-boost-limits.md)
 {% endhint %}
 
 ***

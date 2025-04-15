@@ -32,13 +32,13 @@ Your account balance will be updated immediately upon successful payment.
 
 Free plan users **cannot top up their Compute Units directly**. Instead, you have the option to upgrade to one of our monthly paid plans, providing significantly higher limits and extra features.
 
-<figure><img src="../../.gitbook/assets/TopUp_free_upgrade.svg" alt="Switching from free GetBlock plan to higher limit plans "><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/TopUp_free_upgrade.svg" alt="Switching from free GetBlock free plan to higher limit plans"><figcaption></figcaption></figure>
 
 ***
 
 ### Boost CU, RPS, and Access Token limits
 
-If you're on the **Enterprise** plan (our customizable Shared Node plan), you can additionally request **higher RPS and Access Token limits**. Here’s how:
+If you're on the **Enterprise** plan (our customizable Shared Node plan), you can additionally request **higher RPS** and **Access Token limits**. Here’s how:
 
 1. Click "**Change**" on the Dashboard next to the **Rate Limit** section.
 
@@ -46,7 +46,7 @@ If you're on the **Enterprise** plan (our customizable Shared Node plan), you ca
 
 2. Fill out and submit a **request form**, choosing your desired RPS limit, CU amount, and number of Access Tokens.
 
-<figure><img src="../../.gitbook/assets/Change_enterpise.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Change_enterpise.svg" alt="Customizing GetBlock&#x27;s Enterprise plan usage limits"><figcaption></figcaption></figure>
 
 3. Our team will review your request and reach out to you with next steps shortly.
 

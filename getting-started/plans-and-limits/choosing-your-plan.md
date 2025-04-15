@@ -16,11 +16,11 @@ You can explore detailed pricing and plans from your **dashboard** in the “Pri
 
 Shared nodes operate on a **resource-sharing model**, where multiple clients access the same underlying node infrastructure maintained by GetBlock.&#x20;
 
-<figure><img src="../../.gitbook/assets/Shared_Plans.svg" alt="GetBlock shared RPC node pricing"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Shared_Plans.svg" alt="GetBlock shared RPC node pricing options"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
 
 Our Shared Nodes deliver the perfect balance between affordability and performance:&#x20;
 
-* **Cost efficiency:** Benefit from our pricing model based on [**Compute Units (CU)**](what-counts-as-a-request.md), so you only pay for the resources needed for your current workload.&#x20;
+* **Cost efficiency:** Benefit from our pricing model based on [**Compute Units (CU)**](what-counts-as-a-cu.md), so you only pay for the resources needed for your current workload.&#x20;
 * **Flexible pricing**: Options range from a **free** to **high-volume plans —** accessible for individual developers and smaller teams while supporting the scaling needs of growing dApps.
 * **Consistent performance**: Each plan enforces a Requests Per Second (**RPS**) limit, preventing individual spikes from impacting overall quality.
 * **Tiered support levels**: Support options adapt to your requirements, **from basic help to priority** support when you need it most.
@@ -48,14 +48,16 @@ This option is ideal for users that require high performance, full control over 
 * **Unlimited usage**: No per-second request caps or CU tracking.&#x20;
 * **Low latency**: With servers available in **Europe**, **Asia**, and **the USA**, choose the optimal server location to minimize latency and enhance performance for your users
 * **Fully customizable**: Complete control over your node configurations, including access to archive data.
-* **Expert support**: 24/7 coverage and immediate issue resolution.
 * **Predictable pricing**:
-  * Full Node: $1,000/month
-  * Archive Node: $1,500/ month
+  * Full Node: $1,000/month;
+  * Archive Node: $1,500/ month.
+* **Expert support**: 24/7 coverage and immediate issue resolution.
 
 {% hint style="info" %}
-A few high-resource blockchain settings (e.g., Arbitrum mainnet, NEAR mainnet) may come with custom pricing due to their intense infrastructure requirements.
+A few **high-resource blockchain** settings (e.g., Arbitrum mainnet, NEAR mainnet) may come with **custom pricing** due to their intense infrastructure requirements.
 {% endhint %}
+
+***
 
 ### Enterprise solutions
 
