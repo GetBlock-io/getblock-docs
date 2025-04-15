@@ -25,15 +25,15 @@ This part covers a step-by-step guide to setting up your team workspace.
 1. Sign in to your GetBlock account. If you don’t have a user account yet, create one following [this guide](../how-to-set-up-an-account.md).&#x20;
 2. Click on the **profile icon** in the bottom-left corner of the sidebar. Select "**Create new team**" from the dropdown menu.
 
-<figure><img src="../../.gitbook/assets/TeamAcc_Create_1.svg" alt="How to create a team account on GetBlock"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_create_new.svg" alt="How to create a team account on GetBlock"><figcaption></figcaption></figure>
 
 3. A popup window will appear. Assign a team name and click the "**Create team**" button.
 
-<figure><img src="../../.gitbook/assets/TeamAcc_Create_2.svg" alt="Creating an enterprise account with RPC node provider GetBlock"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_create_step1.svg" alt="Creating an enterprise account with RPC node provider GetBlock"><figcaption></figcaption></figure>
 
-3. Once the space is created, navigate to **Account Settings** > **My Team** to manage team settings or add teammates.
+3. Once the space is created, navigate to **Account Settings** > **Team** to manage team settings or add teammates.
 
-<figure><img src="../../.gitbook/assets/TeamAcc_Create_3.svg" alt="Collaboration feature for GetBlock enterprise users"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_view.svg" alt="Collaboration feature for GetBlock enterprise users"><figcaption></figcaption></figure>
 
 ***
 
@@ -56,12 +56,12 @@ You can invite team members to join your team account using either their email a
 
 {% tabs %}
 {% tab title="The teammate has a GetBlock account" %}
-1. Go to **Account Settings > My Team**.
+1. Go to **Account Settings > Team**.
 2. Click **"Add team member"** in the top-right corner.
 3. Request the **User ID** from the teammate (they can find it under **Account Settings** > **General**).
 4. Enter the name, User I&#x44;**,** and **send the invite**.&#x20;
 
-<figure><img src="../../.gitbook/assets/team_add_id.svg" alt="Adding users to the team account on GetBlock"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_add_ID.svg" alt="Adding users to the team account on GetBlock"><figcaption></figcaption></figure>
 
 The user gets a notification and can accept the invite.
 {% endtab %}
@@ -76,7 +76,7 @@ The user gets a notification and can accept the invite.
 The invite link is valid for 30 minutes. If it expires, please resend an invitation.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/team_add_email.svg" alt="Inviting teammates to GetBlock&#x27;s team account"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_add_mail.svg" alt="Inviting teammates to GetBlock&#x27;s team account"><figcaption></figcaption></figure>
 
 The user will receive an invitation email with a link to sign up and join the team.
 {% endtab %}
@@ -123,11 +123,11 @@ If you need someone to help manage other team members, be sure to give them **Ad
 
 To remove a user from your team account:
 
-1. Navigate to **My Team** in the **Account Settings**.
+1. Navigate to **Team** in the **Account Settings**.
 2. Click the **three-dot menu** (⋮) next to the team member name.
 3. Select **"Remove"** from the dropdown menu.
 
-<figure><img src="../../.gitbook/assets/Remove_team_member.svg" alt="Instructions to remove a team user from the GetBlock team account"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_revoke.svg" alt="Instructions to remove a team user from the GetBlock team account"><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 When removed from a team, users lose access to that team workspace but keep their personal account.
@@ -146,11 +146,11 @@ When you have a pending team invitation, a notification badge appears on your ac
 1. Click your **account icon** to view an invitation.
 2. Click **"Accept"** if you're ready to join.
 
-<figure><img src="../../.gitbook/assets/Accespt_invite_ID.svg" alt="How to join a team account on GetBlock"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_accept_invite (1).svg" alt="How to join a team account on GetBlock"><figcaption></figcaption></figure>
 
 3. After accepting the invitation, you are given access to your team’s workspace. Your [role and permissions](team-accounts-setup.md#roles-based-permissions) will be **determined by the team owner or admin**.
 
-<figure><img src="../../.gitbook/assets/View_permissions.svg" alt="Viewing permissions for team account users"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_view_access.svg" alt="Viewing permissions for team account users"><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="New to GetBlock" %}
@@ -165,7 +165,7 @@ When someone who is not yet registered on GetBlock receives a team invitation, t
 The invite link is **valid for 30 minutes**. If it expires, ask the team **owner** or **admin** to send a new invitation.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Accept_email_invite.svg" alt="GetBlock sign-up page"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_sign-up.svg" alt="GetBlock sign-up page"><figcaption></figcaption></figure>
 
 Once registered, you’ll have your personal GetBlock account. Additionally, you gain access to the team’s dashboard and resources based on [permissions](team-accounts-setup.md#roles-based-permissions) given by the team owner or admin.
 
@@ -195,7 +195,7 @@ To switch between your personal account and any team accounts you are part of:
 * A dropdown will show all **teams & personal accounts**.&#x20;
 * Switch between them as needed.
 
-<figure><img src="../../.gitbook/assets/Switching_accounts.svg" alt="Using GetBlock&#x27;s personal and team accounts"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team_switch (1).svg" alt="Using GetBlock&#x27;s personal and team accounts"><figcaption></figcaption></figure>
 
 The teams list is sorted by recent activity, with the most recently accessed accounts at the top.
 
