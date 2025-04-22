@@ -8,12 +8,12 @@ description: >-
 # sendTransaction - Solana
 
 {% hint style="success" %}
-The sendTransaction RPC Solana method submits a fully signed transaction (encoded as a string) to the blockchain.&#x20;
+The **sendTransaction** RPC Solana method **submits a fully signed transaction** (encoded as a string) to the blockchain.&#x20;
 {% endhint %}
 
 As a core component of Solana’s JSON-RPC framework, it allows developers to execute on-chain actions while controlling parameters like preflight checks, retries, and encoding formats.
 
-Unlike Ethereum’s viem sendTransaction, which handles gas estimation and signing, Solana requires transactions to be pre-signed and serialized. This API method is critical for applications requiring real-time block inclusion, such as exchanges or gaming platforms.
+Unlike Ethereum’s viem `sendTransaction`, which handles gas estimation and signing, Solana **requires transactions to be pre-signed and serialized**. This API method is critical for applications requiring real-time block inclusion, such as exchanges or gaming platforms.
 
 ### Supported Networks
 
@@ -24,18 +24,18 @@ Access this method via Solana API Endpoints:
 
 ### Parameters
 
-#### transaction (string, required):
+#### transaction (`string`, required):
 
-The signed transaction, encoded as a base58 or base64 string.
+The signed transaction, encoded as a `base58` or `base64` string.
 
-#### config (object, optional):
+#### config (`object`, optional):
 
 Customize transaction handling with these fields:
 
-* skipPreflight (bool, optional): Bypass preflight checks (default: false). Use cautiously to speed up requests.
-* preflightCommitment (string, optional): Commitment level for preflight verification (default: finalized).
-* encoding (string, optional): Transaction encoding: base58 (deprecated) or base64 (recommended).
-* maxRetries (usize, optional): Maximum retry attempts by the RPC node before abandoning the transaction.
+* **`skipPreflight`** (`bool`, optional): Bypass preflight checks (default: `false`). Use cautiously to speed up requests.
+* **`preflightCommitment`** (`string`, optional): Commitment level for preflight verification (default: `finalized`).
+* **`encoding`** (`string`, optional): Transaction encoding: `base58` (deprecated) or `base64` (recommended).
+* **`maxRetries`** (`usize`, optional): Maximum retry attempts by the RPC node before abandoning the transaction.
 
 ### Request
 
@@ -79,6 +79,8 @@ A successful response returns the transaction signature. If the blockhash is exp
 }
 ```
 
+* `result`: a 64‑byte transaction signature which the RPC encodes in `base58` .
+
 **Example Error Response** (sendTransaction error):
 
 ```json
@@ -102,7 +104,7 @@ Common sendTransaction error scenarios include:
 * Invalid transaction encoding or signature.
 * RPC node synchronization issues.
 
-Retry with maxRetries or a fresh blockhash to resolve transient errors.
+Retry with `maxRetries` or a fresh blockhash to resolve transient errors.
 
 ### Use Cases
 
