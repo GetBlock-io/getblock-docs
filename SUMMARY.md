@@ -2588,6 +2588,8 @@
   * [isBlockhashValid - Solana](api-reference/solana-sol/sol_isblockhashvalid.md)
   * [sendTransaction - Solana](api-reference/solana-sol/sol_sendtransaction.md)
 * [TRON (TRX)](api-reference/tron-trx/README.md)
+  * [JSON-RPC_API](api-reference/tron-trx/JSON-RPC_API/README.md)
+    * [buildTransaction - TRON](api-reference/tron-trx/JSON-RPC_API/buildTransaction.md)
   * [buildTransaction(CreateSmartContract) {disallowed} - TRON](api-reference/tron-trx/buildtransaction-createsmartcontract-disallowed-tron.md)
   * [buildTransaction(TransferAssetContract) {disallowed} - TRON](api-reference/tron-trx/buildtransaction-transferassetcontract-disallowed-tron.md)
   * [buildTransaction(TransferContract) {disallowed} - TRON](api-reference/tron-trx/buildtransaction-transfercontract-disallowed-tron.md)
