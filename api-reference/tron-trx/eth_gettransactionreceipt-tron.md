@@ -1,0 +1,2 @@
+# eth\_getTransactionReceipt - TRON
+

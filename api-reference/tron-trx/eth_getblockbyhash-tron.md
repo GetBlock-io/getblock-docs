@@ -1,0 +1,2 @@
+# eth\_getBlockByHash - TRON
+

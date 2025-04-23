@@ -1,0 +1,2 @@
+# buildTransaction(TriggerSmartContract) {disallowed} - TRON
+
