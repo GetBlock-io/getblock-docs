@@ -1,40 +1,47 @@
-# eth_getBlockByHash
+---
+description: >-
+  Discover 'eth_getBlockByHash' in Tron's JSON-RPC API Interface for efficient
+  block retrieval by hash.
+---
 
-
-## Meta Description
-Discover 'eth_getBlockByHash' in Tron's JSON-RPC API Interface for efficient block retrieval by hash.
+# eth\_getBlockByHash - TRON
 
 ## Description
-The 'eth_getBlockByHash' Web3 method in the Tron protocol is a crucial part of the JSON-RPC API Interface, designed to efficiently retrieve specific blockchain blocks using their hash. This method is integral for developers needing precise block data, as it returns comprehensive block details, including transactions, timestamp, and miner information. By leveraging the 'eth_getBlockByHash' RPC protocol, developers can enhance their dApps with accurate and timely blockchain data. It's particularly useful for applications requiring validation or analysis of specific transactions within a block. This method ensures a streamlined and reliable way to access blockchain data, contributing to more robust and efficient decentralized applications.
+
+The 'eth\_getBlockByHash' Web3 method in the Tron protocol is a crucial part of the JSON-RPC API Interface, designed to efficiently retrieve specific blockchain blocks using their hash. This method is integral for developers needing precise block data, as it returns comprehensive block details, including transactions, timestamp, and miner information. By leveraging the 'eth\_getBlockByHash' RPC protocol, developers can enhance their dApps with accurate and timely blockchain data. It's particularly useful for applications requiring validation or analysis of specific transactions within a block. This method ensures a streamlined and reliable way to access blockchain data, contributing to more robust and efficient decentralized applications.
 
 ## Supported Networks
-The eth_getBlockByHash RPC method supports the following network types
-- **Mainnet**
-- **Testnets**
+
+The eth\_getBlockByHash RPC method supports the following network types
+
+* **Mainnet**
+* **Testnets**
 
 ## Parameters
 
-Here is the list of parameters eth_getBlockByHash method needs to be executed.
+Here is the list of parameters eth\_getBlockByHash method needs to be executed.
 
-- **Block Hash (Required)**
-  - **Type:** String
-  - **Description:** The hash of the block you want to retrieve.
-  - **Supported Values:** A valid block hash in hexadecimal format prefixed with "0x".
-
-- **Full Transaction Objects (Required)**
-  - **Type:** Boolean
-  - **Description:** Determines if the full transaction objects should be returned.
-  - **Supported Values:** 
-    - `true`: Returns the full transaction objects.
-    - `false`: Returns only the transaction hashes.
+* **Block Hash (Required)**
+  * **Type:** String
+  * **Description:** The hash of the block you want to retrieve.
+  * **Supported Values:** A valid block hash in hexadecimal format prefixed with "0x".
+* **Full Transaction Objects (Required)**
+  * **Type:** Boolean
+  * **Description:** Determines if the full transaction objects should be returned.
+  * **Supported Values:**
+    * `true`: Returns the full transaction objects.
+    * `false`: Returns only the transaction hashes.
 
 ### URL
+
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_getBlockByHash
+
+Here’s a sample cURL request using eth\_getBlockByHash
 
 Request
+
 ```json
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc' 
 --header 'Content-Type: application/json' 
@@ -42,6 +49,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc'
 ```
 
 Response
+
 ```json
 
 {
@@ -73,6 +81,7 @@ Response
     "uncles": []
   }
 ```
+
 ## Body Parameters
 
 Here is the list of body parameters for the `eth_getBlockByHash` method:
@@ -95,22 +104,19 @@ Here is the list of body parameters for the `eth_getBlockByHash` method:
 16. **stateRoot**: The root of the final state trie of the block in hexadecimal format (e.g., "0x").
 17. **timestamp**: The timestamp for when the block was mined in hexadecimal format (e.g., "0x60b078d0").
 18. **totalDifficulty**: The total difficulty of the chain until this block in hexadecimal format (e.g., "0x0").
-19. **transactions**: An array of transaction hashes included in the block (e.g., ["0x11adfe477e930beb07a1e452dc4b304b89e1b2ae3e8768a2a3e4b4354d007da2"]).
+19. **transactions**: An array of transaction hashes included in the block (e.g., \["0x11adfe477e930beb07a1e452dc4b304b89e1b2ae3e8768a2a3e4b4354d007da2"]).
 20. **transactionsRoot**: The root of the transaction trie of the block in hexadecimal format (e.g., "0x08bffbd69ce085d3a84afdc88d10ec171b7a39015558f63c41584667ba9a09f6").
-21. **uncles**: An array of uncle hashes included in the block (e.g., []).
+21. **uncles**: An array of uncle hashes included in the block (e.g., \[]).
 
 ## Use Case
 
-Here are some use-cases for the eth_getBlockByHash method:
+Here are some use-cases for the eth\_getBlockByHash method:
 
 1. **Transaction Verification**: This method can be used to verify transactions within a block by retrieving the block data associated with a specific block hash. Developers can use this to ensure that a particular transaction has been included in a block and confirm its status on the blockchain.
-
 2. **Blockchain Data Analysis**: By fetching block details using the block hash, developers can analyze the block's metadata, such as the timestamp, miner address, and block size. This information is valuable for conducting in-depth blockchain analysis, such as determining network congestion or identifying patterns in block creation.
+3. **Smart Contract Event Tracking**: For applications that interact with smart contracts, eth\_getBlockByHash can be used to track events emitted during the execution of transactions within a specific block. This is useful for applications needing to respond to specific events or changes in the state of a smart contract in real-time.
 
-3. **Smart Contract Event Tracking**: For applications that interact with smart contracts, eth_getBlockByHash can be used to track events emitted during the execution of transactions within a specific block. This is useful for applications needing to respond to specific events or changes in the state of a smart contract in real-time.
-
-## Code for eth_getBlockByHash
-
+## Code for eth\_getBlockByHash
 
 ```python
 import requests
@@ -130,16 +136,18 @@ if response.status_code == 200:
 else:
     print("Error:", response.status_code, response.text)
 ```
+
 ## Common Errors
 
-Common Errors  
-When using the eth_getBlockByHash RPC Tron method, the following issues may occur:  
-- Invalid block hash format: Ensure that the block hash is a valid 32-byte hexadecimal string prefixed with '0x'. Double-check the hash for any typographical errors.  
-- Missing block data: If the block hash does not exist on the blockchain, verify that the hash corresponds to a valid block. It may be necessary to confirm the block's existence on the Tron network.  
-- Incorrect parameter type: Ensure that the second parameter is a boolean value, either true or false, to specify whether to return full transaction objects. Incorrect types can lead to unexpected errors.  
-- Network connectivity issues: If the request times out or fails to connect, check your network connection and ensure that the Tron node endpoint is correctly configured and accessible.  
+Common Errors\
+When using the eth\_getBlockByHash RPC Tron method, the following issues may occur:
 
-Using the eth_getBlockByHash method in Web3 applications allows developers to retrieve specific block data efficiently, facilitating operations like transaction verification and historical data analysis. This method enhances the capability to interact with the Tron blockchain by providing precise and reliable access to block information, which is crucial for building robust decentralized applications.
+* Invalid block hash format: Ensure that the block hash is a valid 32-byte hexadecimal string prefixed with '0x'. Double-check the hash for any typographical errors.
+* Missing block data: If the block hash does not exist on the blockchain, verify that the hash corresponds to a valid block. It may be necessary to confirm the block's existence on the Tron network.
+* Incorrect parameter type: Ensure that the second parameter is a boolean value, either true or false, to specify whether to return full transaction objects. Incorrect types can lead to unexpected errors.
+* Network connectivity issues: If the request times out or fails to connect, check your network connection and ensure that the Tron node endpoint is correctly configured and accessible.
+
+Using the eth\_getBlockByHash method in Web3 applications allows developers to retrieve specific block data efficiently, facilitating operations like transaction verification and historical data analysis. This method enhances the capability to interact with the Tron blockchain by providing precise and reliable access to block information, which is crucial for building robust decentralized applications.
 
 ### conclusion
 
