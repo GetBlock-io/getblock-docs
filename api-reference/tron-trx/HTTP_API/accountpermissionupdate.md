@@ -1,49 +1,54 @@
-# accountpermissionupdate
+---
+description: >-
+  Use 'accountpermissionupdate' in Tron’s HTTP REST API Interface to manage
+  account permissions efficiently.
+---
 
-
-## Meta Description
-Use 'accountpermissionupdate' in Tron’s HTTP REST API Interface to manage account permissions efficiently.
+# accountpermissionupdate - TRON
 
 ## Description
-The 'accountpermissionupdate' Web3 method in the Tron protocol enables users to efficiently manage and update account permissions via the JSON-RPC API Interface. This RPC protocol allows developers to modify the permission structure of a Tron account, providing flexibility and enhanced security for decentralized applications. By utilizing 'accountpermissionupdate', users can specify new permission settings or update existing ones, defining roles and access levels for various operations. This method is essential for maintaining control over smart contract interactions, ensuring that only authorized entities can execute specific actions. The 'accountpermissionupdate' RPC protocol is a crucial tool for developers aiming to implement robust permission management in their Tron-based applications, enhancing both security and functionality.
+
+The accountpermissionupdate Web3 method in the Tron protocol enables users to efficiently manage and update account permissions via the HTTP REST API Interface. This REST protocol allows developers to modify the permission structure of a Tron account, providing flexibility and enhanced security for decentralized applications. By utilizing 'accountpermissionupdate', users can specify new permission settings or update existing ones, defining roles and access levels for various operations. This method is essential for maintaining control over smart contract interactions, ensuring that only authorized entities can execute specific actions. The accountpermissionupdate REST protocol is a crucial tool for developers aiming to implement robust permission management in their Tron-based applications, enhancing both security and functionality.
 
 ## Supported Networks
-The accountpermissionupdate RPC method supports the following network types
-- **Mainnet**
-- **Testnets**
+
+The accountpermissionupdate REST method supports the following network types
+
+* **Mainnet**
+* **Testnets**
 
 ## Parameters
 
 Here is the list of parameters accountpermissionupdate method needs to be executed.
 
-- **owner_address** (required, string): The address of the owner of the account. This is a unique identifier for the account owner.
-  
-- **actives** (required, array): A list of active permissions associated with the account.
-  - **type** (required, integer): The type of the active permission. In this case, it is set to 2.
-  - **permission_name** (required, string): The name of the active permission. Here, it is "active0".
-  - **threshold** (required, integer): The number of signatures required to authorize an operation. Here, it is set to 2.
-  - **operations** (required, string): A hexadecimal string representing the operations that can be performed with this permission.
-  - **keys** (required, array): A list of keys associated with the active permission.
-    - **address** (required, string): The address associated with the key.
-    - **weight** (required, integer): The weight of the key in the permission structure.
-
-- **owner** (required, object): The owner permission structure.
-  - **type** (required, integer): The type of the owner permission. In this case, it is set to 0.
-  - **permission_name** (required, string): The name of the owner permission, which is "owner".
-  - **threshold** (required, integer): The number of signatures required to authorize an operation for the owner permission. Here, it is set to 1.
-  - **keys** (required, array): A list of keys associated with the owner permission.
-    - **address** (required, string): The address associated with the key.
-    - **weight** (required, integer): The weight of the key in the permission structure.
-
-- **visible** (optional, boolean): Indicates whether the account is visible. The default value is true.
+* **owner\_address** (required, string): The address of the owner of the account. This is a unique identifier for the account owner.
+* **actives** (required, array): A list of active permissions associated with the account.
+  * **type** (required, integer): The type of the active permission. In this case, it is set to 2.
+  * **permission\_name** (required, string): The name of the active permission. Here, it is "active0".
+  * **threshold** (required, integer): The number of signatures required to authorize an operation. Here, it is set to 2.
+  * **operations** (required, string): A hexadecimal string representing the operations that can be performed with this permission.
+  * **keys** (required, array): A list of keys associated with the active permission.
+    * **address** (required, string): The address associated with the key.
+    * **weight** (required, integer): The weight of the key in the permission structure.
+* **owner** (required, object): The owner permission structure.
+  * **type** (required, integer): The type of the owner permission. In this case, it is set to 0.
+  * **permission\_name** (required, string): The name of the owner permission, which is "owner".
+  * **threshold** (required, integer): The number of signatures required to authorize an operation for the owner permission. Here, it is set to 1.
+  * **keys** (required, array): A list of keys associated with the owner permission.
+    * **address** (required, string): The address associated with the key.
+    * **weight** (required, integer): The weight of the key in the permission structure.
+* **visible** (optional, boolean): Indicates whether the account is visible. The default value is true.
 
 ### URL
+
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
+
 Here’s a sample cURL request using accountpermissionupdate
 
 Request
+
 ```json
 curl --request POST \
      --url https://go.getblock.io/<ACCESS-TOKEN>/wallet/accountpermissionupdate \
@@ -87,6 +92,7 @@ curl --request POST \
 ```
 
 Response
+
 ```json
 {
   "visible": true,
@@ -140,40 +146,37 @@ Response
 }
 
 ```
+
 ## Body Parameters
 
 Here is the list of body parameters for the account permission update method:
 
-1. **owner_address** (string): The address of the account whose permissions are being updated.
+1. **owner\_address** (string): The address of the account whose permissions are being updated.
 2. **actives** (array): A list of active permissions, each with:
-   - **type** (integer): Type of permission (typically 2 for active permissions).
-   - **permission_name** (string): A name for the permission.
-   - **threshold** (integer): Minimum weight required for authorization.
-   - **operations** (hex string): Hexadecimal string specifying allowed operations.
-   - **keys** (array): A list of key objects, each with:
-     - **address** (string): The address associated with the key.
-     - **weight** (integer): The weight of the key.
+   * **type** (integer): Type of permission (typically 2 for active permissions).
+   * **permission\_name** (string): A name for the permission.
+   * **threshold** (integer): Minimum weight required for authorization.
+   * **operations** (hex string): Hexadecimal string specifying allowed operations.
+   * **keys** (array): A list of key objects, each with:
+     * **address** (string): The address associated with the key.
+     * **weight** (integer): The weight of the key.
 3. **owner** (object): The owner's permission structure, with similar fields:
-   - **type** (integer)
-   - **permission_name** (string)
-   - **threshold** (integer)
-   - **keys** (array)
+   * **type** (integer)
+   * **permission\_name** (string)
+   * **threshold** (integer)
+   * **keys** (array)
 4. **witness** (object, optional): The witness permission structure (if needed).
 5. **visible** (boolean): Whether the addresses are visible in base58 format (true) or hex format (false).
-
 
 ## Use Case
 
 Here are some use-cases for the `accountpermissionupdate` method:
 
 1. **Enhanced Security for Multi-Signature Wallets**: In Web3 programming, the `accountpermissionupdate` method can be used to update the permissions of a multi-signature wallet. For instance, if a new stakeholder joins a decentralized organization, the method can update the wallet's permissions to include the new member's address. This ensures that transactions require approval from the newly defined set of stakeholders, thereby enhancing the security and governance of the wallet.
-
 2. **Dynamic Access Control**: This method can be employed to dynamically adjust access control in decentralized applications (dApps). For example, a dApp might need to alter permissions based on user roles or activities. By updating the account permissions, developers can ensure that only authorized users can perform specific operations, such as modifying smart contracts or accessing sensitive data, thus maintaining the integrity and security of the dApp.
-
 3. **Automated Permission Adjustments**: In scenarios where permissions need to be adjusted automatically based on certain conditions or events (e.g., reaching a milestone, or a time-based trigger), the `accountpermissionupdate` method can be integrated with smart contracts to facilitate these changes without manual intervention. This can be particularly useful in decentralized finance (DeFi) applications where the conditions for transactions or user roles might evolve over time.
 
 ## Code for accountpermissionupdate
-
 
 ```python
 import requests
@@ -225,14 +228,16 @@ if response.status_code == 200:
 else:
     print("Error:", response.status_code, response.text)
 ```
+
 ## Common Errors
 
-**Common Errors**  
-When using the accountpermissionupdate HTTP REST API Tron method, the following issues may occur:  
-- **Incorrect Threshold Configuration**: If the threshold value is set higher than the total weight of the keys, the account will be unable to authorize any transactions. Ensure the threshold does not exceed the sum of all key weights.  
-- **Invalid Operations Hex String**: The operations field must be a valid hexadecimal string representing the operations the permission can execute. Verify that the string is correctly formatted and corresponds to the intended operations.  
-- **Key Weight Mismatch**: If the weights of the keys do not align with the required threshold, transactions may fail. Double-check that the total weight of the keys meets or exceeds the threshold value to ensure successful authorization.  
-- **Address Format Errors**: Addresses must be in the correct Tron address format. Verify each address for typographical errors or incorrect formatting to prevent authorization failures.  
+**Common Errors**\
+When using the accountpermissionupdate HTTP REST API Tron method, the following issues may occur:
+
+* **Incorrect Threshold Configuration**: If the threshold value is set higher than the total weight of the keys, the account will be unable to authorize any transactions. Ensure the threshold does not exceed the sum of all key weights.
+* **Invalid Operations Hex String**: The operations field must be a valid hexadecimal string representing the operations the permission can execute. Verify that the string is correctly formatted and corresponds to the intended operations.
+* **Key Weight Mismatch**: If the weights of the keys do not align with the required threshold, transactions may fail. Double-check that the total weight of the keys meets or exceeds the threshold value to ensure successful authorization.
+* **Address Format Errors**: Addresses must be in the correct Tron address format. Verify each address for typographical errors or incorrect formatting to prevent authorization failures.
 
 Using the accountpermissionupdate method in Web3 applications allows for dynamic management of account permissions, enhancing security and flexibility. By updating permissions programmatically, developers can create more robust and adaptable decentralized applications that cater to evolving user requirements and security policies.
 

@@ -1,28 +1,36 @@
-# getnodeinfo
+---
+description: >-
+  Discover getnodeinfo using Tron’s REST API Interface for seamless node
+  information retrieval.
+---
 
-
-## Meta Description
-Discover 'getnodeinfo' using Tron’s RESTful API Interface for seamless node information retrieval.
+# getnodeinfo - TRON
 
 ## Description
-The 'getnodeinfo' Web3 method in the Tron protocol provides a comprehensive overview of node details via the RESTful API Interface. This method is an essential tool for developers and network administrators seeking to monitor and manage nodes efficiently. By leveraging the 'getnodeinfo RPC protocol', users can retrieve vital information such as the node's status, version, and network connectivity. The technical design of this method ensures a user-friendly experience, offering reliable data critical for maintaining network integrity and performance. Whether you're integrating with Tron’s blockchain or conducting routine checks, 'getnodeinfo' delivers precise and actionable insights to support your development and operational needs.
+
+The getnodeinfo Web3 method in the Tron protocol provides a comprehensive overview of node details via the REST API Interface. This method is an essential tool for developers and network administrators seeking to monitor and manage nodes efficiently. By leveraging the 'getnodeinfo RPC protocol', users can retrieve vital information such as the node's status, version, and network connectivity. The technical design of this method ensures a user-friendly experience, offering reliable data critical for maintaining network integrity and performance. Whether you're integrating with Tron’s blockchain or conducting routine checks, 'getnodeinfo' delivers precise and actionable insights to support your development and operational needs.
 
 ## Supported Networks
+
 The getnodeinfo REST API method supports the following network types
-- **Mainnet**
-- **Testnets**
+
+* **Mainnet**
+* **Testnets**
 
 ## Parameters
 
 None: This method does not require any parameters.
 
 ### URL
+
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
+
 Here’s a sample cURL request using getnodeinfo
 
 Request
+
 ```json
 curl --request POST 
      --url https://go.getblock.io/<ACCESS-TOKEN>/ \
@@ -35,6 +43,7 @@ curl --request POST
 ```
 
 Response
+
 ```json
 
 {
@@ -373,6 +382,7 @@ Response
   "totalFlow": 0
 }
 ```
+
 ## Body Parameters
 
 Here is the list of body parameters for the `getnodeinfo` method:
@@ -382,73 +392,73 @@ Here is the list of body parameters for the `getnodeinfo` method:
 3. **block**: Information about the current block, including its number and ID.
 4. **cheatWitnessInfoMap**: A map containing information about any cheating witnesses (if any).
 5. **configNodeInfo**: Configuration details of the node, including:
-   - **activeNodeSize**: The number of active nodes.
-   - **allowAdaptiveEnergy**: Whether adaptive energy is allowed.
-   - **allowCreationOfContracts**: Whether the creation of contracts is allowed.
-   - **backupListenPort**: The port for backup listening.
-   - **backupMemberSize**: The size of the backup member.
-   - **backupPriority**: The priority level for backups.
-   - **codeVersion**: The version of the code running on the node.
-   - **dbVersion**: The database version.
-   - **discoverEnable**: Whether node discovery is enabled.
-   - **listenPort**: The port on which the node is listening.
-   - **maxConnectCount**: The maximum number of connections allowed.
-   - **maxTimeRatio**: The maximum time ratio.
-   - **minParticipationRate**: The minimum participation rate.
-   - **minTimeRatio**: The minimum time ratio.
-   - **p2pVersion**: The version of the peer-to-peer protocol.
-   - **passiveNodeSize**: The number of passive nodes.
-   - **sameIpMaxConnectCount**: The maximum number of connections from the same IP.
-   - **sendNodeSize**: The size of the sending node.
-   - **supportConstant**: Whether constant support is enabled.
-   - **versionNum**: The version number of the node.
+   * **activeNodeSize**: The number of active nodes.
+   * **allowAdaptiveEnergy**: Whether adaptive energy is allowed.
+   * **allowCreationOfContracts**: Whether the creation of contracts is allowed.
+   * **backupListenPort**: The port for backup listening.
+   * **backupMemberSize**: The size of the backup member.
+   * **backupPriority**: The priority level for backups.
+   * **codeVersion**: The version of the code running on the node.
+   * **dbVersion**: The database version.
+   * **discoverEnable**: Whether node discovery is enabled.
+   * **listenPort**: The port on which the node is listening.
+   * **maxConnectCount**: The maximum number of connections allowed.
+   * **maxTimeRatio**: The maximum time ratio.
+   * **minParticipationRate**: The minimum participation rate.
+   * **minTimeRatio**: The minimum time ratio.
+   * **p2pVersion**: The version of the peer-to-peer protocol.
+   * **passiveNodeSize**: The number of passive nodes.
+   * **sameIpMaxConnectCount**: The maximum number of connections from the same IP.
+   * **sendNodeSize**: The size of the sending node.
+   * **supportConstant**: Whether constant support is enabled.
+   * **versionNum**: The version number of the node.
 6. **currentConnectCount**: The current number of connections.
 7. **machineInfo**: Information about the machine running the node, including:
-   - **cpuCount**: The number of CPU cores.
-   - **cpuRate**: The CPU usage rate.
-   - **deadLockThreadCount**: The number of deadlock threads.
-   - **deadLockThreadInfoList**: A list of information about deadlock threads.
-   - **freeMemory**: The amount of free memory available.
-   - **javaVersion**: The version of Java being used.
-   - **jvmFreeMemory**: The amount of free memory in the JVM.
-   - **jvmTotalMemory**: The total memory available to the JVM.
-   - **memoryDescInfoList**: A list of memory descriptions, including:
-     - **initSize**: Initial size of the memory area.
-     - **maxSize**: Maximum size of the memory area.
-     - **name**: Name of the memory area.
-     - **useRate**: Usage rate of the memory area.
-     - **useSize**: Used size of the memory area.
-   - **osName**: The name of the operating system.
-   - **processCpuRate**: The CPU usage rate of the process.
-   - **threadCount**: The number of threads.
-   - **totalMemory**: The total memory available on the machine.
+   * **cpuCount**: The number of CPU cores.
+   * **cpuRate**: The CPU usage rate.
+   * **deadLockThreadCount**: The number of deadlock threads.
+   * **deadLockThreadInfoList**: A list of information about deadlock threads.
+   * **freeMemory**: The amount of free memory available.
+   * **javaVersion**: The version of Java being used.
+   * **jvmFreeMemory**: The amount of free memory in the JVM.
+   * **jvmTotalMemory**: The total memory available to the JVM.
+   * **memoryDescInfoList**: A list of memory descriptions, including:
+     * **initSize**: Initial size of the memory area.
+     * **maxSize**: Maximum size of the memory area.
+     * **name**: Name of the memory area.
+     * **useRate**: Usage rate of the memory area.
+     * **useSize**: Used size of the memory area.
+   * **osName**: The name of the operating system.
+   * **processCpuRate**: The CPU usage rate of the process.
+   * **threadCount**: The number of threads.
+   * **totalMemory**: The total memory available on the machine.
 8. **passiveConnectCount**: The number of passive connections.
 9. **peerList**: A list of peers connected to the node, each with details such as:
-   - **active**: Whether the connection is active.
-   - **avgLatency**: The average latency.
-   - **blockInPorcSize**: The size of the block in processing.
-   - **connectTime**: The time the connection was established.
-   - **disconnectTimes**: The number of times the connection was disconnected.
-   - **headBlockTimeWeBothHave**: The head block time both nodes have.
-   - **headBlockWeBothHave**: The head block both nodes have.
-   - **host**: The host address of the peer.
-   - **inFlow**: The incoming flow.
-   - **lastBlockUpdateTime**: The time the last block was updated.
-   - **lastSyncBlock**: The last synchronized block.
-   - **localDisconnectReason**: The reason for local disconnection.
-   - **needSyncFromPeer**: Whether synchronization is needed from the peer.
-   - **needSyncFromUs**: Whether synchronization is needed from us.
-   - **nodeCount**: The number of nodes.
-   - **nodeId**: The node ID.
-   - **port**: The port number.
-   - **remainNum**: The remaining number.
-   - **remoteDisconnectReason**: The reason for remote disconnection.
-   - **score**: The score of the peer.
-   - **syncBlockRequestedSize**: The requested size of the sync block.
-   - **syncFlag**: The synchronization flag.
-   - **syncToFetchSize**: The size to fetch for synchronization.
-   - **syncToFetchSizePeekNum**: The peak number of the size to fetch for synchronization.
-   - **unFetchSynNum**: The number of unfetched syncs.
+   * **active**: Whether the connection is active.
+   * **avgLatency**: The average latency.
+   * **blockInPorcSize**: The size of the block in processing.
+   * **connectTime**: The time the connection was established.
+   * **disconnectTimes**: The number of times the connection was disconnected.
+   * **headBlockTimeWeBothHave**: The head block time both nodes have.
+   * **headBlockWeBothHave**: The head block both nodes have.
+   * **host**: The host address of the peer.
+   * **inFlow**: The incoming flow.
+   * **lastBlockUpdateTime**: The time the last block was updated.
+   * **lastSyncBlock**: The last synchronized block.
+   * **localDisconnectReason**: The reason for local disconnection.
+   * **needSyncFromPeer**: Whether synchronization is needed from the peer.
+   * **needSyncFromUs**: Whether synchronization is needed from us.
+   * **nodeCount**: The number of nodes.
+   * **nodeId**: The node ID.
+   * **port**: The port number.
+   * **remainNum**: The remaining number.
+   * **remoteDisconnectReason**: The reason for remote disconnection.
+   * **score**: The score of the peer.
+   * **syncBlockRequestedSize**: The requested size of the sync block.
+   * **syncFlag**: The synchronization flag.
+   * **syncToFetchSize**: The size to fetch for synchronization.
+   * **syncToFetchSizePeekNum**: The peak number of the size to fetch for synchronization.
+   * **unFetchSynNum**: The number of unfetched syncs.
 10. **solidityBlock**: Information about the solidity block, including its number and ID.
 11. **totalFlow**: The total flow of data.
 
@@ -457,13 +467,10 @@ Here is the list of body parameters for the `getnodeinfo` method:
 Here are some use-cases for the `getnodeinfo` method in Web3 programming:
 
 1. **Network Monitoring and Diagnostics**: The `getnodeinfo` method can be used to monitor the health and status of a blockchain node. By retrieving information such as the node's current block, peers, and protocol version, developers and network administrators can ensure that the node is functioning correctly and is properly synchronized with the rest of the network. This is crucial for maintaining the reliability and efficiency of decentralized applications (dApps) that depend on real-time blockchain data.
-
 2. **Node Management and Optimization**: Developers can leverage the `getnodeinfo` method to gather insights into node performance and resource usage. This information can help in optimizing node configurations, such as adjusting peer connections or upgrading hardware resources, to improve transaction processing speeds and overall network performance. Efficient node management is essential for scaling applications and ensuring seamless user experiences.
-
 3. **Security and Compliance Auditing**: By using the `getnodeinfo` method, organizations can perform security audits and compliance checks on their blockchain nodes. The method provides details about the node's network connections and software versions, which can be analyzed to identify potential vulnerabilities or outdated components. Regular audits help in maintaining the security integrity of blockchain networks and ensuring compliance with industry standards and regulations.
 
 ## Code for getnodeinfo
-
 
 ```python
 import requests
@@ -483,14 +490,16 @@ payload = {
 response = requests.post(url, headers=headers, data=json.dumps(data))
 print(response.json())
 ```
+
 ## Common Errors
 
-Common Errors  
-When using the getnodeinfo HTTP REST API Tron method, the following issues may occur:  
-- **Invalid API Endpoint**: If you receive a 404 error, ensure that the endpoint URL is correctly specified and matches the Tron node's address. Double-check the base URL and path for any typographical errors.  
-- **Unauthorized Access**: A 401 error indicates that your request lacks valid authentication credentials. Verify that you have included the correct API key or token in your request headers.  
-- **Malformed JSON Request**: If you encounter a 400 error, your request payload may be improperly formatted. Check that your JSON structure adheres to the expected schema and all required fields are correctly included.  
-- **Node Synchronization Delay**: In cases where the node information appears outdated, the node might be synchronizing. Ensure that your node is fully synced with the Tron network to retrieve the most current data.  
+Common Errors\
+When using the getnodeinfo HTTP REST API Tron method, the following issues may occur:
+
+* **Invalid API Endpoint**: If you receive a 404 error, ensure that the endpoint URL is correctly specified and matches the Tron node's address. Double-check the base URL and path for any typographical errors.
+* **Unauthorized Access**: A 401 error indicates that your request lacks valid authentication credentials. Verify that you have included the correct API key or token in your request headers.
+* **Malformed JSON Request**: If you encounter a 400 error, your request payload may be improperly formatted. Check that your JSON structure adheres to the expected schema and all required fields are correctly included.
+* **Node Synchronization Delay**: In cases where the node information appears outdated, the node might be synchronizing. Ensure that your node is fully synced with the Tron network to retrieve the most current data.
 
 Using the getnodeinfo method in Web3 applications provides critical insights into the status and configuration of Tron nodes. This information allows developers to monitor node health, optimize network interactions, and ensure robust connectivity within decentralized applications. By leveraging this method, developers can enhance the reliability and performance of their Web3 solutions.
 

@@ -1,40 +1,47 @@
-# getblockbylimitnext
+---
+description: >-
+  Access Tron blockchain data with the getblockbylimitnext REST API Interface
+  for seamless block retrieval.
+---
 
-
-## Meta Description
-Access Tron blockchain data with the getblockbylimitnext RESTful API Interface for seamless block retrieval.
+# getblockbylimitnext - TRON
 
 ## Description
+
 The getblockbylimitnext Web3 method in the Tron protocol provides developers with a robust tool for retrieving a range of blocks efficiently. This RESTful API Interface is designed to facilitate seamless interaction with the Tron blockchain, allowing users to specify a starting block and a limit to fetch subsequent blocks. Utilizing the getblockbylimitnext RPC protocol, developers can easily integrate this functionality into their applications, enabling real-time data access and analysis. This method is particularly useful for applications requiring comprehensive blockchain data insights, offering a user-friendly yet technically advanced solution. Whether you're building decentralized applications or conducting blockchain research, getblockbylimitnext ensures reliable and efficient data retrieval.
 
 ## Supported Networks
+
 The getblockbylimitnext REST API method supports the following network types
-- **Mainnet**
-- **Testnets**
+
+* **Mainnet**
+* **Testnets**
 
 ## Parameters
 
 Here is the list of parameters getblockbylimitnext method needs to be executed.
 
-- **startNum**
-  - **Type**: Integer
-  - **Description**: The starting block number from which the method should begin fetching blocks.
-  - **Required**: Yes
-  - **Default/Supported Values**: Must be a positive integer.
-
-- **endNum**
-  - **Type**: Integer
-  - **Description**: The ending block number up to which the method should fetch blocks.
-  - **Required**: Yes
-  - **Default/Supported Values**: Must be a positive integer, greater than or equal to `startNum`.
+* **startNum**
+  * **Type**: Integer
+  * **Description**: The starting block number from which the method should begin fetching blocks.
+  * **Required**: Yes
+  * **Default/Supported Values**: Must be a positive integer.
+* **endNum**
+  * **Type**: Integer
+  * **Description**: The ending block number up to which the method should fetch blocks.
+  * **Required**: Yes
+  * **Default/Supported Values**: Must be a positive integer, greater than or equal to `startNum`.
 
 ### URL
+
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
+
 Here’s a sample cURL request using getblockbylimitnext
 
 Request
+
 ```json
 curl --request POST 
      --url https://go.getblock.io/<ACCESS-TOKEN>/ \
@@ -47,6 +54,7 @@ curl --request POST
 ```
 
 Response
+
 ```json
 
 {
@@ -106,35 +114,30 @@ Response
   ]
 }
 ```
+
 ## Body Parameters
 
 Here is the list of body parameters for the `getblockbylimitnext` method:
 
 1. **blockID**: A unique identifier for each block in the blockchain. It is a hash value representing the block.
-
-2. **block_header**: Contains metadata about the block, including the following:
-   
-   - **raw_data**: A nested object with the following fields:
-     - **number**: The block number in the blockchain sequence.
-     - **txTrieRoot**: Represents the root hash of the transaction trie, which is a data structure that stores transactions.
-     - **witness_address**: The address of the witness who validated and signed the block.
-     - **parentHash**: The hash of the previous block in the chain, linking the current block to its predecessor.
-     - **timestamp**: The time at which the block was created, represented in milliseconds since the Unix epoch.
-
-   - **witness_signature**: The digital signature of the block, created by the witness to ensure the block's authenticity and integrity.
+2. **block\_header**: Contains metadata about the block, including the following:
+   * **raw\_data**: A nested object with the following fields:
+     * **number**: The block number in the blockchain sequence.
+     * **txTrieRoot**: Represents the root hash of the transaction trie, which is a data structure that stores transactions.
+     * **witness\_address**: The address of the witness who validated and signed the block.
+     * **parentHash**: The hash of the previous block in the chain, linking the current block to its predecessor.
+     * **timestamp**: The time at which the block was created, represented in milliseconds since the Unix epoch.
+   * **witness\_signature**: The digital signature of the block, created by the witness to ensure the block's authenticity and integrity.
 
 ## Use Case
 
 Here are some use-cases for the `getblockbylimitnext` method in Web3 programming:
 
 1. **Blockchain Data Synchronization**: The `getblockbylimitnext` method is useful for developers looking to synchronize blockchain data efficiently. By specifying a range of block numbers, developers can retrieve a sequence of blocks in one call. This is particularly helpful for applications that need to maintain an up-to-date local copy of the blockchain or for analytics platforms that need to process large sets of blockchain data quickly.
-
 2. **Historical Data Analysis**: For projects that require historical analysis of blockchain transactions, the `getblockbylimitnext` method allows developers to fetch a series of blocks within a specified range. This can be used to analyze transaction patterns, study the evolution of smart contracts, or assess network activity over a specific period. By fetching multiple blocks at once, analysts can streamline their data collection process and focus on deriving insights.
-
 3. **Testing and Development**: In a development environment, testing smart contracts and blockchain applications often requires access to specific blocks. The `getblockbylimitnext` method enables developers to retrieve a sequence of blocks for testing purposes, ensuring that their applications interact correctly with the blockchain. This is particularly useful for regression testing or when simulating scenarios that involve multiple blocks.
 
 ## Code for getblockbylimitnext
-
 
 ```python
 import requests
@@ -154,14 +157,16 @@ payload = {
 response = requests.post(url, headers=headers, data=json.dumps(data))
 print(response.json())
 ```
+
 ## Common Errors
 
-Common Errors  
-When using the getblockbylimitnext HTTP REST API Tron method, the following issues may occur:  
-- **Invalid Range Error**: If the `startNum` is greater than `endNum`, the method will fail to execute. Ensure that `startNum` is less than or equal to `endNum` to avoid this error.  
-- **Out of Bounds Error**: Providing a `startNum` or `endNum` outside the current blockchain height will result in an error. Verify the current blockchain height and adjust your parameters accordingly.  
-- **Network Latency**: Slow network responses can lead to timeouts when retrieving large block ranges. Optimize your network connection or consider fetching smaller block ranges to mitigate this issue.  
-- **Unauthorized Access**: If the API key or access token is missing or invalid, the request will be denied. Ensure that your API credentials are correct and included in the request header.
+Common Errors\
+When using the getblockbylimitnext HTTP REST API Tron method, the following issues may occur:
+
+* **Invalid Range Error**: If the `startNum` is greater than `endNum`, the method will fail to execute. Ensure that `startNum` is less than or equal to `endNum` to avoid this error.
+* **Out of Bounds Error**: Providing a `startNum` or `endNum` outside the current blockchain height will result in an error. Verify the current blockchain height and adjust your parameters accordingly.
+* **Network Latency**: Slow network responses can lead to timeouts when retrieving large block ranges. Optimize your network connection or consider fetching smaller block ranges to mitigate this issue.
+* **Unauthorized Access**: If the API key or access token is missing or invalid, the request will be denied. Ensure that your API credentials are correct and included in the request header.
 
 Using the `getblockbylimitnext` method in Web3 applications allows developers to efficiently retrieve sequential blocks within a specified range, enabling seamless blockchain data analysis and integration. This method is particularly beneficial for applications that require continuous block monitoring or historical data processing, enhancing the overall functionality and user experience of decentralized applications.
 
