@@ -1,37 +1,44 @@
-# getnodeinfo
+---
+description: >-
+  Get node details with getnodeinfo in Tron's HTTP REST API Interface. Retrieve
+  network info, version, and more.
+---
 
-
-## Meta Description
-Get node details with 'getnodeinfo' in Tron's JSON-RPC API Interface. Retrieve network info, version, and more.
+# getnodeinfo - TRON
 
 ## Description
-The 'getnodeinfo' RPC method in the Tron protocol provides essential node details, including network status, version, and connectivity metrics. As part of the JSON-RPC API interface, 'getnodeinfo Web3' enables developers to monitor node health and performance programmatically. This method is critical for debugging, analytics, and ensuring seamless integration with the Tron blockchain. Use 'getnodeinfo RPC protocol' to fetch real-time data like peer count, block height, and sync status, optimizing decentralized application (dApp) functionality. Ideal for node operators and developers leveraging Tron's Web3 ecosystem.
+
+The getnodeinfo HTTP REST API method in the Tron protocol provides essential node details, including network status, version, and connectivity metrics. As part of the HTTP REST API interface, 'getnodeinfo Web3' enables developers to monitor node health and performance programmatically. This method is critical for debugging, analytics, and ensuring seamless integration with the Tron blockchain. Use getnodeinfo REST protocol to fetch real-time data like peer count, block height, and sync status, optimizing decentralized application (dApp) functionality. Ideal for node operators and developers leveraging Tron's Web3 ecosystem.
 
 ## Supported Networks
-The getnodeinfo RPC method supports the following network types
-- **Mainnet**
-- **Testnets**
+
+The getnodeinfo HTTP REST API method supports the following network types
+
+* **Mainnet**
+* **Testnets**
 
 ## Parameters
 
 None: This method does not require any parameters.
 
 ### URL
+
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
+
 Here’s a sample cURL request using getnodeinfo
 
 Request
+
 ```json
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc' 
---header 'Content-Type: application/json' 
-{
-  "value": "62747474657374"
-}
+curl --request GET \
+     --url https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getnodeinfo \
+     --header 'accept: application/json'
 ```
 
 Response
+
 ```json
 
   "activeConnectCount": 9,
@@ -369,60 +376,73 @@ Response
   "totalFlow": 0
 }
 ```
+
 ## Body Parameters
 
-This method does not require any parameters.
+* **beginSyncNum** (`int64`):\
+  The block number from which the node started syncing.
+* **block** (`string`):\
+  Information about the latest block, including its height and block ID.
+* **solidityBlock** (`string`):\
+  Information about the latest solidified (irreversible) block, including its height and block ID.
+* **currentConnectCount** (`int32`):\
+  The total number of current connections to other nodes.
+* **activeConnectCount** (`int32`):\
+  The number of active (outbound) node connections.
+* **passiveConnectCount** (`int32`):\
+  The number of passive (inbound) node connections.
+* **totalFlow** (`int64`):\
+  The total amount of TCP network traffic handled by the node.
+* **peerInfoList** (`PeerInfo[]`):\
+  A list of connected peer nodes.\
+  For detailed structure and fields, refer to the corresponding `PeerInfo` protobuf definition.
+* **configNodeInfo** (`ConfigNodeInfo`):\
+  The configuration details of the node.\
+  See the `ConfigNodeInfo` protobuf definition for more information.
+* **machineInfo** (`MachineInfo`):\
+  Information about the machine where the node is running.\
+  Detailed structure is available in the `MachineInfo` protobuf definition.
+* **cheatWitnessInfoMap** (`map<string, string>`):\
+  A mapping containing information about super representatives (SRs) that are suspected of cheating.
 
 ## Use Case
 
 Here are some use-cases for the `getnodeinfo` method in Web3 programming:
 
-1. **Network Diagnostics and Monitoring**  
+1. **Network Diagnostics and Monitoring**\
    Developers can use `getnodeinfo` to retrieve essential details about a node's status, such as its version, protocol, and connectivity. This is useful for debugging network issues, ensuring the node is synced, or verifying compatibility with other nodes in the decentralized network.
-
-2. **Node Management and Configuration**  
+2. **Node Management and Configuration**\
    The method helps administrators or automated scripts gather node metadata (e.g., peer count, chain ID) to optimize performance. For example, it can inform load balancing decisions or trigger alerts if the node falls behind the latest block height.
+3. **User Transparency and Trust**\
+   DApps (decentralized applications) might display node information to users—like the client software version—to build trust by proving the backend operates on a legitimate, up-to-date network participant.
 
-3. **User Transparency and Trust**  
-   DApps (decentralized applications) might display node information to users—like the client software version—to build trust by proving the backend operates on a legitimate, up-to-date network participant.  
-
-*(Note: The provided JSON `{"value": "62747474657374"}` appears unrelated to `getnodeinfo` and may represent hex-encoded data, but further context is needed to interpret it.)*
+_(Note: The provided JSON `{"value": "62747474657374"}` appears unrelated to `getnodeinfo` and may represent hex-encoded data, but further context is needed to interpret it.)_
 
 ## Code for getnodeinfo
 
-
 ```python
 import requests
-import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
-headers = {
-    "Content-Type": "application/json"
-}
-payload = {
-  "value": "62747474657374"
-}
+url = "https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getnodeinfo"
+headers = {"accept": "application/json"}
 
-response = requests.post(url, headers=headers, data=json.dumps(payload))
-
-# Check the response and print the result
-if response.status_code == 200:
-    print("Result:", response.json().get("result"))
-else:
-    print("Error:", response.status_code, response.text)
+response = requests.get(url, headers=headers)
+print(response.json())
 ```
+
 ## Common Errors
 
-**Common Errors**  
-When using the `getnodeinfo` RPC Tron method, the following issues may occur:  
-- **Invalid Node Configuration**: The node may not be properly synced or configured, returning incomplete data. Ensure the node is fully synced and the API is enabled in the configuration file.  
-- **Network Connectivity Issues**: Timeouts or failed responses can occur due to unstable network connections. Verify your internet connection and check the node’s accessibility via ping or curl.  
-- **Rate Limiting or Throttling**: Excessive requests may trigger rate limits, resulting in temporary bans. Space out requests or use a load-balanced setup for high-frequency queries.  
+**Common Errors**\
+When using the `getnodeinfo` HTTP Tron method, the following issues may occur:
+
+* **Invalid Node Configuration**: The node may not be properly synced or configured, returning incomplete data. Ensure the node is fully synced and the API is enabled in the configuration file.
+* **Network Connectivity Issues**: Timeouts or failed responses can occur due to unstable network connections. Verify your internet connection and check the node’s accessibility via ping or curl.
+* **Rate Limiting or Throttling**: Excessive requests may trigger rate limits, resulting in temporary bans. Space out requests or use a load-balanced setup for high-frequency queries.
 
 The `getnodeinfo` method is invaluable for Web3 apps, providing real-time node status and network health metrics. It enables developers to monitor node performance, ensure reliability, and optimize interactions with the Tron blockchain.
 
 ### conclusion
 
-Here’s a concise conclusion incorporating your requested keywords:  
+Here’s a concise conclusion incorporating your requested keywords:
 
-The provided JSON response with the value `"62747474657374"` appears to be a hexadecimal string, which could relate to a Tron blockchain transaction or node data. For further details, you might use the **getnodeinfo RPC** method in **Tron** to retrieve node-specific information, such as network status or peer details. Integrating **getnodeinfo** into your workflow can help monitor node health and ensure seamless interactions with the **Tron** network. Always validate such data against official **Tron** documentation for accuracy.
+The provided HTTP response with the value `"62747474657374"` appears to be a hexadecimal string, which could relate to a Tron blockchain transaction or node data. For further details, you might use the **getnodeinfo REST** method in **Tron** to retrieve node-specific information, such as network status or peer details. Integrating **getnodeinfo** into your workflow can help monitor node health and ensure seamless interactions with the **Tron** network. Always validate such data against official **Tron** documentation for accuracy.
