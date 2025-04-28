@@ -10,13 +10,13 @@ description: >-
 The RPC method retrieves the bytecode of a smart contract at a specific address on the Binance Smart Chain, verifying contract deployment.
 {% endhint %}
 
-The `eth_getCode` method in the BSC protocol is a crucial part of the `eth_getCode Web3` interface, allowing users to retrieve the EVM bytecode of a smart contract at a specified address. By using the `eth_getCode RPC protocol`, developers can programmatically access contract code, facilitating contract analysis and debugging.
+The `eth_getCode` method in the BSC protocol is a crucial part of the `eth_getCode` Web3 interface, allowing users to retrieve the EVM bytecode of a smart contract at a specified address. By using the `eth_getCode` RPC protocol, developers can programmatically access contract code, facilitating contract analysis and debugging.
 
 To call `eth_getCode`, provide the contract's address and the desired block number or use "latest" for the most recent block. The method returns the bytecode as a hexadecimal string. This functionality is essential for developers working with decentralized applications on the Binance Smart Chain, offering insights into contract behavior and state.
 
 ### Supported Networks
 
-The eth\_getCode JSON-RPC API method supports the following network types:
+The `eth_getCode` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -44,7 +44,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getCode :
+Here’s a sample cURL request using `eth_getCode` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -63,7 +63,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getCode upon a successful call:
+Below is a sample JSON response returned by `eth_getCode` upon a successful call:
 
 ```json
 
@@ -105,8 +105,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x"
+  "method": "eth_getCode",
+  "params": ["0x5B56438000bAc5ed2c6E0c1EcFF4354aBfFaf889", "latest"],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -127,8 +128,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x"
+  "method": "eth_getCode",
+  "params": ["0x5B56438000bAc5ed2c6E0c1EcFF4354aBfFaf889", "latest"],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

@@ -10,13 +10,13 @@ description: >-
 The RPC method estimates the gas needed for a transaction on BSC, helping users set appropriate gas limits for successful execution.
 {% endhint %}
 
-The `eth_estimateGas` method in the BSC protocol is a crucial component for developers using the `eth_estimateGas Web3` interface. This method estimates the gas required to execute a specific transaction, ensuring efficient gas usage by predicting the computational cost before execution.
+The `eth_estimateGas` method in the BSC protocol is a crucial component for developers using the `eth_estimateGas` Web3 interface. This method estimates the gas required to execute a specific transaction, ensuring efficient gas usage by predicting the computational cost before execution.
 
-Utilizing the `eth_estimateGas RPC protocol`, developers can simulate transactions to avoid failures due to insufficient gas. This method aids in optimizing transaction costs, enhancing the reliability and performance of smart contracts by providing accurate gas estimations.
+Utilizing the `eth_estimateGas` RPC protocol, developers can simulate transactions to avoid failures due to insufficient gas. This method aids in optimizing transaction costs, enhancing the reliability and performance of smart contracts by providing accurate gas estimations.
 
 ### Supported Networks
 
-The eth\_estimateGas JSON-RPC API method supports the following network types:
+The `eth_estimateGas` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -48,7 +48,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_estimateGas :
+Here’s a sample cURL request using `eth_estimateGas` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -115,8 +115,15 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x52fb"
+  "method": "eth_estimateGas",
+  "params": [
+    {
+      "from": "0xDd7Fd27CC153E303488e9cA7Ab0E38028Ac3eb35",
+      "to": "0x1A0A18AC4BECDDbd6389559687d1A73d8927E416",
+      "value": "0x186a0"
+    }
+  ],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -137,8 +144,15 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x52fb"
+  "method": "eth_estimateGas",
+  "params": [
+    {
+      "from": "0xDd7Fd27CC153E303488e9cA7Ab0E38028Ac3eb35",
+      "to": "0x1A0A18AC4BECDDbd6389559687d1A73d8927E416",
+      "value": "0x186a0"
+    }
+  ],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

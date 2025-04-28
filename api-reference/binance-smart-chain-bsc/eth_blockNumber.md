@@ -16,7 +16,7 @@ Utilizing the `eth_blockNumber` RPC protocol, this method returns the block numb
 
 ### Supported Networks
 
-The eth\_blockNumber JSON-RPC API method supports the following network types:
+The `eth_blockNumber` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_blockNumber :
+Here’s a sample cURL request using `eth_blockNumbe`r :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,16 +54,14 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_blockNumber upon a successful call:
+Below is a sample JSON response returned by `eth_blockNumber` upon a successful call:
 
 ```json
-
 {
   "jsonrpc": "2.0",
   "id": "getblock.io",
   "result": "0x2e64326"
 }
-
 ```
 
 ### Body Parameters
@@ -96,8 +94,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x2e64326"
+  "method": "eth_blockNumber",
+  "params": [],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +117,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x2e64326"
+  "method": "eth_blockNumber",
+  "params": [],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

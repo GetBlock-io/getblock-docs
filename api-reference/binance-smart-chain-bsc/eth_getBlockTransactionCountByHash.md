@@ -11,13 +11,13 @@ description: >-
 The RPC method retrieves the number of transactions in a specific block on the Binance Smart Chain using the block's hash.
 {% endhint %}
 
-The `eth_getBlockTransactionCountByHash` method in the BSC protocol is a part of the `eth_getBlockTransactionCountByHash Web3` interface. It retrieves the number of transactions in a block identified by its hash. This method is essential for developers needing precise transaction counts for specific blocks.
+The `eth_getBlockTransactionCountByHash` method in the BSC protocol is a part of the `eth_getBlockTransactionCountByHash` Web3 interface. It retrieves the number of transactions in a block identified by its hash. This method is essential for developers needing precise transaction counts for specific blocks.
 
-Using the `eth_getBlockTransactionCountByHash RPC protocol`, users can efficiently query the transaction count of a block without fetching the entire block data. This enhances performance and minimizes data transfer, making it a preferred choice for applications that require quick transaction count retrieval.
+Using the `eth_getBlockTransactionCountByHash` RPC protocol, users can efficiently query the transaction count of a block without fetching the entire block data. This enhances performance and minimizes data transfer, making it a preferred choice for applications that require quick transaction count retrieval.
 
 ### Supported Networks
 
-The eth\_getBlockTransactionCountByHash JSON-RPC API method supports the following network types:
+The `eth_getBlockTransactionCountByHash` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -42,7 +42,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getBlockTransactionCountByHash :
+Here’s a sample cURL request using `eth_getBlockTransactionCountByHash` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -61,7 +61,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getBlockTransactionCountByHash upon a successful call:
+Below is a sample JSON response returned by `eth_getBlockTransactionCountByHash` upon a successful call:
 
 ```json
 
@@ -103,8 +103,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x5e"
+  "method": "eth_getBlockTransactionCountByHash",
+  "params": ["0x94c626286c237e187454ddd993adc534f0ce3468aaec134a39fbd52185cc3a5f"],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -125,8 +126,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x5e"
+  "method": "eth_getBlockTransactionCountByHash",
+  "params": ["0x94c626286c237e187454ddd993adc534f0ce3468aaec134a39fbd52185cc3a5f"],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

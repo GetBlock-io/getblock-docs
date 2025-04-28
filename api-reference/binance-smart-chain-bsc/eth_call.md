@@ -16,7 +16,7 @@ As part of the `eth_call` RPC protocol, this method requires parameters such as 
 
 ### Supported Networks
 
-The eth\_call JSON-RPC API method supports the following network types:
+The `eth_call` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -73,7 +73,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_call :
+Here’s a sample cURL request using `eth_call` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -147,8 +147,20 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x00000000000000000000000000000000000000000000000000000000017d2582"
+  "method": "eth_call",
+  "params": [
+    {
+      "to": "0x0fd43c8fabe26d70dfa4c8b6fa680db39f147460",
+      "data": "0x919840ad"
+    },
+    "latest",
+    {
+      "0x0fd43c8fabe26d70dfa4c8b6fa680db39f147460": {
+        "code": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063919840ad14602d575b600080fd5b60336045565b60408051918252519081900360200190f35b60005a90509056fea265627a7a72315820df124583906aafd283490b866399b6762e2075e1d84214363893c5993a13276f64736f6c63430005110032"
+      }
+    }
+  ],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -169,8 +181,20 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x00000000000000000000000000000000000000000000000000000000017d2582"
+  "method": "eth_call",
+  "params": [
+    {
+      "to": "0x0fd43c8fabe26d70dfa4c8b6fa680db39f147460",
+      "data": "0x919840ad"
+    },
+    "latest",
+    {
+      "0x0fd43c8fabe26d70dfa4c8b6fa680db39f147460": {
+        "code": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063919840ad14602d575b600080fd5b60336045565b60408051918252519081900360200190f35b60005a90509056fea265627a7a72315820df124583906aafd283490b866399b6762e2075e1d84214363893c5993a13276f64736f6c63430005110032"
+      }
+    }
+  ],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

@@ -63,7 +63,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by debug\_traceTransaction upon a successful call:
+Below is a sample JSON response returned by `debug_traceTransaction` upon a successful call:
 
 ```json
 
@@ -108,14 +108,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "transaction not found"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "debug_traceTransaction",
+"params": ["0xcd718a69d478340dc28fdf6bf8056374a52dc95841b44083163ced8dfe29310c", null],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -133,14 +129,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "transaction not found"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "debug_traceTransaction",
+"params": ["0xcd718a69d478340dc28fdf6bf8056374a52dc95841b44083163ced8dfe29310c", null],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

@@ -16,7 +16,7 @@ As part of the `eth_getStorageAt RPC protocol`, this method facilitates direct a
 
 ### Supported Networks
 
-The eth\_getStorageAt JSON-RPC API method supports the following network types:
+The `eth_getStorageAt` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -51,7 +51,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getStorageAt :
+Here’s a sample cURL request using `eth_getStorageAt` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -70,7 +70,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getStorageAt upon a successful call:
+Below is a sample JSON response returned by `eth_getStorageAt` upon a successful call:
 
 ```json
 
@@ -110,10 +110,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+payload = : "2.0",
+  "method": "eth_getStorageAt",
+  "params": ["0xE592427A0AEce92De3Edee1F18E0157C05861564", "0x0", "latest"],
+  "id": 1
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -132,10 +132,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+const payload = : "2.0",
+  "method": "eth_getStorageAt",
+  "params": ["0xE592427A0AEce92De3Edee1F18E0157C05861564", "0x0", "latest"],
+  "id": 1
 };
 
 axios.post(url, payload, {

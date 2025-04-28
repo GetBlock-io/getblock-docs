@@ -10,13 +10,13 @@ description: >-
 The method retrieves changes in logs or events for a specified filter on Binance Smart Chain, enabling efficient event tracking without polling the entire blockchain.
 {% endhint %}
 
-The `eth_getFilterChanges` method in the BSC protocol retrieves a list of changes since the last call to this method using the filter ID. In the context of `eth_getFilterChanges Web3`, it efficiently monitors blockchain events. This method is crucial for applications needing real-time updates without polling the entire blockchain.
+The `eth_getFilterChanges` method in the BSC protocol retrieves a list of changes since the last call to this method using the filter ID. In the context of `eth_getFilterChanges` Web3, it efficiently monitors blockchain events. This method is crucial for applications needing real-time updates without polling the entire blockchain.
 
-When using the `eth_getFilterChanges RPC protocol`, it returns logs or transaction hashes, depending on the filter type. This enables developers to manage data streams effectively and maintain optimal performance. It's essential for developers implementing event-driven architectures on the Binance Smart Chain.
+When using the `eth_getFilterChanges` RPC protocol, it returns logs or transaction hashes, depending on the filter type. This enables developers to manage data streams effectively and maintain optimal performance. It's essential for developers implementing event-driven architectures on the Binance Smart Chain.
 
 ### Supported Networks
 
-The eth\_getFilterChanges JSON-RPC API method supports the following network types:
+The `eth_getFilterChanges` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -41,7 +41,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getFilterChanges :
+Here’s a sample cURL request using `eth_getFilterChanges` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -60,7 +60,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getFilterChanges upon a successful call:
+Below is a sample JSON response returned by `eth_getFilterChanges` upon a successful call:
 
 ```json
 
@@ -107,11 +107,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "filter not found"
-  }
+  "method": "eth_getFilterChanges",
+  "params": ["YOUR_FILTER_ID"],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -132,11 +130,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "filter not found"
-  }
+  "method": "eth_getFilterChanges",
+  "params": ["YOUR_FILTER_ID"],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

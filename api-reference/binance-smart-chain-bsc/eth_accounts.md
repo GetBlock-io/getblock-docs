@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": []
+  "method": "eth_accounts",
+  "params": [],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": []
+  "method": "eth_accounts",
+  "params": [],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

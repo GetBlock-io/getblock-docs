@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_chainId :
+Here’s a sample cURL request using `eth_chainId` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_chainId upon a successful call:
+Below is a sample JSON response returned by `eth_chainId` upon a successful call:
 
 ```json
 
@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x38"
+  "method": "eth_chainId",
+  "params": [],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x38"
+  "method": "eth_chainId",
+  "params": [],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

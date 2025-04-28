@@ -16,7 +16,7 @@ As an integral component of the `debug_accountRange` RPC protocol, this method f
 
 ### Supported Networks
 
-The debug\_accountRange JSON-RPC API method supports the following network types:
+The `debug_accountRange` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -69,7 +69,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using debug\_accountRange :
+Here’s a sample cURL request using `debug_accountRange` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -86,7 +86,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by debug\_accountRange upon a successful call:
+Below is a sample JSON response returned by `debug_accountRange` upon a successful call:
 
 ```json
 
@@ -131,14 +131,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "block 0xc48fb64230a82f65a08e7280bd8745e7fea87bc7c206309dee32209fe9a985f7 not found"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "debug_accountRange",
+"params": ["0xc48fb64230a82f65a08e7280bd8745e7fea87bc7c206309dee32209fe9a985f7", "0x0f", 0, false, false, false],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -156,14 +152,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "block 0xc48fb64230a82f65a08e7280bd8745e7fea87bc7c206309dee32209fe9a985f7 not found"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "debug_accountRange",
+"params": ["0xc48fb64230a82f65a08e7280bd8745e7fea87bc7c206309dee32209fe9a985f7", "0x0f", 0, false, false, false],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

@@ -10,13 +10,13 @@ description: >-
 The RPC method retrieves historical gas fee data on BSC, aiding users in estimating transaction costs and optimizing gas usage.
 {% endhint %}
 
-The `eth_feeHistory` method in the BSC protocol provides a snapshot of historical gas fee data, crucial for understanding recent network activity. Utilizing the `eth_feeHistory Web3` interface, developers can retrieve information about gas prices over a range of recent blocks, aiding in more accurate fee estimations.
+The `eth_feeHistory` method in the BSC protocol provides a snapshot of historical gas fee data, crucial for understanding recent network activity. Utilizing the `eth_feeHistory` Web3 interface, developers can retrieve information about gas prices over a range of recent blocks, aiding in more accurate fee estimations.
 
-Through the `eth_feeHistory RPC protocol`, users can specify the number of blocks and the priority fee percentile to obtain detailed insights into gas price trends. This method is essential for optimizing transaction costs and enhancing the efficiency of applications interacting with the Binance Smart Chain.
+Through the `eth_feeHistory` RPC protocol, users can specify the number of blocks and the priority fee percentile to obtain detailed insights into gas price trends. This method is essential for optimizing transaction costs and enhancing the efficiency of applications interacting with the Binance Smart Chain.
 
 ### Supported Networks
 
-The eth\_feeHistory JSON-RPC API method supports the following network types:
+The `eth_feeHistory` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -48,7 +48,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_feeHistory :
+Here’s a sample cURL request using `eth_feeHistory` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -67,7 +67,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_feeHistory upon a successful call:
+Below is a sample JSON response returned by `eth_feeHistory` upon a successful call:
 
 ```json
 
@@ -134,30 +134,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": {
-    "oldestBlock": "0x2e64327",
-    "reward": [
-      [
-        "0x3840",
-        "0x47868c00"
-      ]
-    ],
-    "baseFeePerGas": [
-      "0x0",
-      "0x0"
-    ],
-    "gasUsedRatio": [
-      0.0846828
-    ],
-    "baseFeePerBlobGas": [
-      "0x1",
-      "0x1"
-    ],
-    "blobGasUsedRatio": [
-      0
-    ]
-  }
+  "method": "eth_feeHistory",
+  "params": [4, "latest", [25, 75]],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -178,30 +157,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": {
-    "oldestBlock": "0x2e64327",
-    "reward": [
-      [
-        "0x3840",
-        "0x47868c00"
-      ]
-    ],
-    "baseFeePerGas": [
-      "0x0",
-      "0x0"
-    ],
-    "gasUsedRatio": [
-      0.0846828
-    ],
-    "baseFeePerBlobGas": [
-      "0x1",
-      "0x1"
-    ],
-    "blobGasUsedRatio": [
-      0
-    ]
-  }
+  "method": "eth_feeHistory",
+  "params": [4, "latest", [25, 75]],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

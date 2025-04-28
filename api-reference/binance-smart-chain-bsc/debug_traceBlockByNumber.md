@@ -110,14 +110,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "historical state not available in path scheme yet"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "debug_traceBlockByNumber",
+"params": ["0xA1", {"tracer": "callTracer"}],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -135,14 +131,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "historical state not available in path scheme yet"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "debug_traceBlockByNumber",
+"params": ["0xA1", {"tracer": "callTracer"}],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

@@ -139,19 +139,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": {
-    "from": "0x0000000000000000000000000000000000000000",
-    "gas": "0x17d7840",
-    "gasUsed": "0x5208",
-    "to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567",
-    "input": "0x",
-    "value": "0x0",
-    "type": "CALL"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "debug_traceCall",
+"params": [{"to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567"}, "finalized", {"tracer": "callTracer"}],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -169,19 +160,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": {
-    "from": "0x0000000000000000000000000000000000000000",
-    "gas": "0x17d7840",
-    "gasUsed": "0x5208",
-    "to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567",
-    "input": "0x",
-    "value": "0x0",
-    "type": "CALL"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "debug_traceCall",
+"params": [{"to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567"}, "finalized", {"tracer": "callTracer"}],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

@@ -10,13 +10,13 @@ description: >-
 The RPC eth\_getLogs retrieves event logs from the Binance Smart Chain, aiding in tracking contract events and filtering blockchain data.
 {% endhint %}
 
-The `eth_getLogs` method in the BSC protocol is a part of the `eth_getLogs Web3` and `eth_getLogs RPC protocol`, designed to retrieve event logs from the blockchain. This method allows users to filter logs based on specific criteria such as block range, contract address, and topics, providing a powerful tool for monitoring and analyzing blockchain events.
+The `eth_getLogs` method in the BSC protocol is a part of the `eth_getLogs` Web3 and `eth_getLogs` RPC protocol, designed to retrieve event logs from the blockchain. This method allows users to filter logs based on specific criteria such as block range, contract address, and topics, providing a powerful tool for monitoring and analyzing blockchain events.
 
 Utilizing `eth_getLogs`, developers can efficiently access historical and real-time data for smart contract interactions. The method returns an array of log objects, each containing details like block number, transaction hash, and data payload. This functionality is crucial for applications that need to track contract events or audit blockchain activities.
 
 ### Supported Networks
 
-The eth\_getLogs JSON-RPC API method supports the following network types:
+The `eth_getLogs` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -42,7 +42,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getLogs :
+Here’s a sample cURL request using `eth_getLogs` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -63,7 +63,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getLogs upon a successful call:
+Below is a sample JSON response returned by `eth_getLogs` upon a successful call:
 
 ```json
 
@@ -107,8 +107,11 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": []
+  "method": "eth_getLogs",
+  "params": [{
+    "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+  }],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -129,8 +132,11 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": []
+  "method": "eth_getLogs",
+  "params": [{
+    "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+  }],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

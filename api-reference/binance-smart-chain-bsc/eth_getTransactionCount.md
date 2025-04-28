@@ -10,13 +10,13 @@ description: >-
 The method retrieves the number of transactions sent from a specific BSC address, useful for determining the nonce for new transactions.
 {% endhint %}
 
-The `eth_getTransactionCount` method in the BSC protocol is a crucial JSON-RPC API used to retrieve the number of transactions sent from a specified address. In the context of `eth_getTransactionCount Web3`, this method helps developers determine the nonce, which is essential for transaction ordering and avoiding replay attacks.
+The `eth_getTransactionCount` method in the BSC protocol is a crucial JSON-RPC API used to retrieve the number of transactions sent from a specified address. In the context of `eth_getTransactionCount` Web3, this method helps developers determine the nonce, which is essential for transaction ordering and avoiding replay attacks.
 
-When using `eth_getTransactionCount RPC protocol`, you specify the address and optionally the block parameter to get the transaction count at a particular block state. This method returns a hexadecimal value representing the count, ensuring precise transaction management and execution in decentralized applications.
+When using `eth_getTransactionCount` RPC protocol, you specify the address and optionally the block parameter to get the transaction count at a particular block state. This method returns a hexadecimal value representing the count, ensuring precise transaction management and execution in decentralized applications.
 
 ### Supported Networks
 
-The eth\_getTransactionCount JSON-RPC API method supports the following network types:
+The `eth_getTransactionCount` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -47,7 +47,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getTransactionCount :
+Here’s a sample cURL request using `eth_getTransactionCount` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -66,7 +66,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getTransactionCount upon a successful call:
+Below is a sample JSON response returned by `eth_getTransactionCount` upon a successful call:
 
 ```json
 
@@ -108,8 +108,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x0"
+  "method": "eth_getTransactionCount",
+  "params": ["0x8D97689C9818892B700e27F316cc3E41e17fBeb9", "latest"],
+  "id": 1
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -130,8 +131,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x0"
+  "method": "eth_getTransactionCount",
+  "params": ["0x8D97689C9818892B700e27F316cc3E41e17fBeb9", "latest"],
+  "id": 1
 };
 
 axios.post(url, payload, {

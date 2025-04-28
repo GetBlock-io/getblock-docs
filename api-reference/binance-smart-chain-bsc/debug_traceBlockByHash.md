@@ -63,7 +63,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by debug\_traceBlockByHash upon a successful call:
+Below is a sample JSON response returned by `debug_traceBlockByHash` upon a successful call:
 
 ```json
 
@@ -108,14 +108,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "block 0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce not found"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "debug_traceBlockByHash",
+"params": ["0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce", null],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -133,14 +129,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "block 0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce not found"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "debug_traceBlockByHash",
+"params": ["0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce", null],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

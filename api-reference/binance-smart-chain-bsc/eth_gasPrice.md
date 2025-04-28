@@ -10,13 +10,13 @@ description: >-
 The RPC method fetches the current gas price in wei for transactions on the Binance Smart Chain, helping users estimate transaction costs.
 {% endhint %}
 
-The `eth_gasPrice` method in the BSC protocol is a JSON-RPC API call that retrieves the current gas price in wei, which is essential for determining transaction fees. This method is integral to both `eth_gasPrice Web3` and `eth_gasPrice RPC protocol` implementations, providing users with real-time gas price data to optimize transaction costs.
+The `eth_gasPrice` method in the BSC protocol is a JSON-RPC API call that retrieves the current gas price in wei, which is essential for determining transaction fees. This method is integral to both `eth_gasPrice` Web3 and `eth_gasPrice` RPC protocol implementations, providing users with real-time gas price data to optimize transaction costs.
 
 When invoked, `eth_gasPrice` returns the network's median gas price, enabling developers to set appropriate gas fees for transactions on the Binance Smart Chain. This ensures efficient transaction processing and cost management, making it a critical tool for developers and users navigating the blockchain environment.
 
 ### Supported Networks
 
-The eth\_gasPrice JSON-RPC API method supports the following network types:
+The `eth_gasPrice` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_gasPrice :
+Here’s a sample cURL request using `eth_gasPrice` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_gasPrice upon a successful call:
+Below is a sample JSON response returned by `eth_gasPrice` upon a successful call:
 
 ```json
 
@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x3b9aca00"
+  "method": "eth_gasPrice",
+  "params": [],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x3b9aca00"
+  "method": "eth_gasPrice",
+  "params": [],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

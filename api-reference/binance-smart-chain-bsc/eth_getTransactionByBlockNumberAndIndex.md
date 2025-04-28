@@ -10,13 +10,13 @@ description: >-
 Retrieves a transaction from a specific block number and index on BSC, aiding in transaction tracking and blockchain analysis.
 {% endhint %}
 
-The `eth_getTransactionByBlockNumberAndIndex` method in the BSC protocol allows users to retrieve a specific transaction from a block using its block number and transaction index. This method is part of the `eth_getTransactionByBlockNumberAndIndex Web3` functionality, providing developers with a precise way to access transaction details within a block.
+The `eth_getTransactionByBlockNumberAndIndex` method in the BSC protocol allows users to retrieve a specific transaction from a block using its block number and transaction index. This method is part of the `eth_getTransactionByBlockNumberAndIndex` Web3 functionality, providing developers with a precise way to access transaction details within a block.
 
-Utilizing the `eth_getTransactionByBlockNumberAndIndex RPC protocol`, developers can query the BSC network to obtain transaction information efficiently. This method requires two parameters: the block number and the transaction index, both of which are essential for pinpointing the exact transaction within a block, ensuring accurate data retrieval.
+Utilizing the `eth_getTransactionByBlockNumberAndIndex` RPC protocol, developers can query the BSC network to obtain transaction information efficiently. This method requires two parameters: the block number and the transaction index, both of which are essential for pinpointing the exact transaction within a block, ensuring accurate data retrieval.
 
 ### Supported Networks
 
-The eth\_getTransactionByBlockNumberAndIndex JSON-RPC API method supports the following network types:
+The `eth_getTransactionByBlockNumberAndIndex` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -46,7 +46,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getTransactionByBlockNumberAndIndex :
+Here’s a sample cURL request using `eth_getTransactionByBlockNumberAndIndex` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -65,7 +65,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getTransactionByBlockNumberAndIndex upon a successful call:
+Below is a sample JSON response returned by `eth_getTransactionByBlockNumberAndIndex` upon a successful call:
 
 ```json
 
@@ -137,25 +137,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": {
-    "blockHash": "0xf6e21d834a28d32a340b1bfb721019c3c3b49ae6b0f0a49c9f4c14ca1d82a000",
-    "blockNumber": "0xc5043f",
-    "from": "0x4982085c9e2f89f2ecb8131eca71afad896e89cb",
-    "gas": "0x13c32",
-    "gasPrice": "0x4a817c800",
-    "hash": "0xeac6fc618eed658e566d23bb8a76fd258ddf075305bae5c5803ae6f83fead55b",
-    "input": "0xa9059cbb000000000000000000000000bf2bc9f66955db1c62cfec5a564b3e62c752008a000000000000000000000000000000000000000000000482114f7028102f0000",
-    "nonce": "0x1a14c0",
-    "to": "0xe56842ed550ff2794f010738554db45e60730371",
-    "transactionIndex": "0x0",
-    "value": "0x0",
-    "type": "0x0",
-    "chainId": "0x38",
-    "v": "0x93",
-    "r": "0xcd1ff18127b5177f308529e47d282146269105ce140196ed40e416bf6fc32123",
-    "s": "0x7561d811c71860ca9384e2996539628818fecf54a911783295b99b410182fc5b"
-  }
+  "method": "eth_getTransactionByBlockNumberAndIndex",
+  "params": ["0xc5043f", "0x0"],
+  "id": 1
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -176,25 +160,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": {
-    "blockHash": "0xf6e21d834a28d32a340b1bfb721019c3c3b49ae6b0f0a49c9f4c14ca1d82a000",
-    "blockNumber": "0xc5043f",
-    "from": "0x4982085c9e2f89f2ecb8131eca71afad896e89cb",
-    "gas": "0x13c32",
-    "gasPrice": "0x4a817c800",
-    "hash": "0xeac6fc618eed658e566d23bb8a76fd258ddf075305bae5c5803ae6f83fead55b",
-    "input": "0xa9059cbb000000000000000000000000bf2bc9f66955db1c62cfec5a564b3e62c752008a000000000000000000000000000000000000000000000482114f7028102f0000",
-    "nonce": "0x1a14c0",
-    "to": "0xe56842ed550ff2794f010738554db45e60730371",
-    "transactionIndex": "0x0",
-    "value": "0x0",
-    "type": "0x0",
-    "chainId": "0x38",
-    "v": "0x93",
-    "r": "0xcd1ff18127b5177f308529e47d282146269105ce140196ed40e416bf6fc32123",
-    "s": "0x7561d811c71860ca9384e2996539628818fecf54a911783295b99b410182fc5b"
-  }
+  "method": "eth_getTransactionByBlockNumberAndIndex",
+  "params": ["0xc5043f", "0x0"],
+  "id": 1
 };
 
 axios.post(url, payload, {

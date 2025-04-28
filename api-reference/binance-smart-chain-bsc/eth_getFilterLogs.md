@@ -10,13 +10,13 @@ description: >-
 eth\_getFilterLogs retrieves logs that match a specified filter on the Binance Smart Chain, primarily used to track events and transactions.
 {% endhint %}
 
-The `eth_getFilterLogs` method in the BSC protocol is a part of the JSON-RPC API, enabling users to retrieve an array of log objects that match the criteria set by a filter ID. This method is integral to the `eth_getFilterLogs Web3` interface, allowing developers to efficiently access event logs without manually parsing blocks.
+The `eth_getFilterLogs` method in the BSC protocol is a part of the JSON-RPC API, enabling users to retrieve an array of log objects that match the criteria set by a filter ID. This method is integral to the `eth_getFilterLogs` Web3 interface, allowing developers to efficiently access event logs without manually parsing blocks.
 
-In the `eth_getFilterLogs RPC protocol`, the method requires a single parameter, the filter ID, which is obtained from a previous filter creation call such as `eth_newFilter`. By leveraging this method, developers can streamline their log retrieval processes, ensuring precise and relevant data extraction for their decentralized applications.
+In the `eth_getFilterLogs` RPC protocol, the method requires a single parameter, the filter ID, which is obtained from a previous filter creation call such as `eth_newFilter`. By leveraging this method, developers can streamline their log retrieval processes, ensuring precise and relevant data extraction for their decentralized applications.
 
 ### Supported Networks
 
-The eth\_getFilterLogs JSON-RPC API method supports the following network types:
+The `eth_getFilterLogs` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -41,7 +41,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getFilterLogs :
+Here’s a sample cURL request using `eth_getFilterLogs` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -60,7 +60,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getFilterLogs upon a successful call:
+Below is a sample JSON response returned by `eth_getFilterLogs` upon a successful call:
 
 ```json
 
@@ -106,11 +106,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "filter not found"
-  }
+  "method": "eth_getFilterLogs",
+  "params": ["0xfba02b32cc0fd31639b68144ebc59fd2"],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -131,11 +129,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "filter not found"
-  }
+  "method": "eth_getFilterLogs",
+  "params": ["0xfba02b32cc0fd31639b68144ebc59fd2"],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {

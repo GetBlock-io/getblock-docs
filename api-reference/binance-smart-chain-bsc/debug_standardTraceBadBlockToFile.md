@@ -16,7 +16,7 @@ Utilizing the `debug_standardTraceBadBlockToFile` RPC protocol, developers can e
 
 ### Supported Networks
 
-The debug\_standardTraceBadBlockToFile JSON-RPC API method supports the following network types:
+The `debug_standardTraceBadBlockToFile` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -41,7 +41,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using debug\_standardTraceBadBlockToFile :
+Here’s a sample cURL request using `debug_standardTraceBadBlockToFile` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -58,7 +58,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by debug\_standardTraceBadBlockToFile upon a successful call:
+Below is a sample JSON response returned by `debug_standardTraceBadBlockToFile` upon a successful call:
 
 ```json
 
@@ -103,14 +103,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "bad block 0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce not found"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "debug_standardTraceBadBlockToFile",
+"params": ["0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce"],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -128,14 +124,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "bad block 0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce not found"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "debug_standardTraceBadBlockToFile",
+"params": ["0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce"],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

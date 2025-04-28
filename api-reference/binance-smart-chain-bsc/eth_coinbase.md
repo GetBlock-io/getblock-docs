@@ -12,11 +12,11 @@ The RPC eth\_coinbase retrieves the default account address for mining rewards o
 
 The `eth_coinbase` method in the BSC protocol is a JSON-RPC API call that retrieves the address of the current coinbase or miner. This method is crucial for developers working with Ethereum-based networks, as it identifies the account responsible for mining new blocks. Used in conjunction with `eth_coinbase Web3`, it facilitates seamless integration with decentralized applications.
 
-In the context of the `eth_coinbase RPC protocol`, this method returns a single string value representing the miner's address. It's a straightforward and efficient way to access essential blockchain data. By leveraging `eth_coinbase`, developers can easily obtain the mining account information, ensuring their applications remain synchronized with the network's state.
+In the context of the `eth_coinbase` RPC protocol, this method returns a single string value representing the miner's address. It's a straightforward and efficient way to access essential blockchain data. By leveraging `eth_coinbase`, developers can easily obtain the mining account information, ensuring their applications remain synchronized with the network's state.
 
 ### Supported Networks
 
-The eth\_coinbase JSON-RPC API method supports the following network types:
+The `eth_coinbase` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_coinbase :
+Here’s a sample cURL request using `eth_coinbase` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -52,7 +52,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_coinbase upon a successful call:
+Below is a sample JSON response returned by `eth_coinbase` upon a successful call:
 
 ```json
 
@@ -97,14 +97,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "etherbase must be explicitly specified"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "eth_coinbase",
+"params": [],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -122,14 +118,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "etherbase must be explicitly specified"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "eth_coinbase",
+"params": [],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

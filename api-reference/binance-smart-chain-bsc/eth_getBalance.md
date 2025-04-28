@@ -10,13 +10,13 @@ description: >-
 The RPC method retrieves an account's balance in wei on the Binance Smart Chain, providing the current balance at a specified block number.
 {% endhint %}
 
-The `eth_getBalance` method in the BSC protocol is an essential JSON-RPC API call that retrieves the balance of a specified address in wei. This method is commonly used in the `eth_getBalance Web3` context to provide developers with precise account balance information at a specific block height, enhancing blockchain interactions.
+The `eth_getBalance` method in the BSC protocol is an essential JSON-RPC API call that retrieves the balance of a specified address in wei. This method is commonly used in the `eth_getBalance` Web3 context to provide developers with precise account balance information at a specific block height, enhancing blockchain interactions.
 
-Utilizing the `eth_getBalance RPC protocol`, users can specify the target Ethereum address and the block parameter, which can be a block number or keywords like `latest`, `earliest`, or `pending`. This flexibility allows developers to obtain real-time or historical balance data, facilitating accurate financial assessments in decentralized applications.
+Utilizing the `eth_getBalance` RPC protocol, users can specify the target Ethereum address and the block parameter, which can be a block number or keywords like `latest`, `earliest`, or `pending`. This flexibility allows developers to obtain real-time or historical balance data, facilitating accurate financial assessments in decentralized applications.
 
 ### Supported Networks
 
-The eth\_getBalance JSON-RPC API method supports the following network types:
+The `eth_getBalance` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -46,7 +46,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getBalance :
+Here’s a sample cURL request using `eth_getBalance` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -65,7 +65,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getBalance upon a successful call:
+Below is a sample JSON response returned by `eth_getBalance` upon a successful call:
 
 ```json
 
@@ -109,8 +109,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x0"
+  "method": "eth_getBalance",
+  "params": ["0x8D97689C9818892B700e27F316cc3E41e17fBeb9", "latest"],
+  "id": "getblock.io"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -131,8 +132,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": "0x0"
+  "method": "eth_getBalance",
+  "params": ["0x8D97689C9818892B700e27F316cc3E41e17fBeb9", "latest"],
+  "id": "getblock.io"
 };
 
 axios.post(url, payload, {
