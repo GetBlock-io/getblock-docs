@@ -1,6 +1,6 @@
 ---
 description: >-
-  Explore 'debug_accountRange' in the JSON-RPC API Interface for efficient
+  Explore debug_accountRange in the JSON-RPC API Interface for efficient
   blockchain account data retrieval on BSC.
 ---
 
@@ -10,7 +10,7 @@ description: >-
 The RPC method retrieves a list of accounts within a specified range on the BSC, aiding in account management and analysis.
 {% endhint %}
 
-The debug\_accountRange Web3 method is a specialized function within the BSC protocol, designed to facilitate the retrieval of blockchain account data over a specified range. As part of the debug\_accountRange RPC protocol, this method provides users with the ability to access detailed account information efficiently, aiding in debugging and data analysis tasks. By specifying parameters such as the start and end account addresses, users can tailor their queries to focus on specific segments of the blockchain, optimizing both time and resource usage. Ideal for developers and blockchain analysts, this method enhances the capability to monitor, debug, and understand on-chain activities within the Binance Smart Chain environment.
+The `debug_accountRange` Web3 method is a specialized function within the BSC protocol, designed to facilitate the retrieval of blockchain account data over a specified range. As part of the debug\_accountRange RPC protocol, this method provides users with the ability to access detailed account information efficiently, aiding in debugging and data analysis tasks. By specifying parameters such as the start and end account addresses, users can tailor their queries to focus on specific segments of the blockchain, optimizing both time and resource usage. Ideal for developers and blockchain analysts, this method enhances the capability to monitor, debug, and understand on-chain activities within the Binance Smart Chain environment.
 
 ### Supported Networks
 
