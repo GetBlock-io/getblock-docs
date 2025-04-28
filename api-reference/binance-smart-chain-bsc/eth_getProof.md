@@ -1,59 +1,58 @@
 ---
 description: >-
-  eth_getProof JSON-RPC API Interface: Retrieve account and storage proof data efficiently in the BSC protocol for secure blockchain interactions.
+  eth_getProof JSON-RPC API Interface: Retrieve account and storage proof data
+  efficiently in the BSC protocol for secure blockchain interactions.
 ---
 
-# eth_getProof
+# eth\_getProof - Binance Smart Chain
 
 {% hint style="success" %}
-The method retrieves Merkle proof for account and storage, verifying inclusion in the BSC state trie.&#x20;
+The method retrieves Merkle proof for account and storage, verifying inclusion in the BSC state trie.
 {% endhint %}
 
 The `eth_getProof` method in the BSC protocol is a JSON-RPC API method used to generate a Merkle proof for a specific account and its storage. By leveraging the `eth_getProof Web3` interface, developers can retrieve cryptographic proofs of account existence and storage values, which are essential for verifying data integrity.
 
 As part of the `eth_getProof RPC protocol`, this method requires parameters such as the account address, storage keys, and a block number. The response includes the account's balance, nonce, code hash, and storage proofs. This functionality is invaluable for applications requiring secure and verifiable state information.
 
-## Supported Networks
+### Supported Networks
 
-The eth_getProof JSON-RPC API method supports the following network types:
-- **Mainnet**
-- **Testnet**
+The eth\_getProof JSON-RPC API method supports the following network types:
 
-## Parameters
+* **Mainnet**
+* **Testnet**
+
+### Parameters
 
 Here is the list of parameters `eth_getProof` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Address**
-  - **Type**: String
-  - **Description**: The address of the account for which the proof is being requested.
-  - **Required**: Yes
-  - **Example**: `"0x7F0d15C7FAae65896648C8273B6d7E43f58Fa842"`
+* **Address**
+  * **Type**: String
+  * **Description**: The address of the account for which the proof is being requested.
+  * **Required**: Yes
+  * **Example**: `"0x7F0d15C7FAae65896648C8273B6d7E43f58Fa842"`
+* **Storage Keys**
+  * **Type**: Array of Strings
+  * **Description**: A list of storage keys for which the proof is requested.
+  * **Required**: Yes
+  * **Example**: `["0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"]`
+* **Block Parameter**
+  * **Type**: String
+  * **Description**: The block number or block tag (e.g., "latest", "earliest", "pending") for which the proof is requested.
+  * **Required**: Yes
+  * **Default/Supported Values**: `"latest"`, `"earliest"`, `"pending"`, or a specific block number in hexadecimal format.
+  * **Example**: `"latest"`
 
-- **Storage Keys**
-  - **Type**: Array of Strings
-  - **Description**: A list of storage keys for which the proof is requested.
-  - **Required**: Yes
-  - **Example**: `["0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"]`
+## Request Example
 
-- **Block Parameter**
-  - **Type**: String
-  - **Description**: The block number or block tag (e.g., "latest", "earliest", "pending") for which the proof is requested.
-  - **Required**: Yes
-  - **Default/Supported Values**: `"latest"`, `"earliest"`, `"pending"`, or a specific block number in hexadecimal format.
-  - **Example**: `"latest"`
-
-# Request Example
-
-##### API Endpoint
+**API Endpoint**
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
+**Request**
 
-#### Request
-
-Here’s a sample cURL request using eth_getProof :
+Here’s a sample cURL request using eth\_getProof :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -74,9 +73,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-#### Response
+**Response**
 
-Below is a sample JSON response returned by eth_getProof upon a successful call:
+Below is a sample JSON response returned by eth\_getProof upon a successful call:
 
 ```json
 
@@ -111,38 +110,30 @@ Below is a sample JSON response returned by eth_getProof upon a successful call:
 
 ```
 
-## Body Parameters
+### Body Parameters
 
 Here is the list of body parameters for the `eth_getProof` method:
 
 1. **address**: The Ethereum address that the proof is being requested for, e.g., `"0x7f0d15c7faae65896648c8273b6d7e43f58fa842"`.
-
 2. **accountProof**: An array of strings representing the Merkle Patricia Trie proof for the account. Each string is a hex-encoded RLP-encoded node.
-
 3. **balance**: The balance of the account in wei, represented as a hex string, e.g., `"0x0"`.
-
 4. **codeHash**: The hash of the account's code, represented as a hex string. If the account is not a contract, this will be the hash of an empty string, e.g., `"0x0000000000000000000000000000000000000000000000000000000000000000"`.
-
 5. **nonce**: The nonce of the account, represented as a hex string, e.g., `"0x0"`.
-
 6. **storageHash**: The hash of the storage of the account, represented as a hex string, e.g., `"0x0000000000000000000000000000000000000000000000000000000000000000"`.
-
 7. **storageProof**: An array of objects, each containing:
-   - **key**: The storage key being proved, represented as a hex string.
-   - **value**: The value at the storage key, represented as a hex string.
-   - **proof**: An array of strings representing the Merkle Patricia Trie proof for the storage key. Each string is a hex-encoded RLP-encoded node.
+   * **key**: The storage key being proved, represented as a hex string.
+   * **value**: The value at the storage key, represented as a hex string.
+   * **proof**: An array of strings representing the Merkle Patricia Trie proof for the storage key. Each string is a hex-encoded RLP-encoded node.
 
-## Use Cases
+### Use Cases
 
 Here are some use-cases for `eth_getProof` method:
 
 1. **Account and Storage Verification**: The `eth_getProof` method is used to obtain the Merkle proof for a given account and its storage keys. This is particularly useful in scenarios where a decentralized application (dApp) or a smart contract needs to verify the existence and state of an account or its storage on the Ethereum blockchain without relying on a full node. By providing a proof, developers can ensure that the state they are interacting with is authentic and has not been tampered with.
-
 2. **Light Client Implementation**: In the context of light clients, which do not store the entire blockchain data, `eth_getProof` can be used to validate transactions and account states efficiently. Light clients can request proofs for specific accounts or storage keys to confirm their current state, enabling them to operate securely and effectively with limited resources.
-
 3. **Auditing and Compliance**: For auditing purposes, `eth_getProof` can be employed to provide cryptographic evidence of the state of an account or contract at a particular block. This is useful for compliance and regulatory requirements where proving the state of a blockchain entity at a specific point in time is necessary. Auditors can use the proof to verify that the data they are examining is accurate and trustworthy.
 
-## Code for eth_getProof
+### Code for eth\_getProof
 
 {% tabs %}
 {% tab title="Python" %}
@@ -193,6 +184,7 @@ else:
 
 ```
 {% endtab %}
+
 {% tab title="JavaScript" %}
 ```javascript
 const axios = require('axios');
@@ -244,16 +236,17 @@ axios.post(url, payload, {
 {% endtab %}
 {% endtabs %}
 
-## Common Errors
+### Common Errors
 
 When using the `eth_getProof` JSON-RPC API BSC method, the following issues may occur:
-- Invalid address format: Ensure that the address is in the correct hexadecimal format and includes the `0x` prefix. Double-check for any typos or missing characters.
-- Non-existent storage key: The specified storage key might not exist in the contract's state. Verify the key's correctness and ensure it is derived properly from the contract's storage layout.
-- Incorrect block reference: If the block reference is invalid or not available, the method may fail. Confirm that the block identifier is correct and that it corresponds to an existing block in the blockchain.
-- Network connectivity issues: Poor connectivity or network congestion can lead to timeouts or failed requests. Ensure a stable internet connection and consider retrying the request or using a different node provider.
+
+* Invalid address format: Ensure that the address is in the correct hexadecimal format and includes the `0x` prefix. Double-check for any typos or missing characters.
+* Non-existent storage key: The specified storage key might not exist in the contract's state. Verify the key's correctness and ensure it is derived properly from the contract's storage layout.
+* Incorrect block reference: If the block reference is invalid or not available, the method may fail. Confirm that the block identifier is correct and that it corresponds to an existing block in the blockchain.
+* Network connectivity issues: Poor connectivity or network congestion can lead to timeouts or failed requests. Ensure a stable internet connection and consider retrying the request or using a different node provider.
 
 The `eth_getProof` method is beneficial in Web3 applications as it allows developers to obtain Merkle proofs of account and storage states, enhancing the verification processes in decentralized applications. This functionality is crucial for ensuring data integrity and transparency, which are fundamental principles of blockchain technology.
 
-## Conclusion
+### Conclusion
 
 The `eth_getProof` JSON-RPC method is a powerful tool for retrieving account and storage proof data from the Ethereum blockchain, providing users with a way to verify the state of accounts. In the context of Binance Smart Chain (BSC), this method can be particularly useful for developers looking to ensure data integrity and perform validation checks. By leveraging `eth_getProof`, users can gain deeper insights into blockchain state and enhance their application's trustworthiness.

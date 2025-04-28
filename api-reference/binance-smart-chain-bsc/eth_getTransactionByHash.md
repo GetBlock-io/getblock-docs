@@ -1,46 +1,47 @@
 ---
 description: >-
-  Retrieve transaction details by hash using eth_getTransactionByHash in the BSC protocol via the JSON-RPC API Interface.
+  Retrieve transaction details by hash using eth_getTransactionByHash in the BSC
+  protocol via the JSON-RPC API Interface.
 ---
 
-# eth_getTransactionByHash
+# eth\_get TransactionByHash - Binance Smart Chain
 
 {% hint style="success" %}
-The RPC method retrieves transaction details on Binance Smart Chain using a specific transaction hash, providing information like block number, sender, and receiver.&#x20;
+The RPC method retrieves transaction details on Binance Smart Chain using a specific transaction hash, providing information like block number, sender, and receiver.
 {% endhint %}
 
 The `eth_getTransactionByHash` method in the BSC protocol allows users to retrieve detailed information about a specific transaction using its unique hash. As part of the `eth_getTransactionByHash Web3` functionality, it returns transaction details such as block hash, sender, recipient, and value transferred, enabling developers to track and verify transactions efficiently.
 
 In the `eth_getTransactionByHash RPC protocol`, this method is crucial for querying transaction data on the blockchain. By providing the transaction hash as a parameter, users receive a JSON object with comprehensive transaction attributes, ensuring seamless integration into blockchain applications and enhancing transaction monitoring capabilities.
 
-## Supported Networks
+### Supported Networks
 
-The eth_getTransactionByHash JSON-RPC API method supports the following network types:
-- **Mainnet**
-- **Testnet**
+The eth\_getTransactionByHash JSON-RPC API method supports the following network types:
 
-## Parameters
+* **Mainnet**
+* **Testnet**
+
+### Parameters
 
 Here is the list of parameters `eth_getTransactionByHash` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Transaction Hash**
-  - **Type:** String
-  - **Description:** The hash of the transaction you want to retrieve.
-  - **Required:** Yes
-  - **Default/Supported Values:** Must be a valid transaction hash in hexadecimal format, prefixed with "0x".
+* **Transaction Hash**
+  * **Type:** String
+  * **Description:** The hash of the transaction you want to retrieve.
+  * **Required:** Yes
+  * **Default/Supported Values:** Must be a valid transaction hash in hexadecimal format, prefixed with "0x".
 
-# Request Example
+## Request Example
 
-##### API Endpoint
+**API Endpoint**
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
+**Request**
 
-#### Request
-
-Here’s a sample cURL request using eth_getTransactionByHash :
+Here’s a sample cURL request using eth\_getTransactionByHash :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -57,9 +58,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-#### Response
+**Response**
 
-Below is a sample JSON response returned by eth_getTransactionByHash upon a successful call:
+Below is a sample JSON response returned by eth\_getTransactionByHash upon a successful call:
 
 ```json
 
@@ -88,7 +89,7 @@ Below is a sample JSON response returned by eth_getTransactionByHash upon a succ
 
 ```
 
-## Body Parameters
+### Body Parameters
 
 Here is the list of body parameters for `eth_getTransactionByHash` method:
 
@@ -109,17 +110,15 @@ Here is the list of body parameters for `eth_getTransactionByHash` method:
 15. **r**: "0x44f3adbcbce9135114f7bc5f589f8635f05e9d7339c82f072d1a90f45acb5975"
 16. **s**: "0x52e7b937325e03f3cd923a87c1caa2e2d83ac0a0b9db8c6f2c192c91ae4cadc0"
 
-## Use Cases
+### Use Cases
 
 Here are some use-cases for `eth_getTransactionByHash` method:
 
 1. **Transaction Verification**: In Web3 programming, ensuring the integrity and completion of transactions is critical. By using the `eth_getTransactionByHash` method, developers can retrieve the transaction details using its hash. This allows them to verify whether a transaction was successfully mined and included in the blockchain, check the status, and confirm the details such as sender, receiver, and amount transferred.
-
 2. **Audit and Monitoring**: For applications that require auditing or monitoring of blockchain transactions, the `eth_getTransactionByHash` method provides a way to fetch transaction data for logging or analysis. This can be particularly useful for compliance purposes, where businesses need to maintain records of all transactions involving their smart contracts.
-
 3. **User Notifications**: In decentralized applications (dApps), it is often necessary to inform users about the status of their transactions. By using the `eth_getTransactionByHash` method, developers can implement features that notify users when their transactions have been confirmed or if there were any issues, enhancing the user experience and trust in the application.
 
-## Code for eth_getTransactionByHash
+### Code for eth\_getTransactionByHash
 
 {% tabs %}
 {% tab title="Python" %}
@@ -164,6 +163,7 @@ else:
 
 ```
 {% endtab %}
+
 {% tab title="JavaScript" %}
 ```javascript
 const axios = require('axios');
@@ -209,16 +209,17 @@ axios.post(url, payload, {
 {% endtab %}
 {% endtabs %}
 
-## Common Errors
+### Common Errors
 
 When using the `eth_getTransactionByHash` JSON-RPC API BSC method, the following issues may occur:
-- **Transaction Hash Not Found**: If the transaction hash is incorrect or the transaction is not yet mined, the method may return null. Verify the transaction hash and ensure the transaction has been confirmed on the blockchain.
-- **Network Latency**: Due to network congestion or latency, the response might be delayed. Consider implementing retry logic or increasing the timeout duration in your application.
-- **Invalid JSON-RPC Request**: An improperly formatted JSON-RPC request can lead to errors. Double-check the JSON structure, ensuring that the method name and parameters are correctly specified.
-- **Node Synchronization Issues**: If the node you are querying is not fully synchronized with the network, it might not return the most recent transaction data. Use a reliable and fully synced node provider.
+
+* **Transaction Hash Not Found**: If the transaction hash is incorrect or the transaction is not yet mined, the method may return null. Verify the transaction hash and ensure the transaction has been confirmed on the blockchain.
+* **Network Latency**: Due to network congestion or latency, the response might be delayed. Consider implementing retry logic or increasing the timeout duration in your application.
+* **Invalid JSON-RPC Request**: An improperly formatted JSON-RPC request can lead to errors. Double-check the JSON structure, ensuring that the method name and parameters are correctly specified.
+* **Node Synchronization Issues**: If the node you are querying is not fully synchronized with the network, it might not return the most recent transaction data. Use a reliable and fully synced node provider.
 
 Using the `eth_getTransactionByHash` method in Web3 applications provides a straightforward way to retrieve detailed information about specific transactions by their hash. This functionality is crucial for tracking transaction statuses, debugging, and ensuring the integrity of blockchain interactions in decentralized applications.
 
-## Conclusion
+### Conclusion
 
 The JSON-RPC method `eth_getTransactionByHash` is utilized to retrieve detailed information about a specific transaction using its hash on blockchain networks such as Ethereum and Binance Smart Chain (BSC). By providing the transaction hash in the `params` field, users can access comprehensive transaction data, which is crucial for verifying and tracking blockchain activities. This method is essential for developers and users interacting with Ethereum or BSC, as it allows for precise transaction auditing and analysis.

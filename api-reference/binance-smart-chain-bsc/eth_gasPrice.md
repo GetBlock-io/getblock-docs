@@ -1,40 +1,41 @@
 ---
 description: >-
-  Access the eth_gasPrice method via the JSON-RPC API Interface on BSC to retrieve current gas price estimations for transaction fees.
+  Access the eth_gasPrice method via the JSON-RPC API Interface on BSC to
+  retrieve current gas price estimations for transaction fees.
 ---
 
-# eth_gasPrice
+# eth\_gasPrice - Binance Smart Chain
 
 {% hint style="success" %}
-The RPC method fetches the current gas price in wei for transactions on the Binance Smart Chain, helping users estimate transaction costs.&#x20;
+The RPC method fetches the current gas price in wei for transactions on the Binance Smart Chain, helping users estimate transaction costs.
 {% endhint %}
 
 The `eth_gasPrice` method in the BSC protocol is a JSON-RPC API call that retrieves the current gas price in wei, which is essential for determining transaction fees. This method is integral to both `eth_gasPrice Web3` and `eth_gasPrice RPC protocol` implementations, providing users with real-time gas price data to optimize transaction costs.
 
 When invoked, `eth_gasPrice` returns the network's median gas price, enabling developers to set appropriate gas fees for transactions on the Binance Smart Chain. This ensures efficient transaction processing and cost management, making it a critical tool for developers and users navigating the blockchain environment.
 
-## Supported Networks
+### Supported Networks
 
-The eth_gasPrice JSON-RPC API method supports the following network types:
-- **Mainnet**
-- **Testnet**
+The eth\_gasPrice JSON-RPC API method supports the following network types:
 
-## Parameters
+* **Mainnet**
+* **Testnet**
+
+### Parameters
 
 None: This method does not require any parameters.
 
-# Request Example
+## Request Example
 
-##### API Endpoint
+**API Endpoint**
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
+**Request**
 
-#### Request
-
-Here’s a sample cURL request using eth_gasPrice :
+Here’s a sample cURL request using eth\_gasPrice :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -51,9 +52,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-#### Response
+**Response**
 
-Below is a sample JSON response returned by eth_gasPrice upon a successful call:
+Below is a sample JSON response returned by eth\_gasPrice upon a successful call:
 
 ```json
 
@@ -65,7 +66,7 @@ Below is a sample JSON response returned by eth_gasPrice upon a successful call:
 
 ```
 
-## Body Parameters
+### Body Parameters
 
 Here is the list of body parameters for the `eth_gasPrice` method:
 
@@ -73,17 +74,15 @@ Here is the list of body parameters for the `eth_gasPrice` method:
 2. **id**: A unique identifier for the request. Here, it is set to "getblock.io".
 3. **result**: The gas price returned by the Ethereum network, expressed in hexadecimal format. In this example, it is "0x3b9aca00".
 
-## Use Cases
+### Use Cases
 
 Here are some use-cases for `eth_gasPrice` method:
 
 1. **Estimating Transaction Costs**: The `eth_gasPrice` method is commonly used to estimate the cost of a transaction on the Ethereum network. By calling this method, developers can retrieve the current gas price, which helps in calculating the total transaction fee. This is crucial for users who want to ensure they have sufficient funds in their wallets to cover transaction costs.
-
 2. **Dynamic Gas Price Adjustment**: In Web3 applications, developers can use the `eth_gasPrice` method to dynamically adjust the gas price for transactions based on network conditions. For example, during periods of high network congestion, the gas price may increase significantly. By continually querying the current gas price, applications can adaptively set higher gas prices to ensure timely transaction processing or lower them during periods of low congestion to save on costs.
-
 3. **Optimizing Smart Contract Interactions**: When interacting with smart contracts, it is important to optimize the gas usage to make transactions cost-effective. By using `eth_gasPrice`, developers can analyze and adjust the gas prices for different contract calls, ensuring that interactions are executed efficiently without overpaying for gas. This is particularly useful for applications with frequent on-chain operations, where minimizing gas costs can lead to significant savings over time.
 
-## Code for eth_gasPrice
+### Code for eth\_gasPrice
 
 {% tabs %}
 {% tab title="Python" %}
@@ -111,6 +110,7 @@ else:
 
 ```
 {% endtab %}
+
 {% tab title="JavaScript" %}
 ```javascript
 const axios = require('axios');
@@ -139,16 +139,17 @@ axios.post(url, payload, {
 {% endtab %}
 {% endtabs %}
 
-## Common Errors
+### Common Errors
 
 When using the `eth_gasPrice` JSON-RPC API BSC method, the following issues may occur:
-- **Network Latency**: The response time for `eth_gasPrice` may be affected by network congestion, leading to delayed or outdated gas price information. To mitigate this, consider implementing a retry mechanism with exponential backoff to ensure timely data retrieval.
-- **Node Synchronization**: If the BSC node is not fully synchronized with the network, it may return inaccurate gas price estimates. Ensure your node is fully synced or use a reliable third-party node service to obtain accurate data.
-- **Rate Limiting**: Excessive requests to the `eth_gasPrice` method may trigger rate limiting by the node provider, resulting in temporary access blocks. To prevent this, optimize your application's request patterns and consider caching gas price data for short intervals.
-- **Inconsistent Data**: Variability in gas price data across different nodes can lead to inconsistencies. Cross-reference multiple sources or nodes to validate the gas price and enhance your application's reliability.
+
+* **Network Latency**: The response time for `eth_gasPrice` may be affected by network congestion, leading to delayed or outdated gas price information. To mitigate this, consider implementing a retry mechanism with exponential backoff to ensure timely data retrieval.
+* **Node Synchronization**: If the BSC node is not fully synchronized with the network, it may return inaccurate gas price estimates. Ensure your node is fully synced or use a reliable third-party node service to obtain accurate data.
+* **Rate Limiting**: Excessive requests to the `eth_gasPrice` method may trigger rate limiting by the node provider, resulting in temporary access blocks. To prevent this, optimize your application's request patterns and consider caching gas price data for short intervals.
+* **Inconsistent Data**: Variability in gas price data across different nodes can lead to inconsistencies. Cross-reference multiple sources or nodes to validate the gas price and enhance your application's reliability.
 
 Using the `eth_gasPrice` method provides Web3 applications with critical data to estimate transaction costs dynamically, enhancing user experience by allowing for timely and cost-effective transaction submissions. By leveraging real-time gas price information, developers can optimize their applications for both cost efficiency and performance, ensuring users are not overpaying for transactions on the BSC network.
 
-## Conclusion
+### Conclusion
 
 The `eth_gasPrice` method in JSON-RPC is essential for retrieving the current gas price on blockchain networks like Ethereum and Binance Smart Chain (BSC). By calling `eth_gasPrice`, developers can efficiently estimate transaction costs and optimize their smart contract interactions. Understanding the nuances of `eth_gasPrice` helps ensure cost-effective and timely transactions on platforms like BSC.

@@ -1,77 +1,76 @@
 ---
 description: >-
-  Explore the debug_traceCall method in the JSON-RPC API Interface for BSC, enabling detailed transaction execution tracing for developers.
+  Explore the debug_traceCall method in the JSON-RPC API Interface for BSC,
+  enabling detailed transaction execution tracing for developers.
 ---
 
-# debug_traceCall
+# debug\_traceCall - Binance Smart Chain
 
 {% hint style="success" %}
-RPC debug_traceCall for BSC provides detailed execution traces of a transaction without altering the blockchain state, aiding in debugging and analysis.&#x20;
+RPC debug\_traceCall for BSC provides detailed execution traces of a transaction without altering the blockchain state, aiding in debugging and analysis.
 {% endhint %}
 
-The `debug_traceCall` method in the BSC protocol is a powerful tool for developers, enabling detailed analysis of contract executions. As part of the `debug_traceCall Web3` suite, it simulates a transaction without altering the blockchain, providing insights into gas usage, state changes, and execution paths. This aids in debugging complex smart contracts efficiently.
+The `debug_traceCall` method in the BSC protocol is a powerful tool for developers, enabling detailed analysis of contract executions. As part of the `debug_traceCall` Web3 suite, it simulates a transaction without altering the blockchain, providing insights into gas usage, state changes, and execution paths. This aids in debugging complex smart contracts efficiently.
 
-Utilizing the `debug_traceCall RPC protocol`, developers can request granular traces of transaction execution, including internal calls and events. This method is essential for pinpointing issues within contract logic and optimizing performance. By leveraging this protocol, users gain a deeper understanding of transaction behavior, enhancing the reliability and security of decentralized applications on Binance Smart Chain.
+Utilizing the `debug_traceCall` RPC protocol, developers can request granular traces of transaction execution, including internal calls and events. This method is essential for pinpointing issues within contract logic and optimizing performance. By leveraging this protocol, users gain a deeper understanding of transaction behavior, enhancing the reliability and security of decentralized applications on Binance Smart Chain.
 
-## Supported Networks
+### Supported Networks
 
-The debug_traceCall JSON-RPC API method supports the following network types:
-- **Mainnet**
-- **Testnet**
+The `debug_traceCall` JSON-RPC API method supports the following network types:
 
-## Parameters
+* **Mainnet**
+* **Testnet**
+
+### Parameters
 
 Here is the list of parameters `debug_traceCall` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter 1: Transaction Object**
-  - **Type:** Object
-  - **Description:** Contains the transaction details for the call.
-  - **Fields:**
-    - **to:** 
-      - **Type:** String
-      - **Description:** The address of the recipient.
-      - **Required:** Yes
-      - **Example:** `"0xd46e8dd67c5d32be8058bb8eb970870f07244567"`
-
-- **Parameter 2: Block Identifier**
-  - **Type:** String
-  - **Description:** Specifies the block number or block tag to execute the call against.
-  - **Required:** Yes
-  - **Supported Values:** 
-    - `"earliest"`
-    - `"latest"`
-    - `"pending"`
-    - `"finalized"`
-  - **Example:** `"finalized"`
-
-- **Parameter 3: Options**
-  - **Type:** Object
-  - **Description:** Additional options to customize the tracing.
-  - **Fields:**
-    - **tracer:** 
-      - **Type:** String
-      - **Description:** Specifies the type of tracer to use.
-      - **Required:** Yes
-      - **Supported Values:** 
-        - `"callTracer"`
-        - `"prestateTracer"`
-        - `"structLogs"`
-      - **Example:** `"callTracer"`
+* **Parameter 1: Transaction Object**
+  * **Type:** Object
+  * **Description:** Contains the transaction details for the call.
+  * **Fields:**
+    * **to:**
+      * **Type:** String
+      * **Description:** The address of the recipient.
+      * **Required:** Yes
+      * **Example:** `"0xd46e8dd67c5d32be8058bb8eb970870f07244567"`
+* **Parameter 2: Block Identifier**
+  * **Type:** String
+  * **Description:** Specifies the block number or block tag to execute the call against.
+  * **Required:** Yes
+  * **Supported Values:**
+    * `"earliest"`
+    * `"latest"`
+    * `"pending"`
+    * `"finalized"`
+  * **Example:** `"finalized"`
+* **Parameter 3: Options**
+  * **Type:** Object
+  * **Description:** Additional options to customize the tracing.
+  * **Fields:**
+    * **tracer:**
+      * **Type:** String
+      * **Description:** Specifies the type of tracer to use.
+      * **Required:** Yes
+      * **Supported Values:**
+        * `"callTracer"`
+        * `"prestateTracer"`
+        * `"structLogs"`
+      * **Example:** `"callTracer"`
 
 These parameters are part of the JSON-RPC request body and should be formatted accordingly.
 
-# Request Example
+## Request Example
 
-##### API Endpoint
+**API Endpoint**
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
+**Request**
 
-#### Request
-
-Here’s a sample cURL request using debug_traceCall :
+Here’s a sample cURL request using `debug_traceCall` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -86,9 +85,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-#### Response
+**Response**
 
-Below is a sample JSON response returned by debug_traceCall upon a successful call:
+Below is a sample JSON response returned by `debug_traceCall` upon a successful call:
 
 ```json
 
@@ -108,7 +107,7 @@ Below is a sample JSON response returned by debug_traceCall upon a successful ca
 
 ```
 
-## Body Parameters
+### Body Parameters
 
 Here is the list of body parameters for `debug_traceCall` method:
 
@@ -120,17 +119,15 @@ Here is the list of body parameters for `debug_traceCall` method:
 6. **value**: `"0x0"` - The amount of Ether transferred in the transaction.
 7. **type**: `"CALL"` - The type of transaction.
 
-## Use Cases
+### Use Cases
 
 Here are some use-cases for `debug_traceCall` method:
 
 1. **Transaction Debugging**: The `debug_traceCall` method is invaluable for developers looking to debug transactions in Ethereum. By simulating a transaction without actually sending it to the network, developers can trace the execution path, inspect the state changes, and identify any errors or unexpected behavior. This helps in understanding how a transaction would interact with smart contracts and can be crucial for troubleshooting complex logic.
-
 2. **Gas Usage Analysis**: Another use-case for `debug_traceCall` is analyzing the gas consumption of a transaction. By tracing the transaction, developers can see exactly how much gas each operation uses. This information is essential for optimizing smart contracts to be more cost-effective, ensuring that gas limits are not exceeded, and improving the overall efficiency of the contract execution.
-
 3. **Security Audits**: Security auditors can use `debug_traceCall` to perform in-depth analyses of smart contracts. By tracing transactions, auditors can observe the exact sequence of operations and state transitions, which helps in identifying potential vulnerabilities or unintended behaviors. This detailed level of inspection is crucial for ensuring the security and reliability of smart contracts before they are deployed to the main network.
 
-## Code for debug_traceCall
+### Code for debug\_traceCall
 
 {% tabs %}
 {% tab title="Python" %}
@@ -166,6 +163,7 @@ else:
 
 ```
 {% endtab %}
+
 {% tab title="JavaScript" %}
 ```javascript
 const axios = require('axios');
@@ -202,16 +200,17 @@ axios.post(url, payload, {
 {% endtab %}
 {% endtabs %}
 
-## Common Errors
+### Common Errors
 
 When using the `debug_traceCall` JSON-RPC API BSC method, the following issues may occur:
-- **Invalid method parameters:** If the parameters provided to `debug_traceCall` are incorrect or not in the expected format, the call will fail. Ensure that the parameters match the expected structure and types, such as correct address formatting and block identifiers.
-- **Unsupported tracer option:** Specifying an unsupported or misspelled tracer option can lead to errors. Verify that the tracer option, such as `"callTracer"`, is correctly spelled and supported by the BSC node version you are using.
-- **Network synchronization issues:** If the BSC node is not fully synchronized, the `debug_traceCall` method may return incomplete or incorrect traces. Ensure the node is fully synced with the network to obtain accurate trace results.
-- **Resource limitations:** Tracing large or complex transactions can be resource-intensive, potentially leading to timeouts or memory exhaustion. Consider optimizing the node's resources or breaking down the trace into smaller parts if possible.
+
+* **Invalid method parameters:** If the parameters provided to `debug_traceCall` are incorrect or not in the expected format, the call will fail. Ensure that the parameters match the expected structure and types, such as correct address formatting and block identifiers.
+* **Unsupported tracer option:** Specifying an unsupported or misspelled tracer option can lead to errors. Verify that the tracer option, such as `"callTracer"`, is correctly spelled and supported by the BSC node version you are using.
+* **Network synchronization issues:** If the BSC node is not fully synchronized, the `debug_traceCall` method may return incomplete or incorrect traces. Ensure the node is fully synced with the network to obtain accurate trace results.
+* **Resource limitations:** Tracing large or complex transactions can be resource-intensive, potentially leading to timeouts or memory exhaustion. Consider optimizing the node's resources or breaking down the trace into smaller parts if possible.
 
 Using the `debug_traceCall` method in Web3 applications provides significant benefits, such as detailed insights into transaction execution, which aids in debugging and optimizing smart contracts. It allows developers to trace the execution path and understand the internal state changes of transactions, thereby improving the reliability and performance of decentralized applications.
 
-## Conclusion
+### Conclusion
 
 The `debug_traceCall` JSON-RPC method is a powerful tool for developers working with blockchain networks like BSC. It allows for detailed tracing of transactions, providing insights into the execution process and helping to diagnose issues. By using `debug_traceCall`, developers can effectively debug and optimize their smart contracts on the BSC network.

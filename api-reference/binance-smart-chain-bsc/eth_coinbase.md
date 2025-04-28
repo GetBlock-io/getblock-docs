@@ -1,40 +1,41 @@
 ---
 description: >-
-  Access the primary account address on BSC using eth_coinbase via the JSON-RPC API Interface. Streamline blockchain interactions efficiently.
+  Access the primary account address on BSC using eth_coinbase via the JSON-RPC
+  API Interface. Streamline blockchain interactions efficiently.
 ---
 
-# eth_coinbase
+# eth\_coinbase - Binance Smart Chain
 
 {% hint style="success" %}
-The RPC eth_coinbase retrieves the default account address for mining rewards on the BSC network, though it's largely unused as BSC uses Proof of Staked Authority.&#x20;
+The RPC eth\_coinbase retrieves the default account address for mining rewards on the BSC network, though it's largely unused as BSC uses Proof of Staked Authority.
 {% endhint %}
 
 The `eth_coinbase` method in the BSC protocol is a JSON-RPC API call that retrieves the address of the current coinbase or miner. This method is crucial for developers working with Ethereum-based networks, as it identifies the account responsible for mining new blocks. Used in conjunction with `eth_coinbase Web3`, it facilitates seamless integration with decentralized applications.
 
 In the context of the `eth_coinbase RPC protocol`, this method returns a single string value representing the miner's address. It's a straightforward and efficient way to access essential blockchain data. By leveraging `eth_coinbase`, developers can easily obtain the mining account information, ensuring their applications remain synchronized with the network's state.
 
-## Supported Networks
+### Supported Networks
 
-The eth_coinbase JSON-RPC API method supports the following network types:
-- **Mainnet**
-- **Testnet**
+The eth\_coinbase JSON-RPC API method supports the following network types:
 
-## Parameters
+* **Mainnet**
+* **Testnet**
+
+### Parameters
 
 None: This method does not require any parameters.
 
-# Request Example
+## Request Example
 
-##### API Endpoint
+**API Endpoint**
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
+**Request**
 
-#### Request
-
-Here’s a sample cURL request using eth_coinbase :
+Here’s a sample cURL request using eth\_coinbase :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -49,9 +50,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-#### Response
+**Response**
 
-Below is a sample JSON response returned by eth_coinbase upon a successful call:
+Below is a sample JSON response returned by eth\_coinbase upon a successful call:
 
 ```json
 
@@ -66,29 +67,25 @@ Below is a sample JSON response returned by eth_coinbase upon a successful call:
 
 ```
 
-## Body Parameters
+### Body Parameters
 
 Here is the list of body parameters for the `eth_coinbase` method:
 
 1. **jsonrpc**: The version of the JSON-RPC protocol. Typically set to `"2.0"`.
-
 2. **id**: An identifier for the request. It can be any string or number that the client uses to match the response with the request.
-
 3. **error**: An object containing error information if the request fails. It includes:
-   - **code**: A numeric code representing the error type. For example, `-32000` is a generic server error.
-   - **message**: A human-readable message providing more details about the error. In this case, it indicates that the `etherbase` must be explicitly specified.
+   * **code**: A numeric code representing the error type. For example, `-32000` is a generic server error.
+   * **message**: A human-readable message providing more details about the error. In this case, it indicates that the `etherbase` must be explicitly specified.
 
-## Use Cases
+### Use Cases
 
 Here are some use-cases for `eth_coinbase` method:
 
 1. **Mining Reward Address:** In Ethereum, `eth_coinbase` is used to retrieve the address of the account designated to receive mining rewards. This can be particularly useful for developers or operators of mining software who need to verify or display the address that will collect the rewards for mining efforts. By using `eth_coinbase`, they can programmatically access and manage this information within their applications.
-
 2. **Node Configuration Verification:** For developers or system administrators managing Ethereum nodes, `eth_coinbase` can be used to confirm the configuration of a node. By retrieving the coinbase address, they can ensure that the node is set up correctly to credit the appropriate account for any mining activities. This is especially important in scenarios where multiple nodes are managed, and each needs to be configured with specific accounts.
-
 3. **Smart Contract Development:** In smart contract development, particularly in test environments, `eth_coinbase` can be used to simulate and test scenarios where the coinbase address plays a role. For example, a smart contract might have logic that interacts with the coinbase address, and developers can use this method to ensure that their contract behaves as expected when deployed on a network with mining activities.
 
-## Code for eth_coinbase
+### Code for eth\_coinbase
 
 {% tabs %}
 {% tab title="Python" %}
@@ -119,6 +116,7 @@ else:
 
 ```
 {% endtab %}
+
 {% tab title="JavaScript" %}
 ```javascript
 const axios = require('axios');
@@ -150,16 +148,17 @@ axios.post(url, payload, {
 {% endtab %}
 {% endtabs %}
 
-## Common Errors
+### Common Errors
 
 When using the `eth_coinbase` JSON-RPC API BSC method, the following issues may occur:
-- The method returns a null response, indicating that the client is not configured with a coinbase account. Ensure that your BSC node is set up with a valid coinbase address by checking the node's configuration settings.
-- An "unauthorized" error might occur if the node's access permissions are not correctly set up. Verify that your JSON-RPC server allows requests from your application by checking the server's CORS settings and permissions.
-- If you receive an "unknown method" error, it may be due to using an outdated client version. Update your BSC client to the latest version to ensure compatibility with the `eth_coinbase` method.
-- A network timeout error can happen if there's a connectivity issue between your application and the BSC node. Check your network connection and ensure that the node is running and accessible.
+
+* The method returns a null response, indicating that the client is not configured with a coinbase account. Ensure that your BSC node is set up with a valid coinbase address by checking the node's configuration settings.
+* An "unauthorized" error might occur if the node's access permissions are not correctly set up. Verify that your JSON-RPC server allows requests from your application by checking the server's CORS settings and permissions.
+* If you receive an "unknown method" error, it may be due to using an outdated client version. Update your BSC client to the latest version to ensure compatibility with the `eth_coinbase` method.
+* A network timeout error can happen if there's a connectivity issue between your application and the BSC node. Check your network connection and ensure that the node is running and accessible.
 
 Using the `eth_coinbase` method in Web3 applications provides a straightforward way to retrieve the default account address associated with a BSC node. This is particularly useful for applications that need to programmatically manage transactions or interact with smart contracts using the node's primary account. By leveraging this method, developers can streamline account management tasks and enhance the efficiency of their blockchain interactions.
 
-## Conclusion
+### Conclusion
 
 The `eth_coinbase` JSON-RPC method is used to retrieve the address of the coinbase (or miner) account for a node on the Ethereum network. Although commonly associated with Ethereum, this method can also be relevant in the context of other blockchain platforms like BSC (Binance Smart Chain) that support Ethereum-compatible JSON-RPC calls. Understanding `eth_coinbase` is crucial for developers working with blockchain nodes to identify the miner responsible for block creation.
