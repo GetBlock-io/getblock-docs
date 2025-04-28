@@ -2842,20 +2842,3 @@
   * [zcrawkeygen {disallowed} - Zcash](api-reference/zcash-zec/zec_zcrawkeygen.md)
   * [zcrawreceive {disallowed} - Zcash](api-reference/zcash-zec/zec_zcrawreceive.md)
   * [zcsamplejoinsplit {disallowed} - Zcash](api-reference/zcash-zec/zec_zcsamplejoinsplit.md)
-
-## EXPLORER API
-
-* [Get started with GetBlock public API](explorer-api/get-started-with-getblock-public-api.md)
-* [API Methods](explorer-api/api-methods/README.md)
-  * [account \\\[POST\\\]](explorer-api/api-methods/account-post.md)
-  * [account\_list \\\[POST\\\]](explorer-api/api-methods/account_list-post.md)
-  * [account\_list\_by-tx-count \\\[POST\\\]](explorer-api/api-methods/account_list_by-tx-count-post.md)
-  * [block\_get \\\[POST\\\]](explorer-api/api-methods/block_get-post.md)
-  * [block\_list \\\[POST\\\]](explorer-api/api-methods/block_list-post.md)
-  * [node\_list \\\[POST\\\]](explorer-api/api-methods/node_list-post.md)
-  * [statistic \\\[POST\\\]](explorer-api/api-methods/statistic-post.md)
-  * [summary\_chain \\\[GET\\\]](explorer-api/api-methods/summary_chain-get.md)
-  * [summary\_markets \\\[GET\\\]](explorer-api/api-methods/summary_markets-get.md)
-  * [tx\_get \\\[POST\\\]](explorer-api/api-methods/tx_get-post.md)
-  * [tx\_list \\\[POST\\\]](explorer-api/api-methods/tx_list-post.md)
-  * [tx\_list\_account \\\[POST\\\]](explorer-api/api-methods/tx_list_account-post.md)
