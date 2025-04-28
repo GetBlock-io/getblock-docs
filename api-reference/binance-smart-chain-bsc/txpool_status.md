@@ -10,13 +10,13 @@ description: >-
 The RPC txpool\_status for BSC provides information about the transaction pool's current status, including pending and queued transactions, to help manage network congestion.
 {% endhint %}
 
-The `txpool_status` method in the BSC protocol provides a concise overview of the transaction pool's current state. As part of the `txpool_status Web3` interface, it returns essential metrics about the pending and queued transactions, aiding developers in monitoring network congestion and transaction flow.
+The `txpool_status` method in the BSC protocol provides a concise overview of the transaction pool's current state. As part of the `txpool_status` Web3 interface, it returns essential metrics about the pending and queued transactions, aiding developers in monitoring network congestion and transaction flow.
 
-Utilizing the `txpool_status RPC protocol`, this method delivers JSON-RPC formatted data, ensuring seamless integration with existing Web3 applications. By offering real-time insights into the transaction pool, it empowers developers to optimize transaction handling and enhance application performance.
+Utilizing the `txpool_status` RPC protocol, this method delivers JSON-RPC formatted data, ensuring seamless integration with existing Web3 applications. By offering real-time insights into the transaction pool, it empowers developers to optimize transaction handling and enhance application performance.
 
 ### Supported Networks
 
-The txpool\_status JSON-RPC API method supports the following network types:
+The `txpool_status` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using txpool\_status :
+Here’s a sample cURL request using `txpool_status` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by txpool\_status upon a successful call:
+Below is a sample JSON response returned by `txpool_status` upon a successful call:
 
 ```json
 
@@ -97,12 +97,10 @@ headers = {
     "Content-Type": "application/json"
 }
 payload = {
-  "jsonrpc": "2.0",
+  "method": "txpool_status",
+  "params": [],
   "id": 1,
-  "result": {
-    "pending": "0x40ac",
-    "queued": "0xd45"
-  }
+  "jsonrpc": "2.0"
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -122,12 +120,10 @@ const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
-  "jsonrpc": "2.0",
+  "method": "txpool_status",
+  "params": [],
   "id": 1,
-  "result": {
-    "pending": "0x40ac",
-    "queued": "0xd45"
-  }
+  "jsonrpc": "2.0"
 };
 
 axios.post(url, payload, {

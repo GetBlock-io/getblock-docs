@@ -16,7 +16,7 @@ Utilizing the `eth_mining` RPC protocol, this method returns a Boolean value: `t
 
 ### Supported Networks
 
-The eth\_mining JSON-RPC API method supports the following network types:
+The `eth_mining` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_mining :
+Here’s a sample cURL request using `eth_mining` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_mining upon a successful call:
+Below is a sample JSON response returned by `eth_mining` upon a successful call:
 
 ```json
 
@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": false
+  "method": "eth_mining",
+  "params": [],
+  "id": 67
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": false
+  "method": "eth_mining",
+  "params": [],
+  "id": 67
 };
 
 axios.post(url, payload, {

@@ -10,13 +10,13 @@ description: >-
 The RPC method signs messages with a user's private key on BSC, enabling transaction verification and identity confirmation without exposing the private key.
 {% endhint %}
 
-The `eth_sign` method in the BSC protocol is a JSON-RPC API call used to sign messages with an account's private key. This method is integral to the `eth_sign Web3` functionality, allowing developers to authenticate and verify messages securely. By using `eth_sign`, users can ensure the integrity and origin of the message.
+The `eth_sign` method in the BSC protocol is a JSON-RPC API call used to sign messages with an account's private key. This method is integral to the `eth_sign` Web3 functionality, allowing developers to authenticate and verify messages securely. By using `eth_sign`, users can ensure the integrity and origin of the message.
 
-In the `eth_sign RPC protocol`, this method requires the address of the account and the message to be signed. The response includes the signed data, which can be used for further verification processes. It's crucial for developers to understand that `eth_sign` does not alter the blockchain state, making it a safe choice for off-chain operations.
+In the `eth_sign` RPC protocol, this method requires the address of the account and the message to be signed. The response includes the signed data, which can be used for further verification processes. It's crucial for developers to understand that `eth_sign` does not alter the blockchain state, making it a safe choice for off-chain operations.
 
 ### Supported Networks
 
-The eth\_sign JSON-RPC API method supports the following network types:
+The `eth_sign` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -46,7 +46,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_sign :
+Here’s a sample cURL request using `eth_sign` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -63,7 +63,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_sign upon a successful call:
+Below is a sample JSON response returned by `eth_sign` upon a successful call:
 
 ```json
 
@@ -108,14 +108,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "unknown account"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "eth_sign",
+"params": ["0xcee8ae756461e2653b88aefdbd70c1144de52b23", "0xbcda"],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -133,14 +129,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "unknown account"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "eth_sign",
+"params": ["0xcee8ae756461e2653b88aefdbd70c1144de52b23", "0xbcda"],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

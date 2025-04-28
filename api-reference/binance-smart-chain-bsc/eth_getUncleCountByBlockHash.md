@@ -11,13 +11,13 @@ description: >-
 The RPC method retrieves the number of uncles for a specific block by its hash on the Binance Smart Chain.
 {% endhint %}
 
-The `eth_getUncleCountByBlockHash` method in the BSC protocol is a JSON-RPC API call that retrieves the number of uncle blocks for a specific block identified by its hash. This method is part of the `eth_getUncleCountByBlockHash Web3` interface, facilitating developers in determining the uncle count associated with a given block hash.
+The `eth_getUncleCountByBlockHash` method in the BSC protocol is a JSON-RPC API call that retrieves the number of uncle blocks for a specific block identified by its hash. This method is part of the `eth_getUncleCountByBlockHash` Web3 interface, facilitating developers in determining the uncle count associated with a given block hash.
 
-Utilizing the `eth_getUncleCountByBlockHash RPC protocol`, developers can efficiently access uncle block data, enhancing blockchain analysis and monitoring. This method requires the block hash as a parameter and returns the uncle count as a numeric value, providing essential insights into the block's structure and network activity.
+Utilizing the `eth_getUncleCountByBlockHash` RPC protocol, developers can efficiently access uncle block data, enhancing blockchain analysis and monitoring. This method requires the block hash as a parameter and returns the uncle count as a numeric value, providing essential insights into the block's structure and network activity.
 
 ### Supported Networks
 
-The eth\_getUncleCountByBlockHash JSON-RPC API method supports the following network types:
+The `eth_getUncleCountByBlockHash` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -42,7 +42,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getUncleCountByBlockHash :
+Here’s a sample cURL request using `eth_getUncleCountByBlockHash` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -61,7 +61,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getUncleCountByBlockHash upon a successful call:
+Below is a sample JSON response returned by `eth_getUncleCountByBlockHash` upon a successful call:
 
 ```json
 
@@ -103,10 +103,10 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x0"
+  "method": "eth_getUncleCountByBlockHash",
+  "params": ["0x94c626286c237e187454ddd993adc534f0ce3468aaec134a39fbd52185cc3a5f"],
+  "id": 1
 }
-
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
 # Check the response and print the result
@@ -125,8 +125,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x0"
+  "method": "eth_getUncleCountByBlockHash",
+  "params": ["0x94c626286c237e187454ddd993adc534f0ce3468aaec134a39fbd52185cc3a5f"],
+  "id": 1
 };
 
 axios.post(url, payload, {

@@ -10,13 +10,13 @@ description: >-
 The RPC web3\_clientVersion for BSC retrieves the client software version, providing information about the node's software and version details.
 {% endhint %}
 
-The `web3_clientVersion` method in the BSC protocol provides a way to retrieve the current client version using the `web3_clientVersion Web3` interface. This method is part of the JSON-RPC API, allowing clients to query the version of the node they are interacting with, ensuring compatibility and aiding in debugging.
+The `web3_clientVersion` method in the BSC protocol provides a way to retrieve the current client version using the `web3_clientVersion` Web3 interface. This method is part of the JSON-RPC API, allowing clients to query the version of the node they are interacting with, ensuring compatibility and aiding in debugging.
 
-Utilizing the `web3_clientVersion RPC protocol`, users can execute a simple request to obtain a string response that details the client name and version number. This is essential for developers who need to verify the software version being used, facilitating smoother integration and maintenance of blockchain applications.
+Utilizing the `web3_clientVersion` RPC protocol, users can execute a simple request to obtain a string response that details the client name and version number. This is essential for developers who need to verify the software version being used, facilitating smoother integration and maintenance of blockchain applications.
 
 ### Supported Networks
 
-The web3\_clientVersion JSON-RPC API method supports the following network types:
+The `web3_clientVersion` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using web3\_clientVersion :
+Here’s a sample cURL request using `web3_clientVersion` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by web3\_clientVersion upon a successful call:
+Below is a sample JSON response returned by `web3_clientVersion` upon a successful call:
 
 ```json
 
@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "Geth/v1.5.8-294c7321-20250323/linux-amd64/go1.24.0"
+  "method": "web3_clientVersion",
+  "params": [],
+  "id": 1
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "Geth/v1.5.8-294c7321-20250323/linux-amd64/go1.24.0"
+  "method": "web3_clientVersion",
+  "params": [],
+  "id": 1
 };
 
 axios.post(url, payload, {

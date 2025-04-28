@@ -11,13 +11,13 @@ description: >-
 The RPC method retrieves an uncle block from a specific Binance Smart Chain block using its hash and uncle index, aiding in blockchain analysis and validation.
 {% endhint %}
 
-The `eth_getUncleByBlockHashAndIndex` method in the JSON-RPC API retrieves an uncle block from a specified block within the Binance Smart Chain (BSC) protocol. Utilizing the `eth_getUncleByBlockHashAndIndex Web3` interface, it requires the block hash and the uncle index as parameters, enabling precise access to uncle block data.
+The `eth_getUncleByBlockHashAndIndex` method in the JSON-RPC API retrieves an uncle block from a specified block within the Binance Smart Chain (BSC) protocol. Utilizing the `eth_getUncleByBlockHashAndIndex` Web3 interface, it requires the block hash and the uncle index as parameters, enabling precise access to uncle block data.
 
-In the `eth_getUncleByBlockHashAndIndex RPC protocol`, this method is essential for developers needing detailed information about uncle blocks, which are alternative block proposals not included in the main chain. By providing a structured response, it facilitates efficient blockchain data analysis and validation.
+In the `eth_getUncleByBlockHashAndIndex` RPC protocol, this method is essential for developers needing detailed information about uncle blocks, which are alternative block proposals not included in the main chain. By providing a structured response, it facilitates efficient blockchain data analysis and validation.
 
 ### Supported Networks
 
-The eth\_getUncleByBlockHashAndIndex JSON-RPC API method supports the following network types:
+The `eth_getUncleByBlockHashAndIndex` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -47,7 +47,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_getUncleByBlockHashAndIndex :
+Here’s a sample cURL request using `eth_getUncleByBlockHashAndIndex` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -64,7 +64,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_getUncleByBlockHashAndIndex upon a successful call:
+Below is a sample JSON response returned by `eth_getUncleByBlockHashAndIndex` upon a successful call:
 
 ```json
 
@@ -104,11 +104,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": null
-}
+payload = {"jsonrpc": "2.0",
+"method": "eth_getUncleByBlockHashAndIndex",
+"params": ["0x94c626286c237e187454ddd993adc534f0ce3468aaec134a39fbd52185cc3a5f", "0x2"],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -126,11 +125,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "result": null
-};
+const payload = {"jsonrpc": "2.0",
+"method": "eth_getUncleByBlockHashAndIndex",
+"params": ["0x94c626286c237e187454ddd993adc534f0ce3468aaec134a39fbd52185cc3a5f", "0x2"],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

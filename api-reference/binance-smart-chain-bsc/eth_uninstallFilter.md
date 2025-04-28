@@ -16,7 +16,7 @@ In the context of Web3 and the `eth_uninstallFilter` RPC protocol, this method i
 
 ### Supported Networks
 
-The eth\_uninstallFilter JSON-RPC API method supports the following network types:
+The `eth_uninstallFilter` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -41,7 +41,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_uninstallFilter :
+Here’s a sample cURL request using `eth_uninstallFilter` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -60,7 +60,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_uninstallFilter upon a successful call:
+Below is a sample JSON response returned by `eth_uninstallFilter` upon a successful call:
 
 ```json
 
@@ -102,8 +102,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": false
+  "method": "eth_uninstallFilter",
+  "params": ["0x10ff0bfba9472c87932c56632eef8f5cc70910e8e71d"],
+  "id": 1
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -124,8 +125,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": false
+  "method": "eth_uninstallFilter",
+  "params": ["0x10ff0bfba9472c87932c56632eef8f5cc70910e8e71d"],
+  "id": 1
 };
 
 axios.post(url, payload, {

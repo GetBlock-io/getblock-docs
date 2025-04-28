@@ -10,13 +10,13 @@ description: >-
 The RPC method returns the number of connected peers to a BSC node, helping monitor network connectivity and node performance.
 {% endhint %}
 
-The `net_peerCount` method in the BSC protocol is a JSON-RPC API call used to determine the number of peers currently connected to a node. As part of the `net_peerCount Web3` interface, it provides essential network status information, aiding developers in monitoring and managing node connectivity efficiently.
+The `net_peerCount` method in the BSC protocol is a JSON-RPC API call used to determine the number of peers currently connected to a node. As part of the `net_peerCount` Web3 interface, it provides essential network status information, aiding developers in monitoring and managing node connectivity efficiently.
 
-Utilizing the `net_peerCount RPC protocol`, this method returns a hexadecimal string representing the count of active peer connections. This data is crucial for ensuring optimal network performance and troubleshooting connection issues. By integrating `net_peerCount`, developers can enhance their application's reliability and responsiveness within the BSC ecosystem.
+Utilizing the `net_peerCount` RPC protocol, this method returns a hexadecimal string representing the count of active peer connections. This data is crucial for ensuring optimal network performance and troubleshooting connection issues. By integrating `net_peerCount`, developers can enhance their application's reliability and responsiveness within the BSC ecosystem.
 
 ### Supported Networks
 
-The net\_peerCount JSON-RPC API method supports the following network types:
+The `net_peerCount` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using net\_peerCount :
+Here’s a sample cURL request using `net_peerCount` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by net\_peerCount upon a successful call:
+Below is a sample JSON response returned by `net_peerCount` upon a successful call:
 
 ```json
 
@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": "0x42"
+  "method": "net_peerCount",
+  "params": [],
+  "id": 67
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": "0x42"
+  "method": "net_peerCount",
+  "params": [],
+  "id": 67
 };
 
 axios.post(url, payload, {

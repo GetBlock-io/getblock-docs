@@ -10,13 +10,13 @@ description: >-
 The RPC method checks if a Binance Smart Chain node is actively listening for network connections, indicating its readiness to participate in the network.
 {% endhint %}
 
-The `net_listening` method in the BSC protocol is a key component of the `net_listening Web3` interface. It checks if the client is actively listening for network connections, returning a boolean. This method is crucial for applications to verify network connectivity and ensure seamless interaction with the blockchain.
+The `net_listening` method in the BSC protocol is a key component of the `net_listening` Web3 interface. It checks if the client is actively listening for network connections, returning a boolean. This method is crucial for applications to verify network connectivity and ensure seamless interaction with the blockchain.
 
-Through the `net_listening RPC protocol`, developers can programmatically determine the node's listening status. This facilitates better network management and troubleshooting, providing a straightforward mechanism to confirm that the node is ready to accept incoming connections.
+Through the `net_listening` RPC protocol, developers can programmatically determine the node's listening status. This facilitates better network management and troubleshooting, providing a straightforward mechanism to confirm that the node is ready to accept incoming connections.
 
 ### Supported Networks
 
-The net\_listening JSON-RPC API method supports the following network types:
+The `net_listening` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using net\_listening :
+Here’s a sample cURL request using `net_listening` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by net\_listening upon a successful call:
+Below is a sample JSON response returned by `net_listening` upon a successful call:
 
 ```json
 
@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": true
+  "method": "net_listening",
+  "params": [],
+  "id": 67
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": true
+  "method": "net_listening",
+  "params": [],
+  "id": 67
 };
 
 axios.post(url, payload, {

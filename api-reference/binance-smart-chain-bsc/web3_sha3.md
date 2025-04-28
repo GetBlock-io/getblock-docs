@@ -10,13 +10,13 @@ description: >-
 The RPC method computes the Keccak-256 hash of the given input data, used for data integrity and verification on the Binance Smart Chain.
 {% endhint %}
 
-The `web3_sha3` method in the BSC protocol is a JSON-RPC API function that computes the Keccak-256 hash of the given input data. As part of the `web3_sha3 Web3` suite, this method is essential for developers needing to generate cryptographic hashes, ensuring data integrity and security within decentralized applications.
+The `web3_sha3` method in the BSC protocol is a JSON-RPC API function that computes the Keccak-256 hash of the given input data. As part of the `web3_sha3` Web3 suite, this method is essential for developers needing to generate cryptographic hashes, ensuring data integrity and security within decentralized applications.
 
-Utilizing the `web3_sha3 RPC protocol`, developers can send a JSON-RPC request with a single parameter, the input data in hexadecimal format, to receive the corresponding Keccak-256 hash. This method is crucial for tasks such as verifying data authenticity and is a fundamental tool in blockchain development.
+Utilizing the `web3_sha3` RPC protocol, developers can send a JSON-RPC request with a single parameter, the input data in hexadecimal format, to receive the corresponding Keccak-256 hash. This method is crucial for tasks such as verifying data authenticity and is a fundamental tool in blockchain development.
 
 ### Supported Networks
 
-The web3\_sha3 JSON-RPC API method supports the following network types:
+The `web3_sha3` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -41,7 +41,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using web3\_sha3 :
+Here’s a sample cURL request using `web3_sha3` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -60,7 +60,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by web3\_sha3 upon a successful call:
+Below is a sample JSON response returned by `web3_sha3` upon a successful call:
 
 ```json
 
@@ -102,8 +102,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+  "method": "web3_sha3",
+  "params": ["0x68656c6c6f20776f726c64"],
+  "id": 1
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -124,8 +125,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+  "method": "web3_sha3",
+  "params": ["0x68656c6c6f20776f726c64"],
+  "id": 1
 };
 
 axios.post(url, payload, {

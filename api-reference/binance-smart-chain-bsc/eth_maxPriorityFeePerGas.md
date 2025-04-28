@@ -16,7 +16,7 @@ Utilizing the `eth_maxPriorityFeePerGas` Web3 interface, developers can integrat
 
 ### Supported Networks
 
-The eth\_maxPriorityFeePerGas JSON-RPC API method supports the following network types:
+The `eth_maxPriorityFeePerGas` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_maxPriorityFeePerGas :
+Here’s a sample cURL request using `eth_maxPriorityFeePerGas` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_maxPriorityFeePerGas upon a successful call:
+Below is a sample JSON response returned by `eth_maxPriorityFeePerGas` upon a successful call:
 
 ```json
 
@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x3b9aca00"
+  "method": "eth_maxPriorityFeePerGas",
+  "params": [],
+  "id": 1
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "result": "0x3b9aca00"
+  "method": "eth_maxPriorityFeePerGas",
+  "params": [],
+  "id": 1
 };
 
 axios.post(url, payload, {

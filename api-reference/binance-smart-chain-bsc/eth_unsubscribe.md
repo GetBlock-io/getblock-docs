@@ -10,13 +10,13 @@ description: >-
 The RPC eth\_unsubscribe for BSC stops active subscriptions to events or data streams, ceasing further updates or notifications.
 {% endhint %}
 
-The `eth_unsubscribe` method in the BSC protocol is used to terminate an existing subscription, effectively stopping the delivery of notifications to the client. In the context of `eth_unsubscribe Web3`, this method is crucial for managing resources efficiently by ceasing unnecessary data flow.
+The `eth_unsubscribe` method in the BSC protocol is used to terminate an existing subscription, effectively stopping the delivery of notifications to the client. In the context of `eth_unsubscribe` Web3, this method is crucial for managing resources efficiently by ceasing unnecessary data flow.
 
-Utilizing the `eth_unsubscribe RPC protocol`, clients can send a request with the subscription ID they wish to cancel. This ensures that the client no longer receives updates related to the specified subscription, optimizing network and client performance.
+Utilizing the `eth_unsubscribe` RPC protocol, clients can send a request with the subscription ID they wish to cancel. This ensures that the client no longer receives updates related to the specified subscription, optimizing network and client performance.
 
 ### Supported Networks
 
-The eth\_unsubscribe JSON-RPC API method supports the following network types:
+The `eth_unsubscribe` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -41,7 +41,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_unsubscribe :
+Here’s a sample cURL request using `eth_unsubscribe` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -58,7 +58,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_unsubscribe upon a successful call:
+Below is a sample JSON response returned by `eth_unsubscribe` upon a successful call:
 
 ```json
 
@@ -103,14 +103,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "subscription not found"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "eth_unsubscribe",
+"params": ["0xe5af64ddfd365b4632988c5935cfedb7"],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -128,14 +124,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "subscription not found"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "eth_unsubscribe",
+"params": ["0xe5af64ddfd365b4632988c5935cfedb7"],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

@@ -10,13 +10,13 @@ description: >-
 It submits a signed transaction to the Binance Smart Chain network for execution, enabling direct interaction without revealing private keys.
 {% endhint %}
 
-The `eth_sendRawTransaction` method in the BSC protocol is a crucial feature of the `eth_sendRawTransaction Web3` interface. It enables users to broadcast a signed transaction to the network without requiring local signing. This method directly pushes the raw transaction data to the blockchain, ensuring efficient processing.
+The `eth_sendRawTransaction` method in the BSC protocol is a crucial feature of the `eth_sendRawTransaction` Web3 interface. It enables users to broadcast a signed transaction to the network without requiring local signing. This method directly pushes the raw transaction data to the blockchain, ensuring efficient processing.
 
-As part of the `eth_sendRawTransaction RPC protocol`, this method requires a single parameter: the raw, hex-encoded transaction data. Upon successful execution, it returns the transaction hash, allowing users to track its status. This approach enhances security by keeping private keys off the client-side, making it a preferred choice for decentralized applications.
+As part of the `eth_sendRawTransaction` RPC protocol, this method requires a single parameter: the raw, hex-encoded transaction data. Upon successful execution, it returns the transaction hash, allowing users to track its status. This approach enhances security by keeping private keys off the client-side, making it a preferred choice for decentralized applications.
 
 ### Supported Networks
 
-The eth\_sendRawTransaction JSON-RPC API method supports the following network types:
+The `eth_sendRawTransaction` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -41,7 +41,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_sendRawTransaction :
+Here’s a sample cURL request using `eth_sendRawTransaction` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -60,7 +60,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_sendRawTransaction upon a successful call:
+Below is a sample JSON response returned by `eth_sendRawTransaction` upon a successful call:
 
 ```json
 
@@ -107,11 +107,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32602,
-    "message": "invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutil.Bytes"
-  }
+  "method": "eth_sendRawTransaction",
+  "params": ["signed transaction"],
+  "id": 1
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -132,11 +130,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32602,
-    "message": "invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutil.Bytes"
-  }
+  "method": "eth_sendRawTransaction",
+  "params": ["signed transaction"],
+  "id": 1
 };
 
 axios.post(url, payload, {

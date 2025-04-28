@@ -10,13 +10,13 @@ description: >-
 The RPC method creates a filter to monitor new pending transactions on the Binance Smart Chain, enabling real-time tracking of transaction activity.
 {% endhint %}
 
-The `eth_newPendingTransactionFilter` method in the BSC protocol is a JSON-RPC API call used to create a filter that listens for new pending transactions. This method is part of the `eth_newPendingTransactionFilter Web3` suite, enabling developers to monitor transactions that have been submitted but not yet mined into a block.
+The `eth_newPendingTransactionFilter` method in the BSC protocol is a JSON-RPC API call used to create a filter that listens for new pending transactions. This method is part of the `eth_newPendingTransactionFilter` Web3 suite, enabling developers to monitor transactions that have been submitted but not yet mined into a block.
 
-Utilizing the `eth_newPendingTransactionFilter RPC protocol`, developers can efficiently track transaction activity in real-time. This method returns a filter ID, which can be used with other API calls to fetch or remove pending transaction data, enhancing the ability to build responsive and interactive blockchain applications.
+Utilizing the `eth_newPendingTransactionFilter` RPC protocol, developers can efficiently track transaction activity in real-time. This method returns a filter ID, which can be used with other API calls to fetch or remove pending transaction data, enhancing the ability to build responsive and interactive blockchain applications.
 
 ### Supported Networks
 
-The eth\_newPendingTransactionFilter JSON-RPC API method supports the following network types:
+The `eth_newPendingTransactionFilter` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_newPendingTransactionFilter :
+Here’s a sample cURL request using `eth_newPendingTransactionFilter` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_newPendingTransactionFilter upon a successful call:
+Below is a sample JSON response returned by `eth_newPendingTransactionFilter` upon a successful call:
 
 ```json
 
@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": "0x746380cef6b04f8ab8c53a309ce8c98d"
+  "method": "eth_newPendingTransactionFilter",
+  "params": [],
+  "id": 67
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": "0x746380cef6b04f8ab8c53a309ce8c98d"
+  "method": "eth_newPendingTransactionFilter",
+  "params": [],
+  "id": 67
 };
 
 axios.post(url, payload, {

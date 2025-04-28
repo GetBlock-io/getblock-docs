@@ -16,7 +16,7 @@ Utilizing the `eth_sendTransaction` RPC protocol, this method requires a running
 
 ### Supported Networks
 
-The eth\_sendTransaction JSON-RPC API method supports the following network types:
+The `eth_sendTransaction` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -64,7 +64,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_sendTransaction :
+Here’s a sample cURL request using `eth_sendTransaction` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -81,7 +81,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_sendTransaction upon a successful call:
+Below is a sample JSON response returned by `eth_sendTransaction` upon a successful call:
 
 ```json
 
@@ -128,14 +128,10 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
-payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "unknown account"
-  }
-}
+payload = {"jsonrpc": "2.0",
+"method": "eth_sendTransaction",
+"params": [{"from": "0xb60e8dd61c5d32be8058bb8eb970870f07233155", "to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567", "gas": "0x76c0", "gasPrice": "0x9184e72a000", "value": "0x9184e72a", "data": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"}],
+"id": "getblock.io"}
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
 
@@ -153,14 +149,10 @@ else:
 const axios = require('axios');
 
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
-const payload = {
-  "jsonrpc": "2.0",
-  "id": "getblock.io",
-  "error": {
-    "code": -32000,
-    "message": "unknown account"
-  }
-};
+const payload = {"jsonrpc": "2.0",
+"method": "eth_sendTransaction",
+"params": [{"from": "0xb60e8dd61c5d32be8058bb8eb970870f07233155", "to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567", "gas": "0x76c0", "gasPrice": "0x9184e72a000", "value": "0x9184e72a", "data": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"}],
+"id": "getblock.io"};
 
 axios.post(url, payload, {
   headers: { "Content-Type": "application/json" }

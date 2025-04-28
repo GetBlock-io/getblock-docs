@@ -10,13 +10,13 @@ description: >-
 The RPC method creates a filter to receive notifications for new blocks on the Binance Smart Chain, enabling real-time block monitoring.
 {% endhint %}
 
-The `eth_newBlockFilter` method in the BSC protocol is part of the `eth_newBlockFilter Web3` and `eth_newBlockFilter RPC protocol`, designed to create a filter for new block notifications. This method enables users to listen for new blocks added to the blockchain, providing a unique filter identifier upon success.
+The `eth_newBlockFilter` method in the BSC protocol is part of the `eth_newBlockFilter` Web3 and `eth_newBlockFilter` RPC protocol, designed to create a filter for new block notifications. This method enables users to listen for new blocks added to the blockchain, providing a unique filter identifier upon success.
 
 Utilizing `eth_newBlockFilter` allows developers to efficiently track blockchain changes without polling for new blocks continuously. By leveraging this method, applications can respond to new block events in real-time, enhancing the responsiveness and efficiency of blockchain-based applications.
 
 ### Supported Networks
 
-The eth\_newBlockFilter JSON-RPC API method supports the following network types:
+The `eth_newBlockFilter` JSON-RPC API method supports the following network types:
 
 * **Mainnet**
 * **Testnet**
@@ -35,7 +35,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Request**
 
-Here’s a sample cURL request using eth\_newBlockFilter :
+Here’s a sample cURL request using `eth_newBlockFilter` :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -54,7 +54,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 **Response**
 
-Below is a sample JSON response returned by eth\_newBlockFilter upon a successful call:
+Below is a sample JSON response returned by `eth_newBlockFilter` upon a successful call:
 
 ```json
 
@@ -96,8 +96,9 @@ headers = {
 }
 payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": "0xcb5b0ec347fb06c786ab6f6f3b4bb584"
+  "method": "eth_newBlockFilter",
+  "params": [],
+  "id": 67
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(payload))
@@ -118,8 +119,9 @@ const axios = require('axios');
 const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   "jsonrpc": "2.0",
-  "id": 67,
-  "result": "0xcb5b0ec347fb06c786ab6f6f3b4bb584"
+  "method": "eth_newBlockFilter",
+  "params": [],
+  "id": 67
 };
 
 axios.post(url, payload, {
