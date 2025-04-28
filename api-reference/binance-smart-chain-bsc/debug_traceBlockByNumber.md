@@ -1,47 +1,54 @@
 ---
 description: >-
-  Use debug_traceBlockByNumber in the JSON-RPC API Interface to trace block execution and analyze smart contract behavior in the BSC protocol.
+  Explore the JSON-RPC API Interface with debug_traceBlockByNumber for detailed block tracing by number in the BSC protocol.
 ---
 
 # debug_traceBlockByNumber
 
 {% hint style="success" %}
-The RPC method provides detailed execution traces for a specific block by number on the Binance Smart Chain, aiding in debugging and performance analysis.&#x20;
+This method provides detailed execution traces of all transactions within a specific block number on BSC, aiding in debugging and analysis of smart contract interactions.&#x20;
 {% endhint %}
 
-The debug_traceBlockByNumber Web3 method in the BSC protocol allows developers to trace the execution of a specific block by its number. This JSON-RPC API method provides detailed insights into the operations and smart contract interactions within the block, enabling users to analyze transaction execution and debug issues effectively. By utilizing the debug_traceBlockByNumber RPC protocol, developers can access detailed execution traces, including opcode execution, stack, memory, and storage details. This tool is essential for diagnosing complex smart contract behaviors, optimizing performance, and ensuring the integrity of decentralized applications running on the Binance Smart Chain.
+The `debug_traceBlockByNumber` method in the BSC protocol is a powerful tool designed for developers to trace the execution of all transactions within a specific block, identified by its block number. This method provides detailed insights into the computational processes, including operations and state changes, enabling users to diagnose issues and optimize smart contract performance. It is part of the `debug_traceBlockByNumber Web3` suite, allowing seamless integration with Web3 libraries.
 
-### Supported Networks
+Utilizing the `debug_traceBlockByNumber RPC protocol`, developers can access this method via remote procedure calls, facilitating efficient debugging and monitoring of BSC transactions. The method outputs comprehensive trace data, helping users to understand the internal workings of the BSC network, thus enhancing transparency and reliability in blockchain development.
 
-The debug_traceBlockByNumber REST API method supports the following network types
+## Supported Networks
+
+The debug_traceBlockByNumber JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters debug_traceBlockByNumber method needs to be executed:
+Here is the list of parameters `debug_traceBlockByNumber` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Block Number (required)**
-  - **Type:** String
-  - **Description:** Specifies the block number to be traced. It should be provided in hexadecimal format prefixed with "0x".
-  - **Supported Values:** Any valid block number in hexadecimal format.
+- **Parameter 1**: 
+  - **Type**: String
+  - **Description**: The block number in hexadecimal format.
+  - **Required**: Yes
+  - **Example**: `"0xA1"`
+  - **Details**: This parameter specifies the block number for which the trace is requested. It should be provided in hexadecimal format prefixed with `0x`.
 
-- **Options (optional)**
-  - **Type:** Object
-  - **Description:** An object containing additional options for tracing.
-  - **Supported Values:** 
-    - **tracer:** Specifies the type of tracer to use. In this case, "callTracer" is used, which traces calls made during the execution of a transaction.
+- **Parameter 2**: 
+  - **Type**: Object
+  - **Description**: A tracer configuration object.
+  - **Required**: Yes
+  - **Example**: `{"tracer": "callTracer"}`
+  - **Details**: This object specifies the type of trace to perform. In this case, the `tracer` is set to `"callTracer"`, which is used to trace call operations within the block. This parameter allows for customization of the trace process.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using debug_traceBlockByNumber
+
 
 #### Request
+
+Here’s a sample cURL request using debug_traceBlockByNumber :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -56,8 +63,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by debug_traceBlockByNumber upon a successful call:
 
 ```json
 
@@ -72,27 +80,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for debug_traceBlockByNumber method:
+Here is the list of body parameters for `debug_traceBlockByNumber` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol being used. Typically, this is "2.0".
-2. **id**: A unique identifier for the request. This can be any string or number and is used to match responses to requests.
-3. **error**: An object containing details about any error that occurred during the execution of the method.
-   - **code**: A numeric code representing the specific error that occurred.
-   - **message**: A descriptive message providing more information about the error.
+1. **jsonrpc**: A string specifying the version of the JSON-RPC protocol. Typically set to "2.0".
+2. **id**: A unique identifier for the request. It can be a string, number, or null.
+3. **error**: An object containing error details:
+   - **code**: A number indicating the error type. In this case, -32000 represents a server error.
+   - **message**: A string providing a brief description of the error. For example, "historical state not available in path scheme yet".
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for debug_traceBlockByNumber method:
+Here are some use-cases for `debug_traceBlockByNumber` method:
 
-1. **Transaction Analysis**: This method is particularly useful for developers and blockchain analysts who need to perform an in-depth analysis of all transactions within a specific block. By tracing the execution of each transaction, developers can identify issues such as failed transactions, gas consumption, and understand the sequence of contract calls. This level of detail is essential for optimizing smart contracts and ensuring efficient execution.
+1. **Transaction Debugging**: One of the primary use cases for the `debug_traceBlockByNumber` method is to debug transactions within a specific block. By tracing through each transaction, developers can identify issues such as failed transactions, unexpected behavior, or errors in smart contract execution. This is particularly useful when trying to understand why a transaction did not produce the expected results.
 
-2. **Security Auditing**: In the realm of blockchain security, auditing smart contracts for vulnerabilities and unexpected behavior is crucial. The debug_traceBlockByNumber method allows security auditors to trace the execution paths of smart contracts within a block, helping them to detect anomalies, reentrancy attacks, or other security issues that might not be evident from the transaction receipts alone. This detailed tracing helps in ensuring the robustness and security of smart contracts before they are deployed on the mainnet.
+2. **Performance Analysis**: Developers can use `debug_traceBlockByNumber` to analyze the performance of smart contracts and transactions in a block. By examining the detailed execution traces, it's possible to identify performance bottlenecks or inefficiencies in the code. This can help in optimizing smart contracts for better gas usage and execution speed.
 
-3. **Historical Debugging**: When developers are troubleshooting issues that occurred in the past, they can use this method to replay and analyze the transactions in a specific block. This is particularly useful for debugging complex issues that require understanding the state and behavior of a contract at a particular point in time. By examining past blocks, developers can gain insights into the conditions that led to a bug or unexpected behavior, facilitating more effective debugging and resolution.
+3. **Security Auditing**: Security auditors can leverage the `debug_traceBlockByNumber` method to perform a thorough analysis of transactions in a block. By tracing through the execution steps, auditors can detect vulnerabilities, such as reentrancy attacks or improper access control, ensuring that the smart contracts are secure and robust against potential exploits.
 
-### Code for debug_traceBlockByNumber
+## Code for debug_traceBlockByNumber
 
 {% tabs %}
 {% tab title="Python" %}
@@ -123,19 +131,47 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "error": {
+    "code": -32000,
+    "message": "historical state not available in path scheme yet"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the debug_traceBlockByNumber JSON-RPC API BSC method, the following issues may occur:  
-- Incorrect block number format: Ensure the block number is provided in hexadecimal format prefixed with "0x". Double-check the input to avoid decimal or improperly formatted values.  
-- Insufficient node resources: Tracing a block can be resource-intensive, leading to timeouts or memory issues. Consider increasing the node's computational resources or using a more powerful node setup.  
-- Tracer configuration errors: If the tracer option is misconfigured or unsupported, the method may fail. Verify that the tracer is correctly specified and supported by the node version in use.  
-- Network connectivity issues: Problems with network connectivity between the client and the node can cause request failures. Ensure stable network conditions and verify node accessibility.
+When using the `debug_traceBlockByNumber` JSON-RPC API BSC method, the following issues may occur:
+- **Invalid Block Number:** If the block number provided is out of range or does not exist, an error will be returned. Ensure the block number is within the current blockchain height and is formatted correctly in hexadecimal.
+- **Tracer Misconfiguration:** Incorrect or unsupported tracer options can lead to unexpected results or errors. Verify that the tracer configuration matches the supported options outlined in the BSC documentation.
+- **Network Latency:** High network latency might cause timeouts or slow responses, especially when tracing large blocks. Consider optimizing your network connection or increasing the timeout settings in your client configuration.
+- **Resource Limitations:** The method may consume significant computational resources, leading to performance issues. It's advisable to run this method on a well-resourced node or consider offloading tracing tasks to dedicated infrastructure.
 
-Using the debug_traceBlockByNumber method provides valuable insights into the execution of transactions within a block, making it an essential tool for debugging and analyzing smart contracts in Web3 applications. By leveraging this method, developers can gain a deeper understanding of transaction flows and optimize their decentralized applications for better performance and reliability.
+Using the `debug_traceBlockByNumber` method in Web3 applications provides a powerful tool for analyzing the execution of transactions within a specific block. It allows developers to gain deep insights into contract interactions and debug complex transaction flows, enhancing the reliability and transparency of blockchain applications.
 
-### conclusion
+## Conclusion
 
-The debug_traceBlockByNumber JSON-RPC method is a powerful tool for developers working on the Binance Smart Chain (BSC), allowing them to trace and debug transactions within a specific block by its number. By using this method with parameters like a call tracer, developers can gain detailed insights into the execution of smart contracts and identify potential issues. This functionality is essential for maintaining the robustness and reliability of applications on BSC.
+The JSON-RPC method `debug_traceBlockByNumber` is a powerful tool for developers working with the Binance Smart Chain (BSC), allowing them to trace and debug transactions within a specific block. By using this method, developers can gain detailed insights into the execution of smart contracts and identify potential issues, enhancing the overall reliability of applications on the BSC.

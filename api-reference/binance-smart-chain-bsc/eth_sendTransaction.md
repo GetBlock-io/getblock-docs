@@ -1,71 +1,75 @@
 ---
 description: >-
-  Use eth_sendTransaction in the JSON-RPC API Interface to send transactions on the BSC network efficiently.
+  eth_sendTransaction in the JSON-RPC API Interface allows you to create and send transactions on the BSC protocol efficiently and securely.
 ---
 
 # eth_sendTransaction
 
 {% hint style="success" %}
-The RPC method sends a transaction on the Binance Smart Chain, facilitating token transfers or contract interactions by specifying transaction details like recipient, value, and data.&#x20;
+The RPC method sends a transaction to the BSC network, facilitating actions like transferring tokens or executing smart contracts.&#x20;
 {% endhint %}
 
-The eth_sendTransaction Web3 method is a critical function within the Binance Smart Chain (BSC) ecosystem, enabling users to send transactions seamlessly through the eth_sendTransaction RPC protocol. This method facilitates the transfer of funds or execution of smart contracts by specifying parameters such as the recipient address, value, and optional data payloads. When invoked, it generates a transaction that is signed and broadcast to the network. Users can customize gas price and limit to optimize transaction costs. As part of the JSON-RPC API Interface, this method requires a connection to a BSC node, ensuring secure and reliable transaction processing. Ideal for developers and users seeking efficient blockchain interactions, it supports various use cases from simple transfers to complex decentralized applications.
+The `eth_sendTransaction` method in the BSC protocol allows users to create and send a transaction to the network. As part of the `eth_sendTransaction` Web3 interface, it facilitates interactions with smart contracts and token transfers. Users must specify transaction parameters like `from`, `to`, `value`, `gas`, and `data`.
 
-### Supported Networks
+Utilizing the `eth_sendTransaction` RPC protocol, this method requires a running Ethereum client to process requests. It is essential for developers to ensure the sending account is unlocked and has sufficient funds for the transaction. This method returns a transaction hash, which can be used to track the transaction status on the blockchain.
 
-The eth_sendTransaction REST API method supports the following network types
+## Supported Networks
+
+The eth_sendTransaction JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_sendTransaction method needs to be executed.
+Here is the list of parameters `eth_sendTransaction` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **from** (required)
-  - **Type:** string
-  - **Description:** The address of the sender.
-  - **Default/Supported Values:** A valid Ethereum address.
+- **`from`** (required)
+  - **Type**: String
+  - **Description**: The address of the sender.
+  - **Default/Supported Values**: Must be a valid Ethereum address.
 
-- **to** (required)
-  - **Type:** string
-  - **Description:** The address of the recipient.
-  - **Default/Supported Values:** A valid Ethereum address.
+- **`to`** (required)
+  - **Type**: String
+  - **Description**: The address of the recipient.
+  - **Default/Supported Values**: Must be a valid Ethereum address.
 
-- **gas** (optional)
-  - **Type:** string
-  - **Description:** The gas limit provided for the transaction.
-  - **Default/Supported Values:** Hexadecimal string representing the gas limit. Default depends on the network or client settings.
+- **`gas`** (optional)
+  - **Type**: String
+  - **Description**: The amount of gas to use for the transaction.
+  - **Default/Supported Values**: Hexadecimal format. If not specified, a default value is used based on network conditions.
 
-- **gasPrice** (optional)
-  - **Type:** string
-  - **Description:** The price per unit of gas in wei.
-  - **Default/Supported Values:** Hexadecimal string representing the gas price. Default depends on the network or client settings.
+- **`gasPrice`** (optional)
+  - **Type**: String
+  - **Description**: The price per unit of gas.
+  - **Default/Supported Values**: Hexadecimal format. If not specified, the network's current gas price is used.
 
-- **value** (optional)
-  - **Type:** string
-  - **Description:** The amount of ether to send with the transaction.
-  - **Default/Supported Values:** Hexadecimal string representing the value in wei.
+- **`value`** (optional)
+  - **Type**: String
+  - **Description**: The amount of Ether to send with the transaction.
+  - **Default/Supported Values**: Hexadecimal format. Represents the amount in Wei.
 
-- **data** (optional)
-  - **Type:** string
-  - **Description:** The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.
-  - **Default/Supported Values:** Hexadecimal string representing the data payload.
+- **`data`** (optional)
+  - **Type**: String
+  - **Description**: The compiled code of a contract or the hash of the invoked method signature and encoded parameters.
+  - **Default/Supported Values**: Hexadecimal format. Used for contract interactions.
 
-- **id** (optional)
-  - **Type:** string
-  - **Description:** An identifier established by the client to track the request.
-  - **Default/Supported Values:** Any string value, used to match responses with requests.
+- **`id`** (optional)
+  - **Type**: String
+  - **Description**: An identifier for the request, which can be used to match responses to requests.
+  - **Default/Supported Values**: Any string value, often used for tracking requests.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_sendTransaction
+
 
 #### Request
+
+Here’s a sample cURL request using eth_sendTransaction :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -80,8 +84,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_sendTransaction upon a successful call:
 
 ```json
 
@@ -96,29 +101,29 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_sendTransaction method:
+Here is the list of body parameters for `eth_sendTransaction` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol being used. In this context, it is "2.0".
+1. **from**: The address of the sender.
+2. **to**: The address of the receiver. This can be `null` if you are creating a contract.
+3. **gas**: The gas provided for the transaction execution. It will return unused gas.
+4. **gasPrice**: The price per unit of gas.
+5. **value**: The value to be transferred in wei.
+6. **data**: The compiled code of a contract OR the hash of the invoked method signature and encoded parameters.
+7. **nonce**: The number of transactions made by the sender prior to this one.
 
-2. **id**: A unique identifier for the request. This helps in matching responses with requests in asynchronous environments. In this example, it is "getblock.io".
+## Use Cases
 
-3. **error**: An object containing details about any error that occurred during the execution of the method. This includes:
-   - **code**: A numeric error code. In this case, it is -32000, which indicates an error related to the method execution.
-   - **message**: A human-readable message providing more details about the error. Here, it is "unknown account", indicating that the account specified in the transaction is not recognized.
+Here are some use-cases for `eth_sendTransaction` method:
 
-### Use Cases
+1. **Transferring Ether Between Accounts**: One of the primary use-cases for the `eth_sendTransaction` method is to transfer Ether from one Ethereum account to another. This is a fundamental operation in Ethereum, allowing users to send Ether as a form of payment or transfer funds to another account address. The transaction includes details such as the sender's address, recipient's address, the amount of Ether to transfer, and optional parameters like gas price and gas limit.
 
-Here are some use-cases for eth_sendTransaction method in Web3 programming:
+2. **Interacting with Smart Contracts**: Another common use-case for the `eth_sendTransaction` method is to interact with smart contracts deployed on the Ethereum blockchain. By including the appropriate data payload in the transaction, developers can call functions on the smart contract, passing necessary parameters and invoking contract logic. This enables a wide range of decentralized applications (dApps) to perform operations such as token transfers, contract state updates, or triggering specific contract functionalities.
 
-1. **Transferring Ether**: One of the primary use cases is to transfer Ether from one account to another. This is a fundamental operation on the Ethereum network, allowing users to send cryptocurrency to peers, pay for services, or make donations. By specifying the sender's and recipient's addresses, the amount of Ether to send, and the gas price, developers can facilitate these transactions programmatically.
+3. **Deploying Smart Contracts**: The `eth_sendTransaction` method can also be used to deploy new smart contracts to the Ethereum blockchain. By sending a transaction with the contract's compiled bytecode as the data payload and specifying the deploying account as the sender, developers can publish new contracts. This is an essential step in the lifecycle of dApps, allowing developers to introduce new functionalities and services to the Ethereum network.
 
-2. **Interacting with Smart Contracts**: Developers often use this method to interact with deployed smart contracts. By including the contract's address in the 'to' field and encoding the function call in the 'data' field, users can invoke contract functions, pass parameters, and modify the contract's state. This is essential for decentralized applications that require interactions beyond simple Ether transfers.
-
-3. **Deploying Smart Contracts**: Another use case is deploying new smart contracts to the Ethereum blockchain. By omitting the 'to' field and including the contract's bytecode in the 'data' field, developers can use this method to create new contracts. This process involves sending a transaction that includes the compiled code, which the Ethereum network then processes to instantiate the contract on the blockchain.
-
-### Code for eth_sendTransaction
+## Code for eth_sendTransaction
 
 {% tabs %}
 {% tab title="Python" %}
@@ -149,19 +154,47 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "error": {
+    "code": -32000,
+    "message": "unknown account"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_sendTransaction JSON-RPC API BSC method, the following issues may occur:  
-- Insufficient gas: If the gas limit is set too low, the transaction may fail due to insufficient gas. Ensure that the gas limit is adequate for the transaction complexity and network conditions.  
-- Incorrect nonce: Using an incorrect nonce can cause transaction failures or delays. Verify that the nonce is correctly incremented for each transaction from the same account.  
-- Invalid recipient address: Sending a transaction to an invalid or incorrectly formatted address will result in failure. Double-check the recipient address to ensure it is valid and correctly formatted.  
-- Insufficient funds: If the sender's account balance is lower than the transaction value plus gas fees, the transaction will not be processed. Verify that the sender's account has sufficient funds to cover the transaction and associated costs.  
+When using the `eth_sendTransaction` JSON-RPC API BSC method, the following issues may occur:
+- Insufficient Gas: If the gas limit is set too low, the transaction may fail. Ensure the gas limit is sufficient by estimating the gas required for the transaction using `eth_estimateGas`.
+- Invalid Nonce: A transaction might be rejected if the nonce is incorrect. Verify that the nonce is set correctly by checking the latest nonce for the sender account with `eth_getTransactionCount`.
+- Incorrect Gas Price: Setting a gas price too low can result in the transaction taking a long time to be included in a block. Adjust the gas price according to current network conditions using gas price estimation tools.
+- Insufficient Funds: If the sender's account balance is lower than the transaction value plus gas costs, the transaction will fail. Ensure the sender's account has enough BNB to cover both the transaction value and the associated fees.
 
-Using the eth_sendTransaction method in Web3 applications allows for seamless interaction with the blockchain, enabling users to send transactions directly from their applications. This method is essential for executing smart contracts and transferring assets, providing a robust foundation for decentralized applications.
+Using the `eth_sendTransaction` method in Web3 applications allows developers to programmatically send transactions, facilitating interactions with smart contracts and transferring tokens. This method is integral for creating dynamic, decentralized applications, enabling seamless, automated transactions on the blockchain.
 
-### conclusion
+## Conclusion
 
-The eth_sendTransaction method in the JSON-RPC protocol is crucial for initiating transactions on Ethereum and Binance Smart Chain (BSC) networks. It allows users to send Ether or tokens by specifying parameters such as the sender and recipient addresses, gas, gas price, and transaction data. This method facilitates seamless interaction with smart contracts and decentralized applications on these blockchain platforms.
+The `eth_sendTransaction` method is a crucial part of the JSON-RPC API, allowing for the transfer of Ether or execution of smart contracts on Ethereum and compatible networks like BSC (Binance Smart Chain). This method facilitates seamless interaction with the blockchain, enabling users to initiate transactions by specifying parameters such as sender, receiver, gas, and value. By leveraging `eth_sendTransaction`, developers can efficiently build decentralized applications that interact with Ethereum-based ecosystems.

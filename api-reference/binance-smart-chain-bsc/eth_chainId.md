@@ -1,36 +1,40 @@
 ---
 description: >-
-  Retrieve the chain ID with the eth_chainId method using the JSON-RPC API Interface for seamless blockchain network identification.
+  Retrieve the BSC network's unique identifier using eth_chainId via the JSON-RPC API Interface.
 ---
 
 # eth_chainId
 
 {% hint style="success" %}
-The RPC eth_chainId for BSC returns the unique identifier for the Binance Smart Chain network, helping applications verify they’re connected to the correct blockchain.&#x20;
+The RPC eth_chainId for BSC returns the unique identifier of the Binance Smart Chain network, ensuring correct network connections for transactions and data queries.&#x20;
 {% endhint %}
 
-The eth_chainId method in Web3 is a crucial component of the eth_chainId RPC protocol, designed to facilitate the identification of blockchain networks. When interacting with Binance Smart Chain (BSC) or other Ethereum-compatible networks, this method provides a simple yet effective way to determine the unique chain ID of the network you are connected to. By querying this method via the JSON-RPC API, developers can ensure that their applications are interfacing with the correct blockchain environment, preventing potential cross-network errors. This method returns the chain ID as a hexadecimal string, enhancing the reliability and accuracy of network-specific operations in decentralized applications.
+The `eth_chainId` method in the BSC protocol is a JSON-RPC API call that retrieves the unique identifier of the blockchain network. This method is crucial for applications to ensure they are interacting with the correct network. In the context of `eth_chainId Web3`, it helps developers verify network connections programmatically.
 
-### Supported Networks
+Utilizing the `eth_chainId RPC protocol`, this method returns a hexadecimal string representing the chain ID. This ID distinguishes between mainnets and testnets, aiding in network-specific operations. By invoking `eth_chainId`, developers can prevent cross-network errors, ensuring that their transactions and smart contract interactions occur on the intended blockchain.
 
-The eth_chainId REST API method supports the following network types
+## Supported Networks
+
+The eth_chainId JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
 None: This method does not require any parameters.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_chainId
+
 
 #### Request
+
+Here’s a sample cURL request using eth_chainId :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,8 +51,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_chainId upon a successful call:
 
 ```json
 
@@ -60,27 +65,25 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_chainId method:
+Here is the list of body parameters for `eth_chainId` method:
 
-1. **jsonrpc**: This parameter specifies the version of the JSON-RPC protocol being used. In this case, it is "2.0".
+1. **jsonrpc**: This is the version of the JSON-RPC protocol being used. In this case, it is "2.0".
+2. **id**: A unique identifier for the request. Here, it is "getblock.io", which can be any string or number used to match the response with the request.
+3. **result**: This represents the chain ID of the blockchain network in hexadecimal format. In this example, it is "0x38", which corresponds to the Binance Smart Chain mainnet.
 
-2. **id**: This parameter is a unique identifier for the request. It is used to match the response with the request. In this example, it is "getblock.io".
+## Use Cases
 
-3. **result**: This parameter contains the chain ID in hexadecimal format. In this example, the chain ID is "0x38".
+Here are some use-cases for `eth_chainId` method:
 
-### Use Cases
+1. **Network Identification**: In Web3 programming, it's crucial to ensure that the application is interacting with the correct Ethereum network, whether it's the mainnet, a testnet, or a private network. The `eth_chainId` method helps in identifying the current network by returning a unique identifier for the blockchain. This is particularly useful when switching between different networks to prevent transactions from being sent to the wrong chain.
 
-Here are some use-cases for eth_chainId method:
+2. **Compatibility Checks**: When developing decentralized applications (dApps), it's important to ensure that the smart contracts and features are compatible with the network being used. By using the `eth_chainId` method, developers can programmatically check the network and conditionally execute code that is specific to certain networks, thus enhancing the robustness and reliability of the dApp.
 
-1. Network Identification: In Web3 programming, it's crucial to identify which Ethereum network a client is connected to, especially when interacting with multiple networks such as the Ethereum mainnet, Ropsten, Rinkeby, or other testnets. This method helps developers ensure that their applications are operating on the intended network, thereby avoiding potential issues like deploying contracts or executing transactions on the wrong network.
+3. **Security Measures**: Using the `eth_chainId` method can be part of security protocols to avoid phishing attacks or misconfigurations. By verifying the network ID, applications can prevent users from accidentally interacting with malicious or unintended networks, thereby safeguarding user funds and data.
 
-2. Application Configuration: Many decentralized applications (dApps) require specific configurations depending on the network they are interacting with. By using this method, developers can dynamically configure their applications to adapt to different network environments. For instance, they can load different contract addresses or API endpoints based on the network ID returned by this method.
-
-3. Security Measures: Verifying the chain ID is an important security measure to prevent replay attacks. In scenarios where transactions could be replayed on different networks, checking the chain ID ensures that transactions are only valid on the intended network, thereby protecting users and their assets from unintended actions.
-
-### Code for eth_chainId
+## Code for eth_chainId
 
 {% tabs %}
 {% tab title="Python" %}
@@ -108,19 +111,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "result": "0x38"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_chainId JSON-RPC API BSC method, the following issues may occur:  
-- Incorrect endpoint configuration: If the endpoint URL is misconfigured or points to an incorrect network, the method may return an unexpected chain ID. Ensure your endpoint is correctly set to the desired BSC network.  
-- Network congestion: High network traffic can lead to delayed responses or timeouts. Consider implementing retry logic or using a load-balanced node service to mitigate this issue.  
-- Unauthorized access: If the node provider requires authentication and your request lacks valid credentials, the method may fail. Verify your API keys or authentication tokens are correctly configured.  
-- Outdated client library: Using an outdated Web3 library can lead to compatibility issues with the latest protocol updates. Regularly update your libraries to ensure compatibility with the BSC network.  
+When using the `eth_chainId` JSON-RPC API BSC method, the following issues may occur:
+- Incorrect network ID: If the returned chain ID does not match the expected value for Binance Smart Chain, verify that your node is correctly configured to connect to the BSC network.
+- Network connectivity issues: If you receive a timeout or no response, ensure your client is connected to the network and that there are no firewall rules blocking the request.
+- Invalid JSON-RPC response: Receiving malformed JSON responses may indicate a problem with the node software. Update your node client to the latest version to resolve compatibility issues.
+- Node synchronization lag: If the chain ID returned is outdated, your node might be out of sync. Ensure your node is fully synchronized with the network.
 
-Using the eth_chainId method in Web3 applications provides a reliable way to verify the network your application is interacting with, ensuring that transactions and interactions occur on the intended blockchain. This method enhances the security and accuracy of decentralized applications by preventing cross-network errors and facilitating seamless blockchain interactions.
+Using the `eth_chainId` method in Web3 applications ensures that your application is interacting with the correct blockchain network, which is crucial for maintaining consistent and reliable operations. This method provides a simple yet effective way to programmatically verify network identity, reducing the risk of executing transactions on the wrong chain.
 
-### conclusion
+## Conclusion
 
-The eth_chainId method in JSON-RPC is crucial for identifying the specific blockchain network being interacted with, such as Ethereum or Binance Smart Chain (BSC). This method helps ensure that transactions and smart contract interactions occur on the correct network, preventing costly mistakes. Understanding and utilizing eth_chainId is essential for developers working across multiple blockchains like BSC.
+The `eth_chainId` method in JSON-RPC is crucial for identifying the specific blockchain network a client is interacting with, such as Ethereum or Binance Smart Chain (BSC). By calling `eth_chainId`, developers can ensure their applications are operating on the correct network, preventing potential mismatches and errors. This functionality is vital for maintaining seamless and secure interactions across different blockchain environments.

@@ -1,48 +1,52 @@
 ---
 description: >-
-  Access uncle block details with eth_getUncleByBlockNumberAndIndex using the JSON-RPC API Interface on the BSC protocol.
+  Access uncle block details by block number and index using eth_getUncleByBlockNumberAndIndex in the JSON-RPC API Interface for BSC.
 ---
 
 # eth_getUncleByBlockNumberAndIndex
 
 {% hint style="success" %}
-The RPC method retrieves information about an uncle block by block number and index on the Binance Smart Chain, aiding in blockchain analysis and validation.&#x20;
+The RPC method retrieves an uncle block from a specific block number and index on the Binance Smart Chain, aiding in blockchain analysis and validation.&#x20;
 {% endhint %}
 
-The eth_getUncleByBlockNumberAndIndex Web3 method allows users to retrieve details of an uncle block by specifying a block number and index. This functionality is part of the eth_getUncleByBlockNumberAndIndex RPC protocol, which serves as a vital tool for developers working with the Binance Smart Chain (BSC). By providing the block number and the index of the uncle, users can access specific information about uncle blocks, which are blocks that were mined simultaneously but not included in the main blockchain. This method is crucial for understanding the dynamics of block validation and network performance. Its integration into the JSON-RPC API Interface ensures seamless interaction with the BSC network, enabling efficient data retrieval in decentralized applications.
+The `eth_getUncleByBlockNumberAndIndex` method in the BSC protocol is a JSON-RPC API call that retrieves information about an uncle block by specifying the block number and the uncle's index position. This method is essential for developers using the `eth_getUncleByBlockNumberAndIndex Web3` interface to access uncle block data efficiently.
 
-### Supported Networks
+Utilizing the `eth_getUncleByBlockNumberAndIndex RPC protocol`, developers can obtain details such as the uncle's hash, miner, and other metadata. This method is crucial for applications needing to analyze uncle blocks within the Binance Smart Chain, offering a straightforward way to fetch specific uncle data by block number and index.
 
-The eth_getUncleByBlockNumberAndIndex REST API method supports the following network types
+## Supported Networks
+
+The eth_getUncleByBlockNumberAndIndex JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_getUncleByBlockNumberAndIndex method needs to be executed.
+Here is the list of parameters `eth_getUncleByBlockNumberAndIndex` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
 - **Parameter 1: Block Number**
-  - **Type:** String
-  - **Description:** The block number from which the uncle block is to be retrieved. It is represented in hexadecimal format.
-  - **Required:** Yes
-  - **Default/Supported Values:** A valid block number in hexadecimal format, prefixed with "0x".
+  - **Type**: String
+  - **Description**: The block number from which the uncle block is to be retrieved, represented as a hexadecimal string.
+  - **Required**: Yes
+  - **Default/Supported Values**: Must be a valid block number in hexadecimal format, prefixed with "0x".
 
 - **Parameter 2: Uncle Index**
-  - **Type:** String
-  - **Description:** The index position of the uncle block within the specified block. It is represented in hexadecimal format.
-  - **Required:** Yes
-  - **Default/Supported Values:** A valid index in hexadecimal format, prefixed with "0x".
+  - **Type**: String
+  - **Description**: The index position of the uncle block within the specified block, represented as a hexadecimal string.
+  - **Required**: Yes
+  - **Default/Supported Values**: Must be a valid index in hexadecimal format, prefixed with "0x".
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_getUncleByBlockNumberAndIndex
+
 
 #### Request
+
+Here’s a sample cURL request using eth_getUncleByBlockNumberAndIndex :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -57,8 +61,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_getUncleByBlockNumberAndIndex upon a successful call:
 
 ```json
 
@@ -70,25 +75,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_getUncleByBlockNumberAndIndex method:
+Here is the list of body parameters for the `eth_getUncleByBlockNumberAndIndex` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol. It should be "2.0".
-2. **id**: An identifier for the request. It can be any string or number, often used to match requests and responses.
-3. **result**: The result of the request. In this case, it is `null`, indicating that no uncle block was found for the specified block number and index.
+1. **jsonrpc**: This parameter specifies the version of the JSON-RPC protocol. It is typically set to `"2.0"`.
 
-### Use Cases
+2. **id**: This parameter is a unique identifier for the request. It is used to match the response with the request. In this example, it is set to `"getblock.io"`.
 
-Here are some use-cases for eth_getUncleByBlockNumberAndIndex method:
+3. **result**: This parameter contains the result of the method call. For the `eth_getUncleByBlockNumberAndIndex` method, it would include the details of the uncle block if the request is successful. In this case, it is `null`, indicating that no uncle block was found or there was an error in retrieving the data.
 
-1. **Blockchain Data Analysis**: Developers and analysts can use this method to gather detailed information about uncle blocks within Ethereum. By retrieving uncles based on block number and index, they can analyze the frequency and conditions under which uncle blocks occur. This information can be crucial for understanding network performance, block propagation times, and the overall efficiency of the Ethereum network.
+## Use Cases
 
-2. **Uncle Block Rewards Verification**: In Ethereum, miners receive rewards for both regular blocks and uncle blocks. This method allows developers to verify the existence and details of uncle blocks associated with a particular block. By doing so, they can ensure that miners are accurately compensated for their contributions to the network, thereby maintaining the integrity and fairness of reward distribution.
+Here are some use-cases for `eth_getUncleByBlockNumberAndIndex` method:
 
-3. **Historical Data Retrieval**: For applications that require historical blockchain data, such as blockchain explorers or analytics platforms, this method provides a way to access uncle block information from past blocks. This can be valuable for reconstructing the state of the blockchain at a specific point in time, conducting audits, or providing users with comprehensive historical insights into blockchain activity.
+1. **Blockchain Analysis and Research**: Developers and researchers can use the `eth_getUncleByBlockNumberAndIndex` method to retrieve uncle blocks for a specific block number and index. This can be useful for analyzing the frequency and distribution of uncle blocks within the Ethereum blockchain, which can provide insights into network performance and mining efficiency.
 
-### Code for eth_getUncleByBlockNumberAndIndex
+2. **Mining Pool Monitoring**: Mining pools can utilize the `eth_getUncleByBlockNumberAndIndex` method to monitor the occurrence of uncle blocks that their miners produce. By tracking these uncles, pools can optimize their strategies to reduce the occurrence of uncle blocks, which generally result in lower rewards compared to successfully mined blocks.
+
+3. **Reward Calculation**: In Ethereum, uncle blocks still receive a partial reward. Developers building tools for miners or mining pools can use the `eth_getUncleByBlockNumberAndIndex` method to accurately calculate the rewards associated with uncle blocks. This ensures that miners receive the correct compensation for their contributions to the network, even when their blocks are not included in the main chain.
+
+## Code for eth_getUncleByBlockNumberAndIndex
 
 {% tabs %}
 {% tab title="Python" %}
@@ -116,19 +123,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "result": null
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_getUncleByBlockNumberAndIndex JSON-RPC API BSC method, the following issues may occur:  
-- Incorrect block number format: Ensure the block number is provided in hexadecimal format, prefixed with "0x". Double-check your input to prevent conversion errors.  
-- Index out of range: If the specified uncle index does not exist for the block, verify the block's uncle count to ensure the index is valid.  
-- Network connectivity issues: A failure to connect to the BSC node may result in timeouts or no response. Verify your network connection and node status to ensure proper communication.  
-- Invalid parameters: Incorrectly formatted parameters can lead to errors. Ensure both parameters are correctly formatted and valid to avoid issues.
+When using the `eth_getUncleByBlockNumberAndIndex` JSON-RPC API BSC method, the following issues may occur:
+- Incorrect block number format: Ensure that the block number is provided in hexadecimal format prefixed with "0x". Double-check the conversion from decimal to hexadecimal to avoid this error.
+- Index out of range: If the specified uncle index exceeds the number of uncles in the block, the method will return a null value. Verify the number of uncles in the target block to ensure the index is valid.
+- Network connectivity issues: If the connection to the BSC node is unstable, the request may fail. Ensure that the network connection is reliable and that the node is responsive.
+- Insufficient node permissions: Some nodes may restrict access to certain methods. Confirm that the node you are querying allows access to the `eth_getUncleByBlockNumberAndIndex` method.
 
-Using the eth_getUncleByBlockNumberAndIndex method in Web3 applications provides valuable insights into the blockchain's structure by retrieving uncle blocks. This can be useful for analyzing block propagation and orphaned block occurrences, enhancing the understanding and optimization of blockchain performance.
+Using the `eth_getUncleByBlockNumberAndIndex` method in Web3 applications provides valuable insights into the uncle blocks associated with a specific block, which can be crucial for understanding the block's consensus and mining rewards. This method allows developers to efficiently retrieve uncle block data, enhancing the ability to analyze blockchain performance and integrity.
 
-### conclusion
+## Conclusion
 
-The eth_getUncleByBlockNumberAndIndex JSON-RPC method is used to retrieve information about an uncle block by specifying the block number and index on the Ethereum blockchain. This function is crucial for developers working on Ethereum-based projects, including those on Binance Smart Chain (BSC), as it helps in analyzing block data and understanding blockchain dynamics. By leveraging eth_getUncleByBlockNumberAndIndex, developers can gain insights into the network's operation and performance.
+The `eth_getUncleByBlockNumberAndIndex` method is a JSON-RPC call used in Ethereum and compatible blockchains like Binance Smart Chain (BSC) to retrieve information about an uncle block by specifying the block number and the index of the uncle. This method is particularly useful for developers and analysts looking to understand the structure and rewards of uncle blocks within a blockchain network. By utilizing `eth_getUncleByBlockNumberAndIndex`, one can gain insights into the network's block validation process and the occurrence of uncle blocks.

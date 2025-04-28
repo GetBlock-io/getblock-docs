@@ -1,36 +1,40 @@
 ---
 description: >-
-  Create a new pending transaction filter using eth_newPendingTransactionFilter in the JSON-RPC API Interface for the BSC protocol.
+  Create a pending transaction filter using eth_newPendingTransactionFilter in the JSON-RPC API Interface for real-time BSC network monitoring.
 ---
 
 # eth_newPendingTransactionFilter
 
 {% hint style="success" %}
-Creates a filter to listen for new pending transactions in the Binance Smart Chain, allowing applications to react to transactions before they're confirmed.&#x20;
+The RPC method creates a filter to monitor new pending transactions on the Binance Smart Chain, enabling real-time tracking of transaction activity.&#x20;
 {% endhint %}
 
-The eth_newPendingTransactionFilter Web3 method allows developers to create a filter for monitoring new pending transactions in the Binance Smart Chain (BSC) network. By utilizing the eth_newPendingTransactionFilter RPC protocol, users can efficiently track transactions that are yet to be mined, providing a real-time view of network activity. This method is particularly useful for applications that require immediate updates on transaction status or need to respond to transaction events promptly. The filter ID returned by this method can be used with other RPC calls to retrieve and manage pending transaction data. Designed for seamless integration, this function is essential for developers working with the JSON-RPC API Interface to enhance their blockchain applications.
+The `eth_newPendingTransactionFilter` method in the BSC protocol is a JSON-RPC API call used to create a filter that listens for new pending transactions. This method is part of the `eth_newPendingTransactionFilter Web3` suite, enabling developers to monitor transactions that have been submitted but not yet mined into a block.
 
-### Supported Networks
+Utilizing the `eth_newPendingTransactionFilter RPC protocol`, developers can efficiently track transaction activity in real-time. This method returns a filter ID, which can be used with other API calls to fetch or remove pending transaction data, enhancing the ability to build responsive and interactive blockchain applications.
 
-The eth_newPendingTransactionFilter REST API method supports the following network types
+## Supported Networks
+
+The eth_newPendingTransactionFilter JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
 None: This method does not require any parameters.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_newPendingTransactionFilter
+
 
 #### Request
+
+Here’s a sample cURL request using eth_newPendingTransactionFilter :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,8 +51,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_newPendingTransactionFilter upon a successful call:
 
 ```json
 
@@ -60,25 +65,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_newPendingTransactionFilter method:
+Here is the list of body parameters for the `eth_newPendingTransactionFilter` method:
 
-1. `jsonrpc`: The version of the JSON-RPC protocol being used, typically "2.0".
-2. `id`: A unique identifier for the request, which can be any number or string. In this case, it is 67.
-3. `result`: The response from the method, which is a unique identifier for the newly created filter. In this example, it is "0x746380cef6b04f8ab8c53a309ce8c98d".
+1. **jsonrpc**: Indicates the version of the JSON-RPC protocol being used. In this case, it is `"2.0"`.
 
-### Use Cases
+2. **id**: A unique identifier for the request. It is used to match the response with the request. In this example, the ID is `67`.
 
-Here are some use-cases for eth_newPendingTransactionFilter method:
+3. **result**: The result of the `eth_newPendingTransactionFilter` method call, which is a filter ID. This ID is used to identify the filter and retrieve pending transactions. In this example, the result is `"0x746380cef6b04f8ab8c53a309ce8c98d"`.
 
-1. **Real-time Transaction Monitoring**: This method can be used to keep track of all pending transactions in real-time. Developers can set up a filter to receive notifications whenever a new transaction is added to the pending state. This is particularly useful for applications that need to display live transaction data or for monitoring transaction activity on the network for analytics purposes.
+## Use Cases
 
-2. **Building Alert Systems**: By utilizing this method, developers can create alert systems that notify users or administrators of specific transaction patterns or activities. For instance, if a transaction meets certain criteria, such as a high gas price or a particular sender address, an alert can be triggered to inform relevant parties. This can be helpful for security monitoring or for users who want to be informed of transactions involving their accounts.
+Here are some use-cases for `eth_newPendingTransactionFilter` method:
 
-3. **Optimizing Gas Usage**: Developers can use this method to analyze pending transactions and adjust their own transaction strategies accordingly. By understanding the current state of pending transactions, they can decide whether to increase the gas price to ensure quicker inclusion in a block or to wait for network congestion to decrease. This can lead to more efficient use of gas and potentially lower transaction costs.
+1. **Real-time Transaction Monitoring**: One of the primary use-cases for the `eth_newPendingTransactionFilter` method is to monitor pending transactions in real-time. Developers and blockchain enthusiasts can use this method to create applications that track transactions as they are broadcasted to the Ethereum network but before they are included in a block. This can be particularly useful for building alert systems that notify users about transactions involving specific addresses or smart contracts.
 
-### Code for eth_newPendingTransactionFilter
+2. **Network Analysis and Statistics**: By using `eth_newPendingTransactionFilter`, developers can gather data on the number and types of transactions being submitted to the network. This information can be used for analytical purposes, such as understanding network congestion, transaction fee trends, or identifying patterns in transaction types. Such insights can help in optimizing smart contract performance or improving user experience by adjusting transaction strategies.
+
+3. **Front-running Prevention**: In decentralized finance (DeFi) and other blockchain applications, front-running is a concern where malicious actors attempt to gain an advantage by executing a transaction ahead of a known pending transaction. Developers can use `eth_newPendingTransactionFilter` to detect and analyze pending transactions, allowing them to implement strategies to mitigate front-running risks, such as adjusting transaction parameters or implementing transaction ordering mechanisms.
+
+## Code for eth_newPendingTransactionFilter
 
 {% tabs %}
 {% tab title="Python" %}
@@ -106,19 +113,43 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 67,
+  "result": "0x746380cef6b04f8ab8c53a309ce8c98d"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_newPendingTransactionFilter JSON-RPC API BSC method, the following issues may occur:  
-- Filter not updating: If the filter does not seem to capture new pending transactions, ensure that the node you're connected to is fully synced with the network. Regularly check the node's synchronization status and restart it if necessary.  
-- Invalid response format: Occasionally, you might receive responses that are not properly formatted. Verify that your client library correctly parses JSON-RPC responses and that there are no network issues causing incomplete data transfers.  
-- Filter ID not found: If you receive an error indicating that the filter ID is not found, double-check that the filter has not been automatically removed by the node due to inactivity. Consider setting up a mechanism to refresh or recreate filters periodically.  
-- Node compatibility issues: Some nodes might not fully support all JSON-RPC methods. Ensure that your node is running a version that supports eth_newPendingTransactionFilter and consider upgrading the node software if necessary.
+When using the `eth_newPendingTransactionFilter` JSON-RPC API BSC method, the following issues may occur:
+- Network Latency: High network latency can lead to delayed notifications of new pending transactions. To mitigate this, ensure a stable and fast internet connection and consider using a WebSocket connection for real-time updates.
+- Filter Limitations: The filter may not capture all pending transactions if the node is under heavy load. To address this, periodically refresh the filter and handle any missed transactions by querying the transaction pool directly.
+- Node Synchronization: If the node is not fully synchronized with the network, it may provide incomplete or outdated transaction data. Ensure your node is fully synced before deploying filters to receive accurate results.
 
-Utilizing the eth_newPendingTransactionFilter method in Web3 applications allows developers to efficiently monitor pending transactions on the BSC network. This can be particularly beneficial for applications that need real-time updates on transaction statuses, enabling quick responses to network activity. By leveraging this method, developers can enhance the interactivity and responsiveness of their blockchain-based applications.
+Using the `eth_newPendingTransactionFilter` method in Web3 applications allows developers to efficiently monitor the transaction pool for new pending transactions. This capability is crucial for applications that need to react to transaction submissions in real-time, such as automated trading bots or transaction monitoring tools, providing a responsive and dynamic user experience.
 
-### conclusion
+## Conclusion
 
-The eth_newPendingTransactionFilter method in JSON-RPC is a valuable tool for developers working on platforms like BSC. It allows them to monitor pending transactions efficiently. By leveraging eth_newPendingTransactionFilter, developers can enhance their applications' responsiveness to real-time transaction data on the blockchain.
+The `eth_newPendingTransactionFilter` method in JSON-RPC is a crucial tool for developers working on Ethereum and Binance Smart Chain (BSC) networks. It allows them to create a filter to monitor pending transactions efficiently. By leveraging `eth_newPendingTransactionFilter`, developers can stay updated on the transaction pool dynamics and optimize their decentralized applications accordingly.

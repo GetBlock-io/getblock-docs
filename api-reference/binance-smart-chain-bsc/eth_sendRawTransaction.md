@@ -1,42 +1,46 @@
 ---
 description: >-
-  Use eth_sendRawTransaction in the JSON-RPC API Interface to broadcast signed transactions on the BSC network seamlessly.
+  eth_sendRawTransaction method in the JSON-RPC API Interface allows users to send raw transactions on the BSC protocol efficiently.
 ---
 
 # eth_sendRawTransaction
 
 {% hint style="success" %}
-The RPC method eth_sendRawTransaction on BSC broadcasts a pre-signed transaction for network validation and inclusion in the blockchain.&#x20;
+It submits a signed transaction to the Binance Smart Chain network for execution, enabling direct interaction without revealing private keys.&#x20;
 {% endhint %}
 
-The eth_sendRawTransaction Web3 method is a core component of the Binance Smart Chain (BSC) network, allowing users to broadcast signed transactions directly through the eth_sendRawTransaction RPC protocol. This method requires the transaction to be pre-signed, ensuring that the sender's private key remains secure and never leaves their environment. By accepting a serialized, hex-encoded transaction, it facilitates efficient and secure transaction processing. Users can leverage this method to interact with smart contracts, transfer tokens, or execute other blockchain operations without exposing sensitive information. The eth_sendRawTransaction Web3 method is essential for developers and users seeking to perform transactions programmatically, offering a streamlined and secure approach within the BSC ecosystem.
+The `eth_sendRawTransaction` method in the BSC protocol is a crucial feature of the `eth_sendRawTransaction Web3` interface. It enables users to broadcast a signed transaction to the network without requiring local signing. This method directly pushes the raw transaction data to the blockchain, ensuring efficient processing.
 
-### Supported Networks
+As part of the `eth_sendRawTransaction RPC protocol`, this method requires a single parameter: the raw, hex-encoded transaction data. Upon successful execution, it returns the transaction hash, allowing users to track its status. This approach enhances security by keeping private keys off the client-side, making it a preferred choice for decentralized applications.
 
-The eth_sendRawTransaction REST API method supports the following network types
+## Supported Networks
+
+The eth_sendRawTransaction JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_sendRawTransaction method needs to be executed:
+Here is the list of parameters `eth_sendRawTransaction` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter**: signed transaction
-  - **Required/Optional**: Required
+- **signed transaction**
   - **Type**: String
-  - **Description**: The raw signed transaction data that you want to send to the Ethereum network. This should be encoded as a hexadecimal string.
-  - **Default/Supported Values**: The value must be a valid signed transaction in hexadecimal format.
+  - **Description**: The raw signed transaction data encoded as a hexadecimal string. This is the serialized and signed transaction that you want to broadcast to the Ethereum network.
+  - **Required**: Yes
+  - **Default/Supported Values**: Must be a valid signed transaction in hexadecimal format.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_sendRawTransaction
+
 
 #### Request
+
+Here’s a sample cURL request using eth_sendRawTransaction :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -53,8 +57,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_sendRawTransaction upon a successful call:
 
 ```json
 
@@ -69,31 +74,29 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_sendRawTransaction method:
+Here is the list of body parameters for the `eth_sendRawTransaction` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol being used. Typically, this is "2.0".
+1. **jsonrpc**: A string specifying the version of the JSON-RPC protocol. Typically, this is set to `"2.0"`.
 
-2. **id**: A unique identifier for the request. This is usually a number, but it can also be a string. It's used to match responses with requests.
+2. **id**: A unique identifier for the request. It can be a number, string, or null. This is used to match the response with the request.
 
-3. **error**: An object containing details about any errors that occurred during the processing of the request. This includes:
-   - **code**: A numeric error code indicating the type of error.
-   - **message**: A descriptive message providing more details about the error.
+3. **error**: An object containing error details if the request fails. The object includes:
+   - **code**: A numeric code representing the error type. In this case, `-32602` indicates an invalid parameter.
+   - **message**: A string description of the error. For instance, "invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutil.Bytes" indicates that the input was expected to be a hex string prefixed with `0x`.
 
-Note: The error message in your example indicates that the transaction data provided is not properly formatted. It should be a hex string prefixed with "0x".
+## Use Cases
 
-### Use Cases
+Here are some use-cases for `eth_sendRawTransaction` method:
 
-Here are some use-cases for eth_sendRawTransaction method in Web3 programming:
+1. **Submitting Transactions with Higher Security**: The `eth_sendRawTransaction` method is commonly used in scenarios where security is a priority. By signing the transaction locally, typically on a user's device, the private key never leaves the user's environment. This reduces the risk of exposing sensitive information to potentially insecure networks or third-party services.
 
-1. **Broadcasting Transactions**: This method is commonly used to broadcast a pre-signed transaction to the Ethereum network. Developers can sign transactions offline using a private key and then send the raw transaction data to the network, which ensures that the private key does not need to be exposed to the network or the client application, enhancing security.
+2. **Interacting with Smart Contracts**: Developers use `eth_sendRawTransaction` to interact with smart contracts on the Ethereum blockchain. By crafting and signing a transaction that calls a smart contract function, developers can execute complex operations such as token transfers, decentralized finance (DeFi) operations, or any other smart contract logic.
 
-2. **Automating Transactions**: In scenarios where transactions need to be automated, such as in decentralized applications (dApps) or smart contract interactions, eth_sendRawTransaction can be used to programmatically send transactions without manual intervention. This is particularly useful for executing a series of transactions or interacting with smart contracts in a seamless and efficient manner.
+3. **Enabling Offline Transaction Signing**: This method is ideal for creating offline transaction workflows. Users can sign transactions offline and then broadcast them later using `eth_sendRawTransaction`. This is particularly useful in environments where internet connectivity is intermittent or when users want to prepare transactions in advance and submit them when they have access to the network.
 
-3. **Handling Complex Transactions**: For users or applications that need to handle complex transactions involving multiple steps or conditions, sending raw transactions allows for greater control over the transaction parameters. Developers can customize gas prices, nonce values, and other transaction details before signing and sending them to the network, which can optimize transaction processing and cost.
-
-### Code for eth_sendRawTransaction
+## Code for eth_sendRawTransaction
 
 {% tabs %}
 {% tab title="Python" %}
@@ -124,19 +127,47 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 1,
+  "error": {
+    "code": -32602,
+    "message": "invalid argument 0: json: cannot unmarshal hex string without 0x prefix into Go value of type hexutil.Bytes"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_sendRawTransaction JSON-RPC API BSC method, the following issues may occur:  
-- Invalid Signature: If the transaction signature is incorrect, the network will reject it. Ensure the private key used for signing matches the sender's address.  
-- Insufficient Gas: Transactions with gas limits set too low will not be processed. Verify that your gas limit covers the computational cost of the transaction.  
-- Nonce Mismatch: A mismatch in the transaction nonce can lead to failures. Check and synchronize the nonce with the current transaction count of the sender's address.  
-- Insufficient Funds: If the sender's account lacks the necessary balance to cover the transaction value and gas fees, the transaction will fail. Ensure the account has adequate funds before sending.  
+When using the `eth_sendRawTransaction` JSON-RPC API BSC method, the following issues may occur:
+- **Invalid Signature**: If the transaction signature is incorrect, the transaction will be rejected. Ensure that the private key used to sign the transaction is correct and that the signing process is properly implemented.
+- **Insufficient Funds**: Transactions may fail if the sending account does not have enough BNB to cover the gas fees. Verify the account balance before sending a transaction to prevent this error.
+- **Nonce Too Low**: If the nonce of the transaction is lower than expected, it will be rejected. Keep track of the nonce for each transaction sent from the account to avoid this issue.
+- **Gas Limit Exceeded**: If the transaction's gas limit is set too low, it will not be processed. Estimate the gas required for the transaction accurately and set an appropriate gas limit.
 
-Using the eth_sendRawTransaction method allows Web3 applications to broadcast pre-signed transactions directly to the network, enhancing security by keeping private keys off the server. This method enables more efficient and flexible transaction handling, empowering developers to create seamless user experiences in decentralized applications.
+The `eth_sendRawTransaction` method is highly beneficial in Web3 applications as it allows for the submission of pre-signed transactions, enabling users to interact with the blockchain without exposing their private keys. This enhances security and efficiency, as transactions can be prepared offline and submitted directly to the network.
 
-### conclusion
+## Conclusion
 
-The eth_sendRawTransaction method in JSON-RPC is a crucial tool for broadcasting signed transactions to the Ethereum network or Binance Smart Chain (BSC). By using this method, developers can directly interact with the blockchain, ensuring secure and efficient transaction processing. Understanding how to implement eth_sendRawTransaction within these networks is essential for leveraging the full potential of decentralized applications.
+The method `eth_sendRawTransaction` is a crucial component of the JSON-RPC API, enabling users to broadcast signed transactions directly to the Ethereum network or compatible networks like BSC. By using `eth_sendRawTransaction`, developers can ensure that their transactions are securely and efficiently processed on the blockchain, leveraging the power of decentralized networks.

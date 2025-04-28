@@ -1,36 +1,40 @@
 ---
 description: >-
-  net_version in the JSON-RPC API Interface returns the current network ID in the BSC protocol for seamless blockchain interaction.
+  Retrieve the current network ID using the net_version method in the JSON-RPC API Interface for seamless BSC protocol integration.
 ---
 
 # net_version
 
 {% hint style="success" %}
-The RPC net_version for BSC returns the current network ID, helping applications identify which blockchain network they are interacting with.&#x20;
+The RPC net_version for BSC returns the current network ID, helping to identify the specific blockchain network being interacted with.&#x20;
 {% endhint %}
 
-The net_version Web3 method in the BSC protocol's JSON-RPC API Interface is a key tool for developers seeking to identify the network ID of the Binance Smart Chain they are interacting with. By calling this method, users can retrieve a string that represents the current network version, facilitating compatibility checks and ensuring that applications are operating on the intended blockchain network. The net_version RPC protocol is crucial for applications that need to dynamically adapt to different network environments, such as mainnet, testnet, or any private networks. This method provides a straightforward way to verify network configurations, aiding in the development of robust, cross-network applications.
+The `net_version` method in the BSC protocol is a JSON-RPC API call used to retrieve the current network ID. This is essential for applications to confirm they are interacting with the correct blockchain network. By calling `net_version`, developers can ensure compatibility and prevent cross-network issues.
 
-### Supported Networks
+In the context of Web3, `net_version` is crucial for dApps to verify network integrity. The method adheres to the JSON-RPC protocol, a lightweight remote procedure call protocol, ensuring efficient communication between client applications and the BSC network. This enhances the reliability and security of blockchain interactions.
 
-The net_version REST API method supports the following network types
+## Supported Networks
+
+The net_version JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
 None: This method does not require any parameters.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using net_version
+
 
 #### Request
+
+Here’s a sample cURL request using net_version :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,8 +51,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by net_version upon a successful call:
 
 ```json
 
@@ -60,25 +65,25 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for net_version method:
+Here is the list of body parameters for `net_version` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol, typically "2.0".
-2. **id**: A unique identifier for the request, used to match responses to requests. In this case, it is 67.
-3. **result**: The version of the network as a string. In this example, it is "56".
+1. **jsonrpc**: The version of the JSON-RPC protocol being used. In this case, it is "2.0".
+2. **id**: A unique identifier for the request. Here, it is set to 67.
+3. **result**: The network version as a string. In this example, the result is "56".
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for net_version method in Web3 programming:
+Here are some use-cases for `net_version` method:
 
-1. Network Identification: In Web3 applications, it's crucial to know which Ethereum network you are interacting with, such as the mainnet, Ropsten, Rinkeby, or any other test network. The net_version method helps developers identify the network by returning its unique network ID. This ensures that the application behaves appropriately depending on the network, preventing issues such as deploying contracts to the wrong network or using incorrect configurations.
+1. **Network Identification**: In Web3 programming, the `net_version` method is used to identify the network on which a node is currently operating. This is crucial when developing decentralized applications (dApps) that need to interact with different Ethereum networks, such as the mainnet, Ropsten, Rinkeby, or any private network. By calling `net_version`, developers can ensure that their application is connected to the correct network, preventing potential issues with transactions or contract interactions.
 
-2. Conditional Logic Based on Network: Developers often need to implement conditional logic in their applications based on the network they are connected to. By using the net_version method, they can fetch the network ID and execute different code paths. For example, an application might connect to different APIs, use different contract addresses, or enable specific features only on certain networks.
+2. **Environment Configuration**: Developers often use `net_version` to configure their application environment dynamically. For example, based on the network ID returned by `net_version`, a dApp can automatically select the appropriate smart contract addresses, APIs, or other network-specific configurations. This helps in maintaining a single codebase that can adapt to multiple environments without manual intervention.
 
-3. Debugging and Development: During the development and debugging phases, it's essential to ensure that the application is connected to the correct network. The net_version method can be used in logging and debugging processes to verify network connections. This can help developers quickly identify configuration errors or mismatches between the intended and actual networks being used.
+3. **User Feedback and Debugging**: Providing users with feedback about the current network can enhance user experience and aid in debugging. By utilizing the `net_version` method, a dApp can display the current network to the user, helping them understand where their transactions are being processed. Additionally, developers can use this information to log network activity and diagnose issues related to network misconfigurations.
 
-### Code for net_version
+## Code for net_version
 
 {% tabs %}
 {% tab title="Python" %}
@@ -106,19 +111,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 67,
+  "result": "56"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the net_version JSON-RPC API BSC method, the following issues may occur:  
-- Network ID mismatch: If the network ID returned does not match the expected value, ensure that your node is connected to the correct blockchain network and verify the node configuration.  
-- Connection timeout: This error occurs when the request to the node takes too long to respond. Check your network connection and node status to ensure it is running and accessible.  
-- Invalid response format: If the response is not in the expected JSON format, verify that the node is running the correct software version and that there are no network issues affecting data transmission.  
-- Unauthorized access: If you encounter a permissions error, ensure that your API credentials are correctly configured and that your node allows access from your client.  
+When using the `net_version` JSON-RPC API BSC method, the following issues may occur:
+- Network ID Mismatch: If the returned network ID does not match the expected value for Binance Smart Chain, ensure that your endpoint is correctly configured and pointing to a BSC node. Verify your connection settings and node provider.
+- Timeout Errors: If the request times out, this might be due to network latency or server overload. Try increasing the timeout setting in your client library or switch to a more reliable node provider.
+- Unauthorized Access: If you receive an authorization error, check your API key and permissions. Make sure your credentials are correctly set up and have the necessary permissions to access the network information.
+- Invalid Response Format: If the response from the server is not in the expected JSON format, verify that you are communicating with a compliant BSC node and that there are no middleware issues altering the response.
 
-Using the net_version method in Web3 applications is beneficial as it provides a quick and reliable way to verify the network your application is connected to, ensuring compatibility and preventing cross-network issues. This functionality is essential for maintaining the integrity and security of transactions and interactions within decentralized applications.
+Using the `net_version` method in Web3 applications is beneficial as it allows developers to programmatically verify the network their application is connected to, ensuring compatibility and preventing cross-network transaction issues. This method helps maintain the integrity of decentralized applications by confirming the correct blockchain environment.
 
-### conclusion
+## Conclusion
 
-The net_version method in a JSON-RPC call is used to retrieve the current network version of a blockchain like BSC. This is crucial for ensuring compatibility and understanding the specific network environment in which transactions and smart contracts are executed. By using net_version in JSON-RPC, developers can seamlessly interact with the BSC network and manage blockchain operations effectively.
+The `net_version` method in JSON-RPC is used to retrieve the current network ID, which is essential for applications interacting with blockchain networks like BSC. By calling `net_version`, developers can ensure compatibility and proper network identification, facilitating seamless integration with BSC and other blockchain environments.

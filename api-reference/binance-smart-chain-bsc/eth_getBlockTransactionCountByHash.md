@@ -1,42 +1,46 @@
 ---
 description: >-
-  Discover the eth_getBlockTransactionCountByHash method in the JSON-RPC API Interface for retrieving transaction counts by block hash on BSC.
+  Retrieve the number of transactions in a block using the eth_getBlockTransactionCountByHash method via the JSON-RPC API Interface on BSC.
 ---
 
 # eth_getBlockTransactionCountByHash
 
 {% hint style="success" %}
-This RPC method retrieves the number of transactions in a specific block identified by its hash on the Binance Smart Chain.&#x20;
+The RPC method retrieves the number of transactions in a specific block on the Binance Smart Chain using the block's hash.&#x20;
 {% endhint %}
 
-The eth_getBlockTransactionCountByHash Web3 method is an integral part of the eth_getBlockTransactionCountByHash RPC protocol, designed to efficiently retrieve the number of transactions in a specific block identified by its hash on the Binance Smart Chain (BSC). This method requires the block hash as input and returns the transaction count as an integer, providing developers with a streamlined way to access transaction data for blockchain analysis, monitoring, or integration purposes. By leveraging the JSON-RPC API Interface, users can seamlessly interact with the BSC network, enabling enhanced functionality for decentralized applications and smart contract operations. This technical yet user-friendly approach ensures reliable data retrieval for blockchain enthusiasts and developers alike.
+The `eth_getBlockTransactionCountByHash` method in the BSC protocol is a part of the `eth_getBlockTransactionCountByHash Web3` interface. It retrieves the number of transactions in a block identified by its hash. This method is essential for developers needing precise transaction counts for specific blocks.
 
-### Supported Networks
+Using the `eth_getBlockTransactionCountByHash RPC protocol`, users can efficiently query the transaction count of a block without fetching the entire block data. This enhances performance and minimizes data transfer, making it a preferred choice for applications that require quick transaction count retrieval.
 
-The eth_getBlockTransactionCountByHash REST API method supports the following network types
+## Supported Networks
+
+The eth_getBlockTransactionCountByHash JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_getBlockTransactionCountByHash method needs to be executed.
+Here is the list of parameters `eth_getBlockTransactionCountByHash` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter**: 0x94c626286c237e187454ddd993adc534f0ce3468aaec134a39fbd52185cc3a5f
-  - **Type**: String
-  - **Description**: The hash of the block from which to retrieve the transaction count.
+- **Block Hash**
+  - **Type**: `string`
+  - **Description**: The hash of the block for which the transaction count is being requested.
   - **Required**: Yes
-  - **Default/Supported Values**: A valid block hash, typically a 66-character hexadecimal string prefixed with "0x".
+  - **Default/Supported Values**: A valid block hash in hexadecimal format prefixed with `0x`.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_getBlockTransactionCountByHash
+
 
 #### Request
+
+Here’s a sample cURL request using eth_getBlockTransactionCountByHash :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -53,8 +57,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_getBlockTransactionCountByHash upon a successful call:
 
 ```json
 
@@ -66,25 +71,25 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_getBlockTransactionCountByHash method:
+Here is the list of body parameters for the `eth_getBlockTransactionCountByHash` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol being used, typically "2.0".
-2. **id**: An identifier for the request, which can be a string or a number. It is used to match the response with the request.
-3. **result**: The hexadecimal representation of the number of transactions in the block, for example, "0x5e".
+1. **jsonrpc**: Specifies the version of the JSON-RPC protocol. In this case, it is `"2.0"`.
+2. **id**: A unique identifier for the request. In this example, it is `"getblock.io"`.
+3. **result**: The hexadecimal representation of the number of transactions in the block, which is `"0x5e"` in this response. This indicates the block contains 94 transactions.
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for eth_getBlockTransactionCountByHash method:
+Here are some use-cases for the `eth_getBlockTransactionCountByHash` method:
 
-1. **Transaction Monitoring and Analysis**: Developers can use this method to monitor the number of transactions within a specific block. This is particularly useful for analytics platforms that track blockchain activity to provide insights into network usage, transaction trends, and block performance. By knowing the transaction count of each block, developers can analyze patterns, detect anomalies, and optimize their applications based on blockchain activity.
+1. **Transaction Analysis and Statistics**: Developers and analysts can use the `eth_getBlockTransactionCountByHash` method to determine the number of transactions included in a specific block. This can be useful for generating statistics about network activity, such as average transactions per block, or for analyzing the activity levels during specific periods or events on the Ethereum blockchain.
 
-2. **Blockchain Explorer Development**: Blockchain explorers often display detailed information about each block, including the number of transactions it contains. This method can be used to fetch the transaction count for a block identified by its hash, providing users with accurate and up-to-date information about blockchain activity. This enhances the user experience by offering transparency and detailed data about each block.
+2. **Blockchain Monitoring and Alerts**: By regularly querying the transaction count of new blocks using `eth_getBlockTransactionCountByHash`, monitoring systems can be set up to detect unusual spikes or drops in transaction activity. This can help in identifying potential network issues, attacks, or significant events that might require further investigation or immediate action.
 
-3. **Smart Contract Event Tracking**: When developing applications that interact with smart contracts, it may be necessary to track the number of transactions in specific blocks to understand the contract's activity and performance. By using this method, developers can identify blocks with high transaction volumes, which could indicate periods of high interaction with a particular contract, allowing them to optimize and scale their applications accordingly.
+3. **Application Performance Optimization**: For decentralized applications (dApps) that rely on blockchain data, knowing the transaction count of recent blocks can help optimize performance. For example, if a dApp needs to process all transactions in a block, knowing the transaction count in advance can help allocate the appropriate resources and manage load efficiently.
 
-### Code for eth_getBlockTransactionCountByHash
+## Code for eth_getBlockTransactionCountByHash
 
 {% tabs %}
 {% tab title="Python" %}
@@ -112,19 +117,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "result": "0x5e"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_getBlockTransactionCountByHash JSON-RPC API BSC method, the following issues may occur:  
-- Invalid block hash: Ensure the block hash provided is in the correct hexadecimal format and corresponds to an existing block on the BSC network.  
-- Network connectivity issues: Confirm that your connection to the BSC node is stable and that the node is fully synchronized with the network.  
-- Insufficient permissions: Verify that your API key or account has the necessary permissions to access blockchain data on the node you are querying.  
-- Node rate limits: Check if you are exceeding the rate limits set by the node provider, and consider optimizing your requests or upgrading your plan if necessary.  
+When using the `eth_getBlockTransactionCountByHash` JSON-RPC API BSC method, the following issues may occur:
+- Invalid block hash: Ensure that the block hash provided is accurate and corresponds to an existing block on the Binance Smart Chain. Verify the hash format and its existence in the blockchain.
+- Network connectivity issues: If the request fails to return a response, check your network connection and ensure that your node is properly synchronized with the Binance Smart Chain.
+- Incorrect node configuration: Verify that your node is configured correctly to interact with the BSC network. Ensure that the node is running and connected to the correct network to process the request.
+- API rate limits: Exceeding API rate limits can result in request failures. Consider implementing request throttling or upgrading your node service if necessary.
 
-Using the eth_getBlockTransactionCountByHash method in Web3 applications allows developers to efficiently retrieve the number of transactions in a specific block, enabling precise transaction analysis and network activity monitoring. This functionality is vital for applications that require detailed insights into blockchain operations, contributing to more robust and data-driven decision-making processes.
+Using the `eth_getBlockTransactionCountByHash` method in Web3 applications offers the advantage of efficiently retrieving the number of transactions in a specific block via its hash. This functionality is essential for applications that need to analyze transaction volumes or validate block data on the Binance Smart Chain, enhancing the app's ability to interact with blockchain data seamlessly.
 
-### conclusion
+## Conclusion
 
-The eth_getBlockTransactionCountByHash method is a JSON-RPC call used to retrieve the number of transactions in a specific block on the Ethereum blockchain, identified by its hash. This method is particularly useful for developers and analysts looking to understand transaction activity within a given block. When working with Binance Smart Chain (BSC), this JSON-RPC call can similarly be employed to gain insights into transaction volumes, aiding in network analysis and performance monitoring.
+The JSON-RPC method `eth_getBlockTransactionCountByHash` is a useful tool for retrieving the number of transactions within a specific block on the Ethereum blockchain or Binance Smart Chain (BSC). By providing the block hash as a parameter, users can efficiently query transaction counts, which is essential for blockchain analysis and monitoring. Utilizing `eth_getBlockTransactionCountByHash` allows developers and analysts to gain insights into network activity and transaction density on Ethereum or BSC.

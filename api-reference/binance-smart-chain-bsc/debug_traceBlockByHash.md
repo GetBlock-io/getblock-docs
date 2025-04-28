@@ -1,48 +1,52 @@
 ---
 description: >-
-  Access 'debug_traceBlockByHash' via the JSON-RPC API Interface to trace BSC blocks using their hash for in-depth debugging.
+  Explore block traces using debug_traceBlockByHash via the JSON-RPC API Interface in BSC protocol for in-depth debugging insights.
 ---
 
 # debug_traceBlockByHash
 
 {% hint style="success" %}
-This method retrieves detailed execution traces of all transactions in a specific block on the Binance Smart Chain, aiding in debugging and analysis.&#x20;
+The RPC method provides detailed execution traces of all transactions within a specific block on the Binance Smart Chain, aiding in debugging and analysis.&#x20;
 {% endhint %}
 
-The debug_traceBlockByHash Web3 method offers developers a powerful tool for tracing the execution of a specific block on the Binance Smart Chain (BSC) using its hash. This function, part of the debug_traceBlockByHash RPC protocol, allows users to obtain granular details about every transaction within a block, including state changes, executed operations, and gas consumption. By providing an in-depth view of block execution, this method is invaluable for developers seeking to debug complex smart contracts or analyze blockchain behavior. Utilizing the JSON-RPC API Interface, developers can seamlessly integrate this functionality into their applications, enabling efficient and detailed blockchain analysis. This method is essential for those looking to optimize smart contract performance and ensure robust application development on the BSC network.
+The `debug_traceBlockByHash` method in the BSC protocol allows developers to trace all transactions in a block using its hash. It provides detailed execution insights, including stack, memory, and storage changes. This is crucial for debugging and understanding transaction behavior in the `debug_traceBlockByHash Web3` context.
 
-### Supported Networks
+As part of the `debug_traceBlockByHash RPC protocol`, this method aids in identifying issues by simulating block execution without affecting the blockchain state. It is a powerful tool for developers needing in-depth analysis of transactions within a specific block, enhancing the debugging process and ensuring efficient smart contract development.
 
-The debug_traceBlockByHash REST API method supports the following network types
+## Supported Networks
+
+The debug_traceBlockByHash JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters debug_traceBlockByHash method needs to be executed.
+Here is the list of parameters `debug_traceBlockByHash` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter 1**: 
-  - **Type**: String
-  - **Description**: The hash of the block to be traced.
-  - **Requirement**: Required
-  - **Supported Values**: A valid block hash in hexadecimal format prefixed with "0x".
+- **Parameter 1: Block Hash**
+  - **Type:** String
+  - **Description:** The hash of the block to be traced.
+  - **Required:** Yes
+  - **Example:** `"0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce"`
 
-- **Parameter 2**: 
-  - **Type**: Object or Null
-  - **Description**: Options for the trace method, such as enabling/disabling memory storage or stack trace.
-  - **Requirement**: Optional
-  - **Default Value**: Null (default options are used if this parameter is not provided)
+- **Parameter 2: Options**
+  - **Type:** Object or `null`
+  - **Description:** Additional options for tracing, such as enabling memory storage or disabling stack traces.
+  - **Required:** No
+  - **Default/Supported Values:** Can be `null` or an object with specific tracing options. In this request, it is set to `null`.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using debug_traceBlockByHash
+
 
 #### Request
+
+Here’s a sample cURL request using debug_traceBlockByHash :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -57,8 +61,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by debug_traceBlockByHash upon a successful call:
 
 ```json
 
@@ -73,27 +78,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for debug_traceBlockByHash method:
+Here is the list of body parameters for the `debug_traceBlockByHash` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol being used. Typically, this is "2.0".
-2. **id**: A unique identifier for the request, used to match the response with the request. For example, "getblock.io".
-3. **error**: An object containing details about any error that occurred during the request.
-   - **code**: A numeric code representing the error type. In this case, it is -32000.
-   - **message**: A descriptive message providing more information about the error. For example, "block 0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce not found".
+1. **jsonrpc**: A string specifying the version of the JSON-RPC protocol. Typically, this is "2.0".
+2. **id**: A unique identifier for the request. This can be any string or number that helps you match responses to requests.
+3. **error**: An object containing details about any error that occurred during the execution of the request.
+   - **code**: A numeric code indicating the type of error. For example, `-32000` indicates a server error.
+   - **message**: A string providing a human-readable explanation of the error, such as "block not found".
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for debug_traceBlockByHash method in Web3 programming:
+Here are some use-cases for `debug_traceBlockByHash` method:
 
-1. **Transaction Analysis**: Developers can use this method to perform a detailed analysis of all the transactions within a specific block. By tracing the execution of each transaction, developers can identify issues such as failed transactions, gas inefficiencies, or unexpected behavior in smart contract execution. This is particularly useful for debugging complex transactions or understanding the impact of a specific block on the overall state of the blockchain.
+1. **Transaction Analysis and Debugging**: The `debug_traceBlockByHash` method is particularly useful for developers and auditors who need to analyze and debug transactions within a specific block. By tracing the execution of each transaction in the block, developers can identify issues such as failed transactions, gas usage inefficiencies, or unexpected contract behavior. This detailed insight is crucial for optimizing smart contracts and ensuring they function as intended.
 
-2. **Security Audits**: During security audits, it is crucial to understand how smart contracts interact within a block. This method allows auditors to trace the flow of execution and identify any vulnerabilities or anomalies in the smart contract logic. By examining the detailed execution traces, auditors can ensure that the contracts behave as expected and do not expose any security risks.
+2. **Security Audits**: Security professionals can use `debug_traceBlockByHash` to perform comprehensive audits of blockchain activity. By examining the execution trace of transactions, auditors can detect anomalies or suspicious activities, such as reentrancy attacks or unauthorized access attempts. This method provides a granular view of how transactions interact with smart contracts, helping to uncover vulnerabilities that might not be evident from transaction receipts alone.
 
-3. **Performance Optimization**: By analyzing the execution traces of transactions in a block, developers can identify performance bottlenecks and optimize smart contract code for better efficiency. Understanding the gas consumption and execution paths can lead to more efficient contract designs and reduced transaction costs, ultimately improving the performance of decentralized applications.
+3. **Performance Optimization**: Blockchain developers can leverage `debug_traceBlockByHash` to optimize the performance of their applications. By analyzing the execution traces, developers can pinpoint bottlenecks or inefficiencies in their smart contracts or dApps. This information can guide them in refactoring code to reduce gas consumption and improve overall transaction throughput, leading to more cost-effective and responsive applications.
 
-### Code for debug_traceBlockByHash
+## Code for debug_traceBlockByHash
 
 {% tabs %}
 {% tab title="Python" %}
@@ -124,19 +129,47 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "error": {
+    "code": -32000,
+    "message": "block 0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce not found"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the debug_traceBlockByHash JSON-RPC API BSC method, the following issues may occur:  
-- Invalid block hash: If the block hash provided is incorrect or not in the expected format, the method will fail to execute. Ensure that the block hash is a valid 32-byte hexadecimal string.  
-- Null response: The method might return a null response if the block is not found in the node's database. Verify that the node is fully synchronized with the network and the block exists.  
-- High resource consumption: Tracing a block can be resource-intensive, leading to timeouts or performance degradation. Consider optimizing node resources or using a dedicated tracing node for better performance.  
-- Incorrect parameter types: Providing parameters in incorrect types, such as a non-null second parameter, can lead to method errors. Ensure that parameters are correctly formatted and adhere to the method's specifications.  
+When using the `debug_traceBlockByHash` JSON-RPC API BSC method, the following issues may occur:
+- **Invalid Block Hash**: If the block hash provided is incorrect or not found on the network, the method will return an error. Ensure that the block hash is valid and corresponds to a block on the Binance Smart Chain.
+- **Null Parameter Misuse**: Passing `null` as a parameter without understanding its purpose can lead to unexpected results. Use `null` correctly to apply default tracing options, or specify a valid tracing configuration to suit your needs.
+- **Network Latency**: High network latency can result in delayed responses or timeouts. To mitigate this, ensure a stable and fast internet connection and consider increasing the timeout settings in your client configuration.
+- **Resource Limitations**: Tracing a block can be resource-intensive, potentially causing performance issues on low-capacity nodes. It's advisable to perform such operations on nodes with sufficient CPU and memory resources.
 
-Using the debug_traceBlockByHash method in Web3 applications allows developers to gain deep insights into the execution of transactions within a block. This can be invaluable for debugging complex smart contracts and understanding transaction behaviors, ultimately leading to more robust and reliable decentralized applications.
+Using the `debug_traceBlockByHash` method in Web3 applications offers significant advantages by providing detailed execution traces of transactions within a specific block. This functionality is invaluable for developers and auditors aiming to understand contract behavior, debug complex transactions, and ensure the integrity of smart contract interactions on the Binance Smart Chain.
 
-### conclusion
+## Conclusion
 
-The debug_traceBlockByHash JSON-RPC method is a powerful tool for developers working with the Binance Smart Chain (BSC), allowing them to trace the execution of all transactions within a specific block by its hash. This method provides in-depth insights into transaction processes, aiding in debugging and optimizing smart contract interactions on BSC. By utilizing debug_traceBlockByHash, developers can ensure more efficient and error-free blockchain applications.
+The `debug_traceBlockByHash` JSON-RPC method is a powerful tool for developers working with the Binance Smart Chain (BSC), allowing them to trace the execution of transactions within a specific block by its hash. By providing detailed insights into the block's execution, `debug_traceBlockByHash` aids in debugging and optimizing smart contracts on the BSC.

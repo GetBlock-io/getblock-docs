@@ -1,67 +1,80 @@
 ---
 description: >-
-  Use eth_call in the JSON-RPC API Interface to execute smart contract code on the BSC network without making a state change.
+  The eth_call method in the JSON-RPC API Interface for BSC executes smart contract code without state changes, offering a read-only interaction.
 ---
 
 # eth_call
 
 {% hint style="success" %}
-The RPC eth_call for BSC executes a smart contract function without creating a transaction, allowing data retrieval from the blockchain without state changes.&#x20;
+The RPC method retrieves data from the blockchain without changing state, primarily used to read smart contract information on BSC.&#x20;
 {% endhint %}
 
-The eth_call Web3 method in the BSC protocol allows users to execute smart contract code locally without altering the blockchain's state. It's a read-only operation used primarily for retrieving data from contracts, such as balances or token details, without incurring gas costs. This method requires specifying a transaction call object, including the contract address and optional parameters like gas and value. The eth_call RPC protocol is essential for developers needing to simulate contract interactions or debug smart contracts without affecting the network. Efficient and precise, it ensures accurate data retrieval while maintaining the network's integrity.
+The `eth_call` method in the BSC protocol is a crucial component of the `eth_call Web3` API, allowing users to execute a new message call immediately without creating a transaction on the blockchain. This method is typically used to query data from smart contracts, providing a way to read contract state and execute code without any state change.
 
-### Supported Networks
+As part of the `eth_call RPC protocol`, this method requires parameters such as the transaction call object and the block number. The call object specifies details like the sender and recipient addresses, gas, and data payload. Since `eth_call` is executed locally on a node, it ensures fast and efficient querying without incurring gas fees, making it essential for developers interacting with smart contracts.
 
-The eth_call REST API method supports the following network types
+## Supported Networks
+
+The eth_call JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_call method needs to be executed:
+Here is the list of parameters `eth_call` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter 1:**
+- **Parameter 1: Transaction Call Object**
   - **Type:** Object
-  - **Description:** The call object containing details about the transaction to be executed.
-  - **Details:**
-    - **to** (required): The address of the contract to interact with.
+  - **Description:** The transaction call object defines the message call to be made.
+  - **Required:** Yes
+  - **Fields:**
+    - **to:** 
       - **Type:** String
-      - **Description:** The destination address for the transaction, typically a smart contract.
-    - **data** (optional): The data to send with the transaction, usually the function selector and arguments.
+      - **Description:** The address of the contract to call.
+      - **Required:** Yes
+    - **data:**
       - **Type:** String
-      - **Description:** Encoded function call and parameters to be executed on the contract.
+      - **Description:** The hash of the method signature and encoded parameters.
+      - **Required:** Yes
 
-- **Parameter 2:**
+- **Parameter 2: Block Number**
   - **Type:** String
-  - **Description:** The block number, or a string representing the state of the blockchain to execute the call against.
-  - **Default/Supported Values:** "latest", "earliest", "pending", or a specific block number.
+  - **Description:** The block number to execute the call against.
+  - **Required:** Yes
+  - **Supported Values:** 
+    - `"latest"`: The latest mined block.
+    - `"earliest"`: The earliest/genesis block.
+    - `"pending"`: The pending state/transactions.
 
-- **Parameter 3:**
+- **Parameter 3: State Override**
   - **Type:** Object
-  - **Description:** A map of contract addresses to their corresponding contract code, allowing for execution in a simulated environment.
-  - **Details:**
-    - **Key** (required): Contract address.
-      - **Type:** String
-      - **Description:** The address of the contract to be simulated.
-    - **Value** (required): Contract code.
+  - **Description:** Allows for temporary overriding of account state during the call.
+  - **Required:** No
+  - **Fields:**
+    - **Address Key (e.g., `0x0fd43c8fabe26d70dfa4c8b6fa680db39f147460`):**
       - **Type:** Object
-      - **Description:** Contains the bytecode of the contract to be used in the simulation.
-      - **Details:**
-        - **code** (required): The bytecode of the contract.
+      - **Description:** Contains the state override for the specific address.
+      - **Required:** No
+      - **Sub-fields:**
+        - **code:**
           - **Type:** String
-          - **Description:** The compiled bytecode of the smart contract to be used in the call simulation.
+          - **Description:** The EVM bytecode to be used instead of the existing code at the address.
+          - **Required:** No
 
-### Request Example
+This breakdown provides a concise understanding of the parameters needed to execute the `eth_call` method.
 
-#### API Endpoint
+# Request Example
+
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_call
+
 
 #### Request
+
+Here’s a sample cURL request using eth_call :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -89,8 +102,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_call upon a successful call:
 
 ```json
 
@@ -102,27 +116,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_call method:
+Here is the list of body parameters for `eth_call` method:
 
-1. **jsonrpc**: This indicates the version of the JSON-RPC protocol being used. In this case, it's "2.0".
+1. **jsonrpc**: The version of the JSON-RPC protocol. Typically, this is "2.0".
+2. **id**: An identifier to match the response with the request. In this case, it is "getblock.io".
+3. **result**: The result of the `eth_call` method, which is the returned data from the executed contract function. In this example, it is "0x00000000000000000000000000000000000000000000000000000000017d2582".
 
-2. **id**: A unique identifier for the request. It can be any string or number that the client uses to match the response with the request. Here, it is "getblock.io".
+## Use Cases
 
-3. **result**: The outcome of the eth_call method, which is typically the returned data from the executed call. In this example, it is "0x00000000000000000000000000000000000000000000000000000000017d2582".
+Here are some use-cases for the `eth_call` method in Web3 programming:
 
-### Use Cases
+1. **Reading Smart Contract Data**: The `eth_call` method is commonly used to read data from smart contracts without making any state changes. For instance, it can be used to fetch the balance of a token holder, retrieve the current state of a contract, or get the result of a view or pure function. This is useful for applications that need to display data from the blockchain without altering it.
 
-Here are some use-cases for eth_call method in Web3 programming:
+2. **Simulating Transactions**: Another use-case for `eth_call` is to simulate a transaction before actually executing it on the blockchain. This allows developers to verify that a transaction will succeed and to check the output of a function call without incurring any gas costs. This is particularly useful for testing and debugging smart contract interactions.
 
-1. **Reading Contract State**: One of the primary uses is to read data from a smart contract without changing the blockchain state. For example, you can use it to check the balance of an ERC-20 token for a specific address or to retrieve the current owner of a contract. This is useful for applications that need to display contract data to users without incurring gas costs.
+3. **Fetching Contract Metadata**: Developers can use `eth_call` to fetch metadata from a smart contract, such as the contract's name, symbol, or any other details exposed by the contract's functions. This is essential for applications that need to display information about various tokens or smart contracts to users.
 
-2. **Simulating Transactions**: Before sending a transaction that changes the state, developers often simulate the transaction using this method to ensure it will succeed. This helps in identifying potential errors or reverts in the transaction logic without spending any gas, providing a safe way to test transactions.
+By using `eth_call`, developers can efficiently interact with the Ethereum blockchain to gather necessary data without modifying the blockchain state, ensuring cost-effective and safe operations.
 
-3. **Fetching Contract Metadata**: It can be used to call functions that return metadata about a contract, such as its version, name, or supported interfaces. This is particularly useful for decentralized applications that interact with various contracts and need to verify compatibility or functionality before proceeding with further operations.
-
-### Code for eth_call
+## Code for eth_call
 
 {% tabs %}
 {% tab title="Python" %}
@@ -150,19 +164,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "result": "0x00000000000000000000000000000000000000000000000000000000017d2582"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_call JSON-RPC API BSC method, the following issues may occur:  
-- Invalid contract address: Ensure the 'to' field contains a valid, checksummed Ethereum address to prevent errors.  
-- Incorrect data payload: Verify that the 'data' field contains the correct function selector and parameters encoded in hexadecimal format to ensure the function is called correctly.  
-- Outdated block reference: Using an incorrect block identifier, such as an old block number, can lead to unexpected results. Always specify 'latest' to get the most recent state of the blockchain.  
-- Contract code not found: If the contract code is missing or incorrectly specified in the 'params', the call will fail. Make sure the contract is deployed and the code is correctly provided.
+When using the `eth_call` JSON-RPC API BSC method, the following issues may occur:
+- Incorrect `data` encoding: If the `data` field is not properly encoded or matches the expected function signature, the call will fail. Ensure the function selector and parameters are correctly encoded in hexadecimal format.
+- Invalid contract address: If the `to` address does not correspond to a deployed contract, the call will not execute. Verify that the contract address is correct and that the contract is deployed on the BSC network.
+- Outdated block state: Using an outdated block reference for state can lead to inconsistent results. Always specify "latest" for the most recent block data or ensure the block number is accurate.
+- Insufficient gas limit: If the gas limit is too low, the call might revert. Adjust the gas limit to accommodate the complexity of the function being called, even though `eth_call` is a read-only operation.
 
-Using the eth_call method in Web3 applications allows developers to interact with smart contracts in a read-only manner, which is crucial for retrieving data without modifying the blockchain state. This method enables efficient querying of contract states and helps in building responsive and data-driven applications.
+The `eth_call` method is invaluable in Web3 applications for simulating transactions and retrieving data from smart contracts without modifying the blockchain state. It allows developers to test and debug contract interactions efficiently, ensuring smooth deployment and operation of decentralized applications.
 
-### conclusion
+## Conclusion
 
-The eth_call method in JSON-RPC is a crucial tool for interacting with smart contracts on blockchain networks like Ethereum and BSC. It allows users to execute a read-only call, retrieving data without altering the blockchain state. This functionality is essential for developers and users who need to access contract information efficiently and securely.
+The `eth_call` method in JSON-RPC is a powerful tool for reading data from smart contracts on blockchain networks like BSC (Binance Smart Chain) without making any state changes. By simulating a transaction, `eth_call` allows developers to query the blockchain efficiently, enabling the retrieval of information and testing of smart contract interactions.

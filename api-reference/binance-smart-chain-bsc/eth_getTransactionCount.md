@@ -1,48 +1,53 @@
 ---
 description: >-
-  Retrieve the nonce of an account with eth_getTransactionCount using the JSON-RPC API Interface on the BSC protocol.
+  Retrieve the number of transactions sent from an address using eth_getTransactionCount via the JSON-RPC API Interface on the BSC protocol.
 ---
 
 # eth_getTransactionCount
 
 {% hint style="success" %}
-The RPC method retrieves the number of transactions sent from a BSC address, crucial for determining the next transaction's nonce value.&#x20;
+The method retrieves the number of transactions sent from a specific BSC address, useful for determining the nonce for new transactions.&#x20;
 {% endhint %}
 
-The eth_getTransactionCount Web3 method is a crucial function within the BSC protocol, enabling users to obtain the number of transactions sent from a specific address. This count, known as the nonce, is essential for transaction management and ensuring the correct order of transactions. By using the eth_getTransactionCount RPC protocol, developers can efficiently query the transaction count via the JSON-RPC API, facilitating seamless interaction with the blockchain. This method requires specifying the address and the block parameter, which can be set to 'latest', 'earliest', or a specific block number, providing flexibility in retrieving the desired transaction count.
+The `eth_getTransactionCount` method in the BSC protocol is a crucial JSON-RPC API used to retrieve the number of transactions sent from a specified address. In the context of `eth_getTransactionCount Web3`, this method helps developers determine the nonce, which is essential for transaction ordering and avoiding replay attacks.
 
-### Supported Networks
+When using `eth_getTransactionCount RPC protocol`, you specify the address and optionally the block parameter to get the transaction count at a particular block state. This method returns a hexadecimal value representing the count, ensuring precise transaction management and execution in decentralized applications.
 
-The eth_getTransactionCount REST API method supports the following network types
+## Supported Networks
+
+The eth_getTransactionCount JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_getTransactionCount method needs to be executed:
+Here is the list of parameters `eth_getTransactionCount` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter 1: Address**
+- **Address**
   - **Type:** String
   - **Description:** The address of the account whose transaction count is being queried.
   - **Required:** Yes
-  - **Default/Supported Values:** A valid Ethereum address (e.g., "0x8D97689C9818892B700e27F316cc3E41e17fBeb9").
+  - **Example:** `"0x8D97689C9818892B700e27F316cc3E41e17fBeb9"`
 
-- **Parameter 2: Block Parameter**
+- **Block Parameter**
   - **Type:** String
-  - **Description:** The block number or one of the predefined block parameters ("latest", "earliest", "pending") indicating the point in time at which the transaction count should be retrieved.
+  - **Description:** The block number or one of the predefined block tags ('latest', 'earliest', 'pending') to specify the context of the transaction count.
   - **Required:** Yes
-  - **Default/Supported Values:** "latest", "earliest", "pending", or a specific block number in hexadecimal format.
+  - **Supported Values:** `"latest"`, `"earliest"`, `"pending"`, or a specific block number in hexadecimal format.
+  - **Example:** `"latest"`
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_getTransactionCount
+
 
 #### Request
+
+Here’s a sample cURL request using eth_getTransactionCount :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -59,8 +64,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_getTransactionCount upon a successful call:
 
 ```json
 
@@ -72,25 +78,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_getTransactionCount method:
+Here is the list of body parameters for the `eth_getTransactionCount` method:
 
-1. `jsonrpc`: The version of the JSON-RPC protocol. Typically, this is "2.0".
-2. `id`: A unique identifier for the request, which helps in matching responses with requests.
-3. `result`: The transaction count for the specified address, represented as a hexadecimal string. In the example, "0x0" indicates that there have been no transactions.
+1. **`jsonrpc`**: This parameter specifies the version of the JSON-RPC protocol being used. In this case, it is `"2.0"`.
 
-### Use Cases
+2. **`id`**: This parameter is an identifier for the request. It is used to match the response with the request. In this example, the `id` is `1`.
 
-Here are some use-cases for eth_getTransactionCount method:
+3. **`result`**: This parameter contains the result of the request. For the `eth_getTransactionCount` method, it returns the transaction count as a hexadecimal string. In this response, the `result` is `"0x0"`, which indicates that the transaction count is zero.
 
-1. **Transaction Nonce Management**: In Ethereum, each transaction sent from an address includes a nonce, which is a counter that increments with each transaction. The eth_getTransactionCount method is used to retrieve the current nonce for an address. This is crucial for developers to ensure that transactions are processed in the correct order and to prevent transaction replacement or replay attacks.
+## Use Cases
 
-2. **Account Activity Monitoring**: Developers can use this method to monitor the activity of a specific Ethereum address. By periodically checking the transaction count, one can determine how many transactions have been sent from an address, which can be useful for auditing purposes or to trigger specific actions when a certain number of transactions have been reached.
+Here are some use-cases for `eth_getTransactionCount` method:
 
-3. **Smart Contract Deployment**: When deploying smart contracts, developers need to know the transaction count of their deployment account to correctly set the nonce for the deployment transaction. This ensures that the deployment transaction is processed correctly on the Ethereum network without conflicts with other pending transactions from the same account.
+1. **Transaction Nonce Management**: In Ethereum, each transaction sent from an account must include a "nonce," which is a unique number that helps to prevent replay attacks and ensures that transactions are processed in the correct order. The `eth_getTransactionCount` method is used to retrieve the number of transactions sent from a specific address. This count can be used to determine the correct nonce for a new transaction, ensuring that it is processed correctly on the network.
 
-### Code for eth_getTransactionCount
+2. **Account Activity Monitoring**: By using `eth_getTransactionCount`, developers can monitor the activity of a specific Ethereum account. By periodically checking the transaction count, one can determine if new transactions have been sent from the account, which can be useful for applications that need to react to account activity or for auditing purposes.
+
+3. **Pre-Deployment Checks**: Before deploying a smart contract or sending a transaction, developers can use `eth_getTransactionCount` to verify the current state of the account. This check can ensure that the account has not been compromised and that the expected number of transactions have been sent, providing an additional layer of security and integrity to the deployment process.
+
+## Code for eth_getTransactionCount
 
 {% tabs %}
 {% tab title="Python" %}
@@ -118,19 +126,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x0"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_getTransactionCount JSON-RPC API BSC method, the following issues may occur:  
-- Invalid address format: Ensure the address is a valid, checksummed Ethereum address. Double-check for typographical errors or incorrect character casing.  
-- Incorrect block parameter: The block parameter should be set to "latest," "earliest," or a specific block number. Ensure the parameter is correctly specified to avoid unexpected results.  
-- Network connectivity issues: If the node is unreachable, verify network configurations and ensure the node is running and accessible. Check firewall settings and network permissions.  
-- Rate limiting by the node provider: If requests are being throttled, consider optimizing the request frequency or upgrading your node service plan to handle higher throughput.  
+When using the `eth_getTransactionCount` JSON-RPC API BSC method, the following issues may occur:
+- **Invalid Address Format**: If the address provided is not in a valid hexadecimal format, the method will fail. Ensure the address starts with '0x' and contains 40 hexadecimal characters.
+- **Network Latency**: High latency or network congestion can lead to delayed responses. Consider implementing retry logic or increasing the timeout settings in your application to handle such scenarios.
+- **Incorrect Block Parameter**: Using an invalid block parameter, such as a misspelled keyword or an unsupported block number, will result in an error. Verify that the block parameter is either 'latest', 'earliest', or a valid block number.
+- **Node Synchronization Issues**: If the connected node is not fully synchronized with the network, the transaction count may be outdated. Ensure that your node is fully synced or connect to a reliable public node.
 
-Using the eth_getTransactionCount method in Web3 applications allows developers to track the number of transactions sent from a specific address, providing essential data for managing account activity and preventing nonce errors. This method is crucial for maintaining accurate transaction sequencing and ensuring seamless interactions with the blockchain network.
+Using the `eth_getTransactionCount` method in Web3 applications is beneficial as it allows developers to determine the number of transactions sent from a specific address, which is crucial for transaction management and nonce calculation. This method is essential for ensuring the correct sequencing of transactions, thereby preventing issues such as transaction replacement or nonce conflicts.
 
-### conclusion
+## Conclusion
 
-The eth_getTransactionCount method in JSON-RPC is a crucial tool for interacting with blockchain networks like Ethereum and Binance Smart Chain (BSC). It allows users to retrieve the number of transactions sent from a specific address, providing essential information for managing nonce values in transactions. This function is vital for developers and users to ensure the accuracy and reliability of their transactions on networks such as Ethereum and BSC.
+The JSON-RPC method `eth_getTransactionCount` is used to retrieve the number of transactions sent from a specific address, in this case, "0x8D97689C9818892B700e27F316cc3E41e17fBeb9", on the Ethereum blockchain or compatible networks like Binance Smart Chain (BSC). By specifying the "latest" parameter, it fetches the most recent transaction count, which is crucial for understanding an account's activity and managing nonce values in subsequent transactions. Utilizing `eth_getTransactionCount` via JSON-RPC is essential for developers and users interacting with Ethereum or BSC to ensure accurate transaction management.

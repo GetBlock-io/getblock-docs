@@ -1,42 +1,46 @@
 ---
 description: >-
-  Retrieve filter changes using the eth_getFilterChanges method in the JSON-RPC API Interface for the BSC protocol.
+  Access the JSON-RPC API Interface to track event updates using eth_getFilterChanges in the BSC protocol, ensuring efficient data retrieval.
 ---
 
 # eth_getFilterChanges
 
 {% hint style="success" %}
-Retrieves changes in blockchain logs or pending transactions since the last poll, helping track updates efficiently on Binance Smart Chain.&#x20;
+The method retrieves changes in logs or events for a specified filter on Binance Smart Chain, enabling efficient event tracking without polling the entire blockchain.&#x20;
 {% endhint %}
 
-The eth_getFilterChanges Web3 method is a key component of the JSON-RPC interface in the BSC protocol, designed to efficiently track and retrieve changes to filters. This method is particularly useful for developers who need to monitor specific blockchain events or transactions without repeatedly polling the entire blockchain. By calling the eth_getFilterChanges RPC protocol, users can obtain an array of event logs or transaction hashes that have occurred since the last call, minimizing unnecessary data transmission and optimizing performance. This functionality is essential for applications requiring real-time updates and is integral to maintaining efficient communication between decentralized applications and the blockchain network.
+The `eth_getFilterChanges` method in the BSC protocol retrieves a list of changes since the last call to this method using the filter ID. In the context of `eth_getFilterChanges Web3`, it efficiently monitors blockchain events. This method is crucial for applications needing real-time updates without polling the entire blockchain.
 
-### Supported Networks
+When using the `eth_getFilterChanges RPC protocol`, it returns logs or transaction hashes, depending on the filter type. This enables developers to manage data streams effectively and maintain optimal performance. It's essential for developers implementing event-driven architectures on the Binance Smart Chain.
 
-The eth_getFilterChanges REST API method supports the following network types
+## Supported Networks
+
+The eth_getFilterChanges JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_getFilterChanges method needs to be executed. Do not highlight the method name or enclose it in quotation marks.
+Here is the list of parameters `eth_getFilterChanges` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- Filter ID
-  - Type: String
-  - Description: The ID of the filter for which you want to retrieve changes. This ID is obtained from a previous filter creation call.
-  - Required: Yes
-  - Default/Supported Values: A valid filter ID string, typically returned by methods like `eth_newFilter` or `eth_newBlockFilter`.
+- **Filter ID**
+  - **Type**: String
+  - **Description**: The ID of the filter for which to retrieve changes. This ID is obtained from a previous filter creation call such as `eth_newFilter` or `eth_newBlockFilter`.
+  - **Required**: Yes
+  - **Default/Supported Values**: Must be a valid filter ID string returned by a filter creation method.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_getFilterChanges
+
 
 #### Request
+
+Here’s a sample cURL request using eth_getFilterChanges :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -53,8 +57,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_getFilterChanges upon a successful call:
 
 ```json
 
@@ -69,27 +74,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_getFilterChanges method:
+Here is the list of body parameters for `eth_getFilterChanges` method:
 
 1. **jsonrpc**: The version of the JSON-RPC protocol. It should be "2.0".
-2. **id**: A unique identifier for the request. It can be any string or number, such as "getblock.io".
-3. **error**: An object that contains error details if the request fails.
-   - **code**: A numeric code representing the error type. For example, -32000 indicates a specific server error.
-   - **message**: A descriptive message explaining the error, such as "filter not found".
+2. **id**: An identifier for the request, which can be any string or number. It is used to match the response with the request.
+3. **error**: An object containing error information if the request was unsuccessful. This includes:
+   - **code**: A numeric code indicating the type of error. In this case, the code is -32000.
+   - **message**: A descriptive message providing more details about the error. Here, the message is "filter not found".
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for eth_getFilterChanges method in Web3 programming:
+Here are some use-cases for `eth_getFilterChanges` method:
 
-1. **Monitoring Event Logs**: This method is commonly used to monitor smart contract events on the Ethereum blockchain. Developers can create a filter to listen for specific events emitted by smart contracts. By using eth_getFilterChanges, they can periodically check for new events that match their filter criteria. This is particularly useful for applications that need to respond to on-chain events, such as updating user interfaces or triggering off-chain processes.
+1. **Monitoring Contract Events**: One of the primary use-cases for the `eth_getFilterChanges` method is to monitor events emitted by smart contracts. Developers can create a filter to listen for specific events and use this method to retrieve any new occurrences of these events since the last poll. This is particularly useful for applications that need to react to blockchain events in near real-time, such as updating UI elements in decentralized applications (dApps) when a specific event occurs.
 
-2. **Tracking Transactions**: Developers can use this method to track pending transactions in the Ethereum network. By setting up a filter for pending transactions, they can retrieve updates on new transactions that are added to the mempool. This is beneficial for applications that need to provide real-time transaction status updates to users or for monitoring network activity for analytics purposes.
+2. **Tracking Transactions**: Another use-case is tracking transactions to or from specific addresses. By setting up a filter for transactions involving certain addresses, developers can use `eth_getFilterChanges` to get updates on new transactions. This can be useful for wallets or exchanges that need to display the latest transaction history to their users without polling the entire blockchain repeatedly.
 
-3. **Detecting Changes in Account State**: Another use case is to monitor changes in the state of specific accounts. By creating a filter for account-related changes, developers can use eth_getFilterChanges to detect updates such as balance changes or nonce increments. This is useful for applications that need to maintain an up-to-date view of account states, such as wallets or financial dashboards.
+3. **Network Monitoring and Analytics**: Developers and analysts can use `eth_getFilterChanges` to gather data for network monitoring and analytics. By setting up various filters, they can collect data on network activity, such as the number of transactions per block or the frequency of specific events, and analyze this information to gain insights into network performance and usage patterns.
 
-### Code for eth_getFilterChanges
+## Code for eth_getFilterChanges
 
 {% tabs %}
 {% tab title="Python" %}
@@ -120,19 +125,47 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "error": {
+    "code": -32000,
+    "message": "filter not found"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_getFilterChanges JSON-RPC API BSC method, the following issues may occur:  
-- Invalid filter ID: If the filter ID is incorrect or has expired, the method will return an error. Ensure the filter ID is valid and has been recently obtained from a successful eth_newFilter call.  
-- Empty result set: This may occur if there are no new events or logs since the last call. Verify that the filter parameters are correctly set to capture the desired changes.  
-- Network connectivity issues: Intermittent network problems can lead to failed requests. Check your network connection and retry the request if necessary.  
-- Exceeded rate limits: Excessive requests in a short time frame may hit rate limits imposed by the provider. Implement request throttling or contact your provider for higher rate limits.  
+When using the `eth_getFilterChanges` JSON-RPC API BSC method, the following issues may occur:
+- **Invalid Filter ID:** If the filter ID is incorrect or expired, the method will return an error. Ensure that the filter ID is valid and has not been removed by the network due to inactivity.
+- **Network Latency:** High network latency can cause delayed responses or timeouts. To mitigate this, consider implementing retry logic or increasing the timeout settings in your application.
+- **Empty Results:** The method may return an empty array if no events have occurred since the last poll. Verify that the filter is set up correctly and that there are indeed events to capture.
+- **Permission Denied:** If the node does not permit access to create or query filters, you may encounter permission errors. Check the node's configuration and ensure your client has the necessary permissions.
 
-Using the eth_getFilterChanges method in Web3 applications allows developers to efficiently track changes in the blockchain state without polling for new data continuously. This method helps optimize network usage and enhances application performance by only retrieving new data when it is available.
+Using the `eth_getFilterChanges` method in Web3 applications provides an efficient way to poll for changes in blockchain events without constantly querying the blockchain. This method allows developers to build responsive applications that react to on-chain events in real-time, improving the overall user experience and reducing unnecessary network load.
 
-### conclusion
+## Conclusion
 
-The eth_getFilterChanges JSON-RPC method is a useful tool for developers working with Ethereum or BSC, as it allows them to efficiently track changes in the blockchain that match a specific filter. By regularly polling this method with the appropriate filter ID, developers can stay updated on new events without needing to re-scan the entire blockchain, enhancing the efficiency of their applications.
+The `eth_getFilterChanges` method in JSON-RPC is a powerful tool for developers working on Ethereum and Binance Smart Chain (BSC) networks. It allows them to efficiently track changes and updates to specific filters, enabling real-time data retrieval and event monitoring. This functionality is crucial for applications that require up-to-date blockchain data without constantly polling the network.

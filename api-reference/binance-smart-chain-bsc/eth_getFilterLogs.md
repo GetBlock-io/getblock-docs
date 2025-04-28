@@ -1,42 +1,46 @@
 ---
 description: >-
-  Retrieve event logs using eth_getFilterLogs via the JSON-RPC API Interface for efficient blockchain data access.
+  Retrieve logs using eth_getFilterLogs via the JSON-RPC API Interface in BSC, offering efficient access to blockchain event data.
 ---
 
 # eth_getFilterLogs
 
 {% hint style="success" %}
-The RPC method retrieves log entries for a specified filter on Binance Smart Chain, enabling event tracking and analysis in smart contracts.&#x20;
+eth_getFilterLogs retrieves logs that match a specified filter on the Binance Smart Chain, primarily used to track events and transactions.&#x20;
 {% endhint %}
 
-The eth_getFilterLogs Web3 method is a key feature in the BSC protocol, allowing users to retrieve event logs efficiently. This method is part of the eth_getFilterLogs RPC protocol, designed to query logs that match a specified filter object. Users can specify parameters such as block range and address to tailor their log retrieval, ensuring precise data access. By leveraging this method, developers can monitor specific events within the blockchain, aiding in debugging and data analysis. As a crucial component of the JSON-RPC API Interface, eth_getFilterLogs provides a streamlined approach to accessing blockchain event data, enhancing the development and monitoring capabilities within the BSC ecosystem.
+The `eth_getFilterLogs` method in the BSC protocol is a part of the JSON-RPC API, enabling users to retrieve an array of log objects that match the criteria set by a filter ID. This method is integral to the `eth_getFilterLogs Web3` interface, allowing developers to efficiently access event logs without manually parsing blocks.
 
-### Supported Networks
+In the `eth_getFilterLogs RPC protocol`, the method requires a single parameter, the filter ID, which is obtained from a previous filter creation call such as `eth_newFilter`. By leveraging this method, developers can streamline their log retrieval processes, ensuring precise and relevant data extraction for their decentralized applications.
 
-The eth_getFilterLogs REST API method supports the following network types
+## Supported Networks
+
+The eth_getFilterLogs JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_getFilterLogs method needs to be executed. Do not highlight the method name or enclose it in quotation marks.
+Here is the list of parameters `eth_getFilterLogs` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter**: "0xfba02b32cc0fd31639b68144ebc59fd2"
-  - **Type**: String
-  - **Description**: This is the filter ID for which logs are being requested. It is a unique identifier that represents a filter previously created using methods like `eth_newFilter`.
-  - **Required/Optional**: Required
-  - **Default/Supported Values**: Must be a valid filter ID string, usually a hexadecimal value.
+- **Filter ID**
+  - **Type:** String
+  - **Description:** The ID of the filter for which to retrieve logs. This ID is obtained from a previous call to `eth_newFilter` or similar methods.
+  - **Required:** Yes
+  - **Default/Supported Values:** A valid filter ID in hexadecimal format.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_getFilterLogs
+
 
 #### Request
+
+Here’s a sample cURL request using eth_getFilterLogs :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -53,8 +57,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_getFilterLogs upon a successful call:
 
 ```json
 
@@ -69,29 +74,26 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_getFilterLogs method:
+Here is the list of body parameters for the `eth_getFilterLogs` method:
 
-1. **jsonrpc**: Specifies the version of the JSON-RPC protocol being used. Typically, this is "2.0".
-   
-2. **id**: A unique identifier for the request. It can be a string, number, or null, and is used to match the response with the request.
+1. **jsonrpc**: Specifies the version of the JSON-RPC protocol. It should be "2.0".
+2. **id**: A unique identifier for the request. It can be any string or number, and is used to match the response with the request.
+3. **method**: The name of the method being called, which in this case is `eth_getFilterLogs`.
+4. **params**: An array containing the filter ID for which logs are being requested. This ID is obtained from a previous call to the `eth_newFilter` method.
 
-3. **method**: The name of the method to be invoked. For this case, it is eth_getFilterLogs.
+## Use Cases
 
-4. **params**: An array containing the parameters for the method. For eth_getFilterLogs, it usually includes the filter ID for which the logs are being requested.
+Here are some use-cases for `eth_getFilterLogs` method:
 
-### Use Cases
+1. **Monitoring Contract Events**: One of the primary use-cases for the `eth_getFilterLogs` method is to monitor and retrieve logs for specific events emitted by smart contracts. Developers can create a filter to listen for particular events and use this method to fetch all logs that match the filter criteria. This is especially useful for applications that need to react to on-chain events, such as updating user interfaces in real-time when a transaction is confirmed or when specific conditions are met within a decentralized application.
 
-Here are some use-cases for eth_getFilterLogs method:
+2. **Historical Data Analysis**: `eth_getFilterLogs` can be employed to gather historical log data for analysis. By setting up a filter with the appropriate parameters, developers can retrieve logs from past blocks, which can then be used for data analytics, auditing, or generating reports. This capability is crucial for understanding the behavior of smart contracts over time and for verifying that they have operated as expected.
 
-1. **Tracking Event Emissions**: Developers can use this method to track specific events emitted by smart contracts on the Ethereum blockchain. By setting up a filter for particular event signatures, developers can retrieve logs that match the criteria, enabling them to monitor contract activities such as token transfers, contract upgrades, or any other significant occurrences within the blockchain ecosystem.
+3. **Debugging and Testing**: During the development and testing phases of a smart contract, developers can use `eth_getFilterLogs` to debug and verify that events are being emitted correctly. By fetching logs for specific transactions or blocks, developers can ensure that their contracts are functioning as intended and that event data is being recorded accurately. This is an essential step in the development process to catch and fix issues before deploying contracts to the mainnet.
 
-2. **Historical Data Analysis**: This method is useful for retrieving historical logs that match a given filter. This capability is particularly beneficial for applications that require analysis of past blockchain events, such as auditing transactions, analyzing market trends, or generating reports based on historical blockchain data.
-
-3. **Real-time Monitoring**: By combining eth_getFilterLogs with other methods like eth_newFilter, developers can create a system for real-time monitoring of the blockchain. This setup allows for the continuous retrieval of logs as new blocks are added to the chain, facilitating applications that need to react promptly to blockchain events, such as automated trading systems or alerting mechanisms for specific on-chain activities.
-
-### Code for eth_getFilterLogs
+## Code for eth_getFilterLogs
 
 {% tabs %}
 {% tab title="Python" %}
@@ -122,19 +124,47 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "error": {
+    "code": -32000,
+    "message": "filter not found"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_getFilterLogs JSON-RPC API BSC method, the following issues may occur:  
-- Invalid filter ID: If the filter ID provided is incorrect or expired, the method will return an empty result. Ensure the filter ID is active and correctly generated by a prior method like eth_newFilter.  
-- Network latency or timeouts: High network traffic can lead to delays or timeouts when retrieving logs. Consider increasing the timeout settings or retrying the request to accommodate network conditions.  
-- Node synchronization issues: If the node is not fully synchronized with the network, it might return incomplete or outdated logs. Verify that the node is fully synced before making requests.  
-- Permission errors: Some nodes may have restricted access to certain methods. Ensure that your node provider allows access to the eth_getFilterLogs method and that your credentials are correctly configured.  
+When using the `eth_getFilterLogs` JSON-RPC API BSC method, the following issues may occur:
+- **Invalid Filter ID**: If the filter ID provided is incorrect or expired, the method will return an error. Ensure the filter ID is valid and active by checking the filter creation time and refreshing it if necessary.
+- **Network Latency**: Due to network congestion, responses might be delayed, leading to timeouts. Consider implementing retry logic with exponential backoff to handle these delays gracefully.
+- **Permission Denied**: Access to logs might be restricted based on node permissions. Verify that your node configuration allows for reading logs and adjust the settings if needed.
+- **Malformed JSON Request**: Incorrect JSON formatting can lead to parsing errors. Double-check the JSON structure for syntax errors, such as missing commas or brackets, before sending the request.
 
-Using the eth_getFilterLogs method in Web3 applications allows developers to efficiently retrieve logs that match specific filter criteria, enabling real-time event monitoring and data analysis. This functionality is essential for building responsive and interactive decentralized applications, as it provides a reliable way to track on-chain events and state changes.
+The `eth_getFilterLogs` method is highly beneficial in Web3 applications, allowing developers to efficiently retrieve event logs based on specific filter criteria. This functionality is crucial for tracking blockchain events and building responsive, event-driven applications that react to on-chain activities in real-time.
 
-### conclusion
+## Conclusion
 
-The eth_getFilterLogs method in JSON-RPC is a valuable tool for retrieving logs of specific events from the Ethereum blockchain, and it can also be applied to other EVM-compatible chains like BSC. By using this method, developers can efficiently monitor and respond to blockchain events, enhancing their applications' functionality and responsiveness.
+The `eth_getFilterLogs` method in the JSON-RPC API is a powerful tool for retrieving logs from the Ethereum blockchain or compatible networks like Binance Smart Chain (BSC). By specifying a filter identifier, users can efficiently access event data that meets certain criteria. This capability is crucial for developers and analysts who need to monitor specific blockchain activities in real-time.

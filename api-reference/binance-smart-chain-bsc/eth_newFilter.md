@@ -1,60 +1,64 @@
 ---
 description: >-
-  Use eth_newFilter in the JSON-RPC API Interface to create new filters for event logs on the BSC protocol.
+  eth_newFilter in the JSON-RPC API Interface creates a filter for logs in the BSC protocol, enabling efficient event monitoring and data retrieval.
 ---
 
 # eth_newFilter
 
 {% hint style="success" %}
-The RPC method creates a filter to monitor blockchain events, such as logs and smart contract interactions, on BSC, enabling real-time event tracking and notifications.&#x20;
+The RPC method creates a filter for monitoring specific blockchain events or logs on the Binance Smart Chain, enabling efficient event tracking and data retrieval.&#x20;
 {% endhint %}
 
-The eth_newFilter Web3 method in the BSC protocol allows developers to create new filters for monitoring event logs efficiently. By utilizing the eth_newFilter RPC protocol, users can specify parameters such as address, topics, and block range to tailor the filter to their needs. This method is essential for applications requiring real-time data tracking and event-driven programming. Once a filter is created, it returns a filter ID, which can be used with other JSON-RPC methods to poll for changes or uninstall the filter. This functionality is crucial for developers looking to build responsive and data-driven applications on the Binance Smart Chain, ensuring they can capture and react to blockchain events as they occur.
+The `eth_newFilter` method in the BSC protocol allows developers to create a new filter object to listen for specific state changes in the blockchain. Utilizing the `eth_newFilter Web3` interface, this method is essential for applications that need to monitor logs or events efficiently.
 
-### Supported Networks
+Through the `eth_newFilter RPC protocol`, users can specify parameters such as address, topics, and block range to customize their filter. This enables precise event tracking and is crucial for applications requiring real-time data updates.
 
-The eth_newFilter REST API method supports the following network types
+## Supported Networks
+
+The eth_newFilter JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_newFilter method needs to be executed. Do not highlight the method name or enclose it in quotation marks.
+Here is the list of parameters `eth_newFilter` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
 - **fromBlock**
-  - **Type**: String (Hexadecimal)
-  - **Description**: The block number from which to start looking for logs. This parameter specifies the starting block for the filter.
-  - **Optional/Required**: Optional
-  - **Default/Supported Values**: If not specified, the default is "latest".
+  - **Type**: String
+  - **Required**: Optional
+  - **Description**: The block number from which to start looking for logs. This can be a specific block number or a string like "latest", "earliest", or "pending".
+  - **Default/Supported Values**: Hexadecimal string representing a block number or predefined keywords.
 
 - **toBlock**
-  - **Type**: String (Hexadecimal)
-  - **Description**: The block number up to which to look for logs. This parameter specifies the ending block for the filter.
-  - **Optional/Required**: Optional
-  - **Default/Supported Values**: If not specified, the default is "latest".
+  - **Type**: String
+  - **Required**: Optional
+  - **Description**: The block number at which to stop looking for logs. Similar to `fromBlock`, it can be a specific block number or a string like "latest", "earliest", or "pending".
+  - **Default/Supported Values**: Hexadecimal string representing a block number or predefined keywords.
 
 - **address**
-  - **Type**: String
-  - **Description**: The contract address from which logs should originate. This parameter filters logs based on the specified address.
-  - **Optional/Required**: Optional
-  - **Default/Supported Values**: Can be a single address or an array of addresses.
+  - **Type**: String or Array of Strings
+  - **Required**: Optional
+  - **Description**: The contract address or a list of addresses from which logs should originate. If not specified, logs from all addresses are considered.
+  - **Default/Supported Values**: A single address as a string or an array of addresses.
 
 - **topics**
   - **Type**: Array
-  - **Description**: The topics to filter logs by. Each topic can also be an array of multiple topics.
-  - **Optional/Required**: Optional
-  - **Default/Supported Values**: An empty array indicates no filtering by topics.
+  - **Required**: Optional
+  - **Description**: An array of strings or nulls representing the topics to filter by. Each topic can also be an array of multiple topics, which means that logs must match one of the topics in the array. If not specified, all topics are considered.
+  - **Default/Supported Values**: An array of strings or nulls, or an array of arrays for multiple topics.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_newFilter
+
 
 #### Request
+
+Here’s a sample cURL request using eth_newFilter :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -76,8 +80,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_newFilter upon a successful call:
 
 ```json
 
@@ -89,31 +94,25 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_newFilter method:
+Here is the list of body parameters for the `eth_newFilter` method:
 
-1. **fromBlock**: (optional) The block number from which to start looking for logs. It can be specified as a hex string or as "latest", "earliest", or "pending".
+1. **jsonrpc**: The version of the JSON-RPC protocol. For Ethereum, this is typically "2.0".
+2. **id**: A unique identifier for the request. This is used to match the response with the request.
+3. **result**: The ID of the newly created filter, which can be used to retrieve logs or uninstall the filter.
 
-2. **toBlock**: (optional) The block number up to which to look for logs. Similar to fromBlock, it can be specified as a hex string or as "latest", "earliest", or "pending".
+## Use Cases
 
-3. **address**: (optional) An address or a list of addresses from which logs should originate.
+Here are some use-cases for the `eth_newFilter` method:
 
-4. **topics**: (optional) A list of topics to filter by. Each topic can be a single topic or an array of topics.
+1. **Monitoring Contract Events**: The `eth_newFilter` method is commonly used to monitor specific events emitted by a smart contract. By specifying a contract address and relevant topics, developers can track events such as token transfers, approvals, or any custom event defined within a smart contract. This is particularly useful for applications that need to respond to blockchain events in real-time, such as updating user interfaces or triggering off-chain processes.
 
-5. **blockHash**: (optional) With blockHash set, the filter restricts logs to the specified block. This field is mutually exclusive with fromBlock and toBlock.
+2. **Building Notification Systems**: Another use case for the `eth_newFilter` method is in constructing notification systems that alert users when certain blockchain events occur. For instance, a decentralized application (dApp) could use this method to notify users when they receive a new token or when a transaction they initiated is confirmed. By continuously polling the filter, the application can efficiently detect and react to changes on the blockchain.
 
-### Use Cases
+3. **Data Analysis and Auditing**: Developers and analysts can use `eth_newFilter` to gather historical data for analysis or auditing purposes. By setting a range of blocks to monitor, they can collect event logs over a specific time period, which can then be used to analyze trends, verify transactions, or audit the activity of a smart contract. This capability is crucial for ensuring transparency and accountability in blockchain-based systems.
 
-Here are some use-cases for eth_newFilter method:
-
-1. **Monitoring Smart Contract Events**: Developers can use this method to monitor specific events emitted by a smart contract. By setting up a filter with the contract's address and relevant event topics, applications can listen for and respond to certain actions, such as token transfers or state changes, in real-time. This is particularly useful in decentralized applications (dApps) that need to update their UI or trigger other processes based on blockchain activity.
-
-2. **Tracking Transactions in a Block Range**: The method allows developers to specify a range of blocks to watch for transactions involving a particular address. This can be useful for auditing purposes, where a user or application needs to verify all transactions that occurred within a specific timeframe. By setting the fromBlock and toBlock parameters, developers can efficiently track and analyze blockchain activity over a defined period.
-
-3. **Building Notification Systems**: By leveraging this method, developers can create notification systems that alert users or systems when certain conditions are met on the blockchain. For example, a dApp could notify a user when they receive a payment or when a specific event related to their account occurs. This enhances user engagement and provides timely updates without requiring users to manually check the blockchain.
-
-### Code for eth_newFilter
+## Code for eth_newFilter
 
 {% tabs %}
 {% tab title="Python" %}
@@ -141,19 +140,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0xfb997524907ce408eed52d23df0ffcb9"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_newFilter JSON-RPC API BSC method, the following issues may occur:  
-- Incorrect block range: Specifying a block range that does not exist or is out of sync with the network can lead to empty results. Ensure your node is fully synced and the block numbers are accurate.  
-- Invalid address format: Providing an incorrect smart contract address format can cause the filter to fail. Double-check the address format to ensure it is a valid hexadecimal string.  
-- Missing topics array: Although an empty topics array is valid, if filtering by specific events is required, ensure the topics array is properly structured with the correct event signatures.  
-- Network latency: High network latency can delay filter updates and result in missed logs. Optimize your network setup or consider using a more robust node provider to mitigate this issue.  
+When using the `eth_newFilter` JSON-RPC API BSC method, the following issues may occur:
+- Incorrect block range: Specifying a `fromBlock` or `toBlock` that is not valid or is out of sync with the network can lead to errors. Ensure that the block numbers are within the current blockchain range and are properly formatted in hexadecimal.
+- Invalid address format: Providing an incorrect or improperly formatted contract address can cause the filter to fail. Double-check that the address is a valid Ethereum address and is in the correct format.
+- Empty topics array: While an empty `topics` array is acceptable, ensure that this is intentional. If specific events are being targeted, populate the `topics` array with the correct event signatures.
+- Network connectivity issues: If the node is not properly connected to the BSC network, the filter may not function as expected. Verify network connectivity and node synchronization status.
 
-Using the eth_newFilter method in Web3 applications allows developers to efficiently monitor and react to blockchain events by setting up filters for specific smart contract interactions. This capability enhances the responsiveness and interactivity of decentralized applications, providing users with real-time updates and a seamless experience.
+Using the `eth_newFilter` method in Web3 applications provides developers with a powerful tool to monitor blockchain events efficiently. It allows for real-time tracking of specific transactions or contract events, enabling responsive and dynamic application behavior. By leveraging this method, developers can enhance the interactivity and responsiveness of their decentralized applications.
 
-### conclusion
+## Conclusion
 
-The eth_newFilter method in JSON-RPC is used to create a filter object for monitoring specific events on the Ethereum blockchain, and it can also be utilized in similar ecosystems like BSC (Binance Smart Chain). By specifying parameters such as fromBlock, toBlock, and address, users can efficiently track events and transactions within a defined range. This method is a crucial tool for developers looking to automate event listening and streamline blockchain interactions.
+The `eth_newFilter` JSON-RPC method is a powerful tool for developers working with blockchain networks like Ethereum and BSC. It allows users to create a filter for monitoring specific events or transactions within a defined block range or associated with a particular address. By leveraging `eth_newFilter`, developers can efficiently track on-chain activities and respond to them programmatically, enhancing the capabilities of decentralized applications.

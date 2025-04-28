@@ -1,36 +1,40 @@
 ---
 description: >-
-  Explore 'net_listening' in the JSON-RPC API Interface to check if your BSC node is actively listening for network connections.
+  Check if the BSC node is actively listening for network connections using the net_listening method in the JSON-RPC API Interface.
 ---
 
 # net_listening
 
 {% hint style="success" %}
-The RPC method checks if the Binance Smart Chain node is actively listening for network connections, ensuring it can communicate with other nodes.&#x20;
+The RPC method checks if a Binance Smart Chain node is actively listening for network connections, indicating its readiness to participate in the network.&#x20;
 {% endhint %}
 
-The net_listening Web3 method is an essential component of the Binance Smart Chain (BSC) network, utilized to determine if a node is actively listening for incoming network connections. As part of the net_listening RPC protocol, this method returns a Boolean value: true if the node is listening, indicating it's ready to accept connections, or false if it is not. This functionality is crucial for developers and network administrators to monitor and manage node connectivity effectively. By integrating net_listening within the JSON-RPC API Interface, users can programmatically check the network status of their BSC nodes, ensuring seamless communication and network reliability. This method is a vital tool for maintaining robust blockchain infrastructure and optimizing node performance.
+The `net_listening` method in the BSC protocol is a key component of the `net_listening Web3` interface. It checks if the client is actively listening for network connections, returning a boolean. This method is crucial for applications to verify network connectivity and ensure seamless interaction with the blockchain.
 
-### Supported Networks
+Through the `net_listening RPC protocol`, developers can programmatically determine the node's listening status. This facilitates better network management and troubleshooting, providing a straightforward mechanism to confirm that the node is ready to accept incoming connections.
 
-The net_listening REST API method supports the following network types
+## Supported Networks
+
+The net_listening JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
 None: This method does not require any parameters.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using net_listening
+
 
 #### Request
+
+Here’s a sample cURL request using net_listening :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,8 +51,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by net_listening upon a successful call:
 
 ```json
 
@@ -60,25 +65,25 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for net_listening method:
+Here is the list of body parameters for `net_listening` method:
 
-1. **jsonrpc**: A string specifying the version of the JSON-RPC protocol, typically "2.0".
-2. **id**: A unique identifier for the request, which in this case is 67.
-3. **result**: A boolean value indicating the outcome of the request. In this example, it is `true`, meaning the network is listening.
+1. **jsonrpc**: The version of the JSON-RPC protocol, typically "2.0".
+2. **id**: A unique identifier for the request, which helps in matching responses to requests. In this case, it is 67.
+3. **result**: A boolean value indicating whether the node is actively listening for network connections. In the given response, it is `true`.
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for net_listening method in Web3 programming:
+Here are some use-cases for `net_listening` method:
 
-1. **Network Connectivity Monitoring**: Developers can use this method to check if a node is currently listening for network connections. This is crucial for ensuring that the node is properly set up and capable of interacting with other nodes on the blockchain network. By confirming that the node is listening, developers can verify that their application is ready to send and receive data over the network.
+1. **Network Status Monitoring**: The `net_listening` method can be used to check if a node is actively listening for network connections. This is particularly useful for developers and network administrators who need to ensure that their Ethereum node is properly connected to the network and ready to accept incoming connections. By regularly checking the listening status, they can quickly identify and troubleshoot connectivity issues.
 
-2. **Troubleshooting and Diagnostics**: When encountering connectivity issues, this method can help diagnose whether a node is actively participating in the network. If a node is not listening, it could indicate configuration issues or network problems. By incorporating this method into diagnostic tools, developers can quickly identify and address connectivity problems, ensuring smoother operation of decentralized applications.
+2. **Automated Health Checks**: In a production environment, automated scripts or monitoring tools can utilize the `net_listening` method to perform regular health checks on Ethereum nodes. By integrating this method into automated monitoring systems, developers can receive alerts if a node stops listening, allowing for prompt intervention to maintain optimal network performance and uptime.
 
-3. **Node Status Verification**: In a decentralized application, ensuring that all nodes are functioning correctly is essential for maintaining network reliability and performance. This method can be used as part of a regular status check routine to verify that nodes are listening as expected. This ongoing verification helps maintain network health and can alert developers to potential issues before they impact the application's functionality.
+3. **Load Balancing and Failover**: For applications that rely on multiple Ethereum nodes, the `net_listening` method can be used to implement load balancing and failover strategies. By checking which nodes are currently listening, applications can dynamically route traffic to available nodes, ensuring efficient load distribution and minimizing downtime in case of node failures.
 
-### Code for net_listening
+## Code for net_listening
 
 {% tabs %}
 {% tab title="Python" %}
@@ -106,19 +111,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 67,
+  "result": true
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the net_listening JSON-RPC API BSC method, the following issues may occur:  
-- Network connectivity issues may prevent the node from listening. Ensure that your network settings are correctly configured and that no firewall rules are blocking the necessary ports.  
-- If the node is not fully synchronized with the network, the method might return false. Verify that your node is up-to-date and fully synced with the BSC network.  
-- Invalid JSON-RPC request format can lead to errors. Double-check that your JSON structure adheres to the JSON-RPC 2.0 specification and that all required fields are correctly populated.  
-- Permission issues might restrict access to the net_listening method if the node's configuration is too restrictive. Review the node's access control settings to ensure that the method is accessible.
+When using the `net_listening` JSON-RPC API BSC method, the following issues may occur:
+- Network connectivity issues: If the node is not properly connected to the network, `net_listening` may return false. Ensure that your node is correctly configured and has stable internet connectivity.
+- Incorrect node configuration: If the node is not set up to listen for network connections, the method will fail. Verify that the node's configuration file allows for incoming connections and that no firewall rules are blocking access.
+- RPC endpoint issues: If the RPC endpoint is not correctly set up or is unavailable, you may receive an error. Check the RPC server status and ensure that the endpoint URL is correctly specified in your application.
+- Authentication errors: If your RPC server requires authentication and the credentials are incorrect or missing, the method may not execute. Double-check your authentication settings and credentials.
 
-Using the net_listening method in Web3 applications provides a reliable way to check if a BSC node is actively listening for network connections, which is crucial for maintaining real-time interaction with the blockchain. This functionality helps developers ensure that their applications are connected to the network, facilitating seamless transactions and data retrieval.
+Using the `net_listening` method in Web3 applications is beneficial as it allows developers to programmatically check if a node is actively listening for network connections, ensuring that the node is operational and ready to participate in the blockchain network. This functionality is crucial for maintaining robust and reliable decentralized applications by enabling automated health checks and network status monitoring.
 
-### conclusion
+## Conclusion
 
-The net_listening method in JSON-RPC is crucial for determining if a node is actively listening for network connections, which is essential for maintaining connectivity within a blockchain network like Binance Smart Chain (BSC). By using net_listening, developers can ensure their BSC nodes are properly configured and operational, facilitating seamless communication and transaction processing across the network. This method plays a vital role in network diagnostics and health monitoring for blockchain infrastructures.
+The `net_listening` method in JSON-RPC is a crucial tool for determining if a node is actively listening for network connections, which is essential for maintaining robust communication in blockchain networks like BSC (Binance Smart Chain). By using `net_listening`, developers can ensure their nodes are correctly configured and ready to participate in the network, thereby enhancing the overall reliability and performance of the BSC ecosystem.

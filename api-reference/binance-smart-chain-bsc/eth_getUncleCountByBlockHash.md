@@ -1,42 +1,46 @@
 ---
 description: >-
-  Use the JSON-RPC API Interface to access 'eth_getUncleCountByBlockHash' for retrieving uncle count by block hash in BSC.
+  Access uncle block count for a given block hash using eth_getUncleCountByBlockHash via the JSON-RPC API Interface on the BSC protocol.
 ---
 
 # eth_getUncleCountByBlockHash
 
 {% hint style="success" %}
-The RPC method retrieves the number of uncles for a specific block identified by its hash on the Binance Smart Chain.&#x20;
+The RPC method retrieves the number of uncles for a specific block by its hash on the Binance Smart Chain.&#x20;
 {% endhint %}
 
-The eth_getUncleCountByBlockHash Web3 method is a crucial part of the JSON-RPC API, specifically designed for developers working with the Binance Smart Chain (BSC). This method allows users to retrieve the number of uncles associated with a specific block, identified by its hash. As part of the eth_getUncleCountByBlockHash RPC protocol, it provides a streamlined way to gather data about a block's uncles, which are essentially orphaned blocks that are not part of the main chain but are still recognized by the network. By using this method, developers can efficiently query uncle data, which is vital for understanding block validation and network performance. This method is indispensable for applications that require detailed blockchain analytics and insights.
+The `eth_getUncleCountByBlockHash` method in the BSC protocol is a JSON-RPC API call that retrieves the number of uncle blocks for a specific block identified by its hash. This method is part of the `eth_getUncleCountByBlockHash Web3` interface, facilitating developers in determining the uncle count associated with a given block hash.
 
-### Supported Networks
+Utilizing the `eth_getUncleCountByBlockHash RPC protocol`, developers can efficiently access uncle block data, enhancing blockchain analysis and monitoring. This method requires the block hash as a parameter and returns the uncle count as a numeric value, providing essential insights into the block's structure and network activity.
 
-The eth_getUncleCountByBlockHash REST API method supports the following network types
+## Supported Networks
+
+The eth_getUncleCountByBlockHash JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_getUncleCountByBlockHash method needs to be executed:
+Here is the list of parameters `eth_getUncleCountByBlockHash` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Block Hash**:
-  - **Required**: Yes
-  - **Type**: String
-  - **Description**: The hash of the block for which you want to retrieve the uncle count. This hash uniquely identifies a block in the blockchain.
-  - **Supported Values**: A 32-byte hexadecimal string prefixed with "0x".
+- **Block Hash**
+  - **Type:** String
+  - **Description:** The hash of the block whose uncle count you want to retrieve.
+  - **Requirement:** Required
+  - **Default/Supported Values:** A valid block hash in hexadecimal format, prefixed with "0x".
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_getUncleCountByBlockHash
+
 
 #### Request
+
+Here’s a sample cURL request using eth_getUncleCountByBlockHash :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -53,8 +57,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_getUncleCountByBlockHash upon a successful call:
 
 ```json
 
@@ -66,25 +71,25 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_getUncleCountByBlockHash method:
+Here is the list of body parameters for the `eth_getUncleCountByBlockHash` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol. Typically, this is "2.0".
-2. **id**: A unique identifier for the request. It is used to match the response with the request.
-3. **result**: The result of the method call. For this method, it returns the number of uncles for the given block hash, represented as a hexadecimal string (e.g., "0x0").
+1. **jsonrpc**: The version of the JSON-RPC protocol. In this case, it is `"2.0"`.
+2. **id**: A unique identifier for the request, which helps in matching responses with requests. Here, it is `1`.
+3. **result**: The result of the method call. For `eth_getUncleCountByBlockHash`, this is the number of uncles for the block identified by its hash. In this response, the result is `"0x0"`, indicating that there are no uncles for the specified block.
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for eth_getUncleCountByBlockHash method:
+Here are some use-cases for `eth_getUncleCountByBlockHash` method:
 
-1. **Blockchain Data Analysis**: Developers and researchers can use this method to analyze the frequency and distribution of uncle blocks in the Ethereum blockchain. By retrieving the number of uncles for specific blocks, they can gain insights into mining performance, network congestion, and the effectiveness of consensus mechanisms.
+1. **Blockchain Analysis and Research**: Developers and researchers can use the `eth_getUncleCountByBlockHash` method to analyze the frequency and distribution of uncle blocks within the Ethereum blockchain. By understanding how often uncle blocks occur, researchers can gain insights into network performance and the efficiency of block propagation.
 
-2. **Network Performance Monitoring**: Blockchain infrastructure providers and network operators can utilize this method to monitor the health and performance of the Ethereum network. By tracking the occurrence of uncle blocks, they can identify potential issues with block propagation and optimize their nodes for better efficiency and reliability.
+2. **Network Health Monitoring**: By regularly querying the number of uncle blocks for recent blocks using `eth_getUncleCountByBlockHash`, network operators and developers can monitor the health of the Ethereum network. A sudden increase in uncle blocks might indicate network congestion or issues with block propagation, prompting further investigation or optimization efforts.
 
-3. **Historical Data Verification**: For applications that require historical data verification, such as auditing or forensic analysis, this method can be used to verify the integrity and completeness of blockchain data. By checking the uncle count for given blocks, developers can ensure that their data sources are accurate and trustworthy.
+3. **Historical Data Collection**: Developers building blockchain explorers or analytics platforms can use `eth_getUncleCountByBlockHash` to collect historical data about uncle blocks for visualization and reporting purposes. This data can help users understand the dynamics of block inclusion and the impact of uncle blocks on overall network consensus.
 
-### Code for eth_getUncleCountByBlockHash
+## Code for eth_getUncleCountByBlockHash
 
 {% tabs %}
 {% tab title="Python" %}
@@ -112,19 +117,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x0"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_getUncleCountByBlockHash JSON-RPC API BSC method, the following issues may occur:  
-- Invalid block hash: Ensure that the block hash provided is a valid 32-byte hexadecimal string. Double-check for typos or incorrect formatting in the hash input.  
-- Non-existent block hash: The block hash might not exist on the blockchain if it's from a future block or a fork. Verify that the block hash corresponds to a confirmed block within the blockchain.  
-- Network connectivity issues: If there is a failure in the network connection to the BSC node, the request might not be processed. Ensure stable network connectivity and verify that the node is operational.  
-- Incorrect JSON-RPC version: Ensure that the JSON-RPC version specified is "2.0" as required by the protocol. Using an incorrect version might lead to compatibility issues.
+When using the `eth_getUncleCountByBlockHash` JSON-RPC API BSC method, the following issues may occur:
+- Invalid block hash: If the block hash provided is incorrect or does not exist on the blockchain, the method will return an error. Ensure that the block hash is valid and correctly formatted.
+- Network connectivity issues: If there are network problems or the node is unreachable, the request may fail. Verify your network connection and node status to ensure proper communication.
+- Node synchronization lag: If the node is not fully synchronized with the blockchain, it may return outdated or incorrect uncle count data. Check the node's sync status and allow it to fully catch up with the network.
+- Misconfigured JSON-RPC endpoint: If the JSON-RPC endpoint is incorrectly set up, the request might not reach the intended node. Confirm the endpoint configuration and ensure it's pointing to a valid BSC node.
 
-Using the eth_getUncleCountByBlockHash method in Web3 applications provides a straightforward way to access the number of uncles associated with a specific block, which can be crucial for analyzing block efficiency and mining rewards. This functionality enables developers to gather comprehensive data on blockchain performance and contribute to more robust and data-driven applications.
+The `eth_getUncleCountByBlockHash` method is valuable in Web3 applications as it allows developers to retrieve the number of uncles (or ommer blocks) associated with a specific block. This information can be crucial for analyzing block rewards and understanding network performance, thereby enhancing the application's ability to provide insights into the blockchain's operation.
 
-### conclusion
+## Conclusion
 
-The eth_getUncleCountByBlockHash JSON-RPC method is used to retrieve the number of uncles for a specific block identified by its hash on blockchain networks like Ethereum or Binance Smart Chain (BSC). This method is crucial for developers and analysts who need to understand block validation and uncle block occurrences in these networks. By utilizing eth_getUncleCountByBlockHash, one can gain insights into the network's performance and efficiency.
+The `eth_getUncleCountByBlockHash` JSON-RPC method is used to retrieve the number of uncle blocks associated with a specific block hash on blockchain networks like Ethereum and BSC (Binance Smart Chain). By providing the block hash, users can efficiently query uncle block data, which can be crucial for analyzing network performance and block validation processes. This method is essential for developers and analysts who need to understand the dynamics of block creation and the occurrence of uncle blocks in decentralized networks.

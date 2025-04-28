@@ -1,48 +1,52 @@
 ---
 description: >-
-  Use eth_sign in the JSON-RPC API Interface to sign data with a specific account on the BSC protocol.
+  eth_sign in the JSON-RPC API Interface allows signing data with a specific account's private key on the BSC protocol efficiently.
 ---
 
 # eth_sign
 
 {% hint style="success" %}
-The RPC method allows users to sign messages with their private keys on the Binance Smart Chain, ensuring message authenticity and integrity without broadcasting a transaction.&#x20;
+The RPC method signs messages with a user's private key on BSC, enabling transaction verification and identity confirmation without exposing the private key.&#x20;
 {% endhint %}
 
-The eth_sign Web3 method in the BSC protocol allows users to sign arbitrary data with a specified account, leveraging the JSON-RPC API Interface. This functionality is crucial for verifying the origin of a message or transaction, ensuring that the data has not been tampered with. When using the eth_sign RPC protocol, a client sends a request containing the account address and the data to be signed. The response includes the corresponding signature, which can be used for authentication or validation purposes. This method is particularly useful for developers and applications that require secure message signing and verification processes on the Binance Smart Chain. It simplifies the process of generating cryptographic signatures, providing a seamless and efficient way to enhance security in decentralized applications.
+The `eth_sign` method in the BSC protocol is a JSON-RPC API call used to sign messages with an account's private key. This method is integral to the `eth_sign Web3` functionality, allowing developers to authenticate and verify messages securely. By using `eth_sign`, users can ensure the integrity and origin of the message.
 
-### Supported Networks
+In the `eth_sign RPC protocol`, this method requires the address of the account and the message to be signed. The response includes the signed data, which can be used for further verification processes. It's crucial for developers to understand that `eth_sign` does not alter the blockchain state, making it a safe choice for off-chain operations.
 
-The eth_sign REST API method supports the following network types
+## Supported Networks
+
+The eth_sign JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters eth_sign method needs to be executed.
+Here is the list of parameters `eth_sign` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter 1**: 
-  - **Type**: String
-  - **Description**: The address of the account to sign with.
-  - **Required**: Yes
-  - **Default/Supported Values**: A valid Ethereum address in hexadecimal format (e.g., "0xcee8ae756461e2653b88aefdbd70c1144de52b23").
+- **Parameter 1:**
+  - **Type:** `string`
+  - **Description:** The address of the account to sign with.
+  - **Required:** Yes
+  - **Example Value:** `"0xcee8ae756461e2653b88aefdbd70c1144de52b23"`
+  
+- **Parameter 2:**
+  - **Type:** `string`
+  - **Description:** The data to sign, which should be a hexadecimal string.
+  - **Required:** Yes
+  - **Example Value:** `"0xbcda"`
 
-- **Parameter 2**: 
-  - **Type**: String
-  - **Description**: The data to sign.
-  - **Required**: Yes
-  - **Default/Supported Values**: A data payload in hexadecimal format (e.g., "0xbcda").
+# Request Example
 
-### Request Example
-
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_sign
+
 
 #### Request
+
+Here’s a sample cURL request using eth_sign :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -57,8 +61,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_sign upon a successful call:
 
 ```json
 
@@ -73,27 +78,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_sign method:
+Here is the list of body parameters for `eth_sign` method:
 
-1. `jsonrpc`: The version of the JSON-RPC protocol being used. Typically, this is "2.0".
-2. `id`: An identifier for the request, which can be used to match responses with requests. In this case, it is "getblock.io".
-3. `error`: Contains details about any error that occurred during the request.
-   - `code`: A numerical code representing the specific error. Here, it is -32000.
-   - `message`: A descriptive message providing more information about the error. In this instance, it is "unknown account".
+1. **jsonrpc**: Specifies the version of the JSON-RPC protocol. Typically, this is "2.0".
+2. **id**: A unique identifier for the request. It is used to match the response with the request.
+3. **error**: An object that contains details about any error that occurred during the execution of the method.
+   - **code**: A numeric code representing the error type. In this case, `-32000` indicates an "unknown account" error.
+   - **message**: A brief description of the error. Here, it states "unknown account".
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for eth_sign method in Web3 programming:
+Here are some use-cases for `eth_sign` method:
 
-1. **Transaction Authorization**: This method can be used to authorize transactions on the Ethereum network. By signing a transaction with a private key, users can confirm their intent to send Ether or interact with a smart contract. This ensures that only the owner of the private key can initiate the transaction, providing a secure way to manage digital assets.
+1. **Transaction Signing**: One of the primary uses of the `eth_sign` method is to sign transactions before they are sent to the Ethereum network. This ensures that the transaction is authorized by the owner of the account and has not been tampered with. By using `eth_sign`, developers can create secure transactions that are cryptographically signed, allowing them to be verified and executed on the blockchain.
 
-2. **Data Integrity Verification**: Developers can use this method to sign arbitrary data, which can then be used to verify the integrity and authenticity of the data. For example, a decentralized application (dApp) might require users to sign a message to prove ownership of a particular Ethereum address. This signed message can be verified by others to ensure that the data has not been tampered with and that it was indeed signed by the owner of the address.
+2. **Message Authentication**: `eth_sign` can be used to sign arbitrary data, which is particularly useful for authenticating messages. In decentralized applications (dApps), users can sign messages to prove ownership of their Ethereum address. This is often used in login processes, where a user can sign a nonce provided by the dApp to authenticate themselves without revealing their private key.
 
-3. **User Authentication**: In the context of dApps, this method can be employed for user authentication. Instead of traditional username and password systems, users can sign a unique message with their private key to log in. This approach leverages the security of cryptographic signatures, providing a seamless and secure way for users to authenticate themselves without the need for additional credentials.
+3. **Smart Contract Interactions**: When interacting with smart contracts, `eth_sign` can be used to sign off-chain data that will be used in on-chain operations. This allows for complex interactions where data integrity and authenticity are crucial. For example, when submitting a bid in an auction contract, a user might sign their bid details off-chain, which are later verified on-chain for validity and authenticity.
 
-### Code for eth_sign
+## Code for eth_sign
 
 {% tabs %}
 {% tab title="Python" %}
@@ -124,19 +129,47 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "error": {
+    "code": -32000,
+    "message": "unknown account"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_sign JSON-RPC API BSC method, the following issues may occur:  
-- Invalid address format: Ensure the address is a valid Ethereum address starting with '0x' and is 42 characters long. Double-check for typos or incorrect characters.  
-- Malformed data parameter: The data to be signed must be a properly formatted hexadecimal string. Verify that the string starts with '0x' and contains only valid hex characters.  
-- Unsupported account type: Some wallets or nodes may not support signing with certain account types, such as contract accounts. Use a standard externally owned account (EOA) for signing operations.  
-- Network connectivity issues: Ensure your node is correctly connected to the BSC network and that there are no network disruptions. Check your node's logs for any connectivity errors.  
+When using the `eth_sign` JSON-RPC API BSC method, the following issues may occur:
+- **Invalid Address Format**: If the address provided is not in a valid hexadecimal format, the signing process will fail. Ensure the address is correctly formatted by checking for a proper "0x" prefix and a 40-character string.
+- **Data Length Mismatch**: The data to be signed must be a valid hexadecimal string. If the length of the data is incorrect or not in hexadecimal format, the process will not proceed. Verify the data length and format before initiating the request.
+- **Unauthorized Account Access**: If the account is locked or the private key is inaccessible, the signing will not be possible. Make sure the account is unlocked and the private key is correctly configured in your node setup.
+- **Network Latency or Connectivity Issues**: Occasionally, network issues can lead to delayed or failed requests. Ensure stable network connectivity and consider implementing retries or timeout handling in your application.
 
-Using the eth_sign method in Web3 applications provides a powerful way to authenticate transactions and messages, ensuring data integrity and user verification. It allows developers to implement secure cryptographic operations, enhancing trust and functionality in decentralized applications.
+The `eth_sign` method is invaluable in Web3 applications, allowing for the secure signing of messages with a specific account's private key. This functionality enables the creation of verifiable, tamper-proof transactions and messages, enhancing the security and authenticity of decentralized applications.
 
-### conclusion
+## Conclusion
 
-The eth_sign method in JSON-RPC is a crucial tool for signing data with a specific Ethereum account, as demonstrated in the example using the address on the Binance Smart Chain (BSC). This functionality is essential for verifying transactions or messages securely, ensuring that only the owner of the private key can authorize actions on the blockchain.
+The `eth_sign` method in JSON-RPC is a crucial function for signing messages with an Ethereum account's private key, ensuring the authenticity and integrity of transactions on networks like BSC. By leveraging `eth_sign`, developers can facilitate secure interactions and validate user intentions in decentralized applications.

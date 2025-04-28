@@ -1,36 +1,40 @@
 ---
 description: >-
-  Retrieve the latest block number using eth_blockNumber in the JSON-RPC API Interface for efficient blockchain data access.
+  Retrieve the latest block number on Binance Smart Chain using eth_blockNumber via the JSON-RPC API Interface for seamless blockchain interaction.
 ---
 
 # eth_blockNumber
 
 {% hint style="success" %}
-The RPC method retrieves the latest block number on the Binance Smart Chain, providing the current state of the blockchain for synchronization or monitoring purposes.&#x20;
+The RPC method for BSC retrieves the latest block number, helping users track blockchain progress and synchronize with the network.&#x20;
 {% endhint %}
 
-The eth_blockNumber Web3 method is a crucial part of interacting with the Binance Smart Chain (BSC) via the JSON-RPC API. It allows users to query the most recent block number on the blockchain, providing a snapshot of the network's current state. By returning the latest block number, developers can synchronize their applications with the blockchain, ensuring they are working with the most up-to-date data. The eth_blockNumber RPC protocol is designed for efficiency and ease of use, making it an essential tool for developers working with BSC. Whether you're building decentralized applications or monitoring blockchain activity, this method helps maintain accurate and timely data access.
+The `eth_blockNumber` method in the JSON-RPC API retrieves the current block number in the Binance Smart Chain (BSC) network. As part of the `eth_blockNumber` Web3 interface, it provides developers with the latest block's index, facilitating real-time blockchain data access for applications interacting with BSC.
 
-### Supported Networks
+Utilizing the `eth_blockNumber` RPC protocol, this method returns the block number as a hexadecimal string, ensuring seamless integration with applications that require blockchain synchronization. This functionality is crucial for monitoring and verifying transactions, enabling efficient blockchain operations and development.
 
-The eth_blockNumber REST API method supports the following network types
+## Supported Networks
+
+The eth_blockNumber JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
 None: This method does not require any parameters.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_blockNumber
+
 
 #### Request
+
+Here’s a sample cURL request using eth_blockNumber :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,8 +51,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_blockNumber upon a successful call:
 
 ```json
 
@@ -60,25 +65,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_blockNumber method:
+Here is the list of body parameters for the `eth_blockNumber` method:
 
-1. jsonrpc: The version of the JSON-RPC protocol being used, typically "2.0".
-2. id: A unique identifier for the request, which can be used to match the response with the request.
-3. result: The hexadecimal representation of the current block number.
+1. **`jsonrpc`**: Specifies the version of the JSON-RPC protocol being used. In this case, it is `"2.0"`.
 
-### Use Cases
+2. **`id`**: A unique identifier for the request. This can be a string, number, or null. In the example, it is `"getblock.io"`.
 
-Here are some use-cases for eth_blockNumber method:
+3. **`result`**: The result of the method call, which is the current block number in hexadecimal format. In the example, it is `"0x2e64326"`.
 
-1. **Synchronization Check**: One of the primary uses of this method is to check the synchronization status of a blockchain node. By regularly querying the latest block number, developers can determine if their node is up-to-date with the network. This is crucial for applications that rely on real-time data, such as decentralized exchanges or other financial services, to ensure they are operating on the most current state of the blockchain.
+## Use Cases
 
-2. **Transaction Confirmation**: In decentralized applications, it's important to confirm transactions after they are mined. By using the block number, developers can track how many blocks have been added to the chain since a particular transaction was included. This helps in determining the number of confirmations a transaction has received, which is often used as a measure of security and finality.
+Here are some use-cases for `eth_blockNumber` method:
 
-3. **Event Monitoring**: For applications that need to monitor specific events on the blockchain, knowing the current block number is essential. Developers can use this information to efficiently scan through blocks and detect events of interest, such as specific contract interactions or changes in state. This is particularly useful for services that provide analytics or notifications based on blockchain activity.
+1. **Synchronizing Blockchain Data**: Developers often use the `eth_blockNumber` method to determine the latest block number on the Ethereum blockchain. This information is crucial for applications that need to synchronize data with the blockchain, ensuring they are working with the most up-to-date information. For instance, a wallet application might use this method to check the current block number to confirm that all recent transactions have been successfully processed.
 
-### Code for eth_blockNumber
+2. **Monitoring Blockchain Activity**: The `eth_blockNumber` method can be employed in monitoring tools that track blockchain activity. By continuously fetching the latest block number, these tools can detect when new blocks are added to the blockchain, allowing them to trigger alerts or update dashboards in real-time. This is particularly useful for developers who need to monitor the performance and status of the network.
+
+3. **Smart Contract Event Listening**: When working with smart contracts, developers often need to listen for specific events emitted by the contracts. By using the `eth_blockNumber` method, developers can track the current block number and compare it against the block number where certain events were expected to occur. This helps in efficiently setting up event listeners that can process events only after the blockchain has reached a specific block height, optimizing the performance of decentralized applications.
+
+## Code for eth_blockNumber
 
 {% tabs %}
 {% tab title="Python" %}
@@ -106,19 +113,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "result": "0x2e64326"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_blockNumber JSON-RPC API BSC method, the following issues may occur:  
-- Network latency can result in delayed responses. To mitigate this, ensure your network connection is stable and consider implementing retry logic with exponential backoff.  
-- An improperly configured endpoint can lead to failed requests. Verify that the endpoint URL is correct and the server is operational.  
-- Rate limiting by the service provider might block requests if too many are made in a short period. Monitor your request rate and implement rate limiting in your application to avoid this issue.  
-- Invalid JSON-RPC request format can cause errors. Ensure that your request adheres to the JSON-RPC 2.0 specification with correct method names and parameter structures.  
+When using the `eth_blockNumber` JSON-RPC API BSC method, the following issues may occur:
+- Network Latency: High network latency can lead to delayed responses. Ensure a stable internet connection and consider using a local node or a reliable third-party provider to minimize delays.
+- Rate Limiting: Exceeding the request rate limit can result in blocked requests. Implement exponential backoff strategies and optimize your request frequency to stay within the limits.
+- Invalid JSON-RPC Request: Malformed JSON-RPC requests can lead to errors. Double-check the JSON structure and ensure all required fields are correctly specified.
+- Node Synchronization: If the node is not fully synchronized, it might return outdated block numbers. Ensure your node is fully synced with the BSC network to get accurate results.
 
-Using the eth_blockNumber method in Web3 applications provides a straightforward way to retrieve the latest block number, which is crucial for tasks such as transaction tracking and network synchronization. This method enhances the efficiency and reliability of blockchain interactions by allowing applications to stay up-to-date with the current state of the blockchain.
+Using the `eth_blockNumber` method in Web3 applications provides real-time insights into the blockchain's current state, allowing developers to track the latest block number efficiently. This is essential for applications that need to monitor on-chain activities or validate transactions, ensuring they operate with the most up-to-date blockchain data.
 
-### conclusion
+## Conclusion
 
-The eth_blockNumber method in JSON-RPC is essential for retrieving the latest block number on blockchain networks like Ethereum and BSC. By using this method, developers can efficiently track the current state of the blockchain, facilitating actions such as transaction verification and network monitoring. This makes eth_blockNumber a critical component for maintaining up-to-date blockchain applications.
+The `eth_blockNumber` method in JSON-RPC is a crucial tool for retrieving the most recent block number on the Ethereum blockchain, and it can also be used on other EVM-compatible chains like BSC. By regularly calling `eth_blockNumber`, developers can efficiently track and interact with the latest blockchain data.

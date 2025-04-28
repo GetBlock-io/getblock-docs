@@ -1,36 +1,40 @@
 ---
 description: >-
-  Discover the eth_maxPriorityFeePerGas method in the JSON-RPC API Interface for efficient gas fee management on the BSC protocol.
+  Retrieve the current max priority fee per gas on BSC using eth_maxPriorityFeePerGas via the JSON-RPC API Interface.
 ---
 
 # eth_maxPriorityFeePerGas
 
 {% hint style="success" %}
-The RPC method estimates the optimal priority fee per gas for transactions on Binance Smart Chain, enhancing transaction speed and efficiency.&#x20;
+The method estimates the current optimal priority fee per gas for transactions on the Binance Smart Chain, enhancing transaction speed and efficiency.&#x20;
 {% endhint %}
 
-The eth_maxPriorityFeePerGas Web3 method is a key component of the BSC protocol, providing users with the ability to query the maximum priority fee per gas. This feature is essential for optimizing transaction costs by determining the highest priority fee that can be included in a block. Utilizing the eth_maxPriorityFeePerGas RPC protocol, developers and users can efficiently manage gas fees, ensuring transactions are processed promptly without overpaying. This method offers a streamlined approach to gas fee management, leveraging the JSON-RPC API Interface to enhance the user experience on the BSC network. Whether you're a developer or a user, understanding and utilizing this method can lead to more cost-effective transactions.
+The `eth_maxPriorityFeePerGas` method in the BSC protocol is a JSON-RPC API call that retrieves the maximum priority fee per gas unit suggested for transactions. This method aids users in determining an appropriate tip to include in their transactions, ensuring timely processing by miners on the network.
 
-### Supported Networks
+Utilizing the `eth_maxPriorityFeePerGas` Web3 interface, developers can integrate this functionality into their applications to enhance user experience by providing dynamic fee calculations. The `eth_maxPriorityFeePerGas` RPC protocol ensures efficient communication between clients and the BSC network, optimizing transaction handling.
 
-The eth_maxPriorityFeePerGas REST API method supports the following network types
+## Supported Networks
+
+The eth_maxPriorityFeePerGas JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
 None: This method does not require any parameters.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_maxPriorityFeePerGas
+
 
 #### Request
+
+Here’s a sample cURL request using eth_maxPriorityFeePerGas :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,8 +51,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_maxPriorityFeePerGas upon a successful call:
 
 ```json
 
@@ -60,27 +65,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_maxPriorityFeePerGas method:
+Here is the list of body parameters for the `eth_maxPriorityFeePerGas` method:
 
-1. `jsonrpc`: This parameter specifies the version of the JSON-RPC protocol. In this case, it is "2.0".
+1. **jsonrpc**: This parameter specifies the version of the JSON-RPC protocol being used. In this case, it is "2.0".
 
-2. `id`: This is an identifier for the request. It is used to match the response with the request. In this example, the id is 1.
+2. **id**: This is an identifier for the request. It is used to match the response with the request. In this example, the id is 1.
 
-3. `result`: This parameter contains the result of the method call. For the eth_maxPriorityFeePerGas method, it returns the maximum priority fee per gas in hexadecimal format. In this example, the result is "0x3b9aca00".
+3. **result**: This parameter contains the result of the `eth_maxPriorityFeePerGas` method call. It is the maximum priority fee per gas that a user is willing to pay to have their transaction included in a block, represented in hexadecimal format. In this response, the result is "0x3b9aca00".
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for eth_maxPriorityFeePerGas method:
+Here are some use-cases for `eth_maxPriorityFeePerGas` method:
 
-1. **Optimizing Transaction Costs**: In Ethereum, users pay gas fees to miners to process their transactions. The maxPriorityFeePerGas method helps developers determine the minimum priority fee that should be included in a transaction to ensure it is processed promptly. By using this method, developers can optimize transaction costs for users by suggesting a competitive priority fee that balances cost and speed, especially during periods of network congestion.
+1. **Transaction Cost Estimation**: When developing decentralized applications (dApps) on Ethereum, it's crucial to estimate transaction costs accurately. By using the `eth_maxPriorityFeePerGas` method, developers can retrieve the current maximum priority fee that users are paying to get their transactions processed quickly. This information helps in setting an appropriate `maxPriorityFeePerGas` for transactions, ensuring they are mined promptly without overpaying.
 
-2. **Improving User Experience in DApps**: Decentralized applications (DApps) often require users to send transactions to the Ethereum network. By integrating the maxPriorityFeePerGas method, DApps can automatically suggest appropriate gas fees for users, enhancing the user experience by reducing the need for manual fee adjustments. This ensures that transactions are confirmed in a timely manner without excessive costs, making the DApp more user-friendly.
+2. **Dynamic Fee Adjustment**: In volatile network conditions, the gas fees can fluctuate significantly. The `eth_maxPriorityFeePerGas` method provides real-time data that developers can use to adjust transaction fees dynamically. This is particularly useful for wallets or services that aim to optimize transaction costs for users by automatically adjusting fees based on current network conditions.
 
-3. **Dynamic Fee Adjustment in Wallets**: Cryptocurrency wallets that support Ethereum can utilize the maxPriorityFeePerGas method to dynamically adjust transaction fees based on current network conditions. This method allows wallets to provide real-time fee recommendations, helping users avoid overpaying during low congestion periods or underpaying when the network is busy, thereby improving transaction success rates and efficiency.
+3. **User Experience Enhancement**: For applications that aim to provide a seamless user experience, understanding the current fee market is essential. By integrating the `eth_maxPriorityFeePerGas` method, developers can offer users recommendations or presets for transaction fees, helping them choose the right balance between cost and speed. This can lead to higher user satisfaction as transactions are confirmed in a timely manner without unnecessary expense.
 
-### Code for eth_maxPriorityFeePerGas
+## Code for eth_maxPriorityFeePerGas
 
 {% tabs %}
 {% tab title="Python" %}
@@ -108,19 +113,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x3b9aca00"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_maxPriorityFeePerGas JSON-RPC API BSC method, the following issues may occur:  
-- Network congestion may lead to outdated priority fee estimates. To mitigate this, ensure that your application dynamically adjusts to the latest network conditions.  
-- Incorrectly formatted JSON-RPC requests can result in server errors. Double-check the structure and syntax of your requests to ensure compliance with JSON-RPC standards.  
-- Insufficient permissions or incorrect API endpoint configuration might block access to the method. Verify that your node or service provider supports this method and that your credentials are properly configured.  
-- Misinterpretation of the priority fee value can cause overpayment. Always validate the fee against current network activity and consider implementing a cap to avoid excessive fees.  
+When using the `eth_maxPriorityFeePerGas` JSON-RPC API BSC method, the following issues may occur:
+- **Network Congestion:** If the network is experiencing high traffic, the returned priority fee might be higher than expected. To address this, monitor network conditions and adjust your transaction strategy accordingly.
+- **Outdated Client Software:** Using an outdated client version might lead to unexpected errors or inaccurate fee estimates. Ensure that your client software is up-to-date to maintain compatibility with the latest protocol changes.
+- **Rate Limiting:** Excessive requests to the BSC node can result in rate limiting, leading to delayed or failed responses. Implement request throttling and caching strategies to optimize your application's performance.
+- **Node Synchronization Issues:** If the BSC node is not fully synchronized with the network, it might provide incorrect fee estimates. Verify node synchronization status and consider using a reliable node provider to mitigate this risk.
 
-Using the eth_maxPriorityFeePerGas method in Web3 applications allows developers to optimize transaction costs by leveraging real-time network fee data. This enhances the efficiency of transaction processing and helps maintain cost-effectiveness, which is crucial for applications running on the BSC network.
+Using the `eth_maxPriorityFeePerGas` method in Web3 applications allows developers to dynamically adjust transaction fees based on current network conditions, ensuring timely transaction processing. This capability enhances user experience by reducing transaction delays and optimizing gas costs, making it a valuable tool for efficient transaction management in decentralized applications.
 
-### conclusion
+## Conclusion
 
-The eth_maxPriorityFeePerGas method in the JSON-RPC API is crucial for determining the maximum priority fee per gas on the Ethereum network, ensuring efficient transaction processing. This feature is also relevant in similar blockchain environments like Binance Smart Chain (BSC), where understanding gas fees is essential for optimizing transaction costs.
+The `eth_maxPriorityFeePerGas` method in the JSON-RPC API is crucial for determining the maximum priority fee per gas on networks like Ethereum and BSC. By leveraging `eth_maxPriorityFeePerGas`, developers can optimize transaction costs efficiently. This method is essential for ensuring transactions are processed promptly without overpaying.

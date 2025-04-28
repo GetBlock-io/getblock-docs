@@ -1,66 +1,65 @@
 ---
 description: >-
-  Explore debug_storageRangeAt in the JSON-RPC API Interface for detailed storage insights on the BSC protocol.
+  Access detailed storage state in BSC using debug_storageRangeAt via the JSON-RPC API Interface. Ideal for developers seeking precise blockchain data.
 ---
 
 # debug_storageRangeAt
 
 {% hint style="success" %}
-The RPC method retrieves a specified contract's storage range at a given block, aiding in debugging and analysis on the Binance Smart Chain.&#x20;
+The RPC method retrieves a range of storage entries for a specific BSC contract, aiding in debugging by examining storage content at a particular block.&#x20;
 {% endhint %}
 
-The debug_storageRangeAt Web3 method is a powerful tool within the BSC protocol, designed for developers and technical users seeking in-depth insights into smart contract storage. Utilizing the debug_storageRangeAt RPC protocol, this method allows users to query the storage of a specific contract at a given block, providing a snapshot of key-value pairs within a specified range. This can be particularly useful for debugging and analyzing contract behavior over time. By specifying parameters like the block hash, transaction index, and key range, users can efficiently pinpoint and examine storage data, facilitating a deeper understanding of contract states and interactions.
+The `debug_storageRangeAt` method in the BSC protocol is a JSON-RPC API function that enables developers to inspect the storage state of a smart contract at a specific block. This method, part of the `debug_storageRangeAt Web3` suite, allows users to fetch storage entries in a specified range, facilitating detailed analysis.
 
-### Supported Networks
+Utilizing the `debug_storageRangeAt RPC protocol`, developers can specify parameters such as block hash, transaction index, and contract address to retrieve storage data efficiently. This method is crucial for debugging and optimizing smart contracts, offering a granular view of storage variables and their values at given blockchain states.
 
-The debug_storageRangeAt REST API method supports the following network types
+## Supported Networks
+
+The debug_storageRangeAt JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters debug_storageRangeAt method needs to be executed:
+Here is the list of parameters `debug_storageRangeAt` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter 1**:  
-  - **Type**: String  
-  - **Description**: The block hash to inspect.  
-  - **Required**: Yes  
-  - **Default/Supported Values**: 32-byte hash string.
+- **Block Hash** (Required)
+  - **Type**: String
+  - **Description**: The hash of the block from which to retrieve the storage range.
+  - **Default/Supported Values**: Must be a valid block hash in hexadecimal format.
 
-- **Parameter 2**:  
-  - **Type**: Integer  
-  - **Description**: The transaction index within the block.  
-  - **Required**: Yes  
-  - **Default/Supported Values**: Non-negative integer.
+- **Transaction Index** (Required)
+  - **Type**: Integer
+  - **Description**: The index of the transaction within the block for which to retrieve the storage range.
+  - **Default/Supported Values**: Must be a non-negative integer.
 
-- **Parameter 3**:  
-  - **Type**: String  
-  - **Description**: The address of the contract to inspect.  
-  - **Required**: Yes  
-  - **Default/Supported Values**: 20-byte address string.
+- **Contract Address** (Required)
+  - **Type**: String
+  - **Description**: The address of the contract whose storage is being queried.
+  - **Default/Supported Values**: Must be a valid Ethereum address in hexadecimal format.
 
-- **Parameter 4**:  
-  - **Type**: String  
-  - **Description**: The storage key to start searching from.  
-  - **Required**: Yes  
-  - **Default/Supported Values**: 32-byte hash string.
+- **Start Key** (Required)
+  - **Type**: String
+  - **Description**: The starting key for the storage range query.
+  - **Default/Supported Values**: Must be a valid storage key in hexadecimal format.
 
-- **Parameter 5**:  
-  - **Type**: Integer  
-  - **Description**: The maximum number of storage entries to return.  
-  - **Required**: Yes  
-  - **Default/Supported Values**: Positive integer.
+- **Max Results** (Required)
+  - **Type**: Integer
+  - **Description**: The maximum number of key-value pairs to return.
+  - **Default/Supported Values**: Must be a positive integer.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using debug_storageRangeAt
+
 
 #### Request
+
+Here’s a sample cURL request using debug_storageRangeAt :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -75,8 +74,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by debug_storageRangeAt upon a successful call:
 
 ```json
 
@@ -91,27 +91,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for debug_storageRangeAt method:
+Here is the list of body parameters for `debug_storageRangeAt` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol being used. Typically "2.0".
-2. **id**: A unique identifier for the request, which can be a string or number. In this case, it is "getblock.io".
-3. **error**: An object containing details about the error that occurred.
-   - **code**: A numeric code representing the error type. Here, it is -32000.
-   - **message**: A descriptive message providing more details about the error. In this response, the message is "historical state not available in path scheme yet".
+1. **jsonrpc**: Version of the JSON-RPC protocol being used. Typically, this is "2.0".
+2. **id**: An identifier for the request, which can be used to match the response with the request.
+3. **error**: An object containing error details if the request fails. It includes:
+   - **code**: A numeric code representing the error type. In this case, `-32000` indicates that the historical state is not available.
+   - **message**: A descriptive message explaining the error. Here, it states "historical state not available in path scheme yet".
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for debug_storageRangeAt method:
+Here are some use-cases for `debug_storageRangeAt` method:
 
-1. **Smart Contract Debugging**: This method is particularly useful for developers who need to debug smart contracts. By examining the storage of a contract at a specific block, developers can trace how the state of the contract has changed over time. This can help identify bugs or unexpected behavior in the contract logic by providing insights into the values stored at different stages of execution.
+1. **Smart Contract Debugging**: The `debug_storageRangeAt` method is invaluable for developers who need to debug smart contracts. By allowing access to the storage of a contract at a specific block, developers can inspect the state of the contract at any given point in time. This can help in identifying bugs or unexpected behavior by comparing the expected storage state with the actual one.
 
-2. **Historical State Analysis**: In scenarios where developers or auditors need to understand the historical state of a smart contract, this method allows them to access the storage at a specific block number. This can be crucial for auditing purposes, as it helps verify the integrity and correctness of the contract's state at any given point in the past.
+2. **Historical Data Analysis**: For developers and analysts interested in understanding how the state of a smart contract has evolved over time, `debug_storageRangeAt` provides a way to retrieve historical storage data. This can be particularly useful for auditing purposes or for analyzing patterns in how a contract's state changes in response to different transactions.
 
-3. **Forensic Investigations**: In the case of security incidents or disputes, this method can be employed to perform forensic investigations. By examining the contract's storage at various block heights, investigators can reconstruct events leading up to an incident, such as unauthorized access or state manipulation, and gather evidence to support their findings.
+3. **Security Audits**: During security audits, it is crucial to verify that a smart contract's state transitions are secure and as intended. `debug_storageRangeAt` allows auditors to examine the storage state at different points in time, helping them to identify potential vulnerabilities or deviations from expected behavior in the contract's execution.
 
-### Code for debug_storageRangeAt
+## Code for debug_storageRangeAt
 
 {% tabs %}
 {% tab title="Python" %}
@@ -142,19 +142,47 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "error": {
+    "code": -32000,
+    "message": "historical state not available in path scheme yet"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the debug_storageRangeAt JSON-RPC API BSC method, the following issues may occur:  
-- Incorrect Block Hash: If the block hash provided is incorrect or not found in the blockchain, the method will fail. Ensure that the block hash is accurate and corresponds to an existing block.  
-- Invalid Account Address: Providing an invalid or incorrectly formatted account address can lead to errors. Double-check the address format and ensure it is a valid Ethereum address.  
-- Out of Range Slot: Specifying a storage slot that is out of range or does not exist can result in an error. Verify that the storage slot index is within the valid range for the account's storage.  
-- Network Latency: Slow network response or timeouts can occur if the node is under heavy load. Consider using a more powerful node or optimizing network configurations to improve performance.  
+When using the `debug_storageRangeAt` JSON-RPC API BSC method, the following issues may occur:
+- Incorrect block hash: If the block hash provided is incorrect or does not exist, the method will fail to retrieve the storage range. Ensure the block hash is accurate and corresponds to a valid block number.
+- Invalid contract address: Providing an incorrect contract address can lead to no storage data being returned. Double-check the contract address to ensure it is valid and deployed on the BSC network.
+- Out of range storage key: If the storage key specified is out of the range of the contract's storage, the method will not return any data. Verify the storage key and ensure it is within the contract's storage range.
+- Network connectivity issues: Poor network connectivity can result in timeouts or failed requests. Ensure a stable and reliable internet connection when making the request.
 
-Using the debug_storageRangeAt method in Web3 applications allows developers to inspect and analyze smart contract storage at a specific block, providing valuable insights into contract state changes over time. This functionality is essential for debugging complex contracts and ensuring the integrity of decentralized applications. By leveraging this method, developers can enhance the reliability and performance of their blockchain solutions.
+Utilizing the `debug_storageRangeAt` method in Web3 applications provides developers with a powerful tool for inspecting the storage state of smart contracts at specific blocks. This capability is invaluable for debugging and understanding contract behavior over time, helping developers optimize and troubleshoot their decentralized applications effectively.
 
-### conclusion
+## Conclusion
 
-The debug_storageRangeAt JSON-RPC method is a powerful tool for developers working on the Binance Smart Chain (BSC), enabling them to inspect the storage state of a smart contract at a specific block and transaction. By providing detailed insights into storage slots, this method aids in debugging and optimizing smart contract performance on the BSC.
+The JSON-RPC method `debug_storageRangeAt` is used to inspect the storage of a smart contract at a specific block on blockchain networks like Ethereum or Binance Smart Chain (BSC). By providing parameters such as the block hash, transaction index, and contract address, users can retrieve detailed storage information for debugging purposes. This makes `debug_storageRangeAt` a valuable tool for developers working on BSC to identify and resolve issues within smart contracts.

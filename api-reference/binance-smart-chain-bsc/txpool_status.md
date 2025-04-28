@@ -1,36 +1,40 @@
 ---
 description: >-
-  Access txpool_status via JSON-RPC API Interface to monitor pending and queued transactions on the BSC network.
+  Access current transaction pool stats using the txpool_status method via the JSON-RPC API Interface in the BSC protocol.
 ---
 
 # txpool_status
 
 {% hint style="success" %}
-The RPC txpool_status for BSC provides information about the number of pending and queued transactions in the transaction pool, aiding in network congestion analysis.&#x20;
+The RPC txpool_status for BSC provides information about the transaction pool's current status, including pending and queued transactions, to help manage network congestion.&#x20;
 {% endhint %}
 
-The txpool_status Web3 method is a key component of the BSC protocol, providing developers with real-time insights into the transaction pool. By utilizing the txpool_status RPC protocol, users can efficiently track the number of pending and queued transactions within the Binance Smart Chain network. This method returns detailed information about the current state of the transaction pool, helping developers and users to manage transaction flows effectively. The JSON-RPC API Interface ensures seamless integration and communication with the blockchain, allowing for precise monitoring and optimization of transaction processing. Whether you're developing applications or monitoring network activity, txpool_status offers a reliable and straightforward way to access crucial transaction data.
+The `txpool_status` method in the BSC protocol provides a concise overview of the transaction pool's current state. As part of the `txpool_status Web3` interface, it returns essential metrics about the pending and queued transactions, aiding developers in monitoring network congestion and transaction flow.
 
-### Supported Networks
+Utilizing the `txpool_status RPC protocol`, this method delivers JSON-RPC formatted data, ensuring seamless integration with existing Web3 applications. By offering real-time insights into the transaction pool, it empowers developers to optimize transaction handling and enhance application performance.
 
-The txpool_status REST API method supports the following network types
+## Supported Networks
+
+The txpool_status JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
 None: This method does not require any parameters.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using txpool_status
+
 
 #### Request
+
+Here’s a sample cURL request using txpool_status :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,8 +51,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by txpool_status upon a successful call:
 
 ```json
 
@@ -63,27 +68,25 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for txpool_status method:
+Here is the list of body parameters for `txpool_status` method:
 
-1. `jsonrpc`: The version of the JSON-RPC protocol, typically "2.0".
-2. `id`: A unique identifier for the request, used to match responses to requests.
-3. `result`: An object containing the status of the transaction pool.
-   - `pending`: The number of transactions that are pending in the pool, represented in hexadecimal format.
-   - `queued`: The number of transactions that are queued in the pool, also represented in hexadecimal format.
+1. **pending**: This parameter indicates the number of transactions that are currently pending in the transaction pool. In this response, the value is "0x40ac", which is the hexadecimal representation of the pending transactions count.
 
-### Use Cases
+2. **queued**: This parameter represents the number of transactions that are queued in the transaction pool, waiting to be processed. In this response, the value is "0xd45", which is the hexadecimal representation of the queued transactions count.
 
-Here are some use-cases for txpool_status method in Web3 programming:
+## Use Cases
 
-1. **Monitoring Transaction Backlog**: This method can be utilized to monitor the number of pending and queued transactions in the transaction pool. By checking the status of the transaction pool, developers can assess network congestion and optimize their applications to handle varying levels of transaction throughput. This is particularly useful for applications that rely on timely transaction processing, such as decentralized exchanges or real-time bidding platforms.
+Here are some use-cases for `txpool_status` method:
 
-2. **Optimizing Gas Fees**: Developers can use this method to determine the current state of the transaction pool and adjust gas fees accordingly. By understanding the number of transactions waiting to be processed, developers can advise users on appropriate gas fees to ensure their transactions are processed in a timely manner, thereby enhancing the user experience and reducing costs during periods of high network activity.
+1. **Monitoring Transaction Backlog**: The `txpool_status` method is useful for developers and network operators to monitor the current state of the transaction pool in an Ethereum node. By using this method, one can retrieve information about the number of pending and queued transactions. This is particularly helpful for applications that need to adapt their behavior based on network congestion, such as dynamically adjusting gas prices to ensure timely transaction processing.
 
-3. **Debugging and Performance Tuning**: For developers and system administrators, the method provides valuable insights into the transaction pool, aiding in debugging and performance tuning of blockchain applications. By analyzing the transaction pool status, developers can identify bottlenecks or inefficiencies in how transactions are being handled, allowing them to make necessary adjustments to improve the overall performance and reliability of their applications.
+2. **Network Health Analysis**: Another use case for the `txpool_status` method is to analyze the overall health of the Ethereum network. By periodically checking the status of the transaction pool, developers can gather insights into network activity and identify potential bottlenecks or issues. This information can be used to optimize node performance and improve the efficiency of decentralized applications.
 
-### Code for txpool_status
+3. **Debugging and Development**: During the development and testing of smart contracts or decentralized applications, developers can use the `txpool_status` method to track the flow of transactions through the pool. This can help in identifying issues with transaction submission, such as incorrect gas limits or nonce errors, allowing for more efficient debugging and refinement of the application logic.
+
+## Code for txpool_status
 
 {% tabs %}
 {% tab title="Python" %}
@@ -114,19 +117,46 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "pending": "0x40ac",
+    "queued": "0xd45"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the txpool_status JSON-RPC API BSC method, the following issues may occur:  
-- Incorrect JSON structure: Ensure that the JSON-RPC request is properly formatted with all required fields, such as "method," "params," "id," and "jsonrpc," to avoid parsing errors.  
-- Network connectivity issues: If the request fails to reach the BSC node, verify your network connection and ensure that the node URL is correctly specified and accessible.  
-- Unauthorized access: If you receive an authentication error, check that you have the necessary permissions and that any required API keys or credentials are correctly configured.  
-- Outdated client software: Ensure that your BSC client is up to date, as using an outdated version may lead to compatibility issues with the latest network features and API methods.  
+When using the `txpool_status` JSON-RPC API BSC method, the following issues may occur:
+- Network Latency: High network latency can lead to delayed responses. Ensure your network connection is stable and consider retrying the request after a short interval.
+- Invalid Parameters: Sending incorrect parameters will result in an error. Double-check the method call to ensure all parameters are correctly formatted and appropriate for `txpool_status`.
+- Rate Limiting: Exceeding the API rate limits can cause request failures. Implement rate limiting in your application to avoid hitting the API too frequently and consider using exponential backoff strategies for retries.
 
-The txpool_status method is a valuable tool in Web3 applications, providing insights into the current state of the transaction pool on the BSC network. By monitoring the pending and queued transactions, developers can optimize transaction handling and improve the efficiency of their decentralized applications.
+Using the `txpool_status` method in Web3 applications provides a real-time snapshot of the transaction pool, allowing developers to monitor pending transactions and optimize transaction management strategies. This enhances the application's ability to handle transactions efficiently, ensuring a smoother user experience.
 
-### conclusion
+## Conclusion
 
-The txpool_status JSON-RPC method is used to retrieve the status of the transaction pool on the Binance Smart Chain (BSC). This method provides insights into the current state of pending and queued transactions, helping developers and users understand the network's transaction processing capabilities. By utilizing txpool_status on BSC, one can effectively monitor and manage transaction throughput and network congestion.
+The `txpool_status` method is a JSON-RPC call used to retrieve the status of the transaction pool on blockchain networks like Binance Smart Chain (BSC). By utilizing this method, users can gain insights into the current state of pending and queued transactions in the network's transaction pool. Understanding the `txpool_status` is essential for developers and users to monitor network congestion and transaction processing on BSC.

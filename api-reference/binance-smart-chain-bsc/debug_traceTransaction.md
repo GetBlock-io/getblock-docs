@@ -1,50 +1,52 @@
 ---
 description: >-
-  Explore the debug_traceTransaction method in the JSON-RPC API Interface for detailed transaction analysis on the Binance Smart Chain.
+  Explore transaction details with debug_traceTransaction via the JSON-RPC API Interface. Gain insights into execution traces on the BSC protocol.
 ---
 
 # debug_traceTransaction
 
 {% hint style="success" %}
-RPC debug_traceTransaction for BSC provides detailed execution traces of a transaction, helping developers analyze and debug smart contract behavior and performance issues.&#x20;
+The RPC method provides detailed execution traces of a transaction on BSC, helping developers debug and analyze smart contract behavior and performance.&#x20;
 {% endhint %}
 
-The debug_traceTransaction Web3 method is a powerful tool within the Binance Smart Chain ecosystem, designed to provide developers with in-depth insights into transaction execution. By leveraging the debug_traceTransaction RPC protocol, users can trace the execution path of a transaction, examining each step for debugging and analysis purposes. This method is particularly useful for identifying issues in smart contracts or understanding complex transaction behaviors. It outputs detailed information about each operation executed, including stack, memory, and storage changes. Ideal for developers needing to troubleshoot or optimize their decentralized applications, this method enhances transparency and understanding of transaction processes on the BSC network.
+The `debug_traceTransaction` method in the BSC protocol is a powerful tool for developers and analysts, allowing them to trace the execution of a transaction. This method, part of the `debug_traceTransaction Web3` suite, provides detailed insights into the state changes and operations executed during a transaction's lifecycle.
 
-### Supported Networks
+Utilizing the `debug_traceTransaction RPC protocol`, users can retrieve granular information such as stack traces and memory modifications. This aids in debugging smart contracts by offering a comprehensive view of the transaction's execution path, helping to identify issues and optimize performance.
 
-The debug_traceTransaction REST API method supports the following network types
+## Supported Networks
+
+The debug_traceTransaction JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
-Here is the list of parameters debug_traceTransaction method needs to be executed. Do not highlight the method name or enclose it in quotation marks.
+Here is the list of parameters `debug_traceTransaction` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-- **Parameter 1**:
-  - **Type**: String
-  - **Description**: The hash of the transaction to trace.
-  - **Requirement**: Required
-  - **Supported Values**: A valid transaction hash in hexadecimal format.
+- **Parameter 1:**
+  - **Type:** String
+  - **Description:** The hash of the transaction to be traced.
+  - **Required/Optional:** Required
+  - **Default/Supported Values:** A valid transaction hash.
 
-- **Parameter 2**:
-  - **Type**: Object or null
-  - **Description**: Optional configuration object for the tracing operation.
-  - **Requirement**: Optional
-  - **Default Value**: null
-  - **Supported Values**: 
-    - If provided, an object containing optional parameters to modify the tracing behavior. If not provided, defaults to null, which uses default tracing options.
+- **Parameter 2:**
+  - **Type:** Object or Null
+  - **Description:** Additional options for tracing. Passing `null` uses default settings.
+  - **Required/Optional:** Optional
+  - **Default/Supported Values:** `null` or an object with specific tracing options (e.g., `{"tracer": "callTracer", "timeout": "60s"}`).
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using debug_traceTransaction
+
 
 #### Request
+
+Here’s a sample cURL request using debug_traceTransaction :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -59,8 +61,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by debug_traceTransaction upon a successful call:
 
 ```json
 
@@ -75,31 +78,27 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for debug_traceTransaction method:
+Here is the list of body parameters for `debug_traceTransaction` method:
 
-1. **jsonrpc**: Specifies the version of the JSON-RPC protocol being used. In this case, it is "2.0".
+1. **jsonrpc**: The version of the JSON-RPC protocol being used. Typically, this is "2.0".
+2. **id**: The identifier for the request, which helps in matching responses to requests. In this case, it is "getblock.io".
+3. **error**: An object containing details about the error.
+   - **code**: The error code, which in this example is -32000, indicating that the transaction was not found.
+   - **message**: A descriptive message about the error. Here, it states "transaction not found".
 
-2. **id**: A unique identifier for the request, which can be used to match responses with requests. In this example, it is "getblock.io".
+## Use Cases
 
-3. **error**: Contains details about any error that occurred during the processing of the request.
+Here are some use-cases for `debug_traceTransaction` method:
 
-   - **code**: A numeric code representing the type of error. In this example, the code is -32000, indicating a specific error related to the transaction.
+1. **Transaction Debugging**: One of the primary use cases for the `debug_traceTransaction` method is to debug transactions on the Ethereum blockchain. Developers can use this method to obtain detailed execution traces of a transaction, which includes information about every operation executed, the state changes, and any errors that occurred. This is especially useful for identifying issues in smart contract execution, such as out-of-gas errors or unexpected behavior.
 
-   - **message**: A descriptive message providing more information about the error. Here, the message is "transaction not found".
+2. **Gas Usage Analysis**: Another important use case is analyzing the gas usage of a transaction. By tracing a transaction with `debug_traceTransaction`, developers can understand how much gas each operation consumed. This can help in optimizing smart contracts to reduce gas costs, which is crucial for cost-effective deployment and execution on the Ethereum network.
 
-### Use Cases
+3. **Security Auditing**: Security auditors can utilize `debug_traceTransaction` to perform thorough audits of smart contracts. By examining the detailed execution trace, auditors can identify potential vulnerabilities, such as reentrancy attacks or unauthorized access to contract functions. This method provides a granular view of the transaction execution, making it an invaluable tool for ensuring the security and integrity of smart contracts.
 
-Here are some use-cases for debug_traceTransaction method:
-
-1. **Transaction Debugging**: This method is invaluable for developers who need to debug transactions on the Ethereum blockchain. By providing a detailed trace of the transaction's execution, developers can identify issues such as failed operations, incorrect gas usage, or unexpected behavior in smart contracts. This detailed insight helps in pinpointing the exact step where a transaction may have gone wrong, enabling more efficient troubleshooting and debugging.
-
-2. **Gas Usage Analysis**: Understanding the gas consumption of a transaction is crucial for optimizing smart contracts. This method allows developers to analyze the gas used by each operation within a transaction, providing a granular view of where gas is being consumed. This information can be used to refactor code, optimize smart contract functions, and reduce transaction costs by minimizing unnecessary gas usage.
-
-3. **Security Auditing**: For security auditors, this method provides a comprehensive view of a transaction's execution, which is essential for identifying vulnerabilities or unexpected behavior in smart contracts. By tracing the execution path, auditors can ensure that the contract behaves as intended and does not expose any security loopholes. This is particularly important for contracts handling significant amounts of value, where security is a paramount concern.
-
-### Code for debug_traceTransaction
+## Code for debug_traceTransaction
 
 {% tabs %}
 {% tab title="Python" %}
@@ -130,19 +129,47 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": "getblock.io",
+  "error": {
+    "code": -32000,
+    "message": "transaction not found"
+  }
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the debug_traceTransaction JSON-RPC API BSC method, the following issues may occur:  
-- Invalid transaction hash: Ensure the transaction hash is correct and exists on the BSC network. Double-check for any typos or missing characters in the hash.  
-- Insufficient node resources: If the node lacks sufficient resources, tracing may fail or be slow. Consider upgrading the node's hardware or using a more powerful node provider.  
-- Unsupported node version: The node might be running an outdated version of the BSC client that does not support this method. Update the node to a version that supports debug_traceTransaction.  
-- Network congestion: High network traffic can delay the response time for transaction tracing. Try again later or use a node with a higher capacity to handle requests.  
+When using the `debug_traceTransaction` JSON-RPC API BSC method, the following issues may occur:
+- **Missing Transaction Hash:** Ensure the transaction hash is correct and exists on the blockchain. Verify that the transaction has been mined and is accessible.
+- **Node Configuration Issues:** If the node is not configured to support debug methods, the request will fail. Ensure the node is running with debug capabilities enabled.
+- **Resource Limitations:** Tracing a transaction can be resource-intensive, potentially leading to timeouts. Consider increasing the node's computational resources or using a more powerful node provider.
+- **Null or Incorrect Parameters:** Providing incorrect parameters, such as a malformed transaction hash, will result in errors. Double-check that all parameters are correctly formatted and valid.
 
-Using the debug_traceTransaction method in Web3 applications provides developers with detailed insights into transaction execution, including internal operations and state changes. This information is invaluable for debugging complex smart contract interactions and optimizing performance, enhancing the robustness and reliability of decentralized applications on the Binance Smart Chain.
+Using the `debug_traceTransaction` method in Web3 applications provides developers with deep insights into transaction execution. By tracing transactions, developers can diagnose issues, optimize smart contracts, and enhance the reliability of their decentralized applications. This method is a powerful tool for debugging and improving blockchain-based systems.
 
-### conclusion
+## Conclusion
 
-The debug_traceTransaction JSON-RPC method is a powerful tool used in blockchain networks like BSC to trace the execution of a specific transaction. By analyzing the detailed execution trace, developers can identify issues or understand the transaction's behavior more thoroughly. This capability is essential for debugging and optimizing smart contracts within the Binance Smart Chain ecosystem.
+The `debug_traceTransaction` JSON-RPC method is a powerful tool for developers and analysts working with blockchain transactions on networks like BSC (Binance Smart Chain). By providing detailed execution traces, it allows for in-depth debugging and analysis of transaction behavior. This utility is essential for understanding complex transaction flows and diagnosing issues in smart contract interactions.

@@ -1,36 +1,40 @@
 ---
 description: >-
-  eth_newBlockFilter in JSON-RPC API Interface enables real-time BSC block notifications for developers.
+  eth_newBlockFilter in JSON-RPC API Interface creates a filter to notify when new blocks are added to the BSC blockchain, enhancing monitoring.
 ---
 
 # eth_newBlockFilter
 
 {% hint style="success" %}
-The RPC method creates a filter to receive notifications for new blocks on the BSC, enabling real-time monitoring of blockchain activity.&#x20;
+The RPC method creates a filter to receive notifications for new blocks on the Binance Smart Chain, enabling real-time block monitoring.&#x20;
 {% endhint %}
 
-The eth_newBlockFilter Web3 method is a key component of the BSC protocol, offering developers a streamlined way to receive notifications about new blocks. By utilizing the eth_newBlockFilter RPC protocol, users can create a filter object that listens for new block events, ensuring they stay updated with the latest blockchain data. This method is particularly useful for applications that require real-time block information, such as monitoring services or decentralized applications that react to new block confirmations. The eth_newBlockFilter method enhances the efficiency and responsiveness of applications interacting with the BSC network, providing a reliable and straightforward mechanism to track blockchain activity through the JSON-RPC API.
+The `eth_newBlockFilter` method in the BSC protocol is part of the `eth_newBlockFilter Web3` and `eth_newBlockFilter RPC protocol`, designed to create a filter for new block notifications. This method enables users to listen for new blocks added to the blockchain, providing a unique filter identifier upon success.
 
-### Supported Networks
+Utilizing `eth_newBlockFilter` allows developers to efficiently track blockchain changes without polling for new blocks continuously. By leveraging this method, applications can respond to new block events in real-time, enhancing the responsiveness and efficiency of blockchain-based applications.
 
-The eth_newBlockFilter REST API method supports the following network types
+## Supported Networks
+
+The eth_newBlockFilter JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
 None: This method does not require any parameters.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_newBlockFilter
+
 
 #### Request
+
+Here’s a sample cURL request using eth_newBlockFilter :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,8 +51,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_newBlockFilter upon a successful call:
 
 ```json
 
@@ -60,25 +65,25 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_newBlockFilter method:
+Here is the list of body parameters for the `eth_newBlockFilter` method:
 
-1. `jsonrpc`: The version of the JSON-RPC protocol being used. Typically, this is "2.0".
-2. `id`: A unique identifier for the request. In this example, it is 67.
-3. `result`: The filter ID created by the method, which can be used to poll for new blocks. In this example, it is "0xcb5b0ec347fb06c786ab6f6f3b4bb584".
+1. **jsonrpc**: The version of the JSON-RPC protocol used, which is "2.0" in this case.
+2. **id**: A unique identifier for the request, which helps in matching the response with the request. In this example, it is 67.
+3. **result**: The filter identifier returned by the method, which can be used to check for new blocks. In this example, it is "0xcb5b0ec347fb06c786ab6f6f3b4bb584".
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for eth_newBlockFilter method:
+Here are some use-cases for `eth_newBlockFilter` method:
 
-1. **Real-time Block Monitoring**: This method is useful for applications that need to monitor the Ethereum blockchain in real-time. By setting up a block filter, developers can receive notifications whenever a new block is added to the blockchain. This is particularly beneficial for services that need to react promptly to changes in the blockchain, such as updating transaction statuses or triggering smart contract functions based on new block data.
+1. **Real-time Block Monitoring**: The `eth_newBlockFilter` method is particularly useful for applications that need to monitor new blocks in real-time. By creating a filter, developers can receive notifications whenever a new block is mined. This is essential for applications such as blockchain explorers, which need to update their data continuously to provide users with the latest information on block transactions, confirmations, and other block-related data.
 
-2. **Efficient Data Collection**: For developers building analytics tools or dashboards, this method allows for efficient collection of blockchain data without constantly polling the network. By using a block filter, applications can gather relevant block information as soon as it becomes available, reducing the need for redundant network requests and minimizing bandwidth usage.
+2. **Smart Contract Event Tracking**: Developers can use `eth_newBlockFilter` to track events emitted by smart contracts. By monitoring new blocks, applications can check for specific events or transactions within those blocks that are relevant to the operations of a decentralized application (dApp). This is useful for triggering actions based on specific blockchain events, such as updating a user interface or executing follow-up transactions.
 
-3. **Automated Event Handling**: In decentralized applications, there may be a need to automate certain actions based on blockchain events. By utilizing this method, developers can automate workflows that depend on the occurrence of new blocks, such as sending alerts, updating databases, or interacting with other decentralized protocols, ensuring that the application remains responsive and up-to-date with the latest blockchain state.
+3. **Security and Fraud Detection**: By leveraging `eth_newBlockFilter`, security-focused applications can monitor blockchain activity in real-time to detect suspicious activities or potential fraud. For instance, a security application could be set up to watch for unusually large transactions or a high frequency of transactions, which might indicate a potential security threat or fraudulent behavior. This allows for immediate alerts and responses to mitigate risks.
 
-### Code for eth_newBlockFilter
+## Code for eth_newBlockFilter
 
 {% tabs %}
 {% tab title="Python" %}
@@ -106,19 +111,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 67,
+  "result": "0xcb5b0ec347fb06c786ab6f6f3b4bb584"
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_newBlockFilter JSON-RPC API BSC method, the following issues may occur:  
-- Incorrect JSON Structure: If the JSON request is improperly formatted or contains syntax errors, the server may return a parse error. Ensure that your JSON structure adheres to the correct format and all necessary fields are included.  
-- Network Connectivity Issues: If there are connectivity problems between your client and the BSC node, you might experience timeouts or failed requests. Verify your network connection and ensure that the node endpoint is reachable.  
-- Invalid Parameters: Although eth_newBlockFilter does not require parameters, providing unexpected parameters might lead to an invalid request error. Double-check that your request does not include unnecessary fields.  
-- Unauthorized Access: If the node requires authentication and your request lacks proper credentials, it could be rejected. Ensure you have the necessary permissions and include any required authentication details.
+When using the `eth_newBlockFilter` JSON-RPC API BSC method, the following issues may occur:
+- Incorrect JSON-RPC version: Ensure that the JSON-RPC version is set to "2.0" as older versions may not support this method correctly.
+- Network connectivity issues: If there are network problems, the filter may not be created. Verify your internet connection and ensure that your BSC node is running and accessible.
+- Unauthorized access: If you receive an authorization error, check your credentials and ensure that your client has the necessary permissions to interact with the BSC node.
+- Resource limitations: Excessive filter creation can lead to resource exhaustion on the node. Consider implementing a cleanup mechanism for unused filters to optimize resource usage.
 
-Using the eth_newBlockFilter method in Web3 applications is beneficial as it allows developers to efficiently monitor new blocks on the BSC network without polling for updates continuously. This can lead to more responsive applications and reduced network overhead, enhancing the overall user experience.
+Using the `eth_newBlockFilter` method in Web3 applications allows developers to efficiently monitor new blocks on the Binance Smart Chain without polling continuously. This method enhances performance by providing a way to receive block notifications, enabling real-time updates and more responsive decentralized applications.
 
-### conclusion
+## Conclusion
 
-The eth_newBlockFilter method in JSON-RPC is a useful tool for developers working with blockchain networks like Ethereum and Binance Smart Chain (BSC). It allows users to create a filter that listens for new blocks, enabling real-time updates and efficient monitoring of the blockchain's state. By leveraging eth_newBlockFilter, developers can enhance their applications with timely data and improve overall responsiveness.
+The `eth_newBlockFilter` method in JSON-RPC is a useful tool for developers working with blockchain networks like BSC (Binance Smart Chain). It allows for the creation of a filter to listen for new blocks, enabling efficient monitoring and interaction with the blockchain. By utilizing `eth_newBlockFilter`, developers can streamline their applications to respond to new block events in real-time, enhancing the responsiveness and functionality of their solutions on platforms like BSC.

@@ -1,36 +1,40 @@
 ---
 description: >-
-  Discover the eth_syncing method in the JSON-RPC API Interface for real-time syncing status on the Binance Smart Chain network.
+  Explore eth_syncing in the JSON-RPC API Interface for BSC, a method to check node synchronization status efficiently and effectively.
 ---
 
 # eth_syncing
 
 {% hint style="success" %}
-The RPC method checks if a Binance Smart Chain node is syncing, providing details on the current block and highest block being processed.&#x20;
+The RPC eth_syncing for BSC checks if the node is syncing with the network, providing synchronization status details.&#x20;
 {% endhint %}
 
-The eth_syncing Web3 method in the BSC protocol's JSON-RPC API provides users with real-time information about the syncing status of a node. When a node is in the process of synchronizing with the Binance Smart Chain network, this method returns an object with details such as the starting block, current block, and highest block. If the node is fully synchronized, it returns false. The eth_syncing RPC protocol is essential for developers and network participants who need to monitor node synchronization to ensure seamless interaction with the blockchain. By using this method, users can efficiently track the progress and status of their node's synchronization, facilitating better network management and operational planning.
+The `eth_syncing` method in the BSC protocol is an essential JSON-RPC API call used to determine the synchronization status of a node. When invoked, `eth_syncing` Web3 provides information on whether the node is currently syncing with the network, returning either a boolean or detailed syncing data.
 
-### Supported Networks
+In the `eth_syncing` RPC protocol, if the node is syncing, it returns a structure with details like the starting block, current block, and highest block. This enables developers to monitor sync progress and ensure nodes are up-to-date, facilitating efficient network participation and data integrity.
 
-The eth_syncing REST API method supports the following network types
+## Supported Networks
+
+The eth_syncing JSON-RPC API method supports the following network types:
 - **Mainnet**
-- **Testnets**
+- **Testnet**
 
-### Parameters
+## Parameters
 
 None: This method does not require any parameters.
 
-### Request Example
+# Request Example
 
-#### API Endpoint
+##### API Endpoint
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
-Here’s a sample cURL request using eth_syncing
+
 
 #### Request
+
+Here’s a sample cURL request using eth_syncing :
 
 {% tabs %}
 {% tab title="curl" %}
@@ -47,8 +51,9 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-### Response
+#### Response
 
+Below is a sample JSON response returned by eth_syncing upon a successful call:
 
 ```json
 
@@ -60,25 +65,25 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 
 ```
 
-### Body Parameters
+## Body Parameters
 
-Here is the list of body parameters for eth_syncing method:
+Here is the list of body parameters for the `eth_syncing` method:
 
-1. **jsonrpc**: The version of the JSON-RPC protocol. Typically, this is "2.0".
-2. **id**: An identifier for the request, which can be used to match responses with requests.
-3. **result**: The result of the method call. For the `eth_syncing` method, this is typically a boolean or an object. If it is `false`, it indicates that the node is not currently syncing. If it is an object, it contains details about the synchronization status, such as the starting block, current block, and highest block.
+1. **jsonrpc**: The version of the JSON-RPC protocol, which is `"2.0"` in this case.
+2. **id**: An identifier for the request, which is `67` in this example. It is used to match the response with the request.
+3. **result**: The result of the `eth_syncing` method call. In this case, it is `false`, indicating that the Ethereum node is not currently syncing. If the node were syncing, this parameter would contain an object with details about the sync status.
 
-### Use Cases
+## Use Cases
 
-Here are some use-cases for eth_syncing method in Web3 programming:
+Here are some use-cases for the `eth_syncing` method:
 
-1. Monitoring Node Synchronization: Developers and network administrators can use this method to monitor the synchronization status of an Ethereum node. By checking whether the node is currently syncing and retrieving details about the sync progress, they can ensure that the node is up-to-date with the latest blocks and ready to process transactions and smart contracts efficiently.
+1. **Node Synchronization Monitoring**: One of the primary use cases of the `eth_syncing` method is to monitor the synchronization status of an Ethereum node. When a node is syncing with the network, this method provides details about the current block, the highest block, and the starting block. Developers can use this information to determine when their node is fully synchronized and ready to process transactions and smart contracts.
 
-2. Network Health Checks: This method can be employed as part of a broader strategy to assess the health of the Ethereum network. By collecting sync status data from multiple nodes, developers can gain insights into network performance, identify potential bottlenecks, and ensure that the network is functioning smoothly.
+2. **Network Health Check**: The `eth_syncing` method can also be used as part of a broader network health check strategy. By periodically checking the synchronization status of nodes, developers can ensure that their infrastructure is properly connected to the Ethereum network and operating efficiently. This is particularly useful for applications that require high availability and reliability, as it helps in identifying potential issues with node connectivity or performance.
 
-3. Conditional Logic in DApps: Decentralized application (DApp) developers can use the synchronization status to implement conditional logic within their applications. For example, a DApp might restrict certain functionalities or display warnings if the underlying node is not fully synced, thereby preventing users from making decisions based on outdated blockchain data.
+3. **Automated Alerts and Notifications**: Another use case involves setting up automated alerts or notifications based on the synchronization status. For example, if a node falls behind in synchronization or encounters issues during the syncing process, the `eth_syncing` method can trigger alerts to notify developers or system administrators. This allows for timely intervention to resolve any issues and maintain the smooth operation of blockchain-based applications.
 
-### Code for eth_syncing
+## Code for eth_syncing
 
 {% tabs %}
 {% tab title="Python" %}
@@ -106,19 +111,44 @@ else:
 
 ```
 {% endtab %}
+{% tab title="JavaScript" %}
+```javascript
+const axios = require('axios');
+
+const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const payload = {
+  "jsonrpc": "2.0",
+  "id": 67,
+  "result": false
+};
+
+axios.post(url, payload, {
+  headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+  console.log("Result:", response.data.result);
+})
+.catch(error => {
+  if (error.response) {
+    console.error("Error:", error.response.status, error.response.data);
+  } else {
+    console.error("Request failed:", error.message);
+  }
+});
+```
+{% endtab %}
 {% endtabs %}
 
 ## Common Errors
 
-Common Errors  
-When using the eth_syncing JSON-RPC API BSC method, the following issues may occur:  
-- Incorrect Node Configuration: If your node is not configured correctly, it may not sync properly. Ensure your node is set up with the correct network settings and has sufficient resources to handle the sync process.  
-- Network Latency: High network latency can cause delays in synchronization. To mitigate this, consider optimizing your network connection or using a node closer to your geographical location.  
-- Outdated Client Software: Using an outdated client version can lead to compatibility issues. Regularly update your client software to the latest version to ensure smooth operation.  
-- Insufficient Disk Space: Syncing requires significant disk space, and running out can halt the process. Monitor your disk usage and allocate additional storage as needed to accommodate the blockchain data.  
+When using the `eth_syncing` JSON-RPC API BSC method, the following issues may occur:
+- The node might return false, indicating it is not syncing. Ensure your node is connected to a reliable peer network and verify that the blockchain data directory is not corrupted.
+- The response may take longer than expected due to network congestion. Consider increasing your node's bandwidth or using a more powerful server to handle network traffic efficiently.
+- Inconsistent syncing states can occur if the node configuration is incorrect. Double-check your node's configuration files for any discrepancies and ensure they align with the latest BSC network specifications.
+- A node may fail to sync due to outdated software versions. Regularly update your node software to the latest version to maintain compatibility with the network's protocol changes.
 
-The eth_syncing method is essential in Web3 applications as it allows developers to monitor the synchronization status of a node, ensuring that it is up-to-date with the latest state of the blockchain. This functionality is crucial for maintaining the integrity and reliability of decentralized applications that rely on real-time blockchain data.
+Using the `eth_syncing` method in Web3 applications provides real-time insights into the synchronization status of your node, enabling developers to monitor and optimize node performance. This functionality is crucial for maintaining the reliability and efficiency of decentralized applications running on the BSC network.
 
-### conclusion
+## Conclusion
 
-The eth_syncing JSON-RPC method is crucial for checking the synchronization status of a blockchain node, such as those on the Ethereum network or Binance Smart Chain (BSC). By utilizing this method, developers can determine whether their node is fully synced with the network, ensuring accurate data retrieval and transaction processing. Understanding the synchronization state through eth_syncing is vital for maintaining the reliability and performance of applications built on blockchain platforms like BSC.
+The `eth_syncing` method in JSON-RPC is a crucial component for monitoring the synchronization status of a node on Ethereum or Binance Smart Chain (BSC). By utilizing `eth_syncing`, developers can efficiently track the progress and ensure that their node is up-to-date with the network, thereby maintaining optimal performance and reliability.
