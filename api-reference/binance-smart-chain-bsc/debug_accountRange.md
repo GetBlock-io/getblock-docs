@@ -4,10 +4,10 @@ description: >-
   blockchain account data retrieval on BSC.
 ---
 
-# debug\_accountRange - Binance Smart Chain
+# debug\_accountRange - BNB Smart Chain
 
 {% hint style="success" %}
-The method retrieves account data within a specified range, aiding in blockchain analysis and monitoring on the Binance Smart Chain.
+The method retrieves account data within a specified range, aiding in blockchain analysis and monitoring on the BNB Smart Chain.
 {% endhint %}
 
 The `debug_accountRange` method in the BSC protocol is a part of the `debug_accountRange` Web3 suite, providing developers with the ability to retrieve detailed information on accounts within a specified range. This method is instrumental for debugging and analyzing account data, offering insights into account states and storage.
@@ -59,7 +59,7 @@ Here is the list of parameters `debug_accountRange` method needs to be executed.
   * **Supported Values:** `true` or `false`
   * **Example Value:** `false`
 
-## Request Example
+### Request Example
 
 **API Endpoint**
 
@@ -67,7 +67,7 @@ Here is the list of parameters `debug_accountRange` method needs to be executed.
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
-**Request**
+#### **Request**
 
 Here’s a sample cURL request using `debug_accountRange` :
 
@@ -84,7 +84,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 {% endtab %}
 {% endtabs %}
 
-**Response**
+#### **Response**
 
 Below is a sample JSON response returned by `debug_accountRange` upon a successful call:
 
@@ -178,9 +178,9 @@ axios.post(url, payload, {
 
 When using the `debug_accountRange` JSON-RPC API BSC method, the following issues may occur:
 
-* Incorrect block hash: If the block hash provided is invalid or does not exist, the method will fail. Ensure the block hash is accurate and corresponds to a valid block in the BSC network.
-* Invalid range parameters: Supplying an incorrect range, such as a negative or excessively large range, can lead to errors. Verify that the range is within acceptable limits and corresponds to existing accounts.
-* Network synchronization issues: If the node is not fully synced with the BSC network, the method may return incomplete or outdated data. Confirm that your node is fully synchronized before making the request.
+* **Incorrect block hash:** If the block hash provided is invalid or does not exist, the method will fail. Ensure the block hash is accurate and corresponds to a valid block in the BSC network.
+* **Invalid range parameters:** Supplying an incorrect range, such as a negative or excessively large range, can lead to errors. Verify that the range is within acceptable limits and corresponds to existing accounts.
+* **Network synchronization issues:** If the node is not fully synced with the BSC network, the method may return incomplete or outdated data. Confirm that your node is fully synchronized before making the request.
 
 Using the `debug_accountRange` method in Web3 applications can significantly enhance debugging capabilities by allowing developers to efficiently examine account states within a specific block range. This method provides valuable insights into contract interactions and account balances, facilitating the troubleshooting and optimization of decentralized applications on the BSC network.
 

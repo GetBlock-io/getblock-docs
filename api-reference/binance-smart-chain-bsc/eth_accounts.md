@@ -4,10 +4,10 @@ description: >-
   JSON-RPC API Interface in the BSC protocol.
 ---
 
-# eth\_accounts - Binance Smart Chain
+# eth\_accounts - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method retrieves a list of addresses owned by the client on the Binance Smart Chain, primarily for account management and transaction purposes.
+The RPC method retrieves a list of addresses owned by the client on the BNB Smart Chain, primarily for account management and transaction purposes.
 {% endhint %}
 
 The `eth_accounts` method in the BSC protocol is a part of the `eth_accounts` Web3 interface, which retrieves a list of addresses controlled by the client. This method is particularly useful for decentralized applications that need to display or manage user accounts without exposing private keys.

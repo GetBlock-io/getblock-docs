@@ -4,10 +4,10 @@ description: >-
   on the BSC protocol, offering precise and efficient data access.
 ---
 
-# eth\_getBalance - Binance Smart Chain
+# eth\_getBalance - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method retrieves an account's balance in wei on the Binance Smart Chain, providing the current balance at a specified block number.
+The RPC method retrieves an account's balance in wei on the BNB Smart Chain, providing the current balance at a specified block number.
 {% endhint %}
 
 The `eth_getBalance` method in the BSC protocol is an essential JSON-RPC API call that retrieves the balance of a specified address in wei. This method is commonly used in the `eth_getBalance` Web3 context to provide developers with precise account balance information at a specific block height, enhancing blockchain interactions.

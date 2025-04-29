@@ -4,7 +4,7 @@ description: >-
   JSON-RPC API Interface in the BSC protocol.
 ---
 
-# web3\_clientVersion - Binance Smart Chain
+# web3\_clientVersion - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC web3\_clientVersion for BSC retrieves the client software version, providing information about the node's software and version details.
@@ -154,4 +154,4 @@ Using the `web3_clientVersion` method in Web3 applications is beneficial as it a
 
 ### Conclusion
 
-The `web3_clientVersion` method in JSON-RPC is a useful tool for retrieving the client version information on blockchain networks like BSC (Binance Smart Chain). By invoking `web3_clientVersion`, developers can ensure compatibility and troubleshoot issues more effectively. This method is integral to maintaining smooth interactions within the web3 ecosystem.
+The `web3_clientVersion` method in JSON-RPC is a useful tool for retrieving the client version information on blockchain networks like BSC (BNB Smart Chain). By invoking `web3_clientVersion`, developers can ensure compatibility and troubleshoot issues more effectively. This method is integral to maintaining smooth interactions within the web3 ecosystem.

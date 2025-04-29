@@ -4,7 +4,7 @@ description: >-
   Interface on BSC, ensuring efficient gas usage and cost prediction.
 ---
 
-# eth\_estimateGas - Binance Smart Chain
+# eth\_estimateGas - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method estimates the gas needed for a transaction on BSC, helping users set appropriate gas limits for successful execution.
@@ -185,4 +185,4 @@ Using the `eth_estimateGas` method in Web3 applications provides a reliable way 
 
 ### Conclusion
 
-The `eth_estimateGas` JSON-RPC method is a crucial tool for developers working on Ethereum and Binance Smart Chain (BSC) as it allows them to estimate the gas required for a transaction before execution. By providing an estimate, it helps in optimizing gas usage and ensures that the transaction has a higher likelihood of success without running out of gas. Using `eth_estimateGas` is an essential step in managing transaction costs effectively on Ethereum and BSC networks.
+The `eth_estimateGas` JSON-RPC method is a crucial tool for developers working on Ethereum and BNB Smart Chain (BSC) as it allows them to estimate the gas required for a transaction before execution. By providing an estimate, it helps in optimizing gas usage and ensures that the transaction has a higher likelihood of success without running out of gas. Using `eth_estimateGas` is an essential step in managing transaction costs effectively on Ethereum and BSC networks.

@@ -4,10 +4,10 @@ description: >-
   in BSC, enabling efficient data retrieval for developers.
 ---
 
-# eth\_getLogs - Binance Smart Chain
+# eth\_getLogs - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC eth\_getLogs retrieves event logs from the Binance Smart Chain, aiding in tracking contract events and filtering blockchain data.
+The RPC eth\_getLogs retrieves event logs from the BNB Smart Chain, aiding in tracking contract events and filtering blockchain data.
 {% endhint %}
 
 The `eth_getLogs` method in the BSC protocol is a part of the `eth_getLogs` Web3 and `eth_getLogs` RPC protocol, designed to retrieve event logs from the blockchain. This method allows users to filter logs based on specific criteria such as block range, contract address, and topics, providing a powerful tool for monitoring and analyzing blockchain events.
@@ -169,4 +169,4 @@ The `eth_getLogs` method is invaluable in Web3 applications as it allows develop
 
 ### Conclusion
 
-The `eth_getLogs` JSON-RPC method is a powerful tool for retrieving event logs from the Ethereum blockchain, allowing users to filter logs by specific contract addresses, such as the one provided for USDT. This method is also applicable to other EVM-compatible chains like Binance Smart Chain (BSC), making it versatile for developers working across different blockchain networks.
+The `eth_getLogs` JSON-RPC method is a powerful tool for retrieving event logs from the Ethereum blockchain, allowing users to filter logs by specific contract addresses, such as the one provided for USDT. This method is also applicable to other EVM-compatible chains like BNB Smart Chain (BSC), making it versatile for developers working across different blockchain networks.

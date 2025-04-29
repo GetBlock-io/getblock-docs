@@ -4,15 +4,15 @@ description: >-
   eth_getUncleByBlockNumberAndIndex in the JSON-RPC API Interface for BSC.
 ---
 
-# eth\_getUncleByBlockNumberAndIndex - Binance Smart Chain
+# eth\_getUncleByBlockNumberAndIndex - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method retrieves an uncle block from a specific block number and index on the Binance Smart Chain, aiding in blockchain analysis and validation.
+The RPC method retrieves an uncle block from a specific block number and index on the BNB Smart Chain, aiding in blockchain analysis and validation.
 {% endhint %}
 
 The `eth_getUncleByBlockNumberAndIndex` method in the BSC protocol is a JSON-RPC API call that retrieves information about an uncle block by specifying the block number and the uncle's index position. This method is essential for developers using the `eth_getUncleByBlockNumberAndIndex` Web3 interface to access uncle block data efficiently.
 
-Utilizing the `eth_getUncleByBlockNumberAndIndex` RPC protocol, developers can obtain details such as the uncle's hash, miner, and other metadata. This method is crucial for applications needing to analyze uncle blocks within the Binance Smart Chain, offering a straightforward way to fetch specific uncle data by block number and index.
+Utilizing the `eth_getUncleByBlockNumberAndIndex` RPC protocol, developers can obtain details such as the uncle's hash, miner, and other metadata. This method is crucial for applications needing to analyze uncle blocks within the BNB Smart Chain, offering a straightforward way to fetch specific uncle data by block number and index.
 
 ### Supported Networks
 
@@ -159,4 +159,4 @@ Using the `eth_getUncleByBlockNumberAndIndex` method in Web3 applications provid
 
 ### Conclusion
 
-The `eth_getUncleByBlockNumberAndIndex` method is a JSON-RPC call used in Ethereum and compatible blockchains like Binance Smart Chain (BSC) to retrieve information about an uncle block by specifying the block number and the index of the uncle. This method is particularly useful for developers and analysts looking to understand the structure and rewards of uncle blocks within a blockchain network. By utilizing `eth_getUncleByBlockNumberAndIndex`, one can gain insights into the network's block validation process and the occurrence of uncle blocks.
+The `eth_getUncleByBlockNumberAndIndex` method is a JSON-RPC call used in Ethereum and compatible blockchains like BNB Smart Chain (BSC) to retrieve information about an uncle block by specifying the block number and the index of the uncle. This method is particularly useful for developers and analysts looking to understand the structure and rewards of uncle blocks within a blockchain network. By utilizing `eth_getUncleByBlockNumberAndIndex`, one can gain insights into the network's block validation process and the occurrence of uncle blocks.

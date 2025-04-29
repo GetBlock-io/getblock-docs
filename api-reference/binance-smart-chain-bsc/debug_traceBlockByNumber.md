@@ -4,7 +4,7 @@ description: >-
   block tracing by number in the BSC protocol.
 ---
 
-# debug\_traceBlockByNumber - Binance Smart Chain
+# debug\_traceBlockByNumber - BNB Smart Chain
 
 {% hint style="success" %}
 This method provides detailed execution traces of all transactions within a specific block number on BSC, aiding in debugging and analysis of smart contract interactions.
@@ -166,4 +166,4 @@ Using the `debug_traceBlockByNumber` method in Web3 applications provides a powe
 
 ### Conclusion
 
-The JSON-RPC method `debug_traceBlockByNumber` is a powerful tool for developers working with the Binance Smart Chain (BSC), allowing them to trace and debug transactions within a specific block. By using this method, developers can gain detailed insights into the execution of smart contracts and identify potential issues, enhancing the overall reliability of applications on the BSC.
+The JSON-RPC method `debug_traceBlockByNumber` is a powerful tool for developers working with the BNB Smart Chain (BSC), allowing them to trace and debug transactions within a specific block. By using this method, developers can gain detailed insights into the execution of smart contracts and identify potential issues, enhancing the overall reliability of applications on the BSC.

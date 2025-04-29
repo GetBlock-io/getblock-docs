@@ -4,15 +4,15 @@ description: >-
   retrieve current gas price estimations for transaction fees.
 ---
 
-# eth\_gasPrice - Binance Smart Chain
+# eth\_gasPrice - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method fetches the current gas price in wei for transactions on the Binance Smart Chain, helping users estimate transaction costs.
+The RPC method fetches the current gas price in wei for transactions on the BNB Smart Chain, helping users estimate transaction costs.
 {% endhint %}
 
 The `eth_gasPrice` method in the BSC protocol is a JSON-RPC API call that retrieves the current gas price in wei, which is essential for determining transaction fees. This method is integral to both `eth_gasPrice` Web3 and `eth_gasPrice` RPC protocol implementations, providing users with real-time gas price data to optimize transaction costs.
 
-When invoked, `eth_gasPrice` returns the network's median gas price, enabling developers to set appropriate gas fees for transactions on the Binance Smart Chain. This ensures efficient transaction processing and cost management, making it a critical tool for developers and users navigating the blockchain environment.
+When invoked, `eth_gasPrice` returns the network's median gas price, enabling developers to set appropriate gas fees for transactions on the BNB Smart Chain. This ensures efficient transaction processing and cost management, making it a critical tool for developers and users navigating the blockchain environment.
 
 ### Supported Networks
 
@@ -154,4 +154,4 @@ Using the `eth_gasPrice` method provides Web3 applications with critical data to
 
 ### Conclusion
 
-The `eth_gasPrice` method in JSON-RPC is essential for retrieving the current gas price on blockchain networks like Ethereum and Binance Smart Chain (BSC). By calling `eth_gasPrice`, developers can efficiently estimate transaction costs and optimize their smart contract interactions. Understanding the nuances of `eth_gasPrice` helps ensure cost-effective and timely transactions on platforms like BSC.
+The `eth_gasPrice` method in JSON-RPC is essential for retrieving the current gas price on blockchain networks like Ethereum and BNB Smart Chain (BSC). By calling `eth_gasPrice`, developers can efficiently estimate transaction costs and optimize their smart contract interactions. Understanding the nuances of `eth_gasPrice` helps ensure cost-effective and timely transactions on platforms like BSC.

@@ -4,7 +4,7 @@ description: >-
   JSON-RPC API Interface. Ideal for developers seeking precise blockchain data.
 ---
 
-# debug\_storageRangeAt - Binance Smart Chain
+# debug\_storageRangeAt - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method retrieves a range of storage entries for a specific BSC contract, aiding in debugging by examining storage content at a particular block.
@@ -174,4 +174,4 @@ Utilizing the `debug_storageRangeAt` method in Web3 applications provides develo
 
 ### Conclusion
 
-The JSON-RPC method `debug_storageRangeAt` is used to inspect the storage of a smart contract at a specific block on blockchain networks like Ethereum or Binance Smart Chain (BSC). By providing parameters such as the block hash, transaction index, and contract address, users can retrieve detailed storage information for debugging purposes. This makes `debug_storageRangeAt` a valuable tool for developers working on BSC to identify and resolve issues within smart contracts.
+The JSON-RPC method `debug_storageRangeAt` is used to inspect the storage of a smart contract at a specific block on blockchain networks like Ethereum or BNB Smart Chain (BSC). By providing parameters such as the block hash, transaction index, and contract address, users can retrieve detailed storage information for debugging purposes. This makes `debug_storageRangeAt` a valuable tool for developers working on BSC to identify and resolve issues within smart contracts.

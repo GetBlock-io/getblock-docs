@@ -4,15 +4,15 @@ description: >-
   execution to a file, aiding in detailed debugging and analysis.
 ---
 
-# debug\_standard TraceBlock ToFile - Binance Smart Chain
+# debug\_standard TraceBlock ToFile - BNB Smart Chain
 
 {% hint style="success" %}
-The method saves detailed execution traces of a block to a file, aiding in debugging and analysis on the Binance Smart Chain.
+The method saves detailed execution traces of a block to a file, aiding in debugging and analysis on the BNB Smart Chain.
 {% endhint %}
 
 The `debug_standardTraceBlockToFile` method in the BSC protocol is a powerful tool for developers looking to trace the execution of a block. This method, part of the `debug_standardTraceBlockToFile` Web3 suite, allows users to output detailed trace information of a specified block to a file. Such tracing is crucial for debugging and understanding the inner workings of smart contracts and transactions within a block.
 
-Utilizing the `debug_standardTraceBlockToFile` RPC protocol, this method facilitates an in-depth analysis by capturing execution details, including opcode-level insights. It is designed to be user-friendly, providing an accessible way to store and review complex transaction data outside the blockchain. This capability is essential for developers aiming to optimize or audit smart contract performance on the Binance Smart Chain.
+Utilizing the `debug_standardTraceBlockToFile` RPC protocol, this method facilitates an in-depth analysis by capturing execution details, including opcode-level insights. It is designed to be user-friendly, providing an accessible way to store and review complex transaction data outside the blockchain. This capability is essential for developers aiming to optimize or audit smart contract performance on the BNB Smart Chain.
 
 ### Supported Networks
 
@@ -164,4 +164,4 @@ Utilizing the `debug_standardTraceBlockToFile` method in Web3 applications provi
 
 ### Conclusion
 
-The JSON-RPC method `debug_standardTraceBlockToFile` is a powerful tool for developers working with BSC (Binance Smart Chain), allowing them to trace and debug block execution by writing detailed trace data to a file. This method is essential for in-depth analysis and troubleshooting within the blockchain environment, facilitating enhanced understanding and optimization of smart contract interactions.
+The JSON-RPC method `debug_standardTraceBlockToFile` is a powerful tool for developers working with BSC (BNB Smart Chain), allowing them to trace and debug block execution by writing detailed trace data to a file. This method is essential for in-depth analysis and troubleshooting within the blockchain environment, facilitating enhanced understanding and optimization of smart contract interactions.

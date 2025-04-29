@@ -4,10 +4,10 @@ description: >-
   new blocks are added to the BSC blockchain, enhancing monitoring.
 ---
 
-# eth\_newBlockFilter - Binance Smart Chain
+# eth\_newBlockFilter - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method creates a filter to receive notifications for new blocks on the Binance Smart Chain, enabling real-time block monitoring.
+The RPC method creates a filter to receive notifications for new blocks on the BNB Smart Chain, enabling real-time block monitoring.
 {% endhint %}
 
 The `eth_newBlockFilter` method in the BSC protocol is part of the `eth_newBlockFilter` Web3 and `eth_newBlockFilter` RPC protocol, designed to create a filter for new block notifications. This method enables users to listen for new blocks added to the blockchain, providing a unique filter identifier upon success.
@@ -150,8 +150,8 @@ When using the `eth_newBlockFilter` JSON-RPC API BSC method, the following issue
 * Unauthorized access: If you receive an authorization error, check your credentials and ensure that your client has the necessary permissions to interact with the BSC node.
 * Resource limitations: Excessive filter creation can lead to resource exhaustion on the node. Consider implementing a cleanup mechanism for unused filters to optimize resource usage.
 
-Using the `eth_newBlockFilter` method in Web3 applications allows developers to efficiently monitor new blocks on the Binance Smart Chain without polling continuously. This method enhances performance by providing a way to receive block notifications, enabling real-time updates and more responsive decentralized applications.
+Using the `eth_newBlockFilter` method in Web3 applications allows developers to efficiently monitor new blocks on the BNB Smart Chain without polling continuously. This method enhances performance by providing a way to receive block notifications, enabling real-time updates and more responsive decentralized applications.
 
 ### Conclusion
 
-The `eth_newBlockFilter` method in JSON-RPC is a useful tool for developers working with blockchain networks like BSC (Binance Smart Chain). It allows for the creation of a filter to listen for new blocks, enabling efficient monitoring and interaction with the blockchain. By utilizing `eth_newBlockFilter`, developers can streamline their applications to respond to new block events in real-time, enhancing the responsiveness and functionality of their solutions on platforms like BSC.
+The `eth_newBlockFilter` method in JSON-RPC is a useful tool for developers working with blockchain networks like BSC (BNB Smart Chain). It allows for the creation of a filter to listen for new blocks, enabling efficient monitoring and interaction with the blockchain. By utilizing `eth_newBlockFilter`, developers can streamline their applications to respond to new block events in real-time, enhancing the responsiveness and functionality of their solutions on platforms like BSC.

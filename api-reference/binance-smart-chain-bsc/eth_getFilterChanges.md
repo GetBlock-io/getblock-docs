@@ -4,15 +4,15 @@ description: >-
   eth_getFilterChanges in the BSC protocol, ensuring efficient data retrieval.
 ---
 
-# eth\_getFilterChanges - Binance Smart Chain
+# eth\_getFilterChanges - BNB Smart Chain
 
 {% hint style="success" %}
-The method retrieves changes in logs or events for a specified filter on Binance Smart Chain, enabling efficient event tracking without polling the entire blockchain.
+The method retrieves changes in logs or events for a specified filter on BNB Smart Chain, enabling efficient event tracking without polling the entire blockchain.
 {% endhint %}
 
 The `eth_getFilterChanges` method in the BSC protocol retrieves a list of changes since the last call to this method using the filter ID. In the context of `eth_getFilterChanges` Web3, it efficiently monitors blockchain events. This method is crucial for applications needing real-time updates without polling the entire blockchain.
 
-When using the `eth_getFilterChanges` RPC protocol, it returns logs or transaction hashes, depending on the filter type. This enables developers to manage data streams effectively and maintain optimal performance. It's essential for developers implementing event-driven architectures on the Binance Smart Chain.
+When using the `eth_getFilterChanges` RPC protocol, it returns logs or transaction hashes, depending on the filter type. This enables developers to manage data streams effectively and maintain optimal performance. It's essential for developers implementing event-driven architectures on the BNB Smart Chain.
 
 ### Supported Networks
 
@@ -165,4 +165,4 @@ Using the `eth_getFilterChanges` method in Web3 applications provides an efficie
 
 ### Conclusion
 
-The `eth_getFilterChanges` method in JSON-RPC is a powerful tool for developers working on Ethereum and Binance Smart Chain (BSC) networks. It allows them to efficiently track changes and updates to specific filters, enabling real-time data retrieval and event monitoring. This functionality is crucial for applications that require up-to-date blockchain data without constantly polling the network.
+The `eth_getFilterChanges` method in JSON-RPC is a powerful tool for developers working on Ethereum and BNB Smart Chain (BSC) networks. It allows them to efficiently track changes and updates to specific filters, enabling real-time data retrieval and event monitoring. This functionality is crucial for applications that require up-to-date blockchain data without constantly polling the network.

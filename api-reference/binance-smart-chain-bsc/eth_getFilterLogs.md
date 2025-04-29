@@ -4,10 +4,10 @@ description: >-
   offering efficient access to blockchain event data.
 ---
 
-# eth\_getFilterLogs - Binance Smart Chain
+# eth\_getFilterLogs - BNB Smart Chain
 
 {% hint style="success" %}
-eth\_getFilterLogs retrieves logs that match a specified filter on the Binance Smart Chain, primarily used to track events and transactions.
+eth\_getFilterLogs retrieves logs that match a specified filter on the  BNB Smart Chain, primarily used to track events and transactions.
 {% endhint %}
 
 The `eth_getFilterLogs` method in the BSC protocol is a part of the JSON-RPC API, enabling users to retrieve an array of log objects that match the criteria set by a filter ID. This method is integral to the `eth_getFilterLogs` Web3 interface, allowing developers to efficiently access event logs without manually parsing blocks.
@@ -164,4 +164,4 @@ The `eth_getFilterLogs` method is highly beneficial in Web3 applications, allowi
 
 ### Conclusion
 
-The `eth_getFilterLogs` method in the JSON-RPC API is a powerful tool for retrieving logs from the Ethereum blockchain or compatible networks like Binance Smart Chain (BSC). By specifying a filter identifier, users can efficiently access event data that meets certain criteria. This capability is crucial for developers and analysts who need to monitor specific blockchain activities in real-time.
+The `eth_getFilterLogs` method in the JSON-RPC API is a powerful tool for retrieving logs from the Ethereum blockchain or compatible networks like BNB Smart Chain (BSC). By specifying a filter identifier, users can efficiently access event data that meets certain criteria. This capability is crucial for developers and analysts who need to monitor specific blockchain activities in real-time.

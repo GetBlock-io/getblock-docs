@@ -4,10 +4,10 @@ description: >-
   the JSON-RPC API Interface for real-time BSC network monitoring.
 ---
 
-# eth\_newPendingTransactionFilter - Binance Smart Chain
+# eth\_newPendingTransactionFilter - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method creates a filter to monitor new pending transactions on the Binance Smart Chain, enabling real-time tracking of transaction activity.
+The RPC method creates a filter to monitor new pending transactions on the  BNB Smart Chain, enabling real-time tracking of transaction activity.
 {% endhint %}
 
 The `eth_newPendingTransactionFilter` method in the BSC protocol is a JSON-RPC API call used to create a filter that listens for new pending transactions. This method is part of the `eth_newPendingTransactionFilter` Web3 suite, enabling developers to monitor transactions that have been submitted but not yet mined into a block.
@@ -153,4 +153,4 @@ Using the `eth_newPendingTransactionFilter` method in Web3 applications allows d
 
 ### Conclusion
 
-The `eth_newPendingTransactionFilter` method in JSON-RPC is a crucial tool for developers working on Ethereum and Binance Smart Chain (BSC) networks. It allows them to create a filter to monitor pending transactions efficiently. By leveraging `eth_newPendingTransactionFilter`, developers can stay updated on the transaction pool dynamics and optimize their decentralized applications accordingly.
+The `eth_newPendingTransactionFilter` method in JSON-RPC is a crucial tool for developers working on Ethereum and BNB Smart Chain (BSC) networks. It allows them to create a filter to monitor pending transactions efficiently. By leveraging `eth_newPendingTransactionFilter`, developers can stay updated on the transaction pool dynamics and optimize their decentralized applications accordingly.

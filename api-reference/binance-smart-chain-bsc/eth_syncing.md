@@ -4,7 +4,7 @@ description: >-
   node synchronization status efficiently and effectively.
 ---
 
-# eth\_syncing - Binance Smart Chain
+# eth\_syncing - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC eth\_syncing for BSC checks if the node is syncing with the network, providing synchronization status details.
@@ -154,4 +154,4 @@ Using the `eth_syncing` method in Web3 applications provides real-time insights 
 
 ### Conclusion
 
-The `eth_syncing` method in JSON-RPC is a crucial component for monitoring the synchronization status of a node on Ethereum or Binance Smart Chain (BSC). By utilizing `eth_syncing`, developers can efficiently track the progress and ensure that their node is up-to-date with the network, thereby maintaining optimal performance and reliability.
+The `eth_syncing` method in JSON-RPC is a crucial component for monitoring the synchronization status of a node on Ethereum or BNB Smart Chain (BSC). By utilizing `eth_syncing`, developers can efficiently track the progress and ensure that their node is up-to-date with the network, thereby maintaining optimal performance and reliability.

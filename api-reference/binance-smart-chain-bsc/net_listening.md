@@ -4,10 +4,10 @@ description: >-
   net_listening method in the JSON-RPC API Interface.
 ---
 
-# net\_listening - Binance Smart Chain
+# net\_listening - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method checks if a Binance Smart Chain node is actively listening for network connections, indicating its readiness to participate in the network.
+The RPC method checks if a BNB Smart Chain node is actively listening for network connections, indicating its readiness to participate in the network.
 {% endhint %}
 
 The `net_listening` method in the BSC protocol is a key component of the `net_listening` Web3 interface. It checks if the client is actively listening for network connections, returning a boolean. This method is crucial for applications to verify network connectivity and ensure seamless interaction with the blockchain.

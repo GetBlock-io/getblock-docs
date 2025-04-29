@@ -4,7 +4,7 @@ description: >-
   Quickly check if mining is active and running smoothly.
 ---
 
-# eth\_mining - Binance Smart Chain
+# eth\_mining - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method checks if a BSC node is actively mining, primarily used to verify mining activity status.
@@ -153,4 +153,4 @@ Using the `eth_mining` method in Web3 applications allows developers to programm
 
 ### Conclusion
 
-The JSON-RPC method `eth_mining` is used to check if the Ethereum client is actively mining new blocks. While this method is pertinent to Ethereum, it is not applicable to the Binance Smart Chain (BSC), as BSC uses a different consensus mechanism. Understanding `eth_mining` is crucial for developers and miners who rely on JSON-RPC for blockchain interactions.
+The JSON-RPC method `eth_mining` is used to check if the Ethereum client is actively mining new blocks. While this method is pertinent to Ethereum, it is not applicable to the BNB Smart Chain (BSC), as BSC uses a different consensus mechanism. Understanding `eth_mining` is crucial for developers and miners who rely on JSON-RPC for blockchain interactions.

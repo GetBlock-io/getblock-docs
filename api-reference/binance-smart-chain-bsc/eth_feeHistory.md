@@ -4,7 +4,7 @@ description: >-
   API Interface for efficient transaction cost analysis on BSC.
 ---
 
-# eth\_feeHistory - Binance Smart Chain
+# eth\_feeHistory - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method retrieves historical gas fee data on BSC, aiding users in estimating transaction costs and optimizing gas usage.
@@ -12,7 +12,7 @@ The RPC method retrieves historical gas fee data on BSC, aiding users in estimat
 
 The `eth_feeHistory` method in the BSC protocol provides a snapshot of historical gas fee data, crucial for understanding recent network activity. Utilizing the `eth_feeHistory` Web3 interface, developers can retrieve information about gas prices over a range of recent blocks, aiding in more accurate fee estimations.
 
-Through the `eth_feeHistory` RPC protocol, users can specify the number of blocks and the priority fee percentile to obtain detailed insights into gas price trends. This method is essential for optimizing transaction costs and enhancing the efficiency of applications interacting with the Binance Smart Chain.
+Through the `eth_feeHistory` RPC protocol, users can specify the number of blocks and the priority fee percentile to obtain detailed insights into gas price trends. This method is essential for optimizing transaction costs and enhancing the efficiency of applications interacting with the BNB Smart Chain.
 
 ### Supported Networks
 

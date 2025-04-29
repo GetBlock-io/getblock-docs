@@ -4,7 +4,7 @@ description: >-
   API Interface for seamless BSC protocol integration.
 ---
 
-# net\_version - Binance Smart Chain
+# net\_version - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC net\_version for BSC returns the current network ID, helping to identify the specific blockchain network being interacted with.
@@ -145,7 +145,7 @@ axios.post(url, payload, {
 
 When using the `net_version` JSON-RPC API BSC method, the following issues may occur:
 
-* Network ID Mismatch: If the returned network ID does not match the expected value for Binance Smart Chain, ensure that your endpoint is correctly configured and pointing to a BSC node. Verify your connection settings and node provider.
+* Network ID Mismatch: If the returned network ID does not match the expected value for BNB Smart Chain, ensure that your endpoint is correctly configured and pointing to a BSC node. Verify your connection settings and node provider.
 * Timeout Errors: If the request times out, this might be due to network latency or server overload. Try increasing the timeout setting in your client library or switch to a more reliable node provider.
 * Unauthorized Access: If you receive an authorization error, check your API key and permissions. Make sure your credentials are correctly set up and have the necessary permissions to access the network information.
 * Invalid Response Format: If the response from the server is not in the expected JSON format, verify that you are communicating with a compliant BSC node and that there are no middleware issues altering the response.

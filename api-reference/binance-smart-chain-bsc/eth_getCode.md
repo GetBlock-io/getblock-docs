@@ -4,15 +4,15 @@ description: >-
   Interface for BSC, enabling efficient blockchain data access.
 ---
 
-# eth\_getCode - Binance Smart Chain
+# eth\_getCode - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method retrieves the bytecode of a smart contract at a specific address on the Binance Smart Chain, verifying contract deployment.
+The RPC method retrieves the bytecode of a smart contract at a specific address on the BNB Smart Chain, verifying contract deployment.
 {% endhint %}
 
 The `eth_getCode` method in the BSC protocol is a crucial part of the `eth_getCode` Web3 interface, allowing users to retrieve the EVM bytecode of a smart contract at a specified address. By using the `eth_getCode` RPC protocol, developers can programmatically access contract code, facilitating contract analysis and debugging.
 
-To call `eth_getCode`, provide the contract's address and the desired block number or use "latest" for the most recent block. The method returns the bytecode as a hexadecimal string. This functionality is essential for developers working with decentralized applications on the Binance Smart Chain, offering insights into contract behavior and state.
+To call `eth_getCode`, provide the contract's address and the desired block number or use "latest" for the most recent block. The method returns the bytecode as a hexadecimal string. This functionality is essential for developers working with decentralized applications on the BNB Smart Chain, offering insights into contract behavior and state.
 
 ### Supported Networks
 

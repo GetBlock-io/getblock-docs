@@ -4,7 +4,7 @@ description: >-
   Interface. Gain insights into execution traces on the BSC protocol.
 ---
 
-# debug\_traceTransaction - Binance Smart Chain
+# debug\_traceTransaction - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method provides detailed execution traces of a transaction on BSC, helping developers debug and analyze smart contract behavior and performance.
@@ -164,4 +164,4 @@ Using the `debug_traceTransaction` method in Web3 applications provides develope
 
 ### Conclusion
 
-The `debug_traceTransaction` JSON-RPC method is a powerful tool for developers and analysts working with blockchain transactions on networks like BSC (Binance Smart Chain). By providing detailed execution traces, it allows for in-depth debugging and analysis of transaction behavior. This utility is essential for understanding complex transaction flows and diagnosing issues in smart contract interactions.
+The `debug_traceTransaction` JSON-RPC method is a powerful tool for developers and analysts working with blockchain transactions on networks like BSC (BNB Smart Chain). By providing detailed execution traces, it allows for in-depth debugging and analysis of transaction behavior. This utility is essential for understanding complex transaction flows and diagnosing issues in smart contract interactions.

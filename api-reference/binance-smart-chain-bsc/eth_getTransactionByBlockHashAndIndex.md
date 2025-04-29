@@ -4,10 +4,10 @@ description: >-
   eth_getTransactionByBlockHashAndIndex in the JSON-RPC API Interface for BSC.
 ---
 
-# eth\_get TransactionByBlockHashAndIndex - Binance Smart Chain
+# eth\_get TransactionByBlockHashAndIndex - BNB Smart Chain
 
 {% hint style="success" %}
-Retrieves transaction details from a specific block on Binance Smart Chain using block hash and transaction index.
+Retrieves transaction details from a specific block on BNB Smart Chain using block hash and transaction index.
 {% endhint %}
 
 The `eth_getTransactionByBlockHashAndIndex` method in the BSC protocol is an essential tool for retrieving transaction details by block hash and transaction index. As part of the `eth_getTransactionByBlockHashAndIndex` Web3 interface, this method facilitates precise access to transaction data, enhancing blockchain interaction.
@@ -212,4 +212,4 @@ Using the `eth_getTransactionByBlockHashAndIndex` method in Web3 applications al
 
 ### Conclusion
 
-The `eth_getTransactionByBlockHashAndIndex` method is a JSON-RPC call that enables users to retrieve a specific transaction from a block using the block's hash and the transaction's index. This method is particularly useful for developers and users working with Ethereum-based blockchains, such as BSC (Binance Smart Chain), where precise transaction data is essential for various applications. By utilizing `eth_getTransactionByBlockHashAndIndex`, one can efficiently access transaction details, enhancing the ability to monitor and analyze blockchain activities.
+The `eth_getTransactionByBlockHashAndIndex` method is a JSON-RPC call that enables users to retrieve a specific transaction from a block using the block's hash and the transaction's index. This method is particularly useful for developers and users working with Ethereum-based blockchains, such as BSC (BNB Smart Chain), where precise transaction data is essential for various applications. By utilizing `eth_getTransactionByBlockHashAndIndex`, one can efficiently access transaction details, enhancing the ability to monitor and analyze blockchain activities.

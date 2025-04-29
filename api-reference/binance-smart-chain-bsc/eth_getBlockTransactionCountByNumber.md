@@ -5,13 +5,13 @@ description: >-
   protocol.
 ---
 
-# eth\_getBlock TransactionCountByNumber - Binance Smart Chain
+# eth\_getBlock TransactionCountByNumber - BNB Smart Chain
 
 {% hint style="success" %}
-This method retrieves the number of transactions in a specific block by its number on the Binance Smart Chain (BSC).
+This method retrieves the number of transactions in a specific block by its number on the BNB Smart Chain (BSC).
 {% endhint %}
 
-The `eth_getBlockTransactionCountByNumber` method in the BSC protocol is a JSON-RPC API call that retrieves the number of transactions in a specific block identified by its block number. By providing the block number as a parameter, users can leverage the `eth_getBlockTransactionCountByNumber` Web3 to efficiently query transaction counts in the Binance Smart Chain.
+The `eth_getBlockTransactionCountByNumber` method in the BSC protocol is a JSON-RPC API call that retrieves the number of transactions in a specific block identified by its block number. By providing the block number as a parameter, users can leverage the `eth_getBlockTransactionCountByNumber` Web3 to efficiently query transaction counts in the BNB Smart Chain.
 
 Utilizing the `eth_getBlockTransactionCountByNumber` RPC protocol, developers can programmatically access transaction data, aiding in blockchain analytics and monitoring. This method is essential for applications requiring precise transaction metrics, ensuring seamless integration and performance tracking within decentralized applications.
 

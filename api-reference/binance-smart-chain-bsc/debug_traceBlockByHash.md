@@ -4,10 +4,10 @@ description: >-
   Interface in BSC protocol for in-depth debugging insights.
 ---
 
-# debug\_traceBlockByHash - Binance Smart Chain
+# debug\_traceBlockByHash - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method provides detailed execution traces of all transactions within a specific block on the Binance Smart Chain, aiding in debugging and analysis.
+The RPC method provides detailed execution traces of all transactions within a specific block on the BNB Smart Chain, aiding in debugging and analysis.
 {% endhint %}
 
 The `debug_traceBlockByHash` method in the BSC protocol allows developers to trace all transactions in a block using its hash. It provides detailed execution insights, including stack, memory, and storage changes. This is crucial for debugging and understanding transaction behavior in the `debug_traceBlockByHash` Web3 context.
@@ -155,13 +155,13 @@ axios.post(url, payload, {
 
 When using the `debug_traceBlockByHash` JSON-RPC API BSC method, the following issues may occur:
 
-* **Invalid Block Hash**: If the block hash provided is incorrect or not found on the network, the method will return an error. Ensure that the block hash is valid and corresponds to a block on the Binance Smart Chain.
+* **Invalid Block Hash**: If the block hash provided is incorrect or not found on the network, the method will return an error. Ensure that the block hash is valid and corresponds to a block on the BNB Smart Chain.
 * **Null Parameter Misuse**: Passing `null` as a parameter without understanding its purpose can lead to unexpected results. Use `null` correctly to apply default tracing options, or specify a valid tracing configuration to suit your needs.
 * **Network Latency**: High network latency can result in delayed responses or timeouts. To mitigate this, ensure a stable and fast internet connection and consider increasing the timeout settings in your client configuration.
 * **Resource Limitations**: Tracing a block can be resource-intensive, potentially causing performance issues on low-capacity nodes. It's advisable to perform such operations on nodes with sufficient CPU and memory resources.
 
-Using the `debug_traceBlockByHash` method in Web3 applications offers significant advantages by providing detailed execution traces of transactions within a specific block. This functionality is invaluable for developers and auditors aiming to understand contract behavior, debug complex transactions, and ensure the integrity of smart contract interactions on the Binance Smart Chain.
+Using the `debug_traceBlockByHash` method in Web3 applications offers significant advantages by providing detailed execution traces of transactions within a specific block. This functionality is invaluable for developers and auditors aiming to understand contract behavior, debug complex transactions, and ensure the integrity of smart contract interactions on the BNB Smart Chain.
 
 ### Conclusion
 
-The `debug_traceBlockByHash` JSON-RPC method is a powerful tool for developers working with the Binance Smart Chain (BSC), allowing them to trace the execution of transactions within a specific block by its hash. By providing detailed insights into the block's execution, `debug_traceBlockByHash` aids in debugging and optimizing smart contracts on the BSC.
+The `debug_traceBlockByHash` JSON-RPC method is a powerful tool for developers working with the BNB Smart Chain (BSC), allowing them to trace the execution of transactions within a specific block by its hash. By providing detailed insights into the block's execution, `debug_traceBlockByHash` aids in debugging and optimizing smart contracts on the BSC.

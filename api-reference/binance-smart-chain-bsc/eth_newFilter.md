@@ -4,10 +4,10 @@ description: >-
   BSC protocol, enabling efficient event monitoring and data retrieval.
 ---
 
-# eth\_newFilter - Binance Smart Chain
+# eth\_newFilter - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method creates a filter for monitoring specific blockchain events or logs on the Binance Smart Chain, enabling efficient event tracking and data retrieval.
+The RPC method creates a filter for monitoring specific blockchain events or logs on the BNB Smart Chain, enabling efficient event tracking and data retrieval.
 {% endhint %}
 
 The `eth_newFilter` method in the BSC protocol allows developers to create a new filter object to listen for specific state changes in the blockchain. Utilizing the `eth_newFilter` Web3 interface, this method is essential for applications that need to monitor logs or events efficiently.

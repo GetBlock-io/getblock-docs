@@ -4,10 +4,10 @@ description: >-
   eth_maxPriorityFeePerGas via the JSON-RPC API Interface.
 ---
 
-# eth\_maxPriorityFeePerGas - Binance Smart Chain
+# eth\_maxPriorityFeePerGas - BNB Smart Chain
 
 {% hint style="success" %}
-The method estimates the current optimal priority fee per gas for transactions on the Binance Smart Chain, enhancing transaction speed and efficiency.
+The method estimates the current optimal priority fee per gas for transactions on the BNB Smart Chain, enhancing transaction speed and efficiency.
 {% endhint %}
 
 The `eth_maxPriorityFeePerGas` method in the BSC protocol is a JSON-RPC API call that retrieves the maximum priority fee per gas unit suggested for transactions. This method aids users in determining an appropriate tip to include in their transactions, ensuring timely processing by miners on the network.

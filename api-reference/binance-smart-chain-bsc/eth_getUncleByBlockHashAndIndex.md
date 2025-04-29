@@ -5,13 +5,13 @@ description: >-
   protocol.
 ---
 
-# eth\_getUncleByBlockHashAndIndex - Binance Smart Chain
+# eth\_getUncleByBlockHashAndIndex - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method retrieves an uncle block from a specific Binance Smart Chain block using its hash and uncle index, aiding in blockchain analysis and validation.
+The RPC method retrieves an uncle block from a specific BNB Smart Chain block using its hash and uncle index, aiding in blockchain analysis and validation.
 {% endhint %}
 
-The `eth_getUncleByBlockHashAndIndex` method in the JSON-RPC API retrieves an uncle block from a specified block within the Binance Smart Chain (BSC) protocol. Utilizing the `eth_getUncleByBlockHashAndIndex` Web3 interface, it requires the block hash and the uncle index as parameters, enabling precise access to uncle block data.
+The `eth_getUncleByBlockHashAndIndex` method in the JSON-RPC API retrieves an uncle block from a specified block within the BNB Smart Chain (BSC) protocol. Utilizing the `eth_getUncleByBlockHashAndIndex` Web3 interface, it requires the block hash and the uncle index as parameters, enabling precise access to uncle block data.
 
 In the `eth_getUncleByBlockHashAndIndex` RPC protocol, this method is essential for developers needing detailed information about uncle blocks, which are alternative block proposals not included in the main chain. By providing a structured response, it facilitates efficient blockchain data analysis and validation.
 
@@ -159,4 +159,4 @@ Using the `eth_getUncleByBlockHashAndIndex` method in Web3 applications provides
 
 ### Conclusion
 
-The JSON-RPC method `eth_getUncleByBlockHashAndIndex` is used to retrieve information about an uncle block by specifying the block hash and the uncle's index. This method is essential for developers working with Ethereum or Binance Smart Chain (BSC) as it allows them to access detailed uncle block data efficiently. Understanding how to use `eth_getUncleByBlockHashAndIndex` is crucial for managing blockchain data and analyzing network performance.
+The JSON-RPC method `eth_getUncleByBlockHashAndIndex` is used to retrieve information about an uncle block by specifying the block hash and the uncle's index. This method is essential for developers working with Ethereum or BNB Smart Chain (BSC) as it allows them to access detailed uncle block data efficiently. Understanding how to use `eth_getUncleByBlockHashAndIndex` is crucial for managing blockchain data and analyzing network performance.

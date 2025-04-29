@@ -4,7 +4,7 @@ description: >-
   enabling detailed transaction execution tracing for developers.
 ---
 
-# debug\_traceCall - Binance Smart Chain
+# debug\_traceCall - BNB Smart Chain
 
 {% hint style="success" %}
 RPC debug\_traceCall for BSC provides detailed execution traces of a transaction without altering the blockchain state, aiding in debugging and analysis.
@@ -12,7 +12,7 @@ RPC debug\_traceCall for BSC provides detailed execution traces of a transaction
 
 The `debug_traceCall` method in the BSC protocol is a powerful tool for developers, enabling detailed analysis of contract executions. As part of the `debug_traceCall` Web3 suite, it simulates a transaction without altering the blockchain, providing insights into gas usage, state changes, and execution paths. This aids in debugging complex smart contracts efficiently.
 
-Utilizing the `debug_traceCall` RPC protocol, developers can request granular traces of transaction execution, including internal calls and events. This method is essential for pinpointing issues within contract logic and optimizing performance. By leveraging this protocol, users gain a deeper understanding of transaction behavior, enhancing the reliability and security of decentralized applications on Binance Smart Chain.
+Utilizing the `debug_traceCall` RPC protocol, developers can request granular traces of transaction execution, including internal calls and events. This method is essential for pinpointing issues within contract logic and optimizing performance. By leveraging this protocol, users gain a deeper understanding of transaction behavior, enhancing the reliability and security of decentralized applications on BNB Smart Chain.
 
 ### Supported Networks
 

@@ -4,7 +4,7 @@ description: >-
   JSON-RPC API Interface in the BSC protocol.
 ---
 
-# txpool\_status - Binance Smart Chain
+# txpool\_status - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC txpool\_status for BSC provides information about the transaction pool's current status, including pending and queued transactions, to help manage network congestion.
@@ -155,4 +155,4 @@ Using the `txpool_status` method in Web3 applications provides a real-time snaps
 
 ### Conclusion
 
-The `txpool_status` method is a JSON-RPC call used to retrieve the status of the transaction pool on blockchain networks like Binance Smart Chain (BSC). By utilizing this method, users can gain insights into the current state of pending and queued transactions in the network's transaction pool. Understanding the `txpool_status` is essential for developers and users to monitor network congestion and transaction processing on BSC.
+The `txpool_status` method is a JSON-RPC call used to retrieve the status of the transaction pool on blockchain networks like BNB Smart Chain (BSC). By utilizing this method, users can gain insights into the current state of pending and queued transactions in the network's transaction pool. Understanding the `txpool_status` is essential for developers and users to monitor network congestion and transaction processing on BSC.

@@ -4,7 +4,7 @@ description: >-
   updates from a subscription in the BSC protocol efficiently.
 ---
 
-# eth\_unsubscribe - Binance Smart Chain
+# eth\_unsubscribe - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC eth\_unsubscribe for BSC stops active subscriptions to events or data streams, ceasing further updates or notifications.
@@ -159,4 +159,4 @@ Using the `eth_unsubscribe` method in Web3 applications offers the benefit of ef
 
 ### Conclusion
 
-The `eth_unsubscribe` method in JSON-RPC is used to cancel a previously established subscription, such as those for new blocks or pending transactions, on blockchain networks like Ethereum and Binance Smart Chain (BSC). By using `eth_unsubscribe`, developers can effectively manage active subscriptions and optimize resource usage. This functionality is crucial for maintaining efficient communication between clients and the blockchain network.
+The `eth_unsubscribe` method in JSON-RPC is used to cancel a previously established subscription, such as those for new blocks or pending transactions, on blockchain networks like Ethereum and BNB Smart Chain (BSC). By using `eth_unsubscribe`, developers can effectively manage active subscriptions and optimize resource usage. This functionality is crucial for maintaining efficient communication between clients and the blockchain network.

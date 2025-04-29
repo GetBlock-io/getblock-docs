@@ -4,10 +4,10 @@ description: >-
   streamlining your blockchain data management efficiently.
 ---
 
-# eth\_uninstallFilter - Binance Smart Chain
+# eth\_uninstallFilter - BNB Smart Chain
 
 {% hint style="success" %}
-The method removes a previously created filter on Binance Smart Chain, freeing up resources and stopping event notifications.
+The method removes a previously created filter on BNB Smart Chain, freeing up resources and stopping event notifications.
 {% endhint %}
 
 The `eth_uninstallFilter` method in the BSC protocol is a JSON-RPC API call used to remove a filter created with `eth_newFilter`, `eth_newBlockFilter`, or `eth_newPendingTransactionFilter`. This method helps manage and optimize resource usage by eliminating unnecessary filters. When invoked, it returns a boolean indicating the success of the operation.

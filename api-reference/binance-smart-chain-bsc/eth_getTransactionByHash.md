@@ -4,10 +4,10 @@ description: >-
   protocol via the JSON-RPC API Interface.
 ---
 
-# eth\_get TransactionByHash - Binance Smart Chain
+# eth\_get TransactionByHash - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method retrieves transaction details on Binance Smart Chain using a specific transaction hash, providing information like block number, sender, and receiver.
+The RPC method retrieves transaction details on BNB Smart Chain using a specific transaction hash, providing information like block number, sender, and receiver.
 {% endhint %}
 
 The `eth_getTransactionByHash` method in the BSC protocol allows users to retrieve detailed information about a specific transaction using its unique hash. As part of the `eth_getTransactionByHash` Web3 functionality, it returns transaction details such as block hash, sender, recipient, and value transferred, enabling developers to track and verify transactions efficiently.
@@ -190,4 +190,4 @@ Using the `eth_getTransactionByHash` method in Web3 applications provides a stra
 
 ### Conclusion
 
-The JSON-RPC method `eth_getTransactionByHash` is utilized to retrieve detailed information about a specific transaction using its hash on blockchain networks such as Ethereum and Binance Smart Chain (BSC). By providing the transaction hash in the `params` field, users can access comprehensive transaction data, which is crucial for verifying and tracking blockchain activities. This method is essential for developers and users interacting with Ethereum or BSC, as it allows for precise transaction auditing and analysis.
+The JSON-RPC method `eth_getTransactionByHash` is utilized to retrieve detailed information about a specific transaction using its hash on blockchain networks such as Ethereum and BNB Smart Chain (BSC). By providing the transaction hash in the `params` field, users can access comprehensive transaction data, which is crucial for verifying and tracking blockchain activities. This method is essential for developers and users interacting with Ethereum or BSC, as it allows for precise transaction auditing and analysis.

@@ -4,10 +4,10 @@ description: >-
   send raw transactions on the BSC protocol efficiently.
 ---
 
-# eth\_sendRawTransaction - Binance Smart Chain
+# eth\_sendRawTransaction - BNB Smart Chain
 
 {% hint style="success" %}
-It submits a signed transaction to the Binance Smart Chain network for execution, enabling direct interaction without revealing private keys.
+It submits a signed transaction to the BNB  Smart Chain network for execution, enabling direct interaction without revealing private keys.
 {% endhint %}
 
 The `eth_sendRawTransaction` method in the BSC protocol is a crucial feature of the `eth_sendRawTransaction` Web3 interface. It enables users to broadcast a signed transaction to the network without requiring local signing. This method directly pushes the raw transaction data to the blockchain, ensuring efficient processing.

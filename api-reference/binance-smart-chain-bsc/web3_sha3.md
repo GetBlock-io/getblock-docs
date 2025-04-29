@@ -4,10 +4,10 @@ description: >-
   Keccak-256 hash of input data, offering secure and efficient hashing.
 ---
 
-# web3\_sha3 - Binance Smart Chain
+# web3\_sha3 - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method computes the Keccak-256 hash of the given input data, used for data integrity and verification on the Binance Smart Chain.
+The RPC method computes the Keccak-256 hash of the given input data, used for data integrity and verification on the BNB Smart Chain.
 {% endhint %}
 
 The `web3_sha3` method in the BSC protocol is a JSON-RPC API function that computes the Keccak-256 hash of the given input data. As part of the `web3_sha3` Web3 suite, this method is essential for developers needing to generate cryptographic hashes, ensuring data integrity and security within decentralized applications.

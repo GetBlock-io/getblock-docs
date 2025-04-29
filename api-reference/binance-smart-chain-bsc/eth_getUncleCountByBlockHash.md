@@ -5,10 +5,10 @@ description: >-
   protocol.
 ---
 
-# eth\_getUncleCountByBlockHash - Binance Smart Chain
+# eth\_getUncleCountByBlockHash - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method retrieves the number of uncles for a specific block by its hash on the Binance Smart Chain.
+The RPC method retrieves the number of uncles for a specific block by its hash on the BNB Smart Chain.
 {% endhint %}
 
 The `eth_getUncleCountByBlockHash` method in the BSC protocol is a JSON-RPC API call that retrieves the number of uncle blocks for a specific block identified by its hash. This method is part of the `eth_getUncleCountByBlockHash` Web3 interface, facilitating developers in determining the uncle count associated with a given block hash.
@@ -160,4 +160,4 @@ The `eth_getUncleCountByBlockHash` method is valuable in Web3 applications as it
 
 ### Conclusion
 
-The `eth_getUncleCountByBlockHash` JSON-RPC method is used to retrieve the number of uncle blocks associated with a specific block hash on blockchain networks like Ethereum and BSC (Binance Smart Chain). By providing the block hash, users can efficiently query uncle block data, which can be crucial for analyzing network performance and block validation processes. This method is essential for developers and analysts who need to understand the dynamics of block creation and the occurrence of uncle blocks in decentralized networks.
+The `eth_getUncleCountByBlockHash` JSON-RPC method is used to retrieve the number of uncle blocks associated with a specific block hash on blockchain networks like Ethereum and BSC (BNB Smart Chain). By providing the block hash, users can efficiently query uncle block data, which can be crucial for analyzing network performance and block validation processes. This method is essential for developers and analysts who need to understand the dynamics of block creation and the occurrence of uncle blocks in decentralized networks.

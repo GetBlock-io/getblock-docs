@@ -4,7 +4,7 @@ description: >-
   Interface for seamless BSC network monitoring.
 ---
 
-# net\_peerCount - Binance Smart Chain
+# net\_peerCount - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method returns the number of connected peers to a BSC node, helping monitor network connectivity and node performance.
@@ -154,4 +154,4 @@ Using the `net_peerCount` method in Web3 applications provides valuable insights
 
 ### Conclusion
 
-The `net_peerCount` method in JSON-RPC is a crucial tool for monitoring the number of connected peers in a blockchain network, such as Binance Smart Chain (BSC). By providing real-time insights into network connectivity, `net_peerCount` helps ensure optimal performance and stability in BSC environments.
+The `net_peerCount` method in JSON-RPC is a crucial tool for monitoring the number of connected peers in a blockchain network, such as  BNB Smart Chain (BSC). By providing real-time insights into network connectivity, `net_peerCount` helps ensure optimal performance and stability in BSC environments.

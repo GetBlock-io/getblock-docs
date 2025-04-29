@@ -4,7 +4,7 @@ description: >-
   Interface for BSC, offering in-depth technical insights.
 ---
 
-# debug\_traceBlock - Binance Smart Chain
+# debug\_traceBlock - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method provides detailed execution traces of all transactions within a block on BSC, aiding in debugging and performance analysis.
@@ -12,7 +12,7 @@ The RPC method provides detailed execution traces of all transactions within a b
 
 The `debug_traceBlock` method in the BSC protocol provides detailed execution traces for all transactions within a specified block. Utilizing the `debug_traceBlock` Web3 interface, developers can analyze transaction behaviors, including internal calls and state changes, facilitating in-depth debugging and performance analysis.
 
-As part of the `debug_traceBlock` RPC protocol, this method returns comprehensive data, such as opcode execution and gas usage, enabling efficient troubleshooting. It is an invaluable tool for developers aiming to optimize smart contracts and ensure robust application performance on the Binance Smart Chain.
+As part of the `debug_traceBlock` RPC protocol, this method returns comprehensive data, such as opcode execution and gas usage, enabling efficient troubleshooting. It is an invaluable tool for developers aiming to optimize smart contracts and ensure robust application performance on the BNB Smart Chain.
 
 ### Supported Networks
 
@@ -166,4 +166,4 @@ The `debug_traceBlock` method is invaluable for Web3 applications as it provides
 
 ### Conclusion
 
-The `debug_traceBlock` method in JSON-RPC is a crucial tool for developers working on blockchain platforms like BSC (Binance Smart Chain). It allows for in-depth analysis and debugging of block execution, providing insights into the state changes and transactions within a specific block. By utilizing `debug_traceBlock`, developers can ensure the reliability and efficiency of smart contracts and blockchain applications on BSC.
+The `debug_traceBlock` method in JSON-RPC is a crucial tool for developers working on blockchain platforms like BSC (BNB Smart Chain). It allows for in-depth analysis and debugging of block execution, providing insights into the state changes and transactions within a specific block. By utilizing `debug_traceBlock`, developers can ensure the reliability and efficiency of smart contracts and blockchain applications on BSC.

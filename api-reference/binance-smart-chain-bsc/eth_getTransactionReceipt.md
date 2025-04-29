@@ -4,7 +4,7 @@ description: >-
   eth_getTransactionReceipt method via the JSON-RPC API Interface.
 ---
 
-# eth\_getTransactionReceipt - Binance Smart Chain
+# eth\_getTransactionReceipt - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method retrieves transaction receipt details on BSC, including status, block number, gas used, and logs, confirming transaction execution.
@@ -273,4 +273,4 @@ Using the `eth_getTransactionReceipt` method in Web3 applications provides criti
 
 ### Conclusion
 
-The `eth_getTransactionReceipt` method is a crucial JSON-RPC call used to retrieve the status and details of a specific transaction on blockchain networks like Ethereum and Binance Smart Chain (BSC). By providing the transaction hash, users can obtain information such as block number, gas used, and logs, which are essential for verifying transaction success and debugging smart contracts. This makes `eth_getTransactionReceipt` an indispensable tool for developers and users interacting with decentralized applications on BSC and other Ethereum-compatible networks.
+The `eth_getTransactionReceipt` method is a crucial JSON-RPC call used to retrieve the status and details of a specific transaction on blockchain networks like Ethereum and BNB Smart Chain (BSC). By providing the transaction hash, users can obtain information such as block number, gas used, and logs, which are essential for verifying transaction success and debugging smart contracts. This makes `eth_getTransactionReceipt` an indispensable tool for developers and users interacting with decentralized applications on BSC and other Ethereum-compatible networks.

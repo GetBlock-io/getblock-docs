@@ -4,7 +4,7 @@ description: >-
   contract code without state changes, offering a read-only interaction.
 ---
 
-# eth\_call - Binance Smart Chain
+# eth\_call - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method retrieves data from the blockchain without changing state, primarily used to read smart contract information on BSC.
@@ -227,4 +227,4 @@ The `eth_call` method is invaluable in Web3 applications for simulating transact
 
 ### Conclusion
 
-The `eth_call` method in JSON-RPC is a powerful tool for reading data from smart contracts on blockchain networks like BSC (Binance Smart Chain) without making any state changes. By simulating a transaction, `eth_call` allows developers to query the blockchain efficiently, enabling the retrieval of information and testing of smart contract interactions.
+The `eth_call` method in JSON-RPC is a powerful tool for reading data from smart contracts on blockchain networks like BSC (BNB Smart Chain) without making any state changes. By simulating a transaction, `eth_call` allows developers to query the blockchain efficiently, enabling the retrieval of information and testing of smart contract interactions.

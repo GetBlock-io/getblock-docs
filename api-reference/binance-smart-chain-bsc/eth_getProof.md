@@ -4,7 +4,7 @@ description: >-
   efficiently in the BSC protocol for secure blockchain interactions.
 ---
 
-# eth\_getProof - Binance Smart Chain
+# eth\_getProof - BNB Smart Chain
 
 {% hint style="success" %}
 The method retrieves Merkle proof for account and storage, verifying inclusion in the BSC state trie.
@@ -213,4 +213,4 @@ The `eth_getProof` method is beneficial in Web3 applications as it allows develo
 
 ### Conclusion
 
-The `eth_getProof` JSON-RPC method is a powerful tool for retrieving account and storage proof data from the Ethereum blockchain, providing users with a way to verify the state of accounts. In the context of Binance Smart Chain (BSC), this method can be particularly useful for developers looking to ensure data integrity and perform validation checks. By leveraging `eth_getProof`, users can gain deeper insights into blockchain state and enhance their application's trustworthiness.
+The `eth_getProof` JSON-RPC method is a powerful tool for retrieving account and storage proof data from the Ethereum blockchain, providing users with a way to verify the state of accounts. In the context of BNB Smart Chain (BSC), this method can be particularly useful for developers looking to ensure data integrity and perform validation checks. By leveraging `eth_getProof`, users can gain deeper insights into blockchain state and enhance their application's trustworthiness.

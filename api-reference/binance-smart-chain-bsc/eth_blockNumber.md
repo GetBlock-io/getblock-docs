@@ -1,16 +1,16 @@
 ---
 description: >-
-  Retrieve the latest block number on Binance Smart Chain using eth_blockNumber
-  via the JSON-RPC API Interface for seamless blockchain interaction.
+  Retrieve the latest block number on BNB Smart Chain using eth_blockNumber via
+  the JSON-RPC API Interface for seamless blockchain interaction.
 ---
 
-# eth\_blockNumber - Binance Smart Chain
+# eth\_blockNumber - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method for BSC retrieves the latest block number, helping users track blockchain progress and synchronize with the network.
 {% endhint %}
 
-The `eth_blockNumber` method in the JSON-RPC API retrieves the current block number in the Binance Smart Chain (BSC) network. As part of the `eth_blockNumber` Web3 interface, it provides developers with the latest block's index, facilitating real-time blockchain data access for applications interacting with BSC.
+The `eth_blockNumber` method in the JSON-RPC API retrieves the current block number in the BNB Smart Chain (BSC) network. As part of the `eth_blockNumber` Web3 interface, it provides developers with the latest block's index, facilitating real-time blockchain data access for applications interacting with BSC.
 
 Utilizing the `eth_blockNumber` RPC protocol, this method returns the block number as a hexadecimal string, ensuring seamless integration with applications that require blockchain synchronization. This functionality is crucial for monitoring and verifying transactions, enabling efficient blockchain operations and development.
 

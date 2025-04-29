@@ -4,7 +4,7 @@ description: >-
   API Interface. Streamline blockchain interactions efficiently.
 ---
 
-# eth\_coinbase - Binance Smart Chain
+# eth\_coinbase - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC eth\_coinbase retrieves the default account address for mining rewards on the BSC network, though it's largely unused as BSC uses Proof of Staked Authority.
@@ -153,4 +153,4 @@ Using the `eth_coinbase` method in Web3 applications provides a straightforward 
 
 ### Conclusion
 
-The `eth_coinbase` JSON-RPC method is used to retrieve the address of the coinbase (or miner) account for a node on the Ethereum network. Although commonly associated with Ethereum, this method can also be relevant in the context of other blockchain platforms like BSC (Binance Smart Chain) that support Ethereum-compatible JSON-RPC calls. Understanding `eth_coinbase` is crucial for developers working with blockchain nodes to identify the miner responsible for block creation.
+The `eth_coinbase` JSON-RPC method is used to retrieve the address of the coinbase (or miner) account for a node on the Ethereum network. Although commonly associated with Ethereum, this method can also be relevant in the context of other blockchain platforms like BSC (BNB Smart Chain) that support Ethereum-compatible JSON-RPC calls. Understanding `eth_coinbase` is crucial for developers working with blockchain nodes to identify the miner responsible for block creation.

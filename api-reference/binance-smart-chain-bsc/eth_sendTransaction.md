@@ -4,7 +4,7 @@ description: >-
   send transactions on the BSC protocol efficiently and securely.
 ---
 
-# eth\_sendTransaction - Binance Smart Chain
+# eth\_sendTransaction - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method sends a transaction to the BSC network, facilitating actions like transferring tokens or executing smart contracts.
@@ -184,4 +184,4 @@ Using the `eth_sendTransaction` method in Web3 applications allows developers to
 
 ### Conclusion
 
-The `eth_sendTransaction` method is a crucial part of the JSON-RPC API, allowing for the transfer of Ether or execution of smart contracts on Ethereum and compatible networks like BSC (Binance Smart Chain). This method facilitates seamless interaction with the blockchain, enabling users to initiate transactions by specifying parameters such as sender, receiver, gas, and value. By leveraging `eth_sendTransaction`, developers can efficiently build decentralized applications that interact with Ethereum-based ecosystems.
+The `eth_sendTransaction` method is a crucial part of the JSON-RPC API, allowing for the transfer of Ether or execution of smart contracts on Ethereum and compatible networks like BSC (BNB Smart Chain). This method facilitates seamless interaction with the blockchain, enabling users to initiate transactions by specifying parameters such as sender, receiver, gas, and value. By leveraging `eth_sendTransaction`, developers can efficiently build decentralized applications that interact with Ethereum-based ecosystems.

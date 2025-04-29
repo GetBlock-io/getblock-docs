@@ -4,7 +4,7 @@ description: >-
   analyzing bad blocks in the BSC protocol efficiently.
 ---
 
-# debug\_standardTrace BadBlockToFile - Binance Smart Chain
+# debug\_standardTrace BadBlockToFile - BNB Smart Chain
 
 {% hint style="success" %}
 The RPC method records detailed trace data of problematic BSC blocks to a file, aiding in debugging and analyzing blockchain issues.
@@ -12,7 +12,7 @@ The RPC method records detailed trace data of problematic BSC blocks to a file, 
 
 The `debug_standardTraceBadBlockToFile` method in the BSC protocol is a powerful tool used for tracing and debugging problematic blocks. It captures detailed execution traces of bad blocks and writes them to a file, facilitating in-depth analysis. This method is part of the `debug_standardTraceBadBlockToFile` Web3 interface, providing developers with essential insights into block execution failures.
 
-Utilizing the `debug_standardTraceBadBlockToFile` RPC protocol, developers can effectively diagnose issues within the Binance Smart Chain by examining the precise operations and state changes leading to block errors. This aids in identifying bugs and optimizing performance, ensuring a more robust blockchain environment.
+Utilizing the `debug_standardTraceBadBlockToFile` RPC protocol, developers can effectively diagnose issues within the BNB Smart Chain by examining the precise operations and state changes leading to block errors. This aids in identifying bugs and optimizing performance, ensuring a more robust blockchain environment.
 
 ### Supported Networks
 

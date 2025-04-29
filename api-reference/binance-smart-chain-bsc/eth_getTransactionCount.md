@@ -4,7 +4,7 @@ description: >-
   eth_getTransactionCount via the JSON-RPC API Interface on the BSC protocol.
 ---
 
-# eth\_getTransactionCount - Binance Smart Chain
+# eth\_getTransactionCount - BNB Smart Chain
 
 {% hint style="success" %}
 The method retrieves the number of transactions sent from a specific BSC address, useful for determining the nonce for new transactions.
@@ -166,4 +166,4 @@ Using the `eth_getTransactionCount` method in Web3 applications is beneficial as
 
 ### Conclusion
 
-The JSON-RPC method `eth_getTransactionCount` is used to retrieve the number of transactions sent from a specific address, in this case, "0x8D97689C9818892B700e27F316cc3E41e17fBeb9", on the Ethereum blockchain or compatible networks like Binance Smart Chain (BSC). By specifying the "latest" parameter, it fetches the most recent transaction count, which is crucial for understanding an account's activity and managing nonce values in subsequent transactions. Utilizing `eth_getTransactionCount` via JSON-RPC is essential for developers and users interacting with Ethereum or BSC to ensure accurate transaction management.
+The JSON-RPC method `eth_getTransactionCount` is used to retrieve the number of transactions sent from a specific address, in this case, "0x8D97689C9818892B700e27F316cc3E41e17fBeb9", on the Ethereum blockchain or compatible networks like BNB Smart Chain (BSC). By specifying the "latest" parameter, it fetches the most recent transaction count, which is crucial for understanding an account's activity and managing nonce values in subsequent transactions. Utilizing `eth_getTransactionCount` via JSON-RPC is essential for developers and users interacting with Ethereum or BSC to ensure accurate transaction management.

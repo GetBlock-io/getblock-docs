@@ -4,10 +4,10 @@ description: >-
   JSON-RPC API Interface in the BSC protocol. Technical and user-friendly.
 ---
 
-# eth\_getStorageAt - Binance Smart Chain
+# eth\_getStorageAt - BNB Smart Chain
 
 {% hint style="success" %}
-The RPC method retrieves the value stored at a specific storage position of a smart contract on Binance Smart Chain.
+The RPC method retrieves the value stored at a specific storage position of a smart contract on BNB Smart Chain.
 {% endhint %}
 
 The `eth_getStorageAt` method in the BSC protocol allows users to retrieve the value stored at a specific storage position of a contract. Using the `eth_getStorageAt Web3` interface, developers can easily interact with smart contract storage by providing the contract address, storage position, and block number.
