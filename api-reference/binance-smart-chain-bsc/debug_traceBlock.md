@@ -25,12 +25,12 @@ The `debug_traceBlock` JSON-RPC API method supports the following network types:
 
 Here is the list of parameters `debug_traceBlock` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-* **Parameter 1:**
+* **blockhash:**
   * **Type:** String
   * **Description:** The block hash of the block to be traced.
   * **Required:** Yes
   * **Default/Supported Values:** The hash should be a valid hexadecimal string representing the block hash.
-* **Parameter 2:**
+* **traceOptions:**
   * **Type:** Object or `null`
   * **Description:** An optional parameter that can be used to specify additional configurations for the trace operation. In this request, it is set to `null`.
   * **Required:** No

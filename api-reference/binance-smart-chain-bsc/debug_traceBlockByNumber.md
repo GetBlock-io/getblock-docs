@@ -25,13 +25,13 @@ The `debug_traceBlockByNumber` JSON-RPC API method supports the following networ
 
 Here is the list of parameters `debug_traceBlockByNumber` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-* **Parameter 1**:
+* **blocknumber**:
   * **Type**: String
   * **Description**: The block number in hexadecimal format.
   * **Required**: Yes
   * **Example**: `"0xA1"`
   * **Details**: This parameter specifies the block number for which the trace is requested. It should be provided in hexadecimal format prefixed with `0x`.
-* **Parameter 2**:
+* **Object**:
   * **Type**: Object
   * **Description**: A tracer configuration object.
   * **Required**: Yes

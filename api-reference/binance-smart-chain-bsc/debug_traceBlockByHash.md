@@ -25,12 +25,12 @@ The `debug_traceBlockByHash` JSON-RPC API method supports the following network 
 
 Here is the list of parameters `debug_traceBlockByHash` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-* **Parameter 1: Block Hash**
+* **blockHash: Block Hash**
   * **Type:** String
   * **Description:** The hash of the block to be traced.
   * **Required:** Yes
   * **Example:** `"0x0cf46846c9f2abef8e40ed2f8deea4b789464f44284efe25d443e8d272393fce"`
-* **Parameter 2: Options**
+* &#x20;**Options:**
   * **Type:** Object or `null`
   * **Description:** Additional options for tracing, such as enabling memory storage or disabling stack traces.
   * **Required:** No

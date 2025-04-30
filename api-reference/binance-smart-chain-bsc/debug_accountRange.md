@@ -25,34 +25,34 @@ The `debug_accountRange` JSON-RPC API method supports the following network type
 
 Here is the list of parameters `debug_accountRange` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-* **Parameter 1:**
+* **stateRoot:**
   * **Type:** String
   * **Description:** The root of the account trie.
   * **Required:** Yes
   * **Example Value:** `"0xc48fb64230a82f65a08e7280bd8745e7fea87bc7c206309dee32209fe9a985f7"`
-* **Parameter 2:**
+* **startKey:**
   * **Type:** String
   * **Description:** The starting account address, represented as a hexadecimal string.
   * **Required:** Yes
   * **Example Value:** `"0x0f"`
-* **Parameter 3:**
+* **maxResults:**
   * **Type:** Integer
   * **Description:** The maximum number of accounts to return.
   * **Required:** Yes
   * **Example Value:** `0`
-* **Parameter 4:**
+* **includeStorage:**
   * **Type:** Boolean
   * **Description:** Whether to include storage information.
   * **Required:** Yes
   * **Supported Values:** `true` or `false`
   * **Example Value:** `false`
-* **Parameter 5:**
+* **includeCode:**
   * **Type:** Boolean
   * **Description:** Whether to include code information.
   * **Required:** Yes
   * **Supported Values:** `true` or `false`
   * **Example Value:** `false`
-* **Parameter 6:**
+* **includeBalance:**
   * **Type:** Boolean
   * **Description:** Whether to include account balance information.
   * **Required:** Yes

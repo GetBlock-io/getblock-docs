@@ -25,7 +25,7 @@ The `debug_traceCall` JSON-RPC API method supports the following network types:
 
 Here is the list of parameters `debug_traceCall` method needs to be executed. Always format the method name as inline code (wrapped in backticks).
 
-* **Parameter 1: Transaction Object**
+* **tx: Transaction Object**
   * **Type:** Object
   * **Description:** Contains the transaction details for the call.
   * **Fields:**
@@ -34,7 +34,7 @@ Here is the list of parameters `debug_traceCall` method needs to be executed. Al
       * **Description:** The address of the recipient.
       * **Required:** Yes
       * **Example:** `"0xd46e8dd67c5d32be8058bb8eb970870f07244567"`
-* **Parameter 2: Block Identifier**
+* **blockTag: Block Identifier**
   * **Type:** String
   * **Description:** Specifies the block number or block tag to execute the call against.
   * **Required:** Yes
@@ -44,7 +44,7 @@ Here is the list of parameters `debug_traceCall` method needs to be executed. Al
     * `"pending"`
     * `"finalized"`
   * **Example:** `"finalized"`
-* **Parameter 3: Options**
+* **traceOptions: Options**
   * **Type:** Object
   * **Description:** Additional options to customize the tracing.
   * **Fields:**
