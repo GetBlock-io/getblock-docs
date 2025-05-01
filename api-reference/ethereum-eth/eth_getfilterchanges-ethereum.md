@@ -54,7 +54,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```
 {% endtab %}
 
-{% tab title="ws" %}
+{% tab title="wss" %}
 ```json
 wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
 # wait for connection and send the request body 

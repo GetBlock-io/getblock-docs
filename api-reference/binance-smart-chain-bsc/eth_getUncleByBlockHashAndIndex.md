@@ -60,6 +60,21 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 "id": "getblock.io"}
 ```
 {% endtab %}
+
+{% tab title="wss" %}
+```json
+wscat -c wss://go.getblock.io/{ACCESS_TOKEN}/
+{
+    "jsonrpc": "2.0",
+    "method": "eth_getUncleByBlockHashAndIndex",
+    "params": [
+        "0xc48fb64230a82f65a08e7280bd8745e7fea87bc7c206309dee32209fe9a985f7",
+        "0x0"
+    ],
+    "id": "getblock.io"
+}
+```
+{% endtab %}
 {% endtabs %}
 
 **Response**

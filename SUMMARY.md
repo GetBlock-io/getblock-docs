@@ -183,7 +183,7 @@
   * [web3\_sha3 - Avalanche](api-reference/avalanche-avax/avax_web3_sha3.md)
 * [BNB Smart Chain (BSC)](api-reference/binance-smart-chain-bsc/README.md)
   * [debug\_accountRange - BNB Smart Chain](api-reference/binance-smart-chain-bsc/debug_accountRange.md)
-  * [debug\_standardTrace BadBlockToFile - BNB Smart Chain](api-reference/binance-smart-chain-bsc/debug_standardTraceBadBlockToFile.md)
+  * [debug\_standardTraceBadBlockToFile - BNB Smart Chain](api-reference/binance-smart-chain-bsc/debug_standardTraceBadBlockToFile.md)
   * [debug\_standard TraceBlock ToFile - BNB Smart Chain](api-reference/binance-smart-chain-bsc/debug_standardTraceBlockToFile.md)
   * [debug\_storageRangeAt - BNB Smart Chain](api-reference/binance-smart-chain-bsc/debug_storageRangeAt.md)
   * [debug\_traceBlock - BNB Smart Chain](api-reference/binance-smart-chain-bsc/debug_traceBlock.md)

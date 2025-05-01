@@ -50,6 +50,18 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
 }
 ```
 {% endtab %}
+
+{% tab title="wss" %}
+```json
+wscat -c wss://go.getblock.io/{ACCESS_TOKEN}/
+{
+    "jsonrpc": "2.0",
+    "method": "eth_newPendingTransactionFilter",
+    "params": [],
+    "id": "getblock.io"
+}
+```
+{% endtab %}
 {% endtabs %}
 
 **Response**

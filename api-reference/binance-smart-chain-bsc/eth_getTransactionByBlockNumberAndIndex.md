@@ -4,7 +4,7 @@ description: >-
   eth_getTransactionByBlockNumberAndIndex in the JSON-RPC API Interface on BSC.
 ---
 
-# eth\_getTransactionByBlockNumberAndIndex - Binance Smart Chain
+# eth\_getTransactionByBlockNumberAndIndex - BNB Smart Chain
 
 {% hint style="success" %}
 Retrieves a transaction from a specific block number and index on BSC, aiding in transaction tracking and blockchain analysis.
@@ -59,6 +59,16 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/
   "params": ["0xc5043f", "0x0"],
   "id": 1
 }
+```
+{% endtab %}
+
+{% tab title="wss" %}
+```json
+wscat -c wss://go.getblock.io/{ACCESS_TOKEN}/
+{"jsonrpc": "2.0",
+"method": "eth_getTransactionByBlockNumberAndIndex",
+"params": ["0x52A96E", "0x1"],
+"id": "getblock.io"}
 ```
 {% endtab %}
 {% endtabs %}
