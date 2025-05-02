@@ -74,7 +74,7 @@ yarn add axios
 Create a file called `index.js` and add the following code:
 
 ```js
-jsКопироватьРедактироватьimport axios from "axios";
+import axios from "axios";
 
 const url = `https://go.getblock.io/<ACCESS-TOKEN>/`;  // Replace <ACCESS-TOKEN> with your actual API key
 
