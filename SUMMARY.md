@@ -33,6 +33,7 @@
   * [TronWeb integration](guides/using-web3-libraries/connect-to-getblock-with-tronweb.md)
 * [Connect to GetBlock with MetaMask](guides/connect-to-getblock-with-metamask.md)
 * [Querying Web3 data using Covalent API](guides/querying-web3-data-using-covalent-api.md)
+* [Connect Brave Wallet to GetBlock](guides/connect-brave-wallet-to-getblock.md)
 
 ## API REFERENCE
 
