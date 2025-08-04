@@ -51,7 +51,7 @@ Your **node’s region** is locked in when you deploy it, during the setup flow.
 
 Example endpoint URLs:
 
-```typescript
+```http
 // Europe (Frankfurt)
 https://go.getblock.io/<YOUR_ACCESS_TOKEN>/
 
