@@ -35,6 +35,12 @@
 * [Querying Web3 data using Covalent API](guides/querying-web3-data-using-covalent-api.md)
 * [Connect Brave Wallet to GetBlock](guides/connect-brave-wallet-to-getblock.md)
 
+## ADD-ONS
+
+* [Yellowstone gRPC API](add-ons/yellowstone-grpc-api/README.md)
+  * [Overview](add-ons/yellowstone-grpc-api/overview.md)
+  * [Quickstart guide](add-ons/yellowstone-grpc-api/quickstart-guide.md)
+
 ## API REFERENCE
 
 * [Overview](api-reference/overview.md)
