@@ -6,15 +6,6 @@ description: Track and extend your dedicated node subscriptions on GetBlock.
 
 This page explains how to manage your **dedicated node subscriptions**, including checking their status and extending the service duration—all from your user account.
 
-{% hint style="success" %}
-### Update on Dedicated Node pricing
-
-GetBlock is introducing an advanced Dedicated Node service with updated pricing:
-
-* **Existing users** can extend their subscriptions at the old pricing until **May 1, 2025**.
-* **New users** can purchase new subscriptions at the current pricing until the service upgrade begins on **March 25, 2025**.
-{% endhint %}
-
 ***
 
 ### Tracking subscription status
@@ -41,9 +32,9 @@ Each endpoint in “**My endpoints**” list now shows its current subscription 
 
 ***
 
-#### Subscription statuses&#x20;
+#### Subscription status breakdown&#x20;
 
-<table><thead><tr><th width="201.48828125" align="center">Status</th><th width="219.43359375" align="center">Dashboard View</th><th align="center" valign="middle">Manage Plans View</th></tr></thead><tbody><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-1">Active </a></p><p><a data-footnote-ref href="#user-content-fn-1">(<mark style="color:orange;">Recurring Payment</mark></a><mark style="color:orange;">)</mark></p></td><td align="center"><img src="../../.gitbook/assets/Status_1 (1).svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_1(MP) (1).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-2">Active </a></p><p><a data-footnote-ref href="#user-content-fn-2">(<mark style="color:green;">One-Time Payment</mark></a><mark style="color:green;">)</mark></p></td><td align="center"><img src="../../.gitbook/assets/Status_2 (1).svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_2(MP).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-3">Expiring Soon </a></p><p>(<mark style="color:green;">One-Time Payment</mark>) </p></td><td align="center"><img src="../../.gitbook/assets/Status_3.svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_3(MP).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-4">In Grace Period </a></p><p>(<mark style="color:orange;">Recurring</mark> /<mark style="color:green;">One-Time</mark>)</p></td><td align="center"><img src="../../.gitbook/assets/Status_4.svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_4(MP).svg" alt=""></td></tr></tbody></table>
+<table><thead><tr><th width="201.48828125" align="center">Status</th><th width="219.43359375" align="center">Dashboard View</th><th align="center" valign="middle">Manage Plans View</th></tr></thead><tbody><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-1">Active </a></p><p>(<mark style="color:orange;">Recurring Payment)</mark></p></td><td align="center"><img src="../../.gitbook/assets/Status_1 (1).svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_1(MP) (1).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-2">Active </a></p><p>(<mark style="color:green;">One-Time Payment)</mark></p></td><td align="center"><img src="../../.gitbook/assets/Status_2 (1).svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_2(MP).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-3">Expiring Soon </a></p><p>(<mark style="color:green;">One-Time Payment</mark>) </p></td><td align="center"><img src="../../.gitbook/assets/Status_3.svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_3(MP).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-4">In Grace Period </a></p><p>(<mark style="color:orange;">Recurring</mark> /<mark style="color:green;">One-Time</mark>)</p></td><td align="center"><img src="../../.gitbook/assets/Status_4.svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_4(MP).svg" alt=""></td></tr></tbody></table>
 
 ***
 

@@ -16,15 +16,16 @@ You can explore detailed pricing and plans from your **dashboard** in the “Pri
 
 Shared nodes operate on a **resource-sharing model**, where multiple clients access the same underlying node infrastructure maintained by GetBlock.&#x20;
 
-<figure><img src="../../.gitbook/assets/Shared_Plans.svg" alt="GetBlock shared RPC node pricing options"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Shared_Plans_2025_upd.svg" alt="GetBlock shared RPC node pricing options"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
 
 Our Shared Nodes deliver the perfect balance between affordability and performance:&#x20;
 
 * **Cost efficiency:** Benefit from our pricing model based on [**Compute Units (CU)**](what-counts-as-a-cu.md), so you only pay for the resources needed for your current workload.&#x20;
 * **Flexible pricing**: Options range from a **free** to **high-volume plans —** accessible for individual developers and smaller teams while supporting the scaling needs of growing dApps.
-* **Consistent performance**: Each plan enforces a Requests Per Second (**RPS**) limit, preventing individual spikes from impacting overall quality.
-* **Tiered support levels**: Support options adapt to your requirements, **from basic help to priority** support when you need it most.
-* **Multi-chain accessibility**: Prototype, test, and deploy applications **across different networks** without the complexities of connecting to each blockchain individually.
+* **Consistent performance**: Each plan enforces a Requests Per Second (RPS) limit, preventing individual spikes from impacting overall quality.
+* **Multi-chain accessibility**: Prototype, test, and deploy applications across different networks without the complexities of deploying infrastructure for each blockchain individually.
+* **Regional endpoints**: Connect to the nearest datacenter — Frankfurt (EU), New York (US), Singapore (APAC) — to minimize network latency.
+* **Tiered support levels**: Support options adapt to your requirements, from basic help to priority support when you need it most.
 
 {% hint style="success" %}
 This option is ideal for developers and teams looking for reliable connectivity to various blockchain networks without the higher costs of dedicated server resources.
@@ -40,7 +41,7 @@ A Dedicated Node is a **private RPC server** deployed solely for your use case. 
 If your project demands the fastest, most reliable blockchain infrastructure, a Dedicated Node from GetBlock is a perfect choice.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Dedic_Plan.svg" alt="What does it cost to deploy a private blockchain node"><figcaption><p>GetBlock private node features and pricing</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Dedic_Plan_upd.svg" alt="What does it cost to deploy a private blockchain node"><figcaption><p>GetBlock private node features and pricing</p></figcaption></figure>
 
 This option is ideal for users that require high performance, full control over node configuration, and a flawless connection to the blockchain without any limitations:
 

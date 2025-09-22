@@ -26,13 +26,13 @@ For more detailed analysis, visit the **Statistics** tab in ‘My Endpoints’ s
 Customize the data view by **parameters** or by **access** **tokens** using the dropdown menu.
 {% endhint %}
 
-Select the time period, protocol name, networks (mainnet/testnet), and API interfaces to analyze the data by parameters.
+Select the time period, protocol name, networks (mainnet/testnet), region, and API interfaces to analyze the data by parameters.
 
-<figure><img src="../.gitbook/assets/Stats_pro_user.svg" alt="How to track your blokchain API usage"><figcaption><p>The Statistics tab shows more in-depth and customizable data analysis for your endpoints</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/stats_new.svg" alt="How to track your blokchain API usage"><figcaption><p>The Statistics tab shows more in-depth and customizable data analysis for your endpoints</p></figcaption></figure>
 
 All data is displayed through infographics, including:
 
-* Number of requests
+* Number of requests and CUs
 * Response statuses
 * Method call distribution
 * Rate limit rejections
