@@ -1,7 +1,7 @@
 ---
 description: >-
    This endpoint gets the latest information from the Aptos blockchain ledger,
-  including chain ID
+   including chain ID
 ---
 
 # /v1 - Aptos
