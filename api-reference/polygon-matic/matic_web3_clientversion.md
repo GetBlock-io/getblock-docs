@@ -1,29 +1,46 @@
 ---
 description: >-
-  Example code for the web3_clientVersion json-rpc method. Сomplete guide on how
-  to use web3_clientVersion json-rpc in GetBlock.io Web3 documentation.
+  Learn how to use web3_clientVersion JSON-RPC method to retrieve the Polygon client
+  version. Complete guide with examples for identifying node software and version info.
 ---
 
 # web3\_clientVersion - Polygon
 
-#### Parameters
+{% hint style="info" %}
+The `web3_clientVersion` method returns the current client version of the Polygon node. This method is useful for identifying the specific implementation and version of the blockchain client software running on the node.
+{% endhint %}
 
-\-
+### Use Cases
 
-#### Request
+* **Node Verification**: Confirm you're connected to the correct Polygon node implementation (Bor)
+* **Compatibility Checks**: Verify the node version supports specific features or RPC methods
+* **Debugging**: Identify potential version-specific issues or behaviors
+* **Monitoring**: Track node software versions across your infrastructure
 
-```java
+### Parameters
+
+None
+
+### Request
+
+{% tabs %}
+{% tab title="cURL" %}
+```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
---header 'Content-Type: application/json' \ 
---data-raw '{"jsonrpc": "2.0",
-"method": "web3_clientVersion",
-"params": [],
-"id": "getblock.io"}'
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "jsonrpc": "2.0",
+  "method": "web3_clientVersion",
+  "params": [],
+  "id": "getblock.io"
+}'
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Response
 
-```java
+```json
 {
     "id": "getblock.io",
     "jsonrpc": "2.0",
