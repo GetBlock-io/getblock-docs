@@ -1,7 +1,6 @@
 ---
 description: >-
-  Get all on-chain events for a given Aptos account using its event handle
-  creation number.
+  Example code for the /v1/accounts/{account_hash}/events/{creation_number} JSON-RPC method. Сomplete guide on how to use /v1/accounts/{account_hash}/events/{creation_number} json-rpc in GetBlock.io Web3 documentation.
 ---
 
 # /v1/accounts/{account_hash}/events/{creation_number}
