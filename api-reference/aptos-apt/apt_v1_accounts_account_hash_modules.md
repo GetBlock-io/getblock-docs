@@ -1,6 +1,6 @@
 ---
 description: >-
-    Retrieves all modules (smart contracts) and their bytecode deployed under a specific account at a specific ledger version.
+    Example code for the /v1/accounts/{account_hash}/modules JSON-RPC method. Сomplete guide on how to use /v1/accounts/{account_hash}/modules json-rpc in GetBlock.io Web3 documentation.
 ---
 
 # /v1/accounts/{account\_hash}/modules - Aptos
