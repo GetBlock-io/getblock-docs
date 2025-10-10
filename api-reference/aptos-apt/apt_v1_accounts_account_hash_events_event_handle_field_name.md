@@ -1,7 +1,6 @@
 ---
 description: >-
-    Get specific on-chain events for an Aptos account using an event handle 
-    and field name.
+    Example code for the /v1/accounts/{account_hash}/events/{event_handle}/{field_name} JSON-RPC method. Сomplete guide on how to use /v1/accounts/{account_hash}/events/{event_handle}/{field_name} json-rpc in GetBlock.io Web3 documentation.
 ---
     
   # /v1/accounts/{account_hash}/events/{event_handle}/{field_name}
