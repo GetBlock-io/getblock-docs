@@ -1,6 +1,6 @@
 ---
 description: >-
-  This endpoint gets the account details, including the number of transactions submitted by an account and its     authentication key.
+    Example code for the /v1/accounts/{account_hash} json-rpc method. Сomplete guide on how to use /v1/accounts/{account_hash} json-rpc in GetBlock.io Web3 documentation.
 ---
 
 # /v1/accounts/{account\_hash} - Aptos
