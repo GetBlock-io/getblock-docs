@@ -228,7 +228,37 @@ This method can be used for:
 * Get a specific block by its height.
 * Explore transactions inside a given block.
 * Build block explorers or monitoring dashboards.
-  
+
+## Code Example
+
+**Python(Request)**
+
+```python
+import requests
+
+url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/blocks/by_height/425737645?with_transactions=false"
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+```
+**Node(Axios)**
+```js
+import axios from ‘axios’
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: "https://go.getblock.io/<ACCESS_TOKEN>/v1/blocks/by_height/425737645?with_transactions=false"
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+```
 ## Error Handling
 
 <table>
