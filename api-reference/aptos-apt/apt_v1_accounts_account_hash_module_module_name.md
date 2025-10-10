@@ -1,7 +1,6 @@
 ---
 description: >-
-  Get detailed information about a specific smart contract (module) 
-  deployed under a given Aptos account.
+    Example code for the /v1/accounts/{account_hash}/module/{module_name} JSON-RPC method. Сomplete guide on how to use /v1/accounts/{account_hash}/module/{module_name}json-rpc in GetBlock.io Web3 documentation.
 ---
 
 # /v1/accounts/{account_hash}/module/{module_name}
