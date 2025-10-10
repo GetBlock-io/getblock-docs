@@ -1,8 +1,6 @@
 ---
 description: >-
-  This endpoint gets all resources associated with a specific account at the
-  latest ledger version. These include authentication key, sequence number, GUID,
-  smart contract states, tokens, and more.
+    Example code for the /v1/accounts/{account_hash}/resources JSON-RPC method. Сomplete guide on how to use /v1/accounts/{account_hash}/resources json-rpc in GetBlock.io Web3 documentation.
 ---
 
 # /v1/accounts/{account_hash}/resources – Aptos
