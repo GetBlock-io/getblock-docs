@@ -1,7 +1,6 @@
 ---
 description: >-
-   This endpoint gets the latest information from the Aptos blockchain ledger,
-   including chain ID
+   Example code for the /v1 JSON-RPC method. Сomplete guide on how to use /v1 json-rpc in GetBlock.io Web3 documentation.
 ---
 
 # /v1 - Aptos
