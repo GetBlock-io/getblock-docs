@@ -72,22 +72,22 @@ curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions?limit=1'
 ```json
 [
     {
-        "version": "3363892352",
-        "hash": "0x5b34f4618d0e421f46b2d0a07ba307caabc17c5d28b20e04a2436394187c0272",
+        "version": "3556744764",
+        "hash": "0x1cd28f386d48edfaf30c822117bd0b971e349c59f5fdd08f284558b33ac1715f",
         "state_change_hash": "0xafb6e14fe47d850fd0a7395bcfb997ffacf4715e0f895cc162c218e4a7564bc6",
         "event_root_hash": "0x414343554d554c41544f525f504c414345484f4c4445525f4841534800000000",
-        "state_checkpoint_hash": "0x5267087614437f5aae0662342f49b8e06756c3d74c994af195a6e9a2976f29e0",
+        "state_checkpoint_hash": "0xe8daf9e9f3986dc69e0247b5638af4f55a6e5912da8a2c71e1fa537009a59964",
         "gas_used": "0",
         "success": true,
         "vm_status": "Executed successfully",
-        "accumulator_root_hash": "0x12aa45cc9a90fc25804d7b5017b7aecff53ce7f0fa376ef3c9f9b9e5bb781e97",
+        "accumulator_root_hash": "0x6a006a1a2d4d22b7fdf4ca27a31aac610c3911429d8e5f925e31016738b225e2",
         "changes": [],
-        "timestamp": "1757261604675388",
+        "timestamp": "1760341338522220",
         "block_end_info": {
             "block_gas_limit_reached": false,
             "block_output_limit_reached": false,
-            "block_effective_block_gas_units": 135,
-            "block_approx_output_size": 20765
+            "block_effective_block_gas_units": 71,
+            "block_approx_output_size": 7846
         },
         "type": "block_epilogue_transaction"
     }
