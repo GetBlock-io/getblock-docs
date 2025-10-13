@@ -64,7 +64,7 @@ https://go.getblock.io/<ACCESS_TOKEN>
 ```
 **Example(cURL)**
 ```curl
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_version/3556737308'
+curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_version/3556737308?with_transactions=true'
 ```
 
 ## Response Example
