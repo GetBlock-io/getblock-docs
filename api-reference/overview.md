@@ -1,4 +1,7 @@
 ---
+description: >-
+  GetBlock API docs: RPC endpoints, SDK guides, and developer tools. Everything
+  you need to connect and build on 70+ blockchain networks
 icon: hammer
 ---
 
@@ -26,7 +29,7 @@ print(response.json())
 
 GetBlock is offering one of the most comprehensive APIs toolkits in the segment supporting hundreds of dApps with fast and reliable connection to blockchain nodes.
 
-#### 50+ blockchains in store
+#### 70+ blockchains in store
 
 * Seamless connection to full and archive nodes
 * Shared and dedicated nodes: Tailored for your dApp’s needs.
@@ -42,7 +45,7 @@ All mainstream RPC interfaces
 * JSON RPC
 * GraphQL
 * REST API
-* And more to come
+* And more&#x20;
 
 Add them in Lego-like manner: [https://account.getblock.io/](https://account.getblock.io/)&#x20;
 

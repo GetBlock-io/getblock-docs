@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock Solana RPC API documentation: JSON-RPC reference, WebSocket
+  subscriptions, and connection guides for mainnet & devnet endpoints
+---
+
 # Solana (SOL)
 
 GetBlock provides RPC endpoints that implement the Solana JSON-RPC API standard. These methods are core functionalities for interacting with Solana nodes, enabling seamless integration with the Solana blockchain.

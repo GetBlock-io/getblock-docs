@@ -86,7 +86,6 @@ else:
 
 ## Common Errors
 
-Common Errors\
 When using the net\_version RPC Tron method, the following issues may occur:
 
 * Incorrect Endpoint: If the endpoint URL is incorrect or unreachable, the request may fail. Ensure the endpoint URL is correctly configured and accessible from your network.
@@ -94,8 +93,6 @@ When using the net\_version RPC Tron method, the following issues may occur:
 * Invalid JSON Format: If the JSON request is improperly formatted, the server will return an error. Verify that the JSON structure adheres to the correct syntax and includes all necessary fields.
 * Authentication Errors: If the API requires authentication and credentials are missing or incorrect, the request will be denied. Double-check your authentication details and permissions.
 
-Using the net\_version method in Web3 applications is beneficial as it allows developers to programmatically determine the network version of the Tron blockchain they are interacting with. This ensures compatibility and aids in debugging by confirming that the application is connected to the intended network environment.
-
 ### conclusion
 
-The `net_version` RPC method in Tron is a crucial tool for developers and users to determine the network version of the blockchain they are interacting with. By utilizing the `net_version` RPC, one can ensure compatibility and proper communication with the Tron network. This functionality is essential for maintaining seamless blockchain operations and integrations.
+The `net_version` RPC method in Tron is a crucial tool for developers and users to determine the network version of the blockchain they are interacting with. By utilizing the `net_version` RPC, one can ensure compatibility and proper communication with the Tron network. This functionality ensures compatibility and aids in debugging by confirming that the application is connected to the intended network environment.

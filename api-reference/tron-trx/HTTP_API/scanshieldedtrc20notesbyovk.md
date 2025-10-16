@@ -1,12 +1,22 @@
+---
+description: >-
+  ScanShieldedTrc20NotesByOvk method retrieves shielded TRC-20 notes by OVK on
+  the TRON blockchain
+---
+
 # scanshieldedtrc20notesbyovk - TRON
 
 ## Description
 
-The scanshieldedtrc20notesbyovk Web3 method within the Tron protocol offers a robust solution for scanning shielded TRC-20 notes using the RESTful API Interface. This method is designed for developers seeking to enhance privacy and security in decentralized applications. By utilizing the scanshieldedtrc20notesbyovk RPC protocol, users can efficiently query and retrieve shielded transaction details, ensuring confidentiality and integrity. The interface is engineered to be intuitive yet powerful, catering to both novice and experienced developers in the blockchain space. With comprehensive documentation and support, integrating this method into your Web3 applications is seamless, promoting a secure and efficient blockchain ecosystem.
+The ScanShieldedTrc20NotesByOvk Web3 method within the Tron protocol offers a robust solution for scanning shielded TRC-20 notes using the RESTful API Interface.&#x20;
+
+This method is designed for developers seeking to enhance privacy and security in decentralized applications. By utilizing the scanshieldedtrc20notesbyovk RPC protocol, users can efficiently query and retrieve shielded transaction details, ensuring confidentiality and integrity.&#x20;
+
+The interface is engineered to be intuitive yet powerful, catering to both novice and experienced developers in the blockchain space. With comprehensive documentation and support, integrating this method into your Web3 applications is seamless, promoting a secure and efficient blockchain ecosystem.
 
 ## Supported Networks
 
-The scanshieldedtrc20notesbyovk REST API method supports the following network types
+The ScanShieldedTrc20NotesByOvk REST API method supports the following network types
 
 * **Mainnet**
 * **Testnets**
@@ -21,7 +31,7 @@ None: This method does not require any parameters.
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
-Here’s a sample cURL request using scanshieldedtrc20notesbyovk
+Here’s a sample cURL request using ScanShieldedTrc20NotesByOvk
 
 Request
 
@@ -55,7 +65,7 @@ Here is the list of body parameters for the `scanshieldedtrc20notesbyovk` method
 6. **include\_spent**: A boolean indicating whether to include spent notes in the response.
 7. **include\_unspent**: A boolean indicating whether to include unspent notes in the response.
 
-## Use Case
+## Use Cases
 
 Here are some use-cases for the `scanshieldedtrc20notesbyovk` method:
 
@@ -85,16 +95,15 @@ print(response.json())
 
 ## Common Errors
 
-Common Errors\
-When using the scanshieldedtrc20notesbyovk HTTP REST API Tron method, the following issues may occur:
+When using the ScanShieldedTrc20NotesByOvk HTTP REST API Tron method, the following issues may occur:
 
-* Incorrect OVK format: The provided Outgoing Viewing Key (OVK) may be improperly formatted. Ensure that the OVK is a valid hexadecimal string and matches the expected length requirements.
-* Insufficient permissions: The API request may fail if the associated account does not have the necessary permissions. Verify that the account has the appropriate access rights to perform shielded TRC-20 note scans.
-* Network connectivity issues: Occasionally, network disruptions can prevent the API request from reaching the Tron network. Check your network connection and retry the request if a timeout or connectivity error occurs.
-* Outdated API version: Using an outdated version of the API might lead to compatibility issues. Ensure that you are using the latest version of the Tron API to maintain compatibility and access new features.
+* **Incorrect OVK format**: The provided Outgoing Viewing Key (OVK) may be improperly formatted. Ensure that the OVK is a valid hexadecimal string and matches the expected length requirements.
+* **Insufficient permissions**: The API request may fail if the associated account does not have the necessary permissions. Verify that the account has the appropriate access rights to perform shielded TRC-20 note scans.
+* **Network connectivity issues**: Occasionally, network disruptions can prevent the API request from reaching the Tron network. Check your network connection and retry the request if a timeout or connectivity error occurs.
+* **Outdated API version**: Using an outdated version of the API might lead to compatibility issues. Ensure that you are using the latest version of the Tron API to maintain compatibility and access new features.
 
-The scanshieldedtrc20notesbyovk method offers significant benefits for Web3 applications by providing enhanced privacy features. It enables developers to efficiently scan and manage shielded TRC-20 transactions while maintaining confidentiality. This functionality is crucial for applications that prioritize user privacy and secure transaction handling in the decentralized ecosystem.
+The ScanShieldedTrc20NotesByOvk method offers significant benefits for Web3 applications by providing enhanced privacy features. It enables developers to efficiently scan and manage shielded TRC-20 transactions while maintaining confidentiality. This functionality is crucial for applications that prioritize user privacy and secure transaction handling in the decentralized ecosystem.
 
-### conclusion
+### Conclusion
 
-The "scanshieldedtrc20notesbyovk" feature in the HTTP API for Tron provides a secure way to manage and verify shielded TRC-20 transactions. By leveraging this functionality, developers can ensure the privacy and integrity of transactions on the Tron network. This capability is crucial for applications requiring enhanced confidentiality and security in digital asset management.
+The "ScanShieldedTrc20NotesByOvk" feature in the HTTP API for Tron provides a secure way to manage and verify shielded TRC-20 transactions. By leveraging this functionality, developers can ensure the privacy and integrity of transactions on the Tron network. This capability is crucial for applications requiring enhanced confidentiality and security in digital asset management.

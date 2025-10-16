@@ -8,11 +8,15 @@ description: >-
 
 ## Description
 
-The net\_peerCount Web3 method in the Tron protocol's JSON-RPC API Interface is designed to retrieve the current number of peers connected to a client's network node. This method is essential for developers and network administrators who need to monitor and manage network connectivity and performance. By invoking the net\_peerCount RPC protocol, users can gain insights into the network's health and stability, as a higher peer count generally indicates a more robust and resilient network. This function is particularly useful in decentralized environments where maintaining optimal connectivity is crucial for efficient data propagation and transaction validation. The net\_peerCount method is a valuable tool for ensuring your node remains well-integrated within the Tron network.
+The `net_peerCount` Web3 method in the Tron protocol's JSON-RPC API Interface is designed to retrieve the current number of peers connected to a client's network node.&#x20;
+
+This method is essential for developers and network administrators who need to monitor and manage network connectivity and performance. By invoking the `net_peerCount` RPC protocol, users can gain insights into the network's health and stability, as a higher peer count generally indicates a more robust and resilient network.&#x20;
+
+This function is particularly useful in decentralized environments where maintaining optimal connectivity is crucial for efficient data propagation and transaction validation. The `net_peerCount` method is a valuable tool for ensuring your node remains well-integrated within the Tron network.
 
 ## Supported Networks
 
-The net\_peerCount RPC method supports the following network types
+The `net_peerCount` RPC method supports the following network types
 
 * **Mainnet**
 * **Testnets**
@@ -86,7 +90,6 @@ else:
 
 ## Common Errors
 
-**Common Errors**\
 When using the net\_peerCount RPC Tron method, the following issues may occur:
 
 * **Invalid JSON-RPC Request:** Ensure the request is properly formatted in JSON-RPC 2.0 standard, with correct method name and parameters. Double-check for syntax errors or missing fields in the request structure.
@@ -94,8 +97,6 @@ When using the net\_peerCount RPC Tron method, the following issues may occur:
 * **Node Configuration Errors:** An incorrect or incomplete node configuration can lead to inaccurate peer counts. Review the node's configuration files and logs to ensure it is set up to connect to the correct network and peers.
 * **Authorization Failures:** If access is denied, ensure that the API key or authentication credentials are correctly configured and have the necessary permissions to execute the net\_peerCount method.
 
-Using the net\_peerCount method in Web3 applications provides valuable insights into the connectivity and health of the Tron network. By monitoring peer count, developers can ensure their applications are interacting with a well-connected and reliable node, enhancing the overall robustness and performance of decentralized applications.
-
-### conclusion
+### Conclusion
 
 The `net_peerCount` RPC method is used to retrieve the number of peers currently connected to a blockchain network, such as Tron. By using the `net_peerCount RPC Tron` method, developers can monitor network connectivity and ensure that the Tron network maintains robust peer connections for efficient operation. This metric is crucial for assessing network health and performance.

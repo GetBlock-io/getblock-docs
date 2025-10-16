@@ -1,8 +1,12 @@
+---
+description: >-
+  Get_output_distribution Monero method returns output distribution data by
+  amount and height, useful for privacy tools and chain analysis
+---
+
 # get\_output\_distribution
 
-***
-
-title: get\_output\_distribution - Monero description: Example code for the get\_output\_distribution json-rpc method. Сomplete guide on how to use get\_output\_distribution json-rpc in GetBlock.io Web3 documentation.
+RPC method `get_output_distribution` retrieves output distribution data for specific amounts and block ranges on the Monero network.
 
 #### Parameters
 

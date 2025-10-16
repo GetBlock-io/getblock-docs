@@ -1,12 +1,16 @@
+---
+description: >-
+  Explore the 'getblock' JSON-RPC API Interface in the Tron protocol for
+  retrieving block details by height or ID with parameters and examples
+---
+
 # getblock - TRON
-
-## Meta Description
-
-Explore the 'getblock' JSON-RPC API Interface in the Tron protocol for retrieving block details efficiently.
 
 ## Description
 
-The 'getblock' Web3 method in the Tron protocol allows developers to fetch detailed block information using the getblock RPC protocol. This JSON-RPC API interface supports querying blocks by height or hash, returning data like transactions, timestamps, and block headers. Ideal for blockchain explorers, wallets, and dApps, 'getblock' ensures seamless integration with Tron's decentralized network. Learn how to leverage this endpoint for real-time block analytics and chain synchronization.
+The 'getblock' Web3 method in the Tron protocol allows developers to fetch detailed block information using the getblock RPC protocol. This JSON-RPC API interface supports querying blocks by height or hash, returning data like transactions, timestamps, and block headers.&#x20;
+
+Ideal for blockchain explorers, wallets, and dApps, 'getblock' ensures seamless integration with Tron's decentralized network. Learn how to leverage this endpoint for real-time block analytics and chain synchronization.
 
 ## Supported Networks
 
@@ -88,7 +92,7 @@ Response
   A list of transactions included in the block.\
   Each transaction's structure and details can be found by referring to the `gettransactionbyid` documentation.
 
-## Use Case
+## Use Cases
 
 Here are some use-cases for the `getBlock` method in Web3 programming:
 
@@ -116,7 +120,6 @@ print(response.json())
 
 ## Common Errors
 
-**Common Errors**\
 When using the `getblock` RPC Tron method, the following issues may occur:
 
 * **Invalid block identifier**: The provided block number or hash is incorrect or out of range. Ensure the block exists and is formatted correctly (e.g., hex for hashes, integers for heights).
@@ -126,6 +129,6 @@ When using the `getblock` RPC Tron method, the following issues may occur:
 
 The `getblock` method is essential for Web3 apps to fetch detailed block data, enabling transaction validation, chain analysis, and smart contract interactions. Its reliability and efficiency make it a cornerstone for developers building on the Tron network.
 
-### conclusion
+### Conclusion
 
 In conclusion, **GetBlock** provides a powerful and reliable **RPC** solution for interacting with blockchain networks, including **Tron**. Its seamless integration and robust API make it an ideal choice for developers seeking efficient access to blockchain data. With **GetBlock**, users can easily leverage **Tron** and other networks to build scalable and secure decentralized applications.

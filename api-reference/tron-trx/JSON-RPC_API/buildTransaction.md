@@ -8,11 +8,17 @@ description: >-
 
 ## Description
 
-The 'buildTransaction' method in Tron’s Web3 framework is a crucial component of the buildTransaction RPC protocol, enabling developers to efficiently create transactions within the Tron blockchain. This method constructs a transaction object that includes essential details such as sender and receiver addresses, amount, and any additional parameters required for execution on the network. By leveraging the JSON-RPC API Interface, developers can seamlessly interact with the Tron network, ensuring secure and accurate transaction processing. The 'buildTransaction' method is designed to be user-friendly yet robust, catering to both novice and experienced developers seeking to integrate Tron blockchain capabilities into their applications. Whether you are building decentralized applications or exploring blockchain technology, 'buildTransaction' offers a reliable gateway to the Tron network’s transaction functionalities.
+The `buildTransaction` method in Tron’s Web3 framework is a crucial component of the buildTransaction RPC protocol, enabling developers to efficiently create transactions within the Tron blockchain.&#x20;
+
+This method constructs a transaction object that includes essential details such as sender and receiver addresses, amount, and any additional parameters required for execution on the network.&#x20;
+
+By leveraging the JSON-RPC API Interface, developers can seamlessly interact with the Tron network, ensuring secure and accurate transaction processing.&#x20;
+
+Whether you are building decentralized applications or exploring blockchain technology, `buildTransaction` offers a reliable gateway to the Tron network’s transaction functionalities.
 
 ## Supported Networks
 
-The buildTransaction RPC method supports the following network types
+The `buildTransaction` RPC method supports the following network types
 
 * **Mainnet**
 * **Testnets**
@@ -71,7 +77,7 @@ Here is the list of body parameters for the buildTransaction method:
 | raw\_data      | Raw transaction data (contains all transaction details).                              |
 | raw\_data\_hex | Hex-encoded raw data of the transaction.                                              |
 
-## Use Case
+## Use Cases
 
 Here are some use-cases for the `buildTransaction` method:
 
@@ -105,7 +111,6 @@ else:
 
 ## Common Errors
 
-**Common Errors**\
 When using the buildTransaction RPC Tron method, the following issues may occur:
 
 * **Invalid Address Format**: The recipient address may not be in the correct format. Ensure that the address is a valid hexadecimal string starting with '0x' and is 42 characters long.
