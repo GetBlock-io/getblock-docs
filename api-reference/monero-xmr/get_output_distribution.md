@@ -1,6 +1,6 @@
 ---
 description: >-
-  Get_output_distribution Monero method returns output distribution data by
+  The get_output_distribution Monero method returns output distribution data by
   amount and height, useful for privacy tools and chain analysis
 ---
 
