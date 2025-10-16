@@ -5,556 +5,406 @@ description: >-
   in GetBlock.io Web3 documentation.
 ---
 
-# /v1/accounts/{account\_hash}/transactions - Aptos
+# /v1/accounts/{account_hash}/transactions - Aptos
 
-#### Parameters
+This endpoint gets the on-chain committed transactions associated with a specific account. This includes submitted, executed, or pending transactions where the account is the sender.
 
-`limit` -
 
-Maximum number of transactions to retrieve. Gets default page size if not provided.
+## Supported Network
 
-`start` -
+- Mainnet
 
-Optional starting sequence number of events. Defaults to the most recent transactions.
+## Parameters
 
-#### Request
+<table>
+  <tr>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Data type</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+   <td><strong>Required</strong>
+   </td>
+   <td><strong>In</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>account_hash
+   </td>
+   <td>string
+   </td>
+   <td>Aptos account address
+   </td>
+   <td>Yes
+   </td>
+   <td>Path
+   </td>
+  </tr>
+  <tr>
+   <td>start
+   </td>
+   <td>string
+   </td>
+   <td>The starting point or offset for retrieving resources. If not provided, defaults to showing the latest transactions
+   </td>
+   <td>No
+   </td>
+   <td>query
+   </td>
+  </tr>
+  <tr>
+   <td>limit
+   </td>
+   <td>integer
+   </td>
+   <td>The maximum number of resources to retrieve per request. If not provided, defaults to default page size
+   </td>
+   <td>No
+   </td>
+   <td>query
+   </td>
+  </tr>
+</table>
 
-```java
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/v1/accounts/0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255/transactions?limit=3' \
---header 'Content-Type: application/json'
+
+
+## Request
+
+
+**Base URL**
+
+```bash
+https://go.getblock.io/<ACCESS_TOKEN>
 ```
 
-#### Response
+**Example(cURl)**
 
-```java
+```
+curl -X GET "https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f
+/transactions?limit=5"
+```
+
+## Response
+```json
 [
     {
-        "accumulator_root_hash": "0x7e64a9c9eab0e15726269016cb19a355cddf52f2b4cde5cb3cc208a39c9499df",
+        "version": "3574927316",
+        "hash": "0x01ef3543f79823b3a9fbc8acac9fba4bb25c7c1abb65f533caff2d9bcc0678f6",
+        "state_change_hash": "0x5cfb448ecb226172f3f5279d02658a645afdacf88a1ce308bf5b0717eca0c99e",
+        "event_root_hash": "0x63937d2f2e996f5c9e6cd669e518fdf7e474af4902a11501ec15dbb8d53e5ce9",
+        "state_checkpoint_hash": null,
+        "gas_used": "82",
+        "success": true,
+        "vm_status": "Executed successfully",
+        "accumulator_root_hash": "0x3d25cf24e802a777497da7f76fdeb05a472b30586f2171b82fbb72e1e3504609",
         "changes": [
             {
-                "address": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
+                "address": "0xa",
+                "state_key_hash": "0x1db5441d8fa4229c5844f73fd66da4ad8176cb8793d8b3a7f6ca858722030043",
                 "data": {
+                    "type": "0x1::coin::PairedCoinType",
                     "data": {
-                        "oracle_events": {
-                            "counter": "1064680",
-                            "guid": {
-                                "id": {
-                                    "addr": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                                    "creation_num": "15"
-                                }
-                            }
-                        },
-                        "relayer_events": {
-                            "counter": "1064669",
-                            "guid": {
-                                "id": {
-                                    "addr": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                                    "creation_num": "16"
-                                }
-                            }
+                        "type": {
+                            "account_address": "0x1",
+                            "module_name": "0x6170746f735f636f696e",
+                            "struct_name": "0x4170746f73436f696e"
                         }
-                    },
-                    "type": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90::uln_receive::EventStore"
+                    }
                 },
-                "state_key_hash": "0x7d72ed827ba7631767ca4d5b692e052bdfdc02b962acd9aa702639b297d5d05a",
                 "type": "write_resource"
-            },
-            {
-                "address": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                "data": {
-                    "data": {
-                        "coin": {
-                            "value": "42470741615"
-                        },
-                        "deposit_events": {
-                            "counter": "2",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "2"
-                                }
-                            }
-                        },
-                        "frozen": false,
-                        "withdraw_events": {
-                            "counter": "1",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "3"
-                                }
-                            }
-                        }
-                    },
-                    "type": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>"
-                },
-                "state_key_hash": "0xb2fcff321d24337870b8afa2197359fcb527d2529e51398a0b7165649f2a0801",
-                "type": "write_resource"
-            },
-            {
-                "address": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                "data": {
-                    "data": {
-                        "authentication_key": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                        "coin_register_events": {
-                            "counter": "1",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "0"
-                                }
-                            }
-                        },
-                        "guid_creation_num": "4",
-                        "key_rotation_events": {
-                            "counter": "0",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "1"
-                                }
-                            }
-                        },
-                        "rotation_capability_offer": {
-                            "for": {
-                                "vec": []
-                            }
-                        },
-                        "sequence_number": "497659",
-                        "signer_capability_offer": {
-                            "for": {
-                                "vec": []
-                            }
-                        }
-                    },
-                    "type": "0x1::account::Account"
-                },
-                "state_key_hash": "0x0d90a983bdbbfccd6140bc87ccaaf610d4075289145ce60a4cf17f3223574ecd",
-                "type": "write_resource"
-            },
-            {
-                "data": null,
-                "handle": "0x1b854694ae746cdbd8d44186ca4929b2b337df21d1c74633be19b2710552fdca",
-                "key": "0x0619dc29a0aac8fa146714058e8dd6d2d0f3bdf5f6331907bf91f3acd81e6935",
-                "state_key_hash": "0x6e4b28d40f98a106a65163530924c0dcb40c1349d3aa915d108b4d6cfc1ddb19",
-                "type": "write_table_item",
-                "value": "0x75fbd999db9770010000000000000000"
-            },
-            {
-                "data": null,
-                "handle": "0xcc6c608b81fcf6d6cc0b3e9c07efb69f897bf80605e8279fc7e932fa7c12130d",
-                "key": "0x20519cba9fe1b14af70f378ec0b93fbaca5ecd18aa465ab7c290e0bc4ac67da0e4",
-                "state_key_hash": "0x25a316726ab2f1d5901b8450b33e0b7d03b515bfe872ca53e194663f49ecd23b",
-                "type": "write_table_item",
-                "value": "0x01"
-            },
-            {
-                "data": null,
-                "handle": "0xdcd5cc59d7b3d2b975bf7fcd73faa1c76ac5d3ec7479c61316af3a03ea5db3f5",
-                "key": "0x12e12de0af996d9611b0b78928cd9f4cbf50d94d972043cdd829baa77a78929b204a89a8097c9b249cea4fc77a80150a7e1fc42ac1744dc9d0aed1a7309ca2f37f",
-                "state_key_hash": "0x6bfde154afba527d519daa1f25219eee45c31917953fae0bf186ecbdf370a0e3",
-                "type": "write_table_item",
-                "value": "0x1400000000000000"
             }
+
         ],
-        "event_root_hash": "0xb3520e24d2ce9a2bd789357e730c19422b616622611f3a999b7324fc99cc2cc8",
-        "events": [
-            {
-                "data": {
-                    "confirmations": "20",
-                    "hash": "0x4a89a8097c9b249cea4fc77a80150a7e1fc42ac1744dc9d0aed1a7309ca2f37f",
-                    "signer": "0x12e12de0af996d9611b0b78928cd9f4cbf50d94d972043cdd829baa77a78929b"
-                },
-                "guid": {
-                    "account_address": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                    "creation_number": "15"
-                },
-                "sequence_number": "1064679",
-                "type": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90::uln_receive::SignerEvent"
-            }
-        ],
-        "expiration_timestamp_secs": "1685697282",
-        "gas_unit_price": "120",
-        "gas_used": "939",
-        "hash": "0x6319e20f45e8f1cbe5e6ac0a2ff35537d1f42992ec82a977dd062876e8cc6d50",
+        "sender": "0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f",
+        "sequence_number": "871700",
         "max_gas_amount": "200000",
+        "gas_unit_price": "100",
+        "expiration_timestamp_secs": "1760643271",
         "payload": {
+            "function": "0x487e905f899ccb6d46fdaec56ba1e0c4cf119862a16c409904b8c78fab1f5e8a::router::swap",
+            "type_arguments": [],
             "arguments": [
-                "0x4a89a8097c9b249cea4fc77a80150a7e1fc42ac1744dc9d0aed1a7309ca2f37f",
-                "20",
-                "1685717675",
-                "0x27a97ad7831fe71359586cfabe3fa23ebd98b3f6fd33bd330f70610cc9e2d96c01afcf5249dd6d480702865fa3048bb44149bb46151717b15c98648594d02cd70059f8c14e9467a43bd1a4199608bbf5463856f19611ae8916db0f3cd2fa0139fe2a7f76692e5dd854ab6dbb5d3a15a6e2fcca7a584edd212507b91affbb4d98ab00"
+                "0x82e0b52f95ae57b35220726a32c3415919389aa5b8baa33a058d7125797535cc01000000000000000000000000000000683e030100000000000000000000000000000000000000000000000000000000d093f60000000000000000000000000000000000000000000000000000000000"
             ],
-            "function": "0xc2846ea05319c339b3b52186ceae40b43d4e9cf6c7350336c3eb0b351d9394eb::oracle::mso_propose",
-            "type": "entry_function_payload",
-            "type_arguments": []
+            "type": "entry_function_payload"
         },
-        "sender": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-        "sequence_number": "497658",
         "signature": {
-            "public_key": "0xf22c5aeb53fc98ec8196d88df86df952a616108eabdbb993f14805660a8b1831",
-            "signature": "0x39dbdb6e1835c59371b6da3cc9a159375c23e480827a293a6e8c60e0cec1761398806e76f7a62cb50819f2695f765a97920a1b7da56b00b70caf9617aa7f8302",
+            "public_key": "0x7df17b23676ef29e040847e64ae2a8351819d4bfaf64f3bfe2124d92156c1c02",
+            "signature": "0x8001b27ddb488c1ad5f4f6ed7fe4886b42528b0646a05685469b524b67cc6298192fa42d9af5ff2df1791c88f2f16dfdc22c8c1d5060795c68161a25ef335d01",
             "type": "ed25519_signature"
         },
-        "state_change_hash": "0x3b16c96ce52b8d7fc9c83c2efc8dac12528f1478587eececa05b91a54581da08",
-        "state_checkpoint_hash": null,
-        "success": true,
-        "timestamp": "1685696081721899",
-        "type": "user_transaction",
-        "version": "152087555",
-        "vm_status": "Executed successfully"
-    },
-    {
-        "accumulator_root_hash": "0xa366a7153a92b454754b058ca484fb765d8f64efcd0e4c2cb5e876c0df8288de",
-        "changes": [
-            {
-                "address": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                "data": {
-                    "data": {
-                        "oracle_events": {
-                            "counter": "1064681",
-                            "guid": {
-                                "id": {
-                                    "addr": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                                    "creation_num": "15"
-                                }
-                            }
-                        },
-                        "relayer_events": {
-                            "counter": "1064669",
-                            "guid": {
-                                "id": {
-                                    "addr": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                                    "creation_num": "16"
-                                }
-                            }
-                        }
-                    },
-                    "type": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90::uln_receive::EventStore"
-                },
-                "state_key_hash": "0x7d72ed827ba7631767ca4d5b692e052bdfdc02b962acd9aa702639b297d5d05a",
-                "type": "write_resource"
-            },
-            {
-                "address": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                "data": {
-                    "data": {
-                        "coin": {
-                            "value": "42470628935"
-                        },
-                        "deposit_events": {
-                            "counter": "2",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "2"
-                                }
-                            }
-                        },
-                        "frozen": false,
-                        "withdraw_events": {
-                            "counter": "1",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "3"
-                                }
-                            }
-                        }
-                    },
-                    "type": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>"
-                },
-                "state_key_hash": "0xb2fcff321d24337870b8afa2197359fcb527d2529e51398a0b7165649f2a0801",
-                "type": "write_resource"
-            },
-            {
-                "address": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                "data": {
-                    "data": {
-                        "authentication_key": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                        "coin_register_events": {
-                            "counter": "1",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "0"
-                                }
-                            }
-                        },
-                        "guid_creation_num": "4",
-                        "key_rotation_events": {
-                            "counter": "0",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "1"
-                                }
-                            }
-                        },
-                        "rotation_capability_offer": {
-                            "for": {
-                                "vec": []
-                            }
-                        },
-                        "sequence_number": "497660",
-                        "signer_capability_offer": {
-                            "for": {
-                                "vec": []
-                            }
-                        }
-                    },
-                    "type": "0x1::account::Account"
-                },
-                "state_key_hash": "0x0d90a983bdbbfccd6140bc87ccaaf610d4075289145ce60a4cf17f3223574ecd",
-                "type": "write_resource"
-            },
-            {
-                "data": null,
-                "handle": "0x1b854694ae746cdbd8d44186ca4929b2b337df21d1c74633be19b2710552fdca",
-                "key": "0x0619dc29a0aac8fa146714058e8dd6d2d0f3bdf5f6331907bf91f3acd81e6935",
-                "state_key_hash": "0x6e4b28d40f98a106a65163530924c0dcb40c1349d3aa915d108b4d6cfc1ddb19",
-                "type": "write_table_item",
-                "value": "0x4d43d899db9770010000000000000000"
-            },
-            {
-                "data": null,
-                "handle": "0xcc6c608b81fcf6d6cc0b3e9c07efb69f897bf80605e8279fc7e932fa7c12130d",
-                "key": "0x20a5e4ae6d1ea06db795b154d32445c4c5a1e9f26280e8685bd494275f9e894605",
-                "state_key_hash": "0x648cbca440adcdbf45dede7f92cc04f8781690258c0187729b3ae08fab411e3b",
-                "type": "write_table_item",
-                "value": "0x01"
-            },
-            {
-                "data": null,
-                "handle": "0xdcd5cc59d7b3d2b975bf7fcd73faa1c76ac5d3ec7479c61316af3a03ea5db3f5",
-                "key": "0x12e12de0af996d9611b0b78928cd9f4cbf50d94d972043cdd829baa77a78929b20bc672f7775e641aaf684a2b728c4adceefd546d891300f20fc8c67a750d41452",
-                "state_key_hash": "0xd8b371881886636c5d9b2dc6896b3e0d43e05635c1bf4b715a9ac71a1bbe98b1",
-                "type": "write_table_item",
-                "value": "0x1400000000000000"
-            }
-        ],
-        "event_root_hash": "0x2828654478f067c471d5f53a464286e344c257e5b018750173969a0fbb966ed0",
+        "replay_protection_nonce": null,
         "events": [
             {
-                "data": {
-                    "confirmations": "20",
-                    "hash": "0xbc672f7775e641aaf684a2b728c4adceefd546d891300f20fc8c67a750d41452",
-                    "signer": "0x12e12de0af996d9611b0b78928cd9f4cbf50d94d972043cdd829baa77a78929b"
-                },
                 "guid": {
-                    "account_address": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                    "creation_number": "15"
+                    "creation_number": "0",
+                    "account_address": "0x0"
                 },
-                "sequence_number": "1064680",
-                "type": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90::uln_receive::SignerEvent"
-            }
-        ],
-        "expiration_timestamp_secs": "1685697282",
-        "gas_unit_price": "120",
-        "gas_used": "939",
-        "hash": "0x4354f125d298d4e187aa8ee7bf9a1017d319cd51c3602d7b09ce7e079f713955",
-        "max_gas_amount": "200000",
-        "payload": {
-            "arguments": [
-                "0xbc672f7775e641aaf684a2b728c4adceefd546d891300f20fc8c67a750d41452",
-                "20",
-                "1685717675",
-                "0x5db176243a662d5e94c3d3ce0b616169b02fef578640ea6f21a9d70e77292d9b324fe067d37dc57a24417ca2ee68394ab4d9e72553f951623f75c1a0f8bc19b100960e5304328a83a07c3d481a151a44fc0ee324ce16f9d1381efb5b0de17ad1bc304a9bfde28326182750a07bc1013df3de9263af866a42873ebe937dc512c62b00"
-            ],
-            "function": "0xc2846ea05319c339b3b52186ceae40b43d4e9cf6c7350336c3eb0b351d9394eb::oracle::mso_propose",
-            "type": "entry_function_payload",
-            "type_arguments": []
-        },
-        "sender": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-        "sequence_number": "497659",
-        "signature": {
-            "public_key": "0xf22c5aeb53fc98ec8196d88df86df952a616108eabdbb993f14805660a8b1831",
-            "signature": "0x2e172cd8bb6514417b667696ec7dce524b5775429216c1a6272b3f3dc07fac3299eb5509fdd5c7b222d79c482dce3a9a3c1dec463a50cafcde34708f64411200",
-            "type": "ed25519_signature"
-        },
-        "state_change_hash": "0x281372c68525810baf10f0089cc5fa91c8cc74f9a6aabc725f8b00f1041ad8bb",
-        "state_checkpoint_hash": null,
-        "success": true,
-        "timestamp": "1685696082022666",
-        "type": "user_transaction",
-        "version": "152087558",
-        "vm_status": "Executed successfully"
-    },
-    {
-        "accumulator_root_hash": "0xdf24383f1795b508008f080f598d7b0b3be5bf49e760ded6da8c88d86c33ec9d",
-        "changes": [
-            {
-                "address": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
+                "sequence_number": "0",
+                "type": "0xa611a8ba7261ed1f4d3afe4ac2166fc9f3180103e3296772d593a1e2720c7405::stable::IncentiveSynced",
                 "data": {
-                    "data": {
-                        "oracle_events": {
-                            "counter": "1064682",
-                            "guid": {
-                                "id": {
-                                    "addr": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                                    "creation_num": "15"
-                                }
-                            }
-                        },
-                        "relayer_events": {
-                            "counter": "1064670",
-                            "guid": {
-                                "id": {
-                                    "addr": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                                    "creation_num": "16"
-                                }
-                            }
-                        }
-                    },
-                    "type": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90::uln_receive::EventStore"
-                },
-                "state_key_hash": "0x7d72ed827ba7631767ca4d5b692e052bdfdc02b962acd9aa702639b297d5d05a",
-                "type": "write_resource"
+                    "accumulated_rewards_per_share": "33902212381193",
+                    "campaign_idx": "15",
+                    "last_accumulation_time": "1760643255",
+                    "last_total_shares": "4992836695498717952869616",
+                    "pool_addr": "0x82e0b52f95ae57b35220726a32c3415919389aa5b8baa33a058d7125797535cc",
+                    "total_distributed": "25151305402",
+                    "ts": "1760643255618178"
+                }
             },
             {
-                "address": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                "data": {
-                    "data": {
-                        "coin": {
-                            "value": "42470516255"
-                        },
-                        "deposit_events": {
-                            "counter": "2",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "2"
-                                }
-                            }
-                        },
-                        "frozen": false,
-                        "withdraw_events": {
-                            "counter": "1",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "3"
-                                }
-                            }
-                        }
-                    },
-                    "type": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>"
-                },
-                "state_key_hash": "0xb2fcff321d24337870b8afa2197359fcb527d2529e51398a0b7165649f2a0801",
-                "type": "write_resource"
-            },
-            {
-                "address": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                "data": {
-                    "data": {
-                        "authentication_key": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                        "coin_register_events": {
-                            "counter": "1",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "0"
-                                }
-                            }
-                        },
-                        "guid_creation_num": "4",
-                        "key_rotation_events": {
-                            "counter": "0",
-                            "guid": {
-                                "id": {
-                                    "addr": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-                                    "creation_num": "1"
-                                }
-                            }
-                        },
-                        "rotation_capability_offer": {
-                            "for": {
-                                "vec": []
-                            }
-                        },
-                        "sequence_number": "497661",
-                        "signer_capability_offer": {
-                            "for": {
-                                "vec": []
-                            }
-                        }
-                    },
-                    "type": "0x1::account::Account"
-                },
-                "state_key_hash": "0x0d90a983bdbbfccd6140bc87ccaaf610d4075289145ce60a4cf17f3223574ecd",
-                "type": "write_resource"
-            },
-            {
-                "data": null,
-                "handle": "0x1b854694ae746cdbd8d44186ca4929b2b337df21d1c74633be19b2710552fdca",
-                "key": "0x0619dc29a0aac8fa146714058e8dd6d2d0f3bdf5f6331907bf91f3acd81e6935",
-                "state_key_hash": "0x6e4b28d40f98a106a65163530924c0dcb40c1349d3aa915d108b4d6cfc1ddb19",
-                "type": "write_table_item",
-                "value": "0x47f6d099db9770010000000000000000"
-            },
-            {
-                "data": null,
-                "handle": "0xcc6c608b81fcf6d6cc0b3e9c07efb69f897bf80605e8279fc7e932fa7c12130d",
-                "key": "0x2042678e0b5a3409e6cb67ddb626e61b3cbc09c65bd8636c3a92554446e883a859",
-                "state_key_hash": "0x2574694216b5a51a74960797f1d3c1680ae5c0582a9217c96bfe116c1396aff3",
-                "type": "write_table_item",
-                "value": "0x01"
-            },
-            {
-                "data": null,
-                "handle": "0xdcd5cc59d7b3d2b975bf7fcd73faa1c76ac5d3ec7479c61316af3a03ea5db3f5",
-                "key": "0x12e12de0af996d9611b0b78928cd9f4cbf50d94d972043cdd829baa77a78929b200c8a3237d64bf11673b2d1ef6e7d0e013e1d61ece6e606c7d342a8493b78baff",
-                "state_key_hash": "0xc726f12cfcb45b2f9561685cb3430eb3bcef7a360e59b27de351efae689a0347",
-                "type": "write_table_item",
-                "value": "0x1400000000000000"
-            }
-        ],
-        "event_root_hash": "0x259f6232cd763fa77900080ee376b20862aa7b6416e035a9ea813b96e41d5626",
-        "events": [
-            {
-                "data": {
-                    "confirmations": "20",
-                    "hash": "0x0c8a3237d64bf11673b2d1ef6e7d0e013e1d61ece6e606c7d342a8493b78baff",
-                    "signer": "0x12e12de0af996d9611b0b78928cd9f4cbf50d94d972043cdd829baa77a78929b"
-                },
                 "guid": {
-                    "account_address": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90",
-                    "creation_number": "15"
+                    "creation_number": "0",
+                    "account_address": "0x0"
                 },
-                "sequence_number": "1064681",
-                "type": "0x54ad3d30af77b60d939ae356e6606de9a4da67583f02b962d2d3f2e481484e90::uln_receive::SignerEvent"
-            }
-        ],
-        "expiration_timestamp_secs": "1685697287",
-        "gas_unit_price": "120",
-        "gas_used": "939",
-        "hash": "0x6041a16d053ed12cb5dd185d4443d1ee79a302bfa2a05b2756156ca43140b78f",
-        "max_gas_amount": "200000",
-        "payload": {
-            "arguments": [
-                "0x0c8a3237d64bf11673b2d1ef6e7d0e013e1d61ece6e606c7d342a8493b78baff",
-                "20",
-                "1685717681",
-                "0x945c919bc348e094057f7a9f17dcb5ad17b87c0dc079120c9910d0ad68bd55274d3016421f3521fcb2896dcff7cdfc1e505e52910f6c6a37a97b9ef17d3ec5c9011510a8e2fa099c25b0917b40ca88eaccf3fec37c91d8df43afe0e7733a600c0b6bf90a2a277a0e228188bac85659bec32be770ccb6c2c2db2bb765cd63a367be00"
-            ],
-            "function": "0xc2846ea05319c339b3b52186ceae40b43d4e9cf6c7350336c3eb0b351d9394eb::oracle::mso_propose",
-            "type": "entry_function_payload",
-            "type_arguments": []
-        },
-        "sender": "0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255",
-        "sequence_number": "497660",
-        "signature": {
-            "public_key": "0xf22c5aeb53fc98ec8196d88df86df952a616108eabdbb993f14805660a8b1831",
-            "signature": "0x605835fdb308777a70c7cff179562dd7d0857cfd3b44395eb41741b99ad839064b9b449b3e88bb4084a2a7c21b2d1e245c8099199b6b7a8d19c5de688105a301",
-            "type": "ed25519_signature"
-        },
-        "state_change_hash": "0x157737081d9b412f3cb6d90329877187445c73a948892c1289545f5f0d065537",
-        "state_checkpoint_hash": null,
-        "success": true,
-        "timestamp": "1685696086904097",
-        "type": "user_transaction",
-        "version": "152087596",
-        "vm_status": "Executed successfully"
+                "sequence_number": "0",
+                "type": "0xa611a8ba7261ed1f4d3afe4ac2166fc9f3180103e3296772d593a1e2720c7405::stable::Swapped",
+                "data": {
+                    "bought_id": "0",
+                    "buyer": "0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f",
+                    "pool_addr": "0x82e0b52f95ae57b35220726a32c3415919389aa5b8baa33a058d7125797535cc",
+                    "sold_id": "1",
+                    "stored_balances": [
+                        "1990058935750",
+                        "3042379974793"
+                    ],
+                    "tokens_bought": "16980317",
+                    "tokens_sold": "16989240",
+                    "ts": "1760643255618178"
+                }
+            },
+        "timestamp": "1760643255618178",
+        "type": "user_transaction"
     }
 ]
 ```
+
+### Response Parameter Definition
+
+<table>
+  <tr>
+   <td><strong>Field</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>version
+   </td>
+   <td>String
+   </td>
+   <td>The transaction version (ledger sequence number).
+   </td>
+  </tr>
+  <tr>
+   <td>hash
+   </td>
+   <td>String
+   </td>
+   <td>Unique hash of the transaction.
+   </td>
+  </tr>
+  <tr>
+   <td>state_change_hash
+   </td>
+   <td>String
+   </td>
+   <td>Hash of all state changes caused by this transaction.
+   </td>
+  </tr>
+  <tr>
+   <td>event_root_hash
+   </td>
+   <td>String
+   </td>
+   <td>Merkle root of events emitted in this transaction.
+   </td>
+  </tr>
+  <tr>
+   <td>gas_used
+   </td>
+   <td>String
+   </td>
+   <td>Amount of gas consumed by the transaction.
+   </td>
+  </tr>
+  <tr>
+   <td>success
+   </td>
+   <td>Boolean
+   </td>
+   <td>Whether the transaction executed successfully.
+   </td>
+  </tr>
+  <tr>
+   <td>vm_status
+   </td>
+   <td>String
+   </td>
+   <td>Execution status from the Aptos VM.
+   </td>
+  </tr>
+  <tr>
+   <td>accumulator_root_hash
+   </td>
+   <td>String
+   </td>
+   <td>Root hash of the transaction accumulator after applying this txn.
+   </td>
+  </tr>
+  <tr>
+   <td>changes
+   </td>
+   <td>Array
+   </td>
+   <td>List of state changes caused by the transaction.
+   </td>
+  </tr>
+  <tr>
+   <td>changes.address
+   </td>
+   <td>String
+   </td>
+   <td>Address whose resource was modified.
+   </td>
+  </tr>
+  <tr>
+   <td>changes.state_key_hash
+   </td>
+   <td>String
+   </td>
+   <td>State key hash for the modified resource.
+   </td>
+  </tr>
+  <tr>
+   <td>changes.type
+   </td>
+   <td>String
+   </td>
+   <td>Type of state change (e.g., write_resource).
+   </td>
+  </tr>
+  <tr>
+   <td>changes.data
+   </td>
+   <td>Object
+   </td>
+   <td>Modified resource data.
+   </td>
+  </tr>
+  <tr>
+   <td>changes.data.type
+   </td>
+   <td>String
+   </td>
+   <td>Type of resource (e.g., CoinStore&lt;AptosCoin>).
+   </td>
+  </tr>
+  <tr>
+   <td>changes.data.data
+   </td>
+   <td>Object
+   </td>
+   <td>Full contents of the updated resource (balance, events, frozen state, etc).
+   </td>
+  </tr>
+</table>
+
+
+## Use Cases
+
+This method can be used for:
+* Get an account’s transaction history.
+* Build **wallet activity feeds** (incoming/outgoing transfers).
+* Build **block explorers** that show user-specific transactions.
+* Track failed vs successful transactions.
+
+
+## Code Example
+
+**Python Request**
+
+```python
+import requests
+
+url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255/transactions"
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+
+
+```
+
+**Node(axios)**
+```js
+import axios from 'axios';
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255/transactions',
+  headers: { }
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+
+```
+
+
+
+## Error handling
+
+
+<table>
+  <tr>
+   <td><strong>Status Code</strong>
+   </td>
+   <td><strong>Error Message</strong>
+   </td>
+   <td><strong>Cause</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>403
+   </td>
+   <td>Forbidden
+   </td>
+   <td>Missing or invalid ACCESS_TOKEN.
+   </td>
+  </tr>
+  <tr>
+   <td>404
+   </td>
+   <td>Resource not found
+   </td>
+   <td>The given resource type does not exist for this account.
+   </td>
+  </tr>
+  <tr>
+   <td>500
+   </td>
+   <td>Internal server error
+   </td>
+   <td>Node or network issue. Retry later.
+   </td>
+  </tr>
+</table>
+
+## Integration with Web3
+
+By integrating /v1/accounts/{account_hash}/transactions into developers can:
+
+* **Build transaction history dashboards to** show a user’s past on-chain actions. 
+* Track when a user’s transaction is confirmed or fails.
+* dApps can fetch all transactions from an account for financial or legal reporting.
+* **a**nalyse user behaviour, token transfers, and contract interactions for dApps.
