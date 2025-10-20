@@ -24,11 +24,11 @@ The widget on your dashboard alerts you when your subscription is about to expir
 
 The **Manage Plans** section can be found by navigating to the “**Pricing**” option in the left-side menu. You'll see three tabs: click on “**Manage Plans**” to view all your subscriptions in one place.
 
-#### 3. "My endpoints" list
+#### 3. "Endpoints" list
 
 <figure><img src="../../.gitbook/assets/extend_endpoint_list.svg" alt="Checking the status of dedicated node subscriptions from the main GetBlock user dashboard"><figcaption></figcaption></figure>
 
-Each endpoint in “**My endpoints**” list now shows its current subscription status.
+Each endpoint in “**My endpoints**” list shows its current subscription status.
 
 ***
 
@@ -111,7 +111,7 @@ How to extend your node subscription with a card payment
 {% endtab %}
 {% endtabs %}
 
-#### Option 2: From “My Endpoints” list
+#### Option 2: From “Endpoints” list
 
 1. Navigate to your main dashboard and switch to the **Dedicated Nodes** tab.
 2. **Choose a node to extend.** Expand the node’s details and click **"Extend"** to begin the process.

@@ -20,6 +20,7 @@
 
 * [Endpoint setup](guides/endpoint-setup/README.md)
   * [Creating node endpoints](guides/endpoint-setup/creating-node-endpoints.md)
+  * [Enabling archive mode](guides/endpoint-setup/enabling-archive-mode.md)
   * [Configuring dedicated nodes](guides/endpoint-setup/configuring-dedicated-nodes.md)
   * [Using GetBlock configuration files](guides/endpoint-setup/using-getblock-configuration-files.md)
 * [Testing RPC connection](guides/testing-rpc-connection/README.md)

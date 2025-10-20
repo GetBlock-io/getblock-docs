@@ -1,25 +1,31 @@
 ---
 description: >-
-  Example code for the /v1/accounts/{account_hash}/events/{creation_number} JSON-RPC method. Сomplete guide on how to use /v1/accounts/{account_hash}/events/{creation_number} json-rpc in GetBlock.io Web3 documentation.
+  Example code for the /v1/accounts/{account_hash}/events/{creation_number}
+  JSON-RPC method. Сomplete guide on how to use
+  /v1/accounts/{account_hash}/events/{creation_number} json-rpc in GetBlock.io
+  Web
 ---
 
-# /v1/accounts/{account_hash}/events/{creation_number}
+# /v1/accounts/{account\_hash}/events/{creation\_number} - Aptos
 
 This endpoint retrieves events for a given account based on the creation number of the event handle. Events are emitted during transactions and serve as logs of on-chain actions such as token transfers, deposits, or contract interactions.
 
 ## Supported Network
-- Mainnet
----
+
+* Mainnet
+
+***
+
 ## Parameters
 
-| Parameter        | Data type | Description                                                                                             | Required | In    |
-|------------------|-----------|---------------------------------------------------------------------------------------------------------|----------|-------|
-| `account_hash`   | string    | Aptos account address.                                                                                  | Yes      | Path  |
-| `creation_number`| integer   | The creation number of the event handle to be retrieved.                                                | Yes      | Path  |
-| `start`          | string    | Starting point or offset for retrieving events. Defaults to showing the latest transactions if omitted. | No       | Query |
-| `limit`          | integer   | Maximum number of events to retrieve per request. Defaults to the standard page size if not provided.   | No       | Query |
+| Parameter         | Data type | Description                                                                                             | Required | In    |
+| ----------------- | --------- | ------------------------------------------------------------------------------------------------------- | -------- | ----- |
+| `account_hash`    | string    | Aptos account address.                                                                                  | Yes      | Path  |
+| `creation_number` | integer   | The creation number of the event handle to be retrieved.                                                | Yes      | Path  |
+| `start`           | string    | Starting point or offset for retrieving events. Defaults to showing the latest transactions if omitted. | No       | Query |
+| `limit`           | integer   | Maximum number of events to retrieve per request. Defaults to the standard page size if not provided.   | No       | Query |
 
----
+***
 
 ## Request
 
@@ -31,6 +37,7 @@ https://go.getblock.io/
 ```
 
 **Request Example (cURL)**
+
 ```bash
 curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f/events/0'
 ```
@@ -58,7 +65,9 @@ curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb
 ]
 
 ```
----
+
+***
+
 ## Response Parameter Definition
 
 | Field                  | Type   | Description                                                                |
@@ -75,18 +84,17 @@ curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb
 
 This method can be used for:
 
-- Tracking account-level activity logs such as deposits, withdrawals, and transfers.
+* Tracking account-level activity logs such as deposits, withdrawals, and transfers.
+* Building blockchain explorers that display historical event data.
+* Monitoring DeFi or NFT protocols that emit custom contract events.
+* Triggering real-time alerts when specific on-chain events occur.
 
-- Building blockchain explorers that display historical event data.
+***
 
-- Monitoring DeFi or NFT protocols that emit custom contract events.
-
-- Triggering real-time alerts when specific on-chain events occur.
-
---- 
 ## Code Examples
 
 ### Node.js (Axios)
+
 ```js
 import axios from 'axios';
 
@@ -116,9 +124,10 @@ response = requests.get(url)
 
 print(response.text)
 ```
+
 > Replace `<ACCESS_TOKEN>` with your actual GetBlock access token.
 
----
+***
 
 ## Error Handling
 
@@ -130,16 +139,13 @@ print(response.text)
 | **422**     | Invalid creation number | Malformed or unsupported creation number format.        |
 | **500**     | Internal server error   | Node or network failure while retrieving events.        |
 
----
+***
 
 ## Integration with Web3
 
 By integrating `/v1/accounts/{account_hash}/events/{creation_number}`, developers can:
 
-- Optimise event tracking for NFT, DeFi, and gaming applications.
-
-- Build real-time activity feeds from on-chain actions.
-
-- Map blockchain transactions into user-friendly notifications.
-
-- Support advanced analytics for blockchain event visualisation.
+* Optimise event tracking for NFT, DeFi, and gaming applications.
+* Build real-time activity feeds from on-chain actions.
+* Map blockchain transactions into user-friendly notifications.
+* Support advanced analytics for blockchain event visualisation.

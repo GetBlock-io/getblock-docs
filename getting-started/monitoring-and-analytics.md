@@ -18,6 +18,8 @@ The Dashboard provides a quick snapshot of key metrics:
 * Rate limit based on your plan
 * Total requests made in the last 24 hours
 
+***
+
 ### Detailed statistics
 
 For more detailed analysis, visit the **Statistics** tab in ‘My Endpoints’ section.

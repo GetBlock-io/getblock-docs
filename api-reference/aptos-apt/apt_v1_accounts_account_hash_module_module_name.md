@@ -1,42 +1,48 @@
 ---
 description: >-
-    Example code for the /v1/accounts/{account_hash}/module/{module_name} JSON-RPC method. Сomplete guide on how to use /v1/accounts/{account_hash}/module/{module_name}json-rpc in GetBlock.io Web3 documentation.
+  Example code for the /v1/accounts/{account_hash}/module/{module_name} JSON-RPC
+  method. Сomplete guide on how to use
+  /v1/accounts/{account_hash}/module/{module_name}json-rpc in GetBlock.io Web3
+  documen
 ---
 
-# /v1/accounts/{account_hash}/module/{module_name}
+# /v1/accounts/{account\_hash}/module/{module\_name} - Aptos
 
 This endpoint fetches detailed information about a single smart contract (module) deployed under a specific Aptos account. The response contains the module's bytecode and ABI, providing a complete description of its functions, structs, and on-chain logic.
 
----
+***
 
 ## Supported Network
-- Mainnet
 
----
+* Mainnet
+
+***
 
 ## Parameters
 
-| Parameter        | Data type | Description                                                                 | Required | In    |
-|------------------|-----------|-----------------------------------------------------------------------------|----------|-------|
-| `account_hash`   | string    | Aptos account address.                                                      | Yes      | Path  |
-| `module_name`    | string    | The name of the smart contract module.                                      | Yes      | Path  |
-| `ledger_version` | string    | The ledger version to retrieve the module state. Optional parameter.        | No       | Query |
+| Parameter        | Data type | Description                                                          | Required | In    |
+| ---------------- | --------- | -------------------------------------------------------------------- | -------- | ----- |
+| `account_hash`   | string    | Aptos account address.                                               | Yes      | Path  |
+| `module_name`    | string    | The name of the smart contract module.                               | Yes      | Path  |
+| `ledger_version` | string    | The ledger version to retrieve the module state. Optional parameter. | No       | Query |
 
----
+***
 
 ## Request
 
 **Base URL**
+
 ```bash
 https://go.getblock.io/<ACCESS_TOKEN>/
 ```
 
 **Example (cURL)**
+
 ```bash
 curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/module/curves'
 ```
 
-### Response 
+### Response
 
 ```json
 {
@@ -104,7 +110,8 @@ curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d4426624
   }
 }
 ```
----
+
+***
 
 ## Response Parameter Definition
 
@@ -117,19 +124,16 @@ curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d4426624
 | `abi.exposed_functions` | array  | List of public functions, including parameters, return types, and visibility.  |
 | `abi.structs`           | array  | Struct definitions with fields and type information.                           |
 
----
+***
 
 ### Use Cases
 
 This endpoint can be used to:
 
-- Retrieve module ABIs for building smart contract interaction interfaces.
-
-- Fetch module bytecode for on-chain security analysis and verification.
-
-- Display contract details in analytics dashboards or blockchain explorers.
-
-- Enable dApps to validate if a specific module exists before user interaction.
+* Retrieve module ABIs for building smart contract interaction interfaces.
+* Fetch module bytecode for on-chain security analysis and verification.
+* Display contract details in analytics dashboards or blockchain explorers.
+* Enable dApps to validate if a specific module exists before user interaction.
 
 ## Code Examples
 
@@ -165,7 +169,7 @@ axios.request(config)
 });
 ```
 
----
+***
 
 ## Error Handling
 
@@ -175,16 +179,13 @@ axios.request(config)
 | **404**     | Resource not found    | The specified module does not exist.            |
 | **500**     | Internal server error | Node or network issue. Retry the request later. |
 
----
+***
 
 ## Integration with Web3
 
 By integrating `/v1/accounts/{account_hash}/module/{module_name}`, developers can:
 
-- Retrieve module ABIs to construct transactions for smart contracts dynamically.
-
-- Validate wallet or dApp interactions by confirming module existence.
-
-- Fetch module bytecode for security inspection or automated audits.
-
-- Allow services or other contracts to interpret available structs and functions dynamically.
+* Retrieve module ABIs to construct transactions for smart contracts dynamically.
+* Validate wallet or dApp interactions by confirming module existence.
+* Fetch module bytecode for security inspection or automated audits.
+* Allow services or other contracts to interpret available structs and functions dynamically.

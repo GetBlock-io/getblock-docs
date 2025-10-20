@@ -1,12 +1,14 @@
 ---
 description: >-
-    Example code for the /v1/accounts/{account_hash}/resource/{resource_type} JSON-RPC method. Сomplete guide on how to use /v1/accounts/{account_hash}/resource/{resource_type} json-rpc in GetBlock.io Web3 documentation.
+  Example code for the /v1/accounts/{account_hash}/resource/{resource_type}
+  JSON-RPC method. Сomplete guide on how to use
+  /v1/accounts/{account_hash}/resource/{resource_type} json-rpc in GetBlock.io
+  Web
 ---
 
-# /v1/accounts/{account_hash}/resource/{resource_type} - Aptos
+# /v1/accounts/{account\_hash}/resource/{resource\_type} - Aptos
 
-This endpoint gets an individual resource from a given account and at a specific ledger version.  This is more specific than /resources since it targets one resource type directly.
-
+This endpoint gets an individual resource from a given account and at a specific ledger version. This is more specific than /resources since it targets one resource type directly.
 
 ## Supported Networks
 
@@ -14,63 +16,16 @@ This endpoint gets an individual resource from a given account and at a specific
 
 ## Parameters
 
-
-<table>
-  <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Data type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>In</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><code>account_hash</code>
-   </td>
-   <td>string
-   </td>
-   <td>Aptos account address
-   </td>
-   <td>Yes
-   </td>
-   <td>Path
-   </td>
-  </tr>
-  <tr>
-   <td><code>resource_type</code>
-   </td>
-   <td>string
-   </td>
-   <td>The type format of the account address to retrieve
-   </td>
-   <td>Yes
-   </td>
-   <td>path
-   </td>
-  </tr>
-  <tr>
-   <td><code>ledger_version</code>
-   </td>
-   <td>string
-   </td>
-   <td>The ledger version to get the account state
-   </td>
-   <td>No
-   </td>
-   <td>query
-   </td>
-  </tr>
-</table>
-
-
+| **Parameter**    | **Data type** | **Description**                                    | **Required** | **In** |
+| ---------------- | ------------- | -------------------------------------------------- | ------------ | ------ |
+| `account_hash`   | string        | Aptos account address                              | Yes          | Path   |
+| `resource_type`  | string        | The type format of the account address to retrieve | Yes          | path   |
+| `ledger_version` | string        | The ledger version to get the account state        | No           | query  |
 
 ## Request Example
 
 **Base URL**
+
 ```
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
@@ -82,7 +37,6 @@ curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb
 ```
 
 ## Response
-
 
 ```json
 {
@@ -126,108 +80,26 @@ curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb
 
 ## Response Parameter Definition
 
-<table>
-  <tr>
-   <td>Value
-   </td>
-   <td>Data type
-   </td>
-   <td>Description
-   </td>
-  </tr>
-  <tr>
-   <td>type
-   </td>
-   <td>string
-   </td>
-   <td>The type format of the account address
-   </td>
-  </tr>
-  <tr>
-   <td>data
-   </td>
-   <td>object
-   </td>
-   <td>The additional data or information related to the account resource
-   </td>
-  </tr>
-  <tr>
-   <td>authentication_key
-   </td>
-   <td>string
-   </td>
-   <td>The authentication key associated with the account to verify the identity of account owner
-   </td>
-  </tr>
-  <tr>
-   <td>coin_register_events
-   </td>
-   <td>object
-   </td>
-   <td>The events associated with coin registration for the specified response
-   </td>
-  </tr>
-  <tr>
-   <td>counter
-   </td>
-   <td>string
-   </td>
-   <td>The counter value associated with a particular operation
-   </td>
-  </tr>
-  <tr>
-   <td>guid
-   </td>
-   <td>object
-   </td>
-   <td>the unique identifier (GUID) of the resource
-   </td>
-  </tr>
-  <tr>
-   <td>id
-   </td>
-   <td>objecct
-   </td>
-   <td>The resource identifier
-   </td>
-  </tr>
-  <tr>
-   <td>addr
-   </td>
-   <td>string
-   </td>
-   <td>The address associated with the resource
-   </td>
-  </tr>
-  <tr>
-   <td>creation_num
-   </td>
-   <td>string
-   </td>
-   <td>The creation number of the resource
-   </td>
-  </tr>
-  <tr>
-   <td>sequence_number
-   </td>
-   <td>string
-   </td>
-   <td>The sequence number tracks the order of transactions initiated by the account
-   </td>
-  </tr>
-</table>
-
-
+| Value                  | Data type | Description                                                                                |
+| ---------------------- | --------- | ------------------------------------------------------------------------------------------ |
+| type                   | string    | The type format of the account address                                                     |
+| data                   | object    | The additional data or information related to the account resource                         |
+| authentication\_key    | string    | The authentication key associated with the account to verify the identity of account owner |
+| coin\_register\_events | object    | The events associated with coin registration for the specified response                    |
+| counter                | string    | The counter value associated with a particular operation                                   |
+| guid                   | object    | the unique identifier (GUID) of the resource                                               |
+| id                     | objecct   | The resource identifier                                                                    |
+| addr                   | string    | The address associated with the resource                                                   |
+| creation\_num          | string    | The creation number of the resource                                                        |
+| sequence\_number       | string    | The sequence number tracks the order of transactions initiated by the account              |
 
 ## Use Cases
 
-This method can be used to: 
-* Fetch a specific token balance without retrieving all account resources. 
+This method can be used to:
 
+* Fetch a specific token balance without retrieving all account resources.
 * Query a single resource type (like a staking pool or NFT ownership).
-
 * Used in wallets and DeFi apps where targeted resource data is required.
-
 
 ## Code Examples
 
@@ -242,6 +114,7 @@ response = requests.request("GET", url, headers=headers, data=payload)
 print(response.text)
 
 ```
+
 **Node(Axios)**
 
 ```js
@@ -263,44 +136,16 @@ axios.request(config)
 
 
 ```
+
 ## Error handling
 
- The possible error you may experience includes the following:
+The possible error you may experience includes the following:
 
-<table>
-  <tr>
-   <td><strong>Status Code</strong>
-   </td>
-   <td><strong>Error Message</strong>
-   </td>
-   <td><strong>Cause</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>403
-   </td>
-   <td>Forbidden
-   </td>
-   <td>Missing or invalid ACCESS_TOKEN.
-   </td>
-  </tr>
-  <tr>
-   <td>404
-   </td>
-   <td>Resource not found
-   </td>
-   <td>The given resource type does not exist for this account.
-   </td>
-  </tr>
-  <tr>
-   <td>500
-   </td>
-   <td>Internal server error
-   </td>
-   <td>Node or network issue. Retry later.
-   </td>
-  </tr>
-</table>
+| **Status Code** | **Error Message**     | **Cause**                                                |
+| --------------- | --------------------- | -------------------------------------------------------- |
+| 403             | Forbidden             | Missing or invalid ACCESS\_TOKEN.                        |
+| 404             | Resource not found    | The given resource type does not exist for this account. |
+| 500             | Internal server error | Node or network issue. Retry later.                      |
 
 ## Integration with Web3
 
