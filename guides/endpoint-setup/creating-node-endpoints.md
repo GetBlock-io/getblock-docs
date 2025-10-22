@@ -33,7 +33,7 @@ Find the **Endpoints** section on the Dashboard
 {% step %}
 Click **Get endpoint** to open the endpoint setup menu
 
-<figure><img src="../../.gitbook/assets/Endpoint_setup_Oct &#x27;25.png" alt="GetBlock RPC endpoint setup interface"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Endpoint_setup_upd.svg" alt="GetBlock RPC endpoint setup interface"><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}

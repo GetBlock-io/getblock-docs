@@ -16,7 +16,7 @@ You can explore detailed pricing and plans from your **dashboard** in the “Pri
 
 Shared nodes operate on a **resource-sharing model**, where multiple clients access the same underlying node infrastructure maintained by GetBlock.&#x20;
 
-<figure><img src="../../.gitbook/assets/Shared_Plans_2025_upd.svg" alt="GetBlock shared RPC node pricing options"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Shared_Plans_Oct_2025_upd.svg" alt="GetBlock shared RPC node pricing options"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
 
 Our Shared Nodes deliver the perfect balance between affordability and performance:&#x20;
 
@@ -41,7 +41,7 @@ A Dedicated Node is a **private RPC server** deployed solely for your use case. 
 If your project demands the fastest, most reliable blockchain infrastructure, a Dedicated Node from GetBlock is a perfect choice.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Dedic_Plan_upd.svg" alt="What does it cost to deploy a private blockchain node"><figcaption><p>GetBlock private node features and pricing</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Dedicated_plan_banner.svg" alt="What does it cost to deploy a private blockchain node"><figcaption><p>GetBlock private node features and pricing</p></figcaption></figure>
 
 This option is ideal for users that require high performance, full control over node configuration, and a flawless connection to the blockchain without any limitations:
 

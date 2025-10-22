@@ -14,7 +14,7 @@ With the "**Top Up**" feature, users can add more **Compute Units** to their acc
 
 ### Add Compute Units: Paid plan users
 
-<figure><img src="../../.gitbook/assets/TopUp (Starter User).svg" alt="managing GetBlock CU balance"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Starter_with_top_up_button.png" alt="managing GetBlock CU balance"><figcaption></figcaption></figure>
 
 **Starter, Pro & Enterprise** users can refill their CU balance or switch to another plan for increased limits:
 
@@ -22,7 +22,7 @@ With the "**Top Up**" feature, users can add more **Compute Units** to their acc
 2. Select the **number of CUs** you’d like to add or choose the recommended plan (if prompted) based on your usage needs.
 3. **Confirm** and finalize your purchase.
 
-<figure><img src="../../.gitbook/assets/TopUp_Starter.svg" alt="How to add CU to your GetBlock RPC node package balance"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/TopUp_Starter_upd (1).svg" alt="How to add CU to your GetBlock RPC node package balance"><figcaption></figcaption></figure>
 
 Your account balance will be updated immediately upon successful payment.
 
@@ -32,7 +32,7 @@ Your account balance will be updated immediately upon successful payment.
 
 Free plan users **cannot top up their Compute Units directly**. Instead, you have the option to upgrade to one of our monthly paid plans, providing significantly higher limits and extra features.
 
-<figure><img src="../../.gitbook/assets/TopUp_free_upgrade.svg" alt="Switching from free GetBlock free plan to higher limit plans"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Free_upgrade_top_up.svg" alt="Switching from free GetBlock free plan to higher limit plans"><figcaption></figcaption></figure>
 
 ***
 

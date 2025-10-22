@@ -9,7 +9,7 @@ These tools help ensure optimal use of GetBlock’s services and keep you inform
 
 ### Dashboard
 
-<figure><img src="../.gitbook/assets/Pro_dashboard_stats.svg" alt="How to track your blockchain node service usage statistics"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Pro_dashboard_stats_upd.svg" alt="How to track your blockchain node service usage statistics"><figcaption></figcaption></figure>
 
 The Dashboard provides a quick snapshot of key metrics:
 
@@ -22,7 +22,7 @@ The Dashboard provides a quick snapshot of key metrics:
 
 ### Detailed statistics
 
-For more detailed analysis, visit the **Statistics** tab in ‘My Endpoints’ section.
+For more detailed analysis, visit the **Statistics** tab in the ‘Endpoints’ section.
 
 {% hint style="info" %}
 Customize the data view by **parameters** or by **access** **tokens** using the dropdown menu.
