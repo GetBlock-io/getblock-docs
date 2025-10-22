@@ -16,7 +16,7 @@ You can explore detailed pricing and plans from your **dashboard** in the “Pri
 
 Shared nodes operate on a **resource-sharing model**, where multiple clients access the same underlying node infrastructure maintained by GetBlock.&#x20;
 
-<figure><img src="../../.gitbook/assets/Shared_Plans_Oct_2025_upd.svg" alt="GetBlock shared RPC node pricing options"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Shared_pricing_Oct_2025_upd.svg" alt="GetBlock shared RPC node pricing options"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
 
 Our Shared Nodes deliver the perfect balance between affordability and performance:&#x20;
 
