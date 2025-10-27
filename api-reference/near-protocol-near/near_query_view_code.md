@@ -17,7 +17,7 @@ This method returns the **smart contract code** deployed on a specific NEAR acco
 | **Parameter**    | **Type** | **Required** | **Description**                                                        |
 | ---------------- | -------- | ------------ | ---------------------------------------------------------------------- |
 | `request_type` | string   | Yes        | Must be set to `"view_code"`.                                          |
-| **finality**     | string   | Yes     | Defines how finalised the data should be: `"final"`, `"near-final"` or `"optimistic"`. |
+| `finality`     | string   | Yes     | Defines how finalised the data should be: `"final"`, `"near-final"` or `"optimistic"`. |
 | `account_id`  | string   | Yes        | The NEAR account ID of the contract to inspect.                        |
 
 ## Request
