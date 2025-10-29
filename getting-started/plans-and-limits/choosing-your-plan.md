@@ -25,6 +25,7 @@ Our Shared Nodes deliver the perfect balance between affordability and performan
 * **Consistent performance**: Each plan enforces a Requests Per Second (RPS) limit, preventing individual spikes from impacting overall quality.
 * **Multi-chain accessibility**: Prototype, test, and deploy applications across different networks without the complexities of deploying infrastructure for each blockchain individually.
 * **Regional endpoints**: Connect to the nearest datacenter — Frankfurt (EU), New York (US), Singapore (APAC) — to minimize network latency.
+* **Archive data access**: Run full historical blockchain queries.
 * **Tiered support levels**: Support options adapt to your requirements, from basic help to priority support when you need it most.
 
 {% hint style="success" %}
@@ -47,15 +48,15 @@ This option is ideal for users that require high performance, full control over 
 
 * **Mission-critical reliability**: Maximized uptime and robust failover mechanisms for even more reliable service.
 * **Unlimited usage**: No per-second request caps or CU tracking.&#x20;
-* **Low latency**: With servers available in **Europe**, **Asia**, and **the USA**, choose the optimal server location to minimize latency and enhance performance for your users
+* **Low latency**: With servers available in **Europe**, **Asia**, and **the USA**, choose the optimal server location to minimize latency and enhance performance for your users.
 * **Fully customizable**: Complete control over your node configurations, including access to archive data.
 * **Predictable pricing**:
-  * Full Node: $1,000/month;
-  * Archive Node: $1,500/ month.
+  * Full Node:  from $1,000/month;
+  * Archive Node: from $1,500/ month.
 * **Expert support**: 24/7 coverage and immediate issue resolution.
 
 {% hint style="info" %}
-A few **high-resource blockchain** settings (e.g., Arbitrum mainnet, NEAR mainnet) may come with **custom pricing** due to their intense infrastructure requirements.
+A few **high-resource blockchain** settings (e.g., Solana mainnet, Arbitrum mainnet, NEAR mainnet) may come with **custom pricing** due to their intense infrastructure requirements.
 {% endhint %}
 
 ***
