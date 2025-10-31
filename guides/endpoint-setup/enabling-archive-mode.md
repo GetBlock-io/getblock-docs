@@ -32,7 +32,7 @@ Look for the small history icon ( <img src="../../.gitbook/assets/Archive_Icon.s
 <figure><img src="../../.gitbook/assets/Archive_shared_icon.svg" alt="Archive blockchain data access via GetBlock RPC endpoints"><figcaption></figcaption></figure>
 
 {% hint style="success" %}
-If you need an archive data for a chain not covered by shared Archive mode, request a [Dedicated Node](configuring-dedicated-nodes.md). **Dedicated Nodes** can be deployed in archive mode for **any supported blockchain** and come with additional benefits like:
+If you need an archive data for a chain not covered by shared Archive mode, request a [Dedicated Node](configuring-dedicated-nodes/). **Dedicated Nodes** can be deployed in archive mode for **any supported blockchain** and come with additional benefits like:
 
 1. Full blockchain history at the highest throughput&#x20;
 2. Unlimited query capacity
