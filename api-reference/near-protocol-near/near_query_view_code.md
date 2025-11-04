@@ -6,50 +6,145 @@ description: >-
 
 # query(view\_code) - NEAR Protocol
 
-#### Parameters
+This method returns the **smart contract code** deployed on a specific NEAR account. It provides the **WASM bytecode** and metadata about the code hash, enabling developers to verify and inspect deployed contracts.
 
-`request_type` - string
+## Supported Networks
 
-type of request
+- Mainnet
 
-`finality` - string
+## Parameters Description
 
-You should pick either that or block\_id.
+| **Parameter**    | **Type** | **Required** | **Description**                                                        |
+| ---------------- | -------- | ------------ | ---------------------------------------------------------------------- |
+| `request_type` | string   | Yes        | Must be set to `"view_code"`.                                          |
+| `finality`     | string   | Yes     | Defines how finalised the data should be: `"final"`, `"near-final"` or `"optimistic"`. |
+| `account_id`  | string   | Yes        | The NEAR account ID of the contract to inspect.                        |
 
-Can be either "optimistic" or "final"
+## Request
 
-`block_id` - int or string
+**Base URL**
 
-You should pick either that or finality.
+```bash
+ https://go.getblock.io/<ACCESS_TOKEN>
+```
+**Example(cURL)**
 
-The block\_id param can take either the block number OR the block hash as an argument.
-
-`account_id` - string
-
-account id
-
-#### Request
-
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
---header 'Content-Type: application/json' \ 
---data-raw '{"jsonrpc": "2.0",
+```bash
+curl --location 'https://go.getblock.io/<ACCESS_TOKEN>' \
+--header 'Content-Type: application/json' \
+--data '{"jsonrpc": "2.0",
 "method": "query",
-"params": {"request_type": "view_code", "finality": "final", "account_id": "staked.poolv1.near"},
+"params": {"request_type": "view_code", "finality": "near-final", "account_id": "staked.poolv1.near"},
 "id": "getblock.io"}'
 ```
 
-#### Response
+## Response Example
 
-```java
+```json
 {
-    "id": "getblock.io",
     "jsonrpc": "2.0",
     "result": {
-        "block_hash": "4BsKpcha4YcZCjy7wDs9DPWZ4q9GNe6mKF5KfCRhGfJj",
-        "block_height": 61075007,
-        "code_base64": "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",
+        "block_hash": "5xyv8AMZAknNgSZUug6uqKaTt2TX5hY3zxoEWLDD3mSV",
+        "block_height": 169729125,
+        "code_base64": "AGFzbQEAAAAB7wNBYAJ/fwF/YAF...",
         "hash": "J1arLz48fgXcGyCPVckFwLnewNH6j1uw79thsvwqGYTY"
-    }
+    },
+    "id": "getblock.io"
 }
 ```
+
+## Response Parameters Definition
+
+| **Field**        | **Type** | **Description**                                                      |
+| ---------------- | -------- | -------------------------------------------------------------------- |
+| **block_hash**   | string   | The hash of the block that contains the account state.               |
+| **block_height** | integer  | The height of the block at which the data was retrieved.             |
+| **code_base64**  | string   | The base64-encoded WebAssembly (WASM) code of the smart contract.    |
+| **hash**         | string   | The SHA-256 hash of the contract’s WASM code, used for verification. |
+
+
+## Use Cases
+- Verify a contract’s **deployed bytecode** for audit or testing.
+- Fetch **WASM code** for on-chain contract analysis tools.
+- Ensure deployed code integrity for **security monitoring**.
+
+## Code Example
+
+**Node(Axios)**
+```js
+import axios from "axios";
+let data = JSON.stringify({
+  "jsonrpc": "2.0",
+  "method": "query",
+  "params": {
+    "request_type": "view_code",
+    "finality": "near-final",
+    "account_id": "staked.poolv1.near"
+  },
+  "id": "getblock.io"
+});
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+```
+**Python(Requests)**
+
+```python
+import requests
+import json
+
+url = "https://go.getblock.io/<ACCESS_TOKEN>"
+
+payload = json.dumps({
+  "jsonrpc": "2.0",
+  "method": "query",
+  "params": {
+    "request_type": "view_code",
+    "finality": "near-final",
+    "account_id": "staked.poolv1.near"
+  },
+  "id": "getblock.io"
+})
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+```
+
+
+
+## Error Handling
+
+| **HTTP Code**                 | **Error Message**              | **Description**                                       |
+| ----------------------------- | ------------------------------ | ----------------------------------------------------- |
+| **404 Not Found**             | `Contract not found`           | The specified account has no deployed smart contract. |
+| **500 Internal Server Error** | `Node processing error`        | The NEAR node failed to process the query.            |
+| **403 Forbidden**   | `RBAC: access denied` | The Getblock access token is missing or incorrect    |
+
+
+## Integration with Web3
+
+By integrating `/query (view_code)` into dApp, developers can:
+
+- Enable **smart contract inspection** directly from dashboards.
+- Build **code verification tools** or explorers.
+- Integrate with **CI/CD pipelines** for contract deployment validation.
+- Enhance transparency for **on-chain AI and dApp ecosystems**.
