@@ -15,19 +15,24 @@
   * [What counts as a CU](getting-started/plans-and-limits/what-counts-as-a-cu.md)
   * [Payment methods](getting-started/plans-and-limits/payment-methods.md)
 * [Monitoring and analytics](getting-started/monitoring-and-analytics.md)
+* [Testing RPC connection](getting-started/testing-rpc-connection/README.md)
+  * [Using cURL for testing](getting-started/testing-rpc-connection/using-curl-for-testing.md)
+  * [Postman Collection](getting-started/testing-rpc-connection/postman-collection.md)
+  * [Errors and troubleshooting](getting-started/testing-rpc-connection/errors-and-troubleshooting.md)
+* [Connect to GetBlock with MetaMask](getting-started/connect-to-getblock-with-metamask.md)
+* [Endpoint setup](getting-started/endpoint-setup/README.md)
+  * [Creating node endpoints](getting-started/endpoint-setup/creating-node-endpoints.md)
+  * [Enabling archive mode](getting-started/endpoint-setup/enabling-archive-mode.md)
+  * [Configuring dedicated nodes](getting-started/endpoint-setup/configuring-dedicated-nodes/README.md)
+    * [Dedicated node performance tiers](getting-started/endpoint-setup/configuring-dedicated-nodes/dedicated-node-performance-tiers.md)
+  * [Using GetBlock configuration files](getting-started/endpoint-setup/using-getblock-configuration-files.md)
+
+***
+
+* [Connect Brave Wallet to GetBlock](connect-brave-wallet-to-getblock.md)
 
 ## GUIDES
 
-* [Endpoint setup](guides/endpoint-setup/README.md)
-  * [Creating node endpoints](guides/endpoint-setup/creating-node-endpoints.md)
-  * [Enabling archive mode](guides/endpoint-setup/enabling-archive-mode.md)
-  * [Configuring dedicated nodes](guides/endpoint-setup/configuring-dedicated-nodes/README.md)
-    * [Dedicated node performance tiers](guides/endpoint-setup/configuring-dedicated-nodes/dedicated-node-performance-tiers.md)
-  * [Using GetBlock configuration files](guides/endpoint-setup/using-getblock-configuration-files.md)
-* [Testing RPC connection](guides/testing-rpc-connection/README.md)
-  * [Using cURL for testing](guides/testing-rpc-connection/using-curl-for-testing.md)
-  * [Postman Collection](guides/testing-rpc-connection/postman-collection.md)
-  * [Errors and troubleshooting](guides/testing-rpc-connection/errors-and-troubleshooting.md)
 * [Using Web3 libraries](guides/using-web3-libraries/README.md)
   * [Web3.js integration](guides/using-web3-libraries/web3.js-integration/README.md)
     * [How to generate accounts and send transactions](guides/using-web3-libraries/web3.js-integration/how-to-generate-accounts-and-send-transactions.md)
@@ -38,9 +43,9 @@
     * [Sniping new Solana tokens – Python bot tutorial](guides/blockchain-api-guides/solana-guides/sniping-new-solana-tokens-python-bot-tutorial.md)
     * [Swap API with Jupiter – Node.js backend](guides/blockchain-api-guides/solana-guides/swap-api-with-jupiter-node.js-backend.md)
     * [Analyzing SPL token distribution (Python)](guides/blockchain-api-guides/solana-guides/analyzing-spl-token-distribution-python.md)
-* [Connect to GetBlock with MetaMask](guides/connect-to-getblock-with-metamask.md)
 * [Querying Web3 data using Covalent API](guides/querying-web3-data-using-covalent-api.md)
-* [Connect Brave Wallet to GetBlock](guides/connect-brave-wallet-to-getblock.md)
+* [Build a Real-Time Hyperliquid Whale Tracker Bot with GetBlock](guides/build-a-real-time-hyperliquid-whale-tracker-bot-with-getblock.md)
+* [Tracking Pump.fun Token Mints in Real Time with GetBlock’s Yellowstone gRPC](guides/tracking-pump.fun-token-mints-in-real-time-with-getblocks-yellowstone-grpc.md)
 
 ## ADD-ONS
 

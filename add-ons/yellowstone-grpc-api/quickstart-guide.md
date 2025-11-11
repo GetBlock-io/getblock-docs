@@ -6,9 +6,9 @@ description: Follow these steps to activate the Solana Yellowstone gRPC add-on o
 
 GetBlock offers[ SOL nodes](https://getblock.io/nodes/sol/) with the Solana Geyser gRPC plugin, so you can start using it immediately, without any node setup and maintenance — simply enable the add-on and point your gRPC client at our endpoints.
 
-### Prerequisites&#x20;
+### Prerequisites
 
-* A GetBlock account with a Dedicated Solana Node subscription&#x20;
+* A GetBlock account with a Dedicated Solana Node subscription
 * Your gRPC endpoint URL with access token (found in GetBlock dashboard)
 
 #### Enabling the Solana gRPC add-on on GetBlock
@@ -17,9 +17,9 @@ The Yellowstone gRPC add-on to Solana currently requires a [Dedicated Node](http
 
 1. **Sign up / log in**: Create an account at GetBlock.io or log in to your existing account.
 2. **Deploy a dedicated Solana node:**
-   1. Go to your user **dashboard**, switch the tab to “**Dedicated nodes**”, and scroll down to “My endpoints”&#x20;
+   1. Go to your user **dashboard**, switch the tab to “**Dedicated nodes**”, and scroll down to “My endpoints”
    2. Choose **Solana** under “Protocol”, set the network to **mainnet**.
-   3. Click on **Get**. &#x20;
+   3. Click on **Get**.
 
 <figure><img src="../../.gitbook/assets/Solana dedicated node setup.svg" alt="Deploying a private Solana node with GetBlock RPC provider"><figcaption></figcaption></figure>
 
@@ -35,7 +35,7 @@ Once your node is live, you’ll be able to create gRPC endpoints to begin using
 
 #### Get your gRPC endpoint
 
-Return to **My endpoints** in your Dedicated node dashboard and generate a gRPC [Access Token](https://docs.getblock.io/getting-started/authentication-with-access-tokens). &#x20;
+Return to **My endpoints** in your Dedicated node dashboard and generate a gRPC [Access Token](https://docs.getblock.io/getting-started/authentication-with-access-tokens).
 
 <p align="center"><img src="../../.gitbook/assets/Yellowstone gRPC endpoint setup.svg" alt=""><br></p>
 
@@ -80,7 +80,7 @@ GetBlock provides a single TLS endpoint – you don’t need to open or configur
 
 Dragon’s Mouth uses **gRPC over HTTP/2** for all communication. Its message schemas are defined in Protocol Buffer (`.proto`) files, included in the [Yellowstone repository](https://github.com/rpcpool/yellowstone-grpc/tree/master), which specify all the RPC methods and data types.
 
-The power of Yellowstone is real‑time streaming: open a single bi‑directional stream, send a `SubscribeRequest` with your filters, and get back a sequence of `SubscribeUpdate` messages.&#x20;
+The power of Yellowstone is real‑time streaming: open a single bi‑directional stream, send a `SubscribeRequest` with your filters, and get back a sequence of `SubscribeUpdate` messages.
 
 Here are the main subscription targets:
 
@@ -213,7 +213,7 @@ go get github.com/rpcpool/yellowstone-grpc/examples/golang@latest
 go get google.golang.org/grpc@latest
 ```
 
-**Go Example** (`go-client/main.go`):&#x20;
+**Go Example** (`go-client/main.go`):
 
 ```go
 import (
@@ -378,19 +378,19 @@ You can call these methods directly on the gRPC client without opening a streami
 
 Before you start streaming data with the Yellowstone Geyser plugin, consider these recommendations:
 
-* **Filtering is crucial**:  Always narrow your subscription to only the `accounts` or `programs` you need. Excessive or empty filters can overwhelm clients and hit rate limits.
+* **Filtering is crucial**: Always narrow your subscription to only the `accounts` or `programs` you need. Excessive or empty filters can overwhelm clients and hit rate limits.
 * **Combine with JSON‑RPC**: Use gRPC for real‑time streaming. Continue to use GetBlock’s JSON‑RPC Solana endpoints for on‑demand calls like [`getBlock`](../../api-reference/solana-sol/sol_getblock.md), [`sendTransaction`](../../api-reference/solana-sol/sol_sendtransaction.md), or historical queries.
 * **Keeping your stream alive**: gRPC streams may time out if idle. The Yellowstone plugin can handle keep-alive pings. In your `SubscribeRequest`, you can set `ping: true` to respond to server pings (or send a minimal ping message periodically) to keep the stream alive.
 * **Selecting the right commitment levels**: Choose **`processed`**, **`confirmed`**, or **`finalized`** in your `SubscribeRequest` to balance between lowest latency (`processed`) and highest certainty (`finalized`). For most real‑time use cases (dashboards, bots), use `processed` to see intra‑slot updates.
 
 {% hint style="info" %}
-### About commitment levels
+#### About commitment levels
 
 In Solana’s commitment hierarchy, you have _processed_, _confirmed_, and _finalized:_
 
 * **Finalized**: After full consensus & finalized in the ledger.
 * **Confirmed**: Once a supermajority of validators have voted.
-* **Processed**:  Means the validator has received and executed the transaction, but it may not yet have enough votes to be considered confirmed/finalized – (“intra-slot”).
+* **Processed**: Means the validator has received and executed the transaction, but it may not yet have enough votes to be considered confirmed/finalized – (“intra-slot”).
 
 _Streaming at “processed” gives you every transaction and account write the moment the leader executes it, well before it appears in a confirmed block._
 {% endhint %}

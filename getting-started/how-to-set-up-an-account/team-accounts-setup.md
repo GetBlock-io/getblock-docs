@@ -14,7 +14,7 @@ A team account is **a shared workspace** **where multiple users can collaborate*
 * **Enhanced security:** Role-based access limits each member to only the features they need.
 * **Efficient management:** Easily switch between personal and team accounts.
 
-A **team account user** is a regular GetBlock user. When invited to a team, they can work on company resources, manage service plans or team settings—provided the corresponding permissions are granted. &#x20;
+A **team account user** is a regular GetBlock user. When invited to a team, they can work on company resources, manage service plans or team settings—provided the corresponding permissions are granted.
 
 ***
 
@@ -22,7 +22,7 @@ A **team account user** is a regular GetBlock user. When invited to a team, they
 
 This part covers a step-by-step guide to setting up your team workspace.
 
-1. Sign in to your GetBlock account. If you don’t have a user account yet, create one following [this guide](../how-to-set-up-an-account.md).&#x20;
+1. Sign in to your GetBlock account. If you don’t have a user account yet, create one following [this guide](../how-to-set-up-an-account.md).
 2. Click on the **profile icon** in the bottom-left corner of the sidebar. Select "**Create new team**" from the dropdown menu.
 
 <figure><img src="../../.gitbook/assets/team_create_new.svg" alt="How to create a team account on GetBlock"><figcaption></figcaption></figure>
@@ -49,7 +49,7 @@ The creator of the team account controls who gets invited and manages user roles
 * One team can have a maximum of **30 users.**
 {% endhint %}
 
-You can invite team members to join your team account using either their email address or GetBlock User ID.&#x20;
+You can invite team members to join your team account using either their email address or GetBlock User ID.
 
 * **If the teammate has a GetBlock account**: You can invite them using their **ID**. Since they are already registered, they just need to accept the invitation.
 * **If the teammate is not registered on GetBlock**: Invite them via **email** so they can first create an account before joining the team.
@@ -59,7 +59,7 @@ You can invite team members to join your team account using either their email a
 1. Go to **Account Settings > Team**.
 2. Click **"Add team member"** in the top-right corner.
 3. Request the **User ID** from the teammate (they can find it under **Account Settings** > **General**).
-4. Enter the name, User I&#x44;**,** and **send the invite**.&#x20;
+4. Enter the name, User I&#x44;**,** and **send the invite**.
 
 <figure><img src="../../.gitbook/assets/team_add_ID.svg" alt="Adding users to the team account on GetBlock"><figcaption></figcaption></figure>
 
@@ -69,7 +69,7 @@ The user gets a notification and can accept the invite.
 {% tab title="The teammate is not registered on GetBlock" %}
 1. Go to **Account Settings > My Team**.
 2. Click **"Add team member"** in the top-right corner.
-3. Enter the teammate's name and **email address.**&#x20;
+3. Enter the teammate's name and **email address.**
 4. Send the invite.
 
 {% hint style="warning" %}
@@ -82,7 +82,7 @@ The user will receive an invitation email with a link to sign up and join the te
 {% endtab %}
 {% endtabs %}
 
-A team member is marked as ![Active](<../../.gitbook/assets/Component 20.svg>) when they have successfully accepted the invitation and joined the team.&#x20;
+A team member is marked as ![Active](<../../.gitbook/assets/Component 20.svg>) when they have successfully accepted the invitation and joined the team.
 
 If the invitation has been sent but not yet accepted, their status remains ![Pending](<../../.gitbook/assets/Component 21.svg>).
 
@@ -111,10 +111,10 @@ If a Member has no permissions assigned, they will have **View-Only access** by 
 
 This table provides a breakdown of actions team account users can perform based on their role.
 
-<table><thead><tr><th width="358.49609375">Action</th><th width="103.0234375" align="center">Owner</th><th width="108.4375" align="center">Admin</th><th align="center">Member</th></tr></thead><tbody><tr><td>Create &#x26; manage access tokens </td><td align="center">✅</td><td align="center">✅</td><td align="center"><a data-footnote-ref href="#user-content-fn-1">🔓</a> </td></tr><tr><td>Manage subscriptions &#x26; payments</td><td align="center">✅</td><td align="center">✅</td><td align="center"><a data-footnote-ref href="#user-content-fn-2">🔓</a></td></tr><tr><td>Add &#x26; remove team members</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Edit access levels</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Promote to Admin</td><td align="center">✅</td><td align="center">❌</td><td align="center">❌</td></tr></tbody></table>
+<table><thead><tr><th width="358.49609375">Action</th><th width="103.0234375" align="center">Owner</th><th width="108.4375" align="center">Admin</th><th align="center">Member</th></tr></thead><tbody><tr><td>Create &#x26; manage access tokens</td><td align="center">✅</td><td align="center">✅</td><td align="center"><a data-footnote-ref href="#user-content-fn-1">🔓</a></td></tr><tr><td>Manage subscriptions &#x26; payments</td><td align="center">✅</td><td align="center">✅</td><td align="center"><a data-footnote-ref href="#user-content-fn-2">🔓</a></td></tr><tr><td>Add &#x26; remove team members</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Edit access levels</td><td align="center">✅</td><td align="center">✅</td><td align="center">❌</td></tr><tr><td>Promote to Admin</td><td align="center">✅</td><td align="center">❌</td><td align="center">❌</td></tr></tbody></table>
 
 {% hint style="success" %}
-If you need someone to help manage other team members, be sure to give them **Admin** status.&#x20;
+If you need someone to help manage other team members, be sure to give them **Admin** status.
 {% endhint %}
 
 ***
@@ -175,7 +175,7 @@ Once registered, you’ll have your personal GetBlock account. Additionally, you
 Now that you’ve joined a team, here are a few useful resources to help you get started:
 
 * [**Getting Started** ](../../)– Learn more about GetBlock.
-* [**Managing Endpoints** ](../../guides/endpoint-setup/)– How to create and manage node endpoints.
+* [**Managing Endpoints** ](../endpoint-setup/)– How to create and manage node endpoints.
 * [**Plans & Limits**](../plans-and-limits/) – Understanding plans and payments.
 {% endhint %}
 {% endtab %}
@@ -191,8 +191,8 @@ A team user **does not lose** access to their personal account. They can still u
 
 To switch between your personal account and any team accounts you are part of:
 
-* Click the **account icon** in the left panel.&#x20;
-* A dropdown will show all **teams & personal accounts**.&#x20;
+* Click the **account icon** in the left panel.
+* A dropdown will show all **teams & personal accounts**.
 * Switch between them as needed.
 
 <figure><img src="../../.gitbook/assets/team_switch (1).svg" alt="Using GetBlock&#x27;s personal and team accounts"><figcaption></figcaption></figure>
@@ -204,7 +204,7 @@ The teams list is sorted by recent activity, with the most recently accessed acc
 ### **Best practices for team security**
 
 * Regularly review and **audit permissions**. Revoke access for users who are no longer active.
-* Grant admin privileges only to **trusted team members**.&#x20;
+* Grant admin privileges only to **trusted team members**.
 * Give Members **only the necessary permissions** (e.g., endpoints access or subscriptions management).
 * Never **share login credentials**—use team accounts instead.
 

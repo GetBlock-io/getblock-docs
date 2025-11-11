@@ -9,18 +9,18 @@ description: >-
 In our **Shared Node** plans, we use **CU-based pricing**. **CUs, Compute Units,** is a way to measure the computational resources that each API request consumes.
 
 {% hint style="info" %}
-### Request vs CU
+#### Request vs CU
 
-**Requests** are the raw number of calls (e.g., an RPC method call) you make to the node, while **Compute Units** show how much computing power each call uses.&#x20;
+**Requests** are the raw number of calls (e.g., an RPC method call) you make to the node, while **Compute Units** show how much computing power each call uses.
 {% endhint %}
 
 Instead of charging a fixed fee for every call, GetBlock calculates the “cost” of processing a request based on **the actual computational work involved** – such as CPU & memory usage, and disk I/O.
 
 Here's how it works:
 
-* Different shared node plans include different allocations of Compute Units (CUs).&#x20;
-* Each API call deducts an amount based on the resources it consumes.&#x20;
-* Users can track their remaining CUs in real time on the dashboard.&#x20;
+* Different shared node plans include different allocations of Compute Units (CUs).
+* Each API call deducts an amount based on the resources it consumes.
+* Users can track their remaining CUs in real time on the dashboard.
 
 <figure><img src="../../.gitbook/assets/cu_balance.svg" alt="How to check your CU balance in GetBlock accounts"><figcaption></figcaption></figure>
 
@@ -72,7 +72,7 @@ Different API methods **put different loads on backend nodes**. For example:
 
 Therefore, individual blockchain methods have their own multipliers, depending on how computationally demanding each particular operation is.
 
-The example table below shows some **Ethereum blockchain methods** with their associated multipliers and total CU calculated.&#x20;
+The example table below shows some **Ethereum blockchain methods** with their associated multipliers and total CU calculated.
 
 <table><thead><tr><th width="271.0625">Ethereum RPC Method</th><th align="center">Method Multiplier</th><th align="center">Base Chain Multiplier</th><th align="center">Total CU</th></tr></thead><tbody><tr><td><code>eth_blockNumber</code></td><td align="center">1</td><td align="center">20</td><td align="center">20</td></tr><tr><td><code>eth_getTransactionByHash</code></td><td align="center">1</td><td align="center">20</td><td align="center">20</td></tr><tr><td><code>debug_traceTransaction</code></td><td align="center">2</td><td align="center">20</td><td align="center">40</td></tr><tr><td><code>debug_traceBlock</code></td><td align="center">2</td><td align="center">20</td><td align="center">40</td></tr><tr><td><code>trace_call</code></td><td align="center">2</td><td align="center">20</td><td align="center">40</td></tr><tr><td><code>trace_transaction</code></td><td align="center">2</td><td align="center">20</td><td align="center">40</td></tr><tr><td><code>txpool_status</code></td><td align="center">2</td><td align="center">20</td><td align="center">40</td></tr><tr><td><code>trace_replayTransaction</code></td><td align="center">4</td><td align="center">20</td><td align="center">80</td></tr></tbody></table>
 
@@ -80,7 +80,7 @@ The example table below shows some **Ethereum blockchain methods** with their as
 Some "heavy" calls (e.g. archive calls) may have special adjustments or additional weighting to more accurately reflect their extra computational demands
 {% endhint %}
 
-> Calculation example for <mark style="color:green;">`debug_traceTransaction`</mark>: \
+> Calculation example for <mark style="color:green;">`debug_traceTransaction`</mark>:\
 > \
 > $$20\ (\text{Ethereum base multiplier}) \times 2\ (\text{method multiplier}) = \mathbf{40\ CU}$$
 
@@ -97,10 +97,10 @@ Tracking and pricing requests based on how “heavy” they are:
 * Discourages abuse (like hammering archive calls) and protects node performance & uptime.
 * Makes it easier for GetBlock to scale and optimize resources behind the scenes.
 
-#### 💰 **Compute Units provide a fair, usage-based billing model**&#x20;
+#### 💰 **Compute Units provide a fair, usage-based billing model**
 
 A simple per-request pricing model would charge the same for all methods, which isn’t scalable or logical. The CU model fixes this imbalance.
 
-#### ⚙️ To h**elp developers build smarter**&#x20;
+#### ⚙️ To h**elp developers build smarter**
 
 Because each API call has a clear CU cost, you can spot inefficiencies quickly (e.g. which parts of your dApp consume the most), making it easier to fine-tune performance.

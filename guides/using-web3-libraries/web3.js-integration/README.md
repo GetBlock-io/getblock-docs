@@ -12,23 +12,25 @@ Web3.js is a JavaScript library built for interacting with the Ethereum blockcha
 
 Use your preferred package manager:
 
-* npm:
-
+{% tabs %}
+{% tab title="npm" %}
 ```bash
 npm install web3
 ```
+{% endtab %}
 
-* yarn:
-
+{% tab title="yarn" %}
 ```bash
 yarn add web3
 ```
+{% endtab %}
 
-* Pure js link:
-
-```
+{% tab title="Pure js link" %}
+```bash
 dist/web3.min.js
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Set up your connection to GetBlock
 
