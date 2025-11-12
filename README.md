@@ -1,7 +1,7 @@
 ---
 description: >-
   Welcome to GetBlock.io! We make it easy for developers and businesses to
-  connect to 50+ blockchain networks.
+  connect to 80+ blockchain networks.
 icon: hand-wave
 cover: .gitbook/assets/cover.png
 coverY: 0
@@ -24,7 +24,7 @@ From DeFi apps and NFT platforms to analytics tools, AppChains, and more, GetBlo
   Reliable 24/7 connection to multiple blockchain networks.
 *   **Multi-chain support**
 
-    Connect to Bitcoin, Ethereum, BNB Chain, Polygon, Solana, TON, and 50+ other networks. (And we support new protocols before anyone else!)
+    Connect to Bitcoin, Ethereum, BNB Chain, Polygon, Solana, TON, and 80+ other networks. (And we support new protocols before anyone else!)
 *   **Flexible plans**
 
     From free access to enterprise-grade solutions, we’ve got options for every stage of your project.

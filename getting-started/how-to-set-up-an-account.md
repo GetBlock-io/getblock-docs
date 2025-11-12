@@ -9,13 +9,13 @@ icon: file-lines
 
 {% stepper %}
 {% step %}
-#### Go to GetBlock
+**Go to GetBlock**
 
 Visit the [homepage](https://getblock.io/) and click on the 'Dashboard' button in the upper-right corner, or use [this direct link](https://account.getblock.io/sign-up).
 {% endstep %}
 
 {% step %}
-#### Choose the sign-up method
+**Choose the sign-up method**
 
 *   **Register with Email**
 
@@ -32,7 +32,7 @@ Visit the [homepage](https://getblock.io/) and click on the 'Dashboard' button i
 {% endstep %}
 
 {% step %}
-#### Review and accept policies
+**Review and accept policies**
 
 During registration, you will be asked to accept our [Terms of Service](https://getblock.io/terms-of-service/) and [Privacy Policy](https://getblock.io/privacy-policy/).
 {% endstep %}
@@ -48,6 +48,6 @@ Once you've created an account and signed in, you'll be directed to the GetBlock
 
 ### Check your User ID
 
-Find your user ID located in the ‘Account Settings’ section or simply click your account icon to view it. Please use it when contacting GetBlock’s team so we can identify your account and help you faster.
+Find your GetBlock user ID located in the ‘Settings’ section or simply click your account icon to view and copy it. Please use it when contacting GetBlock’s team so we can identify your account and help you faster.
 
-<figure><img src="../.gitbook/assets/UserID_settings.svg" alt="How to find GetBlock user ID"><figcaption><p>Find the user ID</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/UserID_settings.svg" alt="How to find GetBlock user ID"><figcaption><p>Where to find the GetBlock user ID</p></figcaption></figure>
