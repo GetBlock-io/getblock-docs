@@ -2,6 +2,7 @@
 description: >-
   A complete guide on how to track Pump.fun token launches on Solana in
   real-time using GetBlock’s Yellowstone gRPC service.
+icon: rocket-launch
 ---
 
 # Tracking Pump.fun Token Mints in Real Time with GetBlock’s Yellowstone gRPC

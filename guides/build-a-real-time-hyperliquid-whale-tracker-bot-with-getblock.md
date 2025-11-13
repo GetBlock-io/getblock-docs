@@ -2,6 +2,7 @@
 description: >-
   A step by step guide on how to build an Hyperliquid Whale Tracker Bot using
   GetBlock API
+icon: telegram
 ---
 
 # Build a Real-Time Hyperliquid Whale Tracker Bot with GetBlock
