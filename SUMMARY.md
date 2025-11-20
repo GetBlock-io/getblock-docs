@@ -46,6 +46,8 @@
 * [Querying Web3 data using Covalent API](guides/querying-web3-data-using-covalent-api.md)
 * [Build a Real-Time Hyperliquid Whale Tracker Bot with GetBlock](guides/build-a-real-time-hyperliquid-whale-tracker-bot-with-getblock.md)
 * [Tracking Pump.fun Token Mints in Real Time with GetBlock’s Yellowstone gRPC](guides/tracking-pump.fun-token-mints-in-real-time-with-getblocks-yellowstone-grpc.md)
+* [Basic-level Model-Context Protocol with GetBlock API Endpoints](guides/basic-level-model-context-protocol-with-getblock-api-endpoints.md)
+* [Monitoring Liquidity Pools on Solana DEXes with GetBlock's Yellowstone gRPC](guides/monitoring-liquidity-pools-on-solana-dexes-with-getblocks-yellowstone-grpc.md)
 
 ## ADD-ONS
 

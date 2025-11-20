@@ -57,8 +57,6 @@ Before you begin, ensure you have:
 
 ### Step 1: Set Up Your GetBlock’s Yellowstone Endpoint
 
-GetBlock offers Solana nodes with the Yellowstone Geyser gRPC plugin pre-installed, allowing you to start using it immediately without any node setup or maintenance. You simply enable the add-on and point your gRPC client at the endpoint.
-
 #### Deploy Your Dedicated Solana Node
 
 First, you need to deploy a dedicated Solana node on GetBlock with the Yellowstone gRPC add-on enabled.
@@ -83,7 +81,7 @@ First, you need to deploy a dedicated Solana node on GetBlock with the Yellowsto
 
 * In Step 3 of your node setup (Select API and Add-ons)
 * Check the box for **Yellowstone gRPC** under Add-ons
-* Complete payout and finalize the setup
+* Complete payout and finalise the setup
 
 ![](<../.gitbook/assets/unknown (1).png>)
 
@@ -131,13 +129,14 @@ Ensure you securely store both the base endpoint and the access token. You'll ne
 GetBlock provides a single TLS endpoint - you don't need to configure different ports or protocols. Everything works over standard HTTPS (`port 443`).
 {% endhint %}
 
-### Step 2: Initialize Your Project
+### Step 2: Set up Development Environment
 
 1. Create a directory for your project
 
-```bash
+```
 mkdir pumpfun-monitor
 cd pumpfun-monitor
+npm init-y
 ```
 
 2. Install Dependencies:
@@ -151,7 +150,7 @@ What these packages do:
 * [@triton-one/yellowstone-grpc](https://www.npmjs.com/package/@triton-one/yellowstone-grpc) - Official client for connecting to Yellowstone gRPC services (works with GetBlock)
 * [bs58@5.0.0 ](https://www.npmjs.com/package/bs58)- Encodes binary data to base58 format (Solana's address format). Version 5.0.0 supports vanilla js.
 
-{% hint style="success" %}
+{% hint style="info" %}
 `bs58@5.0.0`  because version 6.x + uses ES modules only, which don't work with vanilla js - `require()` statements.
 {% endhint %}
 
@@ -160,7 +159,7 @@ What these packages do:
 Create the following files to have a basic structure for your project:
 
 ```bash
-├── index.js            // Main apllication
+├── pumpfun-monitor.js          // Main apllication
 └── .env                // Environment variables
 └── .gitignore          // Git ignore file
 ```
