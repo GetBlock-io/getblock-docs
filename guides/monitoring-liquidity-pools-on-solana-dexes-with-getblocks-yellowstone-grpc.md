@@ -637,4 +637,4 @@ In this guide, you've learn how to build a monitor that fetches liquidity pools 
 #### Resources:
 
 1. [Pool monitor repo](https://github.com/GetBlock-io/guides/tree/main/pool-monitor)
-2. [GetBlock Yellowstone gRPC](../add-ons/yellowstone-grpc-api/)\
+2. [GetBlock Yellowstone gRPC](../add-ons/yellowstone-grpc-api/)<br>

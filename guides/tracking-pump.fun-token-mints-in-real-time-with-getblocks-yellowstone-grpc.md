@@ -243,8 +243,7 @@ function decodeString(buffer, offset) {
 
 * Pump.fun stores strings as \[4 bytes for length]\[UTF-8 string data]. This function reads that format and returns both the string value and how many bytes were consumed.
 
-2.  Add Instruction Parser: \
-
+2.  Add Instruction Parser: <br>
 
     ```javascript
     function parseCreateInstruction(data) {
@@ -698,4 +697,4 @@ It also explains how to troubleshoot some errors you may encounter and possible 
 
 \
 \
-\
+<br>

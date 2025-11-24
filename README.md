@@ -3,7 +3,7 @@ description: >-
   Welcome to GetBlock.io! We make it easy for developers and businesses to
   connect to 80+ blockchain networks.
 icon: hand-wave
-cover: .gitbook/assets/cover.png
+cover: .gitbook/assets/Dosc (2).png
 coverY: 0
 ---
 
