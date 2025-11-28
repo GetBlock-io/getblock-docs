@@ -7,7 +7,7 @@ description: >-
 # accountSubscribe – Solana
 
 {% hint style="success" %}
-The **accountSubscribe** RPC Solana method is often used in dApps to track account balance changes and state modifications.&#x20;
+The **accountSubscribe** RPC Solana method is often used in dApps to track account balance changes and state modifications.
 {% endhint %}
 
 It provides a subscription ID that can be used to unsubscribe later. The notification format is similar to the getAccountInfo method's response.
@@ -15,7 +15,6 @@ It provides a subscription ID that can be used to unsubscribe later. The notific
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

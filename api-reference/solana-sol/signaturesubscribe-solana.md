@@ -8,7 +8,7 @@ description: >-
 # signatureSubscribe – Solana
 
 {% hint style="info" %}
-The signatureSubscribe RPC Solana method tracks the status of a transaction signature and notifies the client when it has been processed or received.&#x20;
+The signatureSubscribe RPC Solana method tracks the status of a transaction signature and notifies the client when it has been processed or received.
 {% endhint %}
 
 This is crucial for dApps and Web3 applications that need real-time transaction status updates.
@@ -16,7 +16,6 @@ This is crucial for dApps and Web3 applications that need real-time transaction 
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

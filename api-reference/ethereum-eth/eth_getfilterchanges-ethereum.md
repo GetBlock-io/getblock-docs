@@ -20,7 +20,7 @@ As a critical feature in Ethereum eth\_getFilterChanges, this method is commonly
 The eth\_getFilterChanges RPC Ethereum method is supported on the following network types
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 

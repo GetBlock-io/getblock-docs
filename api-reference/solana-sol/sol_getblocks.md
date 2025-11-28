@@ -17,7 +17,6 @@ This method is vital for querying multiple consecutive blocks, making it essenti
 The getBlocks RPC Solana method supports the following network types:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

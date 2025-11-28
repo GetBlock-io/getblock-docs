@@ -18,7 +18,7 @@ The eth\_uninstallFilter method is part of the Ethereum JSON RPC Core API, used 
 The eth\_uninstallFilter RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -27,7 +27,7 @@ The eth\_uninstallFilter RPC Ethereum method supports the following network type
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -121,7 +121,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios'); 
+import axios from 'axios'; 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 const data = {
   jsonrpc: '2.0',

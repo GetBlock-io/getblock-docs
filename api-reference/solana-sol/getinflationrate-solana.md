@@ -7,7 +7,7 @@ description: >-
 # getInflationRate – Solana
 
 {% hint style="success" %}
-The **getInflationRate** RPC Solana method provides real-time inflation data for the current epoch, including the total inflation percentage, the amount allocated to validators, and the portion allocated to the foundation.&#x20;
+The **getInflationRate** RPC Solana method provides real-time inflation data for the current epoch, including the total inflation percentage, the amount allocated to validators, and the portion allocated to the foundation.
 {% endhint %}
 
 The getInflationRate method returns **the current inflation rate parameters** of the Solana network. It provides information on the expected annual inflation rate, staking rewards distribution, and total token supply adjustments, helping users and validators understand the network’s monetary policy.
@@ -17,7 +17,6 @@ The getInflationRate method returns **the current inflation rate parameters** of
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -149,5 +148,3 @@ fetchInflationRate();
 ### Integration with Web3
 
 Integrate the **getInflationRate** API with Solana’s Core API to retrieve real-time inflation rate data dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate tracking of staking rewards, inflation changes, and the impact of network economics on the Solana ecosystem.
-
-\

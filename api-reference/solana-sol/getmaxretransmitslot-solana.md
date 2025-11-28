@@ -7,7 +7,7 @@ description: >-
 # getMaxRetransmitSlot – Solana
 
 {% hint style="success" %}
-The **getMaxRetransmitSlot** RPC Solana method provides insight into the highest slot number seen during the retransmit stage.&#x20;
+The **getMaxRetransmitSlot** RPC Solana method provides insight into the highest slot number seen during the retransmit stage.
 {% endhint %}
 
 The getMaxRetransmitSlot method returns **the highest slot that the node has retransmitted to the network**. It helps developers monitor node behavior, assess data propagation, and analyze the effectiveness of Solana’s block transmission process.
@@ -17,7 +17,6 @@ The getMaxRetransmitSlot method returns **the highest slot that the node has ret
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -97,8 +96,6 @@ The Solana **getMaxRetransmitSlot** method is useful for:
 
 ### Code getMaxRetransmitSlot Example – Web3 Integration
 
-
-
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
@@ -136,5 +133,3 @@ fetchMaxRetransmitSlot();
 ### Integration with Web3
 
 By integrating Web3 **getMaxRetransmitSlot** into Solana’s Core API, developers can track network slot propagation, monitor block dissemination, and improve transaction confirmation strategies. The JSON-RPC request structure allows seamless retrieval of retransmit slot data, ensuring efficient blockchain operations for dApps, validators, and infrastructure providers.
-
-\

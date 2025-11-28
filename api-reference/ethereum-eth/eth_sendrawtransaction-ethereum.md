@@ -20,7 +20,7 @@ To avoid exposing your private key, it is recommended to create signed transacti
 The eth\_sendRawTransaction RPC Ethereum method works across various Ethereum network types, including:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -30,7 +30,7 @@ The method accepts a single parameter:
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -137,7 +137,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 // Define the API URL and headers
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
@@ -177,5 +177,3 @@ When using the eth\_sendRawTransaction RPC Ethereum method, the following issues
 * Replay Protection: Only replay-protected (EIP-155) transactions are allowed over RPC.
 
 By integrating the Web3 eth\_sendRawTransaction method into your application, you can securely send transactions and interact with the Ethereum blockchain. Use this core API method to enable seamless user experiences while maintaining high security.
-
-\\

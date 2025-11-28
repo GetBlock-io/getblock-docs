@@ -7,7 +7,7 @@ description: >-
 # getBlockHeight - Solana
 
 {% hint style="success" %}
-The getBlockHeight RPC method allows you to fetch the current block height on the Solana blockchain.&#x20;
+The getBlockHeight RPC method allows you to fetch the current block height on the Solana blockchain.
 {% endhint %}
 
 By using this method, you can easily get the latest block number, which represents the most recent block added to the blockchain. The block height is helpful for tracking blockchain progress, synchronizing nodes, or monitoring the state of the network.
@@ -17,7 +17,6 @@ By using this method, you can easily get the latest block number, which represen
 The getBlockHeight RPC method is available on the following networks:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -73,7 +72,7 @@ The getBlockHeight method is useful for applications that need to monitor or dis
 * Wallets or staking platforms to show the latest blockchain status.
 * Node operators for synchronization or tracking the progress of the network.
 
-### Code getBlockHeight  Example
+### Code getBlockHeight Example
 
 {% tabs %}
 {% tab title="JavaScript" %}

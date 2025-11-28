@@ -20,7 +20,6 @@ The method is part of the Solana Core API and can be accessed through the Solana
 The getBalance RPC Solana method supports the following network types:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

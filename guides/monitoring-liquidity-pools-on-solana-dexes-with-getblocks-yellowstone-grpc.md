@@ -2,6 +2,7 @@
 description: >-
   Step-by-step guide for building a Node.js app to track real-time swaps on
   Solana using GetBlock's Yellowstone gRPC
+icon: rotate
 ---
 
 # Monitoring Liquidity Pools on Solana DEXes with GetBlock's Yellowstone gRPC

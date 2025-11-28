@@ -8,7 +8,7 @@ description: >-
 # eth\_mining Ethereum
 
 {% hint style="success" %}
-Whether the client is actively mining new blocks. Besu pauses miningwhile the client synchronizes with the network regardless of command settings or methods called.
+Whether the client is actively mining new blocks. Besu pauses mining while the client synchronizes with the network regardless of command settings or methods called.
 {% endhint %}
 
 The eth\_mining method is part of the Ethereum JSON RPC API and determines whether the client is actively mining new blocks. This method is useful for understanding the status of mining operations in Ethereum-based systems. It also highlights that Besu pauses mining while the client synchronizes with the network, regardless of command settings or methods called.
@@ -18,7 +18,7 @@ The eth\_mining method is part of the Ethereum JSON RPC API and determines wheth
 The eth\_mining RPC Ethereum method works on various Ethereum network types, including:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ This method does not require any parameters. The request can be sent with an emp
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -125,7 +125,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 // Define the API URL and headers
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
@@ -161,5 +161,3 @@ When using the eth\_mining RPC Ethereum method, the following errors may occur:
 * eth\_mining error: This may occur if the method is not supported on the selected network or if there are synchronization issues with the client.
 
 By integrating the Web3 eth\_mining method into your applications, you can monitor mining activity efficiently and ensure seamless operation in Ethereum-based systems. Use this core API method to retrieve the mining status of the client and adapt your DApp’s behavior accordingly.
-
-\\

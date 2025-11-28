@@ -7,7 +7,7 @@ description: >-
 # getSignatureStatuses – Solana
 
 {% hint style="success" %}
-The getSignatureStatuses RPC Solana method checks the status of a list of transaction signatures (txid).&#x20;
+The getSignatureStatuses RPC Solana method checks the status of a list of transaction signatures (txid).
 {% endhint %}
 
 By default, it only searches **the recent status cache**, which includes all active slots plus `MAX_RECENT_BLOCKHASHES` rooted slots. However, enabling the **searchTransactionHistory** parameter allows a deeper search in the node's ledger.
@@ -19,7 +19,6 @@ This method is valuable for applications that need to verify whether a block con
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -197,5 +196,3 @@ fetchSignatureStatuses();
 ### Integration with Web3
 
 By integrating Web3 **getSignatureStatuses** into Solana’s Core API, developers can verify transaction statuses in real time, track block confirmations, and ensure efficient request handling. This JSON-RPC method is essential for decentralized applications, validators, and blockchain explorers that require up-to-date transaction insights.
-
-\

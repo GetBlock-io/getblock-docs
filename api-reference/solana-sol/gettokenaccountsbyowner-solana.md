@@ -7,7 +7,7 @@ description: >-
 # getTokenAccountsByOwner – Solana
 
 {% hint style="success" %}
-The **getTokenAccountsByOwner** RPC Solana method allows developers to query SPL Token accounts by specifying an account Pubkey of the owner.&#x20;
+The **getTokenAccountsByOwner** RPC Solana method allows developers to query SPL Token accounts by specifying an account Pubkey of the owner.
 {% endhint %}
 
 This method supports optional filtering by mint or programId and offers various encoding formats for flexibility when **working with token data** in Solana’s Core API.
@@ -17,7 +17,6 @@ This method supports optional filtering by mint or programId and offers various 
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

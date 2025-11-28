@@ -7,7 +7,7 @@ description: >-
 # simulateTransaction – Solana
 
 {% hint style="success" %}
-The **simulateTransaction** RPC Solana method executes a transaction in a simulated environment.&#x20;
+The **simulateTransaction** RPC Solana method executes a transaction in a simulated environment.
 {% endhint %}
 
 It verifies signatures and blockhash validity, returning the execution logs and account state changes without modifying the blockchain state.
@@ -17,7 +17,6 @@ It verifies signatures and blockhash validity, returning the execution logs and 
 This method is accessible via the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

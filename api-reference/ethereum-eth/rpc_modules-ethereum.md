@@ -18,7 +18,7 @@ The rpc\_modules method is part of the Ethereum JSON RPC Core API, used to list 
 The rpc\_modules RPC Ethereum method supports all Ethereum network types, including:
 
 * Mainnet
-* Testnets: Sepolia, Holesky
+* Testnets: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ This method does not require any parameters.
 
 ### Request Example
 
-URL (API Endpoint)
+URL
 
 ```
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -153,5 +153,3 @@ axios.post(url, data, {
 This Python script sends a request to the rpc\_modules method and prints the returned list of enabled APIs and their versions. Replace \<ACCESS-TOKEN> with your actual API token. The Web3 rpc\_modules method can also be accessed through Web3 libraries for Ethereum, offering a convenient way to retrieve module information programmatically.
 
 The Ethereum rpc\_modules method is a key tool for developers working with the Ethereum JSON RPC API, enabling them to identify available APIs and their versions quickly. As part of the Core API Endpoints, this method enhances compatibility and debugging workflows by providing transparent module information.
-
-\\

@@ -7,7 +7,7 @@ description: >-
 # getSlotLeaders – Solana
 
 {% hint style="success" %}
-The **getSlotLeaders** RPC Solana method provides an array of node identity public keys corresponding to the leaders for a given slot range.&#x20;
+The **getSlotLeaders** RPC Solana method provides an array of node identity public keys corresponding to the leaders for a given slot range.
 {% endhint %}
 
 This information is crucial for **understanding** **block production patterns** and **identifying potential network performance issues**.
@@ -19,7 +19,6 @@ This method requires specifying a start slot and a limit to define the range. Th
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -162,5 +161,3 @@ fetchSlotLeaders();
 ### Integration with Web3
 
 By integrating Web3 **getSlotLeaders** into Solana’s Core API, developers can track block production trends, monitor transaction performance, and analyze slot leadership across specified ranges. This JSON-RPC method plays a crucial role in maintaining network visibility and performance optimization.
-
-\

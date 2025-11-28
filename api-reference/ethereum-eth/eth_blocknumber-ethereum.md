@@ -18,7 +18,7 @@ This method is essential for applications that need to stay updated with the lat
 The eth\_blockNumber **RPC Ethereum** method supports the following network types
 
 * **Mainnet**
-* **Testnet**: Sepolia, Holesky
+* **Testnet**: Sepolia, Hoodi
 
 ### Parameters
 

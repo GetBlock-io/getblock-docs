@@ -7,7 +7,7 @@ description: >-
 # getStakeMinimumDelegation – Solana
 
 {% hint style="success" %}
-The **getStakeMinimumDelegation** RPC Solana method provides the minimum stake amount necessary to delegate stake to a validator.&#x20;
+The **getStakeMinimumDelegation** RPC Solana method provides the minimum stake amount necessary to delegate stake to a validator.
 {% endhint %}
 
 This value is denominated in lamports, Solana's smallest currency unit. The method supports an optional parameters object to specify commitment levels for data accuracy.
@@ -19,7 +19,6 @@ The Core API uses this method to help **validators**, **dApps**, and **wallet ap
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -149,5 +148,3 @@ fetchStakeMinimumDelegation();
 ### Integration with Web3
 
 By integrating Web3 **getStakeMinimumDelegation** into Solana’s Core API, developers can manage staking operations, query the blockchain for current transaction requirements, and provide stake-related information to users efficiently. This JSON-RPC method ensures accurate and up-to-date insights into stake requirements for validators and delegators.
-
-\

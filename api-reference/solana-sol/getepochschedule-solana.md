@@ -17,7 +17,6 @@ It helps developers and validators understand the number of slots per epoch, lea
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -137,5 +136,3 @@ fetchEpochSchedule();
 ### Integration with Web3
 
 Integrate the getEpochSchedule API with Solana’s Core API to retrieve real-time epoch structure details. By leveraging JSON-RPC parameters and endpoints, developers can track epoch progression, slot distribution, and leader schedule offsets, ensuring smooth blockchain operations.
-
-\

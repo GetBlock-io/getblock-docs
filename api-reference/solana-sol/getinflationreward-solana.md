@@ -7,7 +7,7 @@ description: >-
 # getInflationReward – Solana
 
 {% hint style="success" %}
-The **getInflationReward** RPC Solana method provides reward distribution details for validators and stakers, including reward amount, effective slot, post-reward balance, and commission percentage (if applicable).&#x20;
+The **getInflationReward** RPC Solana method provides reward distribution details for validators and stakers, including reward amount, effective slot, post-reward balance, and commission percentage (if applicable).
 {% endhint %}
 
 The getInflationReward method retrieves **inflation rewards earned by one or more validator accounts for a given epoch**. It provides insights into staking rewards, helping delegators and validators track earnings and assess the impact of inflation-based incentives on the Solana network.
@@ -17,7 +17,6 @@ The getInflationReward method retrieves **inflation rewards earned by one or mor
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -86,9 +85,9 @@ The result field is an array with elements corresponding (in order) to the list 
 
 #### **In this response:**
 
-* `amount` (`u64`): The number of lamports rewarded during that epoch.&#x20;
-* `effectiveSlot`(`u64`): The slot at which the reward was calculated.&#x20;
-* `epoch`(`u64`): The epoch for which the reward was issued.&#x20;
+* `amount` (`u64`): The number of lamports rewarded during that epoch.
+* `effectiveSlot`(`u64`): The slot at which the reward was calculated.
+* `epoch`(`u64`): The epoch for which the reward was issued.
 * `postBalance`(`u64`): The account’s balance (in lamports) immediately after the reward was applied.
 * `null`: The second address did not receive any reward for the requested epoch.
 
@@ -177,5 +176,3 @@ fetchInflationReward();
 ### Integration with Web3
 
 Integrate the Web3 **getInflationReward** API with Solana’s Core API to track staking rewards dynamically. By leveraging JSON-RPC parameters and endpoints, developers can efficiently monitor staking performance, validator commissions, and epoch-based reward distributions.
-
-\

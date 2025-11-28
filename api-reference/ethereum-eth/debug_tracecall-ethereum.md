@@ -17,7 +17,7 @@ This method returns a transaction trace object, providing detailed insights into
 The debug\_traceCall RPC Ethereum method supports all Ethereum network types, including:
 
 * Mainnet
-* Testnets: Sepolia, Holesky
+* Testnets: Sepolia, Hoodi
 
 ### Parameters
 
@@ -29,8 +29,11 @@ The debug\_traceCall method accepts the following parameters:
 
 ### Request Example
 
-URL (API Endpoint)\
-https://go.getblock.io/\<ACCESS-TOKEN>/
+URL
+
+```
+https://go.getblock.io/<ACCESS-TOKEN>/
+```
 
 To make a request, send a JSON object with the jsonrpc, method, and params fields. Below is an example of how to make a request using curl:
 
@@ -148,7 +151,7 @@ print(json.dumps(response_data, indent=4))Pyth
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/'; // Замените <ACCESS-TOKEN> на ваш токен доступа
 const headers = {
@@ -182,5 +185,3 @@ axios.post(url, data, { headers })
 {% endtabs %}
 
 This Python script demonstrates how to interact with the debug\_traceCall method programmatically. Replace \<ACCESS-TOKEN> with your actual API key. The Web3 debug\_traceCall method is also accessible through Web3 libraries for Ethereum, enabling seamless debugging workflows for decentralized application development.
-
-\\

@@ -15,7 +15,6 @@ Once unsubscribed, the client will no longer receive notifications about transac
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

@@ -7,7 +7,7 @@ description: >-
 # rootUnsubscribe – Solana
 
 {% hint style="success" %}
-The **rootUnsubscribe** RPC Solana method cancels an existing subscription to root notifications using a subscription ID.&#x20;
+The **rootUnsubscribe** RPC Solana method cancels an existing subscription to root notifications using a subscription ID.
 {% endhint %}
 
 This helps Web3 applications reduce unnecessary traffic and maintain efficiency.
@@ -15,7 +15,6 @@ This helps Web3 applications reduce unnecessary traffic and maintain efficiency.
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

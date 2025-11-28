@@ -11,7 +11,7 @@ description: >-
 The **getTransaction** method in JSON-RPC is used to fetch details of a confirmed transaction in the Solana blockchain by its signature.
 {% endhint %}
 
-The **getTransaction** method is a crucial part of Solana’s Core API, allowing developers to **retrieve detailed information about a specific transaction**. It provides essential data, including transaction status, block confirmations, signatures, and executed instructions.&#x20;
+The **getTransaction** method is a crucial part of Solana’s Core API, allowing developers to **retrieve detailed information about a specific transaction**. It provides essential data, including transaction status, block confirmations, signatures, and executed instructions.
 
 This method is particularly useful for transaction tracking, debugging, and blockchain activity analysis, making it a key tool for explorers, wallets, and other blockchain-based applications.
 
@@ -20,7 +20,6 @@ This method is particularly useful for transaction tracking, debugging, and bloc
 The **getTransaction** RPC Solana method supports the following network types:
 
 * Mainnet
-* Devnet
 
 #### Parameters <a href="#parameters" id="parameters"></a>
 
@@ -134,7 +133,7 @@ Successful Response:
 
 #### Use Cases <a href="#use-case" id="use-case"></a>
 
-The **getTransaction** method is used to retrieve detailed information about a confirmed transaction on the Solana blockchain by its signature. This method allows developers to integrate transaction lookup functionality into applications such as **blockchain explorers**, **analytics tools**, and **decentralized apps**.
+retrievesThe **getTransaction** method is used to retrieve detailed information about a confirmed transaction on the Solana blockchain by its signature. This method allows developers to integrate transaction lookup functionality into applications such as **blockchain explorers**, **analytics tools**, and **decentralized apps**.
 
 For example, a user inputs a transaction signature, and the application sends a request to the server to fetch data about account balances before and after the transaction, instructions executed, fees, and any potential errors. This enables the display of complete transaction details, enhancing user interaction.
 

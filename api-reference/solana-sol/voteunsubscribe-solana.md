@@ -13,7 +13,6 @@ This method is useful for efficiently managing WebSocket subscriptions and preve
 #### Supported Networks
 
 * Mainnet
-* Devnet
 
 #### Parameters
 
@@ -99,8 +98,6 @@ The **Solana voteUnsubscribe** method is useful for:
 * Ensuring that applications remain within API rate limits by properly managing subscriptions.
 
 #### Code voteUnsubscribe Example – Web3 Integration
-
-
 
 {% tabs %}
 {% tab title="JavaScript" %}

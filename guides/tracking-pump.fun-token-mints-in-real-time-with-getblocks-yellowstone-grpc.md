@@ -11,7 +11,7 @@ icon: rocket-launch
 
 Traditional blockchain monitoring relies on polling RPC endpoints every few seconds, which introduces significant latency (2-5 seconds) and checking for updates that may not exist.&#x20;
 
-GetBlock's Yellowstone gRPC service solves this by streaming data directly from Solana validators in real-time.&#x20;
+GetBlock's Yellowstone gRPC service solves this by streaming data from Solana validators in real time.&#x20;
 
 Here is a comparison:
 
@@ -694,7 +694,3 @@ It also explains how to troubleshoot some errors you may encounter and possible 
 * [GetBlock Yellowstone gRPC API](../add-ons/yellowstone-grpc-api/)
 * [Yellowstone gRPC GitHub](https://github.com/rpcpool/yellowstone-grpc)
 * [Pump.fun on Solscan](https://solscan.io/account/6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P)
-
-\
-\
-<br>

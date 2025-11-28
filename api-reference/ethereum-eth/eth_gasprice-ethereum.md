@@ -18,7 +18,7 @@ This method returns a percentile gas unit price for the most recent blocks in th
 The eth\_gasPrice RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 

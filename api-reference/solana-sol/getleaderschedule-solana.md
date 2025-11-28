@@ -17,7 +17,6 @@ The getLeaderSchedule method retrieves **the leader schedule for a given epoch**
 Access this method via Solana API Endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -159,5 +158,3 @@ fetchLeaderSchedule();
 ### Integration with Web3
 
 Integrate the Web3 **getLeaderSchedule** API with Solana’s Core API to retrieve real-time leader schedules. By leveraging JSON-RPC parameters and endpoints, developers can optimize transaction execution and validator slot assignments, ensuring maximum efficiency in blockchain operations.
-
-\

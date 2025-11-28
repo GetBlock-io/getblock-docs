@@ -18,7 +18,7 @@ The debug\_accountRange method is part of the Ethereum JSON RPC Core API. It is 
 The debug\_accountRange RPC Ethereum method supports the following Ethereum network types:
 
 * Mainnet
-* Testnets: Sepolia, Holesky
+* Testnets: Sepolia, Hoodi
 
 ### Parameters
 
@@ -31,7 +31,7 @@ The debug\_accountRange method accepts the following parameters:
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -137,7 +137,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 

@@ -18,7 +18,6 @@ The getFeeForMessage method calculates the transaction fee for a given Base-64 e
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -153,5 +152,3 @@ fetchTransactionFee();
 ### Integration with Web3
 
 Integrate the getFeeForMessage API with Solana’s Core API to retrieve real-time fee estimates. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate transaction fee calculations, helping users make informed decisions before broadcasting transactions.
-
-\

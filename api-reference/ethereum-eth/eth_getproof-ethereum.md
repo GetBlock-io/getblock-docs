@@ -20,7 +20,7 @@ The eth\_getProof RPC Ethereum method is an essential tool for verifying on-chai
 Ethereum eth\_getProof RPC method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 

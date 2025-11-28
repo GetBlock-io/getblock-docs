@@ -18,7 +18,7 @@ The web3\_clientVersion method is part of the Ethereum JSON RPC Core API and is 
 The web3\_clientVersion RPC Ethereum method is supported across all Ethereum network types, including:
 
 * Mainnet
-* Testnets: Sepolia, Holesky
+* Testnets: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ This method does not require any parameters.
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -124,7 +124,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 

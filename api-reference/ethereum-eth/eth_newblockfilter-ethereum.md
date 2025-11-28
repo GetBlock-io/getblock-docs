@@ -18,7 +18,7 @@ The eth\_newBlockFilter method is part of the Ethereum JSON RPC API and is used 
 The eth\_newBlockFilter RPC Ethereum method works on various Ethereum network types, including:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ This method does not require any parameters. The request can be sent with an emp
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -125,7 +125,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 // Define the API URL and headers
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';

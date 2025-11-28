@@ -17,7 +17,7 @@ The debug\_getBadBlocks method is part of the Ethereum JSON RPC Core API, design
 The debug\_getBadBlocks RPC Ethereum method supports all Ethereum network types, including:
 
 * Mainnet
-* Testnets: Sepolia, Holesky
+* Testnets: Sepolia, Hoodi
 
 ### Parameters
 
@@ -135,7 +135,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 const headers = {

@@ -19,7 +19,6 @@ This method is useful for developers building **dashboards**, **analytics tools*
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -167,5 +166,3 @@ fetchSupplyInfo();
 ### Integration with Web3
 
 By integrating Web3 **getSupply** into Solana’s Core API, developers can track blockchain supply metrics, analyze transaction activity, and monitor circulating and non-circulating supply dynamics. This JSON-RPC method is essential for applications that need accurate supply information for financial reporting and analytics.
-
-\

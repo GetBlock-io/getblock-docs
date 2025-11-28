@@ -18,7 +18,7 @@ The web3\_sha3 method is part of the Ethereum JSON RPC Core API, designed to ret
 The web3\_sha3 RPC Ethereum method is universally supported across all Ethereum networks, including:
 
 * Mainnet
-* Testnets: Sepolia, Holesky
+* Testnets: Sepolia, Hoodi
 
 ### Parameters
 
@@ -27,7 +27,7 @@ The web3\_sha3 RPC Ethereum method is universally supported across all Ethereum 
 
 ### Request
 
-URL (API Endpoint)
+URL&#x20;
 
 ```
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -123,7 +123,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 

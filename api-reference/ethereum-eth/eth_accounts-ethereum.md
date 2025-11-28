@@ -18,7 +18,7 @@ This method is particularly useful in **Web3 applications** that need to access 
 The eth\_accounts **RPC Ethereum** method supports the following network types
 
 * **Mainnet**
-* **Testnet**: Sepolia, Holesky
+* **Testnet**: Sepolia, Hoodi
 
 ### Parameters
 

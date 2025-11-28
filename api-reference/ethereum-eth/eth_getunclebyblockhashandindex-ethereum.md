@@ -18,7 +18,7 @@ The eth\_getUncleByBlockHashAndIndex method is part of the Ethereum JSON RPC Cor
 The eth\_getUncleByBlockHashAndIndexRPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -27,7 +27,7 @@ The eth\_getUncleByBlockHashAndIndexRPC Ethereum method supports the following n
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -124,7 +124,7 @@ The server responds with a JSON object containing the uncle block details. Below
 
 ### Use Case
 
-The response to this method can also include important information for analyzing specific transaction that might be related to the uncle blocks.The eth\_getUncleByBlockHashAndIndex method is useful for developers who need to analyze the structure of uncle blocks in Ethereum. This method helps to gain insights into the consensus mechanism and understand the process of including uncles in the blockchain. By using the eth\_getUncleByBlockHashAndIndexRPC Ethereum method, developers can easily access all necessary details about an uncle block. In case of an eth\_getUncleByBlockHashAndIndex error, developers should verify that the provided block hash and index are correct. An eth\_getUncleByBlockHashAndIndex example can illustrate the correct usage of this method.
+The response to this method can also include important information for analyzing specific transactions that might be related to the uncle blocks. The eth\_getUncleByBlockHashAndIndex method is useful for developers who need to analyze the structure of uncle blocks in Ethereum. This method helps to gain insights into the consensus mechanism and understand the process of including uncles in the blockchain. By using the eth\_getUncleByBlockHashAndIndexRPC Ethereum method, developers can easily access all necessary details about an uncle block. In case of an eth\_getUncleByBlockHashAndIndex error, developers should verify that the provided block hash and index are correct. An eth\_getUncleByBlockHashAndIndex example can illustrate the correct usage of this method.
 
 ### Code Example
 
@@ -196,7 +196,7 @@ axios
 {% endtab %}
 {% endtabs %}
 
-This Python script sends a request to the **eth\_getUncleByBlockHashAndIndex** method and prints the returned uncle block information. Make sure to replace \<ACCESS-TOKEN> with your actual API token.&#x20;
+This Python script sends a request to the **eth\_getUncleByBlockHashAndIndex** method and prints the returned uncle block information. Make sure to replace \<ACCESS-TOKEN> with your actual API token.
 
 The eth\_getUncleByBlockHashAndIndex method can also be used in Web3 libraries for Ethereum, providing an interface to access uncle block data for various use cases, including network analysis and blockchain research.
 

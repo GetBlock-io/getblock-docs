@@ -15,7 +15,6 @@ The **slotsUpdatesSubscribe** method provides a WebSocket-based **subscription**
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

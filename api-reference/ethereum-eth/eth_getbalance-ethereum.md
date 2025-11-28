@@ -18,7 +18,7 @@ This method allows you to check the account balance at a specific block or trans
 The eth\_getBalance RPC Ethereum method works on the following Ethereum network types
 
 * **Mainnet**
-* **Testnet**: Sepolia, Holesky
+* **Testnet**: Sepolia, Hoodi
 
 ### Parameters
 
@@ -31,7 +31,7 @@ QUANTITY|TAG: A string representing the block number or one of the following tag
 
 ### Request
 
-URL
+* URL
 
 {% code fullWidth="false" %}
 ```json
@@ -39,7 +39,7 @@ https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endcode %}
 
-To make a request to the eth\_getBalance method, you can use the following curl command. The request sends a JSON-RPC query to the Ethereum network via the GetBlock API
+To request the eth\_getBalance method, you can use the following curl command. The request sends a JSON-RPC query to the Ethereum network via the GetBlock API
 
 {% tabs %}
 {% tab title="curl" %}

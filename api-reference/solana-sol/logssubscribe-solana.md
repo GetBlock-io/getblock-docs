@@ -7,7 +7,7 @@ description: >-
 # logsSubscribe – Solana
 
 {% hint style="success" %}
-The logsSubscribe RPC Solana method provides notifications for transaction logs, filtered by account type.&#x20;
+The logsSubscribe RPC Solana method provides notifications for transaction logs, filtered by account type.
 {% endhint %}
 
 Developers can track all transactions, vote transactions, or transactions mentioning specific accounts.
@@ -15,7 +15,6 @@ Developers can track all transactions, vote transactions, or transactions mentio
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -158,7 +157,7 @@ The Solana **logsSubscribe** method is essential for:
 * Detecting errors during transaction execution.
 * Real-time event streaming.
 
-### Code logsSubscribe  Example – Web3 Integration
+### Code logsSubscribe Example – Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}

@@ -10,7 +10,7 @@ description: >-
 The getLatestBlockhash RPC Solana method returns the latest blockhash and its associated lastValidBlockHeight, which indicates the last slot at which the blockhash can be used.
 {% endhint %}
 
-&#x20;As part of Solana’s Core API, it is critical for applications requiring real-time transaction submission, such as wallets or DeFi platforms.
+As part of Solana’s Core API, it is critical for applications requiring real-time transaction submission, such as wallets or DeFi platforms.
 
 This method supports optional parameters like commitment to specify the confirmation level of the blockhash. By ensuring that transactions reference valid blockhashes, developers prevent errors and optimize Web3 application performance.
 
@@ -19,7 +19,6 @@ This method supports optional parameters like commitment to specify the confirma
 Access this method via Solana API Endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -156,5 +155,3 @@ fetchLatestBlockhash();
 ### Integration with Web3
 
 Integrate the getLatestBlockhash RPC Solana method into Web3 applications to ensure valid transaction submissions and real-time network state tracking. By leveraging Core API parameters like commitment, developers optimize blockhash retrieval for wallets, dApps, and enterprise solutions.
-
-\

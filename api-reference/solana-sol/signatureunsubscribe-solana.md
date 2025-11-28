@@ -7,7 +7,7 @@ description: >-
 # signatureUnsubscribe – Solana
 
 {% hint style="success" %}
-The **signatureUnsubscribe** RPC Solana method is used to cancel an active signature subscription.&#x20;
+The **signatureUnsubscribe** RPC Solana method is used to cancel an active signature subscription.
 {% endhint %}
 
 When a subscription ID is provided, the server will stop sending notifications for the corresponding transaction signature.
@@ -15,7 +15,6 @@ When a subscription ID is provided, the server will stop sending notifications f
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

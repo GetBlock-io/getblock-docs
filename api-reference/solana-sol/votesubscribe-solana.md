@@ -17,7 +17,6 @@ This subscription is **unstable** and only available if the validator was starte
 #### Supported Networks
 
 * Mainnet
-* Devnet
 
 #### Parameters
 

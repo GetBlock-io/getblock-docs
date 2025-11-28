@@ -17,7 +17,6 @@ The getSignaturesForAddress method retrieves a **list of transaction signatures 
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -185,5 +184,3 @@ fetchSignaturesForAddress();
 ### Integration with Web3
 
 By integrating Web3 **getSignaturesForAddress** into Solana’s Core API, developers can efficiently query transaction records linked to an address, retrieve block confirmations, and optimize request performance. This JSON-RPC method is a powerful tool for tracking transaction histories in decentralized applications and blockchain infrastructure.
-
-\

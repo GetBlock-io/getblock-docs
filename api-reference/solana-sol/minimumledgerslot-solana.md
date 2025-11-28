@@ -7,7 +7,7 @@ description: >-
 # minimumLedgerSlot – Solana
 
 {% hint style="success" %}
-The **minimumLedgerSlot** RPC Solana method is used in Web3 minimumLedgerSlot applications to determine the starting point of available ledger data.&#x20;
+The **minimumLedgerSlot** RPC Solana method is used in Web3 minimumLedgerSlot applications to determine the starting point of available ledger data.
 {% endhint %}
 
 This is essential for tasks that require historical transaction data.
@@ -17,7 +17,6 @@ This is essential for tasks that require historical transaction data.
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

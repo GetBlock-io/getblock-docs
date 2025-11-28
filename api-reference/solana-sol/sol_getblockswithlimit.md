@@ -17,7 +17,6 @@ The getBlocksWithLimit method is a key part of Solana’s Core API, enabling eff
 The getBlocksWithLimit RPC Solana method supports the following network types:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -114,7 +113,7 @@ The getBlocksWithLimit method is ideal for applications requiring a sequential r
 
 By specifying parameters like start\_slot and end\_slot, developers can retrieve only the required block data, optimizing their applications for performance and efficiency.
 
-### Code getBlocksWithLimit Example - Web3 Integration &#x20;
+### Code getBlocksWithLimit Example - Web3 Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -156,4 +155,3 @@ axios.post(url, payload, { headers })
 The Web3 getBlocksWithLimit method is a powerful tool for Web3 getBlocksWithLimit applications interacting with Solana's Core API. By enabling efficient retrieval of block numbers, it supports various use cases such as block exploration, transaction monitoring, and network analysis. With support for parameters like start\_slot, end\_slot, and commitment, developers can tailor requests to meet their specific needs.
 
 Integrating the getBlocksWithLimit JSON-RPC method into applications provides seamless access to Solana block data, making it a cornerstone for blockchain-based solutions.
-

@@ -8,7 +8,7 @@ description: >-
 # sendTransaction - Solana
 
 {% hint style="success" %}
-The **sendTransaction** RPC Solana method **submits a fully signed transaction** (encoded as a string) to the blockchain.&#x20;
+The **sendTransaction** RPC Solana method **submits a fully signed transaction** (encoded as a string) to the blockchain.
 {% endhint %}
 
 As a core component of Solana’s JSON-RPC framework, it allows developers to execute on-chain actions while controlling parameters like preflight checks, retries, and encoding formats.
@@ -20,15 +20,14 @@ Unlike Ethereum’s viem `sendTransaction`, which handles gas estimation and sig
 Access this method via Solana API Endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
-#### transaction (`string`, required):
+`transaction (string, required):`
 
 The signed transaction, encoded as a `base58` or `base64` string.
 
-#### config (`object`, optional):
+`config (object, optional):`
 
 Customize transaction handling with these fields:
 
@@ -45,7 +44,7 @@ API Endpoints:
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
-#### sendTransaction example (cURL)&#x20;
+#### sendTransaction example (cURL)
 
 {% tabs %}
 {% tab title="curl" %}
@@ -161,5 +160,3 @@ sendTransaction();
 ### Integration with Web3
 
 Integrate the sendTransaction RPC Solana method into Web3 applications to enable seamless on-chain interactions. By leveraging Core API parameters like preflightCommitment and maxRetries, developers balance speed and reliability for transactions, ensuring optimal user experiences in wallets, dApps, and trading platforms.
-
-\

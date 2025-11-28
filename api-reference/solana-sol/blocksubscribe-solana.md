@@ -8,7 +8,7 @@ description: >-
 # blockSubscribe – Solana
 
 {% hint style="danger" %}
-#### Unstable Method
+**Unstable Method**
 
 This method is considered unstable and requires the validator to be started with the `--rpc-pubsub-enable-block-subscription` flag. Future changes to this method's format are possible.
 {% endhint %}
@@ -18,7 +18,6 @@ The **blockSubscribe** RPC Solana method provides real-time block notifications 
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

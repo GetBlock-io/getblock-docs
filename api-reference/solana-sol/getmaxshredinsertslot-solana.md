@@ -7,7 +7,7 @@ description: >-
 # getMaxShredInsertSlot – Solana
 
 {% hint style="success" %}
-The **getMaxShredInsertSlot** RPC Solana method provides insight into the highest slot number observed after shred insert.&#x20;
+The **getMaxShredInsertSlot** RPC Solana method provides insight into the highest slot number observed after shred insert.
 {% endhint %}
 
 This method is particularly useful for **tracking data propagation and block finalization** within the network.
@@ -19,7 +19,6 @@ Unlike other block or transaction retrieval methods, this RPC focuses on the poi
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -136,5 +135,3 @@ fetchMaxShredInsertSlot();
 ### Integration with Web3
 
 By integrating Web3 **getMaxShredInsertSlot** into Solana’s Core API, developers can track shred insertion status, monitor block finalization, and improve transaction data flow. The JSON-RPC request structure allows seamless retrieval of slot insertion data, ensuring efficient blockchain operations for dApps, validators, and infrastructure providers.
-
-\

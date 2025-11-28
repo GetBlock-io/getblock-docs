@@ -17,7 +17,6 @@ The getRecentPerformanceSamples method retrieves recent performance metrics of t
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -188,5 +187,3 @@ fetchRecentPerformanceSamples();
 ### Integration with Web3
 
 By integrating Web3 **getRecentPerformanceSamples** into Solana’s Core API, developers can track block processing rates, monitor network congestion, and optimize transaction execution strategies. The JSON-RPC request provides real-time insights into Solana’s performance, making it a valuable tool for dApps, validators, and analytics platforms.
-
-\

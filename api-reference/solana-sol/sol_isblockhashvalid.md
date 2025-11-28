@@ -10,7 +10,7 @@ description: >-
 The isBlockhashValid RPC Solana method verifies the validity of a blockhash by checking if it is still usable for transaction submission.
 {% endhint %}
 
-&#x20;As part of Solana’s Core API, it is critical for applications requiring real-time transaction validation, such as wallets or DeFi platforms.
+As part of Solana’s Core API, it is critical for applications requiring real-time transaction validation, such as wallets or DeFi platforms.
 
 This method supports optional parameters like commitment to specify the confirmation level of the blockhash. By ensuring that transactions reference valid blockhashes, developers prevent errors and optimize Web3 application performance.
 
@@ -19,7 +19,6 @@ This method supports optional parameters like commitment to specify the confirma
 Access this method via Solana API Endpoints:
 
 * Mainnet
-* Devnet
 
 #### Parameters
 
@@ -156,5 +155,3 @@ checkBlockhashValidity();
 #### Integration with Web3
 
 Integrate the isBlockhashValid RPC Solana method into Web3 applications to ensure valid transaction submissions and real-time network state tracking. By leveraging Core API parameters like commitment, developers optimize blockhash validation for wallets, dApps, and enterprise solutions.
-
-\

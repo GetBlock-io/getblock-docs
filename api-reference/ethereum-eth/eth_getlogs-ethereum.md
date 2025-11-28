@@ -20,7 +20,7 @@ To optimize the retrieval of logs, it's recommended to leave the --auto-log-bloo
 The eth\_getLogs RPC Ethereum method supports the following network types
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 

@@ -17,7 +17,6 @@ The getProgramAccounts method retrieves **all accounts associated with a specifi
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -216,5 +215,3 @@ fetchProgramAccounts();
 ### Integration with Web3
 
 By integrating Web3 **getProgramAccounts** into Solana’s Core API, developers can efficiently track program-owned accounts, retrieve transaction and block details, and optimize decentralized applications. The JSON-RPC request structure allows streamlined account queries, making it an essential tool for Solana-based services.
-
-\

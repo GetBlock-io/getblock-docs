@@ -17,7 +17,6 @@ The getMultipleAccounts method retrieves **information about multiple specified 
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -204,5 +203,3 @@ fetchMultipleAccounts();
 ### Integration with Web3
 
 By integrating Web3 **getMultipleAccounts** into Solana’s Core API, developers can retrieve multiple transaction and block details in a single request, optimizing performance for dApps, analytics platforms, and infrastructure services. The JSON-RPC request allows efficient bulk account queries, making it an essential tool for Solana applications.
-
-\

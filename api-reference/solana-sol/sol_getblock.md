@@ -18,7 +18,6 @@ It returns detailed information about the block, including its height, timestamp
 The getBlock RPC Solana method supports the following networks:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

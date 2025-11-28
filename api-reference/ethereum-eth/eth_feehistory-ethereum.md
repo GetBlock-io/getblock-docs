@@ -18,7 +18,7 @@ This method returns data on gas fees and usage ratios for a specified range of b
 The eth\_feeHistory RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesk
+* Testnet: Sepolia, Hoodi
 
 ### **Parameters:**
 
@@ -176,6 +176,4 @@ axios.post(url, data, { headers })
 
 This script sends a request to the eth\_feeHistory method and prints the returned historical gas information. Make sure to replace \<ACCESS-TOKEN> with your actual API token.
 
-**Common Errors:**
-
-eth\_feeHistory error: You might encounter errors if the provided parameters are incorrect, or if the network is unreachable. Also, ensure that the block range you are querying is valid, and that your access token is correctly provided.\\
+**Common Errors:**&#x65;th\_feeHistory error: You might encounter errors if the provided parameters are incorrect, or if the network is unreachable. Also, ensure that the block range you are querying is valid, and that your access token is correctly provided.\\

@@ -18,7 +18,7 @@ The eth\_syncing method is part of the Ethereum JSON-RPC API and is used to chec
 The eth\_syncing RPC Ethereum method works on the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ This method does not require any parameters. The request can be sent with an emp
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -78,7 +78,7 @@ Example Response
 
 Example Response (Node Synchronizing)
 
-```
+```json
 {
     "id": "getblock.io",
     "jsonrpc": "2.0",
@@ -145,7 +145,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 // Define the API URL and headers
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';

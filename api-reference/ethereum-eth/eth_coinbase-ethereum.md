@@ -20,7 +20,7 @@ The eth\_coinbase method is often used to verify the served eth\_coinbase addres
 The **`eth_chainId` RPC Ethereum** method supports the following network types
 
 * **Mainnet**
-* **Testnet**: Sepolia, Holesky
+* **Testnet**: Sepolia, Hoodi
 
 ### Parameters
 

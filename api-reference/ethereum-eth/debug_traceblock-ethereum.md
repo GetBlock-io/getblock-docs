@@ -17,7 +17,7 @@ The debug\_traceBlock method is part of the Ethereum JSON RPC Core API and is de
 The debug\_traceBlock RPC Ethereum method supports all Ethereum network types, including:
 
 * Mainnet
-* Testnets: Sepolia, Holesky
+* Testnets: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,8 +28,11 @@ The debug\_traceBlock method accepts the following parameters:
 
 ### Request
 
-URL (API Endpoint)\
-https://go.getblock.io/\<ACCESS-TOKEN>/
+URL&#x20;
+
+```bash
+https://go.getblock.io/<ACCESS-TOKEN>/
+```
 
 To make a request, send a JSON object with the jsonrpc, method, and params fields. Below is an example of how to make a request using curl:
 
@@ -137,7 +140,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 const headers = {

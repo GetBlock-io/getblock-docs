@@ -7,7 +7,7 @@ description: >-
 # getIdentity – Solana
 
 {% hint style="success" %}
-The **getIdentity** RPC Solana method returns the identity pubkey of the node as a base-58 encoded string.&#x20;
+The **getIdentity** RPC Solana method returns the identity pubkey of the node as a base-58 encoded string.
 {% endhint %}
 
 The getIdentity method returns the **public key of the node making the request**. It is useful for identifying the RPC node in use, verifying network connections, and debugging interactions with different Solana validators.
@@ -17,7 +17,6 @@ The getIdentity method returns the **public key of the node making the request**
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -136,5 +135,3 @@ fetchNodeIdentity();
 ### Integration with Web3
 
 Integrate the **getIdentity** API with Solana’s Core API to retrieve node identity information dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate authentication and network monitoring, supporting security and stability in blockchain infrastructure.
-
-\

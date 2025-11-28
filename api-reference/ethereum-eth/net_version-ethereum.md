@@ -18,7 +18,7 @@ The net\_version method is part of the Ethereum JSON RPC Core API, used to retri
 The net\_version RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ This method does not require any parameters.
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -121,7 +121,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios'); // Ensure axios is installed: npm install axios
+import axios from 'axios'; // Ensure axios is installed: npm install axios
 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 

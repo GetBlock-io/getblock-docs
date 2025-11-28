@@ -18,7 +18,7 @@ The net\_peerCount method is part of the Ethereum JSON RPC Core API, used to ret
 The net\_peerCount RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ This method does not require any parameters.
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -80,7 +80,7 @@ The server responds with a JSON object containing the current peer count. Below 
 
 ### Use Case
 
-The net\_peerCount method is particularly useful for developers and system administrators who need to monitor the network connectivity of their Ethereum node. A high peer count indicates good connectivity, while a low or zero count may suggest issues with the node’s network configuration. In case of a net\_peerCount error, ensure that the client is properly configured to connect to peers. An example of correct usage is provided in this documentation under the net\_peerCount example.A low peer count may also delay transaction propagation, affecting performance.
+The net\_peerCount method is particularly useful for developers and system administrators who need to monitor the network connectivity of their Ethereum node. A high peer count indicates good connectivity, while a low or zero count may suggest issues with the node’s network configuration. In case of a net\_peerCount error, ensure that the client is properly configured to connect to peers. An example of correct usage is provided in this documentation under the net\_peerCount example. A low peer count may also delay transaction propagation, affecting performance.
 
 ### Code Example
 
@@ -117,7 +117,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript" %}
 ```javascript
-const axios = require('axios'); 
+import axios from 'axios'; 
 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 

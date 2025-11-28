@@ -7,7 +7,7 @@ description: >-
 # getTokenAccountsByDelegate – Solana
 
 {% hint style="success" %}
-The **getTokenAccountsByDelegate** RPC Solana method allows developers to query SPL Token accounts where the provided account Pubkey has been designated as a delegate.&#x20;
+The **getTokenAccountsByDelegate** RPC Solana method allows developers to query SPL Token accounts where the provided account Pubkey has been designated as a delegate.
 {% endhint %}
 
 The method supports filtering by mint or programId and can return data in various encoding formats, making it a flexible tool for **account tracking and analysis** in Solana’s Core API.
@@ -17,7 +17,6 @@ The method supports filtering by mint or programId and can return data in variou
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

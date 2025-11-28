@@ -8,7 +8,7 @@ description: >-
 # slotUnsubscribe – Solana
 
 {% hint style="success" %}
-The **slotUnsubscribe** method cancels an existing subscription to slot notifications previously created using **slotSubscribe RPC Solana**.&#x20;
+The **slotUnsubscribe** method cancels an existing subscription to slot notifications previously created using **slotSubscribe RPC Solana**.
 {% endhint %}
 
 It is used to optimize resource consumption by **removing unnecessary data streams** from applications tracking slot changes.
@@ -16,7 +16,6 @@ It is used to optimize resource consumption by **removing unnecessary data strea
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

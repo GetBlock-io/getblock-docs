@@ -19,7 +19,7 @@ Using the eth\_estimateGas method is a crucial practice for optimizing transacti
 The eth\_estimateGas **RPC Ethereum** method supports the following network types
 
 * **Mainnet**
-* **Testnet**: Sepolia, Holesky
+* **Testnet**: Sepolia, Hoodi
 
 ### Parameters
 
@@ -220,16 +220,3 @@ axios.post(url, payload, { headers })
 {% endtab %}
 {% endtabs %}
 
-#### Code Explanation:
-
-API Call Setup: This script sends a JSON-RPC request to estimate the gas for a transaction using the eth\_estimateGas method.
-
-Transaction Object: Defines the transaction parameters such as the from, to, and value.
-
-Error Handling: Checks for successful responses and handles errors, including execution reverted.
-
-Output: Displays the estimated gas required or prints an error message if the estimation fails.
-
-This Python script helps developers efficiently integrate gas estimation into their Ethereum-based applications, leveraging the eth\_estimateGas method to optimize gas usage and prevent transaction failures.
-
-\\

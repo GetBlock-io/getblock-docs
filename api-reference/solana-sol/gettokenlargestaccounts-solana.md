@@ -7,7 +7,7 @@ description: >-
 # getTokenLargestAccounts – Solana
 
 {% hint style="success" %}
-The **getTokenLargestAccounts** RPC Solana method returns a list of the 20 largest token accounts associated with a specific token Mint address.&#x20;
+The **getTokenLargestAccounts** RPC Solana method returns a list of the 20 largest token accounts associated with a specific token Mint address.
 {% endhint %}
 
 This information helps developers **analyze token distribution patterns** and **track high-value accounts** using the Core API.
@@ -19,7 +19,6 @@ The response includes account addresses, raw balances, and formatted balances wi
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -196,5 +195,3 @@ fetchTokenLargestAccounts();
 ### Integration with Web3
 
 By integrating Web3 **getTokenLargestAccounts** into Solana’s Core API, developers can efficiently analyze token distributions, monitor account balances, and provide insights into transaction activity. This JSON-RPC method is a key tool for applications dealing with token analytics and blockchain monitoring.
-
-\

@@ -10,7 +10,7 @@ description: >-
 The getBlockProduction method in Solana allows you to retrieve block production data for specific slots or for an entire range of slots, depending on the parameters provided.
 {% endhint %}
 
-&#x20;This method is part of Solana’s Core API and is essential for tracking the block production across various validators. By querying this method, you can identify how many blocks each validator produced during the specified slot range. It is useful for monitoring validator performance and analyzing block production patterns in the Solana blockchain.
+This method is part of Solana’s Core API and is essential for tracking the block production across various validators. By querying this method, you can identify how many blocks each validator produced during the specified slot range. It is useful for monitoring validator performance and analyzing block production patterns in the Solana blockchain.
 
 This method is available through the getBlockProduction RPC and allows you to filter results by validator identity, slot range, and commitment level, providing more granular insights into Solana’s block production activity.
 
@@ -19,7 +19,6 @@ This method is available through the getBlockProduction RPC and allows you to fi
 The getBlockProduction RPC Solana method supports the following network types:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -192,4 +191,3 @@ fetchBlockProduction();
 ### Integration with Web3
 
 The Web3 getBlockProduction method is a powerful tool for developers building Web3 applications that need to track validator performance or analyze block production patterns. By utilizing this method, developers can easily access data about how many blocks each validator has produced within a specified slot range, making it a valuable resource for improving the efficiency and transparency of Solana’s blockchain.
-

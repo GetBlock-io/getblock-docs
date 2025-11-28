@@ -7,7 +7,7 @@ description: >-
 # getEpochInfo – Solana
 
 {% hint style="success" %}
-The getEpochInfo RPC Solana method returns details about the current epoch, including slot index, total slots in the epoch, block height, and transaction count.&#x20;
+The getEpochInfo RPC Solana method returns details about the current epoch, including slot index, total slots in the epoch, block height, and transaction count.
 {% endhint %}
 
 The getEpochInfo method retrieves information about the current epoch in the Solana network. It provides details such as the epoch number, slot progress, remaining slots until the next epoch, and the estimated time for epoch completion. This method is essential for tracking network progression, staking schedules, and protocol timing.
@@ -17,7 +17,6 @@ The getEpochInfo method retrieves information about the current epoch in the Sol
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -141,5 +140,3 @@ fetchEpochInfo();
 ### Integration with Web3
 
 Integrate the getEpochInfo API with Solana’s Core API to retrieve up-to-date epoch details dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure accurate tracking of block progression, transaction volume, and epoch-based calculations for staking and governance applications.
-
-\

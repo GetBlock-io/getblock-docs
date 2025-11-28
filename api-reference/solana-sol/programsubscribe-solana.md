@@ -7,7 +7,7 @@ description: >-
 # programSubscribe – Solana
 
 {% hint style="success" %}
-The programSubscribe RPC Solana method listens for changes to lamports or data associated with program-owned accounts.&#x20;
+The programSubscribe RPC Solana method listens for changes to lamports or data associated with program-owned accounts.
 {% endhint %}
 
 Notifications are sent whenever account information is updated.
@@ -15,7 +15,6 @@ Notifications are sent whenever account information is updated.
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

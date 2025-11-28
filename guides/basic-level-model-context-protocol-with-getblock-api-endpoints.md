@@ -1,5 +1,6 @@
 ---
 description: A step-by-step guide on how to build MCP with GetBlock API
+icon: message-bot
 ---
 
 # Basic-level Model-Context Protocol with GetBlock API Endpoints

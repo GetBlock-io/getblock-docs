@@ -18,7 +18,7 @@ The eth\_getTransactionCount method is part of the Ethereum JSON RPC Core API, u
 The eth\_getTransactionCount RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -27,7 +27,7 @@ The eth\_getTransactionCount RPC Ethereum method supports the following network 
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/

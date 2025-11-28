@@ -20,7 +20,7 @@ In Web3 apps, **metamask eth\_accounts** is commonly used to fetch a user's Ethe
 The **`eth_call` RPC Ethereum** method supports the following network types
 
 * **Mainnet**
-* **Testnet**: Sepolia, Holesky
+* **Testnet**: Sepolia, Hoodi
 
 ### Parameters
 

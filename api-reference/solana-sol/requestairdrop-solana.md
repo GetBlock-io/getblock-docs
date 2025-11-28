@@ -7,7 +7,7 @@ description: >-
 # requestAirdrop – Solana
 
 {% hint style="success" %}
-The **requestAirdrop** RPC Solana method facilitates funding test accounts with lamports.&#x20;
+The **requestAirdrop** RPC Solana method facilitates funding test accounts with lamports.
 {% endhint %}
 
 This is essential for developers building and testing applications on Solana Devnet without requiring real funds. The airdrop is sent as a transaction to the provided account.
@@ -16,8 +16,7 @@ This is essential for developers building and testing applications on Solana Dev
 
 This method is available on the following API endpoints:
 
-* Mainnet (limited availability)
-* Devnet (primary environment for airdrops)
+* Mainnet
 
 ### Parameters
 

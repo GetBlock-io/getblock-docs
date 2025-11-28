@@ -18,7 +18,7 @@ By leveraging the JSON RPC protocol, this method facilitates requests to query t
 The eth\_getBlockTransactionCountByNumber RPC Ethereum method works on the following Ethereum network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 This method is compatible across multiple Ethereum networks, ensuring that developers can request transaction counts on both the mainnet and various testnets.
 
@@ -27,10 +27,9 @@ This method is compatible across multiple Ethereum networks, ensuring that devel
 The eth\_getBlockTransactionCountByNumber method accepts a single parameter:
 
 * QUANTITY | TAG: This parameter can be an integer representing the block number or a string representing one of the special tags (latest, earliest, or pending). It specifies which block to query:
-*
-  * latest: The most recent mined block.
-  * earliest: The first block in the chain (genesis block).
-  * pending: The next block expected to be mined.
+* latest: The most recent mined block.
+* earliest: The first block in the chain (genesis block).
+* pending: The next block expected to be mined.
 
 This flexibility allows users to request the transaction count for a specific block number or a dynamic block based on its state in the chain.
 

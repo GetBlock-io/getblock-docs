@@ -17,7 +17,6 @@ The getGenesisHash method returns the genesis hash of the Solana blockchain. Thi
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -94,8 +93,6 @@ The Solana getGenesisHash method is essential for:
 
 ### Code Example – Web3 getGenesisHash Integration
 
-
-
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
@@ -133,5 +130,3 @@ fetchGenesisHash();
 ### Integration with Web3
 
 Integrate the getGenesisHash API with Solana’s Core API to retrieve blockchain identity information dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure correct network selection and chain validation, improving blockchain security and reliability.
-
-\

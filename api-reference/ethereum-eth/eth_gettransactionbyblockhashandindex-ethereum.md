@@ -18,7 +18,7 @@ Ethereum eth\_getTransactionByBlockHashAndIndex JSON-RPC Core API, used to inter
 The eth\_getTransactionByBlockHashAndIndex RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -27,7 +27,7 @@ The eth\_getTransactionByBlockHashAndIndex RPC Ethereum method supports the foll
 
 ### Request
 
-URL (API Endpoint)
+URL&#x20;
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/

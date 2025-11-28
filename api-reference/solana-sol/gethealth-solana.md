@@ -17,7 +17,6 @@ This method is crucial for network monitoring, validator operations, and infrast
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -145,5 +144,3 @@ fetchNodeHealth();
 ### Integration with Web3
 
 Integrate the getHealth API with Solana’s Core API to monitor node health dynamically. By leveraging JSON-RPC parameters and endpoints, developers can ensure real-time tracking of node synchronization, detect unhealthy nodes, and optimize blockchain infrastructure for dApps and validators.
-
-\

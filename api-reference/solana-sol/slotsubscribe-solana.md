@@ -7,7 +7,7 @@ description: >-
 # slotSubscribe – Solana
 
 {% hint style="info" %}
-The **slotSubscribe RPC Solana** method establishes a **WebSocket connection** that notifies clients when a new **slot** is set.&#x20;
+The **slotSubscribe RPC Solana** method establishes a **WebSocket connection** that notifies clients when a new **slot** is set.
 {% endhint %}
 
 This is particularly useful for applications that require **live updates** on the Solana blockchain. Developers can use this method to **track transaction processing, blockchain synchronization, and block validation.**
@@ -15,7 +15,6 @@ This is particularly useful for applications that require **live updates** on th
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

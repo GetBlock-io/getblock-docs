@@ -18,14 +18,13 @@ The getAccountInfo method is an essential part of Solana’s Core API, enabling 
 Access this method via Solana API Endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
-Pubkey (string, required):\
+`Pubkey (string, required)`:\
 The account’s public key as a base-58 encoded string.
 
-Config (object, optional):\
+`Config (object, optional):`\
 Customize the request with the following fields:
 
 * commitment (string, optional):\
@@ -130,7 +129,7 @@ The getAccountInfo RPC Solana method is ideal for:
 
 By using jsonParsed encoding, developers simplify parsing program-specific account data, enhancing Web3 integrations.
 
-### Code Example (JavaScript) – Web3 getAccountInfo Integration 
+### Code Example (JavaScript) – Web3 getAccountInfo Integration
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -182,5 +181,3 @@ fetchAccountInfo();
 ### Integration with Web3
 
 Integrate the getAccountInfo RPC Solana method into Web3 applications to enable real-time account state tracking and analysis. By leveraging Core API parameters like encoding and dataSlice, developers can retrieve precise account data for wallets, dApps, and enterprise solutions.
-
-\

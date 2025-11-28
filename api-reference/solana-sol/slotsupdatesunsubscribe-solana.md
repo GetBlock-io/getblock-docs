@@ -7,7 +7,7 @@ description: >-
 # slotsUpdatesUnsubscribe – Solana
 
 {% hint style="info" %}
-&#x20;This method is essential for managing WebSocket subscriptions efficiently, ensuring that applications do not receive unnecessary updates once they are no longer needed.
+This method is essential for managing WebSocket subscriptions efficiently, ensuring that applications do not receive unnecessary updates once they are no longer needed.
 {% endhint %}
 
 By using **slotsUpdatesUnsubscribe**, applications can prevent redundant data from being processed, reducing network traffic and improving performance. This is particularly useful in scenarios where **real-time monitoring of blockchain slots** is needed for analytics, transaction tracking, or validator operations.
@@ -15,7 +15,6 @@ By using **slotsUpdatesUnsubscribe**, applications can prevent redundant data fr
 #### Supported Networks
 
 * Mainnet
-* Devnet
 
 #### Parameters
 

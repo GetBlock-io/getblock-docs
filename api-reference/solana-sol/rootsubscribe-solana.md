@@ -15,7 +15,6 @@ In Solana's blockchain architecture, the **root slot** represents the most recen
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

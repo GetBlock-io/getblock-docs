@@ -18,7 +18,7 @@ The eth\_getUncleCountByBlockNumber method is part of the Ethereum JSON RPC Core
 The eth\_getUncleCountByBlockNumber RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -27,7 +27,7 @@ The eth\_getUncleCountByBlockNumber RPC Ethereum method supports the following n
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/

@@ -20,7 +20,6 @@ getVoteAccounts RPC Solana method supports optional filters like votePubkey (to 
 Access this method via Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -62,7 +61,7 @@ curl --location "https://go.getblock.io/<ACCESS-TOKEN>/" -XPOST \
 
 A successful response returns two lists: `current` (active validators) and `delinquent` (underperforming validators). Each entry includes metrics like stake, commission, and voting history.
 
-#### &#x20;getVoteAccounts example Response
+#### getVoteAccounts example Response
 
 ```json
 {
@@ -191,4 +190,4 @@ fetchVoteAccounts();
 
 Integrate the Web3 getVoteAccounts RPC method into Web3 applications to monitor validator networks, optimize staking strategies, and ensure compliance with governance standards. By leveraging Core API parameters like `commitment` and `votePubkey`, developers deliver real-time insights into Solana’s decentralized value ecosystem.
 
-\
+\\

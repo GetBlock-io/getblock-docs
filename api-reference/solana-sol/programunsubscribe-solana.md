@@ -7,7 +7,7 @@ description: >-
 # programUnsubscribe – Solana
 
 {% hint style="success" %}
-The **programUnsubscribe** RPC Solana method stops notifications for program-owned accounts by using a subscription ID.&#x20;
+The **programUnsubscribe** RPC Solana method stops notifications for program-owned accounts by using a subscription ID.
 {% endhint %}
 
 It is crucial for Web3 applications that handle dynamic data streams and need efficient resource management.
@@ -15,7 +15,6 @@ It is crucial for Web3 applications that handle dynamic data streams and need ef
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

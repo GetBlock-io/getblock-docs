@@ -18,7 +18,7 @@ The Ethereum eth\_getStorageAt method is part of the Ethereum JSON RPC Core API,
 The eth\_getStorageAt RPC Ethereum method supports the following network types
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ The eth\_getStorageAt RPC Ethereum method supports the following network types
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/

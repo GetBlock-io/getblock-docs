@@ -18,7 +18,7 @@ The eth\_maxPriorityFeePerGas method is part of the Ethereum JSON RPC API and is
 The eth\_maxPriorityFeePerGas RPC Ethereum method works across various Ethereum network types, including
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 

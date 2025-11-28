@@ -17,7 +17,6 @@ The getHighestSnapshotSlot RPC Solana method returns the highest full snapshot s
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

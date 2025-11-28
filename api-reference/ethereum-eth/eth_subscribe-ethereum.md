@@ -17,7 +17,7 @@ The eth\_subscribe method is part of the Ethereum JSON-RPC API and is used to su
 The eth\_subscribe RPC Ethereum method is supported on:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -33,7 +33,7 @@ objects (optional, hex string): Additional arguments such as an address, multipl
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/

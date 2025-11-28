@@ -18,7 +18,7 @@ The eth\_hashrate method is part of the Ethereum JSON RPC Core API, used to inte
 The eth\_hashrate RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ No parameters are required for this method
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/

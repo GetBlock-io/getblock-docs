@@ -18,7 +18,7 @@ The eth\_getWork method is part of the Ethereum JSON RPC Core API, used to inter
 The eth\_getWork RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,7 +28,7 @@ This method does not require any parameters.
 
 ### Request
 
-URL (API Endpoint)
+URL&#x20;
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/

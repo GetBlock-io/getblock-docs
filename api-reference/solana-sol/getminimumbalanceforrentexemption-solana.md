@@ -17,7 +17,6 @@ The getMinimumBalanceForRentExemption method returns **the minimum SOL balance r
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -142,5 +141,3 @@ fetchMinimumBalanceForRentExemption();
 ### Integration with Web3
 
 By integrating Web3 **getMinimumBalanceForRentExemption** into Solana’s Core API, developers can manage account rent requirements efficiently, optimize block storage, and ensure smooth transaction execution. The JSON-RPC request allows easy retrieval of rent-exemption values, making it a key component in decentralized applications, wallets, and staking infrastructure.
-
-\

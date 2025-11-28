@@ -17,7 +17,6 @@ The response includes the raw balance, the number of decimal places, and formatt
 This method is available on the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -176,5 +175,3 @@ fetchTokenAccountBalance();
 ### Integration with Web3
 
 By integrating Web3 **getTokenAccountBalance** into Solana’s Core API, developers can easily query token balances, track account activity, and analyze transaction flows. This JSON-RPC method is essential for applications requiring accurate and up-to-date token balance information.
-
-\

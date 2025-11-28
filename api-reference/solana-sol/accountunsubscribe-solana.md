@@ -17,7 +17,6 @@ The accountUnsubscribe method is part of Solana’s WebSocket API, allowing clie
 This method is accessible via the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -141,5 +140,3 @@ ws.on('close', () => {
 ### Integration with Web3
 
 By integrating Web3 **accountUnsubscribe** into Solana's Core API, developers can efficiently manage subscription lifecycles, improve dApp performance, and optimize network resource utilization.
-
-\

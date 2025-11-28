@@ -11,14 +11,13 @@ description: >-
 The getBlockCommitment RPC Solana method allows you to query the commitment level and total stake associated with a specific block
 {% endhint %}
 
-&#x20;By using the block's slot as a parameter, this method provides valuable insights into the state of a block in terms of its commitment and the total stake at the time of the block’s finalization. It is useful for applications that need to monitor block validation progress or analyze Solana network consensus. The getBlockCommitment method is part of Solana's Core API and can be accessed through GetBlock.io’s Web3 getBlockCommitment service.
+By using the block's slot as a parameter, this method provides valuable insights into the state of a block in terms of its commitment and the total stake at the time of the block’s finalization. It is useful for applications that need to monitor block validation progress or analyze Solana network consensus. The getBlockCommitment method is part of Solana's Core API and can be accessed through GetBlock.io’s Web3 getBlockCommitment service.
 
 ### **Supported Networks**
 
 The getBlockCommitment RPC Solana method supports the following network types:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

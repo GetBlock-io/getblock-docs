@@ -18,7 +18,7 @@ The Ethereum eth\_getTransactionByBlockNumberAndIndex method is part of the Ethe
 The eth\_getTransactionByBlockNumberAndIndex RPC Ethereum method supports the following network types:
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -27,7 +27,7 @@ The eth\_getTransactionByBlockNumberAndIndex RPC Ethereum method supports the fo
 
 ### Request
 
-URL (API Endpoint)
+URL
 
 ```json
 https://go.getblock.io/<ACCESS-TOKEN>/
@@ -95,7 +95,7 @@ The server responds with a JSON object containing the transaction details at the
 
 ### Response Description
 
-* blockHash: The hash of the block containing the transaction.
+* beforeblockHash: The hash of the block containing the transaction.
 * blockNumber: The number of the block containing the transaction.
 * chainId: The chain ID of the Ethereum network.
 * from: The address of the sender.

@@ -7,7 +7,7 @@ description: >-
 # getClusterNodes – Solana
 
 {% hint style="success" %}
-The getClusterNodes RPC Solana method returns an array of JSON objects containing details about each active node in the cluster.&#x20;
+The getClusterNodes RPC Solana method returns an array of JSON objects containing details about each active node in the cluster.
 {% endhint %}
 
 The returned data includes the node’s public key, network addresses, software version, feature set, and shred version. This information is crucial for developers, validators, and network analysts to assess node distribution, connectivity, and operational details.
@@ -17,7 +17,6 @@ The returned data includes the node’s public key, network addresses, software 
 This method is accessible through Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -149,5 +148,3 @@ fetchClusterNodes();
 ### Integration with Web3
 
 Integrate the getClusterNodes API with Solana’s Core API to dynamically retrieve real-time network data. By leveraging JSON-RPC parameters and endpoints, developers can gain deep insights into cluster activity, ensuring robust infrastructure for blockchain applications and validator operations.
-
-\

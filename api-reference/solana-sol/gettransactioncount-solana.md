@@ -17,7 +17,6 @@ This method supports commitment parameters to determine data finality. Unlike Et
 This method is accessible via Solana API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 
@@ -145,4 +144,4 @@ fetchTransactionCount();
 
 Integrate the **getTransactionCount** RPC Solana method into Web3 applications to track network scalability and performance metrics. By combining this method with block or transaction-specific queries, developers gain holistic insights into Solana’s value as a high-throughput blockchain.
 
-\
+\\

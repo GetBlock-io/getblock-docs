@@ -18,7 +18,7 @@ This method works by connecting to the Ethereum network via JSON-RPC, a remote p
 The eth\_getBlockByNumber RPC Ethereum method works on the following Ethereum network types
 
 * **Mainnet**
-* **Testnet**: Sepolia, Holesky
+* **Testnet**: Sepolia, Hoodi
 
 ### Parameters
 

@@ -48,6 +48,8 @@
 * [Tracking Pump.fun Token Mints in Real Time with GetBlock’s Yellowstone gRPC](guides/tracking-pump.fun-token-mints-in-real-time-with-getblocks-yellowstone-grpc.md)
 * [Basic-level Model-Context Protocol with GetBlock API Endpoints](guides/basic-level-model-context-protocol-with-getblock-api-endpoints.md)
 * [Monitoring Liquidity Pools on Solana DEXes with GetBlock's Yellowstone gRPC](guides/monitoring-liquidity-pools-on-solana-dexes-with-getblocks-yellowstone-grpc.md)
+* [Building Pump.fun to PumpSwap and Raydium Migrations Listener with GetBlock](guides/building-pump.fun-to-pumpswap-and-raydium-migrations-listener-with-getblock.md)
+* [Listening to High-Value SOL Transactions via Yellowstone Geyser gRPC with GetBlock](guides/listening-to-high-value-sol-transactions-via-yellowstone-geyser-grpc-with-getblock.md)
 
 ## ADD-ONS
 

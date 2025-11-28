@@ -17,7 +17,6 @@ It is essential for developers to verify the node's software version before maki
 This method is accessible through the following API endpoints:
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

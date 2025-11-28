@@ -18,7 +18,7 @@ The eth\_getBlockReceipts method is part of the Ethereum JSON RPC Core API and i
 The eth\_getBlockReceipts RPC Ethereum method is available across all Ethereum network types, including:
 
 * Mainnet
-* Testnets: Sepolia, Holesky
+* Testnets: Sepolia, Hoodi
 
 ### Parameters
 
@@ -28,8 +28,11 @@ The eth\_getBlockReceipts method accepts the following parameter:
 
 ### Request Example
 
-URL (API Endpoints)\
-https://go.getblock.io/\<ACCESS-TOKEN>/
+URL
+
+```bash
+https://go.getblock.io/<ACCESS-TOKEN>/
+```
 
 To use this method, send a JSON object containing the jsonrpc, method, and params fields. Below is an example using curl:
 
@@ -135,7 +138,7 @@ print(json.dumps(response_data, indent=4))
 
 {% tab title="JavaScript " %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 const url = 'https://go.getblock.io/<ACCESS-TOKEN>/'; 
 const headers = {

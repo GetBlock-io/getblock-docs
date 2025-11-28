@@ -15,7 +15,6 @@ Once unsubscribed, the client will no longer receive notifications about block c
 ### Supported Networks
 
 * Mainnet
-* Devnet
 
 ### Parameters
 

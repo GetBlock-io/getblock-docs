@@ -20,7 +20,7 @@ This method is commonly used by developers working with Web3 and smart contract 
 The eth\_getCode RPC Ethereum method supports the following network types
 
 * Mainnet
-* Testnet: Sepolia, Holesky
+* Testnet: Sepolia, Hoodi
 
 ### Parameters
 
@@ -100,7 +100,7 @@ The response from the eth\_getBlockTransactionCountByNumber method will look lik
 
 #### Error Response Example
 
-```
+```json5
 {
     "jsonrpc": "2.0",
     "id": "getblock.io",
