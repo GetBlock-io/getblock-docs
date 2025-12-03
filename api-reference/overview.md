@@ -1,7 +1,7 @@
 ---
 description: >-
   GetBlock API docs: RPC endpoints, SDK guides, and developer tools. Everything
-  you need to connect and build on 70+ blockchain networks
+  you need to connect and build on 100+ blockchain networks
 icon: hammer
 ---
 
@@ -29,7 +29,7 @@ print(response.json())
 
 GetBlock is offering one of the most comprehensive APIs toolkits in the segment supporting hundreds of dApps with fast and reliable connection to blockchain nodes.
 
-#### 70+ blockchains in store
+#### 100+ blockchains in store
 
 * Seamless connection to full and archive nodes
 * Shared and dedicated nodes: Tailored for your dApp’s needs.
@@ -45,9 +45,9 @@ All mainstream RPC interfaces
 * JSON RPC
 * GraphQL
 * REST API
-* And more&#x20;
+* And more
 
-Add them in Lego-like manner: [https://account.getblock.io/](https://account.getblock.io/)&#x20;
+Add them in Lego-like manner: [https://account.getblock.io/](https://account.getblock.io/)
 
 #### Industry-leading suite of add-ons and ready-made APIs
 
@@ -56,7 +56,7 @@ Add them in Lego-like manner: [https://account.getblock.io/](https://account.get
 * Blockbook
 * Yellowstone Geyser
 
-Need more? Don’t hesitate to contact sales: [https://getblock.io/contact/](https://getblock.io/contact/)&#x20;
+Need more? Don’t hesitate to contact sales: [https://getblock.io/contact/](https://getblock.io/contact/)
 
 ## Examples for Console REST API Requests
 
@@ -120,74 +120,74 @@ ruby -v
 
 We provide APIs for a wide range of networks, including:
 
-[Aptos (APT) ](https://getblock.io/docs/apt/json-rpc/apt_v1_estimate_gas_price/)
+[Aptos (APT)](https://getblock.io/docs/apt/json-rpc/apt_v1_estimate_gas_price/)
 
-[Arbitrum (ARB) ](https://getblock.io/docs/arb/json-rpc/arbitrum_eth_accounts/)
+[Arbitrum (ARB)](https://getblock.io/docs/arb/json-rpc/arbitrum_eth_accounts/)
 
-[Avalanche (AVAX) ](https://getblock.io/docs/avax/json-rpc/avax_eth_accounts/)
+[Avalanche (AVAX)](https://getblock.io/docs/avax/json-rpc/avax_eth_accounts/)
 
-[Bitcoin Cash (BCH)](https://getblock.io/docs/bch/json-rpc/bch_combinepsbt/)&#x20;
+[Bitcoin Cash (BCH)](https://getblock.io/docs/bch/json-rpc/bch_combinepsbt/)
 
-[BNB Smart Chain (BSC) ](https://getblock.io/docs/bsc/json-rpc/bsc_debug_tracecall/)
+[BNB Smart Chain (BSC)](https://getblock.io/docs/bsc/json-rpc/bsc_debug_tracecall/)
 
-[Bitcoin-SV (BSV) ](https://getblock.io/docs/bsv/json-rpc/bsv_analyzepsbt/)
+[Bitcoin-SV (BSV)](https://getblock.io/docs/bsv/json-rpc/bsv_analyzepsbt/)
 
-[Bitcoin (BTC) ](https://getblock.io/docs/btc/json-rpc/btc_analyzepsbt/)
+[Bitcoin (BTC)](https://getblock.io/docs/btc/json-rpc/btc_analyzepsbt/)
 
-[Bitcoin Gold (BTG) ](https://getblock.io/docs/btg/json-rpc/btg_analyzepsbt/)
+[Bitcoin Gold (BTG)](https://getblock.io/docs/btg/json-rpc/btg_analyzepsbt/)
 
-[Cronos (CRO) ](https://getblock.io/docs/cro/json-rpc/cro_eth_accounts/)
+[Cronos (CRO)](https://getblock.io/docs/cro/json-rpc/cro_eth_accounts/)
 
-[Dash (DASH) ](https://getblock.io/docs/dash/json-rpc/dash_combinerawtransaction/)
+[Dash (DASH)](https://getblock.io/docs/dash/json-rpc/dash_combinerawtransaction/)
 
-[DigiByte (DGB) ](https://getblock.io/docs/dgb/json-rpc/dgb_analyzepsbt/)
+[DigiByte (DGB)](https://getblock.io/docs/dgb/json-rpc/dgb_analyzepsbt/)
 
-[Dogeсoin (DOGE) ](https://getblock.io/docs/doge/json-rpc/doge_createrawtransaction/)
+[Dogeсoin (DOGE)](https://getblock.io/docs/doge/json-rpc/doge_createrawtransaction/)
 
-[Polkadot (DOT) ](https://getblock.io/docs/dot/json-rpc/dot_chain_getblock/)
+[Polkadot (DOT)](https://getblock.io/docs/dot/json-rpc/dot_chain_getblock/)
 
-[Ethereum Classic (ETC) ](https://getblock.io/docs/etc/json-rpc/etc_eth_accounts/)
+[Ethereum Classic (ETC)](https://getblock.io/docs/etc/json-rpc/etc_eth_accounts/)
 
-[Ethereum (ETH)](https://getblock.io/docs/eth/json-rpc/eth_eth_accounts/)&#x20;
+[Ethereum (ETH)](https://getblock.io/docs/eth/json-rpc/eth_eth_accounts/)
 
-[Fantom (FTM) ](https://getblock.io/docs/ftm/json-rpc/ftm_dag_getevent/)
+[Fantom (FTM)](https://getblock.io/docs/ftm/json-rpc/ftm_dag_getevent/)
 
-[Fuse.io (FUSE) ](https://getblock.io/docs/fuse/json-rpc/fuse_eth_accounts/)
+[Fuse.io (FUSE)](https://getblock.io/docs/fuse/json-rpc/fuse_eth_accounts/)
 
-[Moonbeam (GLMR) ](https://getblock.io/docs/glmr/json-rpc/glmr_eth_accounts/)
+[Moonbeam (GLMR)](https://getblock.io/docs/glmr/json-rpc/glmr_eth_accounts/)
 
-[Gnosis Chain (GNO) ](https://getblock.io/docs/gno/json-rpc/gno_eth_accounts/)
+[Gnosis Chain (GNO)](https://getblock.io/docs/gno/json-rpc/gno_eth_accounts/)
 
-[Huobi ECO Chain (HECO) ](https://getblock.io/docs/heco/json-rpc/heco_eth_accounts/)
+[Huobi ECO Chain (HECO)](https://getblock.io/docs/heco/json-rpc/heco_eth_accounts/)
 
-[KuCoin Community Chain (KCC) ](https://getblock.io/docs/kcc/json-rpc/kcc_eth_accounts/)
+[KuCoin Community Chain (KCC)](https://getblock.io/docs/kcc/json-rpc/kcc_eth_accounts/)
 
-[Kusama (KSM) ](https://getblock.io/docs/ksm/json-rpc/ksm_chain_getblock/)
+[Kusama (KSM)](https://getblock.io/docs/ksm/json-rpc/ksm_chain_getblock/)
 
-[Polygon (MATIC) ](https://getblock.io/docs/matic/json-rpc/matic_eth_accounts/)
+[Polygon (MATIC)](https://getblock.io/docs/matic/json-rpc/matic_eth_accounts/)
 
-[Moonriver (MOVR) ](https://getblock.io/docs/movr/json-rpc/movr_chain_getblock/)
+[Moonriver (MOVR)](https://getblock.io/docs/movr/json-rpc/movr_chain_getblock/)
 
-[Near Protocol (NEAR) ](https://getblock.io/docs/near/json-rpc/near_block/)
+[Near Protocol (NEAR)](https://getblock.io/docs/near/json-rpc/near_block/)
 
-[Harmony (ONE) ](https://getblock.io/docs/one/json-rpc/one_eth_accounts/)
+[Harmony (ONE)](https://getblock.io/docs/one/json-rpc/one_eth_accounts/)
 
-[Ontology (ONT)](https://getblock.io/docs/ont/json-rpc/ont_getbalance/)&#x20;
+[Ontology (ONT)](https://getblock.io/docs/ont/json-rpc/ont_getbalance/)
 
-[Optimism (OP)](https://getblock.io/docs/op/json-rpc/optimism_eth_accounts/)&#x20;
+[Optimism (OP)](https://getblock.io/docs/op/json-rpc/optimism_eth_accounts/)
 
-[Rootstock (RSK) ](https://getblock.io/docs/rsk/json-rpc/rsk_eth_accounts/)
+[Rootstock (RSK)](https://getblock.io/docs/rsk/json-rpc/rsk_eth_accounts/)
 
-[Solana (SOL) ](https://getblock.io/docs/sol/json-rpc/sol_getaccountinfo/)
+[Solana (SOL)](https://getblock.io/docs/sol/json-rpc/sol_getaccountinfo/)
 
-[Theta (THETA) ](https://getblock.io/docs/theta/json-rpc/theta_theta.broadcastrawtransaction/)
+[Theta (THETA)](https://getblock.io/docs/theta/json-rpc/theta_theta.broadcastrawtransaction/)
 
-[TON (TON) ](https://getblock.io/docs/ton/json-rpc/ton_detectaddress/)
+[TON (TON)](https://getblock.io/docs/ton/json-rpc/ton_detectaddress/)
 
-[Tron (TRX) ](https://getblock.io/docs/trx/json-rpc/trx_eth_blocknumber/)
+[Tron (TRX)](https://getblock.io/docs/trx/json-rpc/trx_eth_blocknumber/)
 
-[NEM (XEM) ](https://getblock.io/docs/xem/rest/xem_account_get_forwarded_from-public-key/)
+[NEM (XEM)](https://getblock.io/docs/xem/rest/xem_account_get_forwarded_from-public-key/)
 
-[Monero (XMR) ](https://getblock.io/docs/xmr/json-rpc/get_alternate_chains/)
+[Monero (XMR)](https://getblock.io/docs/xmr/json-rpc/get_alternate_chains/)
 
 [ZCash (ZEC)](https://getblock.io/docs/zec/json-rpc/zec_createrawtransaction/)
