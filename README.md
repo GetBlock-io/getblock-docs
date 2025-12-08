@@ -3,8 +3,25 @@ description: >-
   Welcome to GetBlock! We make it easy for developers and businesses to connect
   to 100+ blockchain networks.
 icon: hand-wave
-cover: .gitbook/assets/Dosc.svg
+cover: .gitbook/assets/cover.png
 coverY: 0
+layout:
+  width: default
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Welcome
