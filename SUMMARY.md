@@ -31,18 +31,18 @@
 
 * [Connect Brave Wallet to GetBlock](connect-brave-wallet-to-getblock.md)
 
-## SDK
+## Solana Advanced Data Tools
 
-* [Solana Indexed Archive](sdk/solana-indexed-archive.md)
+* [StreamFirst](solana-advanced-data-tools/streamfirst.md)
+* [LandFirst](solana-advanced-data-tools/landfirst.md)
+* [TradeFirst](solana-advanced-data-tools/tradefirst.md)
+* [Solana Indexed Archive](solana-advanced-data-tools/solana-indexed-archive.md)
 
 ## ADD-ONS
 
 * [Yellowstone gRPC API](add-ons/yellowstone-grpc-api/README.md)
   * [Overview](add-ons/yellowstone-grpc-api/overview.md)
   * [Quickstart guide](add-ons/yellowstone-grpc-api/quickstart-guide.md)
-* [StreamFirst](add-ons/streamfirst.md)
-* [LandFirst](add-ons/landfirst.md)
-* [TradeFirst](add-ons/tradefirst.md)
 
 ## GUIDES
 
