@@ -31,6 +31,19 @@
 
 * [Connect Brave Wallet to GetBlock](connect-brave-wallet-to-getblock.md)
 
+## SDK
+
+* [Solana Indexed Archive](sdk/solana-indexed-archive.md)
+
+## ADD-ONS
+
+* [Yellowstone gRPC API](add-ons/yellowstone-grpc-api/README.md)
+  * [Overview](add-ons/yellowstone-grpc-api/overview.md)
+  * [Quickstart guide](add-ons/yellowstone-grpc-api/quickstart-guide.md)
+* [StreamFirst](add-ons/streamfirst.md)
+* [LandFirst](add-ons/landfirst.md)
+* [TradeFirst](add-ons/tradefirst.md)
+
 ## GUIDES
 
 * [Using Web3 libraries](guides/using-web3-libraries/README.md)
@@ -50,12 +63,6 @@
 * [Monitoring Liquidity Pools on Solana DEXes with GetBlock's Yellowstone gRPC](guides/monitoring-liquidity-pools-on-solana-dexes-with-getblocks-yellowstone-grpc.md)
 * [Building Pump.fun to PumpSwap and Raydium Migrations Listener with GetBlock](guides/building-pump.fun-to-pumpswap-and-raydium-migrations-listener-with-getblock.md)
 * [Listening to High-Value SOL Transactions via Yellowstone Geyser gRPC with GetBlock](guides/listening-to-high-value-sol-transactions-via-yellowstone-geyser-grpc-with-getblock.md)
-
-## ADD-ONS
-
-* [Yellowstone gRPC API](add-ons/yellowstone-grpc-api/README.md)
-  * [Overview](add-ons/yellowstone-grpc-api/overview.md)
-  * [Quickstart guide](add-ons/yellowstone-grpc-api/quickstart-guide.md)
 
 ## API REFERENCE
 

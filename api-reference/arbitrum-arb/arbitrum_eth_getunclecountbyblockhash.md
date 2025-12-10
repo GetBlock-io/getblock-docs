@@ -7,25 +7,222 @@ description: >-
 
 # eth\_getUncleCountByBlockHash - Arbitrum
 
+This method returns the number of uncles in a block identified by its hash.
+
+{% hint style="warning" %}
+Arbitrum does not produce uncle blocks, so this method always returns **"0x0"**, but it is provided for Ethereum compatibility.
+{% endhint %}
+
 #### Parameters
 
-`DATA` - string
-
-hash of the block.
+| Parameter   | Type   | Required | Description                                                                                            |
+| ----------- | ------ | -------- | ------------------------------------------------------------------------------------------------------ |
+| block\_hash | string | yes      | The hash of the block whose uncle count is requested. Must be a 32-byte hex string starting with `0x`. |
 
 #### Request
 
-<pre class="language-java"><code class="lang-java">curl --location --request POST 'https://go.getblock.io/&#x3C;ACCESS-TOKEN>' \
-<strong>--header 'Content-Type: application/json' \
-</strong>--data-raw '{"jsonrpc": "2.0", "method": "eth_getUncleCountByBlockHash", "params": ["0xf5524f0cf99ac6bc5905e95294ebed9007e2d978155f3457118eb7a26d97503a"], "id": "getblock.io"}'
-</code></pre>
+{% tabs %}
+{% tab title="cURL" %}
+```bash
+curl --location 'https://go.getblock.us/<ACCESS_TOKEN>' \
+--header 'Content-Type: application/json' \
+--data '{
+   "jsonrpc": "2.0",
+       "method": "eth_getUncleCountByBlockHash",
+    "params": [
+        "0xf5524f0cf99ac6bc5905e95294ebed9007e2d978155f3457118eb7a26d97503a"
+    ],
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+
+{% tab title="Axios" %}
+```javascript
+import axios from 'axios'
+let data = JSON.stringify({
+    "jsonrpc": "2.0",
+         "method": "eth_getUncleCountByBlockHash",
+    "params": [
+        "0xf5524f0cf99ac6bc5905e95294ebed9007e2d978155f3457118eb7a26d97503a"
+    ],
+    "id": "getblock.io"
+};
+
+let config = {
+  method: "post",
+  maxBodyLength: Infinity,
+  url: "https://go.getblock.us/<ACCESS_TOKEN>",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  data: data,
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+```
+{% endtab %}
+
+{% tab title="Request" %}
+```python
+import requests
+import json
+
+url = "https://go.getblock.us/<ACESS_TOKEN>"
+
+payload = json.dumps({
+   "jsonrpc": "2.0",
+            "method": "eth_getUncleCountByBlockHash",
+    "params": [
+        "0xf5524f0cf99ac6bc5905e95294ebed9007e2d978155f3457118eb7a26d97503a"
+    ],
+    "id": "getblock.io"
+})
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+
+```
+{% endtab %}
+
+{% tab title="Rust" %}
+```rs
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::builder()
+        .build()?;
+
+    let mut headers = reqwest::header::HeaderMap::new();
+    headers.insert("Content-Type", "application/json".parse()?);
+
+    let data = r#"{
+   "jsonrpc": "2.0",
+        "method": "eth_getUncleCountByBlockHash",
+    "params": [
+        "0xf5524f0cf99ac6bc5905e95294ebed9007e2d978155f3457118eb7a26d97503a"
+    ], 
+    "id": "getblock.io"
+}"#;
+
+    let json: serde_json::Value = serde_json::from_str(&data)?;
+
+    let request = client.request(reqwest::Method::POST, "https://go.getblock.us/<ACCESS_TOKEN>")
+        .headers(headers)
+        .json(&json);
+
+    let response = request.send().await?;
+    let body = response.text().await?;
+
+    println!("{}", body);
+
+    Ok(())
+}
+```
+{% endtab %}
+{% endtabs %}
 
 #### Response
 
 ```java
 {
-    "id": "getblock.io",
     "jsonrpc": "2.0",
+    "id": "getblock.io",
     "result": "0x0"
 }
 ```
+
+#### Reponse Parameter Definition
+
+| Field  | Description                                         | Data Type |
+| ------ | --------------------------------------------------- | --------- |
+| result | The number of uncle blocks as a hexadecimal string. | String    |
+
+{% hint style="info" %}
+But again, on Arbitrum the value is always **null**.
+{% endhint %}
+
+#### Use case
+
+Even though uncle blocks do not exist on Arbitrum, this method helps developers to:
+
+* Maintain compatibility with Ethereum tools and SDKs
+* Avoid breaking multi-chain indexers or dashboards
+* Normalise RPC responses when building explorers
+* Support Ethereum-style APIs for analytics and monitoring
+
+#### Error handling
+
+| Status Code | Error Message    | Cause                                |
+| ----------- | ---------------- | ------------------------------------ |
+| 403         | Forbidden        | Missing or invalid ACCESS\_TOKEN.    |
+| -32602      | Invalid argument | <ul><li>Invalid block hash</li></ul> |
+
+#### Integration with Web3
+
+{% tabs %}
+{% tab title="Ethers.js" %}
+```javascript
+import { ethers } from "ethers";
+const RPC_URL = "https://go.getblock.us/<ACCESS_TOKEN>";
+const provider = new ethers.JsonRpcProvider(RPC_URL);
+async function Call() {
+  try {
+     const result = await provider.send( "eth_getUncleCountByBlockHash",
+ [
+        "0xf5524f0cf99ac6bc5905e95294ebed9007e2d978155f3457118eb7a26d97503a"
+    ]);    
+console.log("The result:", result);
+    return result;
+  } catch (error) {
+    console.error("The error:", error);
+    throw error;
+  }
+}
+```
+{% endtab %}
+
+{% tab title="Viem" %}
+```jsx
+import { createPublicClient, http } from 'viem';
+import { arbitrum } from 'viem/chains';
+
+// Create Viem client with GetBlock
+const client = createPublicClient({
+  chain: arbitrum,
+  transport: http('https://go.getblock.us/<ACCESS_TOKEN>'),
+});
+
+// Using the method through Viem
+async function Call() {
+    try {
+        // Method-specific Viem implementation
+        const result = await client.request({
+        method: "eth_getUncleCountByBlockHash",
+    params: [
+        "0xf5524f0cf99ac6bc5905e95294ebed9007e2d978155f3457118eb7a26d97503a"
+    ],
+         });
+        console.log('Result:', result);
+        return result;
+    } catch (error) {
+        console.error('Viem Error:', error);
+        throw error;
+    }
+}
+
+```
+{% endtab %}
+{% endtabs %}
+
