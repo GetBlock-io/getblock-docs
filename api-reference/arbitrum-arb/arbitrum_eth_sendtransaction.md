@@ -236,42 +236,4 @@ console.log("The result:", result);
 }
 ```
 {% endtab %}
-
-{% tab title="Viem" %}
-```jsx
-import { createPublicClient, http } from 'viem';
-import { arbitrum } from 'viem/chains';
-
-// Create Viem client with GetBlock
-const client = createPublicClient({
-  chain: arbitrum,
-  transport: http('https://go.getblock.us/<ACCESS_TOKEN>'
-});
-
-// Using the method through Viem
-async function Call() {
-    try {
-        // Method-specific Viem implementation
-        const result = await client.request({
-          method: "eth_sendTransaction",
-          params: [
-                {
-                    "from": "0xD1AF2dAc4e0a9d1F58B99E2f42Bc0320Ed74a7cd",
-                    "to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567",
-                    "gas": "0x76c0",
-                    "gasPrice": "0x9184e72a000",
-                    "value": "0x9184e72a",
-                    "data": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"
-                }
-            ],
-        });
-        console.log('Result:', result);
-        return result;
-    } catch (error) {
-        console.error('Viem Error:', error);
-        throw error;
-    }
-}
-```
-{% endtab %}
 {% endtabs %}

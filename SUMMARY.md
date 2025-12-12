@@ -116,7 +116,7 @@
   * [eth\_newFilter - Arbitrum](api-reference/arbitrum-arb/arbitrum_eth_newfilter.md)
   * [eth\_sendRawTransaction - Arbitrum](api-reference/arbitrum-arb/arbitrum_eth_sendrawtransaction.md)
   * [eth\_sendTransaction - Arbitrum](api-reference/arbitrum-arb/arbitrum_eth_sendtransaction.md)
-  * [eth\_sign - Arbitrum](api-reference/arbitrum-arb/arbitrum_eth_sign.md)
+  * [eth\_sign- Arbitrum](api-reference/arbitrum-arb/arbitrum_eth_sign.md)
   * [eth\_signTransaction - Arbitrum](api-reference/arbitrum-arb/arbitrum_eth_signtransaction.md)
   * [eth\_subscribe - Arbitrum](api-reference/arbitrum-arb/arbitrum_eth_subscribe.md)
   * [eth\_syncing - Arbitrum](api-reference/arbitrum-arb/arbitrum_eth_syncing.md)
