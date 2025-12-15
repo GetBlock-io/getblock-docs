@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the shh_getMessages  {disallowed} json-rpc method. Сomplete
-  guide on how to use shh_getMessages  {disallowed} json-rpc in GetBlock.io Web3
-  documentation.
+  Example code for the shh_getMessages JSON RPC method. Сomplete guide on how to
+  use shh_getMessages JSON RPC in GetBlock Web3 documentation.
 ---
 
 # shh\_getMessages {disallowed} - Arbitrum

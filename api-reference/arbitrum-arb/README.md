@@ -21,6 +21,12 @@ Arbitrum chains are EVM-compatible blockchains that use an underlying EVM chain 
 4. **Fraud-Proof Security:** The Arbitrum Rollup Protocol is a trustless, permissionless protocol that uses its underlying base layer for data availability and inherits its security.&#x20;
 5. **Cross-Chain Interactions:** Every Arbitrum chain includes a bridge to/from its parent chain. Arbitrum enables easy cross-chain interactions, asset transfers, and data exchange with Ethereum and other EVM-compatible networks, fostering a connected ecosystem for multi-chain dApps.
 
+{% hint style="info" %}
+_TECHNICAL DISCLAIMER: AUTHORITATIVE JSON-RPC API SPECIFICATION._&#x20;
+
+_GetBlock's RPC API reference documentation is provided exclusively for informational purposes and streamlined developer experience optimization. The canonical and normative specification for Ethereum Virtual Machine (EVM) JSON-RPC methods is solely maintained and published through the official Ethereum Foundation documentation portal at_ [_ethereum.org_](http://ethereum.org/)_. This resource constitutes the sole authoritative reference implementation of the JSON-RPC 2.0 protocol interface across EVM-compatible execution clients._
+{% endhint %}
+
 ## Quickstart
 
 In this section, you will learn how to make your first call with either:

@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the net_listening  {disallowed} json-rpc method. Сomplete
-  guide on how to use net_listening  {disallowed} json-rpc in GetBlock.io Web3
-  documentation.
+  Example code for the net_listening JSON RPC method. Сomplete guide on how to
+  use net_listening  JSON RPC in GetBlock Web3 documentation.
 ---
 
 # net\_listening {disallowed} - Arbitrum

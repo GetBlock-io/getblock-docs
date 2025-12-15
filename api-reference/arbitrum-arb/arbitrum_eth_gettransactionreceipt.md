@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_getTransactionReceipt json-rpc method. Сomplete guide
-  on how to use eth_getTransactionReceipt json-rpc in GetBlock.io Web3
+  Example code for the eth_getTransactionReceipt JSON RPC method. Сomplete guide
+  on how to use eth_getTransactionReceipt JSON RPC in GetBlock Web3
   documentation.
 ---
 

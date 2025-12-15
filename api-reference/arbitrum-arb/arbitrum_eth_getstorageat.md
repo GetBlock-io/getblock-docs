@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_getStorageAt json-rpc method. Сomplete guide on how
-  to use eth_getStorageAt json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_getStorageAt JSON RPC method. Сomplete guide on how
+  to use eth_getStorageAt JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_getStorageAt - Arbitrum

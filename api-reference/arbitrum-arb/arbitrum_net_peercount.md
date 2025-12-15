@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the net_peerCount  {disallowed} json-rpc method. Сomplete
-  guide on how to use net_peerCount  {disallowed} json-rpc in GetBlock.io Web3
-  documentation.
+  Example code for the net_peerCount JSON RPC method. Сomplete guide on how to
+  use net_peerCount  JSON RPC in GetBlock Web3 documentation.
 ---
 
 # net\_peerCount {disallowed} - Arbitrum

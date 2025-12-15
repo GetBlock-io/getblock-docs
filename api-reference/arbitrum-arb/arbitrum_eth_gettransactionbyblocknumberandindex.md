@@ -1,8 +1,8 @@
 ---
 description: >-
-  Example code for the eth_getTransactionByBlockNumberAndIndex json-rpc method.
-  Сomplete guide on how to use eth_getTransactionByBlockNumberAndIndex json-rpc
-  in GetBlock.io Web3 documentation.
+  Example code for the eth_getTransactionByBlockNumberAndIndex JSON RPC method.
+  Сomplete guide on how to use eth_getTransactionByBlockNumberAndIndex JSON RPC
+  in GetBlock Web3 documentation.
 ---
 
 # eth\_getTransactionByBlockNumberAndIndex - Arbitrum

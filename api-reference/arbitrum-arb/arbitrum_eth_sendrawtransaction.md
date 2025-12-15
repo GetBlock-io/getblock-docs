@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_sendRawTransaction json-rpc method. Сomplete guide on
-  how to use eth_sendRawTransaction json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_sendRawTransaction JSON RPC method. Сomplete guide on
+  how to use eth_sendRawTransaction JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_sendRawTransaction - Arbitrum

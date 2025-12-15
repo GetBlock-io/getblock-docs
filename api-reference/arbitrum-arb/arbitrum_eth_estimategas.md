@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_estimateGas json-rpc method. Сomplete guide on how to
-  use eth_estimateGas json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_estimateGas JSON RPC method. Сomplete guide on how to
+  use eth_estimateGas JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_estimateGas - Arbitrum

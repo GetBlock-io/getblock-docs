@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the net_version json-rpc method. Сomplete guide on how to use
-  net_version json-rpc in GetBlock.io Web3 documentation.
+  Example code for the net_version JSON RPC method. Сomplete guide on how to use
+  net_version JSON RPC in GetBlock Web3 documentation.
 ---
 
 # net\_version - Arbitrum

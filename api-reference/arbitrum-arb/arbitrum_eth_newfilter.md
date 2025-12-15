@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_newFilter json-rpc method. Сomplete guide on how to
-  use eth_newFilter json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_newFilter JSON RPC method. Сomplete guide on how to
+  use eth_newFilter JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_newFilter - Arbitrum

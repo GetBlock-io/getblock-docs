@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_signTransaction json-rpc method. Сomplete guide on
-  how to use eth_signTransaction json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_signTransaction JSON RPC method. Сomplete guide on
+  how to use eth_signTransaction JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_signTransaction - Arbitrum

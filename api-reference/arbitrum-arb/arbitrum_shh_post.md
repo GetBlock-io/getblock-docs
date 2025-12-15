@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the shh_post  {disallowed} json-rpc method. Сomplete guide on
-  how to use shh_post  {disallowed} json-rpc in GetBlock.io Web3 documentation.
+  Example code for the shh_post JSON RPC method. Сomplete guide on how to use
+  shh_post  JSON RPC in GetBlock Web3 documentation.
 ---
 
 # shh\_post {disallowed} - Arbitrum

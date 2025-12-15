@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the db_getString  {disallowed} json-rpc method. Сomplete
-  guide on how to use db_getString  {disallowed} json-rpc in GetBlock.io Web3
-  documentation.
+  Example code for the db_getString  JSON RPC method. Сomplete guide on how to
+  use db_getString JSON RPC in GetBlock Web3 documentation.
 ---
 
 # db\_getString {disallowed} - Arbitrum

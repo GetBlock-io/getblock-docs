@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_getBalance json-rpc method. Сomplete guide on how to
-  use eth_getBalance json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_getBalance JSON RPC method. Сomplete guide on how to
+  use eth_getBalance JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_getBalance - Arbitrum

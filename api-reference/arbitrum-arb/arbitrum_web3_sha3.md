@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the web3_sha3 json-rpc method. Сomplete guide on how to use
-  web3_sha3 json-rpc in GetBlock.io Web3 documentation.
+  Example code for the web3_sha3 JSON RPC method. Сomplete guide on how to use
+  web3_sha3 JSON RPC  in GetBlock Web3 documentation.
 ---
 
 # web3\_sha3 - Arbitrum

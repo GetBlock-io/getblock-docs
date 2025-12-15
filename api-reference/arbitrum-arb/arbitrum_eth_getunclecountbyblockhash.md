@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_getUncleCountByBlockHash json-rpc method. Сomplete
-  guide on how to use eth_getUncleCountByBlockHash json-rpc in GetBlock.io Web3
+  Example code for the eth_getUncleCountByBlockHash JSON RPC  method. Сomplete
+  guide on how to use eth_getUncleCountByBlockHash JSON RPC  in GetBlock Web3
   documentation.
 ---
 

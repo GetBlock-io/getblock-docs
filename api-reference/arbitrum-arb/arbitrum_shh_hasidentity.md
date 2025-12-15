@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the shh_hasIdentity  {disallowed} json-rpc method. Сomplete
-  guide on how to use shh_hasIdentity  {disallowed} json-rpc in GetBlock.io Web3
-  documentation.
+  Example code for the shh_hasIdentity JSON RPC method. Сomplete guide on how to
+  use shh_hasIdentity JSON RPC in GetBlock Web3 documentation.
 ---
 
 # shh\_hasIdentity {disallowed} - Arbitrum

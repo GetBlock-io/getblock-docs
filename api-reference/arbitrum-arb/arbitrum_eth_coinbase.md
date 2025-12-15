@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the eth_coinbase  {disallowed} json-rpc method. Сomplete
-  guide on how to use eth_coinbase  {disallowed} json-rpc in GetBlock.io Web3
-  documentation.
+  Example code for the eth_coinbase JSON RPC method. Сomplete guide on how to
+  use eth_coinbase JSON RPC in GetBlock.io Web3 documentation.
 ---
 
 # eth\_coinbase {disallowed} - Arbitrum

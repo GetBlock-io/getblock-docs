@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the shh_addToGroup  {disallowed} json-rpc method. Сomplete
-  guide on how to use shh_addToGroup  {disallowed} json-rpc in GetBlock.io Web3
-  documentation.
+  Example code for the shh_addToGroup JSON RPC method. Сomplete guide on how to
+  use shh_addToGroup JSON RPC in GetBlock Web3 documentation.
 ---
 
 # shh\_addToGroup {disallowed} - Arbitrum

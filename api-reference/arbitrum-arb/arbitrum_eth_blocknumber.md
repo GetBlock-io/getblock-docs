@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_blockNumber json-rpc method. Сomplete guide on how to
-  use eth_blockNumber json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_blockNumber JSON RPC method. Сomplete guide on how to
+  use eth_blockNumber JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_blockNumber - Arbitrum

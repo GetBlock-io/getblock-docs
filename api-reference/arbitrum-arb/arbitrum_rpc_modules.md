@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the rpc_modules json-rpc method. Сomplete guide on how to use
-  rpc_modules json-rpc in GetBlock.io Web3 documentation.
+  Example code for the rpc_modules JSON RPC method. Сomplete guide on how to use
+  rpc_modules JSON RPC in GetBlock Web3 documentation.
 ---
 
 # rpc\_modules - Arbitrum

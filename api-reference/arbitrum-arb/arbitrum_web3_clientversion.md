@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the web3_clientVersion json-rpc method. Сomplete guide on how
-  to use web3_clientVersion json-rpc in GetBlock.io Web3 documentation.
+  Example code for the web3_clientVersion JSON RPC method. Сomplete guide on how
+  to use web3_clientVersion JSON RPC in GetBlock Web3 documentation.
 ---
 
 # web3\_clientVersion - Arbitrum

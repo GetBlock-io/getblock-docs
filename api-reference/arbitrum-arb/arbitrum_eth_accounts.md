@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_accounts json-rpc method. Сomplete guide on how to
-  use eth_accounts json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_accounts JSON RPC method. Сomplete guide on how to
+  use eth_accounts JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_accounts - Arbitrum

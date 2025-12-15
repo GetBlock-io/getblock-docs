@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_unsubscribe json-rpc method. Сomplete guide on how to
-  use eth_unsubscribe json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_unsubscribe JSON RPC method. Сomplete guide on how to
+  use eth_unsubscribe JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_unsubscribe - Arbitrum

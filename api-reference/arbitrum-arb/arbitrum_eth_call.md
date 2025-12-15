@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_call json-rpc method. Сomplete guide on how to use
-  eth_call json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_call JSON RPC method. Сomplete guide on how to use
+  eth_call JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_call - Arbitrum

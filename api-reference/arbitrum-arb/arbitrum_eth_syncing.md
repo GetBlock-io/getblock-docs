@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_syncing json-rpc method. Сomplete guide on how to use
-  eth_syncing json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_syncing JSON RPC method. Сomplete guide on how to use
+  eth_syncing JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_syncing - Arbitrum

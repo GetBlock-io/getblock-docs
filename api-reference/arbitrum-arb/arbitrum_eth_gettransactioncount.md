@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the eth_getTransactionCount json-rpc method. Сomplete guide
-  on how to use eth_getTransactionCount json-rpc in GetBlock.io Web3
-  documentation.
+  Example code for the eth_getTransactionCount JSON RPC method. Сomplete guide
+  on how to use eth_getTransactionCount JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_getTransactionCount - Arbitrum

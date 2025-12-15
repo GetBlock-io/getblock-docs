@@ -1,8 +1,8 @@
 ---
 description: >-
-  Example code for the eth_getUncleByBlockNumberAndIndex json-rpc method.
-  Сomplete guide on how to use eth_getUncleByBlockNumberAndIndex json-rpc in
-  GetBlock.io Web3 documentation.
+  Example code for the eth_getUncleByBlockNumberAndIndex JSON RPC  method.
+  Сomplete guide on how to use eth_getUncleByBlockNumberAndIndex JSON RPC  in
+  GetBlock Web3 documentation.
 ---
 
 # eth\_getUncleByBlockNumberAndIndex - Arbitrum

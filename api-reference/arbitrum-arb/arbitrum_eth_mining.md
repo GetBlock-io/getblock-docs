@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the eth_mining  {disallowed} json-rpc method. Сomplete guide
-  on how to use eth_mining  {disallowed} json-rpc in GetBlock.io Web3
-  documentation.
+  Example code for the eth_mining JSON RPC method. Сomplete guide on how to use
+  eth_mining JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_mining {disallowed} - Arbitrum

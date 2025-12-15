@@ -26,7 +26,13 @@ The Ethereum network offers a comprehensive suite of methods that enable develop
 * Manage and monitor accounts and balances.
 * Interact with smart contracts
 * Submit and track transactions
-* Monitor network activity in real-time&#x20;
+* Monitor network activity in real-time
+
+{% hint style="info" %}
+_TECHNICAL DISCLAIMER: AUTHORITATIVE JSON-RPC API SPECIFICATION._&#x20;
+
+_GetBlock's RPC API reference documentation is provided exclusively for informational purposes and streamlined developer experience optimization. The canonical and normative specification for Ethereum Virtual Machine (EVM) JSON-RPC methods is solely maintained and published through the official Ethereum Foundation documentation portal at_ [_ethereum.org_](http://ethereum.org/)_. This resource constitutes the sole authoritative reference implementation of the JSON-RPC 2.0 protocol interface across EVM-compatible execution clients._
+{% endhint %}
 
 ***
 
@@ -106,8 +112,7 @@ Execute your script with:
 
 node index.js
 
-You should see the latest block number logged to your console.\
-
+You should see the latest block number logged to your console.\\
 
 #### Quickstart with Python and requests
 
@@ -193,8 +198,7 @@ These methods allow users to retrieve information about Ethereum accounts and th
   * Parameters: Address, Block Identifier
   * Response: Balance in Wei
 * eth\_accounts: Lists all accounts managed by the connected Ethereum node.
-  * Response: Array of account addresses\
-
+  * Response: Array of account addresses\\
 
 **2. Block and Transaction Retrieval**
 

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the eth_getBlockByHash json-rpc method. Сomplete guide on how
-  to use eth_getBlockByHash json-rpc in GetBlock.io Web3 documentation.
+  Example code for the eth_getBlockByHash JSON RPC method. Сomplete guide on how
+  to use eth_getBlockByHash JSON RPC in GetBlock Web3 documentation.
 ---
 
 # eth\_getBlockByHash - Arbitrum

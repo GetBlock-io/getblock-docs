@@ -1,8 +1,7 @@
 ---
 description: >-
-  Example code for the shh_getFilterChanges  {disallowed} json-rpc method.
-  Сomplete guide on how to use shh_getFilterChanges  {disallowed} json-rpc in
-  GetBlock.io Web3 documentation.
+  Example code for the shh_getFilterChanges JSON RPC method. Сomplete guide on
+  how to use shh_getFilterChanges  JSON RPC in GetBlock Web3 documentation.
 ---
 
 # shh\_getFilterChanges {disallowed} - Arbitrum
