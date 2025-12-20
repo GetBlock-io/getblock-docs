@@ -80,7 +80,7 @@ If the network of interest is already present, such as with Ethereum, click on t
 
 <figure><img src="../.gitbook/assets/Brave_wallet_ETH_settings.svg" alt="Exploring Brave Wallet network accounts"><figcaption></figcaption></figure>
 
-Look at the **RPC URLs** settings fro Ethereum: usually, a default Brave Wallet endpoint is present here. As every wallet user connects to it by default, it’s overloaded and insecure. That’s why a custom RPC URL is essential for Web3 activities.
+Look at the **RPC URLs** settings for Ethereum: usually, a default Brave Wallet endpoint is present here. As every wallet user connects to it by default, it’s overloaded and insecure. That’s why a custom RPC URL is essential for Web3 activities.
 {% endstep %}
 
 {% step %}
@@ -139,7 +139,7 @@ Voila—the free and highly secure Polygon zkEVM node endpoint is ready.
 
 Copy the access token and go to the Brave settings. Add the new RPC URLs field and paste the access token.&#x20;
 
-<figure><img src="../.gitbook/assets/Polygon_zkEVM_Brave_Wallet.svg" alt="Adding GetBlock zkEVM endpoint to Brave Wallet’"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Polygon_zkEVM_Brave_Wallet.svg" alt="Adding GetBlock zkEVM endpoint to Brave Wallet"><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 
