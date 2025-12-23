@@ -1,6 +1,6 @@
 ---
 description: >-
-  GetBlock provides access to over 50 blockchains. CU and rate limits depend on
+  GetBlock provides access to over 100 blockchains. CU and rate limits depend on
   the selected plan.
 ---
 
@@ -23,7 +23,7 @@ GetBlock’s shared node service is subject to several usage limits. These are t
 * **RPS (Requests Per Second)**: Each plan enforces a maximum number of requests you can send every second. While you’re not billed per request, staying within this limit is critical to maintaining optimal service quality.
 * [**Access Tokens**](../authentication-with-access-tokens.md)**:** Access tokens are unique identifiers used to authenticate your connection to GetBlock’s node infrastructure, generated when you create an endpoint. The limitation on your plan determines how many of these access tokens (and therefore endpoints) you can create.
 
-<table><thead><tr><th width="120.7734375">Plan</th><th width="90.09765625">Free</th><th width="116.25">Starter</th><th width="124.421875">Advanced</th><th width="125.66015625">Pro</th><th>Enterprise</th></tr></thead><tbody><tr><td><a data-footnote-ref href="#user-content-fn-1">Price/month</a></td><td>$0</td><td>$49</td><td>$199</td><td>$499</td><td>from $999</td></tr><tr><td>CU Allocation</td><td>50k/day</td><td>50M/month</td><td>220M/month</td><td>600M/month</td><td>Custom</td></tr><tr><td>RPS Limit</td><td>20 RPS</td><td>100 RPS</td><td>300 RPS</td><td>500 RPS</td><td>Custom </td></tr><tr><td>Access Tokens</td><td>2</td><td>10</td><td>25</td><td>50</td><td>Custom</td></tr><tr><td>Extra CU Purchase</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
+<table><thead><tr><th width="120.7734375">Plan</th><th width="90.09765625">Free</th><th width="116.25">Starter</th><th width="124.421875">Advanced</th><th width="125.66015625">Pro</th><th>Enterprise</th></tr></thead><tbody><tr><td><a data-footnote-ref href="#user-content-fn-1">Price/month</a></td><td>$0</td><td>$49</td><td>$199</td><td>$499</td><td>from $999</td></tr><tr><td>CU Allocation</td><td>50k/day</td><td>50M/month</td><td>220M/month</td><td>600M/month</td><td>Custom</td></tr><tr><td>RPS Limit</td><td>20 RPS</td><td>100 RPS</td><td>300 RPS</td><td>500 RPS</td><td>Custom</td></tr><tr><td>Access Tokens</td><td>2</td><td>10</td><td>25</td><td>50</td><td>Custom</td></tr><tr><td>Extra CU Purchase</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
 
 To see the full comparison table, navigate to [https://getblock.io/pricing/](https://getblock.io/pricing/).
 
@@ -33,13 +33,13 @@ Your **balance of CUs for Shared Nodes** is distributed on **all endpoints** add
 
 {% tabs %}
 {% tab title="1) Free plan" %}
-The plan is ideal if you’re **just starting out** and do not have complex calls or large request volumes.&#x20;
+The plan is ideal if you’re **just starting out** and do not have complex calls or large request volumes.
 
 <figure><img src="../../.gitbook/assets/Free_widget_upd.svg" alt="GetBlock&#x27;s free RPC node plan limits"><figcaption></figcaption></figure>
 
-* **CU**: 50,000/day&#x20;
+* **CU**: 50,000/day
 * **Throughput**: 20 requests per second (RPS)
-* **Access Tokens**: 2&#x20;
+* **Access Tokens**: 2
 
 {% hint style="warning" %}
 **Compute Units** are **renewed daily**, but unused CUs cannot be transferred to the next day.
@@ -51,7 +51,7 @@ Clients who want to increase their usage limits can choose between the higher-ti
 {% tab title="2) Starter plan" %}
 This is a monthly subscription designed for use cases that are growing beyond the free tier. It offers a **significant increase in CU** compared to the Free plan.
 
-<figure><img src="../../.gitbook/assets/Starter_widget_upd.svg" alt="Starter plan limits for Shared RPC nodes by GetBlock "><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Starter_widget_upd.svg" alt="Starter plan limits for Shared RPC nodes by GetBlock"><figcaption></figcaption></figure>
 
 * **CU**: 50M per month (\~1.6M/day)
 * **Throughput**: 100 requests per second (RPS)
@@ -82,13 +82,13 @@ The Pro Plan is built for applications that need significantly **higher throughp
 {% endtab %}
 
 {% tab title="5) Enterprise plan" %}
-The Enterprise plan is **fully customizable** with tailored CU allocations, rate limits, and access tokens to meet exceptionally high call volumes and performance requirements.&#x20;
+The Enterprise plan is **fully customizable** with tailored CU allocations, rate limits, and access tokens to meet exceptionally high call volumes and performance requirements.
 
 <figure><img src="../../.gitbook/assets/Enterprise_widget.svg" alt="GetBlock&#x27;s Enterprise plan with custom usage limit settings"><figcaption></figcaption></figure>
 
 * **CU**: Custom monthly allocation based on your demands
 * **Throughput**: Custom
-* **Access Tokens**: Custom&#x20;
+* **Access Tokens**: Custom
 * Additional CU packages can be purchased on demand
 {% endtab %}
 {% endtabs %}
@@ -118,7 +118,6 @@ Our Dedicated Node service is perfect for teams and projects that demand absolut
 
 ***
 
-If you’re unsure which plan best fits your needs, our team is ready to help! [Contact our support team](https://getblock.io/contact/) or visit our [Choosing your plan](choosing-your-plan.md) page for more information.\
-
+If you’re unsure which plan best fits your needs, our team is ready to help! [Contact our support team](https://getblock.io/contact/) or visit our [Choosing your plan](choosing-your-plan.md) page for more information.\\
 
 [^1]: Prices are based on monthly billing. Opt for **annual subscriptions** to save up to **$200 per month**
