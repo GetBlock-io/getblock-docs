@@ -1,47 +1,82 @@
 ---
 description: >-
-  Example code for the estimatesmartfee json-rpc method. Сomplete guide on how
-  to use estimatesmartfee json-rpc in GetBlock.io Web3 documentation.
+  Example code for the estimatesmartfee JSON RPC method. Сomplete guide on how
+  to use estimatesmartfee JSON RPC in GetBlock Web3 documentation.
 ---
 
 # estimatesmartfee - Bitcoin
 
-#### Parameters
+This method estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within a given number of blocks.
 
-`conf_target` - numeric, required
+### Parameters
 
-Confirmation target in blocks (1 - 1008)
+| Parameter      | Type   | Required | Description                                                                                |
+| -------------- | ------ | -------- | ------------------------------------------------------------------------------------------ |
+| conf\_target   | number | Yes      | Confirmation target in blocks (1 - 1008).                                                  |
+| estimate\_mode | string | No       | The fee estimate mode: "unset", "economical", or "conservative" (default: "conservative"). |
 
-`estimate_mode` - string, optional, default=CONSERVATIVE
+### Request
 
-The fee estimate mode.
-
-Whether to return a more conservative estimate which also satisfies a longer history.
-
-A conservative estimate potentially returns a higher feerate and is more likely to be sufficient for the desired target, but is not as responsive to short term drops in the prevailing fee market.
-
-Must be one of: UNSET, ECONOMICAL, CONSERVATIVE
-
-#### Request
-
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "estimatesmartfee",
-"params": [1, "default"],
-"id": "getblock.io"}'
-```
-
-#### Response
-
-```java
-{
-    "result": {
-        "feerate": 0.00243871,
-        "blocks": 2
-    },
-    "error": null,
+{% tabs %}
+{% tab title="cURL" %}
+```bash
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "estimatesmartfee",
+    "params": [6, "economical"],
     "id": "getblock.io"
+}'
+```
+{% endtab %}
+{% endtabs %}
+
+### Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": {
+        "feerate": 0.00012345,
+        "blocks": 6
+    }
 }
 ```
+
+### Response Parameters
+
+| Field   | Type   | Description                                      |
+| ------- | ------ | ------------------------------------------------ |
+| feerate | number | Estimate fee rate in BTC/kB (1 kB = 1000 bytes). |
+| blocks  | number | Block number where estimate was found.           |
+| errors  | array  | Errors encountered during processing (if any).   |
+
+### Use Case
+
+The `estimatesmartfee` method is essential for:
+
+* Dynamic fee calculation for transactions
+* Building user fee selection interfaces
+* Implementing RBF (Replace-By-Fee) strategies
+* Optimizing transaction costs
+* Supporting various confirmation time preferences
+* Building fee estimation dashboards
+
+### Error Handling
+
+| Status Code | Error Message     | Cause                                |
+| ----------- | ----------------- | ------------------------------------ |
+| 403         | Forbidden         | Missing or invalid ACCESS-TOKEN.     |
+| -1          | Insufficient data | Not enough data to make an estimate. |
+
+### Integration Notes
+
+The `estimatesmartfee` method helps developers:
+
+* Build dynamic fee calculators
+* Implement priority-based fee selection
+* Create cost-optimized transaction systems
+* Support time-sensitive transactions
+* Build fee comparison tools

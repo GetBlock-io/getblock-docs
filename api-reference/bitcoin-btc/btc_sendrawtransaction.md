@@ -1,36 +1,68 @@
 ---
 description: >-
-  Example code for the sendrawtransaction json-rpc method. Сomplete guide on how
-  to use sendrawtransaction json-rpc in GetBlock.io Web3 documentation.
+  Example code for the sendrawtransaction JSON-RPC method. Complete guide on how
+  to use sendrawtransaction JSON-RPC in GetBlock Web3 documentation.
 ---
 
 # sendrawtransaction - Bitcoin
 
-#### Parameters
+This method submits a raw transaction (serialized, hex-encoded) to the local node and network.
 
-`hexstring` - string, required
+### Parameters
 
-The hex string of the raw transaction
+| Parameter  | Type          | Required | Description                                                        |
+| ---------- | ------------- | -------- | ------------------------------------------------------------------ |
+| hexstring  | string        | Yes      | The hex string of the raw transaction.                             |
+| maxfeerate | number/string | No       | Maximum feerate in BTC/kvB to reject transactions (default: 0.10). |
 
-`maxfeerate` - numeric or string, optional, default=0.10
+### Request
 
-Reject transactions whose fee rate is higher than the specified value, expressed in BTC/kB.
+{% include "../../.gitbook/includes/curl-location-request-p... (1).md" %}
 
-Set to 0 to accept any fee rate.
+### Response
 
-#### Request
-
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "sendrawtransaction",
-"params": ["hexstring", null],
-"id": "getblock.io"}'
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": "ee652f0b40209bd02468de0c6336854f5efdd79fb865560aef2c46f4fa0b4a07"
+}
 ```
 
-#### Response
+### Response Parameters
 
-```java
-null
-```
+| Field  | Type   | Description                         |
+| ------ | ------ | ----------------------------------- |
+| result | string | The transaction hash (txid) in hex. |
+
+### Use Case
+
+The `sendrawtransaction` method is essential for:
+
+* Broadcasting signed transactions to the network
+* Wallet transaction submission
+* Payment gateway implementations
+* Automated payment systems
+* DeFi protocol integrations
+* Exchange withdrawal systems
+
+### Error Handling
+
+| Status Code | Error Message                      | Cause                                       |
+| ----------- | ---------------------------------- | ------------------------------------------- |
+| 403         | Forbidden                          | Missing or invalid ACCESS-TOKEN.            |
+| -22         | TX decode failed                   | The transaction hex is malformed.           |
+| -25         | Missing inputs                     | Transaction references non-existent inputs. |
+| -26         | Insufficient fee                   | Transaction fee is below minimum relay fee. |
+| -26         | TX rejected                        | Transaction violates consensus rules.       |
+| -27         | Transaction already in block chain | Transaction was already confirmed.          |
+
+### Integration With Web3
+
+The `sendrawtransaction` method helps developers:
+
+* Build wallet broadcast functionality
+* Implement payment processing systems
+* Create automated trading bots
+* Support bulk transaction submission
+* Enable real-time payment applications

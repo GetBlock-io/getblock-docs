@@ -24,52 +24,84 @@ Arbitrum chains are EVM-compatible blockchains that use an underlying EVM chain 
 {% hint style="info" %}
 _TECHNICAL DISCLAIMER: AUTHORITATIVE JSON-RPC API SPECIFICATION._&#x20;
 
-_GetBlock's RPC API reference documentation is provided exclusively for informational purposes and streamlined developer experience optimization. The canonical and normative specification for Ethereum Virtual Machine (EVM) JSON-RPC methods is solely maintained and published through the official Ethereum Foundation documentation portal at_ [_ethereum.org_](http://ethereum.org/)_. This resource constitutes the sole authoritative reference implementation of the JSON-RPC 2.0 protocol interface across EVM-compatible execution clients._
+_GetBlock's RPC API reference documentation is provided exclusively for informational purposes and to optimize the developer experience. The canonical and normative specification for Ethereum Virtual Machine (EVM) JSON-RPC methods is solely maintained and published through the official Ethereum Foundation documentation portal at_ [_ethereum.org_](http://ethereum.org/)_. This resource constitutes the sole authoritative reference implementation of the JSON-RPC 2.0 protocol interface across EVM-compatible execution clients._
 {% endhint %}
 
-## Quickstart
+### Supported Network&#x20;
+
+| Network | Chain ID | JSON | WSS |
+| ------- | -------- | ---- | --- |
+| Mainnet | 42161    | ✔    | ✔   |
+| Sepolia | 421614   | ✔    | ✔   |
+| Nova    | 42170    | ✔    | ✔   |
+
+### Base URL
+
+{% tabs %}
+{% tab title="New York, USA" %}
+```bash
+https://go.getblock.us/
+```
+{% endtab %}
+
+{% tab title="Franfurt, Germany" %}
+```bash
+https://go.getblock.io
+```
+{% endtab %}
+{% endtabs %}
+
+### Quickstart
 
 In this section, you will learn how to make your first call with either:
 
 * Axios
 * Python
 
-### Quickstart with Axios
+#### Quickstart with Axios
 
 Before you begin, you must have already installed `npm` or `yarn` on your local machine. If not, check out [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) or [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
 
-1.  Set up your project using this command:
+1. Set up your project using this command:
 
-    For npm:
+{% tabs %}
+{% tab title="npm" %}
+```bash
+mkdir arbitrum-api-quickstart
+cd arbitrum-api-quickstart
+npm init --yes
+```
+{% endtab %}
 
-    ```bash
-    mkdir arbitrum-api-quickstart
-    cd arbitrum-api-quickstart
-    npm init --yes
-    ```
-
-Or yarn:
-
+{% tab title="yarn" %}
 ```bash
 mkdir arbitrum-api-quickstart
 cd arbitrum-api-quickstart
 yarn init --yes
 ```
+{% endtab %}
+{% endtabs %}
 
+{% hint style="info" %}
 This creates a project directory named `aptos-api-quickstart` and initialises a Node.js project within it.
+{% endhint %}
 
-2.  Install Axios using this command:\
-    Using npm:
+2. Install Axios using this command:
 
-    ```bash
-    npm install axios
-    ```
+{% tabs %}
+{% tab title="npm" %}
+```bash
+npm install axios
+```
+{% endtab %}
 
-    Using yarn:
+{% tab title="yarn" %}
+```bash
+yarn add axios
+```
+{% endtab %}
+{% endtabs %}
 
-    ```bash
-    yarn add axios
-    ```
 3. Create a new file and name it `index.js`. This is where you will make your first call.
 4. Set the ES module `"type": "module"` in your `package.json`.
 5.  Add the following code to the file (`index.js`):
@@ -121,7 +153,7 @@ This creates a project directory named `aptos-api-quickstart` and initialises a 
     }
     ```
 
-### Quickstart with Python and Requests
+#### Quickstart with Python and Requests
 
 Before you begin, you must have installed Python and Pip on your local machine.
 
@@ -173,29 +205,4 @@ Before you begin, you must have installed Python and Pip on your local machine.
     ```bash
     python main.py
     ```
-
-
-
-### Base URL
-
-{% tabs %}
-{% tab title="New York, USA" %}
-```bash
-https://go.getblock.us/
-```
-{% endtab %}
-
-{% tab title="Franfurt, Germany" %}
-```bash
-https://go.getblock.io
-```
-{% endtab %}
-{% endtabs %}
-
-### Supported Network
-
-* Mainnet
-* Sepolia
-
-
 

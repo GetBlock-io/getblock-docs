@@ -1,59 +1,196 @@
 ---
 description: >-
-  Example code for the getblock json-rpc method. Сomplete guide on how to use
-  getblock json-rpc in GetBlock.io Web3 documentation.
+  Example code for the getblock JSON-RPC method. Complete guide on how to use
+  getblock JSON-RPC in GetBlock Web3 documentation.
 ---
 
 # getblock - Bitcoin
 
-#### Parameters
+This method returns information about a block given its hash. The amount of detail returned depends on the verbosity level.
 
-`blockhash` - string, required
+### Parameters
 
-The block hash
+| Parameter | Type   | Required | Description                                                                                      |
+| --------- | ------ | -------- | ------------------------------------------------------------------------------------------------ |
+| blockhash | string | Yes      | The block hash.                                                                                  |
+| verbosity | number | No       | 0 for hex-encoded data, 1 for JSON object, 2 for JSON object with transaction data (default: 1). |
 
-`verbosity` - numeric, optional, default=1
+### Request
 
-0 for hex-encoded data, 1 for a json object, and 2 for json object with transaction data
-
-#### Request
-
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "getblock",
-"params": ["000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428"],
-"id" : "getblock.io"}'
+{% tabs %}
+{% tab title="cURL" %}
+```bash
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "getblock",
+    "params": ["000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428", 1],
+    "id": "getblock.io"
+}'
 ```
 
-#### Response
 
-```java
-{
-    "bits": "170cdf6f",
-    "chainwork": "00000000000000000000000000000000000000001b633a711a2334c78a29bb40",
-    "confirmations": 1197,
-    "difficulty": 21865558044610.55,
-    "hash": "000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428",
-    "height": 677119,
-    "mediantime": 1617176373,
-    "merkleroot": "d14c9f467c4bdd5135837696150ab5f52f3f5043de324ca4e5766b195b9f8f37",
-    "nTx": 2815,
-    "nextblockhash": "000000000000000000006d8e1eb870bd281b30ed621acf6b8d6af2a3c7ab61f1",
-    "nonce": 3669423616,
-    "previousblockhash": "0000000000000000000aec32aa6edda6c888e8d6a0183d9c976064f98430c2da",
-    "size": 1350854,
-    "strippedsize": 882816,
-    "time": 1617180599,
-    "tx": [
-        "2cd23815f632a3fc8a5c191c9d4fb4d758d85af4599ecd0f7f55427ad682f142",
-        "780791bb2d5a8ccda4b5a707967a8e15b412814852c58c77299e85579bb65587",
-        "635d50c5be6d6aea70527237dce8b0d646b88970ba34384f2ef85eba37f9e604",
-        "fa8b28b42f11aa86ff1bbe6acf67b8e2e497573bef07a8e2fd5de8d79f2df80c"
-    ],
-    "version": 1073733632,
-    "versionHex": "3fffe000",
-    "weight": 3999302
+{% endtab %}
+
+{% tab title="Axios" %}
+```javascript
+import axios from 'axios';
+
+const data = JSON.stringify({
+    "jsonrpc": "2.0",
+    "method": "getblock",
+    "params": ["000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428", 1],
+    "id": "getblock.io"
+});
+
+const config = {
+    method: 'post',
+    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    data: data
+};
+
+axios(config)
+    .then(response => console.log(JSON.stringify(response.data)))
+    .catch(error => console.log(error));
+```
+{% endtab %}
+
+{% tab title="Request" %}
+```python
+import requests
+import json
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = json.dumps({
+    "jsonrpc": "2.0",
+    "method": "getblock",
+    "params": ["000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428", 1],
+    "id": "getblock.io"
+})
+
+headers = {
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.text)
+```
+{% endtab %}
+
+{% tab title="Rust" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "getblock",
+            "params": ["000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428", 1],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
 }
 ```
+{% endtab %}
+{% endtabs %}
+
+### Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": {
+        "hash": "000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428",
+        "confirmations": 15234,
+        "height": 820000,
+        "version": 536870912,
+        "versionHex": "20000000",
+        "merkleroot": "2d66d4b9d56b5f3a3e5ef65323f19b8f68c48e9a4b6d1a7c8e2f3b4c5d6e7f8a",
+        "time": 1700000000,
+        "mediantime": 1699999000,
+        "nonce": 1234567890,
+        "bits": "170d21b9",
+        "difficulty": 62460000000000,
+        "chainwork": "000000000000000000000000000000000000000050a1b2c3d4e5f6789abcdef0",
+        "nTx": 3500,
+        "previousblockhash": "000000000000000000047a9e02e08c16ea186950f42a5498320ddd1bd7ab3427",
+        "nextblockhash": "000000000000000000045b8302e08c16ea186950f42a5498320ddd1bd7ab3429",
+        "strippedsize": 998000,
+        "size": 1500000,
+        "weight": 3993000,
+        "tx": [
+            "txid1...",
+            "txid2...",
+            "..."
+        ]
+    }
+}
+```
+
+### Response Parameters
+
+| Field             | Type   | Description                                                                  |
+| ----------------- | ------ | ---------------------------------------------------------------------------- |
+| hash              | string | The block hash.                                                              |
+| confirmations     | number | Number of confirmations, or -1 if not in main chain.                         |
+| height            | number | Block height or index.                                                       |
+| version           | number | Block version.                                                               |
+| versionHex        | string | Block version formatted in hexadecimal.                                      |
+| merkleroot        | string | The merkle root of transactions.                                             |
+| time              | number | Block time as Unix epoch time.                                               |
+| mediantime        | number | Median time of previous 11 blocks.                                           |
+| nonce             | number | The nonce value.                                                             |
+| bits              | string | The bits field (compact target).                                             |
+| difficulty        | number | The mining difficulty.                                                       |
+| chainwork         | string | Expected number of hashes to produce current chain.                          |
+| nTx               | number | Number of transactions in the block.                                         |
+| previousblockhash | string | Hash of the previous block.                                                  |
+| nextblockhash     | string | Hash of the next block (if available).                                       |
+| strippedsize      | number | Size of block without witness data.                                          |
+| size              | number | Block size in bytes.                                                         |
+| weight            | number | Block weight (BIP 141).                                                      |
+| tx                | array  | Array of transaction ids (verbosity=1) or transaction objects (verbosity=2). |
+
+### Use Case
+
+The `getblock` method is essential for:
+
+* Building blockchain explorers
+* Analyzing block contents and statistics
+* Tracking transaction confirmations
+* Monitoring mining activity
+* Building chain analysis tools
+* Creating block visualization dashboards
+
+### Error Handling
+
+| Status Code | Error Message   | Cause                                    |
+| ----------- | --------------- | ---------------------------------------- |
+| 403         | Forbidden       | Missing or invalid ACCESS-TOKEN.         |
+| -5          | Block not found | The specified block hash does not exist. |
+
+### Integration Notes
+
+The `getblock` method helps developers:
+
+* Build full-featured blockchain explorers
+* Implement block notification services
+* Create mining pool monitoring tools
+* Support transaction confirmation tracking
+* Build chain analysis applications

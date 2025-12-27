@@ -1,67 +1,203 @@
 ---
 description: >-
-  Example code for the getblocktemplate json-rpc method. Сomplete guide on how
-  to use getblocktemplate json-rpc in GetBlock.io Web3 documentation.
+  Example code for the getblocktemplate JSON-RPC method. Complete guide on how
+  to use getblocktemplate JSON-RPC in GetBlock Web3 documentation.
 ---
 
 # getblocktemplate - Bitcoin
 
-#### Parameters
+This method returns data needed to construct a block to work on. It is used by miners to get a template for the next block.
 
-`template_request` - json object, optional, default={}
+### Parameters
 
-Format of the template
+| Parameter                      | Type   | Required | Description                                                     |
+| ------------------------------ | ------ | -------- | --------------------------------------------------------------- |
+| template\_request              | object | No       | Template request parameters.                                    |
+| template\_request.mode         | string | No       | Must be "template" or "proposal" (default: "template").         |
+| template\_request.capabilities | array  | No       | Array of client capabilities (e.g., "longpoll", "coinbasetxn"). |
+| template\_request.rules        | array  | No       | Array of softfork rules to support.                             |
 
-#### Request
+### Request
 
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "getblocktemplate",
-"params": [null],
-"id": "getblock.io"}'
+{% tabs %}
+{% tab title="cURL" %}
+```bash
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "getblocktemplate",
+    "params": [{"rules": ["segwit"]}],
+    "id": "getblock.io"
+}'
 ```
+{% endtab %}
 
-#### Response
+{% tab title="Axios" %}
+```javascript
+import axios from 'axios';
 
-```java
+const data = JSON.stringify({
+    "jsonrpc": "2.0",
+    "method": "getblocktemplate",
+    "params": [{"rules": ["segwit"]}],
+    "id": "getblock.io"
+});
+
+const config = {
+    method: 'post',
+    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    data: data
+};
+
+axios(config)
+    .then(response => console.log(JSON.stringify(response.data)))
+    .catch(error => console.log(error));
+```
+{% endtab %}
+
+{% tab title="Request" %}
+```python
+import requests
+import json
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = json.dumps({
+    "jsonrpc": "2.0",
+    "method": "getblocktemplate",
+    "params": [{"rules": ["segwit"]}],
+    "id": "getblock.io"
+})
+
+headers = {
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.text)
+```
+{% endtab %}
+
+{% tab title="Ruby" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "getblocktemplate",
+            "params": [{"rules": ["segwit"]}],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### Response
+
+```json
 {
-    "error": null,
+    "jsonrpc": "2.0",
     "id": "getblock.io",
     "result": {
-        "bits": "1803a597",
-        "capabilities": [
-            "proposal"
-        ],
-        "coinbaseaux": {
-            "flags": ""
-        },
-        "coinbasevalue": 628148220,
-        "curtime": 1619171227,
-        "height": 684636,
-        "longpollid": "00000000000000000192b1487a01331fe09ef2c7ee09a0f2e36f049eb6ada5a864791970",
-        "mintime": 1619163815,
-        "mutable": [
-            "time",
-            "transactions",
-            "prevblock"
-        ],
-        "noncerange": "00000000ffffffff",
-        "previousblockhash": "00000000000000000192b1487a01331fe09ef2c7ee09a0f2e36f049eb6ada5a8",
-        "sigoplimit": 226950,
-        "sizelimit": 32000000,
-        "target": "000000000000000003a597000000000000000000000000000000000000000000",
+        "capabilities": ["proposal"],
+        "version": 536870912,
+        "rules": ["csv", "segwit", "taproot"],
+        "vbavailable": {},
+        "vbrequired": 0,
+        "previousblockhash": "000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428",
         "transactions": [
             {
-                "data": "020000000168f1dc79ec68a2ac46669106f6df2b8af1109a592362498ac60d19b7a2012a80010000006a4730440220278e62223666d402c4bf6cb676d104a889591387e4617086042cf790f98483f402207c4a945a8da13dd62577942fb42cd9746961398efc89e0528a0649664812ad254121031b3c18ce8efcf9a1ce214cb5c62489e842663b47908b43f3af789d840af71efbffffffff0270ec1b00000000001976a914d54ef84280ff5d254ea038c170f4cee78d8d77c688acf066c100000000001976a914842b152a0bbd4647afaeceec8a6afaa90668e7c788ac00000000",
-                "fee": 10000,
-                "hash": "00141468b749e92a243a3653e214fa152b44ff8611b96f2927b84f7114eb4ae8",
-                "sigops": 1,
-                "txid": "00141468b749e92a243a3653e214fa152b44ff8611b96f2927b84f7114eb4ae8"
+                "data": "0200000001...",
+                "txid": "abc123...",
+                "hash": "def456...",
+                "depends": [],
+                "fee": 25000,
+                "sigops": 4,
+                "weight": 900
             }
         ],
-        "version": 536870912
+        "coinbaseaux": {"flags": ""},
+        "coinbasevalue": 312500000,
+        "longpollid": "000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab342812345",
+        "target": "000000000000000000046b9302e08c16ea186950f42a5498000000000000000",
+        "mintime": 1700000000,
+        "mutable": ["time", "transactions", "prevblock"],
+        "noncerange": "00000000ffffffff",
+        "sigoplimit": 80000,
+        "sizelimit": 4000000,
+        "weightlimit": 4000000,
+        "curtime": 1700001000,
+        "bits": "170d21b9",
+        "height": 820001,
+        "default_witness_commitment": "6a24aa21a9ed..."
     }
 }
 ```
+
+### Response Parameters
+
+| Field                        | Type   | Description                                         |
+| ---------------------------- | ------ | --------------------------------------------------- |
+| version                      | number | Block version.                                      |
+| rules                        | array  | Enabled softfork rules.                             |
+| previousblockhash            | string | Hash of current tip of the best chain.              |
+| transactions                 | array  | Contents of non-coinbase transactions.              |
+| coinbaseaux                  | object | Data that should be included in coinbase scriptSig. |
+| coinbasevalue                | number | Maximum allowable coinbase value in satoshis.       |
+| target                       | string | The hash target.                                    |
+| mintime                      | number | Minimum timestamp appropriate for next block.       |
+| mutable                      | array  | List of mutable template fields.                    |
+| noncerange                   | string | Range of valid nonces.                              |
+| sigoplimit                   | number | Limit of sigops per block.                          |
+| sizelimit                    | number | Block size limit.                                   |
+| weightlimit                  | number | Block weight limit.                                 |
+| curtime                      | number | Current timestamp.                                  |
+| bits                         | string | Compressed target in compact format.                |
+| height                       | number | Height of the next block.                           |
+| default\_witness\_commitment | string | Witness commitment for SegWit.                      |
+
+### Use Case
+
+The `getblocktemplate` method is essential for:
+
+* Mining pool software integration
+* Solo mining implementations
+* Block construction optimization
+* Mining software development
+* Testing mining configurations
+* Understanding block structure
+
+### Error Handling
+
+| Status Code | Error Message              | Cause                               |
+| ----------- | -------------------------- | ----------------------------------- |
+| 403         | Forbidden                  | Missing or invalid ACCESS-TOKEN.    |
+| -9          | Node is downloading blocks | Initial block download in progress. |
+| -10         | Node is not connected      | No peer connections available.      |
+
+### Integration Notes
+
+The `getblocktemplate` method helps developers:
+
+* Build mining pool backends
+* Create solo mining software
+* Implement stratum proxies
+* Test block construction logic
+* Analyze transaction selection algorithms
