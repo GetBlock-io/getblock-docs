@@ -1,60 +1,204 @@
 ---
 description: >-
-  Example code for the getrawmempool json-rpc method. Сomplete guide on how to
-  use getrawmempool json-rpc in GetBlock.io Web3 documentation.
+  Example code for the getrawmempool JSON-RPC method. Complete guide on how to
+  use getrawmempool JSON-RPC in GetBlock Web3 documentation.
 ---
 
 # getrawmempool - Bitcoin
 
-#### Parameters
+This method returns all transaction ids in memory pool as a JSON array of strings.
 
-`verbose` - boolean, optional, default=false
+### Parameters
 
-True for a json object, false for array of transaction ids
+| Parameter         | Type    | Required | Description                                                                           |
+| ----------------- | ------- | -------- | ------------------------------------------------------------------------------------- |
+| verbose           | boolean | No       | True for a JSON object, false for array of txids (default: false).                    |
+| mempool\_sequence | boolean | No       | If verbose=false, returns a JSON object with txid array and mempool\_sequence number. |
 
-`mempool_sequence` - boolean, optional, default=false
+### Request
 
-If verbose=false, returns a json object with transaction list and mempool sequence number attached.
-
-#### Request
-
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "getrawmempool",
-"params": [null, null],
-"id": "getblock.io"}'
+{% tabs %}
+{% tab title="Untitled" %}
+```bash
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "getrawmempool",
+    "params": [false],
+    "id": "getblock.io"
+}'
 ```
+{% endtab %}
 
-#### Response
+{% tab title="Axios" %}
+```javascript
+import axios from 'axios';
 
-```java
+const data = JSON.stringify({
+    "jsonrpc": "2.0",
+    "method": "getrawmempool",
+    "params": [false],
+    "id": "getblock.io"
+});
+
+const config = {
+    method: 'post',
+    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    data: data
+};
+
+axios(config)
+    .then(response => console.log(JSON.stringify(response.data)))
+    .catch(error => console.log(error));
+```
+{% endtab %}
+
+{% tab title="Request" %}
+```python
+import requests
+import json
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = json.dumps({
+    "jsonrpc": "2.0",
+    "method": "getrawmempool",
+    "params": [False],
+    "id": "getblock.io"
+})
+
+headers = {
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.text)
+```
+{% endtab %}
+
+{% tab title="Rust" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "getrawmempool",
+            "params": [false],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### Response (Non-Verbose)
+
+```json
 {
-    "error": null,
+    "jsonrpc": "2.0",
     "id": "getblock.io",
     "result": [
-        "d7d42e8c0ee7721dc5e417fb746c4ac404c7f2cd39e1343b3aa03741fa777782",
-        "27b8644cb6d365e9f57a40d01ce3599d1cfb4f50ffdfaf927bcd1277c96dae12",
-        "fc5e53103d5c9d83e76d8f7f133fb2a519efa572e451392e73a90629895f89f3",
-        "442723267ed7f1b39b66316c8144aef9f3a8fcf30d53ff6750ed34f69e11aa9a",
-        "fecba20b5b84bcb90275e02eb1aeb96c48d0e1b3ae3eb2856304e63c46c2459e",
-        "d496dc633a81455f07a1ac0f587ecbd2ea7745d141b48882c15ee5b64932f260",
-        "45fabcc0e63a0830bd2ca03aa9ffca5827e9201e148e5f5a04d42af53e20fdda",
-        "75d8a77fd06818ae213b07d545d238a1f1a453d8152473e560fe0a251b876c04",
-        "81dcef9211fb8b1091b4d040c7c32347350af3871909df7fb1dcebd36cb16820",
-        "b1a214a33b1fcbd61cf0c496b7b0b0cd52c57fcfcea9f00118e41e2285a6973a",
-        "8827d4c3f9edc65d5550b5700b72c70d26588c6eb6caee05d0f3142c4c90bdcd",
-        "a6cb413669eef903ebef42f249b7a775c9a429e6847129d7a8569f8ca3c00856",
-        "40fd6c80d2977a6a7b9f7f6e4d623eae2afb93e666638122ad7b610989ede995",
-        "a4aef4dd6721ff3e39a6f9b55d87ec2b72bc5bb55ea806ba75aa6c27b2a335df",
-        "b7ccf75f73f871b1d67fdba1aa2ad223fa1ce310ba9fa6eff0d7c10efca9104b",
-        "c889bbe3b168749002cd45dc59f5c64caa69fdd83ea3220b921c4cbeb3e09323",
-        "1eb435d6fe5be7049884035e84c4ce9a827c0f873dfa379856fff6d5ff2590b4",
-        "450fc3fd607df08aa38e8e76e6bcb6fd3b175b7fb9ce15e801bfe3aa59fff47f",
-        "7e7d5116103f450e9e61eb6cb7014072b400e97e91b145eb8121f7832555937c",
-        "e9b956e1c67ab5f06f5a1f01f40524269e03eb29fbf1476640f9cdd219b8c629",
-        null
+        "52273e0ce6cf3452932cfbc1c517c0ce1af1d255fda67a6e3bd63ba1d908c8c2",
+        "abc123def456789012345678901234567890123456789012345678901234abcd",
+        "def456abc789012345678901234567890123456789012345678901234567efgh"
     ]
 }
 ```
+
+### Response (Verbose)
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": {
+        "52273e0ce6cf3452932cfbc1c517c0ce1af1d255fda67a6e3bd63ba1d908c8c2": {
+            "vsize": 141,
+            "weight": 561,
+            "fee": 0.00001410,
+            "modifiedfee": 0.00001410,
+            "time": 1700000000,
+            "height": 820000,
+            "descendantcount": 1,
+            "descendantsize": 141,
+            "descendantfees": 1410,
+            "ancestorcount": 1,
+            "ancestorsize": 141,
+            "ancestorfees": 1410,
+            "wtxid": "abc123...",
+            "fees": {
+                "base": 0.00001410,
+                "modified": 0.00001410,
+                "ancestor": 0.00001410,
+                "descendant": 0.00001410
+            },
+            "depends": [],
+            "spentby": [],
+            "bip125-replaceable": true
+        }
+    }
+}
+```
+
+### Response Parameters
+
+| Field                | Type    | Description                                              |
+| -------------------- | ------- | -------------------------------------------------------- |
+| result (non-verbose) | array   | Array of transaction ids.                                |
+| result (verbose)     | object  | Object with txid keys and transaction details as values. |
+| vsize                | number  | Virtual transaction size.                                |
+| weight               | number  | Transaction weight.                                      |
+| fee                  | number  | Transaction fee in BTC.                                  |
+| modifiedfee          | number  | Fee with priority fee delta.                             |
+| time                 | number  | Local time transaction entered pool.                     |
+| height               | number  | Block height when transaction entered pool.              |
+| descendantcount      | number  | Number of in-mempool descendants.                        |
+| descendantsize       | number  | Virtual size of in-mempool descendants.                  |
+| ancestorcount        | number  | Number of in-mempool ancestors.                          |
+| ancestorsize         | number  | Virtual size of in-mempool ancestors.                    |
+| depends              | array   | Unconfirmed transactions used as inputs.                 |
+| spentby              | array   | Unconfirmed transactions spending this one's outputs.    |
+| bip125-replaceable   | boolean | Whether BIP125 replaceable.                              |
+
+### Use Case
+
+The `getrawmempool` method is essential for:
+
+* Monitoring pending transactions
+* Building mempool explorers
+* Analyzing transaction backlog
+* Creating fee market analysis tools
+* Implementing mempool synchronization
+* Supporting block template creation
+
+### Error Handling
+
+| Status Code | Error Message | Cause                            |
+| ----------- | ------------- | -------------------------------- |
+| 403         | Forbidden     | Missing or invalid ACCESS-TOKEN. |
+
+### Integration With Web3
+
+The `getrawmempool` method helps developers:
+
+* Build mempool browsers and explorers
+* Create transaction monitoring systems
+* Implement mempool analytics
+* Track unconfirmed transaction volume
+* Support mining software integration

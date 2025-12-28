@@ -1,70 +1,186 @@
 ---
 description: >-
-  Example code for the getblockstats json-rpc method. Сomplete guide on how to
-  use getblockstats json-rpc in GetBlock.io Web3 documentation.
+  Example code for the getblockstats JSON-RPC method. Complete guide on how to
+  use getblockstats JSON-RPC in GetBlock Web3 documentation.
 ---
 
 # getblockstats - Bitcoin
 
-#### Parameters
+This method computes per-block statistics for a given block or block range.
 
-`hash_or_height` - string or numeric, required
+### Parameters
 
-The block hash or height of the target block
+| Parameter        | Type          | Required | Description                                                          |
+| ---------------- | ------------- | -------- | -------------------------------------------------------------------- |
+| hash\_or\_height | string/number | Yes      | The block hash or height.                                            |
+| stats            | array         | No       | Array of stat names to retrieve. Returns all stats if not specified. |
 
-`stats` - json array, optional, default=all values
+### Request
 
-Values to plot (see result below)
-
-#### Request
-
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "getblockstats",
-"params": [1000, null],
-"id": "getblock.io"}'
+{% tabs %}
+{% tab title="cURL" %}
+```bash
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "getblockstats",
+    "params": [820000, ["txs", "avgfee", "avgfeerate", "height", "time"]],
+    "id": "getblock.io"
+}'
 ```
+{% endtab %}
 
-#### Response
+{% tab title="Axios" %}
+```javascript
+import axios from 'axios';
 
-```java
+const data = JSON.stringify({
+    "jsonrpc": "2.0",
+    "method": "getblockstats",
+    "params": [820000, ["txs", "avgfee", "avgfeerate", "height", "time"]],
+    "id": "getblock.io"
+});
+
+const config = {
+    method: 'post',
+    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    data: data
+};
+
+axios(config)
+    .then(response => console.log(JSON.stringify(response.data)))
+    .catch(error => console.log(error));
+```
+{% endtab %}
+
+{% tab title="Request" %}
+```python
+import requests
+import json
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = json.dumps({
+    "jsonrpc": "2.0",
+    "method": "getblockstats",
+    "params": [820000, ["txs", "avgfee", "avgfeerate", "height", "time"]],
+    "id": "getblock.io"
+})
+
+headers = {
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.text)
+```
+{% endtab %}
+
+{% tab title="Rust" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "getblockstats",
+            "params": [820000, ["txs", "avgfee", "avgfeerate", "height", "time"]],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### Response
+
+```json
 {
-    "error": null,
+    "jsonrpc": "2.0",
     "id": "getblock.io",
     "result": {
-        "avgfee": 0.0,
-        "avgfeerate": 0.0,
-        "avgtxsize": 0,
-        "blockhash": "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09",
-        "feerate_percentiles": [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-        ],
-        "height": 1000,
-        "ins": 0,
-        "maxfee": 0.0,
-        "maxfeerate": 0.0,
-        "maxtxsize": 0,
-        "medianfee": 0.0,
-        "mediantime": 1232344831,
-        "mediantxsize": 0,
-        "minfee": 0.0,
-        "minfeerate": 0.0,
-        "mintxsize": 0,
-        "outs": 1,
-        "subsidy": 50.0,
-        "time": 1232346882,
-        "total_out": 0.0,
-        "total_size": 0,
-        "totalfee": 0.0,
-        "txs": 1,
-        "utxo_increase": 1,
-        "utxo_size_inc": 117
+        "avgfee": 25000,
+        "avgfeerate": 45,
+        "height": 820000,
+        "time": 1700000000,
+        "txs": 3500
     }
 }
 ```
+
+### Response Parameters (Full Stats)
+
+| Field           | Type   | Description                                |
+| --------------- | ------ | ------------------------------------------ |
+| avgfee          | number | Average fee per transaction (in satoshis). |
+| avgfeerate      | number | Average feerate (in sat/vB).               |
+| avgtxsize       | number | Average transaction size.                  |
+| blockhash       | string | The block hash.                            |
+| height          | number | Block height.                              |
+| ins             | number | Total number of inputs.                    |
+| maxfee          | number | Maximum fee in the block.                  |
+| maxfeerate      | number | Maximum feerate in the block.              |
+| maxtxsize       | number | Maximum transaction size.                  |
+| medianfee       | number | Median transaction fee.                    |
+| mediantime      | number | Block median time.                         |
+| mediantxsize    | number | Median transaction size.                   |
+| minfee          | number | Minimum fee in the block.                  |
+| minfeerate      | number | Minimum feerate in the block.              |
+| mintxsize       | number | Minimum transaction size.                  |
+| outs            | number | Total number of outputs.                   |
+| subsidy         | number | Block subsidy (in satoshis).               |
+| swtotal\_size   | number | Total size of SegWit transactions.         |
+| swtotal\_weight | number | Total weight of SegWit transactions.       |
+| swtxs           | number | Number of SegWit transactions.             |
+| time            | number | Block timestamp.                           |
+| total\_out      | number | Total output value.                        |
+| total\_size     | number | Total size of all transactions.            |
+| total\_weight   | number | Total weight of all transactions.          |
+| totalfee        | number | Total fees in the block.                   |
+| txs             | number | Number of transactions.                    |
+| utxo\_increase  | number | Change in UTXO set size.                   |
+| utxo\_size\_inc | number | Change in UTXO set serialized size.        |
+
+### Use Case
+
+The `getblockstats` method is essential for:
+
+* Block analysis and visualization
+* Fee market research
+* Transaction volume tracking
+* Mining profitability analysis
+* SegWit adoption monitoring
+* Building blockchain analytics dashboards
+
+### Error Handling
+
+| Status Code | Error Message                         | Cause                                       |
+| ----------- | ------------------------------------- | ------------------------------------------- |
+| 403         | Forbidden                             | Missing or invalid ACCESS-TOKEN.            |
+| -3          | Block not inputed                     | The block not inputed.                      |
+| -8          | Invalid stat name or Block not found  | One of the requested stat names is invalid. |
+
+### Integration Notes
+
+The `getblockstats` method helps developers:
+
+* Build block analytics platforms
+* Create fee estimation models
+* Monitor SegWit adoption
+* Analyze transaction patterns
+* Track blockchain economics

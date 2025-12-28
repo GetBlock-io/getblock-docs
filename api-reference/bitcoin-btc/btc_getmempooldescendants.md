@@ -1,47 +1,202 @@
 ---
 description: >-
-  Example code for the getmempooldescendants json-rpc method. Сomplete guide on
-  how to use getmempooldescendants json-rpc in GetBlock.io Web3 documentation.
+  Example code for the getmempoolancestors JSON-RPC method. Complete guide on
+  how to use getmempoolancestors JSON-RPC in GetBlock Web3 documentation.
 ---
 
 # getmempooldescendants - Bitcoin
 
-#### Parameters
+This method returns all in-mempool ancestors of a transaction if it is in the mempool.
 
-`txid` - string, required
+### Parameters
 
-The transaction id (must be in mempool)
+| Parameter | Type    | Required | Description                                                        |
+| --------- | ------- | -------- | ------------------------------------------------------------------ |
+| txid      | string  | Yes      | The transaction id (must be in mempool).                           |
+| verbose   | boolean | No       | True for a JSON object, false for array of txids (default: false). |
 
-`verbose` - boolean, optional, default=false
+### Request
 
-True for a json object, false for array of transaction ids
-
-#### Request
-
-```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' 
---header 'Content-Type: application/json' 
---data-raw '{"jsonrpc": "2.0",
-"method": "getmempooldescendants",
-"params": ["a4aef4dd6721ff3e39a6f9b55d87ec2b72bc5bb55ea806ba75aa6c27b2a335df", null],
-"id": "getblock.io"}'
+{% tabs %}
+{% tab title="cURL" %}
+{% code overflow="wrap" %}
+```bash
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "getmempoolancestors",
+    "params": ["52273e0ce6cf3452932cfbc1c517c0ce1af1d255fda67a6e3bd63ba1d908c8c2", true],
+    "id": "getblock.io"
+}'
 ```
+{% endcode %}
+{% endtab %}
 
-#### Response
+{% tab title="Axios" %}
+{% code overflow="wrap" %}
+```javascript
+import axios from 'axios';
 
-```java
-{
-    "error": null,
-    "id": "getblock.io",
-    "result": [
-        "d8047111681bcb24ade1355458bee569dfa2eda33ddf0d6a3b1eaa21fca0729b",
-        "c7229dcd13432d3dafb8408eb4c61c6973b585b4232039ff2a777057cd3f419f",
-        "ebfa35ff32bacd2e2f31fa09b77a5baf0dd04ea69b49731c785fa14cb4ae26c6",
-        "177b36ad581a51d9eaaa23d6933ee932a1c4997d12469b9ed6ea3ec83ae626c8",
-        "ca603f623a08bd0e825792de6ee158d3a92af4ba512cc9202dd17af6be35dcd3",
-        "65ac887d001640b4a1e490f315af37f02a8962105f0e364429879d55e967c1e2",
-        "f20c3ba1ee5dd284fa75758ff3bdd2805323f6dd590f5ffe27892c672f0f8ff3",
-        "7b28bf17e2757475dc5ff3709dae1d70fc1624eecc0118f5023c49c2b8db08f7"
-    ]
+const data = JSON.stringify({
+    "jsonrpc": "2.0",
+    "method": "getmempoolancestors",
+    "params": ["52273e0ce6cf3452932cfbc1c517c0ce1af1d255fda67a6e3bd63ba1d908c8c2", true],
+    "id": "getblock.io"
+});
+
+const config = {
+    method: 'post',
+    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    data: data
+};
+
+axios(config)
+    .then(response => console.log(JSON.stringify(response.data)))
+    .catch(error => console.log(error));
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Request" %}
+{% code overflow="wrap" %}
+```python
+import requests
+import json
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = json.dumps({
+    "jsonrpc": "2.0",
+    "method": "getmempoolancestors",
+    "params": ["52273e0ce6cf3452932cfbc1c517c0ce1af1d255fda67a6e3bd63ba1d908c8c2", True],
+    "id": "getblock.io"
+})
+
+headers = {
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.text)
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust" %}
+{% code overflow="wrap" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "getmempoolancestors",
+            "params": ["52273e0ce6cf3452932cfbc1c517c0ce1af1d255fda67a6e3bd63ba1d908c8c2", true],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
 }
 ```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+### Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": {
+        "abc123def456...": {
+            "vsize": 141,
+            "weight": 561,
+            "fee": 0.00001410,
+            "modifiedfee": 0.00001410,
+            "time": 1700000000,
+            "height": 820000,
+            "descendantcount": 2,
+            "descendantsize": 282,
+            "descendantfees": 2820,
+            "ancestorcount": 1,
+            "ancestorsize": 141,
+            "ancestorfees": 1410,
+            "wtxid": "def456abc123...",
+            "fees": {
+                "base": 0.00001410,
+                "modified": 0.00001410,
+                "ancestor": 0.00001410,
+                "descendant": 0.00002820
+            },
+            "depends": [],
+            "spentby": ["52273e0ce6cf3452932cfbc1c517c0ce1af1d255fda67a6e3bd63ba1d908c8c2"],
+            "bip125-replaceable": true,
+            "unbroadcast": false
+        }
+    }
+}
+```
+
+### Response Parameters
+
+| Field              | Type    | Description                                           |
+| ------------------ | ------- | ----------------------------------------------------- |
+| vsize              | number  | Virtual transaction size.                             |
+| weight             | number  | Transaction weight.                                   |
+| fee                | number  | Transaction fee in BTC.                               |
+| modifiedfee        | number  | Fee with fee deltas used for mining priority.         |
+| time               | number  | Local time when transaction entered pool.             |
+| height             | number  | Block height when transaction entered pool.           |
+| descendantcount    | number  | Number of in-mempool descendants.                     |
+| descendantsize     | number  | Virtual size of in-mempool descendants.               |
+| descendantfees     | number  | Fees of in-mempool descendants (in satoshis).         |
+| ancestorcount      | number  | Number of in-mempool ancestors.                       |
+| ancestorsize       | number  | Virtual size of in-mempool ancestors.                 |
+| ancestorfees       | number  | Fees of in-mempool ancestors (in satoshis).           |
+| wtxid              | string  | Witness transaction id.                               |
+| fees               | object  | Fee information breakdown.                            |
+| depends            | array   | Unconfirmed transactions used as inputs.              |
+| spentby            | array   | Unconfirmed transactions spending this one's outputs. |
+| bip125-replaceable | boolean | Whether transaction is replaceable (BIP 125).         |
+
+### Use Case
+
+The `getmempoolancestors` method is essential for:
+
+* Analyzing transaction chains in mempool
+* Calculating CPFP (Child Pays for Parent) effectiveness
+* Understanding transaction dependencies
+* Building mempool visualization tools
+* Debugging stuck transactions
+* Implementing RBF strategies
+
+### Error Handling
+
+| Status Code | Error Message              | Cause                                     |
+| ----------- | -------------------------- | ----------------------------------------- |
+| 403         | Forbidden                  | Missing or invalid ACCESS-TOKEN.          |
+| -5          | Transaction not in mempool | The specified txid is not in the mempool. |
+
+### Integration With Web3
+
+The `getmempoolancestors` method helps developers:
+
+* Build CPFP fee calculators
+* Create mempool dependency visualizers
+* Implement transaction acceleration tools
+* Debug unconfirmed transaction chains
+* Analyze fee bumping strategies

@@ -25,7 +25,7 @@ When deploying a Dedicated Node, you can choose between High and Standard setups
 * Select **High** if your workload is latency-sensitive, demands very high concurrent throughput, or is critical to business continuity.
 * Select **Standard** for typical production apps, where workload is within supported performance bounds.
 
-Configuring tiers is available for all supported protocols unless there are specific infrastructure limitations for a given network. In this case, a chain will only support a single tier.&#x20;
+Configuring tiers is available for all supported protocols unless there are specific infrastructure limitations for a given network. In this case, a chain will only support a single tier.
 
 {% hint style="success" %}
 Always check available configurations in your dashboard
@@ -33,7 +33,7 @@ Always check available configurations in your dashboard
 
 #### _High vs Standard tier comparison table_
 
-<table data-header-hidden><thead><tr><th width="208.7109375">Feature </th><th>High Performance</th><th>Standard Performance</th></tr></thead><tbody><tr><td><strong>Resource allocation</strong></td><td>Maximum hardware and bandwidth</td><td>Balanced hardware profile</td></tr><tr><td><strong>Throughput</strong></td><td>Highest supported </td><td>High </td></tr><tr><td><strong>SLA</strong></td><td>99.9% uptime</td><td>99.5% uptime</td></tr><tr><td><strong>Recommended for</strong></td><td>Applications with high transaction volumes &#x26; large user bases, mission-critical systems, and any workflow where latency and throughput are the top priority</td><td>Most production dApps, wallets, and enterprise tools or projects that need guaranteed resources but do not require the maximum performance tier</td></tr></tbody></table>
+<table><thead><tr><th width="208.7109375">Feature</th><th>High Performance</th><th>Standard Performance</th></tr></thead><tbody><tr><td><strong>Resource allocation</strong></td><td>Maximum hardware and bandwidth</td><td>Balanced hardware profile</td></tr><tr><td><strong>Throughput</strong></td><td>Highest supported</td><td>High</td></tr><tr><td><strong>SLA</strong></td><td>99.9% uptime</td><td>99.5% uptime</td></tr><tr><td><strong>Recommended for</strong></td><td>Applications with high transaction volumes &#x26; large user bases, mission-critical systems, and any workflow where latency and throughput are the top priority</td><td>Most production dApps, wallets, and enterprise tools or projects that need guaranteed resources but do not require the maximum performance tier</td></tr></tbody></table>
 
 ***
 
@@ -56,18 +56,18 @@ Monthly costs are always shown during configuration in the **Dashboard** for eac
 
 ***
 
-### Steps to configure dedicated node tiers&#x20;
+### Steps to configure dedicated node tiers
 
 To select a tier during node setup, open the Dedicated Node dashboard:
 
 1. Select protocol, network, deployment region, node mode, and a preferred client.
-2. As a final step, choose the Performance Tier (High or Standard) and required API interfaces.&#x20;
+2. As a final step, choose the Performance Tier (High or Standard) and required API interfaces.
 
 <figure><img src="../../../.gitbook/assets/Dedic_Tier_Selection.svg" alt="Setting up a Dedicated Node performance tier via GetBlock dashboard"><figcaption></figcaption></figure>
 
 3. Review updated performance and pricing details.
 
-Your dedicated node will be ready for use upon activation. To switch between tiers after deploying, reach out to support.&#x20;
+Your dedicated node will be ready for use upon activation. To switch between tiers after deploying, reach out to support.
 
 ***
 

@@ -14,7 +14,7 @@ A team account is **a shared workspace** **where multiple users can collaborate*
 * **Enhanced security:** Role-based access limits each member to only the features they need.
 * **Efficient management:** Easily switch between personal and team accounts.
 
-A **team account user** is a regular GetBlock user. When invited to a team, they can work on company resources, manage service plans or team settings—provided the corresponding permissions are granted.
+A **team account user** is a regular GetBlock user. When invited to a team, they can work on company resources, manage service plans or team settings, provided the corresponding permissions are granted.
 
 ***
 
