@@ -71,7 +71,7 @@ Keep your endpoint safe, as it contains an access token
 Create the following files to have a basic structure for your project:
 
 ```bash
-├── index.js            // Main apllication
+├── index.js            // Main application
 └── .env                // Environment variables
 └── .gitignore          // Git ignore file
 ```
