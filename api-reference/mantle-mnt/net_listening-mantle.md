@@ -1,0 +1,179 @@
+---
+description: >-
+  Example code for the net_listening JSON-RPC method. Complete guide on how to
+  use net_listening JSON-RPC in GetBlock Web3 documentation.
+---
+
+# net\_listening - Mantle
+
+This method returns `true` if the client is actively listening for network connections on the Mantle network.
+
+### Parameters
+
+* None
+
+### Request
+
+{% tabs %}
+{% tab title="cURL" %}
+```bash
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "net_listening",
+    "params": [],
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+
+{% tab title="JavaScript (axios)" %}
+{% code title="request.js" %}
+```javascript
+import axios from 'axios';
+
+const data = JSON.stringify({
+    "jsonrpc": "2.0",
+    "method": "net_listening",
+    "params": [],
+    "id": "getblock.io"
+});
+
+const config = {
+    method: 'post',
+    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    data: data
+};
+
+axios(config)
+    .then(response => console.log(JSON.stringify(response.data)))
+    .catch(error => console.log(error));
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python (requests)" %}
+{% code title="request.py" %}
+```python
+import requests
+import json
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = json.dumps({
+    "jsonrpc": "2.0",
+    "method": "net_listening",
+    "params": [],
+    "id": "getblock.io"
+})
+
+headers = {
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.text)
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust (reqwest)" %}
+{% code title="main.rs" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "net_listening",
+            "params": [],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+### Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": true
+}
+```
+
+### Response Parameters
+
+| Field   | Type    | Description                             |
+| ------- | ------- | --------------------------------------- |
+| jsonrpc | string  | JSON-RPC protocol version ("2.0")       |
+| id      | string  | Request identifier matching the request |
+| result  | boolean | true if listening, false otherwise      |
+
+### Use Case
+
+The `net_listening` method is essential for:
+
+* Node health checks
+* Connection status monitoring
+* Infrastructure monitoring
+* Network diagnostics
+* Service availability checks
+* Node status verification
+
+### Error Handling
+
+| Status Code | Error Message | Cause                           |
+| ----------- | ------------- | ------------------------------- |
+| 403         | Forbidden     | Missing or invalid ACCESS-TOKEN |
+
+### Web3 Integration
+
+{% tabs %}
+{% tab title="Ethers.js" %}
+```javascript
+import { ethers } from 'ethers';
+
+const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+
+const listening = await provider.send('net_listening', []);
+console.log('Listening:', listening);
+```
+{% endtab %}
+
+{% tab title="Viem" %}
+```javascript
+import { createPublicClient, http } from 'viem';
+import { mantle } from 'viem/chains';
+
+const client = createPublicClient({
+    chain: mantle,
+    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+});
+
+const listening = await client.request({
+    method: 'net_listening',
+    params: []
+});
+console.log('Listening:', listening);
+```
+{% endtab %}
+{% endtabs %}

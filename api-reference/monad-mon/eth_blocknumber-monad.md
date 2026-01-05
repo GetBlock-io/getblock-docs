@@ -55,5 +55,53 @@ The `eth_blockNumber` method is essential for:
 
 ### Web3 Integration
 
-{% include "../../.gitbook/includes/import-ethers-from-eth....md" %}
+{% tabs %}
+{% tab title="Ether.js" %}
+{% code overflow="wrap" %}
+```javascript
+import { ethers } from "ethers";
+const RPC_URL = "https://go.getblock.us/<ACCESS_TOKEN>";
+const provider = new ethers.JsonRpcProvider(RPC_URL);
+async function fetchBlockNumberFromProvider() {
+  try {
+    // Call the method — this will resolve to a number (promise resolves to number)
+     const result = await provider.send("eth_blockNumber", [],);
+    console.log("Block number result:", result);
+    return result;
+  } catch (error) {
+    console.error("Ethers Error fetching block number:", error);
+    throw error;
+  }
+}
+```
+{% endcode %}
+{% endtab %}
 
+{% tab title="Viem" %}
+```jsx
+import { createPublicClient, http } from "viem";
+import { hyperEvm } from "viem/chains";
+
+// Create Viem client with GetBlock
+const client = createPublicClient({
+  chain: hyperEvm,
+  transport: http(import.meta.env.MONAD_ACCESS_TOKEN),
+});
+
+// Using the method through Viem
+async function Call() {
+  try {
+    // Method-specific Viem implementation
+    const result = await client.request({
+    "method": "eth_blockNumber",
+    "params": [],
+};
+    return result;
+  } catch (error) {
+    console.error("Viem Error:", error);
+    throw error;
+  }
+}
+```
+{% endtab %}
+{% endtabs %}

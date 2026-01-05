@@ -1,0 +1,200 @@
+---
+description: >-
+  Example code for the getTransactions JSON-RPC method. Complete guide on how to
+  use getTransactions JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getTransactions - Stellar
+
+This method returns a list of transactions from the Stellar network within a specified ledger range.
+
+### Parameters
+
+| Parameter   | Type    | Description                   |
+| ----------- | ------- | ----------------------------- |
+| startLedger | integer | The first ledger to include   |
+| pagination  | object  | (optional) Pagination options |
+
+Pagination Object:
+
+| Field  | Type    | Description                              |
+| ------ | ------- | ---------------------------------------- |
+| cursor | string  | Cursor for pagination                    |
+| limit  | integer | Maximum number of transactions to return |
+
+### Request examples
+
+{% tabs %}
+{% tab title="curl" %}
+```bash
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "getTransactions",
+    "params": {
+        "startLedger": 2539600,
+        "pagination": {
+            "limit": 10
+        }
+    },
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+{% code title="example.js" %}
+```javascript
+import axios from 'axios';
+
+const data = JSON.stringify({
+    "jsonrpc": "2.0",
+    "method": "getTransactions",
+    "params": {
+        "startLedger": 2539600,
+        "pagination": {
+            "limit": 10
+        }
+    },
+    "id": "getblock.io"
+});
+
+const config = {
+    method: 'post',
+    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    data: data
+};
+
+axios(config)
+    .then(response => console.log(JSON.stringify(response.data)))
+    .catch(error => console.log(error));
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="example.py" %}
+```python
+import requests
+import json
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = json.dumps({
+    "jsonrpc": "2.0",
+    "method": "getTransactions",
+    "params": {
+        "startLedger": 2539600,
+        "pagination": {
+            "limit": 10
+        }
+    },
+    "id": "getblock.io"
+})
+
+headers = {
+    'Content-Type': 'application/json'
+}
+
+response = requests.post(url, headers=headers, data=payload)
+print(response.text)
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust" %}
+{% code title="main.rs" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "getTransactions",
+            "params": {
+                "startLedger": 2539600,
+                "pagination": {
+                    "limit": 10
+                }
+            },
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+### Response
+
+{% code title="response.json" %}
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": {
+        "transactions": [
+            {
+                "status": "SUCCESS",
+                "applicationOrder": 1,
+                "feeBump": false,
+                "envelopeXdr": "AAAAAgAAAAAg4dbAxs...",
+                "resultXdr": "AAAAAAAAAGT...",
+                "ledger": 2539600,
+                "createdAt": "1700159048"
+            }
+        ],
+        "latestLedger": 2553978,
+        "latestLedgerCloseTime": "1700159337",
+        "oldestLedger": 2536698,
+        "oldestLedgerCloseTime": "1700072957",
+        "cursor": "2539600-1"
+    }
+}
+```
+{% endcode %}
+
+### Response Parameters
+
+| Field        | Type    | Description                       |
+| ------------ | ------- | --------------------------------- |
+| transactions | array   | Array of transaction objects      |
+| status       | string  | Transaction status                |
+| ledger       | integer | Ledger sequence number            |
+| envelopeXdr  | string  | Transaction envelope (base64 XDR) |
+| resultXdr    | string  | Transaction result (base64 XDR)   |
+| latestLedger | integer | Latest available ledger           |
+| cursor       | string  | Cursor for pagination             |
+
+### Use Case
+
+The `getTransactions` method is essential for:
+
+* Building block explorers
+* Transaction history retrieval
+* Network activity monitoring
+* Data indexing services
+* Analytics and reporting
+* Historical analysis
+
+### Error Handling
+
+| Status Code | Error Message  | Cause                              |
+| ----------- | -------------- | ---------------------------------- |
+| 403         | Forbidden      | Missing or invalid ACCESS-TOKEN    |
+| -32602      | Invalid params | Invalid ledger range or pagination |

@@ -6,9 +6,7 @@ description: >-
 
 # Base
 
-### Overview
-
-Base is a secure, low-cost, and developer-friendly Ethereum Layer 2 blockchain built by Coinbase using the OP Stack. It leverages optimistic rollup technology to deliver fast transactions at a fraction of Ethereum mainnet costs while inheriting Ethereum's security through data availability on L1.
+Base is a secure, low-cost, and developer-friendly Ethereum Layer 2 blockchain built by Coinbase using the OP Stack, the same technology powering Optimism. It leverages optimistic rollup technology to deliver fast transactions at a fraction of Ethereum mainnet costs while inheriting Ethereum's security through data availability on L1.
 
 ### Key Features
 
@@ -64,10 +62,7 @@ https://go.getblock.asia
 
 ## Supported Networks
 
-| Network | Chain ID | JSON RPC | WSS | MEV Protected (JSON RPC) | MEV Protected (WSS) | Graph QL | New York, USA | Frankfurt, Germany | Singapore, Singapore |
-| ------- | -------- | -------- | --- | ------------------------ | ------------------- | -------- | ------------- | ------------------ | -------------------- |
-| Mainnet | 8453     | ✅        | ✅   | ✅                        | ✅                   | ❌        | ✅             | ✅                  | ✅                    |
-| Sepolia | 84532    | ✅        | ✅   | ❌                        | ❌                   | ✅        | ✅             | ❌                  | ❌                    |
+{% include "../../.gitbook/includes/untitled.md" %}
 
 ## Quickstart
 

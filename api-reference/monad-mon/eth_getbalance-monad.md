@@ -154,6 +154,7 @@ The `eth_getBalance` method is essential for:
 
 {% tabs %}
 {% tab title="Ethers.js" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ethers } from "ethers";
 const RPC_URL = "https://go.getblock.us/<ACCESS_TOKEN>";
@@ -170,6 +171,7 @@ async function fetchBlockNumberFromProvider() {
   }
 }
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Viem" %}
