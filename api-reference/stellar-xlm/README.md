@@ -264,7 +264,7 @@ GetBlock provides access to Stellar RPC methods for interacting with the network
 
 For technical support and questions:
 
-* Support: support@getblock.io
+* Support: [support@getblock.io](mailto:support@getblock.io)
 
 ## See Also
 

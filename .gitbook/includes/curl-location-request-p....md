@@ -9,10 +9,11 @@ title: curl --location --request P...
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "jsonrpc": "2.0",
-    "method": "eth_getBlockByNumber",
-    "params": ["latest", true],
-    }'
+  "jsonrpc": "2.0",
+  "method": "suix_getStakes",
+  "params": ["0x9c76d5157eaa77c41a7bfda8db98a8e8080f7cb53b7313088ed085c73f866f21"],
+  "id": "getblock.io"
+}'
 ```
 {% endcode %}
 {% endtab %}
@@ -23,10 +24,11 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 import axios from 'axios';
 
 const data = JSON.stringify({
-    "jsonrpc": "2.0",
-    "method": "eth_getBlockByNumber",
-    "params": ["latest", true],
-    });
+  "jsonrpc": "2.0",
+  "method": "suix_getStakes",
+  "params": ["0x9c76d5157eaa77c41a7bfda8db98a8e8080f7cb53b7313088ed085c73f866f21"],
+  "id": "getblock.io"
+});
 
 const config = {
     method: 'post',
@@ -53,10 +55,11 @@ import json
 url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
-    "jsonrpc": "2.0",
-    "method": "eth_getBlockByNumber",
-    "params": ["latest", true],
-    })
+  "jsonrpc": "2.0",
+  "method": "suix_getStakes",
+  "params": ["0x9c76d5157eaa77c41a7bfda8db98a8e8080f7cb53b7313088ed085c73f866f21"],
+  "id": "getblock.io"
+})
 
 headers = {
     'Content-Type': 'application/json'
@@ -81,11 +84,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .post("https://go.getblock.io/<ACCESS-TOKEN>/")
         .header(header::CONTENT_TYPE, "application/json")
         .body(r#"{
-            "jsonrpc": "2.0",
-            "method": "eth_getBlockByNumber",
-            "params": ["latest", true],
-            "id": "getblock.io"
-        }"#)
+              "jsonrpc": "2.0",
+              "method": "suix_getStakes",
+              "params": ["0x9c76d5157eaa77c41a7bfda8db98a8e8080f7cb53b7313088ed085c73f866f21"],
+              "id": "getblock.io"
+            }"#)
         .send()
         .await?;
     
