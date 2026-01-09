@@ -310,5 +310,5 @@ For technical support and questions:
 * [Sui Block Explorer - SuiVision](https://suivision.xyz/)
 * [Sui Bridge](https://bridge.sui.io/)
 * [Sui TypeScript SDK](https://sdk.mystenlabs.com/typescript)
-* [Sui Rust SDK](https://docs.sui.io/guides/developer/sui-101/building-with-the-sui-rust-sdk)
+* [Sui Rust SDK](https://docs.sui.io/references/rust-sdk)
 * [Move Language Documentation](https://move-language.github.io/move/)
