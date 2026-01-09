@@ -301,14 +301,14 @@ GetBlock provides access to standard SUI JSON-RPC methods for the SUI network.
 
 For technical support and questions:
 
-*
+* Support: [support@getblock.io](mailto:support@getblock.io)
 
 ## See Also
 
-*
-*
-*
-*
-*
-*
+* [Sui Developer Documentation](https://docs.sui.io/)
+* [Sui Block Explorer - SuiScan](https://suiscan.xyz/)
+* [Sui Block Explorer - SuiVision](https://suivision.xyz/)
+* [Sui Bridge](https://bridge.sui.io/)
+* [Sui TypeScript SDK](https://sdk.mystenlabs.com/typescript)
+* [Sui Rust SDK](https://docs.sui.io/guides/developer/sui-101/building-with-the-sui-rust-sdk)
 * [Move Language Documentation](https://move-language.github.io/move/)
