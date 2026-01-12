@@ -133,10 +133,10 @@ GetBlock provides a single TLS endpoint - you don't need to configure different 
 
 1. Create a directory for your project
 
-```
+```bash
 mkdir pumpfun-monitor
 cd pumpfun-monitor
-npm init-y
+npm init -y
 ```
 
 2. Install Dependencies:
@@ -159,7 +159,7 @@ What these packages do:
 Create the following files to have a basic structure for your project:
 
 ```bash
-├── pumpfun-monitor.js          // Main apllication
+├── pumpfun-monitor.js          // Main application
 └── .env                // Environment variables
 └── .gitignore          // Git ignore file
 ```

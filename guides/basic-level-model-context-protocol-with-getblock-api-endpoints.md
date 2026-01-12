@@ -605,7 +605,7 @@ https://go.getblock.us/7hys368hus...
 ```
 {% endtab %}
 
-{% tab title="Signapore" %}
+{% tab title="Singapore" %}
 ```bash
 https://go.getblock.asia/f782e8ec54....
 ```

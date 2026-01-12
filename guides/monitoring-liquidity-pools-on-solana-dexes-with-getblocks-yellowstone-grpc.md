@@ -113,15 +113,15 @@ Ensure you securely store both the base endpoint and the access token. You'll ne
 
 1. Create a directory for your project
 
-```javascript
+```bash
 mkdir pool-monitor
 cd pool-monitor
-npm init-y
+npm init -y
 ```
 
 2. Install Dependencies:
 
-```javascript
+```bash
 npm install @triton-one/yellowstone-grpc bs58@5.0.0
 ```
 
@@ -203,7 +203,7 @@ What this does:
 ```javascript
 // GetBlock Configuration
 const ENDPOINT = "https://go.getblock.io";  // Your region's endpoint
-const TOKEN = process.env.GETBLOCK_TOKEN; ;           // Your generated token
+const TOKEN = process.env.GETBLOCK_TOKEN;            // Your generated token
 ```
 
 What this does:&#x20;

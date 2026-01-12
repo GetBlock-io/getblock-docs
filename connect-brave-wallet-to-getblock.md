@@ -80,7 +80,7 @@ If the network of interest is already present, such as with Ethereum, click on t
 
 <figure><img src=".gitbook/assets/Brave_wallet_ETH_settings.svg" alt="Exploring Brave Wallet network accounts"><figcaption></figcaption></figure>
 
-Look at the **RPC URLs** settings fro Ethereum: usually, a default Brave Wallet endpoint is present here. As every wallet user connects to it by default, it’s overloaded and insecure. That’s why a custom RPC URL is essential for Web3 activities.
+Look at the **RPC URLs** settings for Ethereum: usually, a default Brave Wallet endpoint is present here. As every wallet user connects to it by default, it’s overloaded and insecure. That’s why a custom RPC URL is essential for Web3 activities.
 {% endstep %}
 
 {% step %}
