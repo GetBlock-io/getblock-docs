@@ -64,7 +64,7 @@
 * [Building Pump.fun to PumpSwap and Raydium Migrations Listener with GetBlock](guides/building-pump.fun-to-pumpswap-and-raydium-migrations-listener-with-getblock.md)
 * [Listening to High-Value SOL Transactions via Yellowstone Geyser gRPC with GetBlock](guides/listening-to-high-value-sol-transactions-via-yellowstone-geyser-grpc-with-getblock.md)
 * [Building a Pay-Per-Request Blockchain API with x402 + GetBlock](guides/building-a-pay-per-request-blockchain-api-with-x402-+-getblock.md)
-* [How To Build a Base Flashblocks Listener in Go](guides/how-to-build-a-base-flashblocks-listener-in-go.md)
+* [How To Build a Base Flashblocks Listener](guides/how-to-build-a-base-flashblocks-listener.md)
 
 ## API REFERENCE
 
