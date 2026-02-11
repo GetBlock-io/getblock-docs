@@ -7,49 +7,176 @@ description: >-
 
 # eth\_getTransactionByBlockHashAndIndex - Polygon
 
-#### Parameters
+The `eth_getTransactionByBlockHashAndIndex` method returns information about a transaction by block hash and transaction index position.
 
-`DATA` - string
+## Parameters
 
-Hash of a block.
+| Parameter        | Type   | Required | Description                               |
+| ---------------- | ------ | -------- | ----------------------------------------- |
+| blockHash        | string | Yes      | 32-byte hash of the block                 |
+| transactionIndex | string | Yes      | Transaction index position in hexadecimal |
 
-`QUANTITY` - integer
+## Request
 
-Transaction index position.
-
-#### Request
-
-```java
+{% tabs %}
+{% tab title="cURL" %}
+```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_getTransactionByBlockHashAndIndex",
-"params": ["0x81e807e7a6031d9f103eeee2a2edc5994c3432ee1e3227c66ff78eef30ea1dec", "0x0"],
-"id": "getblock.io"}'
-```
-
-#### Response
-
-```java
-{
-    "id": "getblock.io",
+--data-raw '{
     "jsonrpc": "2.0",
+    "method": "eth_getTransactionByBlockHashAndIndex",
+    "params": ["0x3f07a9c83155594c000642e7d60e8a8a00038d03e9849171a05ed0e2d47acbb3", "0x0"],
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+
+{% tab title="JavaScript (Axios)" %}
+```javascript
+import axios from 'axios';
+
+const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+
+const payload = {
+    jsonrpc: '2.0',
+    method: 'eth_getTransactionByBlockHashAndIndex',
+    params: ["0x3f07a9c83155594c000642e7d60e8a8a00038d03e9849171a05ed0e2d47acbb3", "0x0"],
+    id: 'getblock.io'
+};
+
+axios.post(url, payload, {
+    headers: { 'Content-Type': 'application/json' }
+})
+.then(response => console.log(response.data))
+.catch(error => console.error(error));
+```
+{% endtab %}
+
+{% tab title="Python (requests)" %}
+```python
+import requests
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = {
+    "jsonrpc": "2.0",
+    "method": "eth_getTransactionByBlockHashAndIndex",
+    "params": ["0x3f07a9c83155594c000642e7d60e8a8a00038d03e9849171a05ed0e2d47acbb3", "0x0"],
+    "id": "getblock.io"
+}
+
+response = requests.post(url, headers={"Content-Type": "application/json"}, json=payload)
+print(response.json())
+```
+{% endtab %}
+
+{% tab title="Rust (reqwest)" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "eth_getTransactionByBlockHashAndIndex",
+            "params": ["0x3f07a9c83155594c000642e7d60e8a8a00038d03e9849171a05ed0e2d47acbb3", "0x0"],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
     "result": {
-        "blockHash": "0x81e807e7a6031d9f103eeee2a2edc5994c3432ee1e3227c66ff78eef30ea1dec",
-        "blockNumber": "0x1236b4b",
-        "from": "0x75d56b0103ea3b596d344e153cc89012af3bd22a",
-        "gas": "0x5bd0e",
-        "gasPrice": "0x1d1a94a2000",
-        "hash": "0xe765898fc5cd4835df585df5b913456f274c35287e29057366a8d84d8c9fc8e3",
-        "input": "0x79bc47252a050001050001010000000000000005000000000000000000000000000001db0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000319b0b48626f2ea8000",
-        "nonce": "0x161",
-        "r": "0xd1775131ba56ab8b2306e552700ee3050a20b2b751537386464d80daaaad9950",
-        "s": "0x4055049844c70c8187abd97b50b18ebe296936eacb613e49a5d72c46ab253ff2",
-        "to": "0x013b4f7e1c988d428a2183bcf158d2584f76a6d7",
-        "transactionIndex": "0x0",
-        "type": "0x0",
-        "v": "0x135",
-        "value": "0x0"
+        "hash": "0x...",
+        "blockHash": "0x...",
+        "blockNumber": "0x...",
+        "from": "0x...",
+        "to": "0x...",
+        "value": "0x..."
     }
 }
 ```
+
+<details>
+
+<summary>Response Parameters</summary>
+
+| Field   | Type   | Description                             |
+| ------- | ------ | --------------------------------------- |
+| jsonrpc | string | JSON-RPC version (2.0)                  |
+| id      | string | Request identifier                      |
+| result  | varies | Transaction object or null if not found |
+
+</details>
+
+## Use Case
+
+The `eth_getTransactionByBlockHashAndIndex` method is useful for:
+
+* Block scanning
+* Transaction indexing
+* Block explorers
+* Data extraction
+
+## Error Handling
+
+| Status Code | Error Message   | Cause                           |
+| ----------- | --------------- | ------------------------------- |
+| 403         | Forbidden       | Missing or invalid ACCESS-TOKEN |
+| -32600      | Invalid Request | Malformed request body          |
+| -32602      | Invalid params  | Invalid method parameters       |
+
+## Web3 Integration
+
+{% tabs %}
+{% tab title="Ethers.js" %}
+{% code overflow="wrap" %}
+```javascript
+import { ethers } from 'ethers';
+
+const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+
+const result = await provider.send('eth_getTransactionByBlockHashAndIndex', ["0x3f07a9c83155594c000642e7d60e8a8a00038d03e9849171a05ed0e2d47acbb3", "0x0"]);
+console.log('Result:', result);
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Viem" %}
+{% code overflow="wrap" %}
+```javascript
+import { createPublicClient, http } from 'viem';
+import { polygon } from 'viem/chains';
+
+const client = createPublicClient({
+    chain: polygon,
+    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+});
+
+const result = await client.request({
+    method: 'eth_getTransactionByBlockHashAndIndex',
+    params: ["0x3f07a9c83155594c000642e7d60e8a8a00038d03e9849171a05ed0e2d47acbb3", "0x0"]
+});
+console.log('Result:', result);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}

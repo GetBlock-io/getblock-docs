@@ -6,106 +6,181 @@ description: >-
 
 # eth\_getBlockByNumber - Polygon
 
-#### Parameters
+The `eth_getBlockByNumber` method returns information about a block by its number. This is one of the most commonly used methods for retrieving block data.
 
-`QUANTITY|TAG` - integer or string
+## Parameters
 
-block number or "latest", "earliest" or "pending"
+| Parameter        | Type    | Required | Description                                                                            |
+| ---------------- | ------- | -------- | -------------------------------------------------------------------------------------- |
+| blockNumber      | string  | Yes      | Block number in hex, or `"latest"`, `"earliest"`, `"pending"`, `"safe"`, `"finalized"` |
+| fullTransactions | boolean | Yes      | If true, returns full transaction objects; if false, returns only transaction hashes   |
 
-`Boolean` - Boolean
+## Request Examples
 
-If true it returns the full transaction objects, if false only the hashes of the transactions.
-
-#### Request
-
-```java
+{% tabs %}
+{% tab title="cURL" %}
+{% code title="cURL" %}
+```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_getBlockByNumber",
-"params": ["latest", false],
-"id": "getblock.io"}'
-```
-
-#### Response
-
-```java
-{
-    "id": "getblock.io",
+--data-raw '{
     "jsonrpc": "2.0",
+    "method": "eth_getBlockByNumber",
+    "params": ["latest", false],
+    "id": "getblock.io"
+}'
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="JavaScript (Axios)" %}
+{% code title="request.js" %}
+```javascript
+import axios from 'axios';
+
+const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+
+const payload = {
+    jsonrpc: '2.0',
+    method: 'eth_getBlockByNumber',
+    params: ["latest", false],
+    id: 'getblock.io'
+};
+
+axios.post(url, payload, {
+    headers: { 'Content-Type': 'application/json' }
+})
+.then(response => console.log(response.data))
+.catch(error => console.error(error));
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python (requests)" %}
+{% code title="request.py" %}
+```python
+import requests
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = {
+    "jsonrpc": "2.0",
+    "method": "eth_getBlockByNumber",
+    "params": ["latest", false],
+    "id": "getblock.io"
+}
+
+response = requests.post(url, headers={"Content-Type": "application/json"}, json=payload)
+print(response.json())
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust (reqwest)" %}
+{% code title="main.rs" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "eth_getBlockByNumber",
+            "params": ["latest", false],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
     "result": {
-        "baseFeePerGas": "0x1ce2f0c070",
-        "difficulty": "0x18",
-        "extraData": "0xd682030983626f7288676f312e31392e37856c696e75780000000000000000004550972fc004c01fa22b05596afe0e86b7e519a0dda7a2339d659a21176cd1e04e4d2a7ea9567bcbe7829b0c6a57f0b4e04932c94448c0d61a9ffa3c2f2c366f00",
-        "gasLimit": "0x1c5c199",
-        "gasUsed": "0x8aa2f7",
-        "hash": "0x74ce98370983f09ac459594c0f1a46a63430c530cc3bb06ff673c1f6920f30b3",
-        "logsBloom": "0x8122445a50911014009048602cd484c022916a100a1622c8b41009208d841518800c900054037d29640121b80d7c20812491c2a4066f18c2ac4225528c240e0004595c82390205682103d21db56524d88e832a249306c68c187b45b54120680168640200ca825401602818492b02c913034810196c405043a241659884403922240301454c8a84c03808960014004a6d03914ddba8022424215a88c4840360812b8542915084c3252b0a210599820c9082b2001a08aa1100ee10b28006406854a00039a256820c081595bac87ace9072514f00420241a088a23192a0103270e210509296078b000e4603009206da012c840a012920788702103642110a7703a7",
-        "miner": "0x0000000000000000000000000000000000000000",
-        "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "nonce": "0x0000000000000000",
-        "number": "0x2958278",
-        "parentHash": "0x38212dbdc33250b23a1e5305cc5f410b43bf235c74d6072d95487cdbe9b41ca6",
-        "receiptsRoot": "0x9f762b275163931ea657e356c2ee6025d91d8ac58c128b6eeda72ecf209654e4",
-        "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-        "size": "0xaa24",
-        "stateRoot": "0x893a3b6192dbf487bfcbc5f5b09dddbcdb7de57297d77e017e986cb756806284",
-        "timestamp": "0x6476c033",
-        "totalDifficulty": "0x2b9b55ac",
-        "transactions": [
-            "0xb0f3bb6c33798b4ab4ed2eb0ef20ef936863ca3b72f3816b1b382b3bb008c9ba",
-            "0xf83d3f0e8ce4a088a30c8cd7996c2b522383f604ea1c7f0c99056f5ecc9d8386",
-            "0x71983445d4478f3e7fc1fc74a0570d5d7a51727a21fa80bf3a3fc5047437aa2e",
-            "0x175463749ec8ddcc9e364b91242bc72e3664f644b24497d088feae3df8a307ee",
-            "0x59a693ba9dd2b5b13f7520dc2848a429983f8afbfdf9cf7c2110a02071aa5a6c",
-            "0xe8d3556b69f44d01ba23599c304f5de97de2a183e7c1e32e0e722977f72a5600",
-            "0x9840ed9742c83d5547ce655fd119408f2c4172783db9fa4d6fba2d4955932221",
-            "0xfc7c0c24ec25d02e8a8e5a65274d460c0fca41780364bd09712f15080ce197c7",
-            "0xc20ff855b27b55e5115227db5c7a705027cef2102a86459f7dc8102b15b5cc7b",
-            "0xd1205455cb9e3bd7787d1b7fbb5b66fc3e737c50c97791b5bf00780561fe39bc",
-            "0x0cb42325d3ad86246147147bf41179b9afc3c1f7a31f13e0f2e15d9bb7209c7c",
-            "0xbb886c71b56df717343d7e0386a9c7b9c43443ac9f6d570936dcf68d78b014d3",
-            "0x1f82017f4bad8a48cc1061708572771c22715d7594cc1d82274ecb8688b48193",
-            "0x970ef4159ff140691516afd9ed32e94d370180c698f228f6a285d1541e6ae0de",
-            "0x24b4babcb44196825b163136f889d147d02d3ab435ad367051350a8d010d9f0c",
-            "0xb52125f01009aef13e9413884d58adaf3c7359528c564d00dd7afccc4dfebac0",
-            "0xbe6937810f059b638a069d5791b591919e5917e8d3168e4fe3f7bc6df21ba4ed",
-            "0xea903ce61add2167c887669f0d3aaee37a430846138f10de3fc3ca58cb06a864",
-            "0x3a62564ffc81e480e9fd6402d6b409eed35db54cb076cba4f94e40d9c05d2dde",
-            "0x73331677d88c287a7ea01bf864d34f00c35d19e4ea29e1fd732c5a6ff1159190",
-            "0xf4fc6ac29e08d3f1b23a6de31ca8d9ee619901caa085d68358d3e05ba07f7948",
-            "0x674adf153801fa4e654004233db3a370e39b138ff926908d31454cd50e4ce5c7",
-            "0x1bad699cb0f604fb8603a9c65c9bee950b9f907a3e65d551b8580830f295592c",
-            "0x2b34545213a0875349c4274511a2556a87b69387b292a2a3fbc5741b57c19919",
-            "0x61306dc4c116a3c736e67b665cfd8448a22845866d2c22f7f788772a8c3330a4",
-            "0x8ae68c35b04cda49ddb0b55063d466a88202013c7eddd986730ebd2702ed2c32",
-            "0x329f72dcdbc05cf0a15f37db2a85782570a5a1936af37cc175feaa41550f5609",
-            "0x3dd6a1ed40205baa662f0aa8eb9d598a40d888c3a519127f7fe725edb1c73ad1",
-            "0xc01563fc8c76df157695ffac73f142a2ca6e4fc817f1b9cdace2b613c4faf130",
-            "0x04b4a0213af55839bffaa81f4b24fcd068f6196970664c9f29b2ffa2eb4a80d3",
-            "0x07cfccf8eb696be55556a14643e84d13671d8b38db07de48795f59d9c53a8e30",
-            "0x2127852c5f5d186950cbd8e8d2b58ec48753c624d0e06f4132399eec9359b890",
-            "0x3c00e1cb435e18e73dbc031d6f3f692e42907878925be66112242211db415a3c",
-            "0x7682ca830ca96267642a1b102415bf30c2480a96e82b9e08e2216445ce5aa094",
-            "0x91f754895d5c44aabc93c3a3e01022160a704dc788707f776947b4ab54c33aca",
-            "0xfcf23d58b9ef40e76e8486c0fcc8b79e560fd60e67edc88f76f13aaf6f6b124e",
-            "0x2ace7304cd5e89a06d396c8a0081afa2cd6e4899647e28ef5cb57ac50178c8c9",
-            "0x7d557d3069459631c371dc6c641746aee8f84e9528cd0083ce38db1e03a122fd",
-            "0xf94e287685c5fc5d16c579a6c089bbaf03fcc83ac953769c10b31121e013dec5",
-            "0xa503a73c76a5a24eb07c06111aa9c08451b31d9c200d024659f3bbda7f9f5368",
-            "0x56e345ebc562cb70f682ef61462615561ae65f5c8459e09f48d942c632661e6c",
-            "0x471c3df86583928cb63b3c476518d180309071d287fe3b4bfc08488e597c4ea3",
-            "0xe979e4345961ff87e72703197407d832ab5597d49a78e1843ee33d1000139cd6",
-            "0x0ad0f6cf216350f2f842aa0e18e4ddbc50fb01d10c863aeb8a5be00fce108ed7",
-            "0xa0b667571a96df85d7036df50b67e5d73d2cfb9e6faab6f6fd23eaaeea5701fd",
-            "0x6bdbaff8fb82f5b4c08f0fcf2ae7d6f31812c27618bdeee746bac209d525e793",
-            "0x94fa488cc907cce6f48a1ad6b052e089ee8dbf2b7f19153f24bdaf973bd889af",
-            "0x08d7042e1355d65792e1567f8200c6219cfdbdabb795051668342fda164e0331",
-            "0x063d0fc769f8fb6e24887880a121de5b35420b215ed5da9c1e75b045ba8828e3",
-            "0xcb496e72dc7acdd1cd43d2ea6b134125a8bd47ebaa558c48bdc51054497c10c4"
-        ],
-        "transactionsRoot": "0x46d2b6cf050f40a3d49f6dc23702e2e238a2dfc4b3d7579c51c6930d411baf0f",
-        "uncles": []
+        "number": "0x3A2B5C7",
+        "hash": "0x...",
+        "parentHash": "0x...",
+        "timestamp": "0x64a2b5c7",
+        "gasUsed": "0x1234",
+        "gasLimit": "0x1c9c380",
+        "transactions": []
     }
 }
 ```
+
+## Response Parameters
+
+| Field   | Type   | Description                                    |
+| ------- | ------ | ---------------------------------------------- |
+| jsonrpc | string | JSON-RPC version (2.0)                         |
+| id      | string | Request identifier                             |
+| result  | varies | Block object with details or null if not found |
+
+## Use Case
+
+The `eth_getBlockByNumber` method is useful for:
+
+* Block scanning
+* Event indexing
+* Chain synchronization
+* Data extraction
+
+## Error Handling
+
+| Status Code | Error Message   | Cause                           |
+| ----------- | --------------- | ------------------------------- |
+| 403         | Forbidden       | Missing or invalid ACCESS-TOKEN |
+| -32600      | Invalid Request | Malformed request body          |
+| -32602      | Invalid params  | Invalid method parameters       |
+
+## Web3 Integration
+
+{% tabs %}
+{% tab title="Ethers.js" %}
+{% code title="ethers.js" %}
+```javascript
+import { ethers } from 'ethers';
+
+const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+
+const result = await provider.send('eth_getBlockByNumber', ["latest", false]);
+console.log('Result:', result);
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Viem" %}
+{% code title="viem.js" %}
+```javascript
+import { createPublicClient, http } from 'viem';
+import { polygon } from 'viem/chains';
+
+const client = createPublicClient({
+    chain: polygon,
+    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+});
+
+const result = await client.request({
+    method: 'eth_getBlockByNumber',
+    params: ["latest", false]
+});
+console.log('Result:', result);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}

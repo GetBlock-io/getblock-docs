@@ -7,45 +7,183 @@ description: >-
 
 # eth\_getTransactionByHash - Polygon
 
-#### Parameters
+The **eth\_getTransactionByHash** method returns the information about a transaction requested by transaction hash. This is one of the most commonly used methods for checking transaction details.
 
-`DATA` - string
+## Parameters
 
-Hash of a transaction.
+| Parameter       | Type   | Required | Description              |
+| --------------- | ------ | -------- | ------------------------ |
+| transactionHash | string | Yes      | 32-byte transaction hash |
 
-#### Request
+## Request
 
-```java
+{% tabs %}
+{% tab title="cURL" %}
+{% code title="cURL" %}
+```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_getTransactionByHash",
-"params": ["0xe765898fc5cd4835df585df5b913456f274c35287e29057366a8d84d8c9fc8e3"],
-"id": "getblock.io"}'
-```
-
-#### Response
-
-```java
-{
-    "id": "getblock.io",
+--data-raw '{
     "jsonrpc": "2.0",
+    "method": "eth_getTransactionByHash",
+    "params": ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
+    "id": "getblock.io"
+}'
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="JavaScript (Axios)" %}
+{% code title="request.js" %}
+```javascript
+import axios from 'axios';
+
+const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+
+const payload = {
+    jsonrpc: '2.0',
+    method: 'eth_getTransactionByHash',
+    params: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
+    id: 'getblock.io'
+};
+
+axios.post(url, payload, {
+    headers: { 'Content-Type': 'application/json' }
+})
+.then(response => console.log(response.data))
+.catch(error => console.error(error));
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python (requests)" %}
+{% code title="request.py" %}
+```python
+import requests
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = {
+    "jsonrpc": "2.0",
+    "method": "eth_getTransactionByHash",
+    "params": ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
+    "id": "getblock.io"
+}
+
+response = requests.post(url, headers={"Content-Type": "application/json"}, json=payload)
+print(response.json())
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust (reqwest)" %}
+{% code title="main.rs" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "eth_getTransactionByHash",
+            "params": ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+{% code title="Response (JSON)" %}
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
     "result": {
-        "blockHash": "0x81e807e7a6031d9f103eeee2a2edc5994c3432ee1e3227c66ff78eef30ea1dec",
-        "blockNumber": "0x1236b4b",
-        "from": "0x75d56b0103ea3b596d344e153cc89012af3bd22a",
-        "gas": "0x5bd0e",
-        "gasPrice": "0x1d1a94a2000",
-        "hash": "0xe765898fc5cd4835df585df5b913456f274c35287e29057366a8d84d8c9fc8e3",
-        "input": "0x79bc47252a050001050001010000000000000005000000000000000000000000000001db0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000319b0b48626f2ea8000",
-        "nonce": "0x161",
-        "r": "0xd1775131ba56ab8b2306e552700ee3050a20b2b751537386464d80daaaad9950",
-        "s": "0x4055049844c70c8187abd97b50b18ebe296936eacb613e49a5d72c46ab253ff2",
-        "to": "0x013b4f7e1c988d428a2183bcf158d2584f76a6d7",
-        "transactionIndex": "0x0",
-        "type": "0x0",
-        "v": "0x135",
-        "value": "0x0"
+        "hash": "0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b",
+        "blockHash": "0x...",
+        "blockNumber": "0x...",
+        "from": "0x...",
+        "to": "0x...",
+        "value": "0x...",
+        "gas": "0x...",
+        "gasPrice": "0x..."
     }
 }
 ```
+{% endcode %}
+
+## Response Parameters
+
+| Field   | Type   | Description                                        |
+| ------- | ------ | -------------------------------------------------- |
+| jsonrpc | string | JSON-RPC version (2.0)                             |
+| id      | string | Request identifier                                 |
+| result  | varies | Transaction object or null if pending or not found |
+
+## Use Case
+
+The eth\_getTransactionByHash method is useful for:
+
+* **Transaction verification**
+* **Payment confirmation**
+* **Transaction tracking**
+* **Debugging**
+
+## Error Handling
+
+| Status Code | Error Message   | Cause                           |
+| ----------- | --------------- | ------------------------------- |
+| 403         | Forbidden       | Missing or invalid ACCESS-TOKEN |
+| -32600      | Invalid Request | Malformed request body          |
+| -32602      | Invalid params  | Invalid method parameters       |
+
+## Web3 Integration
+
+{% tabs %}
+{% tab title="Ethers.js" %}
+{% code title="ethers.js" %}
+```javascript
+import { ethers } from 'ethers';
+
+const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+
+const result = await provider.send('eth_getTransactionByHash', ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"]);
+console.log('Result:', result);
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Viem" %}
+{% code title="viem.js" %}
+```javascript
+import { createPublicClient, http } from 'viem';
+import { polygon } from 'viem/chains';
+
+const client = createPublicClient({
+    chain: polygon,
+    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+});
+
+const result = await client.request({
+    method: 'eth_getTransactionByHash',
+    params: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"]
+});
+console.log('Result:', result);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}

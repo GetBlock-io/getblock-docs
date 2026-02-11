@@ -6,32 +6,179 @@ description: >-
 
 # eth\_sendTransaction - Polygon
 
-#### Parameters
+The `eth_sendTransaction` method creates a new transaction or contract if the `data` field contains code. Note that this method requires the node to have access to the sender's private key, which is not available on shared infrastructure.
 
-`object` - json object
+## Parameters
 
-The transacion call object in format: { "from": "address" (optional, string) - The address the transaction is sent from. "to": "address" (optional, string) - The address the transaction is directed to. "gas": "quantity" (optional, string) - Integer of the gas provided for the transaction execution. eth\_call consumes zero gas, but this parameter may be needed by some executions. "gasPrice": "quantity" (optional, string) - Integer of the gasPrice used for each paid gas "value": "quantity" (optional, string) - Integer of the value sent with this transaction "data": "data" (optional, string) - Hash of the method signature and encoded parameters. "nonce": "quantity" (optional, string) - Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce. }
+| Parameter         | Type   | Required | Description                                                              |
+| ----------------- | ------ | -------- | ------------------------------------------------------------------------ |
+| transactionObject | object | Yes      | Transaction object with `from`, `to`, `gas`, `gasPrice`, `value`, `data` |
 
-#### Request
+## Request examples
 
-```java
+{% tabs %}
+{% tab title="cURL" %}
+{% code title="cURL" %}
+```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
---header 'Content-Type: application/json' \ 
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_sendTransaction",
-"params": [{"from": "0xb60e8dd61c5d32be8058bb8eb970870f07233155", "to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567", "gas": "0x76c0", "gasPrice": "0x9184e72a000", "value": "0x9184e72a", "data": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"}],
-"id": "getblock.io"}'
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "eth_sendTransaction",
+    "params": [{"from": "0x...", "to": "0x...", "value": "0x9184e72a"}],
+    "id": "getblock.io"
+}'
 ```
+{% endcode %}
+{% endtab %}
 
-#### Response
+{% tab title="JavaScript (Axios)" %}
+{% code title="axios.js" %}
+```javascript
+import axios from 'axios';
 
-```java
+const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+
+const payload = {
+    jsonrpc: '2.0',
+    method: 'eth_sendTransaction',
+    params: [{"from": "0x...", "to": "0x...", "value": "0x9184e72a"}],
+    id: 'getblock.io'
+};
+
+axios.post(url, payload, {
+    headers: { 'Content-Type': 'application/json' }
+})
+.then(response => console.log(response.data))
+.catch(error => console.error(error));
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python (requests)" %}
+{% code title="requests.py" %}
+```python
+import requests
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = {
+    "jsonrpc": "2.0",
+    "method": "eth_sendTransaction",
+    "params": [{"from": "0x...", "to": "0x...", "value": "0x9184e72a"}],
+    "id": "getblock.io"
+}
+
+response = requests.post(url, headers={"Content-Type": "application/json"}, json=payload)
+print(response.json())
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust (reqwest)" %}
+{% code title="main.rs" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header(header::CONTENT_TYPE, "application/json")
+        .body(r#"{
+            "jsonrpc": "2.0",
+            "method": "eth_sendTransaction",
+            "params": [{"from": "0x...", "to": "0x...", "value": "0x9184e72a"}],
+            "id": "getblock.io"
+        }"#)
+        .send()
+        .await?;
+    
+    println!("{}", response.text().await?);
+    Ok(())
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+{% hint style="warning" %}
+eth\_sendTransaction requires the node to have access to the sender's private key. This is typically only possible on local or dedicated nodes. For shared/public nodes, use `eth_sendRawTransaction` with a pre-signed transaction instead.
+{% endhint %}
+
+## Response
+
+{% code title="response.json" %}
+```json
 {
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
     "error": {
         "code": -32000,
         "message": "unknown account"
-    },
-    "id": "getblock.io",
-    "jsonrpc": "2.0"
+    }
 }
 ```
+{% endcode %}
+
+## Response Parameters
+
+| Field   | Type   | Description                                           |
+| ------- | ------ | ----------------------------------------------------- |
+| jsonrpc | string | JSON-RPC version (2.0)                                |
+| id      | string | Request identifier                                    |
+| result  | varies | Transaction hash on success, or error on shared nodes |
+
+## Use Case
+
+The `eth_sendTransaction` method is useful for:
+
+* Local node usage
+* Development testing
+
+## Error Handling
+
+| Status Code | Error Message   | Cause                           |
+| ----------- | --------------- | ------------------------------- |
+| 403         | Forbidden       | Missing or invalid ACCESS-TOKEN |
+| -32600      | Invalid Request | Malformed request body          |
+| -32602      | Invalid params  | Invalid method parameters       |
+
+## Web3 Integration
+
+{% tabs %}
+{% tab title="Ethers.js" %}
+{% code title="ethers.js" %}
+```javascript
+import { ethers } from 'ethers';
+
+const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+
+const result = await provider.send('eth_sendTransaction', [{"from": "0x...", "to": "0x...", "value": "0x9184e72a"}]);
+console.log('Result:', result);
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Viem" %}
+{% code title="viem.js" %}
+```javascript
+import { createPublicClient, http } from 'viem';
+import { polygon } from 'viem/chains';
+
+const client = createPublicClient({
+    chain: polygon,
+    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+});
+
+const result = await client.request({
+    method: 'eth_sendTransaction',
+    params: [{"from": "0x...", "to": "0x...", "value": "0x9184e72a"}]
+});
+console.log('Result:', result);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}

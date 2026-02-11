@@ -1,0 +1,176 @@
+---
+description: >-
+  Example code for the eth_getFilterChanges JSON RPC method. Сomplete guide on
+  how to use eth_getFilterChanges JSON RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getFilterChanges - BSC
+
+The `eth_getFilterChanges` method returns an array of logs or block hashes that have occurred since the last poll for the given filter on the BNB Smart Chain.
+
+## Parameters
+
+| Parameter | Type   | Required | Description                                          |
+| --------- | ------ | -------- | ---------------------------------------------------- |
+| filterId  | string | Yes      | Filter ID from eth\_newFilter or eth\_newBlockFilter |
+
+## Request Example
+
+{% tabs %}
+{% tab title="cURL" %}
+{% code title="cURL" %}
+```bash
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "eth_getFilterChanges",
+    "params": ["0x1"],
+    "id": "getblock.io"
+}'
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="JavaScript (Axios)" %}
+{% code title="example.js" %}
+```javascript
+const axios = require('axios');
+
+const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+
+const payload = {
+    jsonrpc: '2.0',
+    method: 'eth_getFilterChanges',
+    params: ['0x1'],
+    id: 'getblock.io'
+};
+
+axios.post(url, payload, {
+    headers: { 'Content-Type': 'application/json' }
+})
+.then(response => console.log(response.data))
+.catch(error => console.error(error));
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="example.py" %}
+```python
+import requests
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = {
+    "jsonrpc": "2.0",
+    "method": "eth_getFilterChanges",
+    "params": ["0x1"],
+    "id": "getblock.io"
+}
+
+response = requests.post(url, headers={"Content-Type": "application/json"}, json=payload)
+print(response.json())
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust" %}
+{% code title="main.rs" %}
+```rust
+use reqwest::Client;
+use serde_json::json;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = Client::new();
+    
+    let payload = json!({
+        "jsonrpc": "2.0",
+        "method": "eth_getFilterChanges",
+        "params": ["0x1"],
+        "id": "getblock.io"
+    });
+
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header("Content-Type", "application/json")
+        .json(&payload)
+        .send()
+        .await?;
+
+    let result: serde_json::Value = response.json().await?;
+    println!("{:#?}", result);
+    
+    Ok(())
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Response Example
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": []
+}
+```
+
+## Response Parameters
+
+| Parameter | Type  | Description                          |
+| --------- | ----- | ------------------------------------ |
+| result    | array | Array of log objects or block hashes |
+
+## Use Cases
+
+* Poll for new events on BSC
+* Monitor BEP-20 token transfers
+* Track PancakeSwap swaps
+* Build event-driven applications
+
+{% hint style="info" %}
+When possible, prefer provider-native event listening (SDK event listeners or websocket subscriptions) instead of manual polling for better efficiency and lower latency.
+{% endhint %}
+
+## Error Handling
+
+| Error Code | Description       |
+| ---------- | ----------------- |
+| -32602     | Invalid filter ID |
+| -32603     | Internal error    |
+
+## SDK Integration
+
+{% tabs %}
+{% tab title="Ethers.js" %}
+```javascript
+const { ethers } = require('ethers');
+
+const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+
+// Use event listeners instead of manual polling
+const usdtContract = new ethers.Contract(address, abi, provider);
+usdtContract.on('Transfer', (from, to, amount) => {
+    console.log('Transfer:', from, to, amount);
+});
+```
+{% endtab %}
+
+{% tab title="Viem" %}
+```javascript
+import { createPublicClient, http } from 'viem';
+import { bsc } from 'viem/chains';
+
+const client = createPublicClient({
+    chain: bsc,
+    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+});
+
+// Use watchContractEvent for real-time monitoring
+```
+{% endtab %}
+{% endtabs %}
