@@ -96,16 +96,14 @@ GetBlock Shared Node endpoints can be configured in [Archive Mode](../endpoint-s
 
 To reflect the heavier load on node infrastructure, requests to these endpoints use an Archive Modifier of 2 applied on top of an existing method multiplier.
 
-_Example:_
-
-Ethereum (chain multiplier = 20) `debug_traceTransaction` (method multiplier = 2):
+_Example:_ Ethereum (chain multiplier = 20), `debug_traceTransaction` (method multiplier = 2):
 
 * Regular full-node request: `20 × 2 × 1 = 40 CU`
 * Archive-mode request: `20 × 2 × 2 = 80 CU` (archive modifier applied)
 
 The table below shows CU costs for some Ethereum RPC methods when requests are sent to an archive-enabled endpoint (Archive Modifier = 2).
 
-<table data-full-width="false"><thead><tr><th width="227.4296875">Ethereum RPC Method</th><th align="right">Method Multiplier</th><th align="right">Base Chain Multiplier</th><th align="right">Archive Modifier</th><th align="right">Total CU (Archive Endpoint)</th></tr></thead><tbody><tr><td>eth_blockNumber</td><td align="right">1</td><td align="right">20</td><td align="right">2</td><td align="right">40</td></tr><tr><td>eth_getTransactionByHash</td><td align="right">1</td><td align="right">20</td><td align="right">2</td><td align="right">40</td></tr><tr><td>debug_traceTransaction</td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td>debug_traceBlock</td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td>trace_call</td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td>trace_transaction</td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td>txpool_status</td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td>trace_replayTransaction</td><td align="right">4</td><td align="right">20</td><td align="right">2</td><td align="right">160</td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="227.4296875">Ethereum RPC Method</th><th align="right">Method Multiplier</th><th align="right">Base Chain Multiplier</th><th align="right">Archive Modifier</th><th align="right">Total CU (Archive Endpoint)</th></tr></thead><tbody><tr><td><code>eth_blockNumber</code></td><td align="right">1</td><td align="right">20</td><td align="right">2</td><td align="right">40</td></tr><tr><td><code>eth_getTransactionByHash</code></td><td align="right">1</td><td align="right">20</td><td align="right">2</td><td align="right">40</td></tr><tr><td><code>debug_traceTransaction</code></td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td><code>debug_traceBlock</code></td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td><code>trace_call</code></td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td><code>trace_transaction</code></td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td><code>txpool_status</code></td><td align="right">2</td><td align="right">20</td><td align="right">2</td><td align="right">80</td></tr><tr><td><code>trace_replayTransaction</code></td><td align="right">4</td><td align="right">20</td><td align="right">2</td><td align="right">160</td></tr></tbody></table>
 
 {% hint style="info" %}
 #### The Archive Modifier is applied to all requests sent to an archive-enabled endpoint.
