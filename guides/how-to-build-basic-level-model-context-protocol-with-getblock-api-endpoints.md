@@ -402,7 +402,7 @@ main().catch((error) => {
 3. Scroll down and Click on **Developer**
 4. Under **Local MCP Server**, click on `Edit Config`
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 5. Add the following **configuration**:
 

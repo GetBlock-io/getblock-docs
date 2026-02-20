@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500">
+  <!-- Background -->
+  <rect width="1000" height="500" fill="#0f172a"/>
+  <rect x="20" y="20" width="960" height="460" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="500" y="55" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="bold">GetBlock Dedicated Node + bloxRoute Acceleration</text>
+  <text x="500" y="80" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14">Direct BDN Access Architecture</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowGreen" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L0,12 L12,6 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrowYellow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L0,12 L12,6 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <!-- SECTION 1: Your Dedicated Node -->
+  <rect x="50" y="120" width="220" height="220" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="3"/>
+  <text x="160" y="150" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="14" font-weight="bold">YOUR DEDICATED NODE</text>
+  
+  <!-- Node Icon Box -->
+  <rect x="80" y="170" width="160" height="100" rx="10" fill="#1e3a5f" stroke="#60a5fa" stroke-width="2"/>
+  
+  <!-- Computer Icon -->
+  <rect x="130" y="190" width="60" height="40" rx="4" fill="#3b82f6"/>
+  <rect x="135" y="195" width="50" height="30" rx="2" fill="#1e293b"/>
+  <rect x="145" y="235" width="30" height="6" rx="2" fill="#3b82f6"/>
+  <rect x="140" y="241" width="40" height="4" rx="1" fill="#3b82f6"/>
+  
+  <text x="160" y="265" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="13" font-weight="bold">BSC Node</text>
+  
+  <text x="160" y="310" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="11">Requests acceleration</text>
+  
+  <!-- Connection Arrow 1 -->
+  <line x1="270" y1="230" x2="360" y2="230" stroke="#10b981" stroke-width="5" marker-end="url(#arrowGreen)"/>
+  <rect x="285" y="205" width="60" height="22" rx="4" fill="#064e3b"/>
+  <text x="315" y="221" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="11" font-weight="bold">DIRECT</text>
+  
+  <!-- SECTION 2: GetBlock Gateway -->
+  <rect x="370" y="120" width="240" height="220" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="3"/>
+  <text x="490" y="150" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="14" font-weight="bold">GETBLOCK GATEWAY</text>
+  
+  <!-- bloxRoute Box -->
+  <rect x="400" y="170" width="180" height="90" rx="10" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  
+  <!-- Lightning Icon -->
+  <polygon points="490,185 470,215 485,215 480,245 510,205 495,205" fill="#fbbf24"/>
+  
+  <text x="490" y="260" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="14" font-weight="bold">bloxRoute</text>
+  
+  <!-- Endpoints Box -->
+  <rect x="400" y="275" width="180" height="45" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+  <text x="490" y="297" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="11">Controlled Endpoints</text>
+  <text x="490" y="312" text-anchor="middle" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="11">&amp; Streams</text>
+  
+  <!-- Connection Arrow 2 -->
+  <line x1="610" y1="230" x2="700" y2="230" stroke="#f59e0b" stroke-width="5" marker-end="url(#arrowYellow)"/>
+  <rect x="625" y="205" width="60" height="22" rx="4" fill="#451a03"/>
+  <text x="655" y="221" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="11" font-weight="bold">ACCESS</text>
+  
+  <!-- SECTION 3: BDN -->
+  <rect x="710" y="120" width="260" height="220" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="3"/>
+  <text x="840" y="150" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="13" font-weight="bold">BLOCKCHAIN DISTRIBUTION</text>
+  <text x="840" y="168" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="13" font-weight="bold">NETWORK (BDN)</text>
+  
+  <!-- Transaction Stream Box -->
+  <rect x="730" y="180" width="105" height="85" rx="8" fill="#451a03" stroke="#fbbf24" stroke-width="2"/>
+  
+  <!-- Chart Icon -->
+  <rect x="755" y="200" width="8" height="30" rx="2" fill="#fbbf24"/>
+  <rect x="768" y="210" width="8" height="20" rx="2" fill="#fbbf24"/>
+  <rect x="781" y="195" width="8" height="35" rx="2" fill="#fbbf24"/>
+  <rect x="794" y="205" width="8" height="25" rx="2" fill="#fbbf24"/>
+  
+  <text x="782" y="250" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Transaction</text>
+  <text x="782" y="263" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Stream</text>
+  
+  <!-- Block Stream Box -->
+  <rect x="845" y="180" width="105" height="85" rx="8" fill="#451a03" stroke="#fbbf24" stroke-width="2"/>
+  
+  <!-- Block Icon -->
+  <rect x="875" y="195" width="45" height="35" rx="4" fill="#fbbf24"/>
+  <line x1="875" y1="207" x2="920" y2="207" stroke="#451a03" stroke-width="2"/>
+  <line x1="875" y1="218" x2="920" y2="218" stroke="#451a03" stroke-width="2"/>
+  <line x1="897" y1="195" x2="897" y2="230" stroke="#451a03" stroke-width="2"/>
+  
+  <text x="897" y="250" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Block</text>
+  <text x="897" y="263" text-anchor="middle" fill="#fcd34d" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Stream</text>
+  
+  <!-- Real-time Badge -->
+  <rect x="755" y="280" width="170" height="40" rx="8" fill="#78350f" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="790,295 780,310 788,310 785,320 800,303 792,303" fill="#fbbf24"/>
+  <text x="855" y="305" text-anchor="middle" fill="#fde68a" font-family="Arial, sans-serif" font-size="12" font-weight="bold">REAL-TIME ACCESS</text>
+  
+  <!-- Bottom Flow Steps -->
+  <rect x="50" y="380" width="900" height="60" rx="10" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  
+  <!-- Step 1 -->
+  <circle cx="110" cy="410" r="16" fill="#3b82f6"/>
+  <text x="110" y="415" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">1</text>
+  <text x="210" y="415" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Request acceleration</text>
+  
+  <!-- Step 2 -->
+  <circle cx="380" cy="410" r="16" fill="#10b981"/>
+  <text x="380" y="415" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">2</text>
+  <text x="510" y="415" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Direct gateway connection</text>
+  
+  <!-- Step 3 -->
+  <circle cx="680" cy="410" r="16" fill="#f59e0b"/>
+  <text x="680" y="415" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">3</text>
+  <text x="830" y="415" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Real-time tx &amp; block streams</text>
+</svg>

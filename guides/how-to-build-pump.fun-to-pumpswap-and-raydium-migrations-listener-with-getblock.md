@@ -5,7 +5,7 @@ description: >-
 icon: ear
 ---
 
-# Building Pump.fun to PumpSwap and Raydium Migrations Listener with GetBlock
+# How to Build Pump.fun to PumpSwap and Raydium Migrations Listener with GetBlock
 
 [Pump.fun](https://pump.fun/) is a Solana-based memecoin launchpad that uses a [bonding curve mechanism](https://www.coinbase.com/en-gb/learn/advanced-trading/what-is-a-bonding-curve) to initiate token distribution. When a token reaches an approximate market cap of $69,000, it graduates from the bonding curve. At this point, $12,000 of liquidity is deposited to either [Raydium DEX ](https://raydium.io/swap/)or [PumpSwap](https://swap.pump.fun/) (Pump.fun's native DEX). This migration creates immediate trading opportunities for developers and traders who can detect these events in real-time.
 
@@ -26,7 +26,7 @@ Tokens on Pump.fun start trading on a bonding curve mechanism. When the bonding 
    * **PumpSwap** (Pump.fun's DEX) - Most common since March 2025
    * **Raydium AMM** - Less common, but still happens
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Key Addresses
 
@@ -399,7 +399,7 @@ What this does:
 What this does:
 
 * Checks transaction logs for migration keywords like: \
-  ![](<../.gitbook/assets/image (2).png>)
+  ![](<../.gitbook/assets/image (2) (1).png>)
 * Skips failed transactions
 * Fetches full transaction details when migration is detected
 

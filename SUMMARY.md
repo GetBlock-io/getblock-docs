@@ -31,6 +31,16 @@
 
 * [Connect Brave Wallet to GetBlock](connect-brave-wallet-to-getblock.md)
 
+## BSC Advanced Tooling
+
+* [BSC Chain Accelerated Dedicated Node](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/README.md)
+  * [How to Subscribe to Stream](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-subscribe-to-stream.md)
+  * [How to Submit Transactions to Public Mempool](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-submit-transactions-to-public-mempool.md)
+  * [How to Submit Private Transactions Without Tips](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-submit-private-transactions-without-tips.md)
+  * [Sending Private Transactions (Priority Fee)](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/sending-private-transactions-priority-fee/README.md)
+    * [How to Use Multicall3 for Private Transactions](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/sending-private-transactions-priority-fee/how-to-use-multicall3-for-private-transactions.md)
+    * [How to use Bundle for Private Transaction](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/sending-private-transactions-priority-fee/how-to-use-bundle-for-private-transaction.md)
+
 ## Solana Advanced Data Tools
 
 * [StreamFirst](solana-advanced-data-tools/streamfirst.md)
