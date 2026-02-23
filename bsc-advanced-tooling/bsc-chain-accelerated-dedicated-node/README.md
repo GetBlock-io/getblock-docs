@@ -2,6 +2,7 @@
 description: >-
   GetBlock's BSC Chain Accelerated Dedicated Node enable users to direct access
   to fast, robust and high performance network layers.
+hidden: true
 ---
 
 # BSC Chain Accelerated Dedicated Node

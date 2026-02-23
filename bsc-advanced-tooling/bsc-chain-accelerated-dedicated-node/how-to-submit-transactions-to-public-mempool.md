@@ -141,8 +141,8 @@ Add the following code to `index.js`:
 
 {% step %}
 ```javascript
-const WebSocket = require('ws');
-const { ethers } = require('ethers');
+import WebSocket from 'ws';
+import ethers from 'ethers';
 
 const API_KEY = 'YOUR_API_KEY';
 const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';

@@ -49,7 +49,7 @@ With stream subscription, you enjoy:
 
 ## Quickstart
 
-Here you will be checking if you are connected to streams
+Here, you will be checking if you are connected to streams
 
 {% tabs %}
 {% tab title="Endpoint" %}
