@@ -5,11 +5,13 @@ description: >-
 icon: square-code
 ---
 
-# Building a Pay-Per-Request Blockchain API with x402 + GetBlock
+# How to Build a Pay-Per-Request Blockchain API With x402 and GetBlock
 
 ### Overview
 
-The x402 protocol is an open payment method that enables developers and service providers to charge/sell their APIs and content via HTTP without requiring third-party integrations, credential setup, or gas fees.&#x20;
+The x402 protocol is an open payment method that enables developers and service providers to charge for and sell their APIs and content via HTTP without requiring third-party integrations, credential setup, or gas fees.&#x20;
+
+{% embed url="https://youtu.be/EZqRjnCKS6o?si=OaWn35nlo0FMm6e8" %}
 
 The x402 protocol brings the [HTTP 402 "Payment Required" status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402) to life. Originally reserved in the HTTP specification for future use with digital payments, x402 finally implements this vision, enabling micropayments to be made directly over HTTP.
 

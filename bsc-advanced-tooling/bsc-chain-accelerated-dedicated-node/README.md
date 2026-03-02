@@ -1,13 +1,12 @@
 ---
 description: >-
   GetBlock's BSC Chain Accelerated Dedicated Node enable users to direct access
-  to fast, robust and high performance network layers.
-hidden: true
+  to BDN
 ---
 
 # BSC Chain Accelerated Dedicated Node
 
-A BSC Chain accelerated node is a high-performance dedicated node deployed on top of high-speed networking layers via the Blockchain Distributed Network (BDN) via a reliable gateway, BloxRoute. It observes state changes, mempool activity, and block production events significantly faster than standard peer-to-peer setups, serving traders, validators, dApps, and more with low latency and strong security.
+A BSC Chain accelerated node is a high-performance dedicated node deployed on top of high-speed networking layers via the Blockchain Distributed Network (BDN). It observes state changes, mempool activity, and block production events significantly faster than standard peer-to-peer setups, serving traders, validators, dApps, and more with low latency and strong security.
 
 _**Interested in building on BSC using an Accelerated Dedicated Node?**_ [_**Reach us**_](https://getblock.io/contact) _**for more information.**_
 

@@ -30,6 +30,7 @@ This method executes a new message call immediately without creating a transacti
 
 {% tabs %}
 {% tab title="cURL" %}
+{% code overflow="wrap" %}
 ```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
@@ -43,6 +44,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
     "id": "getblock.io"
 }'
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Axios" %}
