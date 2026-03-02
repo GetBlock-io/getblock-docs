@@ -31,7 +31,7 @@ Configuring tiers is available for all supported protocols unless there are spec
 Always check available configurations in your dashboard
 {% endhint %}
 
-#### _High vs Standard tier comparison table_
+#### _Reference High vs Standard tier comparison_&#x20;
 
 <table><thead><tr><th width="208.7109375">Feature</th><th>High Performance</th><th>Standard Performance</th></tr></thead><tbody><tr><td><strong>Resource allocation</strong></td><td>Maximum hardware and bandwidth</td><td>Balanced hardware profile</td></tr><tr><td><strong>Throughput</strong></td><td>Highest supported</td><td>High</td></tr><tr><td><strong>SLA</strong></td><td>99.9% uptime</td><td>99.5% uptime</td></tr><tr><td><strong>Recommended for</strong></td><td>Applications with high transaction volumes &#x26; large user bases, mission-critical systems, and any workflow where latency and throughput are the top priority</td><td>Most production dApps, wallets, and enterprise tools or projects that need guaranteed resources but do not require the maximum performance tier</td></tr></tbody></table>
 
@@ -61,9 +61,9 @@ Monthly costs are always shown during configuration in the **Dashboard** for eac
 To select a tier during node setup, open the Dedicated Node dashboard:
 
 1. Select protocol, network, deployment region, node mode, and a preferred client.
-2. As a final step, choose the Performance Tier (High or Standard) and required API interfaces.
+2. As a final step, choose the Performance Tier (High or Standard).
 
-<figure><img src="../../../.gitbook/assets/Dedic_Tier_Selection.svg" alt="Setting up a Dedicated Node performance tier via GetBlock dashboard"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/dedic_node_tiers.webp" alt="Setting up a Dedicated Node performance tier via GetBlock dashboard" width="375"><figcaption></figcaption></figure>
 
 3. Review updated performance and pricing details.
 
