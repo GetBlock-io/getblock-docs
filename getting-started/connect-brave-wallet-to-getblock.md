@@ -31,17 +31,17 @@ You need to set up the Brave wallet and prepare the GetBlock API endpoints.
 
 Brave Wallet is inseparable from the Brave browser. So, download and install the browser from the [official website](https://brave.com/wallet/). It’s available for desktop, Android, and iOS.
 
-<figure><img src=".gitbook/assets/brave_wallet.svg" alt="Downloading Brave browser with integrated wallet"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/brave_wallet.svg" alt="Downloading Brave browser with integrated wallet"><figcaption></figcaption></figure>
 
 After opening the browser, look at the wallet icon in the upper right corner. Click on it to open the Brave Wallet. Import the account using a seed phrase or create a new one.
 
-<figure><img src=".gitbook/assets/Brave_browser_wallet.svg" alt="How to start using a Brave browser wallet"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Brave_browser_wallet.svg" alt="How to start using a Brave browser wallet"><figcaption></figcaption></figure>
 
 Now, it’s time to prepare the working part: the GetBlock node.
 
 #### Get a custom RPC API endpoint
 
-<figure><img src=".gitbook/assets/ETH_RPC_URL_for_Brave_wallet.svg" alt="Creating Ethereum access token in GetBlock"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ETH_RPC_URL_for_Brave_wallet.svg" alt="Creating Ethereum access token in GetBlock"><figcaption></figcaption></figure>
 
 1. Proceed to the **GetBlock dashboard** and create an account or log in.
 2. Click on the **Get** button to add a new RPC endpoint, and select the Ethereum mainnet.
@@ -50,7 +50,7 @@ Now, it’s time to prepare the working part: the GetBlock node.
 
 It’s now available via the access token URL and can be used to perform transactions, deploy smart contracts, and much more.
 
-<figure><img src=".gitbook/assets/Ethereum_RPC_endpoint.svg" alt="Getting an ETH RPC URL for Brave wallet"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Ethereum_RPC_endpoint.svg" alt="Getting an ETH RPC URL for Brave wallet"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Without a subscription, you may have only **2 endpoints** simultaneously. If you need more, consider deleting those you don’t need at the given moment.
@@ -68,17 +68,17 @@ Brave Wallet supports a wide range of EVM and non-EVM networks. Let’s modify a
 {% step %}
 **Go to Brave Wallet settings**
 
-In the upper right corner of the wallet interface, click on the three-dot options (![three-dot menu](<.gitbook/assets/dots-vertical (1).svg>)) button and select **Settings**. Here, a list of supported networks can be found.
+In the upper right corner of the wallet interface, click on the three-dot options (![three-dot menu](<../.gitbook/assets/dots-vertical (1).svg>)) button and select **Settings**. Here, a list of supported networks can be found.
 
-<figure><img src=".gitbook/assets/Brave_wallet_network_settings.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Brave_wallet_network_settings.svg" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
 **Locate the network in the list**
 
-If the network of interest is already present, such as with Ethereum, click on the three-dot options (![](<.gitbook/assets/dots-vertical (1).svg>)) button right of Ethereum and then select **Edit** to open the account settings.
+If the network of interest is already present, such as with Ethereum, click on the three-dot options (![](<../.gitbook/assets/dots-vertical (1).svg>)) button right of Ethereum and then select **Edit** to open the account settings.
 
-<figure><img src=".gitbook/assets/Brave_wallet_ETH_settings.svg" alt="Exploring Brave Wallet network accounts"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Brave_wallet_ETH_settings.svg" alt="Exploring Brave Wallet network accounts"><figcaption></figcaption></figure>
 
 Look at the **RPC URLs** settings fro Ethereum: usually, a default Brave Wallet endpoint is present here. As every wallet user connects to it by default, it’s overloaded and insecure. That’s why a custom RPC URL is essential for Web3 activities.
 {% endstep %}
@@ -88,7 +88,7 @@ Look at the **RPC URLs** settings fro Ethereum: usually, a default Brave Wallet 
 
 Go to the GetBlock dashboard and copy the newly obtained Ethereum RPC access token. Add it under **RPC URLs** as shown below.
 
-<figure><img src=".gitbook/assets/Brave_wallet_ETH_RPC_URL_2.svg" alt="Adding GetBlock Ethereum endpoint to Brave Wallet"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Brave_wallet_ETH_RPC_URL_2.svg" alt="Adding GetBlock Ethereum endpoint to Brave Wallet"><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 
@@ -99,7 +99,7 @@ Go to the wallet, and try to perform some actions with the Ethereum account:
 * Execute smart contracts
 * Make a transaction
 
-In the GetBlock dashboard, track the remaining [compute unit](getting-started/plans-and-limits/cu-and-rate-limits.md) balance.
+In the GetBlock dashboard, track the remaining [compute unit](plans-and-limits/cu-and-rate-limits.md) balance.
 
 ***
 
@@ -119,7 +119,7 @@ If you genuinely believe that a network is unfairly missing, you may [contact us
 
 Return to the Wallet Networks menu. Instead of selecting existing networks, click on the Add button. Start typing “polygon zkevm” to locate the network quickly.
 
-<figure><img src=".gitbook/assets/Brave_wallet_zkEVM_RPC_URL.svg" alt="Adding Polygon to Brave"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Brave_wallet_zkEVM_RPC_URL.svg" alt="Adding Polygon to Brave"><figcaption></figcaption></figure>
 
 After clicking on it, Brave fills all required fields automatically.
 {% endstep %}
@@ -129,7 +129,7 @@ After clicking on it, Brave fills all required fields automatically.
 
 Return to the GetBlock dashboard, click Get again, and select Polygon zkEVM mainnet this time. Currently, only the Frankfurt region is available for zkEVM nodes.
 
-<figure><img src=".gitbook/assets/Polygon_zkEVM_endpoint.svg" alt="Creating zkEVM access token in GetBlock"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Polygon_zkEVM_endpoint.svg" alt="Creating zkEVM access token in GetBlock"><figcaption></figcaption></figure>
 
 Voila—the free and highly secure Polygon zkEVM node endpoint is ready.
 {% endstep %}
@@ -139,7 +139,7 @@ Voila—the free and highly secure Polygon zkEVM node endpoint is ready.
 
 Copy the access token and go to the Brave settings. Add the new RPC URLs field and paste the access token.
 
-<figure><img src=".gitbook/assets/Polygon_zkEVM_Brave_Wallet.svg" alt="Adding GetBlock zkEVM endpoint to Brave Wallet’"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Polygon_zkEVM_Brave_Wallet.svg" alt="Adding GetBlock zkEVM endpoint to Brave Wallet’"><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 
@@ -147,6 +147,6 @@ It’s recommended to assign a custom account name, such as “Polygon zkEVM Get
 
 Then, return to the wallet and locate a new Polygon zkEVM account with the ETH native token and a custom name.
 
-<figure><img src=".gitbook/assets/Brave_Wallet_Custom_RPC.svg" alt="New Polygon zkEVM account with GetBlock endpoint"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Brave_Wallet_Custom_RPC.svg" alt="New Polygon zkEVM account with GetBlock endpoint"><figcaption></figcaption></figure>
 
 As with GetBlock’s Ethereum node, track the compute units usage at the GetBlock dashboard.

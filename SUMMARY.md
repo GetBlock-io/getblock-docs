@@ -26,10 +26,7 @@
   * [Errors and troubleshooting](getting-started/testing-rpc-connection/errors-and-troubleshooting.md)
 * [Monitoring and analytics](getting-started/monitoring-and-analytics.md)
 * [Connect to GetBlock with MetaMask](getting-started/connect-to-getblock-with-metamask.md)
-
-***
-
-* [Connect Brave Wallet to GetBlock](connect-brave-wallet-to-getblock.md)
+* [Connect Brave Wallet to GetBlock](getting-started/connect-brave-wallet-to-getblock.md)
 
 ## BSC Advanced Tooling
 
