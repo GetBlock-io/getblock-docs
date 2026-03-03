@@ -8,9 +8,9 @@ description: >-
 
 A bundle is a group of transactions submitted together with a guarantee that either all transactions execute in sequence or none are included. This atomic execution model supports several advanced use cases:
 
-* **Arbitrage** — Execute a buy on one DEX and a sell on another within the same block, ensuring both trades complete or neither does
-* **Liquidations** — Check a position's health and liquidate it atomically, preventing front-running
-* **Complex strategies** — Coordinate multi-step transactions with guaranteed execution order
+* **Arbitrage:** Execute a buy on one DEX and a sell on another within the same block, ensuring both trades complete, or neither does
+* **Liquidations:** Check a position's health and liquidate it atomically, preventing front-running
+* **Complex strategies:** Coordinate multi-step transactions with guaranteed execution order
 
 ### Prerequisites
 
@@ -20,7 +20,7 @@ Before submitting bundles, ensure you have:
 * Node.js v16 or later
 * A funded BSC wallet with sufficient BNB for all transactions and gas
 
-### API Reference
+### Sample Request
 
 {% tabs %}
 {% tab title="Endpoint" %}
@@ -71,15 +71,7 @@ A successful submission returns a bundle hash:
 {% endtab %}
 {% endtabs %}
 
-### Prerequisites
-
-You must have the following:
-
-* Node.js v18 or later installed
-* A funded BSC wallet with sufficient BNB for transactions and gas
-* GetBlock's BSC Accelerated Dedication Node
-
-### Quickstart
+### Example
 
 {% stepper %}
 {% step %}
@@ -403,4 +395,3 @@ await provider.call({
 | Bundle Not Included    | <p>If your bundle is not included after the specified block count:</p><ul><li><strong>Increase the priority fee</strong> — Add a higher fee payment transaction</li><li><strong>Verify nonce sequence</strong> — Nonces must be strictly consecutive with no gaps</li><li><strong>Reduce blocks_count</strong> — Shorter validity signals higher priority to builders</li><li><strong>Validate each transaction</strong> — Ensure every transaction in the bundle is valid independently</li></ul> |
 | "Invalid bundle" Error | <p></p><p>This error indicates a formatting or validation issue:</p><ul><li><strong>Check parameter format</strong> — The <code>transactions</code> parameter must be an array; <code>mev_builders</code> must be an object</li><li><strong>Verify signatures</strong> — All transactions must be properly signed</li><li><strong>Confirm chain ID</strong> — Use chain ID 56 for BSC Mainnet</li></ul>                                                                                            |
 | Partial Execution      | <p></p><p>Bundles execute atomically, so partial execution should not occur. If you observe partial execution:</p><ul><li><strong>Contact support</strong> — This indicates a potential builder issue</li><li><strong>Verify using the bundle hash</strong> — Check the bundle status on a block explorer</li></ul>                                                                                                                                                                                |
-

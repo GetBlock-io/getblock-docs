@@ -20,7 +20,7 @@ graph TD
     
     subgraph Execution ["Smart Contract Execution"]
         B[Multicall3 Contract]
-        B --> C[Call 1: Send tip to BloXroute fee address]
+        B --> C[Call 1: Send tip to gateway fee address]
         B --> D[Call 2: Execute your actual transaction]
     end
     
@@ -42,10 +42,10 @@ You must have the following:
 
 ### Reference Addresses
 
-| Address                                      | Purpose                 |
-| -------------------------------------------- | ----------------------- |
-| `0xcA11bde05977b3631167028862bE2a173976CA11` | Multicall3 contract     |
-| `0x6374Ca2da5646C73Eb444aB99780495d61035f9b` | BloXroute fee recipient |
+| Address                                      | Purpose               |
+| -------------------------------------------- | --------------------- |
+| `0xcA11bde05977b3631167028862bE2a173976CA11` | Multicall3 contract   |
+| `0x6374Ca2da5646C73Eb444aB99780495d61035f9b` | Gateway fee recipient |
 
 ### Quickstart
 

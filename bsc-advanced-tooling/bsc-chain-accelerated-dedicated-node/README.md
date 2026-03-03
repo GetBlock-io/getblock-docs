@@ -1,12 +1,12 @@
 ---
 description: >-
-  GetBlock's BSC Chain Accelerated Dedicated Node enables users to have direct
-  access to fast, robust, and high-performance network layers.
+  GetBlock's BSC Accelerated Dedicated Node enables users to have direct access
+  to fast, robust, and high-performance network layers.
 ---
 
 # BSC Accelerated Dedicated Node
 
-A BSC Chain accelerated node is a high-performance dedicated node deployed on top of high-speed networking layers via the Blockchain Distributed Network (BDN). It observes state changes, mempool activity, and block production events significantly faster than standard peer-to-peer setups, serving traders, validators, dApps, and more with low latency.
+BSC accelerated node is a high-performance dedicated node deployed on top of high-speed networking layers via the Blockchain Distributed Network (BDN). It observes state changes, mempool activity, and block production events significantly faster than standard peer-to-peer setups, serving traders, validators, dApps, and more with low latency.
 
 _**Interested in building on BSC using an Accelerated Dedicated Node?**_ [_**Reach us**_](https://getblock.io/contact) _**for more information.**_
 
@@ -40,13 +40,11 @@ Your dedicated node receives data from both the BDN fast path and the standard P
 
 ### Architecture Details
 
-GetBlock manages the entire Gateway infrastructure on your behalf:
-
-1. **Deployment**: We deploy a bloxRoute Gateway in the same data center as your dedicated node to minimize network hops.  GetBlock's devOps teams deploy your BSC accelerated dedicated node and connect it directly to the BDN.
+1. **Connection**: We connect your dedicated node's P2P interface to the GetBlock Data center.
 2. **Data Flow:** The node receives transactions and blocks from both the standard P2P layer and the BDN propagation network.
 3. **Automatic Selection:** Your node automatically uses the first source to deliver data.
 
-### What Gets Accelerated
+### What Accelerated Node Gets:
 
 The BDN Gateway improves the delivery speed of:
 
@@ -56,11 +54,6 @@ The BDN Gateway improves the delivery speed of:
 | **Mempool Updates**   | Pending transactions           | See opportunities earlier                                              |
 | **State Transitions** | Account and contract state     | Fresher data for decisions                                             |
 | **Transaction**       | Submiting Trsanction           | Submit single transactions or bundles with optimized propagation paths |
-
-1. **Deployment**: We deploy a bloxRoute Gateway in the same data center as your dedicated node, minimizing network hops.
-2. **Connection**: Our DevOps team connects the Gateway directly to your node's P2P interface.
-3. **Data Flow:** The node receives transactions and blocks from both the standard P2P layer and the BDN propagation network.
-4. **Automatic Selection:** Your node automatically uses the first source to deliver data.
 
 ### Who is this for:
 
@@ -80,9 +73,9 @@ Node acceleration directly benefits latency-sensitive applications:
 {% hint style="success" %}
 No Action Required
 
-* Automatic: Enabled when you provision an accelerated dedicated node
-* Transparent: Your existing RPC calls work unchanged
-* Managed: GetBlock handles all Gateway maintenance and updates
+* **Automatic**: Enabled when you provision an accelerated dedicated node
+* **Transparent**: Your existing RPC calls work unchanged
+* **Managed**: GetBlock handles all Gateway maintenance and updates
 
 Your application code remains the same. The improvement happens at the infrastructure layer, giving you faster data without code changes.
 {% endhint %}

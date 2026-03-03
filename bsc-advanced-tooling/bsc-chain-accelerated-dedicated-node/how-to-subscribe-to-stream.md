@@ -132,7 +132,14 @@ ws.on("message", (data) => {
 {% tab title="Response" %}
 ```json
 Connected
-Subscribed! ID: 23
+Subscribed! ID: 9
+New block: { number: 84411561, hash: undefined, txCount: 86 }
+New block: { number: 84411562, hash: undefined, txCount: 105 }
+New block: { number: 84411563, hash: undefined, txCount: 66 }
+New block: { number: 84411564, hash: undefined, txCount: 66 }
+New block: { number: 84411565, hash: undefined, txCount: 78 }
+New block: { number: 84411566, hash: undefined, txCount: 93 }
+New block: { number: 84411567, hash: undefined, txCount: 63 }
 ```
 {% endtab %}
 {% endtabs %}
@@ -336,7 +343,7 @@ monitorNewTxs();
 </code></pre>
 {% endtab %}
 
-{% tab title="Untitled" %}
+{% tab title="Response" %}
 {% code overflow="wrap" %}
 ```bash
 {
@@ -393,9 +400,9 @@ ws.on("message", (data) => {
 {% code overflow="wrap" %}
 ```bash
 { 
- jsonrpc: '2.0', 
- id: 1, 
- result: '0x10' 
+  jsonrpc: '2.0', 
+  id: 1, 
+  result: '0x10' 
 }
 ```
 {% endcode %}

@@ -8,15 +8,15 @@ description: >-
 
 When you submit a transaction to the public mempool, it's visible to everyone. MEV bots can:
 
-* **Sandwich your trade** — Place orders before and after yours to extract value
-* **Front-run you** — Copy your trade and execute it first
-* **Back-run you** — Profit from the price impact you create
+* **Sandwich your trade:** Place orders before and after yours to extract value
+* **Front-run you:** Copy your trade and execute it first
+* **Back-run you:** Profit from the price impact you create
 
 Meanwhile, Private transactions eliminate this exposure by hiding your transactions until they are included.
 
 <figure><img src="../../.gitbook/assets/image (9).png" alt="" width="563"><figcaption></figcaption></figure>
 
-## Private TX vs Public Mempool
+### Private TX vs Public Mempool
 
 | Aspect          | Public Mempool              | Private TX             |
 | --------------- | --------------------------- | ---------------------- |
@@ -25,7 +25,7 @@ Meanwhile, Private transactions eliminate this exposure by hiding your transacti
 | Inclusion speed | Gas price dependent         | Builder dependent      |
 | Best for        | Speed-competitive scenarios | Value-sensitive trades |
 
-## When to Use Private Transactions
+### When to Use Private Transactions
 
 Use private transactions when:
 
@@ -34,7 +34,7 @@ Use private transactions when:
 * Running strategies you don't want copied
 * Protecting any transaction from front-running
 
-## API Reference
+### Request Sample
 
 {% tabs %}
 {% tab title="Endpoint" %}
@@ -44,7 +44,7 @@ wss://go.getblock.io/<ACCESS_TOKEN>
 {% endtab %}
 
 {% tab title="Method" %}
-```
+```bash
 bsc_privateTx
 ```
 {% endtab %}
@@ -68,8 +68,6 @@ bsc_privateTx
   }
 }
 ```
-
-
 {% endtab %}
 
 {% tab title="Response Format" %}

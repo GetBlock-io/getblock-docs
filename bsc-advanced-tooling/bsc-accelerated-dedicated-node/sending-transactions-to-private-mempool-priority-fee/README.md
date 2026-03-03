@@ -1,7 +1,5 @@
 ---
-description: >-
-  Learn how to add tips to private transactions submitted via GetBlock's
-  bloxRoute integration.
+description: Learn how to add tips to transaction while sending to private mempool
 ---
 
 # Sending Transactions to Private Mempool (Priority Fee)
