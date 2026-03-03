@@ -1,10 +1,10 @@
 ---
 description: >-
-  Learn how to submit a private transactions directly to block builders,
+  Learn how to submit transaction to private mempool directly to block builders,
   protecting you from MEV extraction until it's included in a block.
 ---
 
-# How to Submit Private Transactions Without Tips
+# How to Submit Transaction to Private Mempool
 
 When you submit a transaction to the public mempool, it's visible to everyone. MEV bots can:
 
@@ -39,7 +39,7 @@ Use private transactions when:
 {% tabs %}
 {% tab title="Endpoint" %}
 ```bash
-wss://bsc.getblock.io/mev/ws?api_key=YOUR_API_KEY
+wss://go.getblock.io/<ACCESS_TOKEN>
 ```
 {% endtab %}
 
@@ -94,8 +94,8 @@ Set up the project
 {% tabs %}
 {% tab title="npm" %}
 ```bash
-mkdir multicall3-example
-cd multicall3-example
+mkdir transaction-private-mempool
+cd transaction-private-mempool
 npm init -y
 npm install ws ethers dotenv
 ```
@@ -103,8 +103,8 @@ npm install ws ethers dotenv
 
 {% tab title="yarn" %}
 ```bash
-mkdir multicall3-example
-cd multicall3-example
+mkdir transaction-private-mempool
+cd transaction-private-mempool
 yarn init -y
 yarn ws ethers
 ```
@@ -128,10 +128,10 @@ Add the following code to `index.js:`
 Import the dependencies
 
 ```javascript
-const WebSocket = require('ws');
-const { ethers } = require('ethers');
+import WebSocket from 'ws';
+import { ethers } from 'ethers';
+import 'dotenv/config';
 
-const API_KEY = 'YOUR_API_KEY';
 const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
 const RPC_URL = 'https://bsc-dataseed.binance.org';
 ```
@@ -166,7 +166,7 @@ const signedTx = await wallet.signTransaction(tx);
 Submit Privately
 
 ```javascript
-const ws = new WebSocket(`wss://bsc.getblock.io/mev/ws?api_key=${API_KEY}`);
+const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
 
 ws.on('open', () => {
   ws.send(JSON.stringify({
@@ -201,6 +201,15 @@ Response
 ```
 ```
 {% endstep %}
+
+{% step %}
+After confirmation, check the "Internal Transactions" tab on BSCScan:
+
+```
+Internal TX #1: 0.0005 BNB → 0x6374Ca... (Priority fee)
+Internal TX #2: 0.1 BNB → PancakeSwap (Your swap)
+```
+{% endstep %}
 {% endstepper %}
 
 <details>
@@ -208,10 +217,10 @@ Response
 <summary>Complete Example: Private BNB Transfer</summary>
 
 ```javascript
-const WebSocket = require('ws');
-const { ethers } = require('ethers');
+import WebSocket from 'ws';
+import { ethers } from 'ethers';
+import 'dotenv/config'
 
-const API_KEY = 'YOUR_API_KEY';
 const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
 const RPC_URL = 'https://bsc-dataseed.binance.org';
 
@@ -238,7 +247,7 @@ async function sendPrivateTransaction(recipient, amountBNB) {
   });
   
   // Submit privately
-  const ws = new WebSocket(`wss://bsc.getblock.io/mev/ws?api_key=${API_KEY}`);
+  const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
   
   return new Promise((resolve, reject) => {
     ws.on('open', () => {
@@ -288,10 +297,10 @@ sendPrivateTransaction(
 <summary>Complete Example: MEV-Protected PancakeSwap Trade</summary>
 
 ```javascript
-const WebSocket = require('ws');
-const { ethers } = require('ethers');
+import  WebSocket from 'ws';
+import { ethers } from 'ethers';
+import 'dotenv/config';
 
-const API_KEY = 'YOUR_API_KEY';
 const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
 const RPC_URL = 'https://bsc-dataseed.binance.org';
 
@@ -338,7 +347,7 @@ async function privateSwap(tokenAddress, amountBNB, minAmountOut) {
   console.log('  Mode: Private (MEV Protected)');
   
   // Submit privately
-  const ws = new WebSocket(`wss://bsc.getblock.io/mev/ws?api_key=${API_KEY}`);
+  const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
   
   return new Promise((resolve, reject) => {
     ws.on('open', () => {
@@ -382,7 +391,11 @@ privateSwap(
 
 ### Selecting Specific Builders
 
-By default, `mev_builders: ['all']` sends to all available builders. You can target specific builders instead:
+There are list of builders who should receive the transaction without delay. There are:
+
+* `bloxroute`: bloXroute internal builder(default)
+* `all`: all builders
+* Other options: `48club`, `blockrazor`, `jetbldr`, `nodereal`
 
 ```javascript
 params: {
@@ -391,16 +404,14 @@ params: {
 }
 ```
 
-Available builders vary by network conditions. Use `['all']` for maximum inclusion probability.
-
 ### Troubleshooting
 
-| Problem                  | Solution                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Transaction not included | <p></p><p>Without a priority tip, private transactions compete based on gas fees alone. If your transaction isn't being included:</p><ul><li>Increase gas price — Higher gas = higher priority for builders</li><li>Add a priority tip — See <a href="sending-private-transactions-priority-fee/">Private Transactions with Tips</a></li><li>Try specific builders — Some builders may be more responsive</li></ul> |
-| "Invalid transaction"    | <p></p><ul><li>Verify your transaction is properly signed</li><li>Check the chain ID is <code>56</code> (BSC Mainnet)</li><li>Ensure the nonce is correct</li></ul>                                                                                                                                                                                                                                                 |
-| Connection issues        | <p></p><ul><li>Verify your API key is valid</li><li>Check network connectivity</li><li>Try reconnecting after a few seconds</li></ul>                                                                                                                                                                                                                                                                               |
+| Problem                  | Solution                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Transaction not included | <p></p><p>Without a priority tip, private transactions compete based on gas fees alone. If your transaction isn't being included:</p><ul><li>Increase gas price — Higher gas = higher priority for builders</li><li>Add a priority tip — See <a href="sending-transactions-to-private-mempool-priority-fee/">Private Transactions with Tips</a></li><li>Try specific builders — Some builders may be more responsive</li></ul> |
+| "Invalid transaction"    | <p></p><ul><li>Verify your transaction is properly signed</li><li>Check the chain ID is <code>56</code> (BSC Mainnet)</li><li>Ensure the nonce is correct</li></ul>                                                                                                                                                                                                                                                            |
+| Connection issues        | <p></p><ul><li>Verify your API key is valid</li><li>Check network connectivity</li><li>Try reconnecting after a few seconds</li></ul>                                                                                                                                                                                                                                                                                          |
 
 ### Next Steps
 
-To increase inclusion priority for your private transactions, see [Private Transactions with Tips.](sending-private-transactions-priority-fee/)
+To increase the priority for inclusion in your private transactions, see [Private Transactions with Tips.](sending-transactions-to-private-mempool-priority-fee/)

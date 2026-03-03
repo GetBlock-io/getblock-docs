@@ -30,13 +30,13 @@
 
 ## BSC Advanced Tooling
 
-* [BSC Accelerated Dedicated Node](bsc-advanced-tooling/bsc-accelerated-dedicated-node/README.md)
-  * [How to Subscribe to Stream](bsc-advanced-tooling/bsc-accelerated-dedicated-node/how-to-subscribe-to-stream.md)
-  * [How to Submit Transactions to Public Mempool](bsc-advanced-tooling/bsc-accelerated-dedicated-node/how-to-submit-transactions-to-public-mempool.md)
-  * [How to Submit Private Transactions Without Tips](bsc-advanced-tooling/bsc-accelerated-dedicated-node/how-to-submit-private-transactions-without-tips.md)
-  * [Sending Private Transactions (Priority Fee)](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-private-transactions-priority-fee/README.md)
-    * [How to Use Multicall3 for Private Transactions](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-private-transactions-priority-fee/how-to-use-multicall3-for-private-transactions.md)
-    * [How to use Bundle for Private Transaction](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-private-transactions-priority-fee/how-to-use-bundle-for-private-transaction.md)
+* [BSC Accelerated Dedicated Node](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/README.md)
+  * [How to Subscribe to Stream](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-subscribe-to-stream.md)
+  * [How to Submit Transactions to Public Mempool](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-submit-transactions-to-public-mempool.md)
+  * [How to Submit Transaction to Private Mempool](bsc-advanced-tooling/bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md)
+  * [Sending Transactions to Private Mempool (Priority Fee)](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/README.md)
+    * [How to Use Multicall3](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-multicall3.md)
+    * [How to use Bundle](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-bundle.md)
 
 ## Solana Advanced Data Tools
 

@@ -8,39 +8,7 @@ description: >-
 
 This process involves submitting transactions to the BNB Chain public mempool via GetBlock's BDN fast path. Your transaction propagates to validators significantly faster than through standard P2P gossip, increasing the probability of earlier block inclusion.
 
-## How It Works
-
-When you submit a transaction via GetBlock's MEV endpoint:
-
-```mermaid
-graph LR
-    A([Your Transaction]) --> B
-    
-    subgraph Gateway
-        B[GetBlock API]
-    end
-    
-    B -- "Authentication + Rate Limiting" --> C
-    
-    subgraph Relay
-        C[BDN Network]
-    end
-    
-    C -- "High-speed Propagation" --> D
-    
-    subgraph Inclusion
-        D[Validators]
-    end
-
-```
-
-Your transaction reaches a large portion of validators before it would via classical P2P, improving execution consistency.
-
-{% hint style="info" %}
-Note: Final inclusion still depends on the gas price you attach. Earlier propagation improves timing and visibility but doesn't override fee-based ordering.
-{% endhint %}
-
-## When to Use Public Mempool
+### When to Use Public Mempool
 
 Use public mempool submission when:
 
@@ -49,14 +17,14 @@ Use public mempool submission when:
 * You're competing on speed rather than privacy
 * You need broad validator visibility quickly
 
-_For MEV-sensitive transactions, see_ [_Private Transactions_](sending-private-transactions-priority-fee/) _instead._
+_For MEV-sensitive transactions, see_ [_Private Transactions_](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/) _instead._
 
-## API Reference
+### API Reference
 
 {% tabs %}
 {% tab title="Endpoint" %}
 ```bash
-wss://bsc.getblock.io/mev/ws?api_key=YOUR_API_KEY
+wss://go.getblock.io/<ACCESS_TOKEN>
 ```
 {% endtab %}
 
@@ -109,8 +77,8 @@ Set up the project
 {% tabs %}
 {% tab title="npm" %}
 ```bash
-mkdir multicall3-example
-cd multicall3-example
+mkdir transaction-public-mempool
+cd transaction-public-mempool
 npm init -y
 npm install ws ethers dotenv
 ```
@@ -118,10 +86,10 @@ npm install ws ethers dotenv
 
 {% tab title="yarn" %}
 ```bash
-mkdir multicall3-example
-cd multicall3-example
+mkdir transaction-public-mempool
+cd transaction-public-mempool
 yarn init -y
-yarn ws ethers
+yarn ws ethers dotenv
 ```
 {% endtab %}
 {% endtabs %}
@@ -143,8 +111,8 @@ Add the following code to `index.js`:
 ```javascript
 import WebSocket from 'ws';
 import ethers from 'ethers';
+import 'dotenv/config';
 
-const API_KEY = 'YOUR_API_KEY';
 const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
 const RPC_URL = 'https://bsc-dataseed.binance.org';
 ```
@@ -179,8 +147,7 @@ const signedTx = await wallet.signTransaction(tx);
 Submit via WebSocket
 
 ```javascript
-const ws = new WebSocket(`wss://bsc.getblock.io/mev/ws?api_key=${API_KEY}`);
-
+const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
 ws.on('open', () => {
   ws.send(JSON.stringify({
     jsonrpc: '2.0',
@@ -219,10 +186,10 @@ Response
 <summary>Complete Example: BNB Transfer</summary>
 
 ```javascript
-const WebSocket = require('ws');
-const { ethers } = require('ethers');
+import WebSocket from 'ws';
+import { ethers } from 'ethers';
+import 'dotenv/config'
 
-const API_KEY = 'YOUR_API_KEY';
 const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
 const RPC_URL = 'https://bsc-dataseed.binance.org';
 
@@ -252,7 +219,7 @@ async function sendPublicTransaction(recipient, amountBNB) {
   console.log('\nTransaction signed');
   
   // Submit via BDN
-  const ws = new WebSocket(`wss://bsc.getblock.io/mev/ws?api_key=${API_KEY}`);
+const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
   
   return new Promise((resolve, reject) => {
     ws.on('open', () => {
@@ -303,10 +270,10 @@ sendPublicTransaction(
 <summary>Complete Example: Token Swap on PancakeSwap</summary>
 
 ```javascript
-const WebSocket = require('ws');
-const { ethers } = require('ethers');
+import WebSocket from 'ws';
+import { ethers } from 'ethers';
+import 'dotenv/config';
 
-const API_KEY = 'YOUR_API_KEY';
 const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
 const RPC_URL = 'https://bsc-dataseed.binance.org';
 
@@ -355,7 +322,7 @@ async function swapBNBForToken(tokenAddress, amountBNB, minAmountOut) {
   console.log('  Min out:', ethers.formatEther(minAmountOut));
   
   // Submit via BDN
-  const ws = new WebSocket(`wss://bsc.getblock.io/mev/ws?api_key=${API_KEY}`);
+ const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
   
   return new Promise((resolve, reject) => {
     ws.on('open', () => {
@@ -443,5 +410,5 @@ const newGasPrice = existingGasPrice * 110n / 100n;
 
 For transactions that need MEV protection, see:
 
-* [Private Transactions](how-to-submit-private-transactions-without-tips.md) — Hidden from public mempool
-* [Private Transactions with Tips](sending-private-transactions-priority-fee/) — Prioritized private submission
+* [Private Transactions](../bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md) — Hidden from public mempool
+* [Private Transactions with Tips](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/) — Prioritized private submission

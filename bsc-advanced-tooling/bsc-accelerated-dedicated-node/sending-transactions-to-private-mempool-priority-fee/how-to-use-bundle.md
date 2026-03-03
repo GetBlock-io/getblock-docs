@@ -4,7 +4,7 @@ description: >-
   GetBlock's MEV endpoint.
 ---
 
-# How to use Bundle for Private Transaction
+# How to use Bundle
 
 A bundle is a group of transactions submitted together with a guarantee that either all transactions execute in sequence or none are included. This atomic execution model supports several advanced use cases:
 
@@ -27,7 +27,7 @@ Before submitting bundles, ensure you have:
 Connect to the MEV WebSocket endpoint with your API key:
 
 ```bash
-wss://bsc.getblock.io/mev/ws?api_key=YOUR_API_KEY
+wss://go.getblock.io/<ACCESS_TOKEN>
 ```
 {% endtab %}
 
@@ -97,10 +97,10 @@ npm install ws ethers dotenv
 
 {% tab title="yarn" %}
 ```bash
-mkdir multicall3-example
-cd multicall3-example
+mkdir bundle-example
+cd bundle-example
 yarn init -y
-yarn ws ethers
+yarn ws ethers dotenv
 ```
 {% endtab %}
 {% endtabs %}
@@ -121,10 +121,10 @@ The following example demonstrates a simple BNB transfer with a priority fee:
 
 {% code overflow="wrap" %}
 ```js
-const WebSocket = require('ws');
-const { ethers } = require('ethers');
+import WebSocket from 'ws';
+import { ethers } from 'ethers';
+import 'dotenv/config';
 
-const API_KEY = 'YOUR_API_KEY';
 const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
 
 async function submitBundle() {
@@ -157,7 +157,7 @@ async function submitBundle() {
   });
   
   // Connect to the MEV endpoint
-  const ws = new WebSocket(`wss://bsc.getblock.io/mev/ws?api_key=${API_KEY}`);
+  const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
   
   ws.on('open', () => {
     ws.send(JSON.stringify({

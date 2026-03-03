@@ -44,8 +44,7 @@ The following example demonstrates a simple BNB transfer with a priority fee:
 ```js
 import Websocket from 'ws';
 import ethers from 'ethers';
-
-const SIDECAR_URL = 'ws://localhost:28334/ws';
+import 'dotenv/config';
 const PRIVATE_KEY = 'your-private-key';
 const RPC_URL = 'https://bsc-dataseed.binance.org';
 
@@ -108,7 +107,7 @@ async function sendPrivateTxWithTip() {
   console.log('  Total:', ethers.formatEther(totalValue), 'BNB');
   
   // Send via bsc_private_tx
-  const ws = new WebSocket(SIDECAR_URL);
+  const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
   
   ws.on('open', () => {
     const request = {

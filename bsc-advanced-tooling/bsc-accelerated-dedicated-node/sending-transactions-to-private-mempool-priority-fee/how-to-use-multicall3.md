@@ -4,7 +4,7 @@ description: >-
   execution.
 ---
 
-# How to Use Multicall3 for Private Transactions
+# How to Use Multicall3
 
 Multicall3 batches multiple operations into a single transaction with atomic execution using `bsc_private_tx` to get MEV protection with internal fee payment.&#x20;
 
