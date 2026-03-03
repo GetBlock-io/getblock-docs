@@ -14,7 +14,7 @@ With a stream subscription, you enjoy:
 * **Mempool access**: See pending transactions before they're mined
 * **Lower latency:** Edge infrastructure minimizes network hops
 
-### Quickstart
+### Code Sample
 
 Here, you will be checking if you are connected to streams
 
@@ -409,7 +409,7 @@ ws.on("message", (data) => {
 {% endtab %}
 {% endtabs %}
 
-## Unsubscribing
+#### Unsubscribing
 
 To stop receiving notifications, unsubscribe using the subscription ID:
 

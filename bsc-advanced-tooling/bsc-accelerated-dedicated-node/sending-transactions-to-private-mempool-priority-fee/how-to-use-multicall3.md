@@ -47,7 +47,7 @@ You must have the following:
 | `0xcA11bde05977b3631167028862bE2a173976CA11` | Multicall3 contract   |
 | `0x6374Ca2da5646C73Eb444aB99780495d61035f9b` | Gateway fee recipient |
 
-### Quickstart
+### Example
 
 {% include "../../../.gitbook/includes/code-setup-for-product.md" %}
 

@@ -19,7 +19,7 @@ Use public mempool submission when:
 
 _For MEV-sensitive transactions, see_ [_Private Transactions_](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/) _instead._
 
-### API Reference
+### Sample Request
 
 {% tabs %}
 {% tab title="Endpoint" %}
@@ -68,7 +68,7 @@ eth_sendRawTransaction
 {% endtab %}
 {% endtabs %}
 
-### Quickstart
+### How to Submit Transaction to Publoc Mempool
 
 {% stepper %}
 {% step %}

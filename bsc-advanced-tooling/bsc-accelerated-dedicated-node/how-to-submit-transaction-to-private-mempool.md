@@ -83,7 +83,7 @@ bsc_privateTx
 {% endtab %}
 {% endtabs %}
 
-### Quickstart
+### How to Submit Transaction to Private Mempool
 
 {% stepper %}
 {% step %}
