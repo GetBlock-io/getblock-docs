@@ -72,6 +72,7 @@
 * [How to Listen to High-Value SOL Transactions via Yellowstone Geyser gRPC with GetBlock](guides/how-to-listen-to-high-value-sol-transactions-via-yellowstone-geyser-grpc-with-getblock.md)
 * [How to Build a Pay-Per-Request Blockchain API With x402 and GetBlock](guides/how-to-build-a-pay-per-request-blockchain-api-with-x402-and-getblock.md)
 * [How To Build a Base Flashblocks Listener](guides/how-to-build-a-base-flashblocks-listener.md)
+* [How to Build an AI Agent On Solana](guides/how-to-build-an-ai-agent-on-solana.md)
 
 ## API REFERENCE
 
