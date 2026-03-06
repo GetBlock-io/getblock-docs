@@ -293,6 +293,4 @@ In this guide, you have learn what AI agents are, their core stack, and how to b
 2. [Langchain Docs](https://docs.langchain.com/)
 3. [OpenAI Platform](https://platform.openai.com/)
 4. [GetBlock Account Dashboard](https://account.getblock.io/)
-
-
-
+5. [Solana Agent Guide Repo](https://github.com/GetBlock-io/guides/tree/main/Solana-Agent)
