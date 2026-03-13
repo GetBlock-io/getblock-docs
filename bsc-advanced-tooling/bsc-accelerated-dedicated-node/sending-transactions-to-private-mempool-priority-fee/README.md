@@ -31,19 +31,6 @@ Choose the appropriate method based on your use case:
 | **Adding priority fees**  | Via Multicall3                     | Separate transaction in bundle   |
 | **`mev_builders` format** | Array: `["all"]`                   | Object: `{"all": ""}`            |
 
-### Recommended Tip Amounts
-
-| Priority  | Tip Amount | Use Case                |
-| --------- | ---------- | ----------------------- |
-| Low       | 0.0001 BNB | Regular trades          |
-| Medium    | 0.0005 BNB | Time-sensitive          |
-| High      | 0.001 BNB  | Arbitrage, liquidations |
-| Very High | 0.005+ BNB | Critical, competitive   |
-
-{% hint style="info" %}
-**Note:** A higher tip means higher priority, but you only pay if TX is included.
-{% endhint %}
-
 ### Next Steps
 
 Learn how to submit transactions via [Multicall3](how-to-use-multicall3.md) or [Bundle](how-to-use-bundle.md) method to the private mempool.&#x20;

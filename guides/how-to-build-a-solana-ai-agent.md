@@ -5,7 +5,7 @@ description: >-
 icon: message-bot
 ---
 
-# How to Build an AI Agent On Solana
+# How to Build a Solana AI Agent
 
 AI agents are autonomous systems that perform operations or tasks without human intervention.  These agents act independently, as set up by users.  For example, if you set up your agent to send a reminder or a report to your friend, this agent will perform the task on your behalf without your friend knowing that the action was performed by itself.&#x20;
 
@@ -96,7 +96,7 @@ pnpm add @goat-sdk/adapter-langchain @goat-sdk/core @goat-sdk/plugin-jupiter @go
 Create a `.env` file and add the following details:
 
 {% code overflow="wrap" %}
-```
+```bash
 RPC_URL=https://api.devnet.solana.com
 PRIVATE_KEY=your_wallet_private_key
 OPENAI_API_KEY=your_openai_secret_key
