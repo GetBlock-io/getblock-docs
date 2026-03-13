@@ -50,4 +50,4 @@ Once you've created an account and signed in, you'll be directed to the GetBlock
 
 Find your GetBlock user ID located in the ‘Settings’ section or simply click your account icon to view and copy it. Please use it when contacting GetBlock’s team so we can identify your account and help you faster.
 
-<figure><img src="../.gitbook/assets/UserID_settings.svg" alt="How to find GetBlock user ID"><figcaption><p>Where to find the GetBlock user ID</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/getblock_user_id_1.webp" alt="How to find GetBlock user ID"><figcaption><p>Where to find the GetBlock user ID</p></figcaption></figure>

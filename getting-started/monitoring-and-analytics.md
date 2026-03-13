@@ -22,7 +22,7 @@ The Dashboard provides a quick snapshot of key metrics:
 
 ### Detailed statistics
 
-For more detailed analysis, visit the **Statistics** tab in the ‘Endpoints’ section.
+For more detailed analysis, visit the **Statistics** tab in the dashboard.
 
 {% hint style="info" %}
 Customize the data view by **parameters** or by **access** **tokens** using the dropdown menu.
@@ -39,24 +39,27 @@ All data is displayed through infographics, including:
 * Method call distribution
 * Rate limit rejections
 
-<figure><img src="../.gitbook/assets/Docs_stats_charts.svg" alt="The charts visualizing blockchain API usage trends"><figcaption><p>Visual analytics</p></figcaption></figure>
-
 ***
 
-### Notifications
+### Notifications and email communication
 
-GetBlock provides a notification system to help you monitor your usage and subscription status.
+GetBlock provides automated email updates for key account and subscription events:
 
-{% hint style="info" %}
-You can set up alerts for both CU balance and subscription expirations.
+* Account registration
+* Successful order payments (Shared, Dedicated services, and Top-Ups)
+* Start of grace period
+* Subscription expiration&#x20;
+* Dedicated node deployed and activated
+* Recurring payment cancelled
+
+{% hint style="warning" %}
+Email notifications are **delivered only to** **accounts** with a **verified email address** provided during registration.
+
+Users who registered using third-party authentication methods, such as MetaMask login, may not receive email notifications.
 {% endhint %}
 
-Alert types:
+<figure><img src="../.gitbook/assets/email_notifs_1.webp" alt="Managing your blockchain RPC node usage with notifications" width="375"><figcaption></figcaption></figure>
 
-* **Run out of CU:** Notifies you when your CU balance reaches zero.
-* **CU balance alerts**: Warns when remaining CUs drop below specified limits.
-* **Subscription expiration alerts**: Help you renew your dedicated node plans on time.
 
-<figure><img src="../.gitbook/assets/Notifications.svg" alt="Managing your blockchain RPC node usage with notifications"><figcaption></figcaption></figure>
 
-Set up email, Telegram, or Webhook alerts to monitor your usage and subscription status from **Settings** → **Notification Settings.**
+Users can also choose whether to receive marketing communications from GetBlock. This preference can be managed in Account Settings → General by enabling or disabling the “I want to receive marketing offers” option.
