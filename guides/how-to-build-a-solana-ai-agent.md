@@ -16,6 +16,8 @@ In the blockchain context, AI agents can:
 * Monitor wallets and automate transfers
 * Mint NFTs based on social media triggers
 
+{% embed url="https://youtu.be/2AQzYFHsZY0?si=xSn4FlRHOrXjua-G" %}
+
 ### Core Stack of AI Agents
 
 Just like every area of development has its own stack for building applications, AI agent development has its own stack, typically consisting of three layers:
