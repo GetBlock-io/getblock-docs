@@ -74,6 +74,8 @@
 * [How To Build a Base Flashblocks Listener](guides/how-to-build-a-base-flashblocks-listener.md)
 * [How to Build a Solana AI Agent](guides/how-to-build-a-solana-ai-agent.md)
 * [How To Optimize Solana Transactions with Priority Fees](guides/how-to-optimize-solana-transactions-with-priority-fees.md)
+* [What Are Token Extensions](guides/what-are-token-extensions/README.md)
+  * [How to Create Tokens With Metadata On Solana Using Token-2022](guides/what-are-token-extensions/how-to-create-tokens-with-metadata-on-solana-using-token-2022.md)
 * [How To Optimize Solana Transactions With Jito Bundles](guides/how-to-optimize-solana-transactions-with-jito-bundles.md)
 
 ## API REFERENCE

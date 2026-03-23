@@ -68,7 +68,7 @@ eth_sendRawTransaction
 {% endtab %}
 {% endtabs %}
 
-### How to Submit Transaction to Publoc Mempool
+### How to Submit a Transaction to Public Mempool
 
 {% stepper %}
 {% step %}
@@ -110,7 +110,7 @@ Add the following code to `index.js`:
 {% step %}
 ```javascript
 import WebSocket from 'ws';
-import ethers from 'ethers';
+import { ethers } from "ethers";
 import 'dotenv/config';
 
 const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
