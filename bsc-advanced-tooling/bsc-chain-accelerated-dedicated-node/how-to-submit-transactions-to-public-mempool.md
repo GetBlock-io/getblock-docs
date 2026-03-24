@@ -30,7 +30,7 @@ wss://go.getblock.io/<ACCESS_TOKEN>
 
 {% tab title="Method" %}
 ```bash
-eth_sendRawTransaction
+blxr_tx
 ```
 {% endtab %}
 
