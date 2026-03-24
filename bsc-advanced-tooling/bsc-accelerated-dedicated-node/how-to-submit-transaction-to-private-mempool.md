@@ -45,7 +45,7 @@ wss://go.getblock.io/<ACCESS_TOKEN>
 
 {% tab title="Method" %}
 ```bash
-bsc_privateTx
+bsc_private_tx
 ```
 {% endtab %}
 
@@ -61,7 +61,7 @@ bsc_privateTx
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "method": "bsc_privateTx",
+  "method": "bsc_private_tx",
   "params": {
     "transaction": "0xf86c...",
     "mev_builders": ["all"]
@@ -119,7 +119,15 @@ Create a file and name it `index.js`
 {% endstep %}
 
 {% step %}
-Add the following code to `index.js:`
+Create `.env` file and add the following:
+
+{% code overflow="wrap" %}
+```js
+ACCESS_TOKEN=your-accelerated-node-endpoint
+RPC_URL=your-normal-bsc-node-endppoint //e.g https
+PRIVATE_KEY=your-wallet-private-key
+```
+{% endcode %}
 {% endstep %}
 
 {% step %}
@@ -130,8 +138,8 @@ import WebSocket from 'ws';
 import { ethers } from 'ethers';
 import 'dotenv/config';
 
-const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
-const RPC_URL = 'https://bsc-dataseed.binance.org';
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const RPC_URL = process.env.RPC_URL
 ```
 {% endstep %}
 
@@ -170,7 +178,7 @@ ws.on('open', () => {
   ws.send(JSON.stringify({
     jsonrpc: '2.0',
     id: 1,
-    method: 'bsc_privateTx',
+    method: 'bsc_private_tx',
     params: {
       transaction: signedTx,
       mev_builders: ['all']
@@ -196,17 +204,20 @@ ws.on('message', (data) => {
 {% step %}
 Response
 
-```
-```
-{% endstep %}
+{% code overflow="wrap" %}
+```bash
+Wallet: 0xD1AF2dAc4e0a....
+Recipient: 0xd26ea.....
+Amount: 0.001 BNB
+Mode: Private (MEV Protected)
 
-{% step %}
-After confirmation, check the "Internal Transactions" tab on BSCScan:
+Submitting private transaction...
 
+✅ Private transaction submitted!
+TX Hash: 14223ac9adf33b77e4b52e8612dd351517b1bbc5b771567089994a6183f46df2
+BSCScan: https://bscscan.com/tx/14223ac9adf33b77e4b52e8612dd351517b1bbc5b771567089994a6183f46df2
 ```
-Internal TX #1: 0.0005 BNB → 0x6374Ca... (Priority fee)
-Internal TX #2: 0.1 BNB → PancakeSwap (Your swap)
-```
+{% endcode %}
 {% endstep %}
 {% endstepper %}
 
@@ -215,77 +226,84 @@ Internal TX #2: 0.1 BNB → PancakeSwap (Your swap)
 <summary>Complete Example: Private BNB Transfer</summary>
 
 ```javascript
-import WebSocket from 'ws';
-import { ethers } from 'ethers';
-import 'dotenv/config'
+import WebSocket from "ws";
+import { ethers } from "ethers";
+import "dotenv/config";
 
-const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
-const RPC_URL = 'https://bsc-dataseed.binance.org';
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const RPC_URL = process.env.RPC_URL;
 
 async function sendPrivateTransaction(recipient, amountBNB) {
   const provider = new ethers.JsonRpcProvider(RPC_URL);
   const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
-  
-  console.log('Wallet:', wallet.address);
-  console.log('Recipient:', recipient);
-  console.log('Amount:', amountBNB, 'BNB');
-  console.log('Mode: Private (MEV Protected)');
-  
+
+  console.log("Wallet:", wallet.address);
+  console.log("Recipient:", recipient);
+  console.log("Amount:", amountBNB, "BNB");
+  console.log("Mode: Private (MEV Protected)");
+
   // Get nonce
   const nonce = await provider.getTransactionCount(wallet.address);
-  
+
   // Build transaction
   const signedTx = await wallet.signTransaction({
     nonce: nonce,
     to: recipient,
     value: ethers.parseEther(amountBNB),
-    gasPrice: ethers.parseUnits('3', 'gwei'),
+    gasPrice: ethers.parseUnits("3", "gwei"),
     gasLimit: 21000,
-    chainId: 56
+    chainId: 56,
   });
-  
+const signedTxNoPrefix = signedTx.startsWith("0x")
+  ? signedTx.slice(2)
+  : signedTx;
+
+
   // Submit privately
-  const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
-  
+  const ws = new WebSocket(process.env.ACCESS_TOKEN);
+
   return new Promise((resolve, reject) => {
-    ws.on('open', () => {
-      console.log('\nSubmitting private transaction...');
-      
-      ws.send(JSON.stringify({
-        jsonrpc: '2.0',
-        id: 1,
-        method: 'bsc_privateTx',
-        params: {
-          transaction: signedTx,
-          mev_builders: ['all']
-        }
-      }));
+    ws.on("open", () => {
+      console.log("\nSubmitting private transaction...");
+
+      ws.send(
+        JSON.stringify({
+          jsonrpc: "2.0",
+          id: 1,
+          method: "bsc_private_tx",
+          params: {
+            transaction: signedTxNoPrefix,
+            mev_builders: ["all"],
+          },
+        }),
+      );
     });
-    
-    ws.on('message', (data) => {
+
+    ws.on("message", (data) => {
       const response = JSON.parse(data);
       ws.close();
-      
+
       if (response.result) {
-        console.log('\n✅ Private transaction submitted!');
-        console.log('TX Hash:', response.result.txHash);
-        console.log('BSCScan:', `https://bscscan.com/tx/${response.result.txHash}`);
+        console.log("\n✅ Private transaction submitted!");
+        console.log("TX Hash:", response.result.txHash);
+        console.log(
+          "BSCScan:",
+          `https://bscscan.com/tx/${response.result.txHash}`,
+        );
         resolve(response.result.txHash);
       } else {
-        console.error('\n❌ Error:', response.error);
+        console.error("\n❌ Error:", response.error);
         reject(response.error);
       }
     });
-    
-    ws.on('error', reject);
+
+    ws.on("error", reject);
   });
 }
 
 // Usage
-sendPrivateTransaction(
-  '0xRECIPIENT_ADDRESS',
-  '0.1'
-).catch(console.error);
+sendPrivateTransaction(process.env.TO_ADDRESS, "0.001").catch(console.error);
+
 ```
 
 </details>
@@ -299,9 +317,8 @@ import  WebSocket from 'ws';
 import { ethers } from 'ethers';
 import 'dotenv/config';
 
-const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
-const RPC_URL = 'https://bsc-dataseed.binance.org';
-
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const RPC_URL = process.env.RPC_URL;
 const PANCAKE_ROUTER = '0x10ED43C718714eb63d5aA57B78B54704E256024E';
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
 
@@ -352,7 +369,7 @@ async function privateSwap(tokenAddress, amountBNB, minAmountOut) {
       ws.send(JSON.stringify({
         jsonrpc: '2.0',
         id: 1,
-        method: 'bsc_privateTx',
+        method: 'bsc_private_tx',
         params: {
           transaction: signedTx,
           mev_builders: ['all']

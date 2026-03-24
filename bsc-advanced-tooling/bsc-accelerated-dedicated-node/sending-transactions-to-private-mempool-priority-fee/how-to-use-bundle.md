@@ -107,77 +107,84 @@ Set the ES module `"type": "module"` in your `package.json`.
 {% endstep %}
 
 {% step %}
+Create `.env` file and add the following:
+
+{% code overflow="wrap" %}
+```js
+ACCESS_TOKEN=your-accelerated-node-endpoint
+RPC_URL=your-normal-bsc-node-endppoint //e.g https
+PRIVATE_KEY=your-wallet-private-key
+```
+{% endcode %}
+{% endstep %}
+
+{% step %}
 Add the following code to `index.js`:
 
 The following example demonstrates a simple BNB transfer with a priority fee:
 
 {% code overflow="wrap" %}
 ```js
-import WebSocket from 'ws';
-import { ethers } from 'ethers';
-import 'dotenv/config';
-
-const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
-
+import WebSocket from "ws";
+import { ethers } from "ethers";
+import "dotenv/config";
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const RPC_URL = process.env.RPC_URL;
 async function submitBundle() {
-  const provider = new ethers.JsonRpcProvider('https://bsc-dataseed.binance.org');
+  const provider = new ethers.JsonRpcProvider(RPC_URL);
   const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
-  
   // Get the current nonce for your wallet
   const nonce = await provider.getTransactionCount(wallet.address);
-  
   // Transaction 1: First operation
   const tx1 = await wallet.signTransaction({
     nonce: nonce,
     to: DEX_A,
-    value: ethers.parseEther('1.0'),
+    value: ethers.parseEther("0.001"),
     data: buyCalldata,
-    gasPrice: ethers.parseUnits('3', 'gwei'),
+    gasPrice: ethers.parseUnits("3", "gwei"),
     gasLimit: 300000,
-    chainId: 56
+    chainId: 56,
   });
-  
   // Transaction 2: Second operation (must use nonce + 1)
   const tx2 = await wallet.signTransaction({
     nonce: nonce + 1,
     to: DEX_B,
     value: 0,
     data: sellCalldata,
-    gasPrice: ethers.parseUnits('3', 'gwei'),
+    gasPrice: ethers.parseUnits("3", "gwei"),
     gasLimit: 300000,
-    chainId: 56
+    chainId: 56,
   });
-  
   // Connect to the MEV endpoint
-  const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
-  
-  ws.on('open', () => {
-    ws.send(JSON.stringify({
-      jsonrpc: '2.0',
-      id: 1,
-      method: 'mev_sendBundle',
-      params: {
-        transactions: [tx1, tx2],
-        mev_builders: { all: '' },
-        blocks_count: 5
-      }
-    }));
+  const ws = new WebSocket(process.env.ACCESS_TOKEN);
+
+  ws.on("open", () => {
+    ws.send(
+      JSON.stringify({
+        jsonrpc: "2.0",
+        id: 1,
+        method: "mev_sendBundle",
+        params: {
+          transactions: [tx1.slice(2), tx2.slice(2)],
+          mev_builders: { all: "" },
+          blocks_count: 5,
+        },
+      }),
+    );
   });
-  
-  ws.on('message', (data) => {
+  ws.on("message", (data) => {
     const response = JSON.parse(data);
-    
+
     if (response.result) {
-      console.log('Bundle submitted successfully');
-      console.log('Bundle Hash:', response.result.bundleHash);
+      console.log("Bundle submitted successfully");
+      console.log("Bundle Hash:", response.result.bundleHash);
     } else {
-      console.error('Submission failed:', response.error);
+      console.error("Submission failed:", response.error);
     }
-    
+
     ws.close();
   });
 }
-
 submitBundle();
 ```
 {% endcode %}
@@ -220,9 +227,10 @@ Sample response
 ```javascript
 const WebSocket = require('ws');
 const { ethers } = require('ethers');
+import 'dotenv/config';
 
-const API_KEY = 'YOUR_API_KEY';
-const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const RPC_URL= process.env.RPC_URL
 
 // Contract addresses
 const PANCAKE_V2_ROUTER = '0x10ED43C718714eb63d5aA57B78B54704E256024E';
@@ -232,7 +240,7 @@ const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
 const TOKEN = '0xYOUR_TOKEN';
 
 async function arbitrage() {
-  const provider = new ethers.JsonRpcProvider('https://bsc-dataseed.binance.org');
+  const provider = new ethers.JsonRpcProvider(RPC_URL);
   const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
   
   const nonce = await provider.getTransactionCount(wallet.address);
@@ -285,7 +293,7 @@ async function arbitrage() {
   });
   
   // Submit the bundle
-  const ws = new WebSocket(`wss://bsc.getblock.io/mev/ws?api_key=${API_KEY}`);
+  const ws = new WebSocket(process.env.ACCESS_TOKEN);
   
   return new Promise((resolve, reject) => {
     ws.on('open', () => {
@@ -320,8 +328,6 @@ async function arbitrage() {
 arbitrage();
 ```
 {% endcode %}
-
-
 
 </details>
 

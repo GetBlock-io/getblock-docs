@@ -103,5 +103,5 @@ const calls = [
 
 ### Conclusion
 
-This is the simplest method to add tips to private transactions by batching multiple operations into a single transaction with atomic execution. \
+This is the simplest method for adding tips to private transactions: batch multiple operations into a single transaction with atomic execution. \
 This is very good and highly recommended for day-to-day activities like sending transactions or DEX swaps. &#x20;

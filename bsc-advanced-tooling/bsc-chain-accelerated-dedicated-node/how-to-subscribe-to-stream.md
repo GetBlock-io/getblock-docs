@@ -21,7 +21,7 @@ Here, you will be checking if you are connected to streams
 {% tabs %}
 {% tab title="Endpoint" %}
 ```bash
-wss://go.getblock.asia/<ACCESS_TOKEN>
+wss://go.getblock.io/<ACCESS_TOKEN>
 ```
 {% endtab %}
 

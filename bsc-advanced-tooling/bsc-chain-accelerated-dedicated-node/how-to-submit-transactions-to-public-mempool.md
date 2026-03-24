@@ -51,7 +51,7 @@ eth_sendRawTransaction
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "method": "eth_sendRawTransaction",
+  "method": "blxr_tx",
   "params": ["0x<signed_transaction_hex>"]
 }
 ```
@@ -104,17 +104,27 @@ Set the ES module `"type": "module"` in your `package.json`.
 {% endstep %}
 
 {% step %}
+Create `.env` file and add the following:
+
+{% code overflow="wrap" %}
+```js
+ACCESS_TOKEN=your-accelerated-node-endpoint
+RPC_URL=your-normal-bsc-node-endppoint //e.g https
+PRIVATE_KEY=your-wallet-private-key
+TO_ADDRESS=the-receiver-address
+```
+{% endcode %}
+{% endstep %}
+
+{% step %}
 Add the following code to `index.js`:
 {% endstep %}
 
 {% step %}
 ```javascript
-import WebSocket from 'ws';
+import WebSocket from "ws";
 import { ethers } from "ethers";
-import 'dotenv/config';
-
-const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
-const RPC_URL = 'https://bsc-dataseed.binance.org';
+import "dotenv/config";
 ```
 {% endstep %}
 
@@ -122,24 +132,27 @@ const RPC_URL = 'https://bsc-dataseed.binance.org';
 Create and Sign Your Transaction
 
 ```javascript
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const RPC_URL = process.env.RPC_URL;
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
 // Get current nonce
 const nonce = await provider.getTransactionCount(wallet.address);
-
 // Build transaction
 const tx = {
   nonce: nonce,
-  to: '0xRECIPIENT_ADDRESS',
-  value: ethers.parseEther('0.1'),
-  gasPrice: ethers.parseUnits('3', 'gwei'),  // Minimum 3 gwei for BSC
+  to: process.env.TO_ADDRESS,
+  value: ethers.parseEther("0.001"),
+  gasPrice: ethers.parseUnits("3", "gwei"), // Minimum 3 gwei for BSC
   gasLimit: 21000,
-  chainId: 56  // BSC Mainnet
+  chainId: 56, // BSC Mainnet
 };
-
 // Sign transaction
-const signedTx = await wallet.signTransaction(tx);
+const signedTx = await wallet.signTransaction(tx); 
+const signedTxNoPrefix = signedTx.startsWith("0x")
+  ? signedTx.slice(2)
+  : signedTx;
 ```
 {% endstep %}
 
@@ -147,27 +160,26 @@ const signedTx = await wallet.signTransaction(tx);
 Submit via WebSocket
 
 ```javascript
-const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
-ws.on('open', () => {
-  ws.send(JSON.stringify({
-    jsonrpc: '2.0',
-    id: 1,
-    method: 'eth_sendRawTransaction',
-    params: [signedTx]
-  }));
+const ws = new WebSocket(process.env.ACCESS_TOKEN);
+ws.on("open", () => {
+  ws.send(
+    JSON.stringify({
+      jsonrpc: "2.0",
+      id: 1,
+      method: "blxr_tx",
+      params: {"transaction": signedTxNoPrefix},
+    }),
+  );
 });
-
-ws.on('message', (data) => {
+ws.on("message", (data) => {
   const response = JSON.parse(data);
-  
-  if (response.result) {
-    console.log('✅ Transaction submitted!');
-    console.log('TX Hash:', response.result);
-    console.log('BSCScan:', `https://bscscan.com/tx/${response.result}`);
-  } else if (response.error) {
-    console.error('❌ Error:', response.error.message);
+  if (response.result?.txHash) {
+  const hash = response.result.txHash;
+  console.log("TX Hash:", hash);
+  console.log(`https://bscscan.com/tx/${hash}`);
+} else if (response.error) {
+    console.error("❌ Error:", response.error.message);
   }
-  
   ws.close();
 });
 ```
@@ -176,7 +188,10 @@ ws.on('message', (data) => {
 {% step %}
 Response
 
-```
+```bash
+01f86c380384b2d05e0082520894d26ea0f03100358b2ebd4c9638f042aada9a1bcf87038d7ea4c6800080c001a04647f98754480337ae409bcc225f2d62b706b47f31385221421cea20e41080b0a03ae32f07bb7110c4153c2ab121c152db7d3030d54cc0c5341f0b75b20e3d439d
+TX Hash: 00d4fe2db5c667ce549318cf621913af1bcb130022ec51020cbb6cae2b7eedce
+https://bscscan.com/tx/00d4fe2db5c667ce549318cf621913af1bcb130022ec51020cbb6cae2b7eedce
 ```
 {% endstep %}
 {% endstepper %}
@@ -186,82 +201,62 @@ Response
 <summary>Complete Example: BNB Transfer</summary>
 
 ```javascript
-import WebSocket from 'ws';
-import { ethers } from 'ethers';
-import 'dotenv/config'
+import WebSocket from "ws";
+import { ethers } from "ethers";
+import "dotenv/config";
 
-const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
-const RPC_URL = 'https://bsc-dataseed.binance.org';
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const RPC_URL = process.env.RPC_URL;
+const provider = new ethers.JsonRpcProvider(RPC_URL);
+const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
-async function sendPublicTransaction(recipient, amountBNB) {
-  const provider = new ethers.JsonRpcProvider(RPC_URL);
-  const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
-  
-  console.log('Wallet:', wallet.address);
-  console.log('Recipient:', recipient);
-  console.log('Amount:', amountBNB, 'BNB');
-  
-  // Get nonce
-  const nonce = await provider.getTransactionCount(wallet.address);
-  
-  // Build transaction
-  const tx = {
-    nonce: nonce,
-    to: recipient,
-    value: ethers.parseEther(amountBNB),
-    gasPrice: ethers.parseUnits('3', 'gwei'),
-    gasLimit: 21000,
-    chainId: 56
-  };
-  
-  // Sign transaction
-  const signedTx = await wallet.signTransaction(tx);
-  console.log('\nTransaction signed');
-  
-  // Submit via BDN
-const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
-  
-  return new Promise((resolve, reject) => {
-    ws.on('open', () => {
-      console.log('Submitting to BDN...');
-      
-      ws.send(JSON.stringify({
-        jsonrpc: '2.0',
-        id: 1,
-        method: 'eth_sendRawTransaction',
-        params: [signedTx]
-      }));
-    });
-    
-    ws.on('message', (data) => {
-      const response = JSON.parse(data);
-      ws.close();
-      
-      if (response.result) {
-        console.log('\n✅ Transaction submitted!');
-        console.log('TX Hash:', response.result);
-        console.log('BSCScan:', `https://bscscan.com/tx/${response.result}`);
-        resolve(response.result);
-      } else {
-        console.error('\n❌ Error:', response.error);
-        reject(response.error);
-      }
-    });
-    
-    ws.on('error', (err) => {
-      reject(err);
-    });
-  });
-}
 
-// Usage
-sendPublicTransaction(
-  '0xRECIPIENT_ADDRESS',
-  '0.1'  // 0.1 BNB
-).catch(console.error);
+// Get current nonce
+const nonce = await provider.getTransactionCount(wallet.address);
+
+// Build transaction
+const tx = {
+  nonce: nonce,
+  to: "0xd26ea0f03100358b2Ebd4c9638f042aAda9a1BcF",
+  value: ethers.parseEther("0.001"),
+  gasPrice: ethers.parseUnits("3", "gwei"), // Minimum 3 gwei for BSC
+  gasLimit: 21000,
+  chainId: 56, // BSC Mainnet
+};
+
+// Sign transaction
+const signedTx = await wallet.signTransaction(tx); // e.g. "0xabcdef..."
+const signedTxNoPrefix = signedTx.startsWith("0x")
+  ? signedTx.slice(2)
+  : signedTx;
+
+console.log(signedTxNoPrefix);
+
+const ws = new WebSocket(process.env.ACCESS_TOKEN);
+ws.on("open", () => {
+  ws.send(
+    JSON.stringify({
+      jsonrpc: "2.0",
+      id: 1,
+      method: "blxr_tx",
+      params: {"transaction": signedTxNoPrefix},
+    }),
+  );
+});
+
+ws.on("message", (data) => {
+  const response = JSON.parse(data);
+  if (response.result?.txHash) {
+  const hash = response.result.txHash;
+  console.log("TX Hash:", hash);
+  console.log(`https://bscscan.com/tx/${hash}`);
+} else if (response.error) {
+    console.error("❌ Error:", response.error.message);
+  }
+
+  ws.close();
+});
 ```
-
-
 
 </details>
 
@@ -274,8 +269,8 @@ import WebSocket from 'ws';
 import { ethers } from 'ethers';
 import 'dotenv/config';
 
-const PRIVATE_KEY = 'YOUR_PRIVATE_KEY';
-const RPC_URL = 'https://bsc-dataseed.binance.org';
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const RPC_URL = process.env.RPC_URL;
 
 const PANCAKE_ROUTER = '0x10ED43C718714eb63d5aA57B78B54704E256024E';
 const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
@@ -315,6 +310,9 @@ async function swapBNBForToken(tokenAddress, amountBNB, minAmountOut) {
   
   // Sign transaction
   const signedTx = await wallet.signTransaction(tx);
+  const signedTxNoPrefix = signedTx.startsWith("0x")
+ ? signedTx.slice(2)
+ : signedTx;
   
   console.log('Swap details:');
   console.log('  Amount:', amountBNB, 'BNB');
@@ -329,8 +327,8 @@ async function swapBNBForToken(tokenAddress, amountBNB, minAmountOut) {
       ws.send(JSON.stringify({
         jsonrpc: '2.0',
         id: 1,
-        method: 'eth_sendRawTransaction',
-        params: [signedTx]
+        method: "blxr_tx",
+        params: {"transaction": signedTxNoPrefix},
       }));
     });
     
@@ -350,15 +348,13 @@ async function swapBNBForToken(tokenAddress, amountBNB, minAmountOut) {
   });
 }
 
-// Usage: Swap 0.1 BNB for BUSD
+// Usage: Swap 0.001 BNB for BUSD
 swapBNBForToken(
   '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',  // BUSD
-  '0.1',                                          // 0.1 BNB
+  '0.001',                                          // 0.001 BNB
   ethers.parseEther('50')                         // Min 50 BUSD
 ).catch(console.error);
 ```
-
-
 
 </details>
 
