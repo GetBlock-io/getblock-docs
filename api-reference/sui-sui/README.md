@@ -6,13 +6,21 @@ description: >-
 
 # Sui (SUI)
 
-S is a high-performance Layer 1 blockchain designed for low-latency, high-throughput applications. Built by Mysten Labs using the Move programming language, SUI features a unique object-centric data model that enables parallel transaction execution. The network achieves sub-second finality through its innovative Narwhal and Bullshark (transitioning to Mysticeti) consensus mechanism, making it ideal for gaming, DeFi, and real-time applications.
+SUI is a high-performance Layer 1 blockchain designed for low-latency, high-throughput applications. Built by Mysten Labs using the Move programming language, SUI features a unique object-centric data model that enables parallel transaction execution. The network achieves sub-second finality through its innovative Narwhal and Bullshark (transitioning to Mysticeti) consensus mechanism, making it ideal for gaming, DeFi, and real-time applications.
+
+{% hint style="warning" %}
+**JSON RPC is deprecated. Migrate to gRPC, as JSON-RPC will be fully deactivated by July 2026.** \
+\
+**Why gPRC?**
+
+gRPC (Google Remote Procedure Call) is a modern, high-performance protocol that uses [Protocol Buffers ](https://protobuf.dev/overview/)for fast, compact data serialization. It offers strongly typed interfaces, built-in streaming support, and significantly better performance than JSON-RPC — making it ideal for indexers, trading bots, and data-intensive applications.
+{% endhint %}
 
 ### Key Features
 
 * **Object-Centric Model**: Unique architecture where everything is an object with ownership properties
 * **Move Programming Language**: Rust-based, asset-oriented smart contract language with built-in safety
-* **Parallel Transaction Execution**: Independent transactions processed simultaneously for high throughput
+* **Parallel Transaction Execution**: Independent transactions are processed simultaneously for high throughput
 * **Sub-Second Finality**: \~400ms average transaction finality with Mysticeti consensus
 * **Horizontal Scalability**: Designed for 100,000+ TPS through parallel processing
 * **SUI Native Token**: Uses SUI for gas fees, staking, and governance (9 decimals, smallest unit: MIST)
@@ -23,292 +31,485 @@ S is a high-performance Layer 1 blockchain designed for low-latency, high-throug
 {% hint style="info" %}
 _TECHNICAL DISCLAIMER: AUTHORITATIVE JSON-RPC API SPECIFICATION._
 
-_GetBlock's RPC API reference documentation is provided exclusively for informational purposes and streamlined developer experience optimization. The canonical and normative specification for SUI JSON-RPC methods is solely maintained and published through the official SUI documentation portal at_ [_docs.sui.io_](https://docs.sui.io/)_. This resource constitutes the sole authoritative reference implementation of the JSON-RPC 2.0 protocol interface for SUI network clients._
+_GetBlock's RPC API reference documentation is provided exclusively for informational purposes and to streamline the developer experience. The canonical and normative specification for SUI gRPC methods is solely maintained and published through the official SUI documentation portal at_ [_docs.sui.io_](https://docs.sui.io/)_. This resource constitutes the sole authoritative reference implementation of the gRPC protocol interface for SUI network clients._
 {% endhint %}
 
 ## Network Information
 
-| Property        | Value                               |
-| --------------- | ----------------------------------- |
-| Network Name    | SUI Mainnet                         |
-| Chain ID        | 101                                 |
-| Native Currency | SUI                                 |
-| Decimals        | 9 (1 SUI = 1,000,000,000 MIST)      |
-| RPC URL         | https://fullnode.mainnet.sui.io:443 |
-| Consensus       | Narwhal & Mysticeti                 |
-| Block Time      | Sub-second (\~400ms finality)       |
-| Smart Contracts | Move Language                       |
+| Property        | Value                          |
+| --------------- | ------------------------------ |
+| Network Name    | SUI Mainnet                    |
+| Chain ID        | 101                            |
+| Native Currency | SUI                            |
+| Decimals        | 9 (1 SUI = 1,000,000,000 MIST) |
+| gRPC Port       | 443 (TLS)                      |
+| Protocol        | gRPC with Protocol Buffers     |
 
 ## Base URL
 
-{% tabs %}
-{% tab title="Frankfurt, Germany" %}
-```bash
-https://go.getblock.io
-```
-{% endtab %}
-
-{% tab title="New York, USA" %}
-```bash
-https://go.getblock.us
-```
-{% endtab %}
-{% endtabs %}
+| Location           | gRPC Endpoint             |
+| ------------------ | ------------------------- |
+| Frankfurt, Germany | `https://go.getblock.io/` |
 
 ## Supported Networks
 
-| Network | Chain ID | JSON RPC |
-| ------- | -------- | -------- |
-| Mainnet | 101      | ✅        |
+| Network | Chain ID | gRPC |
+| ------- | -------: | ---- |
+| Mainnet |      101 | ✅    |
 
 ## Quickstart
 
-In this section, you will learn how to make your first call with either:
-
-* Axios
-* Python
+In this section, you will learn how to make your first gRPC call using TypeScript/Node.js.
 
 {% hint style="warning" %}
-Before you begin, you must have already installed `npm` or `yarn` on your local machine (for the Axios example) or Python and pip (for the Python example).
+You must have `npm` or `yarn` installed on your local machine.
 
-Refer to:
-
-* [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-* [yarn](https://classic.yarnpkg.com/lang/en/docs/install)
+* [npm installation guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* [yarn installation guide](https://classic.yarnpkg.com/lang/en/docs/install)
 {% endhint %}
+
+### Quickstart with TypeScript/Node.js
 
 {% stepper %}
 {% step %}
-### Quickstart with Axios
-
-#### 1. Set up the project
+### Set up the project
 
 Create and initialize a new project:
 
 ```bash
-mkdir sui-api-quickstart
-cd sui-api-quickstart
+mkdir sui-grpc-quickstart
+cd sui-grpc-quickstart
 npm init --yes
-```
-
-#### Install Axios
-
-```bash
-npm install axios
-```
-
-#### 2. Create file
-
-Create a new file named `index.js`. This is where you will make your first call.
-
-#### 3. Set ES module type
-
-Set the ES module `"type": "module"` in your `package.json`.
-
-#### 4. Add code
-
-Add the following code to `index.js`:
-
-{% code title="index.js" %}
-```javascript
-import axios from 'axios';
-
-const data = JSON.stringify({
-    "jsonrpc": "2.0",
-    "method": "sui_getLatestCheckpointSequenceNumber",
-    "params": [],
-    "id": "getblock.io"
-});
-
-const config = {
-    method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    data: data
-};
-
-axios(config)
-    .then(response => console.log(JSON.stringify(response.data)))
-    .catch(error => console.log(error));
-```
-{% endcode %}
-
-Replace `<ACCESS-TOKEN>` with your actual access token from GetBlock.
-
-#### 5. Run the script
-
-```bash
-node index.js
-```
-
-Expected output (example):
-
-```json
-{
-    "jsonrpc": "2.0",
-    "id": "getblock.io",
-    "result": "231610955"
-}
 ```
 {% endstep %}
 
 {% step %}
-### Quickstart with Python and Requests
-
-#### 1. Set up the project directory
+### Install dependencies
 
 ```bash
-mkdir sui-api-quickstart
-cd sui-api-quickstart
+npm install @grpc/grpc-js @grpc/proto-loader
+npm install -D typescript ts-node @types/node
 ```
+{% endstep %}
 
-#### 2. Create and activate a virtual environment
+{% step %}
+### Initialize TypeScript
 
 ```bash
-python -m venv venv
-source venv/bin/activate
-
-# On Windows, use venv\Scripts\activate
+npx tsc --init
 ```
+{% endstep %}
 
-#### 3. Install requests
+{% step %}
+### Download proto files
+
+Clone the official SUI proto files:
 
 ```bash
-pip install requests
+git clone https://github.com/MystenLabs/sui-apis.git protos
 ```
 
-#### 4. Create script
+Your folder structure should look like:
 
-Create a file called `main.py` with the following content:
+```
+sui-grpc-quickstart/
+├── protos/
+│   └── proto/
+│       ├── google/
+│       │   ├── protobuf/
+│       │   └── rpc/
+│       └── sui/
+│           └── rpc/
+│               └── v2/
+│                   ├── ledger_service.proto
+│                   ├── state_service.proto
+│                   └── ...
+├── index.ts
+├── package.json
+└── tsconfig.json
+```
+{% endstep %}
 
-{% code title="main.py" %}
-```python
-import requests
-import json
+{% step %}
+### Create the client file
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+Create a new file named `index.ts`:
 
-payload = json.dumps({
-    "jsonrpc": "2.0",
-    "method": "sui_getLatestCheckpointSequenceNumber",
-    "params": [],
-    "id": "getblock.io"
-})
+{% code overflow="wrap" %}
+```typescript
+import * as grpc from '@grpc/grpc-js';
+import * as protoLoader from '@grpc/proto-loader';
+import * as path from 'path';
 
-headers = {
-    'Content-Type': 'application/json'
+// Path to the proto file
+const PROTO_PATH = path.join(__dirname, 'protos/proto/sui/rpc/v2/ledger_service.proto');
+
+// Load proto definitions
+const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
+    keepCase: true,
+    longs: String,
+    enums: String,
+    defaults: true,
+    oneofs: true,
+    includeDirs: [path.join(__dirname, 'protos/proto')],
+});
+
+const suiProto = grpc.loadPackageDefinition(packageDefinition) as any;
+const LedgerService = suiProto.sui.rpc.v2.LedgerService;
+
+// GetBlock gRPC endpoint — access token is part of the URL path
+const ACCESS_TOKEN = "<ACCESS_TOKEN>";
+const GETBLOCK_GRPC_URL = `go.getblock.io:443`;
+
+// Create metadata with access token
+const metadata = new grpc.Metadata();
+metadata.add('x-api-key', ACCESS_TOKEN);
+
+// Create gRPC client with TLS
+const client = new LedgerService(
+    GETBLOCK_GRPC_URL,
+    grpc.credentials.createSsl()
+);
+
+// Example 1: Get Service Info
+function getServiceInfo(): Promise<any> {
+    return new Promise((resolve, reject) => {
+        client.GetServiceInfo({}, metadata, (err: any, response: any) => {
+            if (err) reject(err);
+            else resolve(response);
+        });
+    });
 }
 
-response = requests.post(url, headers=headers, data=payload)
-print(response.text)
+// Example 2: Get Checkpoint
+function getCheckpoint(sequenceNumber: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const request = {
+            sequence_number: sequenceNumber,
+            read_mask: {
+                paths: ['sequence_number', 'digest', 'summary']
+            }
+        };
+        client.GetCheckpoint(request, metadata, (err: any, response: any) => {
+            if (err) reject(err);
+            else resolve(response);
+        });
+    });
+}
+
+// Example 3: Get Transaction
+function getTransaction(digest: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const request = {
+            digest: digest,
+            read_mask: {
+                paths: ['digest', 'effects', 'events']
+            }
+        };
+        client.GetTransaction(request, metadata, (err: any, response: any) => {
+            if (err) reject(err);
+            else resolve(response);
+        });
+    });
+}
+
+// Main function
+async function main() {
+    try {
+        // Get service info
+        console.log('📡 Fetching service info...\n');
+        const serviceInfo = await getServiceInfo();
+        console.log('Service Info:', JSON.stringify(serviceInfo, null, 2));
+
+        // Get latest checkpoint
+        console.log('\n📦 Fetching checkpoint #1000...\n');
+        const checkpoint = await getCheckpoint('1000');
+        console.log('Checkpoint:', JSON.stringify(checkpoint, null, 2));
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+main();
 ```
 {% endcode %}
 
-Replace `<ACCESS-TOKEN>` with your actual access token from GetBlock.
+Replace `<ACCESS-TOKEN>` with your actual GetBlock access token.
+{% endstep %}
 
-#### 5. Run the script
+{% step %}
+### Update `tsconfig.json`
+
+Ensure your `tsconfig.json` has these settings:
+
+{% code overflow="wrap" %}
+```json
+{
+  "compilerOptions": {
+     "target": "ES2020",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "types": [],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  }
+}
+```
+{% endcode %}
+{% endstep %}
+
+{% step %}
+### Run the script
 
 ```bash
-python main.py
+npx ts-node index.ts
+```
+
+**Expected output:**
+
+```json
+📡 Fetching service info...
+
+Service Info: {
+  "chain_id": "4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S",
+  "chain": "mainnet",
+  "epoch": "758",
+  "checkpoint_height": "231612345",
+  "lowest_available_checkpoint": "0",
+  "server": "sui-node/1.45.0"
+}
+
+📦 Fetching checkpoint #1000...
+
+Checkpoint: {
+  "checkpoint": {
+    "sequence_number": "1000",
+    "digest": "8Jq2xK...",
+    "summary": { ... }
+  }
+}
 ```
 {% endstep %}
 {% endstepper %}
 
-## Available API Methods
+## More Examples
 
-GetBlock provides access to standard SUI JSON-RPC methods for the SUI network.
+### Get Balance (StateService)
 
-#### Coin Query Methods
+To query balances, use the `StateService`:
 
-| Method                | Description                                |
-| --------------------- | ------------------------------------------ |
-| suix\_getBalance      | Returns balance for a specific coin type   |
-| suix\_getAllBalances  | Returns all coin balances for an address   |
-| suix\_getAllCoins     | Returns all coin objects owned by address  |
-| suix\_getCoins        | Returns coins of specific type for address |
-| suix\_getCoinMetadata | Returns coin metadata (symbol, decimals)   |
-| suix\_getTotalSupply  | Returns total supply for a coin type       |
+```typescript
+import * as grpc from '@grpc/grpc-js';
+import * as protoLoader from '@grpc/proto-loader';
+import * as path from 'path';
 
-#### Read Methods
+const PROTO_PATH = path.join(__dirname, 'protos/proto/sui/rpc/v2/state_service.proto');
 
-| Method                                 | Description                           |
-| -------------------------------------- | ------------------------------------- |
-| sui\_getObject                         | Returns object data by ID             |
-| sui\_multiGetObjects                   | Returns multiple objects by IDs       |
-| sui\_getTransactionBlock               | Returns transaction by digest         |
-| sui\_multiGetTransactionBlocks         | Returns multiple transactions         |
-| sui\_getChainIdentifier                | Returns chain genesis identifier      |
-| sui\_getCheckpoint                     | Returns checkpoint by sequence number |
-| sui\_getCheckpoints                    | Returns paginated checkpoints         |
-| sui\_getLatestCheckpointSequenceNumber | Returns latest checkpoint number      |
-| sui\_getTotalTransactionBlocks         | Returns total transaction count       |
-| sui\_getEvents                         | Returns events for a transaction      |
-| sui\_getProtocolConfig                 | Returns protocol configuration        |
-| sui\_tryGetPastObject                  | Returns object at specific version    |
-| sui\_tryMultiGetPastObjects            | Returns multiple past objects         |
+const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
+    keepCase: true,
+    longs: String,
+    enums: String,
+    defaults: true,
+    oneofs: true,
+    includeDirs: [path.join(__dirname, 'protos/proto')],
+});
 
-#### Extended Query Methods
+const suiProto = grpc.loadPackageDefinition(packageDefinition) as any;
+const StateService = suiProto.sui.rpc.v2.StateService;
 
-| Method                          | Description                       |
-| ------------------------------- | --------------------------------- |
-| suix\_getOwnedObjects           | Returns objects owned by address  |
-| suix\_getDynamicFields          | Returns dynamic fields of object  |
-| suix\_getDynamicFieldObject     | Returns specific dynamic field    |
-| suix\_queryEvents               | Queries events with filters       |
-| suix\_queryTransactionBlocks    | Queries transactions with filters |
-| suix\_resolveNameServiceAddress | Resolves SuiNS name to address    |
-| suix\_resolveNameServiceNames   | Resolves address to SuiNS names   |
+const GETBLOCK_GRPC_URL = 'grpc.getblock.io:443';
+const API_KEY = '<ACCESS-TOKEN>';
 
-#### Governance Methods
+const metadata = new grpc.Metadata();
+metadata.add('x-api-key', API_KEY);
 
-| Method                        | Description                      |
-| ----------------------------- | -------------------------------- |
-| suix\_getCommitteeInfo        | Returns validator committee info |
-| suix\_getLatestSuiSystemState | Returns system state object      |
-| suix\_getReferenceGasPrice    | Returns current gas price        |
-| suix\_getStakes               | Returns stakes for an address    |
-| suix\_getStakesByIds          | Returns stakes by object IDs     |
-| suix\_getValidatorsApy        | Returns validator APY data       |
+const client = new StateService(
+    GETBLOCK_GRPC_URL,
+    grpc.credentials.createSsl()
+);
 
-#### Move Utils Methods
+// Get SUI balance for an address
+function getBalance(owner: string, coinType: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const request = {
+            owner: owner,
+            coin_type: coinType
+        };
+        client.GetBalance(request, metadata, (err: any, response: any) => {
+            if (err) reject(err);
+            else resolve(response);
+        });
+    });
+}
 
-| Method                                 | Description                     |
-| -------------------------------------- | ------------------------------- |
-| sui\_getMoveFunctionArgTypes           | Returns function argument types |
-| sui\_getNormalizedMoveFunction         | Returns function definition     |
-| sui\_getNormalizedMoveModule           | Returns module definition       |
-| sui\_getNormalizedMoveModulesByPackage | Returns all modules in package  |
-| sui\_getNormalizedMoveStruct           | Returns struct definition       |
+async function main() {
+    const balance = await getBalance(
+        '0x94096a6a54129234237759c66e6ef1037224fb3102a0ae29d33b490281c8e4d5',
+        '0x2::sui::SUI'
+    );
+    console.log('Balance:', JSON.stringify(balance, null, 2));
+}
 
-#### Write Methods
+main();
+```
 
-| Method                          | Description                     |
-| ------------------------------- | ------------------------------- |
-| sui\_executeTransactionBlock    | Executes signed transaction     |
-| sui\_dryRunTransactionBlock     | Simulates transaction execution |
-| sui\_devInspectTransactionBlock | Dev-mode transaction testing    |
+### List Owned Objects
 
-#### Subscription Methods (WebSocket)
+```typescript
+function listOwnedObjects(owner: string, pageSize: number = 10): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const request = {
+            owner: owner,
+            page_size: pageSize,
+            read_mask: {
+                paths: ['object_id', 'version', 'object_type']
+            }
+        };
+        client.ListOwnedObjects(request, metadata, (err: any, response: any) => {
+            if (err) reject(err);
+            else resolve(response);
+        });
+    });
+}
+```
 
-| Method                     | Description                      |
-| -------------------------- | -------------------------------- |
-| suix\_subscribeEvent       | Subscribes to event stream       |
-| suix\_subscribeTransaction | Subscribes to transaction stream |
+### Get Coin Info
+
+```typescript
+function getCoinInfo(coinType: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const request = {
+            coin_type: coinType
+        };
+        client.GetCoinInfo(request, metadata, (err: any, response: any) => {
+            if (err) reject(err);
+            else resolve(response);
+        });
+    });
+}
+
+// Usage
+const coinInfo = await getCoinInfo('0x2::sui::SUI');
+console.log('Coin Info:', coinInfo);
+```
+
+## Available gRPC Services & Methods
+
+### LedgerService
+
+| Method                 | Description                                         |
+| ---------------------- | --------------------------------------------------- |
+| `GetServiceInfo`       | Returns node info (chain, epoch, checkpoint height) |
+| `GetObject`            | Returns object data by ID                           |
+| `BatchGetObjects`      | Returns multiple objects by IDs                     |
+| `GetTransaction`       | Returns transaction by digest                       |
+| `BatchGetTransactions` | Returns multiple transactions                       |
+| `GetCheckpoint`        | Returns checkpoint by sequence number or digest     |
+| `GetEpoch`             | Returns epoch information                           |
+
+### StateService
+
+| Method              | Description                                      |
+| ------------------- | ------------------------------------------------ |
+| `GetCoinInfo`       | Returns coin metadata (symbol, decimals, supply) |
+| `GetBalance`        | Returns balance for address and coin type        |
+| `ListBalances`      | Returns all balances for an address              |
+| `ListOwnedObjects`  | Returns objects owned by an address              |
+| `ListDynamicFields` | Returns dynamic fields of an object              |
+
+### TransactionExecutionService
+
+| Method                | Description                               |
+| --------------------- | ----------------------------------------- |
+| `ExecuteTransaction`  | Submits and executes a signed transaction |
+| `SimulateTransaction` | Dry-runs a transaction without execution  |
+
+### SubscriptionService
+
+| Method                 | Description                     |
+| ---------------------- | ------------------------------- |
+| `SubscribeCheckpoints` | Streams live checkpoint updates |
+
+### MovePackageService
+
+| Method        | Description                      |
+| ------------- | -------------------------------- |
+| `GetPackage`  | Returns Move package metadata    |
+| `GetFunction` | Returns Move function definition |
+
+### NameService
+
+| Method          | Description                          |
+| --------------- | ------------------------------------ |
+| `ResolveName`   | Resolves SuiNS name to address       |
+| `LookupAddress` | Reverse lookup address to SuiNS name |
+
+## Field Masks
+
+Use `read_mask` to request only the fields you need:
+
+```typescript
+const request = {
+    sequence_number: '1000',
+    read_mask: {
+        paths: ['sequence_number', 'digest', 'summary', 'transactions']
+    }
+};
+```
+
+Use `*` to get all fields:
+
+```typescript
+const request = {
+    sequence_number: '1000',
+    read_mask: {
+        paths: ['*']
+    }
+};
+```
+
+## Error Handling
+
+```typescript
+try {
+    const result = await getCheckpoint('1000');
+    console.log(result);
+} catch (error: any) {
+    if (error.code === grpc.status.NOT_FOUND) {
+        console.error('Checkpoint not found');
+    } else if (error.code === grpc.status.UNAUTHENTICATED) {
+        console.error('Invalid API key');
+    } else {
+        console.error('gRPC Error:', error.message);
+    }
+}
+```
 
 ## Support
 
 For technical support and questions:
 
-* Support: [support@getblock.io](mailto:support@getblock.io)
+* **Support Email**: [support@getblock.io](mailto:support@getblock.io)
 
 ## See Also
 
+* [Sui gRPC Documentation](https://docs.sui.io/concepts/data-access/grpc-overview)
+* [Official Proto Files (sui-apis)](https://github.com/MystenLabs/sui-apis)
 * [Sui Developer Documentation](https://docs.sui.io/)
-* [Sui Block Explorer - SuiScan](https://suiscan.xyz/)
-* [Sui Block Explorer - SuiVision](https://suivision.xyz/)
-* [Sui Bridge](https://bridge.sui.io/)
 * [Sui TypeScript SDK](https://sdk.mystenlabs.com/typescript)
+* [Protocol Buffers Documentation](https://protobuf.dev/)
+* [Sui Bridge](https://bridge.sui.io/)
 * [Sui Rust SDK](https://docs.sui.io/references/rust-sdk)
 * [Move Language Documentation](https://move-language.github.io/move/)

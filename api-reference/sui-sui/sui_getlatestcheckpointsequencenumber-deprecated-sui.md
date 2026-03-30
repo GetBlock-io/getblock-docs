@@ -1,13 +1,13 @@
 ---
 description: >-
-  Example code for the sui_getTotalTransactionBlocks JSON-RPC method. Complete
-  guide on how to use sui_getTotalTransactionBlocks JSON-RPC in GetBlock Web3
-  documentation.
+  Example code for the sui_getLatestCheckpointSequenceNumber JSON-RPC method.
+  Complete guide on how to use sui_getLatestCheckpointSequenceNumber JSON-RPC in
+  GetBlock Web3 documentation.
 ---
 
-# sui\_getTotalTransactionBlocks - Sui
+# sui\_getLatestCheckpointSequenceNumber{deprecated} - Sui
 
-This method returns the total number of transactions known to the server on the SUI network. This cumulative count includes all transactions processed since genesis and provides a key metric for network activity and throughput analysis.
+This method returns the sequence number of the latest checkpoint that has been executed on the SUI network. This provides a quick way to determine the current height of the blockchain without fetching full checkpoint data. It's useful for monitoring network progress and synchronization status.
 
 {% include "../../.gitbook/includes/this-method-is-deprecated.md" %}
 
@@ -17,9 +17,9 @@ This method returns the total number of transactions known to the server on the 
 
 ## Returns
 
-| Field  | Type   | Description                        |
-| ------ | ------ | ---------------------------------- |
-| result | string | Total number of transaction blocks |
+| Field  | Type   | Description                           |
+| ------ | ------ | ------------------------------------- |
+| result | string | The latest checkpoint sequence number |
 
 ## Request Example
 
@@ -31,7 +31,7 @@ curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 -d '{
   "jsonrpc": "2.0",
   "id": "getblock.io",
-  "method": "sui_getTotalTransactionBlocks",
+  "method": "sui_getLatestCheckpointSequenceNumber",
   "params": []
 }'
 ```
@@ -46,7 +46,7 @@ const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
 const payload = {
   jsonrpc: '2.0',
   id: 'getblock.io',
-  method: 'sui_getTotalTransactionBlocks',
+  method: 'sui_getLatestCheckpointSequenceNumber',
   params: []
 };
 
@@ -68,7 +68,7 @@ url = "https://go.getblock.io/<ACCESS-TOKEN>/"
 payload = {
     "jsonrpc": "2.0",
     "id": "getblock.io",
-    "method": "sui_getTotalTransactionBlocks",
+    "method": "sui_getLatestCheckpointSequenceNumber",
     "params": []
 }
 
@@ -89,7 +89,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let payload = json!({
         "jsonrpc": "2.0",
         "id": "getblock.io",
-        "method": "sui_getTotalTransactionBlocks",
+        "method": "sui_getLatestCheckpointSequenceNumber",
         "params": []
     });
 
@@ -113,25 +113,25 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ```json
 {
-    "jsonrpc": "2.0",
-    "id": "getblock.io",
-    "result": "4638299150"
+  "jsonrpc": "2.0",
+  "result": "507021",
+  "id": "getblock.io"
 }
 ```
 
 ## Response Parameters
 
-| Parameter | Type   | Description                         |
-| --------- | ------ | ----------------------------------- |
-| result    | string | Total transaction count as a string |
+| Parameter | Type   | Description                                   |
+| --------- | ------ | --------------------------------------------- |
+| result    | string | Latest checkpoint sequence number as a string |
 
 ## Use Cases
 
-* Display network statistics in dashboards
-* Calculate transaction throughput over time
-* Monitor network growth and adoption
-* Compare activity across epochs
-* Build analytics and reporting tools
+* Monitor blockchain height and progress
+* Check node synchronization status
+* Implement polling for new checkpoints
+* Calculate finality depth for transactions
+* Display network status in dashboards
 
 ## Error Handling
 
@@ -149,9 +149,9 @@ import { SuiClient } from '@mysten/sui/client';
 
 const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
 
-const totalTx = await client.getTotalTransactionBlocks();
+const latestCheckpoint = await client.getLatestCheckpointSequenceNumber();
 
-console.log(totalTx);
+console.log(latestCheckpoint);
 ```
 {% endtab %}
 
@@ -165,9 +165,9 @@ async fn main() -> Result<(), anyhow::Error> {
         .build("https://go.getblock.io/<ACCESS-TOKEN>/")
         .await?;
     
-    let total = sui.read_api().get_total_transaction_blocks().await?;
+    let seq = sui.read_api().get_latest_checkpoint_sequence_number().await?;
     
-    println!("{}", total);
+    println!("{}", seq);
     Ok(())
 }
 ```
