@@ -308,7 +308,7 @@ Service Info: {
 
 To query balances, use the `StateService`:
 
-{% code overflow="wrap" %}
+{% code title="getBalance.ts" overflow="wrap" %}
 ```typescript
 import * as https from 'https';
 import * as path from 'path';
