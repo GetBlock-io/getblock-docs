@@ -87,7 +87,7 @@ npm init --yes
 ### Install dependencies
 
 ```bash
-npm install @grpc/grpc-js @grpc/proto-loader
+npm install @grpc/proto-loader
 npm install -D typescript ts-node @types/node
 ```
 {% endstep %}
@@ -135,103 +135,104 @@ sui-grpc-quickstart/
 
 Create a new file named `index.ts`:
 
-{% code overflow="wrap" %}
+{% code title="index.ts" overflow="wrap" %}
 ```typescript
-import * as grpc from '@grpc/grpc-js';
-import * as protoLoader from '@grpc/proto-loader';
+import * as https from 'https';
 import * as path from 'path';
+import * as protobuf from 'protobufjs';
 
-// Path to the proto file
-const PROTO_PATH = path.join(__dirname, 'protos/proto/sui/rpc/v2/ledger_service.proto');
-
-// Load proto definitions
-const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
-    keepCase: true,
-    longs: String,
-    enums: String,
-    defaults: true,
-    oneofs: true,
-    includeDirs: [path.join(__dirname, 'protos/proto')],
-});
-
-const suiProto = grpc.loadPackageDefinition(packageDefinition) as any;
-const LedgerService = suiProto.sui.rpc.v2.LedgerService;
-
-// GetBlock gRPC endpoint — access token is part of the URL path
 const ACCESS_TOKEN = "<ACCESS_TOKEN>";
-const GETBLOCK_GRPC_URL = `go.getblock.io:443`;
+const HOST = "go.getblock.io";
+const PROTO_ROOT = path.join(__dirname, 'protos/proto');
 
-// Create metadata with access token
-const metadata = new grpc.Metadata();
-metadata.add('x-api-key', ACCESS_TOKEN);
+// Encode request + wrap in gRPC-Web 5-byte frame, then POST over HTTPS
+function grpcWebCall(
+    root: protobuf.Root,
+    servicePath: string,
+    method: string,
+    requestType: string,
+    responseType: string,
+    requestData: object
+): Promise<object> {
+    const ReqType = root.lookupType(requestType);
+    const ResType = root.lookupType(responseType);
 
-// Create gRPC client with TLS
-const client = new LedgerService(
-    GETBLOCK_GRPC_URL,
-    grpc.credentials.createSsl()
-);
+    const encoded = ReqType.encode(ReqType.create(requestData)).finish();
 
-// Example 1: Get Service Info
-function getServiceInfo(): Promise<any> {
+    // gRPC-Web frame: 1-byte flags (0 = no compression) + 4-byte big-endian length + body
+    const frame = Buffer.alloc(5 + encoded.length);
+    frame.writeUInt8(0, 0);
+    frame.writeUInt32BE(encoded.length, 1);
+    Buffer.from(encoded).copy(frame, 5);
+
     return new Promise((resolve, reject) => {
-        client.GetServiceInfo({}, metadata, (err: any, response: any) => {
-            if (err) reject(err);
-            else resolve(response);
-        });
-    });
-}
+        const req = https.request(
+            {
+                hostname: HOST,
+                port: 443,
+                path: `/${ACCESS_TOKEN}/${servicePath}/${method}`,
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/grpc-web+proto',
+                    'x-grpc-web': '1',
+                    'accept': 'application/grpc-web+proto',
+                    'content-length': frame.length,
+                },
+            },
+            (res) => {
+                console.log('HTTP status  :', res.statusCode);
+                console.log('Content-Type :', res.headers['content-type']);
 
-// Example 2: Get Checkpoint
-function getCheckpoint(sequenceNumber: string): Promise<any> {
-    return new Promise((resolve, reject) => {
-        const request = {
-            sequence_number: sequenceNumber,
-            read_mask: {
-                paths: ['sequence_number', 'digest', 'summary']
+                const chunks: Buffer[] = [];
+                res.on('data', (chunk: Buffer) => chunks.push(chunk));
+                res.on('end', () => {
+                    const data = Buffer.concat(chunks);
+                    if (data.length < 5) {
+                        return reject(new Error(`Short response: ${data.toString('hex')}`));
+                    }
+
+                    const flags = data.readUInt8(0);
+                    const length = data.readUInt32BE(1);
+
+                    // Trailer frame (flags bit 7 set) contains gRPC status metadata
+                    if (flags & 0x80) {
+                        const trailer = data.slice(5).toString();
+                        return reject(new Error(`gRPC-Web error trailer: ${trailer}`));
+                    }
+
+                    const responseBytes = data.slice(5, 5 + length);
+                    const response = ResType.decode(responseBytes);
+                    resolve(ResType.toObject(response, { longs: String, enums: String, defaults: true }));
+                });
             }
-        };
-        client.GetCheckpoint(request, metadata, (err: any, response: any) => {
-            if (err) reject(err);
-            else resolve(response);
-        });
+        );
+
+        req.on('error', reject);
+        req.write(frame);
+        req.end();
     });
 }
 
-// Example 3: Get Transaction
-function getTransaction(digest: string): Promise<any> {
-    return new Promise((resolve, reject) => {
-        const request = {
-            digest: digest,
-            read_mask: {
-                paths: ['digest', 'effects', 'events']
-            }
-        };
-        client.GetTransaction(request, metadata, (err: any, response: any) => {
-            if (err) reject(err);
-            else resolve(response);
-        });
-    });
-}
-
-// Main function
 async function main() {
-    try {
-        // Get service info
-        console.log('📡 Fetching service info...\n');
-        const serviceInfo = await getServiceInfo();
-        console.log('Service Info:', JSON.stringify(serviceInfo, null, 2));
+    const root = new protobuf.Root();
+    root.resolvePath = (_origin: string, target: string) =>
+        target.startsWith('/') ? target : path.join(PROTO_ROOT, target);
+    await root.load(path.join(PROTO_ROOT, 'sui/rpc/v2/ledger_service.proto'), { keepCase: true });
 
-        // Get latest checkpoint
-        console.log('\n📦 Fetching checkpoint #1000...\n');
-        const checkpoint = await getCheckpoint('1000');
-        console.log('Checkpoint:', JSON.stringify(checkpoint, null, 2));
-
-    } catch (error) {
-        console.error('Error:', error);
-    }
+    console.log('Fetching service info...\n');
+    const info = await grpcWebCall(
+        root,
+        'sui.rpc.v2.LedgerService',
+        'GetServiceInfo',
+        'sui.rpc.v2.GetServiceInfoRequest',
+        'sui.rpc.v2.GetServiceInfoResponse',
+        {}
+    );
+    console.log('Service Info:', JSON.stringify(info, null, 2));
 }
 
-main();
+main().catch(console.error);
+
 ```
 {% endcode %}
 
@@ -243,7 +244,7 @@ Replace `<ACCESS-TOKEN>` with your actual GetBlock access token.
 
 Ensure your `tsconfig.json` has these settings:
 
-{% code overflow="wrap" %}
+{% code title="tsconfig.json" overflow="wrap" %}
 ```json
 {
   "compilerOptions": {
@@ -252,7 +253,7 @@ Ensure your `tsconfig.json` has these settings:
     "esModuleInterop": true,
     "outDir": "./dist",
     "rootDir": "./",
-    "types": [],
+    "types": ["node"],
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
@@ -280,25 +281,22 @@ npx ts-node index.ts
 **Expected output:**
 
 ```json
-📡 Fetching service info...
+Fetching service info...
 
+HTTP status  : 200
+Content-Type : application/grpc-web+proto
 Service Info: {
   "chain_id": "4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S",
   "chain": "mainnet",
-  "epoch": "758",
-  "checkpoint_height": "231612345",
-  "lowest_available_checkpoint": "0",
-  "server": "sui-node/1.45.0"
-}
-
-📦 Fetching checkpoint #1000...
-
-Checkpoint: {
-  "checkpoint": {
-    "sequence_number": "1000",
-    "digest": "8Jq2xK...",
-    "summary": { ... }
-  }
+  "epoch": "1084",
+  "checkpoint_height": "260411497",
+  "timestamp": {
+    "seconds": "1775050511",
+    "nanos": 19000000
+  },
+  "lowest_available_checkpoint": "259896745",
+  "lowest_available_checkpoint_objects": "259896745",
+  "server": "sui-node/1.68.1-3c0f387ebb40"
 }
 ```
 {% endstep %}
@@ -310,100 +308,122 @@ Checkpoint: {
 
 To query balances, use the `StateService`:
 
+{% code overflow="wrap" %}
 ```typescript
-import * as grpc from '@grpc/grpc-js';
-import * as protoLoader from '@grpc/proto-loader';
+import * as https from 'https';
 import * as path from 'path';
+import * as protobuf from 'protobufjs';
 
-const PROTO_PATH = path.join(__dirname, 'protos/proto/sui/rpc/v2/state_service.proto');
+const ACCESS_TOKEN = "<ACCESS_TOKEN>";
+const HOST = "go.getblock.io";
+const PROTO_ROOT = path.join(__dirname, 'protos/proto');
 
-const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
-    keepCase: true,
-    longs: String,
-    enums: String,
-    defaults: true,
-    oneofs: true,
-    includeDirs: [path.join(__dirname, 'protos/proto')],
-});
+// Encode request + wrap in gRPC-Web 5-byte frame, then POST over HTTPS
+function grpcWebCall(
+    root: protobuf.Root,
+    servicePath: string,
+    method: string,
+    requestType: string,
+    responseType: string,
+    requestData: object
+): Promise<object> {
+    const ReqType = root.lookupType(requestType);
+    const ResType = root.lookupType(responseType);
 
-const suiProto = grpc.loadPackageDefinition(packageDefinition) as any;
-const StateService = suiProto.sui.rpc.v2.StateService;
+    const encoded = ReqType.encode(ReqType.create(requestData)).finish();
 
-const GETBLOCK_GRPC_URL = 'grpc.getblock.io:443';
-const API_KEY = '<ACCESS-TOKEN>';
+    // gRPC-Web frame: 1-byte flags (0 = no compression) + 4-byte big-endian length + body
+    const frame = Buffer.alloc(5 + encoded.length);
+    frame.writeUInt8(0, 0);
+    frame.writeUInt32BE(encoded.length, 1);
+    Buffer.from(encoded).copy(frame, 5);
 
-const metadata = new grpc.Metadata();
-metadata.add('x-api-key', API_KEY);
-
-const client = new StateService(
-    GETBLOCK_GRPC_URL,
-    grpc.credentials.createSsl()
-);
-
-// Get SUI balance for an address
-function getBalance(owner: string, coinType: string): Promise<any> {
     return new Promise((resolve, reject) => {
-        const request = {
-            owner: owner,
-            coin_type: coinType
-        };
-        client.GetBalance(request, metadata, (err: any, response: any) => {
-            if (err) reject(err);
-            else resolve(response);
-        });
+        const req = https.request(
+            {
+                hostname: HOST,
+                port: 443,
+                path: `/${ACCESS_TOKEN}/${servicePath}/${method}`,
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/grpc-web+proto',
+                    'x-grpc-web': '1',
+                    'accept': 'application/grpc-web+proto',
+                    'content-length': frame.length,
+                },
+            },
+            (res) => {
+                console.log('HTTP status  :', res.statusCode);
+                console.log('Content-Type :', res.headers['content-type']);
+
+                const chunks: Buffer[] = [];
+                res.on('data', (chunk: Buffer) => chunks.push(chunk));
+                res.on('end', () => {
+                    const data = Buffer.concat(chunks);
+                    if (data.length < 5) {
+                        return reject(new Error(`Short response: ${data.toString('hex')}`));
+                    }
+
+                    const flags = data.readUInt8(0);
+                    const length = data.readUInt32BE(1);
+
+                    // Trailer frame (flags bit 7 set) contains gRPC status metadata
+                    if (flags & 0x80) {
+                        const trailer = data.slice(5).toString();
+                        return reject(new Error(`gRPC-Web error trailer: ${trailer}`));
+                    }
+
+                    const responseBytes = data.slice(5, 5 + length);
+                    const response = ResType.decode(responseBytes);
+                    resolve(ResType.toObject(response, { longs: String, enums: String, defaults: true }));
+                });
+            }
+        );
+
+        req.on('error', reject);
+        req.write(frame);
+        req.end();
     });
 }
 
 async function main() {
-    const balance = await getBalance(
-        '0x94096a6a54129234237759c66e6ef1037224fb3102a0ae29d33b490281c8e4d5',
-        '0x2::sui::SUI'
+    const root = new protobuf.Root();
+    root.resolvePath = (_origin: string, target: string) =>
+        target.startsWith('/') ? target : path.join(PROTO_ROOT, target);
+    await root.load(path.join(PROTO_ROOT, 'sui/rpc/v2/ledger_service.proto'), { keepCase: true });
+
+    console.log('Fetching service info...\n');
+    const info = await grpcWebCall(
+        root,
+        'sui.rpc.v2.LedgerService',
+        'GetServiceInfo',
+        'sui.rpc.v2.GetServiceInfoRequest',
+        'sui.rpc.v2.GetServiceInfoResponse',
+        {}
     );
-    console.log('Balance:', JSON.stringify(balance, null, 2));
+    console.log('Service Info:', JSON.stringify(info, null, 2));
 }
 
-main();
+main().catch(console.error);
+
 ```
+{% endcode %}
 
-### List Owned Objects
+#### Response
 
-```typescript
-function listOwnedObjects(owner: string, pageSize: number = 10): Promise<any> {
-    return new Promise((resolve, reject) => {
-        const request = {
-            owner: owner,
-            page_size: pageSize,
-            read_mask: {
-                paths: ['object_id', 'version', 'object_type']
-            }
-        };
-        client.ListOwnedObjects(request, metadata, (err: any, response: any) => {
-            if (err) reject(err);
-            else resolve(response);
-        });
-    });
+{% code overflow="wrap" %}
+```bash
+Fetching SUI balance...
+
+Balance: {
+  "balance": {
+    "coin_type": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+    "balance": "1035000074",
+    "coin_balance": "1035000074"
+  }
 }
 ```
-
-### Get Coin Info
-
-```typescript
-function getCoinInfo(coinType: string): Promise<any> {
-    return new Promise((resolve, reject) => {
-        const request = {
-            coin_type: coinType
-        };
-        client.GetCoinInfo(request, metadata, (err: any, response: any) => {
-            if (err) reject(err);
-            else resolve(response);
-        });
-    });
-}
-
-// Usage
-const coinInfo = await getCoinInfo('0x2::sui::SUI');
-console.log('Coin Info:', coinInfo);
-```
+{% endcode %}
 
 ## Available gRPC Services & Methods
 
