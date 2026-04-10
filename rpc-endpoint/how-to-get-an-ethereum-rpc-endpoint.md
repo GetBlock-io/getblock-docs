@@ -44,15 +44,6 @@ It sends a JSON-RPC request to an Ethereum node through an RPC endpoint. The nod
 ```
 {% endcode %}
 {% endtab %}
-
-{% tab title="Ruby" %}
-{% code overflow="wrap" %}
-```ruby
-message = "hello world"
-puts message
-```
-{% endcode %}
-{% endtab %}
 {% endtabs %}
 
 ### Step-by-Step: Get Your Ethereum RPC Endpoint
@@ -72,7 +63,7 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Configure your endpoint:
 
@@ -81,7 +72,7 @@ Once logged in:
 * **API Interface:** JSON-RPC (most common), WebSocket, or Beacon API
 * **Region:** Choose the closest — Frankfurt (EU), New York (US), or Singapore (APAC)
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 4. Click **"Create":** Your endpoint URL will be generated immediately.
 {% endstep %}
