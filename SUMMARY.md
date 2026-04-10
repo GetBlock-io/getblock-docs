@@ -51,6 +51,11 @@
   * [Overview](add-ons/yellowstone-grpc-api/overview.md)
   * [Quickstart guide](add-ons/yellowstone-grpc-api/quickstart-guide.md)
 
+## RPC ENDPOINT
+
+* [How to Get an Ethereum RPC Endpoint](rpc-endpoint/how-to-get-an-ethereum-rpc-endpoint.md)
+* [How to Get a Solana RPC Endpoint](rpc-endpoint/how-to-get-a-solana-rpc-endpoint.md)
+
 ## GUIDES
 
 * [Using Web3 libraries](guides/using-web3-libraries/README.md)
