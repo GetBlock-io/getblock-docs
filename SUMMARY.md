@@ -45,6 +45,10 @@
 * [TradeFirst](solana-advanced-data-tools/tradefirst.md)
 * [Solana Indexed Archive](solana-advanced-data-tools/solana-indexed-archive.md)
 
+## Tron Energy
+
+* [Introduction](tron-energy/introduction.md)
+
 ## ADD-ONS
 
 * [Yellowstone gRPC API](add-ons/yellowstone-grpc-api/README.md)
