@@ -22,21 +22,6 @@ Solana's JSON-RPC API follows a different specification than Ethereum — it's n
 https://go.getblock.io/<YOUR-ACCESS-TOKEN>/
 ```
 
-### Why You Need a Dedicated RPC Provider for Solana
-
-Solana is especially demanding on RPC infrastructure:
-
-| Challenge                       | Public RPC              | GetBlock               |
-| ------------------------------- | ----------------------- | ---------------------- |
-| Rate limits                     | Aggressive (2-5 RPS)    | Up to 500 RPS          |
-| `getSignaturesForAddress` depth | Often limited to recent | Full history available |
-| WebSocket stability             | Frequent disconnects    | Persistent connections |
-| `getProgramAccounts` support    | Usually blocked         | Available              |
-| MEV protection                  | None                    | Available (Dedicated)  |
-| gRPC streaming (Yellowstone)    | Not available           | Available as add-on    |
-| Archive/historical data         | Limited                 | Full history           |
-| Transaction landing rate        | Low priority            | High via LandFirst     |
-
 ### Step-by-Step: Get Your Ethereum RPC Endpoint
 
 {% stepper %}
@@ -264,6 +249,21 @@ ws.send(JSON.stringify({
 ```
 {% endtab %}
 {% endtabs %}
+
+### Why You Need a Dedicated RPC Provider for Solana
+
+Solana is especially demanding on RPC infrastructure:
+
+| Challenge                       | Public RPC              | GetBlock               |
+| ------------------------------- | ----------------------- | ---------------------- |
+| Rate limits                     | Aggressive (2-5 RPS)    | Up to 500 RPS          |
+| `getSignaturesForAddress` depth | Often limited to recent | Full history available |
+| WebSocket stability             | Frequent disconnects    | Persistent connections |
+| `getProgramAccounts` support    | Usually blocked         | Available              |
+| MEV protection                  | None                    | Available (Dedicated)  |
+| gRPC streaming (Yellowstone)    | Not available           | Available as add-on    |
+| Archive/historical data         | Limited                 | Full history           |
+| Transaction landing rate        | Low priority            | High via LandFirst     |
 
 ### Advanced Solana Infrastructure on GetBlock
 
