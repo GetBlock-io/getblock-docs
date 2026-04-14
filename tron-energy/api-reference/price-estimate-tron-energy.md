@@ -22,7 +22,7 @@ This get a real-time price estimate for Energy delegation before placing an orde
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST https://api.getblock.io/tron-energy/delegateBandwidth \
+curl -X POST https://api.getblock.io/tron-energy/api/price-estimate \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -48,7 +48,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://api.getblock.io/tron-energy/price-estimate ',
+    url: 'https://api.getblock.io/tron-energy/api/price-estimate ',
     headers: {
         'Content-Type': 'application/json',
         'Authorization: Bearer YOUR_API_KEY'
@@ -68,7 +68,7 @@ axios(config)
 import requests
 import json
 
-url = "https://api.getblock.io/tron-energy/price-estimate "
+url = "https://api.getblock.io/tron-energy/api/price-estimate"
 
 payload = json.dumps({
     "resourceType": "energy",
@@ -96,7 +96,7 @@ use reqwest::header;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
 
-    let url = "https://api.getblock.io/tron-energy/price-estimate ";
+    let url = "https://api.getblock.io/tron-energy/api/price-estimate";
     let payload = r#"{
     "resourceType": "energy",
     "volume": 50000,
@@ -130,7 +130,7 @@ import (
     "net/http"
 )
 func main() {
-    url := "https://api.getblock.io/tron-energy/price-estimate "
+    url := "https://api.getblock.io/tron-energy/api/price-estimate"
     payload := map[string]interface{}{
     "resourceType": "energy",
     "volume": 50000,
