@@ -47,7 +47,15 @@
 
 ## Tron Energy
 
-* [Introduction](tron-energy/introduction.md)
+* [Overview](tron-energy/overview.md)
+* [Getting Started](tron-energy/getting-started.md)
+* [TRON Fee Model](tron-energy/tron-fee-model.md)
+* [API Reference](tron-energy/api-reference/README.md)
+  * [delegateEnergy - TRON energy](tron-energy/api-reference/delegateenergy-tron-energy.md)
+  * [delegateBandwidth - TRON energy](tron-energy/api-reference/delegatebandwidth-tron-energy.md)
+  * [addressActivate - TRON energy](tron-energy/api-reference/addressactivate-tron-energy.md)
+  * [orders/{order\_id} - TRON energy](tron-energy/api-reference/orders-order_id-tron-energy.md)
+  * [price-estimate - TRON Energy](tron-energy/api-reference/price-estimate-tron-energy.md)
 
 ## ADD-ONS
 
