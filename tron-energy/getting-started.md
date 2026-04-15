@@ -132,7 +132,7 @@ Enter the target TRON address
 {% endstep %}
 
 {% step %}
-Click "Activate Address=-098
+Click "Activate Address
 
 {% hint style="info" %}
 Activation costs a fixed 1.87 TRX, charged in USD at the current TRX/USD rate.
