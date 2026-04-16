@@ -22,7 +22,7 @@ Solana's JSON-RPC API follows a different specification than Ethereum — it's n
 https://go.getblock.io/<YOUR-ACCESS-TOKEN>/
 ```
 
-### Step-by-Step: Get Your Ethereum RPC Endpoint
+### Step-by-Step: Get Your Solana RPC Endpoint
 
 {% stepper %}
 {% step %}
@@ -32,22 +32,22 @@ Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can reg
 {% endstep %}
 
 {% step %}
-#### Create an Ethereum Endpoint
+#### Create a Solana Endpoint
 
 Once logged in:
 
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Select:
    * **Protocol:** Solana (SOL)
-   * **Network:** Mainnet-beta (or Devnet/Testnet for development)
+   * **Network:** Mainnet
    * **API Interface:** JSON-RPC or WebSocket or MEV protected (JSON-RPC)
    * **Region:** Frankfurt (EU), New York (US), or Singapore (APAC)
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 4. Click **"Create":** Your endpoint URL will be generated immediately.
 {% endstep %}

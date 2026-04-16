@@ -399,7 +399,7 @@ What this does:
 What this does:
 
 * Checks transaction logs for migration keywords like: \
-  ![](<../.gitbook/assets/image (2) (1) (1).png>)
+  ![](<../.gitbook/assets/image (2) (1) (1) (1).png>)
 * Skips failed transactions
 * Fetches full transaction details when migration is detected
 

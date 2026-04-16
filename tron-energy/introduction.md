@@ -27,7 +27,7 @@ GetBlock Tron Energy is a service that lets you rent TRON Energy and Bandwidth v
 5. **Energy recovers** over 24 hours if partially used
 6. **Delegation expires** at the end of the rental period — resources return to GetBlock
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 #### Available Operations
 

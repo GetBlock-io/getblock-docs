@@ -67,6 +67,8 @@
 
 * [How to Get an Ethereum RPC Endpoint](rpc-endpoint/how-to-get-an-ethereum-rpc-endpoint.md)
 * [How to Get a Solana RPC Endpoint](rpc-endpoint/how-to-get-a-solana-rpc-endpoint.md)
+* [How to Get a Polygon RPC Endpoint](rpc-endpoint/how-to-get-a-polygon-rpc-endpoint.md)
+* [How to Get a TON RPC Endpoint](rpc-endpoint/how-to-get-a-ton-rpc-endpoint.md)
 
 ## GUIDES
 
