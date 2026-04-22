@@ -4,7 +4,7 @@ description: Step-by-step guide to getting a fast, reliable Base RPC endpoint
 
 # How to Get a Base RPC Endpoint
 
-Base, a Coinbase L2 built on the OP Stack. It has become one of the most active Ethereum Layer 2 networks for DeFi, social apps, and onchain consumer products.&#x20;
+Base has become one of the most active Ethereum Layer 2 networks for DeFi, social apps, and onchain consumer products.&#x20;
 
 If you're building on Base for the first time or scaling a production application, this guide gets you set up with a reliable RPC endpoint in minutes.
 

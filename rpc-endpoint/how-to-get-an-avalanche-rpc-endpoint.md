@@ -97,11 +97,13 @@ curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
 
 {% tabs %}
 {% tab title="Ethers.js" %}
+{% code overflow="wrap" %}
 ```javascript
 import { JsonRpcProvider } from "ethers";
 const provider = new JsonRpcProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/");
 console.log("Block:", await provider.getBlockNumber());
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
