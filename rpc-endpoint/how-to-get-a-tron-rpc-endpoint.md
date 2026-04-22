@@ -135,12 +135,11 @@ TRON supports multiple API interfaces. GetBlock offers:
 
 Most TRON developers use the HTTP API with TronWeb library.
 
-### Plans
+### What's Next?
 
-Free plan: 50K CU/day. [Compare all plans →](https://getblock.io/pricing/)
-
-* [Full TRON API Reference →](https://docs.getblock.io/api-reference/tron-trx)
-* [TronWeb Integration Guide →](https://docs.getblock.io/guides/using-web3-libraries/connect-to-getblock-with-tronweb)
-* [Dedicated Nodes →](https://getblock.io/dedicated-nodes/)
+* [Full TRON API Reference ](https://docs.getblock.io/api-reference/tron-trx)
+* [TronWeb Integration Guide](https://docs.getblock.io/guides/using-web3-libraries/connect-to-getblock-with-tronweb)
+* [Dedicated Nodes ](https://getblock.io/dedicated-nodes/)
+* [Learn more about our pricing](https://getblock.io/pricing/)
 
 _Processing USDT at scale?_ [_Contact us_](https://getblock.io/contact/) _for dedicated TRON infrastructure._

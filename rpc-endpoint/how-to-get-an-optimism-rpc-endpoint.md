@@ -124,11 +124,10 @@ const client = createPublicClient({
 {% endtab %}
 {% endtabs %}
 
-### Next Steps
-
-Free plan: 50K CU/day, 20 RPS. [Compare all plans](https://getblock.io/pricing/)
+### What's Next?
 
 * [Full OP API Reference](https://docs.getblock.io/api-reference/optimism-op)
 * [Dedicated Nodes](https://getblock.io/dedicated-nodes/)
+* [Learn more about our pricing](https://getblock.io/pricing/)
 
 _Need Superchain infrastructure?_ [_Contact us_](https://getblock.io/contact/)_._

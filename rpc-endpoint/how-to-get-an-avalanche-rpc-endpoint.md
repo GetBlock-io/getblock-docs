@@ -50,9 +50,11 @@ Once logged in:
 
 Your endpoint URL looks like this:
 
-```
+{% code overflow="wrap" %}
+```bash
 https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
+{% endcode %}
 
 {% hint style="warning" %}
 The long string after `go.getblock.io/` is your **access token** — keep it private.
@@ -123,11 +125,10 @@ const client = createPublicClient({
 {% endtab %}
 {% endtabs %}
 
-### Plans
+### What's Next?
 
-Free plan: 50K CU/day. [Compare plans →](https://getblock.io/pricing/)
-
-* [Full Avalanche API Reference →](https://docs.getblock.io/api-reference/avalanche-avax)
-* [Dedicated Nodes →](https://getblock.io/dedicated-nodes/)
+* [Full Avalanche API Reference](https://docs.getblock.io/api-reference/avalanche-avax)
+* [Dedicated Nodes](https://getblock.io/dedicated-nodes/)
+* [Learn about our pricing](https://getblock.io/pricing/)
 
 _Building on Avalanche?_ [_Contact us_](https://getblock.io/contact/) _for custom infrastructure._
