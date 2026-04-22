@@ -14,7 +14,7 @@ When you submit a transaction to the public mempool, it's visible to everyone. M
 
 Meanwhile, Private transactions eliminate this exposure by hiding your transactions until they are included.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Private TX vs Public Mempool
 

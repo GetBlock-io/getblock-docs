@@ -26,7 +26,7 @@ Tokens on Pump.fun start trading on a bonding curve mechanism. When the bonding 
    * **PumpSwap** (Pump.fun's DEX) - Most common since March 2025
    * **Raydium AMM** - Less common, but still happens
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Key Addresses
 

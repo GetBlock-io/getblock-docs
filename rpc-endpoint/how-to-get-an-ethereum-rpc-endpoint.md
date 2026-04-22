@@ -72,7 +72,7 @@ Once logged in:
 * **API Interface:** JSON-RPC (most common), WebSocket, or Beacon API
 * **Region:** Choose the closest — Frankfurt (EU), New York (US), or Singapore (APAC)
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 4. Click **"Create":** Your endpoint URL will be generated immediately.
 {% endstep %}

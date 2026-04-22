@@ -69,6 +69,12 @@
 * [How to Get a Solana RPC Endpoint](rpc-endpoint/how-to-get-a-solana-rpc-endpoint.md)
 * [How to Get a Polygon RPC Endpoint](rpc-endpoint/how-to-get-a-polygon-rpc-endpoint.md)
 * [How to Get a TON RPC Endpoint](rpc-endpoint/how-to-get-a-ton-rpc-endpoint.md)
+* [How to Get an Arbitrum RPC Endpoint](rpc-endpoint/how-to-get-an-arbitrum-rpc-endpoint.md)
+* [How to Get an Avalanche RPC Endpoint](rpc-endpoint/how-to-get-an-avalanche-rpc-endpoint.md)
+* [How to Get a Base RPC Endpoint](rpc-endpoint/how-to-get-a-base-rpc-endpoint.md)
+* [How to Get a BNB Smart Chain (BSC) RPC Endpoint](rpc-endpoint/how-to-get-a-bnb-smart-chain-bsc-rpc-endpoint.md)
+* [How to Get an Optimism RPC Endpoint](rpc-endpoint/how-to-get-an-optimism-rpc-endpoint.md)
+* [How to Get a TRON RPC Endpoint](rpc-endpoint/how-to-get-a-tron-rpc-endpoint.md)
 
 ## GUIDES
 

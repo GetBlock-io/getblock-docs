@@ -42,7 +42,7 @@ Once logged in:
     * **API Interface:** JSON-RPC or WebSocket
     * **Region:** Frankfurt (EU), New York (US), or Singapore (APAC)
 
-    <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 4. Click **"Create":** Your endpoint URL will be generated immediately.
 {% endstep %}
 

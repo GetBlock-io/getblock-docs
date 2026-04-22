@@ -46,7 +46,7 @@ Once logged in:
     * **API Interface:** JSON-RPC or JSON-RPC(v3) or HTTP API(v4)
     *   **Region:** Frankfurt (EU)
 
-        <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+        <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 
 4. Click **"Create":** Your endpoint URL will be generated immediately.
@@ -182,12 +182,11 @@ print(f"Balance: {balance} TON")
 | Viral Telegram app     | **Pro** ($499/mo)      | 600M/mo   | 500       |
 | Payment infrastructure | **Dedicated** (custom) | Unlimited | Unlimited |
 
-[Learn more about our pricing](https://getblock.io/pricing/)
-
 ### What's Next?
 
 * [Full TON API Reference →](https://docs.getblock.io/api-reference/the-open-network-ton)
 * [TON Documentation →](https://docs.ton.org)
 * [Configure a Dedicated TON Node →](https://getblock.io/dedicated-nodes/)
+* [Learn more about our pricing](https://getblock.io/pricing/)
 
 _Building a Telegram Mini App at scale?_ [_Contact us_](https://getblock.io/contact/) _for custom TON infrastructure._
