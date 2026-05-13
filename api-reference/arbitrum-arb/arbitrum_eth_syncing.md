@@ -21,7 +21,7 @@ curl --location 'https://go.getblock.us/<ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
    "jsonrpc": "2.0",
-    "method": "eth_signTransaction",
+    "method": "eth_syncing",
     "params": [],
     "id": "getblock.io"
 }
@@ -129,16 +129,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 #### Response Parameter Definition
 
-| Field               | Type              | Description                                                               |
-| ------------------- | ----------------- | ------------------------------------------------------------------------- |
-| result              | boolean or object | `false` if node is fully synced. Otherwise, an object with sync progress. |
-| startingBlock       | string            | Block number where syncing started.                                       |
-| currentBlock        | string            | Block that the node is currently processing.                              |
-| highestBlock        | string            | The latest block known to the network.                                    |
-| warpChunksAmount    | string            | Total warp sync chunks required for full sync.                            |
-| warpChunksProcessed | string            | Number of warp chunks processed so far.                                   |
-| pulledStates        | string            | Number of state entries downloaded.                                       |
-| knownStates         | string            | Total expected state entries.                                             |
+* **`id`**: A unique request identifier, matching the `id` sent in the request body.
+* **`jsonrpc`**: Specifies the use of JSON-RPC version 2.0.
+* **`result`**: Returns `false` if not syncing, or an object with startingBlock, currentBlock, and highestBlock if syncing.
 
 #### Error handling
 

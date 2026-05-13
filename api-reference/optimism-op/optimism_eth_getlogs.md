@@ -6,74 +6,221 @@ description: >-
 
 # eth\_getLogs - Optimism
 
-#### Parameters
+This method retrieves logs (events) emitted by smart contracts based on filter criteria including address, topics, and block range. It's essential for tracking contract events like token transfers, approvals, and other state changes. Large queries may be limited, so use specific filters and reasonable block ranges.
 
-`Object` - object
+## Parameters
 
-The filter options
+{% hint style="info" %}
+One parameter is required:
+{% endhint %}
 
-#### Request
+| Parameter    | Type   | Description                                                                              | Required |
+| ------------ | ------ | ---------------------------------------------------------------------------------------- | -------- |
+| filterObject | Object | Filter object with fromBlock, toBlock, address, topics, and blockhash (optional) fields. | Yes      |
 
-```java
+## Request Sample
+
+{% tabs %}
+{% tab title="cURL" %}
+{% code overflow="wrap" %}
+```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0",
-"method": "eth_getLogs",
-"params": [{"topics": []}],
-"id": "getblock.io"}'
-```
-
-#### Response
-
-```java
-{
-    "id": "getblock.io",
+--data-raw '{
     "jsonrpc": "2.0",
-    "result": [
-        {
-            "address": "0x7c56d3650f9acd992b3aa635c04a311c54ad264c",
-            "blockHash": "0x8c0682143a415f8fddb84a32f13875c530dd83f398f0aa5aff5c73f397b92c67",
-            "blockNumber": "0x625571c",
-            "data": "0x0000000000000000000000000000000000000000000000000000000004f82d450000000000000000000000002bdf9249c350c68a43a9714c1b9153af54751b1c00000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000002000000000000000000000000ac3b0b1bf185a08cea9febc7cfdcbe0a0002edfd01000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000004f774830000000000000000000000000000000000000000000000000000000004f774830000000000000000000000000000000000000000000000000000000004f774830000000000000000000000000000000000000000000000000000000004f82d450000000000000000000000000000000000000000000000000000000004f82d450000000000000000000000000000000000000000000000000000000004f82d450000000000000000000000000000000000000000000000000000000004f82d450000000000000000000000000000000000000000000000000000000004f86e300000000000000000000000000000000000000000000000000000000004f86e300000000000000000000000000000000000000000000000000000000004f86e30000000000000000000000000000000000000000000000000000000000000000a0102090003040506070800000000000000000000000000000000000000000000",
-            "logIndex": "0x0",
-            "removed": false,
-            "topics": [
-                "0xf6a97944f31ea060dfde0566e4167c1a1082551e64b60ecb14d599a9d023d451",
-                "0x000000000000000000000000000000000000000000000000000000000001cd6f"
-            ],
-            "transactionHash": "0xc897147b372787d6e3969e4a4c843d8a08fc6b430ae9c4a2a322de385f7a9a90",
-            "transactionIndex": "0x0"
-        },
-        {
-            "address": "0x7c56d3650f9acd992b3aa635c04a311c54ad264c",
-            "blockHash": "0x8c0682143a415f8fddb84a32f13875c530dd83f398f0aa5aff5c73f397b92c67",
-            "blockNumber": "0x625571c",
-            "data": "0x000000000000000000000000000000000000000000000000000000006476c7ca",
-            "logIndex": "0x1",
-            "removed": false,
-            "topics": [
-                "0x0109fc6f55cf40689f02fbaad7af7fe7bbac8a3d2186600afc7d3e10cac60271",
-                "0x000000000000000000000000000000000000000000000000000000000001cd6f",
-                "0x0000000000000000000000000000000000000000000000000000000000000000"
-            ],
-            "transactionHash": "0xc897147b372787d6e3969e4a4c843d8a08fc6b430ae9c4a2a322de385f7a9a90",
-            "transactionIndex": "0x0"
-        },
-        {
-            "address": "0x7c56d3650f9acd992b3aa635c04a311c54ad264c",
-            "blockHash": "0x8c0682143a415f8fddb84a32f13875c530dd83f398f0aa5aff5c73f397b92c67",
-            "blockNumber": "0x625571c",
-            "data": "0x000000000000000000000000000000000000000000000000000000006476c7ca",
-            "logIndex": "0x2",
-            "removed": false,
-            "topics": [
-                "0x0559884fd3a460db3073b7fc896cc77986f16e378210ded43186175bf646fc5f",
-                "0x0000000000000000000000000000000000000000000000000000000004f82d45",
-                "0x000000000000000000000000000000000000000000000000000000000001cd6f"
-            ],
-            "transactionHash": "0xc897147b372787d6e3969e4a4c843d8a08fc6b430ae9c4a2a322de385f7a9a90",
-            "transactionIndex": "0x0"
-        }
-    ]
+    "method": "eth_getLogs",
+    "params": [{"fromBlock": "0x7A69B00", "toBlock": "0x7A69B2C", "address": "0x4200000000000000000000000000000000000006", "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}],
+    "id": "getblock.io"
+}'
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="JavaScript (Axios)" %}
+{% code title="request.js" %}
+```javascript
+const axios = require('axios');
+
+const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+
+const payload = {
+    jsonrpc: '2.0',
+    method: 'eth_getLogs',
+    params: [{
+        fromBlock: 'latest',
+        toBlock: 'latest',
+        address: '0x55d398326f99059fF775485246999027B3197955',
+        topics: ['0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef']
+    }],
+    id: 'getblock.io'
+};
+
+axios.post(url, payload, {
+    headers: { 'Content-Type': 'application/json' }
+})
+.then(response => console.log(response.data))
+.catch(error => console.error(error));
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code overflow="wrap" %}
+```python
+import requests
+
+url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+
+payload = {
+    "jsonrpc": "2.0",
+    "method": "eth_getLogs",
+    "params": [{"fromBlock": "0x7A69B00", "toBlock": "0x7A69B2C", "address": "0x4200000000000000000000000000000000000006", "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}],
+    "id": "getblock.io"
+}
+
+response = requests.post(url, headers={"Content-Type": "application/json"}, json=payload)
+print(response.json())
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust" %}
+{% code overflow="wrap" %}
+```rust
+use reqwest::Client;
+use serde_json::json;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = Client::new();
+    
+    let payload = json!({
+    "jsonrpc": "2.0",
+    "method": "eth_getLogs",
+    "params": [{"fromBlock": "0x7A69B00", "toBlock": "0x7A69B2C", "address": "0x4200000000000000000000000000000000000006", "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}],
+    "id": "getblock.io"
+});
+
+    let response = client
+        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .header("Content-Type", "application/json")
+        .json(&payload)
+        .send()
+        .await?;
+
+    let result: serde_json::Value = response.json().await?;
+    println!("{:#?}", result);
+    
+    Ok(())
 }
 ```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+A successful response returns the following:
+
+{% code overflow="wrap" %}
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": [
+        {
+            "address": "0x4200000000000000000000000000000000000006",
+            "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x0000000000000000000000004dc22588ade05c40338a9d95a6da9dcee68bcd60",
+                "0x000000000000000000000000955954d5ac0a61b0996cced9d43e2534b0d99f5e"
+            ],
+            "data": "0x00000000000000000000000000000000000000000000000048670bf1b3f56d8b",
+            "blockNumber": "0x7a69b00",
+            "transactionHash": "0x5968592c02646a499f3e854b2603ce430ce3825a3c6b6aa7eaa2bfc8670f384c",
+            "transactionIndex": "0xa",
+            "blockHash": "0xc79de49c9770a414e1d9ecfd814e0b90652e801944e23971ad73c8e331c98901",
+            "blockTimestamp": "0x67410fb9",
+            "logIndex": "0x1f",
+            "removed": false
+        },
+]
+}
+```
+{% endcode %}
+
+## Response Parameters
+
+| Parameter       | Type   | Description      |
+| --------------- | ------ | ---------------- |
+| address         | string | Contract address |
+| topics          | array  | Event topics     |
+| data            | string | Event data       |
+| blockNumber     | string | Block number     |
+| transactionHash | string | Transaction hash |
+
+## Use Case
+
+The eth\_getLogs method is commonly used for:
+
+* **Event monitoring**
+* **Token transfer tracking**
+* **Contract activity analysis**
+* **DApp event handling**
+* **Historical data retrieval**
+
+## Error Handling
+
+| Error Code | Description                       |
+| ---------- | --------------------------------- |
+| -32602     | Invalid params - malformed filter |
+| -32005     | Query returned too many results   |
+| -32603     | Internal error                    |
+
+## Web3 Integration
+
+{% tabs %}
+{% tab title="Ethers.js" %}
+{% code title="ethers.js" %}
+```javascript
+const { ethers } = require('ethers');
+
+const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+
+const logs = await provider.getLogs({
+            fromBlock: "0x7A69B00",
+            toBlock: "0x7A69B2C",
+            address: "0x4200000000000000000000000000000000000006",
+            topics: [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ]
+});
+console.log('Found logs:', logs.length);
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Viem" %}
+{% code title="viem.js" %}
+```javascript
+import { createPublicClient, http } from 'viem';
+import { optimism } from 'viem/chains';
+
+const client = createPublicClient({
+    chain: optimism,
+    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+});
+
+const logs = await client.getLogs(
+            fromBlock: "0x7A69B00",
+            toBlock: "0x7A69B2C",
+            address: "0x4200000000000000000000000000000000000006",
+            topics: [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ]
+      );
+console.log('Found logs:', logs.length);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
