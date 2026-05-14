@@ -24,8 +24,7 @@ This method searches for a path along which a payment can be made, and periodica
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://xrp.getblock.io/mainnet/' \
---header 'x-api-key: YOUR-API-KEY' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -49,9 +48,8 @@ curl --location --request POST 'https://xrp.getblock.io/mainnet/' \
 ```javascript
 const axios = require('axios');
 
-const url = 'https://xrp.getblock.io/mainnet/';
+const url = 'https://go.getblock.io/<ACCESS_TOKEN>/';
 const headers = {
-    'x-api-key': 'YOUR-API-KEY',
     'Content-Type': 'application/json'
 };
 
@@ -81,9 +79,9 @@ axios.post(url, payload, { headers })
 ```python
 import requests
 
-url = "https://xrp.getblock.io/mainnet/"
+url = "https://go.getblock.io/<ACCESS_TOKEN>/"
 headers = {
-    "x-api-key": "YOUR-API-KEY",
+ 
     "Content-Type": "application/json"
 }
 
@@ -134,8 +132,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://xrp.getblock.io/mainnet/")
-        .header("x-api-key", "YOUR-API-KEY")
+        .post("hhttps://go.getblock.io/<ACCESS_TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()

@@ -173,7 +173,7 @@ import { ethers } from 'ethers';
 
 // Initialize Ethers provider with GetBlock
 const provider = new ethers.JsonRpcProvider(
-    'https://go.getblock.us/<ACCESS-TOKEN>/'
+    'https://go.getblock.io/<ACCESS-TOKEN>'
 );
 
 // Using the method through Ethers
@@ -200,7 +200,7 @@ import { optimism } from "viem/chains";
 // Create Viem client with GetBlock
 const client = createPublicClient({
   chain: optimism,
-  transport: http("https://go.getblock.io/<ACCESS_TOKEN>"),
+  transport: http("https://go.getblock.io/<ACCESS-TOKEN>"),
 });
 // Using the method through Viem
 async function Call() {
