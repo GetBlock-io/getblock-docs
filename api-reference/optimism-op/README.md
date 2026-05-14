@@ -263,11 +263,10 @@ python main.py
 
 ### Gas Methods
 
-| Method                    | Description                                         |
-| ------------------------- | --------------------------------------------------- |
-| eth\_gasPrice             | Returns the current L2 gas price in wei             |
-| eth\_estimateGas          | Estimates gas needed for a transaction              |
-| eth\_estimateExecutionGas | Estimates L2 execution gas only (Optimism-specific) |
+| Method           | Description                             |
+| ---------------- | --------------------------------------- |
+| eth\_gasPrice    | Returns the current L2 gas price in wei |
+| eth\_estimateGas | Estimates gas needed for a transaction  |
 
 ### Filter Methods
 
@@ -299,35 +298,16 @@ python main.py
 
 ### Network/Chain Methods
 
-| Method               | Description                       |
-| -------------------- | --------------------------------- |
-| eth\_chainId         | Returns the chain ID (10)         |
-| eth\_syncing         | Returns sync status of the node   |
-| eth\_coinbase        | Returns the coinbase address      |
-| eth\_mining          | Returns mining status             |
-| eth\_hashrate        | Returns the current hashrate      |
-| eth\_protocolVersion | Returns the protocol version      |
-| net\_version         | Returns the network ID            |
-| net\_listening       | Returns listening status          |
-| net\_peerCount       | Returns number of connected peers |
-| web3\_clientVersion  | Returns the client version        |
-| web3\_sha3           | Returns Keccak-256 hash of data   |
-| rpc\_modules         | Returns enabled RPC modules       |
-
-### Optimism-Specific Methods
-
-| Method            | Description                              |
-| ----------------- | ---------------------------------------- |
-| rollup\_gasPrices | Returns L1 and L2 gas prices             |
-| rollup\_getInfo   | Returns rollup configuration information |
-
-### Trace Methods
-
-| Method                         | Description                                    |
-| ------------------------------ | ---------------------------------------------- |
-| trace\_block                   | Returns traces for all transactions in a block |
-| trace\_transaction             | Returns traces for a specific transaction      |
-| trace\_replayBlockTransactions | Replays all transactions in a block            |
+| Method              | Description                       |
+| ------------------- | --------------------------------- |
+| eth\_chainId        | Returns the chain ID (10)         |
+| eth\_syncing        | Returns sync status of the node   |
+| net\_version        | Returns the network ID            |
+| net\_listening      | Returns listening status          |
+| net\_peerCount      | Returns number of connected peers |
+| web3\_clientVersion | Returns the client version        |
+| web3\_sha3          | Returns Keccak-256 hash of data   |
+| rpc\_modules        | Returns enabled RPC modules       |
 
 ## Support
 
