@@ -57,6 +57,14 @@
   * [orders/{order\_id} - TRON energy](tron-energy/api-reference/orders-order_id-tron-energy.md)
   * [price-estimate - TRON Energy](tron-energy/api-reference/price-estimate-tron-energy.md)
 
+## Crypto Address Audit
+
+* [Wallet Audit](crypto-address-audit/wallet-audit.md)
+* [Wallet Risk](crypto-address-audit/wallet-risk.md)
+* [Rug Pull Checker](crypto-address-audit/rug-pull-checker.md)
+* [How to Get Address Audit API Key](crypto-address-audit/how-to-get-address-audit-api-key.md)
+* [API Reference](crypto-address-audit/api-reference.md)
+
 ## ADD-ONS
 
 * [Yellowstone gRPC API](add-ons/yellowstone-grpc-api/README.md)

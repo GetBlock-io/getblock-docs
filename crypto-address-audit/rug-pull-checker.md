@@ -1,0 +1,2 @@
+# Rug Pull Checker
+
