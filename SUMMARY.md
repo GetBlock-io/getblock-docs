@@ -62,7 +62,6 @@
 * [Wallet Audit](crypto-address-audit/wallet-audit.md)
 * [Wallet Risk](crypto-address-audit/wallet-risk.md)
 * [Rug Pull Checker](crypto-address-audit/rug-pull-checker.md)
-* [How to Get Address Audit API Key](crypto-address-audit/how-to-get-address-audit-api-key.md)
 * [API Reference](crypto-address-audit/api-reference.md)
 
 ## ADD-ONS
