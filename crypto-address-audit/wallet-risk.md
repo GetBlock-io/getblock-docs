@@ -116,4 +116,4 @@ Examples:
 
 1. [Wallet Audit](wallet-audit.md)
 2. [Rug Pull Checker](/broken/pages/5p9srabFofhIIsU5dubn)
-3. [Address Audit API Reference](api-reference.md)
+3. [Address Audit API Reference](api-reference/)

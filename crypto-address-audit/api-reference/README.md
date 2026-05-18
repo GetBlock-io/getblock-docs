@@ -10,13 +10,19 @@ The GetBlock Address Audit API provides access to all address audit services, wh
 
 ### Base URL
 
-| Services         | Base URL                                             |
+{% code overflow="wrap" %}
+```bash
+https://services.getblock.io/v1
+```
+{% endcode %}
+
+### Authentication
+
+| Services         | URL                                                  |
 | ---------------- | ---------------------------------------------------- |
 | Wallet Audit     | `https://services.getblock.io/v1/wallet-audit/audit` |
 | Wallet Risk      | `https://services.getblock.io/v1/wallet-audit/check` |
-| Rug Pull Checker |                                                      |
-
-### Authentication
+| Rug Pull Checker | `https://services.getblock.io/v1/rug-pull/check`     |
 
 All requests require an API key in the header:
 
@@ -26,7 +32,20 @@ Authorization: Bearer <API_KEY>
 
 ### How to Get Address Audit API Key
 
+1. Go to your [account dashboard](https://account.getblock.io/)
+2. Click on the product icon on the Navbar
 
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+
+3. Scroll down and Select **Address Audit**
+4. After that, select the **API key** tab
+5. On the **API Key** tab, click on the plus icon, and your API key will be generated for you automatically
+
+<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="warning" %}
+Ensure you store your API Key securely
+{% endhint %}
 
 ### QuickStart
 
@@ -101,7 +120,7 @@ axios(config)
 ```
 {% endcode %}
 
-Replace `<ACCESS-TOKEN>` with your actual access token from GetBlock.
+> Replace `<YOUR_API_KEY>` with your actual API Key from the GetBlock dashboard.
 {% endstep %}
 
 {% step %}
@@ -222,7 +241,7 @@ print(response.text)
 ```
 {% endcode %}
 
-Replace `<YOUR_API_KEY>` with your actual GetBlock access token.
+> Replace `<YOUR_API_KEY>` with your actual GetBlock API Key.
 {% endstep %}
 
 {% step %}
@@ -236,3 +255,8 @@ python main.py
 {% endtab %}
 {% endtabs %}
 
+### Next Step
+
+* [Wallet Risk endpoint](wallet-risk-endpoint.md)
+* [Wallet Audit endpoint](wallet-audit-endpoint.md)
+* Rug Pull Checker endpoint
