@@ -25,7 +25,7 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3.  Select:
 
@@ -34,7 +34,7 @@ Once logged in:
     * **API Interface:** JSON-RPC or Websocket or GraphQL or MEV-Protected(JSON-RPC) or MEV-Protected(Websocket)
     * **Region:** Frankfurt (EU) or Singapore or New York
 
-    <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 4. Click **"Create":** Your endpoint URL will be generated immediately.
 {% endstep %}
 

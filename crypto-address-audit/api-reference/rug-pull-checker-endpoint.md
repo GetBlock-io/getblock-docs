@@ -147,7 +147,25 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Response Parameters
 
-
+| **Field Path**          | **Type**          | **Example**                  | **Description**                                                                                                                               |
+| ----------------------- | ----------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| status                  | string            | `"Fraud"`                    | Model verdict. Possible values: `"Fraud"`, `"Not Fraud"`, `"Investable"`, `"Not Investable"`, `"Safe"`.                                       |
+| probabilityFraud        | number            | `0.5488`                     | Rug pull probability score ranging from `0.0` to `1.0`.                                                                                       |
+| contractCreationTime    | string (ISO 8601) | `"2021-11-10T12:00:00.000Z"` | Exact timestamp when the smart contract was deployed.                                                                                         |
+| lastChecked             | string (ISO 8601) | `"2026-03-25T18:42:00.000Z"` | Timestamp of the most recent security and fraud analysis.                                                                                     |
+| chain                   | string            | `"ETH"`                      | The network/blockchain name (e.g., `"ETH"`).                                                                                                  |
+| forensic\_details       | object            | _See sub-fields below_       | Deep analysis of the contract's security properties. Core flags are binary: `0` (clean) or `1` (flagged).                                     |
+| ↳ `.contract_name`      | string            | `"PFToken"`                  | The registered name of the smart contract.                                                                                                    |
+| ↳ `.is_open_source`     | number (0/1)      | `1`                          | Indicates if the source code is verified on the network explorer.                                                                             |
+| ↳ `.is_proxy`           | number (0/1)      | `0`                          | Indicates if the contract uses a proxy pattern (allowing the underlying logic to be replaced).                                                |
+| ↳ `.selfdestruct`       | number (0/1)      | `0`                          | Indicates if the contract contains a `selfdestruct` function capability.                                                                      |
+| ↳ `.privilege_withdraw` | number (0/1)      | `0`                          | Indicates if the owner has excessive privileges to arbitrarily withdraw user assets.                                                          |
+| ↳ `.withdraw_missing`   | number (0/1)      | `0`                          | Indicates if critical withdrawal mechanisms are missing, preventing users from recovering funds.                                              |
+| ↳ `.blacklist`          | number (0/1)      | `0`                          | Indicates if the contract owner has the power to blacklist specific wallet addresses.                                                         |
+| ↳ `.approval_abuse`     | number (0/1)      | `0`                          | Indicates if the owner can potentially abuse token allowances/approvals given by users.                                                       |
+| ↳ \`.owner\*\*          | object            | _See sub-fields below_       | Details regarding the administrative ownership of the smart contract.                                                                         |
+|      ↳ `.owner_type`    | string            | `"contract"`                 | The type of owner account. Possible values: `"contract"` (Multi-sig/DAO/Other contract) or `"eoa"` (Externally Owned Account/Regular wallet). |
+|      ↳ `.owner_address` | string (nullable) | `null`                       | The public address of the owner. Returns `null` if the contract ownership has been renounced.                                                 |
 
 ## Error Handling
 

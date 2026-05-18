@@ -20,7 +20,7 @@ For a full behavioral profile (intentions, experience, protocols, transactions),
 * AML Risk Screening: screening across 18 risk categories (cybercrime, money laundering, phishing, etc.)
 * Sanctions Check: verification against sanctions lists
 
-### Difference from Wallet Audit
+### Difference Between Wallet Risk from Wallet Audit
 
 | <p><br></p>                   | Wallet Risk Check                 | Wallet Audit                      |
 | ----------------------------- | --------------------------------- | --------------------------------- |
@@ -34,6 +34,30 @@ For a full behavioral profile (intentions, experience, protocols, transactions),
 | Wallet Overview / Rank        | ❌ No                              | ✅ Yes                             |
 | Networks                      | 5 (ETH, BNB, Base, Polygon, TRON) | 3 (ETH, BNB, Base)                |
 | When to use                   | Quick screening: allow / reject   | Deep analysis: who is this wallet |
+
+### How Predicated Trust Score is Calculated
+
+They are two-step logic involved in this calculation:
+
+#### Step 1: AML Check (hard override)
+
+If at least one field in forensic\_details = "1" → probabilityFraud is automatically set to 1.0 (Predicted Trust = 0%). The ML model is not invoked. Any AML flag = automatic maximum risk.
+
+#### Step 2: ML Model (if AML is clean)
+
+If all forensic\_details fields = "0" → the predictive AI model analyzes on-chain wallet behavior and returns probabilityFraud from 0.0 to 1.0. Predicted Trust = 1 − probabilityFraud.
+
+Examples:
+
+* vitalik.eth: all forensic\_details = "0" → ML model → probabilityFraud = 0.042 → Predicted Trust = 95.8%
+* Fraudulent wallet: money\_laundering = "1" → hard override → probabilityFraud = 1.0 → Predicted Trust = 0%
+
+{% hint style="danger" %}
+### Limitations
+
+* The service only works with regular wallets (EOA — Externally Owned Accounts). **Contract addresses are not supported.**
+* A minimum of 10–15 transactions is required to calculate an accurate predictive score. Wallets with less history lack sufficient data for a reliable assessment
+{% endhint %}
 
 ### Supported Networks
 
@@ -87,30 +111,6 @@ _If at least one parameter forensic\_details = "1" → probabilityFraud is autom
 3. Sanctions Check: This shows sanctions list verification. It displayed as a badge: Not Sanctioned (green) or Sanctioned (red). If the wallet is sanctioned, the category, name, and source link are displayed.
 
 </details>
-
-{% hint style="info" %}
-### Limitations
-
-* The service only works with regular wallets (EOA — Externally Owned Accounts). **Contract addresses are not supported.**
-* A minimum of 10–15 transactions is required to calculate an accurate predictive score. Wallets with less history lack sufficient data for a reliable assessment
-{% endhint %}
-
-### How Predicated Trust Score is Calculated
-
-They are two-step logic involved in this calculation:
-
-#### Step 1: AML Check (hard override)
-
-If at least one field in forensic\_details = "1" → probabilityFraud is automatically set to 1.0 (Predicted Trust = 0%). The ML model is not invoked. Any AML flag = automatic maximum risk.
-
-#### Step 2: ML Model (if AML is clean)
-
-If all forensic\_details fields = "0" → the predictive AI model analyzes on-chain wallet behavior and returns probabilityFraud from 0.0 to 1.0. Predicted Trust = 1 − probabilityFraud.
-
-Examples:
-
-* vitalik.eth: all forensic\_details = "0" → ML model → probabilityFraud = 0.042 → Predicted Trust = 95.8%
-* Fraudulent wallet: money\_laundering = "1" → hard override → probabilityFraud = 1.0 → Predicted Trust = 0%
 
 ### Next Step
 

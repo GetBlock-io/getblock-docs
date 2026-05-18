@@ -97,6 +97,13 @@ Example:
 
 > **Parameters used:** Wallet Rank, Experience Level, Transaction Categories, Predicted Trust, AML Analysis
 
+{% hint style="danger" %}
+### Limitations
+
+* The service only works with regular wallets (EOA — Externally Owned Accounts). **Contract addresses are not supported.**
+* A minimum of 10–15 transactions is required to calculate an accurate predictive score. Wallets with less history lack sufficient data for a reliable assessment
+{% endhint %}
+
 ### Supported Network
 
 1. Ethereum(ETH)
@@ -156,13 +163,6 @@ Example:
 8. AML Analysis: This shows wallet check across 18+ parameters for links to criminal activity. Each parameter is displayed as Yes or No.
 
 </details>
-
-{% hint style="info" %}
-### Limitations
-
-* The service only works with regular wallets (EOA — Externally Owned Accounts). **Contract addresses are not supported.**
-* A minimum of 10–15 transactions is required to calculate an accurate predictive score. Wallets with less history lack sufficient data for a reliable assessment
-{% endhint %}
 
 ### Next Step
 

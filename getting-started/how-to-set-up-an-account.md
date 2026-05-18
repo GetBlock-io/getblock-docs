@@ -56,8 +56,8 @@ Once you've created an account and signed in, you'll be directed to the GetBlock
 
 1. Click on your profile icon
 
-<figure><img src="../.gitbook/assets/image.png" alt="profile icon"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6).png" alt="profile icon"><figcaption></figcaption></figure>
 
 2. Click on the **Copy** Icon to copy your **User ID**
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="Where to find the GetBlock user ID"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt="Where to find the GetBlock user ID"><figcaption></figcaption></figure>
