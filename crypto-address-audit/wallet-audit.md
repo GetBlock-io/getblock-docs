@@ -168,4 +168,4 @@ Example:
 
 1. [Wallet Risk](wallet-risk.md)
 2. [Rug Pull Checker](/broken/pages/5p9srabFofhIIsU5dubn)
-3. [Address Audit API Reference](api-reference/)
+3. [Address Audit API Reference](api-reference.md)

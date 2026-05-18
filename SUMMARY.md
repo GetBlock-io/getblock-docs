@@ -62,7 +62,7 @@
 * [Wallet Audit](crypto-address-audit/wallet-audit.md)
 * [Wallet Risk](crypto-address-audit/wallet-risk.md)
 * [Rug Pull Checker](crypto-address-audit/rug-pull-checker.md)
-* [API Reference](crypto-address-audit/api-reference/README.md)
+* [API Reference](crypto-address-audit/api-reference.md)
   * [Wallet Audit Endpoint](crypto-address-audit/api-reference/wallet-audit-endpoint.md)
   * [Wallet Risk Endpoint](crypto-address-audit/api-reference/wallet-risk-endpoint.md)
   * [Rug Pull Checker Endpoint](crypto-address-audit/api-reference/rug-pull-checker-endpoint.md)
