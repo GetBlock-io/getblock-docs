@@ -6,7 +6,7 @@ description: >-
 
 # web3\_sha3 - ARC
 
-This method returns the Keccak-256 hash of the given input data. Use it to compute event signatures, function selectors, or hashes for off-chain validation. Note: despite the name `sha3`, the algorithm is Keccak-256, not standard SHA-3.
+This method returns the Keccak-256 hash of the given input data. Use it to compute event signatures, function selectors, or hashes for off-chain validation. Note: despite the name `sha3`, the algorithm is Keccak-256, not standard SHA-3
 
 ## Parameters
 
