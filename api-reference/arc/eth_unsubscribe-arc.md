@@ -4,7 +4,7 @@ description: >-
   use eth_unsubscribe JSON-RPC in GetBlock.io Web3 documentation.
 ---
 
-# eth\_unsubscribe - opBNB
+# eth\_unsubscribe - ARC
 
 This method cancels an existing subscription created with `eth_subscribe`.&#x20;
 
@@ -12,7 +12,7 @@ This method cancels an existing subscription created with `eth_subscribe`.&#x20;
 Like `eth_subscribe`, it is only available over WebSocket transport.
 {% endhint %}
 
-## Parameters
+### Parameters
 
 | Parameter      | Type   | Required | Description                                     |
 | -------------- | ------ | -------- | ----------------------------------------------- |
@@ -150,7 +150,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Ethers.js" %}
-{% code overflow="wrap" %}
 ```javascript
 import { ethers } from 'ethers';
 
@@ -161,23 +160,28 @@ const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKE
 const result = await provider.send('eth_unsubscribe', ["0x9cef478923ff08bf67fde6c64013158d"]);
 console.log(result);
 ```
-{% endcode %}
 {% endtab %}
 
 {% tab title="Viem" %}
-{% code overflow="wrap" %}
 ```javascript
-import { createPublicClient, http } from 'viem';
-import { opBNB } from 'viem/chains';
+import { createPublicClient, http, defineChain } from 'viem';
+
+const arcTestnet = defineChain({
+    id: 5042002,
+    name: 'Arc Testnet',
+    network: 'arc-testnet',
+    nativeCurrency: { name: 'USD Coin', symbol: 'USDC', decimals: 6 },
+    rpcUrls: { default: { http: ['https://go.getblock.io/<ACCESS-TOKEN>/'] } },
+    blockExplorers: { default: { name: 'arcscan', url: 'https://testnet.arcscan.app' } }
+});
 
 const client = createPublicClient({
-    chain: opBNB,
+    chain: arcTestnet,
     transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const result = await client.request({ method: 'eth_unsubscribe', params: ["0x9cef478923ff08bf67fde6c64013158d"] });
 console.log(result);
 ```
-{% endcode %}
 {% endtab %}
 {% endtabs %}

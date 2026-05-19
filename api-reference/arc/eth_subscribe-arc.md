@@ -1,15 +1,15 @@
 ---
 description: >-
-  Example code for the eth_subscribe JSON-RPC method. Сomplete guide on how to
-  use eth_subscribe JSON-RPC in GetBlock.io Web3 documentation.
+  Example code for the eth_subscribe JSON-RPC method. Complete guide on how to
+  use eth_subscribe JSON-RPC in GetBlock Web3 documentation.
 ---
 
-# eth\_subscribe - opBNB
+# eth\_subscribe - ARC
 
 This method creates a real-time subscription over a WebSocket connection. Available subscription types are `newHeads` (new block headers), `logs` (matching contract events), and `newPendingTransactions` (pending transactions).&#x20;
 
 {% hint style="info" %}
-This method is only available over WebSocket transport — use `wss://go.getblock.io/<ACCESS-TOKEN>/`.
+This method is only available over WebSocket transport — use `wss://go.getblock.io/<ACCESS-TOKEN>/`. With Arc's \~2 second block times, WebSocket subscriptions are the most efficient way to drive real-time payment UIs.
 {% endhint %}
 
 ## Parameters
@@ -99,6 +99,7 @@ let message = r#"{
 
 ## Response Example
 
+{% code overflow="wrap" %}
 ```json
 {
     "jsonrpc": "2.0",
@@ -106,6 +107,7 @@ let message = r#"{
     "result": "0x9cef478923ff08bf67fde6c64013158d"
 }
 ```
+{% endcode %}
 
 ## Response Parameters
 
@@ -115,10 +117,10 @@ let message = r#"{
 
 ## Use Cases
 
-* Real-time wallet activity notifications
-* Live DEX trade feeds for trading UIs
+* Real-time merchant payment confirmation notifications
+* Live FX engine trade feeds for trading UIs
 * Streaming indexers that react to new blocks instantly
-* Mempool surveillance for MEV bots
+* Compliance systems monitoring high-value transfers in real time
 
 ## Error Handling
 
@@ -147,11 +149,17 @@ provider.on('block', (blockNumber) => {
 
 {% tab title="Viem (WebSocket)" %}
 ```javascript
-import { createPublicClient, webSocket } from 'viem';
-import { opBNB } from 'viem/chains';
+import { createPublicClient, webSocket, defineChain } from 'viem';
+
+const arcTestnet = defineChain({
+    id: 5042002,
+    name: 'Arc Testnet',
+    nativeCurrency: { name: 'USD Coin', symbol: 'USDC', decimals: 6 },
+    rpcUrls: { default: { http: ['https://go.getblock.io/<ACCESS-TOKEN>/'], webSocket: ['wss://go.getblock.io/<ACCESS-TOKEN>/'] } }
+});
 
 const client = createPublicClient({
-    chain: opBNB,
+    chain: arcTestnet,
     transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/')
 });
 
