@@ -132,7 +132,7 @@
   * [/v1/transactions - Aptos](api-reference/aptos-apt/apt_v1_transactions.md)
   * [/v1/transactions/by\_hash/{transaction\_hash} - Aptos](api-reference/aptos-apt/apt_v1_transactions_by_hash_transaction_hash.md)
   * [/v1/transactions/by\_version/{version} - Aptos](api-reference/aptos-apt/apt_v1_transactions_by_version_version.md)
-* [Arc](api-reference/arc/README.md)
+* [ARC](api-reference/arc/README.md)
   * [eth\_blockNumber - ARC](api-reference/arc/eth_blocknumber-arc.md)
   * [eth\_call - ARC](api-reference/arc/eth_call-arc.md)
   * [eth\_chainId - ARC](api-reference/arc/eth_chainid-arc.md)
