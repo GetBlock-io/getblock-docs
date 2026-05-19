@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Arc nodes via JSON-RPC API.
+  Connect to the ARC network without running your own infrastructure.
+---
+
 # ARC
 
 Arc is an open Layer 1 blockchain built by Circle (the company behind USDC), purpose-built for stablecoin finance, payments, and institutional use cases. Launched on public testnet in late 2025 with participation from 100+ institutions, including BlackRock, Visa, and HSBC, Arc takes a fundamentally different approach to gas economics: instead of a volatile native token, **USDC is the network's native gas token**, making transaction fees predictable and dollar-denominated.&#x20;
