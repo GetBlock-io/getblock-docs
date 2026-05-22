@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn about GetBlock Rug Pull Checker, its benefits and how to use to analyze
-  contract address
+  GetBlock Rug Pull Checker: AI rug pull detection for smart contracts — score,
+  trust, and flag
 ---
 
 # Rug Pull Checker
@@ -52,11 +52,9 @@ Rug Pull Check provides automated risk indicators based on publicly available on
 
 ### Supported Networks
 
-| **Network**     | **API Value** | **Note**     |
-| --------------- | ------------- | ------------ |
-| Ethereum        | ETH           | Full support |
-| BNB Smart Chain | BNB           | Full support |
-| Base            | BASE          | Full support |
+1. Ethereum
+2. BNB Smart Chain
+3. Base
 
 ### How Rug Pull Probability Is Calculated&#x20;
 
@@ -125,6 +123,12 @@ The algorithm correctly identifies 68 out of 100 rug pulls based on purely behav
 7. Contract details: This contains parameters that are displayed as a green checkmark (safe) or a red flag (risk).
 
 </details>
+
+If you want to interact with or integrate this service via API, check the [Rug pull checker endpoint](api-reference/rug-pull-checker-endpoint.md).
+
+{% hint style="info" %}
+**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).&#x20;
+{% endhint %}
 
 ### Next Step
 

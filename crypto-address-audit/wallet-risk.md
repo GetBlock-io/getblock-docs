@@ -1,14 +1,14 @@
 ---
 description: >-
-  Learn about GetBlock Wallet Risk, its benefits and how to use to analyze
-  wallet address
+  GetBlock Wallet Risk: fast AI fraud screening for wallets — risk score, level,
+  and flags.
 ---
 
 # Wallet Risk
 
 Wallet Risk Check is a quick blockchain wallet risk assessment service. It returns an AI-predictive trust score, screening across 18 AML risk categories, and a sanctions check — in a single API call with response time under 100ms.
 
-This is a lightweight version of [Wallet Audit](wallet-audit.md). Wallet Risk Check provides a quick go/no-go signal e.g Can this wallet be trusted?&#x20;
+This is a lightweight version of [Wallet Audit](wallet-audit.md). Wallet Risk Check provides a quick go/no-go signal e.g "Can this wallet be trusted?"
 
 {% hint style="info" %}
 For a full behavioral profile (intentions, experience, protocols, transactions), use [Wallet Audit.](wallet-audit.md)
@@ -20,22 +20,22 @@ For a full behavioral profile (intentions, experience, protocols, transactions),
 * AML Risk Screening: screening across 18 risk categories (cybercrime, money laundering, phishing, etc.)
 * Sanctions Check: verification against sanctions lists
 
-### Difference Between Wallet Risk from Wallet Audit
+### Difference Between Wallet Risk And Wallet Audit
 
 | <p><br></p>                   | Wallet Risk Check                 | Wallet Audit                      |
 | ----------------------------- | --------------------------------- | --------------------------------- |
 | Response time                 | < 100ms                           | Several seconds                   |
-| Trust Score                   | ✅ Yes                             | ✅ Yes                             |
-| AML Screening (18 categories) | ✅ Yes                             | ✅ Yes                             |
-| Sanctions Check               | ✅ Yes                             | ✅ Yes                             |
-| Intentions (14 categories)    | ❌ No                              | ✅ Yes                             |
-| Experience / Risk Profile     | ❌ No                              | ✅ Yes                             |
-| Protocols / Categories        | ❌ No                              | ✅ Yes                             |
-| Wallet Overview / Rank        | ❌ No                              | ✅ Yes                             |
+| Trust Score                   | Yes                               | Yes                               |
+| AML Screening (18 categories) | Yes                               | Yes                               |
+| Sanctions Check               | Yes                               | Yes                               |
+| Intentions (14 categories)    | No                                | Yes                               |
+| Experience / Risk Profile     |  No                               | Yes                               |
+| Protocols / Categories        | No                                | Yes                               |
+| Wallet Overview / Rank        | No                                | Yes                               |
 | Networks                      | 5 (ETH, BNB, Base, Polygon, TRON) | 3 (ETH, BNB, Base)                |
 | When to use                   | Quick screening: allow / reject   | Deep analysis: who is this wallet |
 
-### How Predicated Trust Score is Calculated
+### How Predicted Trust Score is Calculated
 
 They are two-step logic involved in this calculation:
 
@@ -111,6 +111,12 @@ _If at least one parameter forensic\_details = "1" → probabilityFraud is autom
 3. Sanctions Check: This shows sanctions list verification. It displayed as a badge: Not Sanctioned (green) or Sanctioned (red). If the wallet is sanctioned, the category, name, and source link are displayed.
 
 </details>
+
+If you want to interact with or integrate this service via API, check the [Wallet risk endpoint.](api-reference/wallet-risk-endpoint.md)
+
+{% hint style="info" %}
+**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).&#x20;
+{% endhint %}
 
 ### Next Step
 

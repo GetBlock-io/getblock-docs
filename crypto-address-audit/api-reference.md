@@ -253,4 +253,4 @@ python main.py
 
 * [Wallet Risk endpoint](api-reference/wallet-risk-endpoint.md)
 * [Wallet Audit endpoint](api-reference/wallet-audit-endpoint.md)
-* Rug Pull Checker endpoint
+* [Rug Pull Checker endpoint](api-reference/rug-pull-checker-endpoint.md)

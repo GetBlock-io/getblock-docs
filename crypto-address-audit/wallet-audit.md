@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn about GetBlock Wallet Audit, its benefits and how to use to analyze
-  wallet address
+  GetBlock Wallet Audit: assess on-chain risk, AML exposure, and wallet behavior
+  in seconds.
 ---
 
 # Wallet Audit
@@ -110,7 +110,7 @@ Example:
 2. BNB Smart Chain(BSC)
 3. Base
 
-### How to Audit a Wallet Address
+### How to Audit a Wallet Address&#x20;
 
 1. Go to your [GetBlock Account Dashboard](https://account.getblock.io/products/address-audit#check)
 
@@ -163,6 +163,12 @@ Example:
 8. AML Analysis: This shows wallet check across 18+ parameters for links to criminal activity. Each parameter is displayed as Yes or No.
 
 </details>
+
+If you want to interact with or integrate this service via API, check the [Wallet audit endpoint.](api-reference/wallet-audit-endpoint.md)
+
+{% hint style="info" %}
+**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).&#x20;
+{% endhint %}
 
 ### Next Step
 
