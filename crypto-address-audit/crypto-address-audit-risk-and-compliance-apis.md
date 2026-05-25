@@ -4,31 +4,31 @@ description: >-
   blockchain addresses before any interaction.
 ---
 
-# Overview
+# Crypto Address Audit: Risk & Compliance APIs
 
-Crypto Address Audit is GetBlock's risk and compliance suite for screening blockchain addresses before any interaction. One API key and one dashboard cover three on-chain analysis tools: a full behavioral profile of a wallet, a fast risk check, and a rug pull predictor for smart contracts.
+Crypto Address Audit is GetBlock's AI-powered risk and compliance suite for screening wallets and smart contracts — fraud risk, AML exposure, and rug pull detection in one API.
 
 The service runs on pure on-chain behavioral analysis — no source code review, no off-chain data — across Ethereum, BNB Smart Chain, and Base.
 
-### Available Crypto Address Audit Services Are:
+### Choose Your Crypto Audit API:
 
 1. **Wallet Audit**
 
 A complete behavioral profile of a wallet address. Returns a trust score, AML check across 18+ parameters, behavioral risk profile (Risk Willingness, Experience Level, Risk Capability), protocol interaction history, transaction breakdown by category, and predictive intentions.
 
-> Learn more about [Wallet Audit](https://claude.ai/crypto-address-audit/wallet-audit.md) or access its [endpoint](api-reference/wallet-audit-endpoint.md)&#x20;
+> Learn more about [Wallet Audit](wallet-audit.md) or access its [endpoint](api-reference/wallet-audit-endpoint.md)&#x20;
 
 2. **Wallet Risk**
 
 A faster, lighter check focused on a single binary outcome: is this address safe to interact with? Returns a risk score and the flags that drove it. Use this when latency matters and a full audit is more than the use case needs — payment flows, point-of-sale, real-time wallet connect.
 
-> Learn more about  [Wallet Risk](https://claude.ai/crypto-address-audit/wallet-risk.md) or access its [endpoint](api-reference/wallet-risk-endpoint.md)
+> Learn more about  [Wallet Risk ](wallet-risk.md)or access its [endpoint](api-reference/wallet-risk-endpoint.md)
 
 3. **Rug Pull Checker**
 
 A predictive check for smart contract and liquidity pool addresses. Analyzes the on-chain behavior of the contract creator and individual liquidity providers — tracing through intermediate contracts to the source wallet — and returns a rug pull risk score (0–100), risk level (LOW / MEDIUM / HIGH), creator trust score, per-LP trust scores, and behavioral flags. The underlying AI model is trained on 336K smart contracts.
 
-> Learn more about  [Rug Pull Checker](https://claude.ai/crypto-address-audit/rug-pull-checker.md) or access its [endpoint](api-reference/rug-pull-checker-endpoint.md)&#x20;
+> Learn more about  [Rug Pull Checker ](rug-pull-checker.md)or access its [endpoint](api-reference/rug-pull-checker-endpoint.md)&#x20;
 
 ### How to Access
 
@@ -58,4 +58,4 @@ Each user gets 5 free requests per day. After the free quota is used, each reque
 1. [Wallet Audit](wallet-audit.md)
 2. [Wallet Risk](wallet-risk.md)
 3. [Rug Pull Checker](rug-pull-checker.md)
-4. [Address Audit API Reference](https://claude.ai/crypto-address-audit/api-reference.md)
+4. [Address Audit API Reference](api-reference.md)
