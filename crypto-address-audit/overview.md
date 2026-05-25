@@ -55,7 +55,10 @@ Each user gets 5 free requests per day. After the free quota is used, each reque
 
 #### Next Step
 
-1. [Wallet Audit](wallet-audit.md)
-2. [Wallet Risk](wallet-risk.md)
-3. [Rug Pull Checker](rug-pull-checker.md)
+1. [Wallet Audit Doc](wallet-audit.md)
+2. [Wallet Risk Doc](wallet-risk.md)
+3. [Rug Pull Checker Doc](rug-pull-checker.md)
 4. [Address Audit API Reference](api-reference.md)
+5. [Wallet Audit Homepage](https://getblock.io/wallet-audit-check/)
+6. [Wallet Risk Homepage](https://getblock.io/wallet-risk-check/)
+7. [Rug Pull Checker Homepage](https://getblock.io/rug-pull-check/)

@@ -120,6 +120,9 @@ If you want to interact with or integrate this service via API, check the [Walle
 
 ### Next Step
 
-1. [Wallet Audit](wallet-audit.md)
-2. [Rug Pull Checker](/broken/pages/5p9srabFofhIIsU5dubn)
+1. [Wallet Audit Doc](wallet-audit.md)
+2. [Rug Pull Checker Doc](/broken/pages/5p9srabFofhIIsU5dubn)
 3. [Address Audit API Reference](api-reference.md)
+4. [Wallet Audit Homepage](https://getblock.io/wallet-audit-check/)
+5. [Wallet Risk Homepage](https://getblock.io/wallet-risk-check/)
+6. [Rug Pull Checker Homepage](https://getblock.io/rug-pull-check/)

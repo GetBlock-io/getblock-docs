@@ -59,7 +59,7 @@
 
 ## Crypto Address Audit
 
-* [Crypto Address Audit: Risk & Compliance APIs](crypto-address-audit/crypto-address-audit-risk-and-compliance-apis.md)
+* [Crypto Address Audit: Risk & Compliance APIs](crypto-address-audit/overview.md)
 * [Wallet Audit](crypto-address-audit/wallet-audit.md)
 * [Wallet Risk](crypto-address-audit/wallet-risk.md)
 * [Rug Pull Checker](crypto-address-audit/rug-pull-checker.md)
