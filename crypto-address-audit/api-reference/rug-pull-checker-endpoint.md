@@ -24,7 +24,7 @@ This method checks a smart contract for rug pull indicators. Proxied to ChainAwa
 curl --location --request POST 'https://services.getblock.io/v1/rug-pull/check' \
 -- header 'Authorization: Bearer YOUR_API_KEY',
 --header 'Content-Type: application/json' \
---data-raw ' {  "network": "ETH", "address": "0xdac17f958d2ee523a2206206994597c13d831ec7"}'
+--data-raw ' {  "network": "ETH", "contract_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"}'
 ```
 {% endcode %}
 {% endtab %}
@@ -34,7 +34,7 @@ curl --location --request POST 'https://services.getblock.io/v1/rug-pull/check' 
 import axios from "axios";
 
 const data = 
-  {  "network": "ETH", "address": "0xdac17f958d2ee523a2206206994597c13d831ec7"};
+  {  "network": "ETH", "contract_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"};
 
 const config = {
   method: "post",
@@ -61,7 +61,7 @@ import json
 
 url = "https://services.getblock.io/v1/rug-pull/check"
 
-payload = json.dumps({  "network": "ETH", "address": "0xdac17f958d2ee523a2206206994597c13d831ec7"})
+payload = json.dumps({  "network": "ETH", "contract_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"})
 
 headers = {
       "Authorization": "Bearer YOUR_API_KEY",
@@ -84,7 +84,7 @@ use serde_json::json;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
-    let payload = json!({  "network": "ETH", "address": "0xdac17f958d2ee523a2206206994597c13d831ec7"});
+    let payload = json!({  "network": "ETH", "contract_address": "0xdac17f958d2ee523a2206206994597c13d831ec7"});
 
     let response = client
         .post("https://services.getblock.io/v1/rug-pull/check")
