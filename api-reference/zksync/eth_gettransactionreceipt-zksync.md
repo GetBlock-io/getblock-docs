@@ -1,4 +1,11 @@
-# eth\_gettransactionreceipt zksync
+---
+description: >-
+  Example code for the eth_getTransactionReceipt JSON-RPC method. Сomplete guide
+  on how to use eth_getTransactionReceipt JSON-RPC in GetBlock.io Web3
+  documentation.
+---
+
+# eth\_getTransactionReceipt - zkSync
 
 Returns the receipt for a transaction, including execution status, gas used, emitted logs, and L1 batch metadata. Available after the transaction has been included in an L2 block.
 
@@ -162,12 +169,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

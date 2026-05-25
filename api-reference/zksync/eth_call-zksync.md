@@ -1,4 +1,10 @@
-# eth\_call zksync
+---
+description: >-
+  Example code for the eth_call JSON-RPC method. Сomplete guide on how to use
+  eth_call JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_call - zkSync
 
 Executes a read-only call against contract state without committing a transaction. Use it to query contract data through view/pure functions or to simulate state-changing calls without paying gas.
 
@@ -161,7 +167,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | ----------- | ------------------ | ---------------------------------------------------------------------- |
 | 403         | Forbidden          | Missing or invalid `<ACCESS-TOKEN>`                                    |
 | -32602      | Invalid params     | Request parameters are missing or malformed                            |
-| -32601      | Method not found   | Method does not exist or is not enabled on this node                   |
 | 429         | Too Many Requests  | Rate limit exceeded for your plan                                      |
 | -32000      | Execution reverted | The contract call reverted; check the data field for the revert reason |
 
@@ -169,6 +174,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="zksync-ethers (JavaScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { Provider } from 'zksync-ethers';
 
@@ -179,6 +185,7 @@ const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
 const result = await provider.send('eth_call', [{"to": "0x36615cf349d7f6344891b1e7ca7c72883f5dc049", "data": "0x70a08231000000000000000000000000d85498dbeaeb1df24be52eed4f52eac2fbd56245"}, "latest"]);
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="zksync2-python (Python)" %}

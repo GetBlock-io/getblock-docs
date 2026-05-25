@@ -1,4 +1,10 @@
-# debug\_traceblockbyhash zksync
+---
+description: >-
+  Example code for the debug_traceBlockByHash JSON-RPC method. Сomplete guide on
+  how to use debug_traceBlockByHash JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# debug\_traceBlockByHash - zkSync
 
 Traces the execution of all transactions within a block specified by hash. Returns an array of trace results, one per transaction.
 
@@ -171,18 +177,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message      | Cause                                                      |
-| ----------- | ------------------ | ---------------------------------------------------------- |
-| 403         | Forbidden          | Missing or invalid `<ACCESS-TOKEN>`                        |
-| -32602      | Invalid params     | Request parameters are missing or malformed                |
-| -32601      | Method not found   | Method does not exist or is not enabled on this node       |
-| 429         | Too Many Requests  | Rate limit exceeded for your plan                          |
-| -32601      | Method not enabled | Debug methods may be premium-only on shared infrastructure |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 
 {% tabs %}
 {% tab title="zksync-ethers (JavaScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { Provider } from 'zksync-ethers';
 
@@ -193,9 +198,11 @@ const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
 const result = await provider.send('debug_traceBlockByHash', ["0x4f3a1d6e8c2b9a7e5d3f1c8a4b6e9d2f5a8c3e7b1d4f9a6c2e5b8d3f7a1c4e9b", {"tracer": "callTracer", "timeout": "120s"}]);
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="zksync2-python (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from zksync2.module.module_builder import ZkSyncBuilder
 
@@ -207,5 +214,6 @@ result = zk_web3.zksync._zks_endpoints if 'debug_traceBlockByHash'.startswith('z
 result = zk_web3.provider.make_request('debug_traceBlockByHash', ["0x4f3a1d6e8c2b9a7e5d3f1c8a4b6e9d2f5a8c3e7b1d4f9a6c2e5b8d3f7a1c4e9b", {"tracer": "callTracer", "timeout": "120s"}])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

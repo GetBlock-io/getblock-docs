@@ -1,4 +1,11 @@
-# eth\_maxpriorityfeepergas zksync
+---
+description: >-
+  Example code for the eth_maxPriorityFeePerGas JSON-RPC method. Сomplete guide
+  on how to use eth_maxPriorityFeePerGas JSON-RPC in GetBlock.io Web3
+  documentation.
+---
+
+# eth\_maxPriorityFeePerGas - zkSync
 
 Returns the suggested priority fee per gas (the "tip" portion of EIP-1559 transactions). On zkSync Era this is typically `0x0` because the network uses a fair gas price rather than priority-based ordering.
 
@@ -128,12 +135,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

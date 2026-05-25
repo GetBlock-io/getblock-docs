@@ -1,4 +1,10 @@
-# eth\_getlogs zksync
+---
+description: >-
+  Example code for the eth_getLogs JSON-RPC method. Сomplete guide on how to use
+  eth_getLogs JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_getLogs - zkSync
 
 Returns logs matching a given filter. Filters specify block range, address, and indexed topics — efficient retrieval of contract events like ERC-20 transfers.
 

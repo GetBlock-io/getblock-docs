@@ -1,4 +1,10 @@
-# eth\_getcode zksync
+---
+description: >-
+  Example code for the eth_getCode JSON-RPC method. Сomplete guide on how to use
+  eth_getCode JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_getCode - zkSync
 
 Returns the contract bytecode deployed at a given address. An empty result (`0x`) indicates the address is an EOA, not a contract. Note: on zkSync, deployed bytecode is EraVM bytecode, not standard EVM bytecode — use `zks_getBytecodeByHash` for queries by hash.
 
@@ -144,17 +150,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 
 {% tabs %}
 {% tab title="zksync-ethers (JavaScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { Provider } from 'zksync-ethers';
 
@@ -165,6 +171,7 @@ const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
 const result = await provider.send('eth_getCode', ["0x36615cf349d7f6344891b1e7ca7c72883f5dc049", "latest"]);
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="zksync2-python (Python)" %}

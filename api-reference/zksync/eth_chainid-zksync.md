@@ -1,4 +1,10 @@
-# eth\_chainid zksync
+---
+description: >-
+  Example code for the eth_chainId JSON-RPC method. Сomplete guide on how to use
+  eth_chainId JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_chainId - zkSync
 
 Returns the chain ID of the connected network. For zkSync Era mainnet the result is `0x144` (324 in decimal); for Sepolia testnet it is `0x12c` (300). Chain ID is required for EIP-155 signed transactions to prevent replay attacks across chains.
 
@@ -129,12 +135,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

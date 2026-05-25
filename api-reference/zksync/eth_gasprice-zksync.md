@@ -1,4 +1,10 @@
-# eth\_gasprice zksync
+---
+description: >-
+  Example code for the eth_gasPrice JSON-RPC method. Сomplete guide on how to
+  use eth_gasPrice JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_gasPrice - zkSync
 
 Returns the current gas price in wei. zkSync's fee model is dynamic and depends on L1 gas conditions plus L2 compute; `zks_getFeeParams` returns the underlying parameters.
 
@@ -129,12 +135,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 

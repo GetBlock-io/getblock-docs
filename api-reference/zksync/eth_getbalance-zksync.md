@@ -1,4 +1,10 @@
-# eth\_getbalance zksync
+---
+description: >-
+  Example code for the eth_getBalance JSON-RPC method. Сomplete guide on how to
+  use eth_getBalance JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_getBalance - zkSync
 
 Returns the ETH balance of an account on zkSync Era, in wei. Divide by 10¹⁸ to obtain ETH.
 
@@ -125,7 +131,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {
     "jsonrpc": "2.0",
     "id": "getblock.io",
-    "result": "0x1bc16d674ec80000"
+    "result": "0x43ebe3d8a50"
 }
 ```
 {% endcode %}
@@ -144,17 +150,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 
 {% tabs %}
 {% tab title="zksync-ethers (JavaScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { Provider } from 'zksync-ethers';
 import { ethers } from 'ethers';
@@ -164,6 +170,7 @@ const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
 const balance = await provider.getBalance('0x36615cf349d7f6344891b1e7ca7c72883f5dc049');
 console.log('Balance:', ethers.formatEther(balance), 'ETH');
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="zksync2-python (Python)" %}

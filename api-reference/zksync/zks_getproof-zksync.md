@@ -1,4 +1,10 @@
-# zks\_getproof zksync
+---
+description: >-
+  Example code for the zks_getProof JSON-RPC method. Сomplete guide on how to
+  use zks_getProof JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# zks\_getProof - zkSync
 
 Generates Merkle proofs for one or more storage values associated with an account. Unlike Ethereum's two-level hexadecimal trie, zkSync Era uses a single-level full binary tree with 256-bit keys — proofs are batch-anchored rather than block-anchored, so the third parameter is an L1 batch number.
 
@@ -174,12 +180,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

@@ -1,6 +1,12 @@
-# eth\_estimategas zksync
+---
+description: >-
+  Example code for the eth_estimateGas JSON-RPC method. Сomplete guide on how to
+  use eth_estimateGas JSON-RPC in GetBlock.io Web3 documentation.
+---
 
-Estimates the gas required to execute a transaction. zkSync's fee model includes both compute and pubdata components — `zks_estimateFee` returns a more detailed breakdown.
+# eth\_estimateGas - zkSync
+
+Estimates the gas required to execute a transaction. zkSync's fee model includes both compute and pubdata components — `zks_estimateFee` Returns a more detailed breakdown.
 
 ## Parameters
 
@@ -160,14 +166,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | ----------- | ------------------ | ----------------------------------------------------- |
 | 403         | Forbidden          | Missing or invalid `<ACCESS-TOKEN>`                   |
 | -32602      | Invalid params     | Request parameters are missing or malformed           |
-| -32601      | Method not found   | Method does not exist or is not enabled on this node  |
 | 429         | Too Many Requests  | Rate limit exceeded for your plan                     |
 | -32000      | Execution reverted | Transaction would revert; estimate cannot be returned |
+| 3           | Insufficient fund  | Low fund for gas and value                            |
 
 ## SDK Integration
 
 {% tabs %}
 {% tab title="zksync-ethers (JavaScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { Provider } from 'zksync-ethers';
 
@@ -178,9 +185,11 @@ const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
 const result = await provider.send('eth_estimateGas', [{"from": "0x36615cf349d7f6344891b1e7ca7c72883f5dc049", "to": "0xd85498dbeaeb1df24be52eed4f52eac2fbd56245", "value": "0x16345785d8a0000"}]);
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="zksync2-python (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from zksync2.module.module_builder import ZkSyncBuilder
 
@@ -192,5 +201,6 @@ result = zk_web3.zksync._zks_endpoints if 'eth_estimateGas'.startswith('zks_') e
 result = zk_web3.provider.make_request('eth_estimateGas', [{"from": "0x36615cf349d7f6344891b1e7ca7c72883f5dc049", "to": "0xd85498dbeaeb1df24be52eed4f52eac2fbd56245", "value": "0x16345785d8a0000"}])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

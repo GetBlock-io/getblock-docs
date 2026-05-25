@@ -1,4 +1,10 @@
-# zks\_gasperpubdata zksync
+---
+description: >-
+  Example code for the zks_gasPerPubdata JSON-RPC method. Сomplete guide on how
+  to use zks_gasPerPubdata JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# zks\_gasPerPubdata - zkSync
 
 Returns the scaled gas-per-pubdata limit for the currently open batch. The result is scaled by 1e18 to preserve precision. Use this value alongside gas limits and L1 calldata size in transaction fee calculations. Available since node version 28.7.0.
 
@@ -129,12 +135,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 

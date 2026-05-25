@@ -1,4 +1,10 @@
-# eth\_blocknumber zksync
+---
+description: >-
+  Example code for the eth_blockNumber JSON-RPC method. Сomplete guide on how to
+  use eth_blockNumber JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_blockNumber - zkSync
 
 Returns the number of the most recent L2 block on zkSync Era. With \~1 second block times, this is the standard way to poll for new blocks. Note: L2 blocks are grouped into L1 batches — use `zks_L1BatchNumber` for batch-level tracking.
 
@@ -131,12 +137,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

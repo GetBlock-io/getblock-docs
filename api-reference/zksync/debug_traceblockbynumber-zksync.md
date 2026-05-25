@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the debug_traceBlockByHash JSON-RPC method. Сomplete guide on
+  how to use debug_traceBlockByHash JSON-RPC in GetBlock.io Web3 documentation.
+---
+
 # debug\_traceBlockBynumber - zkSync
 
 Traces the execution of all transactions within a block specified by number. Returns an array of trace results, one per transaction.
@@ -171,18 +177,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message      | Cause                                                      |
-| ----------- | ------------------ | ---------------------------------------------------------- |
-| 403         | Forbidden          | Missing or invalid `<ACCESS-TOKEN>`                        |
-| -32602      | Invalid params     | Request parameters are missing or malformed                |
-| -32601      | Method not found   | Method does not exist or is not enabled on this node       |
-| 429         | Too Many Requests  | Rate limit exceeded for your plan                          |
-| -32601      | Method not enabled | Debug methods may be premium-only on shared infrastructure |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 
 {% tabs %}
 {% tab title="zksync-ethers (JavaScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { Provider } from 'zksync-ethers';
 
@@ -193,6 +198,7 @@ const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
 const result = await provider.send('debug_traceBlockByNumber', ["latest", {"tracer": "callTracer", "timeout": "120s"}]);
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="zksync2-python (Python)" %}

@@ -1,4 +1,11 @@
-# eth\_getblocktransactioncountbynumber zksync
+---
+description: >-
+  Example code for the eth_getBlockTransactionCountByNumber JSON-RPC method.
+  Сomplete guide on how to use eth_getBlockTransactionCountByNumber JSON-RPC in
+  GetBlock.io Web3 documentation.
+---
+
+# eth\_getBlockTransactionCountByNumber - zkSync
 
 Returns the number of transactions in an L2 block, given the block number or tag.
 
@@ -139,17 +146,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 
 {% tabs %}
 {% tab title="zksync-ethers (JavaScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { Provider } from 'zksync-ethers';
 
@@ -160,9 +167,11 @@ const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
 const result = await provider.send('eth_getBlockTransactionCountByNumber', ["latest"]);
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="zksync2-python (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from zksync2.module.module_builder import ZkSyncBuilder
 
@@ -174,5 +183,6 @@ result = zk_web3.zksync._zks_endpoints if 'eth_getBlockTransactionCountByNumber'
 result = zk_web3.provider.make_request('eth_getBlockTransactionCountByNumber', ["latest"])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

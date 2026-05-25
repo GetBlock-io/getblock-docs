@@ -1,4 +1,10 @@
-# eth\_feehistory zksync
+---
+description: >-
+  Example code for the eth_feeHistory JSON-RPC method. Сomplete guide on how to
+  use eth_feeHistory JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_feeHistory - zkSync
 
 Returns historical base fees and priority fee percentiles over a window of recent blocks. Use it to build a fee oracle that adapts to recent L2 network conditions.
 
@@ -212,12 +218,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

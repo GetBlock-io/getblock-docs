@@ -1,4 +1,10 @@
-# zks\_getfeeparams zksync
+---
+description: >-
+  Example code for the zks_getFeeParams JSON-RPC method. Сomplete guide on how
+  to use zks_getFeeParams JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# zks\_getFeeParams - zkSync
 
 Returns the current fee parameters used by the zkSync Era node — including L1 gas price, pubdata price, compute and pubdata overhead, and batch-level gas limits. These parameters drive the fee model.
 
@@ -113,15 +119,27 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "result": {
         "V2": {
             "config": {
-                "minimal_l2_gas_price": 25000000,
-                "compute_overhead_part": 0,
-                "pubdata_overhead_part": 1,
+                "minimal_l2_gas_price": 45250000,
+                "compute_overhead_part": 0.0,
+                "pubdata_overhead_part": 1.0,
                 "batch_overhead_l1_gas": 800000,
                 "max_gas_per_batch": 200000000,
-                "max_pubdata_per_batch": 240000
+                "max_pubdata_per_batch": 500000
             },
-            "l1_gas_price": 46226388803,
-            "l1_pubdata_price": 100780475095
+            "l1_gas_price": 152278857,
+            "l1_pubdata_price": 7859874,
+            "conversion_ratio": {
+                "l1": {
+                    "numerator": 1,
+                    "denominator": 1
+                },
+                "sl": {
+                    "numerator": 1,
+                    "denominator": 1
+                },
+                "numerator": 1,
+                "denominator": 1
+            }
         }
     }
 }
@@ -149,12 +167,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 

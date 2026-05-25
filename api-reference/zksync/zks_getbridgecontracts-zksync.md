@@ -1,4 +1,10 @@
-# zks\_getbridgecontracts zksync
+---
+description: >-
+  Example code for the zks_getBridgeContracts JSON-RPC method. Сomplete guide on
+  how to use zks_getBridgeContracts JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# zks\_getBridgeContracts - zksync
 
 Returns the addresses of canonical bridge contracts on both L1 and L2, including the default ERC-20 bridge and the WETH bridge.
 
@@ -137,12 +143,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 

@@ -1,6 +1,12 @@
-# zks\_getl1gasprice zksync
+---
+description: >-
+  Example code for the zks_getL1GasPrice JSON-RPC method. Сomplete guide on how
+  to use zks_getL1GasPrice JSON-RPC in GetBlock.io Web3 documentation.
+---
 
-Returns the current L1 gas price used in fee calculations. The L1 gas price contributes to L2 transaction costs since pubdata posting to L1 is part of every transaction's fee.
+# zks\_getL1GasPrice - zkSync
+
+Returns the current L1 gas price used in fee calculations. The L1 gas price contributes to L2 transaction costs because posting pubdata to L1 is part of every transaction's fee.
 
 ## Parameters
 
@@ -129,12 +135,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 

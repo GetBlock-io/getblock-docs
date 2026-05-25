@@ -1,6 +1,17 @@
+---
+description: >-
+  zkSync API Reference for efficient interaction with zkSync nodes, enabling
+  scalable, low-cost transactions and fast finality through Layer 1 solutions on
+  the Ethereum blockchain.
+---
+
 # zkSync
 
-zkSync Era is a Layer 2 ZK rollup for Ethereum, developed by Matter Labs and powered by ZK Stack. It scales Ethereum through validity proofs — cryptographic SNARKs that prove the correctness of transaction batches before they settle to L1 — delivering low fees and near-instant finality without compromising on Ethereum's security guarantees. The network is EVM-equivalent: Solidity and Vyper contracts compile to zkSync-compatible bytecode through the zksolc and zkvyper compilers, and developers can use existing tooling like Hardhat, Foundry, ethers.js, viem, and Web3.js with minimal changes. zkSync Era extends the standard Ethereum JSON-RPC interface with a `zks_*` namespace for L2-specific operations — bridge contract addresses, L1 batch lookups, fee parameters, paymaster integration, and Merkle proof generation across its unique single-level binary tree architecture.
+zkSync Era is a Layer 2 ZK rollup for Ethereum, developed by Matter Labs and powered by ZK Stack. It scales Ethereum through validity proofs, called cryptographic SNARKs, that verify the correctness of transaction batches before they settle on L1, delivering low fees and near-instant finality without compromising Ethereum's security guarantees.
+
+The network is EVM-equivalent: Solidity and Vyper contracts compile to zkSync-compatible bytecode via the zksolc and zkvyper compilers, and developers can use existing tooling such as Hardhat, Foundry, ethers.js, viem, and Web3.js with minimal changes.&#x20;
+
+zkSync Era extends the standard Ethereum JSON-RPC interface with a `zks_*` namespace for L2-specific operations — bridge contract addresses, L1 batch lookups, fee parameters, paymaster integration, and Merkle proof generation across its unique single-level binary tree architecture.
 
 ### Key Features
 
@@ -18,7 +29,7 @@ zkSync Era is a Layer 2 ZK rollup for Ethereum, developed by Matter Labs and pow
 {% hint style="info" %}
 **TECHNICAL DISCLAIMER: AUTHORITATIVE JSON-RPC SPECIFICATION**
 
-GetBlock’s zkSync Era API reference documentation is provided exclusively for informational purposes and to optimize the developer experience. The standard Ethereum JSON-RPC base is specified by the Ethereum community at [ethereum.org/developers/docs/apis/json-rpc](https://ethereum.org/en/developers/docs/apis/json-rpc/). The canonical specification for the `zks_*` namespace, `debug_*` traces, and pubsub subscriptions specific to zkSync is published at [docs.zksync.io/zksync-protocol/api](https://docs.zksync.io/zksync-protocol/api). For protocol-level details on EraVM, account abstraction, and the bridgehub, consult the official zkSync documentation.
+_GetBlock’s zkSync Era API reference documentation is provided exclusively for informational purposes and to optimize the developer experience. The standard Ethereum JSON-RPC base is specified by the Ethereum community at_ [_ethereum.org/developers/docs/apis/json-rpc_](https://ethereum.org/en/developers/docs/apis/json-rpc/)_. The canonical specification for the `zks_*` namespace, `debug_*` traces, and pubsub subscriptions specific to zkSync is published at_ [_docs.zksync.io/zksync-protocol/api_](https://docs.zksync.io/zksync-protocol/api)_. For protocol-level details on EraVM, account abstraction, and the bridgehub, consult the official zkSync documentation._
 {% endhint %}
 
 ## Network Information
@@ -47,28 +58,18 @@ GetBlock’s zkSync Era API reference documentation is provided exclusively for 
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
-
-{% tab title="New York, USA" %}
-```bash
-https://go.getblock.us/<ACCESS-TOKEN>/
-```
-{% endtab %}
-
-{% tab title="Singapore, Singapore" %}
-```bash
-https://go.getblock.asia/<ACCESS-TOKEN>/
-```
-{% endtab %}
 {% endtabs %}
 
+{% hint style="info" %}
 All zkSync Era JSON-RPC methods are called by sending a `POST` request to the base URL with a standard JSON-RPC 2.0 body. For real-time subscriptions (new blocks, logs) use the WebSocket scheme: `wss://go.getblock.io/<ACCESS-TOKEN>/`.
+{% endhint %}
 
 ## Supported Networks
 
-| Network         | JSON-RPC | WSS | Frankfurt, Germany | New York, USA | Singapore, Singapore |
-| --------------- | -------- | --- | ------------------ | ------------- | -------------------- |
-| Mainnet         | ✅        | ✅   | ✅                  | ✅             | ✅                    |
-| Sepolia Testnet | ✅        | ✅   | ✅                  | ✅             | ✅                    |
+| Network         | JSON-RPC | WSS | Frankfurt, Germany |
+| --------------- | -------- | --- | ------------------ |
+| Mainnet         | ✅        | ✅   | ✅                  |
+| Sepolia Testnet | ✅        | ✅   | ✅                  |
 
 ## Quickstart
 
@@ -141,7 +142,7 @@ axios(config)
 ```
 {% endcode %}
 
-Replace `<ACCESS-TOKEN>` with your actual access token from GetBlock.
+Replace `<ACCESS-TOKEN>` with your actual GetBlock access token.
 {% endstep %}
 
 {% step %}

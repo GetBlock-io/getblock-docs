@@ -1,4 +1,10 @@
-# net\_peercount zksync
+---
+description: >-
+  Example code for the net_peerCount JSON-RPC method. Сomplete guide on how to
+  use net_peerCount JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# net\_peerCount - zkSync
 
 Returns the number of peers currently connected to the node, as a hex string.
 
@@ -127,12 +133,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

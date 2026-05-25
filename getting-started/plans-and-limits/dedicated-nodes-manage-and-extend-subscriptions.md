@@ -12,7 +12,7 @@ This page explains how to manage your **dedicated node subscriptions**, includin
 
 You can monitor the status of your dedicated node subscriptions in three different ways.
 
-#### 1. Dashboard&#x20;
+#### 1. Dashboard
 
 <figure><img src="../../.gitbook/assets/dedicated nodes widget.svg" alt="tracking the status of dedicated blockchain node subscriptions from GetBlock account"><figcaption></figcaption></figure>
 
@@ -32,9 +32,9 @@ Each endpoint in “**My endpoints**” list shows its current subscription stat
 
 ***
 
-#### Subscription status breakdown&#x20;
+#### Subscription status breakdown
 
-<table><thead><tr><th width="201.48828125" align="center">Status</th><th width="219.43359375" align="center">Dashboard View</th><th align="center" valign="middle">Manage Plans View</th></tr></thead><tbody><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-1">Active </a></p><p>(<mark style="color:orange;">Recurring Payment)</mark></p></td><td align="center"><img src="../../.gitbook/assets/Status_1 (1).svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_1(MP) (1).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-2">Active </a></p><p>(<mark style="color:green;">One-Time Payment)</mark></p></td><td align="center"><img src="../../.gitbook/assets/Status_2 (1).svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_2(MP).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-3">Expiring Soon </a></p><p>(<mark style="color:green;">One-Time Payment</mark>) </p></td><td align="center"><img src="../../.gitbook/assets/Status_3.svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_3(MP).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-4">In Grace Period </a></p><p>(<mark style="color:orange;">Recurring</mark> /<mark style="color:green;">One-Time</mark>)</p></td><td align="center"><img src="../../.gitbook/assets/Status_4.svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_4(MP).svg" alt=""></td></tr></tbody></table>
+<table><thead><tr><th width="201.48828125" align="center">Status</th><th width="219.43359375" align="center">Dashboard View</th><th align="center" valign="middle">Manage Plans View</th></tr></thead><tbody><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-1">Active</a></p><p>(<mark style="color:orange;">Recurring Payment)</mark></p></td><td align="center"><img src="../../.gitbook/assets/Status_1 (1).svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_1(MP) (1).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-2">Active</a></p><p>(<mark style="color:green;">One-Time Payment)</mark></p></td><td align="center"><img src="../../.gitbook/assets/Status_2 (1).svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_2(MP).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-3">Expiring Soon</a></p><p>(<mark style="color:green;">One-Time Payment</mark>)</p></td><td align="center"><img src="../../.gitbook/assets/Status_3.svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_3(MP).svg" alt=""></td></tr><tr><td align="center"><p><a data-footnote-ref href="#user-content-fn-4">In Grace Period</a></p><p>(<mark style="color:orange;">Recurring</mark> /<mark style="color:green;">One-Time</mark>)</p></td><td align="center"><img src="../../.gitbook/assets/Status_4.svg" alt=""></td><td align="center" valign="middle"><img src="../../.gitbook/assets/Status_4(MP).svg" alt=""></td></tr></tbody></table>
 
 ***
 
@@ -43,10 +43,10 @@ Each endpoint in “**My endpoints**” list shows its current subscription stat
 You can modify your subscription period at any time **if you’re on a one-time payment plan** paid with:
 
 * Cryptocurrency;
-* Credit car&#x64;**.**&#x20;
+* Credit car&#x64;**.**
 
 {% hint style="warning" %}
-#### Note on Recurring Payments
+**Note on Recurring Payments**
 
 Users **cannot manually extend a plan** when using recurring payments. These subscriptions renew automatically at the end of a billing cycle.
 
@@ -77,7 +77,7 @@ There are three ways to extend your subscription.
 
 <figure><img src="../../.gitbook/assets/extend_popup.svg" alt="How to extend dedicated node plan using GetBlock"><figcaption></figcaption></figure>
 
-2. **Choose a new period** and review details. Proceed to checkout.&#x20;
+2. **Choose a new period** and review details. Proceed to checkout.
 3. Complete the payment by following the instructions provided.
 4. Check the "**Payment History**" under the **Pricing** tab to track the progress.
 
@@ -91,8 +91,6 @@ There are three ways to extend your subscription.
 * **VAT may apply** depending on the user's location.
 * The extension is applied **instantly** once the payment is completed.
 
-
-
 {% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FFOeg95CadVyFvyLi70Bh%2Fuploads%2F8pIYDgoi9y0CC2FAKCOb%2FExtendingDedicNodes_Widget_Paddle.mp4?alt=media&token=e5db1173-11ce-43a7-9ca0-af3de0a6e62c" %}
 How to extend your node subscription with a card payment
 {% endembed %}
@@ -104,8 +102,6 @@ How to extend your node subscription with a card payment
 * Payments are processed via **NOWPayments**.
 * Make sure to account for **network fees** to avoid payment issues.
 * The extension is applied **after blockchain confirmation**, which may take a few minutes.
-
-
 
 {% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FFOeg95CadVyFvyLi70Bh%2Fuploads%2FakJE50bGOIdiyyIyo61n%2FExtending_nodes_CryptoPayments.mp4?alt=media&token=f539d7e3-d430-4665-a39c-d09f7a6f1ce9" fullWidth="false" %}
 {% endtab %}

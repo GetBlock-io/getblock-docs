@@ -1,4 +1,10 @@
-# eth\_unsubscribe zksync
+---
+description: >-
+  Example code for the eth_unsubscribe JSON-RPC method. Сomplete guide on how to
+  use eth_unsubscribe JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_unsubscribe - zkSync
 
 Cancels an existing subscription created with `eth_subscribe`. Like `eth_subscribe`, only available over WebSocket transport.
 
@@ -12,104 +18,93 @@ Cancels an existing subscription created with `eth_subscribe`. Like `eth_subscri
 
 {% tabs %}
 {% tab title="cURL" %}
+{% code title="cURL (wscat)" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "eth_unsubscribe",
-    "params": [
-        "0x9cef478923ff08bf67fde6c64013158d"
-    ],
-    "id": "getblock.io"
-}'
+# This method requires WebSocket connection
+wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
+
+> {"jsonrpc":"2.0","method":"eth_unsubscribe","params":["0x1"],"id":"getblock.io"}
 ```
+{% endcode %}
 {% endtab %}
 
-{% tab title="JavaScript (Axios)" %}
+{% tab title="Javascript" %}
+{% code title="JavaScript (ws)" %}
 ```javascript
-import axios from 'axios';
+const WebSocket = require('ws');
 
-const data = JSON.stringify({
-    "jsonrpc": "2.0",
-    "method": "eth_unsubscribe",
-    "params": [
-        "0x9cef478923ff08bf67fde6c64013158d"
-    ],
-    "id": "getblock.io"
+const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+
+ws.on('open', () => {
+    ws.send(JSON.stringify({
+        jsonrpc: '2.0',
+        method: 'eth_unsubscribe',
+        params: ['0x1'],
+        id: 'getblock.io'
+    }));
 });
 
-const config = {
-    method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    data: data
-};
-
-axios(config)
-    .then(response => console.log(JSON.stringify(response.data, null, 2)))
-    .catch(error => console.log(error));
+ws.on('message', (data) => {
+    console.log(JSON.parse(data));
+});
 ```
+{% endcode %}
 {% endtab %}
 
-{% tab title="Python (Requests)" %}
+{% tab title="Python" %}
+{% code title="Python (websockets)" %}
 ```python
-import requests
+import asyncio
+import websockets
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+async def unsubscribe():
+    uri = "wss://go.getblock.io/<ACCESS-TOKEN>/"
+    async with websockets.connect(uri) as ws:
+        payload = {
+            "jsonrpc": "2.0",
+            "method": "eth_unsubscribe",
+            "params": ["0x1"],
+            "id": "getblock.io"
+        }
+        await ws.send(json.dumps(payload))
+        response = await ws.recv()
+        print(json.loads(response))
 
-payload = json.dumps({
-    "jsonrpc": "2.0",
-    "method": "eth_unsubscribe",
-    "params": [
-        "0x9cef478923ff08bf67fde6c64013158d"
-    ],
-    "id": "getblock.io"
-})
-
-headers = {
-    'Content-Type': 'application/json'
-}
-
-response = requests.post(url, headers=headers, data=payload)
-print(response.text)
+asyncio.run(unsubscribe())
 ```
+{% endcode %}
 {% endtab %}
 
-{% tab title="Rust (Reqwest)" %}
+{% tab title="Rust" %}
+{% code title="Rust (tokio-tungstenite)" %}
 ```rust
-use reqwest::Client;
+use tokio_tungstenite::connect_async;
+use futures_util::{SinkExt, StreamExt};
 use serde_json::json;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = Client::new();
-
+    let url = "wss://go.getblock.io/<ACCESS-TOKEN>/";
+    let (mut ws, _) = connect_async(url).await?;
+    
     let payload = json!({
         "jsonrpc": "2.0",
         "method": "eth_unsubscribe",
-        "params": [
-                "0x9cef478923ff08bf67fde6c64013158d"
-        ],
+        "params": ["0x1"],
         "id": "getblock.io"
-});
-
-    let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
-        .header("Content-Type", "application/json")
-        .json(&payload)
-        .send()
-        .await?;
-
-    let result: serde_json::Value = response.json().await?;
-    println!("{:#?}", result);
-
+    });
+    
+    ws.send(payload.to_string().into()).await?;
+    
+    if let Some(msg) = ws.next().await {
+        println!("{:?}", msg?);
+    }
+    
     Ok(())
 }
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -143,7 +138,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | ----------- | ----------------- | -------------------------------------------------------------------------- |
 | 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                                        |
 | -32602      | Invalid params    | Request parameters are missing or malformed                                |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node                       |
 | 429         | Too Many Requests | Rate limit exceeded for your plan                                          |
 | -32600      | Invalid Request   | `eth_unsubscribe` was called over HTTP; use a WebSocket connection instead |
 
@@ -151,6 +145,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="zksync-ethers (JavaScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { Provider } from 'zksync-ethers';
 
@@ -161,6 +156,7 @@ const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
 const result = await provider.send('eth_unsubscribe', ["0x9cef478923ff08bf67fde6c64013158d"]);
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="zksync2-python (Python)" %}

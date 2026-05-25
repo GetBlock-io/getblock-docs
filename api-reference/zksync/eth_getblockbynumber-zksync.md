@@ -1,6 +1,12 @@
-# eth\_getblockbynumber zksync
+---
+description: >-
+  Example code for the eth_getBlockByNumber JSON-RPC method. Сomplete guide on
+  how to use eth_getBlockByNumber JSON-RPC in GetBlock.io Web3 documentation.
+---
 
-Returns information about an L2 block by block number. Pass `"latest"`, `"earliest"`, `"pending"`, `"safe"`, or `"finalized"` as a block tag, or a hex-encoded block number. `"finalized"` reflects the latest block whose L1 batch has been executed on Ethereum mainnet.
+# eth\_getBlockByNumber - zkSync
+
+Returns information about an L2 block by block number. Pass `"latest"`, `"earliest"`, `"pending"`, `"safe"`, or `"finalized"` as a block tag, or a hex-encoded block number. `"finalized"` reflects the latest block whose L1 batch has been executed on the Ethereum mainnet.
 
 ## Parameters
 
@@ -175,12 +181,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

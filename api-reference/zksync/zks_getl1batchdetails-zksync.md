@@ -1,4 +1,10 @@
-# zks\_getl1batchdetails zksync
+---
+description: >-
+  Example code for the zks_getL1BatchDetails JSON-RPC method. Сomplete guide on
+  how to use zks_getL1BatchDetails JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# zks\_getL1BatchDetails - zkSync
 
 Returns full details for an L1 batch, including the commit, prove, and execute transaction hashes on Ethereum mainnet, along with associated timestamps and gas prices.
 
@@ -168,12 +174,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 

@@ -1,4 +1,10 @@
-# eth\_sendrawtransaction zksync
+---
+description: >-
+  Example code for the eth_sendRawTransaction JSON-RPC method. Сomplete guide on
+  how to use eth_sendRawTransaction JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# eth\_sendRawTransaction - zkSync
 
 Broadcasts a signed transaction to zkSync Era for execution. The primary method for submitting any state-changing operation. zkSync supports standard EIP-1559 (type 2) and EIP-712 (type 113, for advanced features like paymasters).
 
@@ -145,7 +151,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | ----------- | ----------------------------------- | ----------------------------------------------------------------------------- |
 | 403         | Forbidden                           | Missing or invalid `<ACCESS-TOKEN>`                                           |
 | -32602      | Invalid params                      | Request parameters are missing or malformed                                   |
-| -32601      | Method not found                    | Method does not exist or is not enabled on this node                          |
 | 429         | Too Many Requests                   | Rate limit exceeded for your plan                                             |
 | -32000      | Insufficient funds for gas          | Sender does not have enough ETH to pay gas + value (unless using a paymaster) |
 | -32000      | Nonce too low                       | Transaction's nonce has already been used                                     |

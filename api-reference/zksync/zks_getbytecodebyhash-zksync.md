@@ -1,4 +1,10 @@
-# zks\_getbytecodebyhash zksync
+---
+description: >-
+  Example code for the zks_getBytecodeByHash JSON-RPC method. Сomplete guide on
+  how to use zks_getBytecodeByHash JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# zks\_getBytecodeByHash - zkSync
 
 Returns the bytecode of a contract by its bytecode hash. zkSync stores deployed bytecode indexed by hash — multiple deployed contracts may share the same bytecode.
 
@@ -145,17 +151,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 
 {% tabs %}
 {% tab title="zksync-ethers (JavaScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { Provider } from 'zksync-ethers';
 
@@ -166,9 +171,11 @@ const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
 const result = await provider.send('zks_getBytecodeByHash', ["0x0100067d861e2f5717a12c3e869cfb657793b86bbb0caa05cc1421f16c5217bc"]);
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="zksync2-python (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from zksync2.module.module_builder import ZkSyncBuilder
 
@@ -180,5 +187,6 @@ result = zk_web3.zksync._zks_endpoints if 'zks_getBytecodeByHash'.startswith('zk
 result = zk_web3.provider.make_request('zks_getBytecodeByHash', ["0x0100067d861e2f5717a12c3e869cfb657793b86bbb0caa05cc1421f16c5217bc"])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

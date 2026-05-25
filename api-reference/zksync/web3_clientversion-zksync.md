@@ -1,4 +1,10 @@
-# web3\_clientversion zksync
+---
+description: >-
+  Example code for the web3_clientVersion JSON-RPC method. Сomplete guide on how
+  to use web3_clientVersion JSON-RPC in GetBlock.io Web3 documentation.
+---
+
+# web3\_clientVersion - zkSync
 
 Returns the version string of the client software running the node.
 
@@ -128,12 +134,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 

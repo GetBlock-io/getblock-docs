@@ -28,75 +28,92 @@ This method requires a WebSocket connection (not HTTP).
 ### Request Example
 
 {% tabs %}
-{% tab title="WebSocket (JavaScript)" %}
-{% code title="subscribe.js" %}
+{% tab title="cURL" %}
+{% code title="cURL (wscat)" overflow="wrap" %}
+```bash
+# This method requires WebSocket connection
+wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
+
+> {"jsonrpc":"2.0","method":"eth_subscribe","params":["newheads"],"id":"getblock.io"}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Javascript" %}
+{% code title="JavaScript (ws)" %}
 ```javascript
 const WebSocket = require('ws');
 
 const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
-  // Subscribe to new block headers
-  const subscribeRequest = {
-    jsonrpc: '2.0',
-    id: 1,
-    method: 'eth_subscribe',
-    params: ['newHeads']
-  };
-  ws.send(JSON.stringify(subscribeRequest));
+    ws.send(JSON.stringify({
+        jsonrpc: '2.0',
+        method: 'eth_subscribe',
+        params: ['newHeads'],
+        id: 'getblock.io'
+    }));
 });
 
 ws.on('message', (data) => {
-  const response = JSON.parse(data);
-  console.log('Received:', response);
+    console.log(JSON.parse(data));
 });
 ```
 {% endcode %}
 {% endtab %}
 
-{% tab title="WebSocket (Python)" %}
-{% code title="subscribe.py" %}
+{% tab title="Python" %}
+{% code title="Python (websockets)" %}
 ```python
 import asyncio
 import websockets
 import json
 
-async def subscribe():
+async def unsubscribe():
     uri = "wss://go.getblock.io/<ACCESS-TOKEN>/"
-    async with websockets.connect(uri) as websocket:
-        # Subscribe to new block headers
-        request = {
+    async with websockets.connect(uri) as ws:
+        payload = {
             "jsonrpc": "2.0",
-            "id": 1,
             "method": "eth_subscribe",
-            "params": ["newHeads"]
+            "params": ["newHeads"],
+            "id": "getblock.io"
         }
-        await websocket.send(json.dumps(request))
-        
-        while True:
-            response = await websocket.recv()
-            print(json.loads(response))
+        await ws.send(json.dumps(payload))
+        response = await ws.recv()
+        print(json.loads(response))
 
-asyncio.run(subscribe())
+asyncio.run(unsubscribe())
 ```
 {% endcode %}
 {% endtab %}
 
-{% tab title="Subscribe to Logs (JavaScript snippet)" %}
-{% code title="subscribe-logs.js" %}
-```javascript
-const subscribeRequest = {
-  jsonrpc: '2.0',
-  id: 1,
-  method: 'eth_subscribe',
-  params: [
-    'logs',
-    {
-      address: '0xContractAddress',
-      topics: ['0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef']
+{% tab title="Rust" %}
+{% code title="Rust (tokio-tungstenite)" %}
+```rust
+use tokio_tungstenite::connect_async;
+use futures_util::{SinkExt, StreamExt};
+use serde_json::json;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let url = "wss://go.getblock.io/<ACCESS-TOKEN>/";
+    let (mut ws, _) = connect_async(url).await?;
+    
+    let payload = json!({
+        "jsonrpc": "2.0",
+        "method": "eth_subscribe",
+        "params": ["newHeads"],
+        "id": "getblock.io"
+    });
+    
+    ws.send(payload.to_string().into()).await?;
+    
+    if let Some(msg) = ws.next().await {
+        println!("{:?}", msg?);
     }
-  ]
-};
+    
+    Ok(())
+}
 ```
 {% endcode %}
 {% endtab %}
