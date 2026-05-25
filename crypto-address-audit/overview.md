@@ -37,7 +37,7 @@ Two ways to use Crypto Address Audit, depending on the workflow.
 1. Via the [Dashboard](https://account.getblock.io/products/address-audit): This runs a check on the wallet/contract address through the UI. Paste an address, and run the check. **No code required.** Best for ad-hoc analysis, manual due diligence, and trying the service before integrating it.
 2. [**Via the API** ](https://account.getblock.io/products/address-audit#api-keys)— one `POST` request per address, JSON response. Best for production integration into a DeFi protocol, wallet, launchpad, or any product that needs to screen addresses programmatically. [Access the available endpoints here](api-reference.md).
 
-#### Pricing & Limits
+### Pricing & Limits
 
 Crypto Address Audit uses a single subscription that covers all three services with a single API key.
 
@@ -53,7 +53,7 @@ Each user gets 5 free requests per day. After the free quota is used, each reque
 **Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).&#x20;
 {% endhint %}
 
-#### Next Step
+### Next Step
 
 1. [Wallet Audit Doc](wallet-audit.md)
 2. [Wallet Risk Doc](wallet-risk.md)
