@@ -1,4 +1,10 @@
-# relay\_tx monero
+---
+description: >-
+  Example code for the relay_tx JSON-RPC method. Complete guide on how to use
+  relay_tx JSON-RPC in GetBlock Web3 documentation.
+---
+
+# relay\_tx - Monero
 
 This method instructs the node to relay one or more transactions (identified by hash) to its peers. The transactions must already be in the node's mempool.
 
@@ -148,12 +154,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 404         | Not Found         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

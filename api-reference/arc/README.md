@@ -60,27 +60,15 @@ Arc uses USDC as its native gas token, with **6 decimals** (not 18 like most EVM
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
-
-{% tab title="New York, USA" %}
-```bash
-https://go.getblock.us/<ACCESS-TOKEN>/
-```
-{% endtab %}
-
-{% tab title="Singapore, Singapore" %}
-```bash
-https://go.getblock.asia/<ACCESS-TOKEN>/
-```
-{% endtab %}
 {% endtabs %}
 
 All Arc JSON-RPC methods are called by sending a `POST` request to the base URL with a standard JSON-RPC 2.0 body. For real-time subscriptions (new blocks, finalized heads, logs) use the WebSocket scheme: `wss://go.getblock.io/<ACCESS-TOKEN>/`.
 
 ## Supported Networks
 
-| Network | JSON-RPC | WSS | Frankfurt, Germany | New York, USA | Singapore, Singapore |
-| ------- | -------- | --- | ------------------ | ------------- | -------------------- |
-| Testnet | ✅        | ✅   | ✅                  | ✅             | ✅                    |
+| Network | JSON-RPC | WSS | Frankfurt, Germany |
+| ------- | -------- | --- | ------------------ |
+| Testnet | ✅        | ✅   | ✅                  |
 
 Arc mainnet has not yet launched. This documentation targets the **public testnet** (Chain ID `5042002`), which is the current stable development environment.
 

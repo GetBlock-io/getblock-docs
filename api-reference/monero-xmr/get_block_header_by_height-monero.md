@@ -1,4 +1,11 @@
-# get\_block\_header\_by\_height monero
+---
+description: >-
+  Example code for the get_block_header_by_height JSON-RPC method. Complete
+  guide on how to use get_block_header_by_height JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# get\_block\_header\_by\_height - Monero
 
 This method returns the header of a block at a given height. Functionally similar to `get_block_header_by_hash` but indexed by height.
 
@@ -158,12 +165,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

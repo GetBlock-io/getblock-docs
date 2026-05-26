@@ -1,6 +1,12 @@
-# is\_key\_image\_spent monero
+---
+description: >-
+  Example code for the is_key_image_spent JSON-RPC method. Complete guide on how
+  to use is_key_image_spent JSON-RPC in GetBlock Web3 documentation.
+---
 
-This non-JSON-RPC endpoint checks whether one or more key images have been spent. Key images are unique identifiers used to prevent double-spends in Monero's ring-signature scheme.
+# is\_key\_image\_spent - Monero
+
+This non-JSON-RPC endpoint checks whether any key images have been spent. Key images are unique identifiers used to prevent double-spends in Monero's ring-signature scheme.
 
 ## Parameters
 
@@ -128,12 +134,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 404         | Not Found         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

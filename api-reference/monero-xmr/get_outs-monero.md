@@ -1,4 +1,10 @@
-# get\_outs monero
+---
+description: >-
+  Example code for the get_outs JSON-RPC method. Complete guide on how to use
+  get_outs JSON-RPC in GetBlock Web3 documentation.
+---
+
+# get\_outs - Monero
 
 This non-JSON-RPC endpoint returns transaction outputs by their global output index. Wallets use this to fetch decoys when constructing ring signatures.
 
@@ -157,12 +163,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 404         | Not Found         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

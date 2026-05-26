@@ -1,4 +1,10 @@
-# get\_block\_headers\_range monero
+---
+description: >-
+  Example code for the get_block_headers_range JSON-RPC method. Complete guide
+  on how to use get_block_headers_range JSON-RPC in GetBlock Web3 documentation.
+---
+
+# get\_block\_headers\_range - Monero
 
 This method returns block headers for all blocks in a given range, inclusive at both ends. Use it to efficiently fetch headers in bulk for indexing.
 
@@ -185,9 +191,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 | Status Code | Error Message     | Cause                                                         |
 | ----------- | ----------------- | ------------------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                           |
+| 404         | Not found         | Missing or invalid `<ACCESS-TOKEN>`                           |
 | -32602      | Invalid params    | Request parameters are missing or malformed                   |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node          |
 | 429         | Too Many Requests | Rate limit exceeded for your plan                             |
 | -2          | Invalid range     | `end_height` is less than `start_height` or exceeds chain tip |
 

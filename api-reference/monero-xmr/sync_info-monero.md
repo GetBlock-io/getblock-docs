@@ -1,4 +1,10 @@
-# sync\_info monero
+---
+description: >-
+  Example code for the sync_info JSON-RPC method. Complete guide on how to use
+  sync_info JSON-RPC in GetBlock Web3 documentation.
+---
+
+# sync\_info - Monero
 
 This method returns synchronization status for the node, including peers it is syncing from and per-peer progress. Useful for diagnosing sync stalls.
 
@@ -165,12 +171,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 404         | Not Found         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 

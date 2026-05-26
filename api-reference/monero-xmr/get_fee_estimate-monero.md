@@ -1,4 +1,10 @@
-# get\_fee\_estimate monero
+---
+description: >-
+  Example code for the get_fee_estimate JSON-RPC method. Complete guide on how
+  to use get_fee_estimate JSON-RPC in GetBlock Web3 documentation.
+---
+
+# get\_fee\_estimate - Monero
 
 This method returns the current per-byte fee estimate for transactions on the network, optionally for a specific priority level. Use it to size fees correctly before broadcasting a transaction.
 
@@ -144,12 +150,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 404         | Not found         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

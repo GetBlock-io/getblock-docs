@@ -1,6 +1,13 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Monero nodes via JSON-RPC API.
+  Connect to the Monero network without running your own infrastructure.
+---
+
 # Monero(XMR)
 
-Monero (XMR) is the leading privacy-focused cryptocurrency by market capitalization and a foundational implementation of the CryptoNote protocol. Originally proposed in 2013 by Nicolas van Saberhagen and launched in 2014, Monero uses ring signatures, stealth addresses, and RingCT (Ring Confidential Transactions) to make transactions untraceable on public block explorers — a property that distinguishes it from transparent ledgers like Bitcoin and Ethereum. The network is secured by the ASIC-resistant RandomX Proof-of-Work algorithm, which keeps mining accessible to commodity CPU hardware and counters centralization pressure. Monero is the canonical choice for use cases that require fungibility and on-chain confidentiality.
+Monero (XMR) is the leading privacy-focused cryptocurrency by market capitalization and a foundational implementation of the CryptoNote protocol. Originally proposed in 2013 by Nicolas van Saberhagen. It launched in 2014, Monero uses ring signatures, stealth addresses, and RingCT (Ring Confidential Transactions) to make transactions untraceable on public block explorers — a property that distinguishes it from transparent ledgers like Bitcoin and Ethereum. \
+The network is secured by the ASIC-resistant RandomX Proof-of-Work algorithm, which keeps mining accessible to commodity CPU hardware and counters centralization pressure. Monero is the canonical choice for use cases that require fungibility and on-chain confidentiality.
 
 ### Key Features
 
@@ -18,15 +25,7 @@ Monero (XMR) is the leading privacy-focused cryptocurrency by market capitalizat
 {% hint style="info" %}
 **TECHNICAL DISCLAIMER: AUTHORITATIVE MONEROD RPC SPECIFICATION**
 
-GetBlock’s Monero API reference documentation is provided exclusively for informational purposes and to optimize the developer experience. The canonical and normative specification for the monerod daemon RPC interface is maintained by the Monero Project and published at [docs.getmonero.org](https://docs.getmonero.org/rpc-library/monerod-rpc/) with the upstream source at [github.com/monero-project/monero-docs](https://github.com/monero-project/monero-docs). For protocol-level details, transaction structure, and cryptographic primitives, consult the official Monero documentation at [getmonero.org](https://www.getmonero.org/).
-{% endhint %}
-
-{% hint style="warning" %}
-**DAEMON RPC ONLY — NO WALLET RPC**
-
-GetBlock exposes the monerod **daemon RPC** for reading blockchain data, broadcasting transactions, and consensus-level queries. GetBlock does **not** expose `monero-wallet-rpc`, which handles private-key operations such as creating addresses, signing transfers, and querying wallet balances. Wallet RPC must be run locally against your own wallet file — never expose it on a managed RPC endpoint.
-
-This is standard practice across all reputable Monero RPC providers and is required for user safety.
+_GetBlock’s Monero API reference documentation is provided exclusively for informational purposes and to optimize the developer experience. The canonical and normative specification for the monerod daemon RPC interface is maintained by the Monero Project and published at_ [_docs.getmonero.org_](https://docs.getmonero.org/rpc-library/monerod-rpc/) _with the upstream source at_ [_github.com/monero-project/monero-docs_](https://github.com/monero-project/monero-docs)_. For protocol-level details, transaction structure, and cryptographic primitives, consult the official Monero documentation at_ [_getmonero.org_](https://www.getmonero.org/)_._
 {% endhint %}
 
 ## Network Information
@@ -50,28 +49,17 @@ This is standard practice across all reputable Monero RPC providers and is requi
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
-
-{% tab title="New York, USA" %}
-```bash
-https://go.getblock.us/<ACCESS-TOKEN>/
-```
-{% endtab %}
-
-{% tab title="Singapore, Singapore" %}
-```bash
-https://go.getblock.asia/<ACCESS-TOKEN>/
-```
-{% endtab %}
 {% endtabs %}
 
-All Monero JSON-RPC methods are called by sending a `POST` request to the base URL with a standard JSON-RPC 2.0 body. Non-JSON-RPC HTTP methods (such as `/get_height` and `/send_raw_transaction`) are accessed at their own URL paths under the same base URL.
+{% hint style="danger" %}
+**Monero is only accessible via a dedicated node**
+{% endhint %}
 
 ## Supported Networks
 
-| Network  | JSON-RPC | HTTP Endpoints | Frankfurt, Germany | New York, USA | Singapore, Singapore |
-| -------- | -------- | -------------- | ------------------ | ------------- | -------------------- |
-| Mainnet  | ✅        | ✅              | ✅                  | ✅             | ✅                    |
-| Stagenet | ✅        | ✅              | ✅                  | ✅             | ✅                    |
+| Network | JSON-RPC | HTTP Endpoints | Frankfurt, Germany |
+| ------- | -------- | -------------- | ------------------ |
+| Mainnet | ✅        | ✅              | ✅                  |
 
 ## Quickstart
 
@@ -148,7 +136,7 @@ axios(config)
 ```
 {% endcode %}
 
-Replace `<ACCESS-TOKEN>` with your actual access token from GetBlock.
+Replace `<ACCESS-TOKEN>` with your actual GetBlock access token.
 {% endstep %}
 
 {% step %}
@@ -252,8 +240,6 @@ python main.py
 ## Available API Methods
 
 Monero exposes two parallel surfaces: standard **JSON-RPC methods** (the majority) and **non-JSON-RPC HTTP endpoints** for binary and high-performance operations. GetBlock provides access to both.
-
-Methods marked **{disallowed}** are administrative operations that mutate node state. GetBlock blocks these on shared and public endpoints for safety. They are documented for completeness and may be available on dedicated nodes by request.
 
 ### JSON-RPC: Blocks & Chain
 

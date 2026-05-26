@@ -1,4 +1,10 @@
-# submit\_block monero
+---
+description: >-
+  Example code for the submit_block JSON-RPC method. Complete guide on how to
+  use submit_block JSON-RPC in GetBlock Web3 documentation.
+---
+
+# submit\_block - Monero
 
 This method submits a mined block to the network. The block blob must be hex-encoded and ordered correctly. The `params` field is a single-element array containing the block blob.
 
@@ -145,9 +151,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 | Status Code | Error Message      | Cause                                                         |
 | ----------- | ------------------ | ------------------------------------------------------------- |
-| 403         | Forbidden          | Missing or invalid `<ACCESS-TOKEN>`                           |
-| -32602      | Invalid params     | Request parameters are missing or malformed                   |
-| -32601      | Method not found   | Method does not exist or is not enabled on this node          |
+| 404         | Not Found          | Missing or invalid `<ACCESS-TOKEN>`                           |
 | 429         | Too Many Requests  | Rate limit exceeded for your plan                             |
 | -7          | Block not accepted | Submitted block failed validation (bad PoW, stale, malformed) |
 

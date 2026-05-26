@@ -16,19 +16,19 @@ The service runs on pure on-chain behavioral analysis — no source code review,
 
 A complete behavioral profile of a wallet address. Returns a trust score, AML check across 18+ parameters, behavioral risk profile (Risk Willingness, Experience Level, Risk Capability), protocol interaction history, transaction breakdown by category, and predictive intentions.
 
-> Learn more about [Wallet Audit](wallet-audit.md) or access its [endpoint](api-reference/wallet-audit-endpoint.md)&#x20;
+> Learn more about [Wallet Audit](https://getblock.io/wallet-audit-check/), check out it [docs](wallet-audit.md), or access its [endpoint](api-reference/wallet-audit-endpoint.md)
 
 2. **Wallet Risk**
 
 A faster, lighter check focused on a single binary outcome: is this address safe to interact with? Returns a risk score and the flags that drove it. Use this when latency matters and a full audit is more than the use case needs — payment flows, point-of-sale, real-time wallet connect.
 
-> Learn more about  [Wallet Risk ](wallet-risk.md)or access its [endpoint](api-reference/wallet-risk-endpoint.md)
+> Learn more about [Wallet Risk](https://getblock.io/wallet-risk-check/), check out it [docs](wallet-risk.md), or access its [endpoint](api-reference/wallet-risk-endpoint.md)
 
 3. **Rug Pull Checker**
 
 A predictive check for smart contract and liquidity pool addresses. Analyzes the on-chain behavior of the contract creator and individual liquidity providers — tracing through intermediate contracts to the source wallet — and returns a rug pull risk score (0–100), risk level (LOW / MEDIUM / HIGH), creator trust score, per-LP trust scores, and behavioral flags. The underlying AI model is trained on 336K smart contracts.
 
-> Learn more about  [Rug Pull Checker ](rug-pull-checker.md)or access its [endpoint](api-reference/rug-pull-checker-endpoint.md)&#x20;
+> Learn more about [Rug Pull Checker](https://getblock.io/rug-pull-checker/), check out it [docs](rug-pull-checker.md), or access its [endpoint](api-reference/rug-pull-checker-endpoint.md)
 
 ### How to Access
 

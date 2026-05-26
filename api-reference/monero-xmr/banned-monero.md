@@ -1,4 +1,10 @@
-# banned monero
+---
+description: >-
+  Example code for the banned JSON-RPC method. Complete guide on how to use
+  banned JSON-RPC in GetBlock Web3 documentation.
+---
+
+# banned - Monero
 
 This method checks whether a given IP address is currently banned on the node.
 
@@ -144,17 +150,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 404         | not found         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 
 {% tabs %}
 {% tab title="monero-javascript" %}
+{% code overflow="wrap" %}
 ```javascript
 import monerojs from 'monero-javascript';
 
@@ -164,9 +170,11 @@ const daemon = await monerojs.connectToDaemonRpc('https://go.getblock.io/<ACCESS
 const result = await daemon.getDaemonConnection().sendJsonRequest('banned', {"address": "192.0.2.1"});
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="monero-python" %}
+{% code overflow="wrap" %}
 ```python
 from monero.backends.jsonrpc import JSONRPCDaemon
 from monero.daemon import Daemon
@@ -179,5 +187,6 @@ daemon = Daemon(backend)
 result = backend.raw_request('banned', {"address": "192.0.2.1"})
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

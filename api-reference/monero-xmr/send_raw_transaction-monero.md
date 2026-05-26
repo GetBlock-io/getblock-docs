@@ -1,4 +1,10 @@
-# send\_raw\_transaction monero
+---
+description: >-
+  Example code for the send_raw_transaction JSON-RPC method. Complete guide on
+  how to use send_raw_transaction JSON-RPC in GetBlock Web3 documentation.
+---
+
+# send\_raw\_transaction - Monero
 
 This non-JSON-RPC endpoint broadcasts a serialized signed transaction to the network. It is the primary submission point for transactions constructed and signed offline by a wallet.
 
@@ -13,6 +19,7 @@ This non-JSON-RPC endpoint broadcasts a serialized signed transaction to the net
 
 {% tabs %}
 {% tab title="cURL" %}
+{% code overflow="wrap" %}
 ```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/send_raw_transaction' \
 --header 'Content-Type: application/json' \
@@ -21,6 +28,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/send_raw_t
     "do_not_relay": false
 }'
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="JavaScript (Axios)" %}
@@ -142,12 +150,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

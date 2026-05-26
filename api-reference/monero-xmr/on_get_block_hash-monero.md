@@ -1,4 +1,10 @@
-# on\_get\_block\_hash monero
+---
+description: >-
+  Example code for the on_get_block_hash JSON-RPC method. Complete guide on how
+  to use on_get_block_hash JSON-RPC in GetBlock Web3 documentation.
+---
+
+# on\_get\_block\_hash - Monero
 
 This method returns the block hash at a given block height. Note the positional `params` array (a single-element array containing the height), not the usual object form.
 
@@ -139,12 +145,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                                       |
+| ----------- | ----------------- | ------------------------------------------- |
+| 404         | Not Found         | Missing or invalid `<ACCESS-TOKEN>`         |
+| -32602      | Invalid params    | Request parameters are missing or malformed |
+| 429         | Too Many Requests | Rate limit exceeded for your plan           |
 
 ## SDK Integration
 

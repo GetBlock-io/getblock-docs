@@ -1,4 +1,10 @@
-# get\_version monero
+---
+description: >-
+  Example code for the get_version JSON-RPC method. Complete guide on how to use
+  get_version JSON-RPC in GetBlock Web3 documentation.
+---
+
+# get\_version - Monero
 
 This method returns the version of the connected monerod instance. Use it for capability detection and logging.
 
@@ -136,12 +142,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 

@@ -1,4 +1,10 @@
-# get\_txpool\_backlog monero
+---
+description: >-
+  Example code for the get_txpool_backlog JSON-RPC method. Complete guide on how
+  to use get_txpool_backlog JSON-RPC in GetBlock Web3 documentation.
+---
+
+# get\_txpool\_backlog - Monero
 
 This method returns the current backlog of transactions in the mempool, including projected confirmation times.
 
@@ -144,12 +150,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Status Code | Error Message     | Cause                                                |
-| ----------- | ----------------- | ---------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                  |
-| -32602      | Invalid params    | Request parameters are missing or malformed          |
-| -32601      | Method not found  | Method does not exist or is not enabled on this node |
-| 429         | Too Many Requests | Rate limit exceeded for your plan                    |
+| Status Code | Error Message     | Cause                               |
+| ----------- | ----------------- | ----------------------------------- |
+| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>` |
+| 429         | Too Many Requests | Rate limit exceeded for your plan   |
 
 ## SDK Integration
 
