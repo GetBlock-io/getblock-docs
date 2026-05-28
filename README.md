@@ -5,6 +5,27 @@ description: >-
 icon: hand-wave
 cover: .gitbook/assets/cover.png
 coverY: 0
+layout:
+  width: default
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # Welcome
@@ -40,7 +61,7 @@ GetBlock Product Demo
 
 Get started with our most in-demand blockchain networks.
 
-| [<img src=".gitbook/assets/Crypto Symbol=Ethereum.svg" alt="" data-size="line">](api-reference/ethereum-eth/) [**Ethereum**](api-reference/ethereum-eth/)                        | [<img src=".gitbook/assets/Logo=Tron (1).svg" alt="" data-size="line">](api-reference/tron-trx/) [**Tron**](api-reference/tron-trx/)                  | [<img src=".gitbook/assets/Logo=Arbitrum (1).svg" alt="" data-size="line">](api-reference/arbitrum-arb/) [**Arbitrum**](api-reference/arbitrum-arb/) |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<img src=".gitbook/assets/Logo=BNB Smart Chain (1).svg" alt="" data-size="line">](api-reference/bnb-smart-chain-bsc/) [**BNB Smart Chain**](api-reference/bnb-smart-chain-bsc/) | [<img src=".gitbook/assets/Logo=Solana (1).svg" alt="" data-size="line">](api-reference/solana-sol/) [**Solana**](api-reference/solana-sol/)          | [<img src=".gitbook/assets/Logo=OP (1).svg" alt="" data-size="line">](api-reference/optimism-op/) [**Optimism**](api-reference/optimism-op/)         |
-| [<img src=".gitbook/assets/Logo=Polygon (1).svg" alt="" data-size="line">](api-reference/polygon-matic/) [**Polygon**](api-reference/polygon-matic/)                             | [<img src=".gitbook/assets/Logo=Avax (1).svg" alt="" data-size="line">](api-reference/avalanche-avax/) [**Avalanche**](api-reference/avalanche-avax/) | [<img src=".gitbook/assets/Logo=Base (1).svg" alt="" data-size="line">](api-reference/base/) [**Base**](api-reference/base/)                         |
+| [<img src=".gitbook/assets/Crypto Symbol=Ethereum.svg" alt="" data-size="line">](api-reference/ethereum-eth/) [**Ethereum**](api-reference/ethereum-eth/)                        | [<img src=".gitbook/assets/Logo=Tron (1).svg" alt="" data-size="line">](api-reference/tron-trx/) [**Tron**](api-reference/tron-trx/)                            | [<img src=".gitbook/assets/Logo=Arbitrum (1).svg" alt="" data-size="line">](api-reference/arbitrum-arb/) [**Arbitrum**](api-reference/arbitrum-arb/) |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [<img src=".gitbook/assets/Logo=BNB Smart Chain (1).svg" alt="" data-size="line">](api-reference/bnb-smart-chain-bsc/) [**BNB Smart Chain**](api-reference/bnb-smart-chain-bsc/) | [<img src=".gitbook/assets/Logo=Solana (1).svg" alt="" data-size="line">](api-reference/solana-sol/) [**Solana**](api-reference/solana-sol/)                    | [<img src=".gitbook/assets/Logo=OP (1).svg" alt="" data-size="line">](api-reference/optimism-op/) [**Optimism**](api-reference/optimism-op/)         |
+| [<img src=".gitbook/assets/Logo=Polygon (1).svg" alt="" data-size="line">](api-reference/polygon-matic/) [**Polygon**](api-reference/polygon-matic/)                             | [<img src=".gitbook/assets/Logo=Avax (1).svg" alt="" data-size="line">](/broken/pages/dKeDyX7Q6JGwJde1sxm7) [**Avalanche**](/broken/pages/dKeDyX7Q6JGwJde1sxm7) | [<img src=".gitbook/assets/Logo=Base (1).svg" alt="" data-size="line">](api-reference/base/) [**Base**](api-reference/base/)                         |

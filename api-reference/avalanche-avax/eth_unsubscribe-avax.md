@@ -1,18 +1,14 @@
 ---
 description: >-
-  Example code for the eth_unsubscribe JSON-RPC method. Сomplete guide on how to
-  use eth_unsubscribe JSON-RPC in GetBlock.io Web3 documentation.
+  Example code for the eth_unsubscribe JSON-RPC method. Complete guide on how to
+  use eth_unsubscribe JSON-RPC in GetBlock Web3 documentation.
 ---
 
-# eth\_unsubscribe - ARC
+# eth\_unsubscribe - AVAX
 
-This method cancels an existing subscription created with `eth_subscribe`.&#x20;
+Cancels an existing subscription created with `eth_subscribe`. Like `eth_subscribe`, only available over WebSocket transport on the C-Chain.
 
-{% hint style="info" %}
-Like `eth_subscribe`, it is only available over WebSocket transport.
-{% endhint %}
-
-### Parameters
+## Parameters
 
 | Parameter      | Type   | Required | Description                                     |
 | -------------- | ------ | -------- | ----------------------------------------------- |
@@ -22,7 +18,7 @@ Like `eth_subscribe`, it is only available over WebSocket transport.
 
 {% tabs %}
 {% tab title="cURL" %}
-{% code title="cURL (wscat)" %}
+{% code title="cURL (wscat)" overflow="wrap" %}
 ```bash
 # This method requires WebSocket connection
 wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
@@ -140,7 +136,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 | Status Code | Error Message     | Cause                                                                      |
 | ----------- | ----------------- | -------------------------------------------------------------------------- |
-| 403         | Forbidden         | Missing or invalid `<ACCESS-TOKEN>`                                        |
+| 404         | Not Found         | Missing or invalid `<ACCESS-TOKEN>`                                        |
 | -32602      | Invalid params    | Request parameters are missing or malformed                                |
 | 429         | Too Many Requests | Rate limit exceeded for your plan                                          |
 | -32600      | Invalid Request   | `eth_unsubscribe` was called over HTTP; use a WebSocket connection instead |
@@ -152,7 +148,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc');
 
 // Most methods are exposed directly on the provider.
 // For raw access, use provider.send(method, params).
@@ -163,20 +159,12 @@ console.log(result);
 
 {% tab title="Viem" %}
 ```javascript
-import { createPublicClient, http, defineChain } from 'viem';
-
-const arcTestnet = defineChain({
-    id: 5042002,
-    name: 'Arc Testnet',
-    network: 'arc-testnet',
-    nativeCurrency: { name: 'USD Coin', symbol: 'USDC', decimals: 6 },
-    rpcUrls: { default: { http: ['https://go.getblock.io/<ACCESS-TOKEN>/'] } },
-    blockExplorers: { default: { name: 'arcscan', url: 'https://testnet.arcscan.app' } }
-});
+import { createPublicClient, http } from 'viem';
+import { avalanche } from 'viem/chains';
 
 const client = createPublicClient({
-    chain: arcTestnet,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    chain: avalanche,
+    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc')
 });
 
 const result = await client.request({ method: 'eth_unsubscribe', params: ["0x9cef478923ff08bf67fde6c64013158d"] });

@@ -164,7 +164,7 @@ Expected output (example):
 {% endstepper %}
 {% endtab %}
 
-{% tab title="undefined" %}
+{% tab %}
 {% stepper %}
 {% step %}
 ### Setup the project directory
