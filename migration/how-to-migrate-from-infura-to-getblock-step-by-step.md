@@ -224,4 +224,5 @@ TON_RPC=https://go.getblock.io/TON_TOKEN/
 * **Infura IPFS** → Pinata, nft.storage, or Fleek
 * **MetaMask default integration** → Add GetBlock as custom RPC in MetaMask settings
 
-_Ready to switch?_ <a href="https://account.getblock.io" class="button primary"> Create your free GetBlock account</a>_and have your new endpoints running in under 5 minutes._
+<a href="https://account.getblock.io" class="button primary">Ready to switch? and have your new endpoints running in under 5 minutes.</a>\
+<br>

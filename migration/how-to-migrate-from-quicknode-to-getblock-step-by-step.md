@@ -206,4 +206,4 @@ If you get a valid response with a block number, you're good.
 * **QuickNode Streams** → Use GetBlock WebSocket + Tracker for real-time data
 * **IPFS/NFT-specific APIs** → Use specialized third-party services
 
-_Ready to switch?_ <a href="https://account.getblock.io" class="button primary"> Create your free GetBlock account</a>_and have your new endpoints running in under 5 minutes._
+<a href="https://account.getblock.io" class="button primary">Ready to switch? and have your new endpoints running in under 5 minutes.</a>
