@@ -8,11 +8,11 @@ description: >-
 
 Infura was the original Ethereum RPC provider, but by 2026, the landscape had changed. If you're looking for more chain support, better pricing, or geographic endpoint control, migrating from Infura to GetBlock is straightforward. This migration only takes 5–10 minutes.
 
-## Why Teams Migrate from Infura
+## Why Teams Switch from Infura To GetBlock
 
 | Reason                 | Infura                          | GetBlock                                         |
 | ---------------------- | ------------------------------- | ------------------------------------------------ |
-| Chain coverage         | \~15 networks                   | **100+ blockchains**                             |
+| Chain coverage         | \~15 networks                   | **130+ blockchains**                             |
 | Free tier archive data | Paid plans only                 | **All plans including Free**                     |
 | Region selection       | No explicit choice              | **Frankfurt, New York, Singapore**               |
 | Dedicated nodes        | Custom pricing                  | **From $1,000/mo, transparent**                  |
@@ -133,7 +133,7 @@ mainnet = "https://go.getblock.io/YOUR_GETBLOCK_TOKEN/"
 {% endcode %}
 {% endtab %}
 
-{% tab title="Wesocket" %}
+{% tab title="Websocket" %}
 {% code overflow="wrap" %}
 ```javascript
 // Before
@@ -150,7 +150,7 @@ const wsProvider = new WebSocketProvider("wss://go.getblock.io/YOUR_GETBLOCK_TOK
 {% step %}
 #### Environment Variables (recommended)
 
-Best practice: use environment variables to so you can switch providers without code changes.
+Best practice: use environment variables to switch providers without code changes.
 
 ```bash
 # .env
@@ -208,7 +208,7 @@ TON_RPC=https://go.getblock.io/TON_TOKEN/
 | Gas API             | ✅ `eth_gasPrice`, `eth_feeHistory` methods |
 | Ethereum Beacon API | ✅ Available                                |
 | MetaMask default    | Can be configured as custom RPC            |
-| \~15 chains         | ✅ **100+ chains**                          |
+| \~15 chains         | ✅ **130+ chains**                          |
 | Dedicated Nodes     | ✅ From $1,000/mo                           |
 
 ### What You Gain

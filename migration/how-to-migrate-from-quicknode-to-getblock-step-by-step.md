@@ -8,12 +8,12 @@ description: >-
 
 QuickNode is a strong provider, but some teams find they need more chain coverage, a permanent free tier, or more predictable pricing. Here's how to migrate from QuickNode to GetBlock.This migration only takes 5–10 minutes.
 
-## Why Teams Switch
+## Why Teams Switch From QuickNode To GetBlock
 
 | Factor              | QuickNode                                    | GetBlock                                   |
 | ------------------- | -------------------------------------------- | ------------------------------------------ |
 | Free tier           | ❌ Trial only (expires)                       | ✅ **Free forever** (50K CU/day)            |
-| Chain coverage      | \~75                                         | **100+**                                   |
+| Chain coverage      | \~75                                         | **130+**                                   |
 | Billing model       | Credits (method-weighted, harder to predict) | **CU tiers with clear pricing**            |
 | Region selection    | Auto-routed                                  | **Choose: Frankfurt, New York, Singapore** |
 | Solana HFT tools    | WebSocket, gRPC                              | **StreamFirst + LandFirst + TradeFirst**   |
@@ -148,7 +148,7 @@ const wsProvider = new WebSocketProvider("wss://go.getblock.io/YOUR_GETBLOCK_TOK
 {% step %}
 #### Environment Variables (recommended)
 
-Best practice: use environment variables to so you can switch providers without code changes.
+Best practice: use environment variables to switch providers without code changes.
 
 ```bash
 # .env

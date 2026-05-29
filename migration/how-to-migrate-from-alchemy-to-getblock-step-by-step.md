@@ -5,7 +5,7 @@ description: >-
   switching.
 ---
 
-# How to Migrate from Alchemy to GetBlock
+# How to Migrate from Alchemy to GetBlock — Step-by-Step
 
 Switching RPC providers sounds harder than it is. In most cases, it's literally changing one URL in your codebase. This guide walks you through migrating from Alchemy to GetBlock, including differences in endpoint formats, SDK configuration changes, and feature mappings. The migration only takes 5–15 minutes for most projects.
 
@@ -13,7 +13,7 @@ Switching RPC providers sounds harder than it is. In most cases, it's literally 
 
 | Reason                   | Details                                                      |
 | ------------------------ | ------------------------------------------------------------ |
-| **More chains**          | GetBlock supports 100+ blockchains vs Alchemy's \~70         |
+| **More chains**          | GetBlock supports 130+ blockchains vs Alchemy's \~70         |
 | **Lower cost at scale**  | GetBlock Pro ($499/mo, 600M CU) vs comparable Alchemy tiers  |
 | **Geographic control**   | Choose your endpoint region (Frankfurt, New York, Singapore) |
 | **Archive on all plans** | Including the free tier — Alchemy requires paid plans        |
@@ -130,7 +130,7 @@ mainnet = "https://go.getblock.io/YOUR_GETBLOCK_TOKEN/"
 {% endcode %}
 {% endtab %}
 
-{% tab title="Wesocket" %}
+{% tab title="Websocket" %}
 {% code overflow="wrap" %}
 ```javascript
 // Before
@@ -147,7 +147,7 @@ const wsProvider = new WebSocketProvider("wss://go.getblock.io/YOUR_GETBLOCK_TOK
 {% step %}
 #### Environment Variables (recommended)
 
-Best practice: use environment variables to so you can switch providers without code changes.
+Best practice: use environment variables to switch providers without code changes.
 
 ```bash
 # .env
@@ -190,7 +190,7 @@ If you get a valid response with a block number, you're good.
 | Enhanced APIs       | Standard RPC         | GetBlock focuses on RPC infrastructure          |
 | Alchemy SDK         | Standard libraries   | Use ethers.js, web3.js directly                 |
 | Dashboard analytics | ✅ Statistics         | Method tracking, CU monitoring                  |
-| Multi-chain         | ✅ 100+ chains        | More chains than Alchemy (\~70)                 |
+| Multi-chain         | ✅ 130+ chains        | More chains than Alchemy (\~70)                 |
 | Regional selection  | ✅ 3 regions          | Alchemy doesn't offer explicit region selection |
 | Dedicated Nodes     | ✅ Dedicated Nodes    | From $1,000/mo, unlimited requests              |
 | Team accounts       | ✅ Team accounts      | Up to 30 users, role-based access               |
