@@ -87,6 +87,12 @@
 * [How to Get an Optimism RPC Endpoint](rpc-endpoint/how-to-get-an-optimism-rpc-endpoint.md)
 * [How to Get a TRON RPC Endpoint](rpc-endpoint/how-to-get-a-tron-rpc-endpoint.md)
 
+## Migration
+
+* [How to Migrate from Alchemy to GetBlock](migration/how-to-migrate-from-alchemy-to-getblock.md)
+* [How to Migrate from Infura to GetBlock — Step-by-Step](migration/how-to-migrate-from-infura-to-getblock-step-by-step.md)
+* [How to Migrate from QuickNode to GetBlock — Step-by-Step](migration/how-to-migrate-from-quicknode-to-getblock-step-by-step.md)
+
 ## GUIDES
 
 * [Using Web3 libraries](guides/using-web3-libraries/README.md)
