@@ -49,6 +49,10 @@ Each user gets 5 free requests per day. After the free quota is used, each reque
 | Price per request | $0.20 USD       |
 | Billing method    | Prepaid balance |
 
+### How to Top Up Your &#x20;
+
+###
+
 {% hint style="info" %}
 **Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).&#x20;
 {% endhint %}
