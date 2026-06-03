@@ -1,7 +1,5 @@
 ---
-description: >-
-  Example code for the price-estimate JSON RPC method. Сomplete guide on how to
-  use price-estimate JSON RPC in GetBlock Web3 documentation.
+description: Example code for the price-estimate JSON RPC method
 ---
 
 # price-estimate
@@ -12,7 +10,7 @@ This get a real-time price estimate for Energy delegation before placing an orde
 
 | Parameter    | Type    | Required | Description                                             |
 | ------------ | ------- | -------- | ------------------------------------------------------- |
-| resourceType | string  | Yes      | "energy", "bandwith"(soon)                              |
+| resourceType | string  | Yes      | "energy", "bandwidth"(soon)                             |
 | volume       | integer | Yes      | Energy amount: 30,000 - 5,000,000 (depends on duration) |
 | duration     | string  | Yes      | "1h", "1d", "3d", "7d"                                  |
 
