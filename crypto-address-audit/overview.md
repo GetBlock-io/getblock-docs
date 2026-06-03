@@ -6,9 +6,9 @@ description: >-
 
 # Crypto Address Audit: Risk & Compliance APIs
 
-Crypto Address Audit is GetBlock's AI-powered risk and compliance suite for screening wallets and smart contracts — fraud risk, AML exposure, and rug pull detection in one API.
+Crypto Address Audit is GetBlock's AI-powered risk and compliance suite that screens wallets and smart contracts for fraud risk, AML exposure, and rug pull detection in a single API.
 
-The service runs on pure on-chain behavioral analysis — no source code review, no off-chain data — across Ethereum, BNB Smart Chain, and Base.
+The service runs on pure on-chain behavioral analysis with no source code review and no off-chain data, across Ethereum, BNB Smart Chain, and Base.
 
 ### Choose Your Crypto Audit API:
 
@@ -49,12 +49,29 @@ Each user gets 5 free requests per day. After the free quota is used, each reque
 | Price per request | $0.20 USD       |
 | Billing method    | Prepaid balance |
 
-### How to Top Up Your &#x20;
+### How to Top Up Your Prepaid Credit
 
-###
+1. On your [account dashboard](https://account.getblock.io/), click on the credit balance as seen below:
+
+<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+
+2. Click on **Top Up**
+
+<figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+
+3. Select the amount you want to pay or enter the amount:
+
+<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+
+4. After that, click on **Proceed to checkout**
+5. You'll be routed to another page to complete your payment
+
+<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+
+6. Once you've completed your payment, go back to your dashboard to see it reflected.
 
 {% hint style="info" %}
-**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).&#x20;
+**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).
 {% endhint %}
 
 ### Next Step
