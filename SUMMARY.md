@@ -56,6 +56,7 @@
   * [delegateBandwidth - TRON energy](tron-energy/api-reference/delegatebandwidth-tron-energy.md)
   * [addressActivate - TRON energy](tron-energy/api-reference/addressactivate-tron-energy.md)
   * [orders/{order\_id} - TRON energy](tron-energy/api-reference/orders-order_id-tron-energy.md)
+  * [Copy of price-estimate](tron-energy/api-reference/copy-of-price-estimate.md)
 
 ## Crypto Address Audit
 
