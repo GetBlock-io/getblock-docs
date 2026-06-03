@@ -2,6 +2,7 @@
 description: >-
   Example code for the orders/{order_id} JSON RPC method. Сomplete guide on how
   to use orders/{order_id} JSON RPC in GetBlock Web3 documentation.
+hidden: true
 ---
 
 # orders/{order\_id} - TRON energy

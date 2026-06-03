@@ -2,6 +2,7 @@
 description: >-
   Example code for the addressActivate JSON RPC method. Сomplete guide on how to
   use addressActivate JSON RPC in GetBlock Web3 documentation.
+hidden: true
 ---
 
 # addressActivate - TRON energy

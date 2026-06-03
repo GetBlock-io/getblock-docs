@@ -2,6 +2,7 @@
 description: >-
   Example code for the delegateBandwidth JSON RPC method. Сomplete guide on how
   to use delegateBandwidth JSON RPC in GetBlock Web3 documentation.
+hidden: true
 ---
 
 # delegateBandwidth - TRON energy
