@@ -4,7 +4,7 @@ description: >-
   use price-estimate JSON RPC in GetBlock Web3 documentation.
 ---
 
-# price-estimate - TRON Energy
+# price-estimate
 
 This get a real-time price estimate for Energy delegation before placing an order.
 

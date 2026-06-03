@@ -9,7 +9,7 @@ The GetBlock TRON Energy API lets you programmatically delegate Energy and Bandw
 ### Base URL
 
 ```bash
-https://api.getblock.io/tron-energy
+https://services.getblock.io/v1/tron-energy/
 ```
 
 ### Authentication
@@ -19,6 +19,12 @@ All requests require an API key in the header:
 ```bash
 Authorization: Bearer YOUR_API_KEY
 ```
+
+{% hint style="info" %}
+**Getting your API key**\
+\
+Generate API keys under **Settings → API**. Open **Settings**, go to the **API** tab, and create a key for your needs. **Copy and save it right away** — treat it as a secret: anyone holding your API key can spend the credits you've topped up on the platform. Store it following security best practices (never commit it to code or share it in plain text).
+{% endhint %}
 
 ### Quick Example
 
