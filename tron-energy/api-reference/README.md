@@ -26,9 +26,7 @@ Authorization: Bearer YOUR_API_KEY
 Generate API keys under **Settings → API**. Open **Settings**, go to the **API** tab, and create a key for your needs. **Copy and save it right away** — treat it as a secret: anyone holding your API key can spend the credits you've topped up on the platform. Store it following security best practices (never commit it to code or share it in plain text).
 {% endhint %}
 
-### Quick Example
-
-* Generate keys in your dashboard under **Delegate → API**.
+### Request example
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -67,11 +65,22 @@ All responses return JSON. Successful delegations include:
 
 ### Endpoints
 
-| Endpoint              | Method | Description                           |
-| --------------------- | ------ | ------------------------------------- |
-| `/api/price-estimate` | POST   | Get real-time price quote             |
-| `/delegateEnergy`     | POST   | Delegate Energy (30K–5M) for 5 min–7d |
+| Endpoint          | Method | Description                           |
+| ----------------- | ------ | ------------------------------------- |
+| `/price-estimate` | POST   | Get real-time price quote             |
+| `/delegateEnergy` | POST   | Delegate Energy (30K–5M) for 5 min–7d |
 
 ### Pricing
 
-You pay in USD. The price is calculated based on the current TRX/USD rate and energy demand. You are charged only after the delegation is confirmed — if the order fails, nothing is deducted.
+You pay in **Credits**. The price is calculated from two live inputs:
+
+* the current TRX/USD exchange rate, and
+* real-time energy demand on the network.
+
+You are charged only after the delegation is confirmed — if the order fails, nothing is deducted from your balance.
+
+**Energy prices fluctuate over time.** Demand follows on-chain activity across the world's major financial clusters — **Asia, Europe, and the US** — so the price rises and falls as different time zones become active and quiet through the day. The swing can be large: in calmer windows energy can be significantly cheaper — sometimes around half the price of peak hours.
+
+{% hint style="info" %}
+If getting a lower price matters to you, **monitor the live price over time and rent when it fits your economic needs.** There is no fixed "cheap hour" — because activity shifts between regions, the best window varies, so watch the actual numbers rather than relying on a fixed schedule.
+{% endhint %}
