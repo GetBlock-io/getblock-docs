@@ -22,7 +22,7 @@ delegateEnergy charges your balance and may place an on-chain order. To make ret
 Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44
 ```
 
-A UUID is recommended. Generate a **new** key for every new purchase, and reuse the **same** key when retrying that exact purchase.
+A UUID is recommended. Generate a **new** key for each purchase, and reuse the same key when retrying the exact same purchase.
 
 | Situation                                         | Result                                                                |
 | ------------------------------------------------- | --------------------------------------------------------------------- |
@@ -39,7 +39,7 @@ Always send an idempotency key on write endpoints. It is the difference between 
 #### Request Sample
 
 ```json
-curl -X POST https://api.getblock.io/tron-energy/delegateEnergy \
+curl -X POST https://services.getblock.io/v1/tron-energy/delegateEnergy \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -H "Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44" \

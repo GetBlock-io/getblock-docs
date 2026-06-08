@@ -70,28 +70,16 @@ This is fundamentally different from chains where the native gas token is a stab
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
-
-{% tab title="New York, USA" %}
-```bash
-https://go.getblock.us/<ACCESS-TOKEN>/
-```
-{% endtab %}
-
-{% tab title="Singapore, Singapore" %}
-```bash
-https://go.getblock.asia/<ACCESS-TOKEN>/
-```
-{% endtab %}
 {% endtabs %}
 
 All Tempo JSON-RPC methods are called by sending a `POST` request to the base URL with a JSON-RPC 2.0 body. For real-time subscriptions (new blocks, logs, consensus events) use the WebSocket scheme: `wss://go.getblock.io/<ACCESS-TOKEN>/`.
 
 ## Supported Networks
 
-| Network          | JSON-RPC | WSS | Frankfurt, Germany | New York, USA | Singapore, Singapore |
-| ---------------- | -------- | --- | ------------------ | ------------- | -------------------- |
-| Mainnet          | ✅        | ✅   | ✅                  | ✅             | ✅                    |
-| Moderato Testnet | ✅        | ✅   | ✅                  | ✅             | ✅                    |
+| Network          | JSON-RPC | WSS | Frankfurt, Germany |
+| ---------------- | -------- | --- | ------------------ |
+| Mainnet          | ✅        | ✅   | ✅                  |
+| Moderato Testnet | ✅        | ✅   | ✅                  |
 
 ## Quickstart
 
