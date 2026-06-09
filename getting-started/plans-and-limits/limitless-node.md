@@ -88,7 +88,7 @@ Our team can also recommend the right tier based on your workload. <a href="http
 
 #### Next steps
 
-* [Endpoint setup](https://docs.getblock.io/getting-started/endpoint-setup)&#x20;
-* [Testing RPC connection](https://docs.getblock.io/getting-started/testing-rpc-connection)
+* [Endpoint setup](../endpoint-setup/)&#x20;
+* [Testing RPC connection](../testing-rpc-connection/)
 * [API Reference](https://app.gitbook.com/s/FOeg95CadVyFvyLi70Bh/api-reference)
 * [Limitless Node Homepage](https://getblock.io/limitless-node/)

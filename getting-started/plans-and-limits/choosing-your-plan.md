@@ -6,17 +6,17 @@ description: >-
 
 # Choosing your plan
 
-GetBlock offers three main service options—**Shared Nodes**, **Dedicated Nodes**, and **Enterprise Solutions**. This page provides a high-level overview of these services.
+GetBlock offers four main service options: **Shared Nodes**, **Limitless Node**, **Dedicated Nodes**, and **Enterprise Solutions**. This page provides a high-level overview of these services.
 
 You can explore detailed pricing and plans from your **dashboard** in the “Pricing” section or via [https://getblock.io/pricing/](https://getblock.io/pricing/).
 
 ***
 
-### Shared nodes
+### Shared Nodes
 
 Shared nodes operate on a **resource-sharing model**, where multiple clients access the same underlying node infrastructure maintained by GetBlock.
 
-<figure><img src="../../.gitbook/assets/Shared_pricing_Oct_2025_upd.svg" alt="GetBlock shared RPC node pricing options"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/shared-rpc-pricing-upd-june-2026.png" alt="GetBlock shared RPC node pricing options"><figcaption></figcaption></figure>
 
 Our Shared Nodes deliver the perfect balance between affordability and performance:
 
@@ -34,7 +34,26 @@ This option is ideal for developers and teams looking for reliable connectivity 
 
 ***
 
-### Dedicated nodes
+### Limitless Node
+
+Limitless Node is the middle ground between Shared and Dedicated Nodes. It's an isolated endpoint with **guaranteed RPS** and a **flat monthly fee**. Pricing is set by throughput rather than Compute Units, so you can send unlimited requests within your RPS tier without per-request metering.
+
+<figure><img src="../../.gitbook/assets/limitless-node-plan-getblock.webp" alt="GetBlock&#x27;s blockchain RPC Plan without request limits"><figcaption></figcaption></figure>
+
+* **Dedicated routing** to ensure consistent performance and throughput.
+* **Fixed RPS tiers**: Choose the throughput level that matches your workload, from smaller setups to higher-volume production traffic.
+* **No Compute Unit (CU) or request limits**: Each plan includes a set RPS limit with unlimited requests within that tier.
+* **Multi-region geo-routing**: Traffic is routed to the nearest healthy node across Europe, the USA, and Asia.
+* **Fixed pricing**: Flat monthly or yearly fee with no usage-based charges.
+* **24/7 support**: Priority coverage with a response time under 5 minutes.
+
+{% hint style="success" %}
+Limitless Node fits workloads with high but predictable request volumes, where a Shared plan's Compute Unit billing is hard to forecast, but a full Dedicated Node is more than you need.
+{% endhint %}
+
+***
+
+### Dedicated Nodes
 
 A Dedicated Node is a **private RPC server** deployed solely for your use case. That means consistent throughput, no API rate throttling due to other users, and better uptime guarantees.
 
@@ -42,7 +61,7 @@ A Dedicated Node is a **private RPC server** deployed solely for your use case. 
 If your project demands the fastest, most reliable blockchain infrastructure, a Dedicated Node from GetBlock is a perfect choice.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Dedicated_plan_banner.svg" alt="What does it cost to deploy a private blockchain node"><figcaption><p>GetBlock private node features and pricing</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Dedicated_plan_banner.svg" alt="What does it cost to deploy a private blockchain node"><figcaption></figcaption></figure>
 
 This option is ideal for users that require high performance, full control over node configuration, and a flawless connection to the blockchain without any limitations:
 
@@ -67,7 +86,7 @@ This option is designed to meet the needs of organizations operating at scale or
 
 What’s included:
 
-* 99.9% uptime guarantee
+* 99.9%+ uptime guarantee
 * Customizable node configurations and integrations
 * Performance optimization via load balancers
 * Advanced analytics and alert systems
