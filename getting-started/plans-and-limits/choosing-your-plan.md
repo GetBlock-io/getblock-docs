@@ -14,13 +14,13 @@ You can explore detailed pricing and plans from your **dashboard** in the “Pri
 
 ### Shared nodes
 
-Shared nodes operate on a **resource-sharing model**, where multiple clients access the same underlying node infrastructure maintained by GetBlock.&#x20;
+Shared nodes operate on a **resource-sharing model**, where multiple clients access the same underlying node infrastructure maintained by GetBlock.
 
 <figure><img src="../../.gitbook/assets/Shared_pricing_Oct_2025_upd.svg" alt="GetBlock shared RPC node pricing options"><figcaption><p>GetBlock shared node service options</p></figcaption></figure>
 
-Our Shared Nodes deliver the perfect balance between affordability and performance:&#x20;
+Our Shared Nodes deliver the perfect balance between affordability and performance:
 
-* **Cost efficiency:** Benefit from our pricing model based on [**Compute Units (CU)**](what-counts-as-a-cu.md), so you only pay for the resources needed for your current workload.&#x20;
+* **Cost efficiency:** Benefit from our pricing model based on [**Compute Units (CU)**](what-counts-as-a-cu.md), so you only pay for the resources needed for your current workload.
 * **Flexible pricing**: Options range from a **free** to **high-volume plans —** accessible for individual developers and smaller teams while supporting the scaling needs of growing dApps.
 * **Consistent performance**: Each plan enforces a Requests Per Second (RPS) limit, preventing individual spikes from impacting overall quality.
 * **Multi-chain accessibility**: Prototype, test, and deploy applications across different networks without the complexities of deploying infrastructure for each blockchain individually.
@@ -47,12 +47,12 @@ If your project demands the fastest, most reliable blockchain infrastructure, a 
 This option is ideal for users that require high performance, full control over node configuration, and a flawless connection to the blockchain without any limitations:
 
 * **Mission-critical reliability**: Maximized uptime and robust failover mechanisms for even more reliable service.
-* **Unlimited usage**: No per-second request caps or CU tracking.&#x20;
+* **Unlimited usage**: No per-second request caps or CU tracking.
 * **Low latency**: With servers available in **Europe**, **Asia**, and **the USA**, choose the optimal server location to minimize latency and enhance performance for your users.
 * **Fully customizable**: Complete control over your node configurations, including access to archive data.
 * **Predictable pricing**:
-  * Full Node:  from $1,000/month;
-  * Archive Node: from $1,500/ month.
+  * Full Node: from $1,000/month;
+  * Archive Node: from $1,500/month.
 * **Expert support**: 24/7 coverage and immediate issue resolution.
 
 {% hint style="info" %}

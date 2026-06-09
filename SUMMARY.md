@@ -9,6 +9,7 @@
 * [Access token management](getting-started/authentication-with-access-tokens.md)
 * [Plans and limits](getting-started/plans-and-limits/README.md)
   * [Choosing your plan](getting-started/plans-and-limits/choosing-your-plan.md)
+  * [Limitless Node](getting-started/plans-and-limits/limitless-node.md)
   * [Dedicated nodes: Manage & extend subscriptions](getting-started/plans-and-limits/dedicated-nodes-manage-and-extend-subscriptions.md)
   * [CU and rate limits](getting-started/plans-and-limits/cu-and-rate-limits.md)
   * [What counts as a CU](getting-started/plans-and-limits/what-counts-as-a-cu.md)

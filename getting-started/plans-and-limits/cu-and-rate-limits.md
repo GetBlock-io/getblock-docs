@@ -118,6 +118,6 @@ Our Dedicated Node service is perfect for teams and projects that demand absolut
 
 ***
 
-If you’re unsure which plan best fits your needs, our team is ready to help! [Contact our support team](https://getblock.io/contact/) or visit our [Choosing your plan](choosing-your-plan.md) page for more information.\\
+If you’re unsure which plan best fits your needs, our team is ready to help! [Contact our support team](https://getblock.io/contact/) or visit our [Choosing your plan](choosing-your-plan.md) page for more information.
 
 [^1]: Prices are based on monthly billing. Opt for **annual subscriptions** to save up to **$200 per month**
