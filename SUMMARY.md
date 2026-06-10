@@ -121,6 +121,9 @@
 * [What Are Token Extensions](guides/what-are-token-extensions/README.md)
   * [How to Create Tokens With Metadata On Solana Using Token-2022](guides/what-are-token-extensions/how-to-create-tokens-with-metadata-on-solana-using-token-2022.md)
 * [How To Optimize Solana Transactions With Jito Bundles](guides/how-to-optimize-solana-transactions-with-jito-bundles.md)
+* [How To Screen Wallets For Fraud and Sanctions With Wallet Risk Check API](guides/how-to-screen-wallets-for-fraud-and-sanctions-with-wallet-risk-check-api.md)
+* [How to Check Tokens For Rug Pull Risk Before Listing with GetBlock  Rug Pull Check API](guides/how-to-check-tokens-for-rug-pull-risk-before-listing-with-getblock-rug-pull-check-api.md)
+* [How to Personalize DeFi onboarding with GetBlock Full Wallet Audit API](guides/how-to-personalize-defi-onboarding-with-getblock-full-wallet-audit-api.md)
 
 ## API REFERENCE
 
