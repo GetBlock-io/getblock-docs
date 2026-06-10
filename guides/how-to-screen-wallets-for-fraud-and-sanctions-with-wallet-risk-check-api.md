@@ -278,4 +278,4 @@ You built a pre-transaction screening gate that calls the GetBlock Wallet Risk C
 * [Wallet Risk Check docs](https://docs.getblock.io/crypto-address-audit/wallet-risk)
 * [Risk & Compliance APIs overview](https://app.gitbook.com/s/FOeg95CadVyFvyLi70Bh/crypto-address-audit)
 * [Get an API key](https://account.getblock.io/products/address-audit#api-keys)
-*
+* [Screen Wallets For Fraud and Sanctions Repo](https://github.com/GetBlock-io/guides/tree/main/wallet-risk-gate)
