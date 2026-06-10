@@ -1,8 +1,8 @@
 ---
-description: Example code for the delegateEnergy JSON RPC method
+description: Example code for the delegate-energy JSON RPC method
 ---
 
-# delegateEnergy
+# delegate-energy
 
 This endpoint delegates energy to a TRON address. In most cases, the order completes immediately with status "success".
 
@@ -39,7 +39,7 @@ Always send an idempotency key on write endpoints. It is the difference between 
 #### Request Sample
 
 ```json
-curl -X POST https://services.getblock.io/v1/tron-energy/delegateEnergy \
+curl -X POST https://services.getblock.io/v1/tron-energy/delegate-energy \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -H "Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44" \

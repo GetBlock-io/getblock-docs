@@ -65,10 +65,10 @@ All responses return JSON. Successful delegations include:
 
 ### Endpoints
 
-| Endpoint          | Method | Description                           |
-| ----------------- | ------ | ------------------------------------- |
-| `/price-estimate` | POST   | Get real-time price quote             |
-| `/delegateEnergy` | POST   | Delegate Energy (30K–5M) for 5 min–7d |
+| Endpoint           | Method | Description                           |
+| ------------------ | ------ | ------------------------------------- |
+| `/price-estimate`  | POST   | Get real-time price quote             |
+| `/delegate-energy` | POST   | Delegate Energy (30K–5M) for 5 min–7d |
 
 ### Pricing
 
@@ -82,5 +82,5 @@ You are charged only after the delegation is confirmed — if the order fails, n
 **Energy prices fluctuate over time.** Demand follows on-chain activity across the world's major financial clusters — **Asia, Europe, and the US** — so the price rises and falls as different time zones become active and quiet through the day. The swing can be large: in calmer windows energy can be significantly cheaper — sometimes around half the price of peak hours.
 
 {% hint style="info" %}
-If getting a lower price matters to you, **monitor the live price over time and rent when it fits your economic needs.** There is no fixed "cheap hour" — because activity shifts between regions, the best window varies, so watch the actual numbers rather than relying on a fixed schedule.
+If getting a lower price matters to you, **monitor the live price and rent when it fits your budget.** There is no fixed "cheap hour" — because activity shifts between regions, the best window varies, so watch the actual numbers rather than relying on a fixed schedule.
 {% endhint %}

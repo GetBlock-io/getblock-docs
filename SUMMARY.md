@@ -53,7 +53,7 @@
 * [TRON Fee Model](tron-energy/tron-fee-model.md)
 * [API Reference](tron-energy/api-reference/README.md)
   * [price-estimate](tron-energy/api-reference/price-estimate-tron-energy.md)
-  * [delegateEnergy](tron-energy/api-reference/delegateenergy.md)
+  * [delegate-energy](tron-energy/api-reference/delegate-energy.md)
   * [delegateBandwidth - TRON energy](tron-energy/api-reference/delegatebandwidth-tron-energy.md)
   * [addressActivate - TRON energy](tron-energy/api-reference/addressactivate-tron-energy.md)
   * [orders/{order\_id} - TRON energy](tron-energy/api-reference/orders-order_id-tron-energy.md)
