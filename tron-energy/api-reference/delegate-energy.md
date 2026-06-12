@@ -2,7 +2,7 @@
 description: Example code for the delegate-energy JSON RPC method
 ---
 
-# delegate-energy
+# delegate-energy - TRON energy
 
 This endpoint delegates energy to a TRON address. In most cases, the order completes immediately with status "success".
 

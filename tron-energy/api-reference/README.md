@@ -65,10 +65,11 @@ All responses return JSON. Successful delegations include:
 
 ### Endpoints
 
-| Endpoint           | Method | Description                           |
-| ------------------ | ------ | ------------------------------------- |
-| `/price-estimate`  | POST   | Get real-time price quote             |
-| `/delegate-energy` | POST   | Delegate Energy (30K–5M) for 5 min–7d |
+| Endpoint              | Method | Description                           |
+| --------------------- | ------ | ------------------------------------- |
+| `/price-estimate`     | POST   | Get real-time price quote             |
+| `/delegate-energy`    | POST   | Delegate Energy (30K–5M) for 5 min–7d |
+| `/delegate-bandwidth` | POST   | Puchase and delegate TRON bandwidth   |
 
 ### Pricing
 
