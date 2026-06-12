@@ -4,7 +4,7 @@ description: >-
   wallet before using your dApp
 ---
 
-# How to Personalize DeFi onboarding with GetBlock Full Wallet Audit API
+# How to Personalize DeFi Onboarding with GetBlock Full Wallet Audit API
 
 When a new user connects their wallet to your dApp, you already know more about them than any sign-up form could ask — it's all on-chain. Are they a cautious newcomer or a seasoned LP? Do they lend, trade, farm, or bridge? Have they ever touched a sanctioned address?&#x20;
 
@@ -319,6 +319,7 @@ You built an onboarding flow that screens a connecting wallet for fraud and sanc
 
 ### Resources
 
-* [Full Wallet Audit docs](https://docs.getblock.io/crypto-address-audit/wallet-audit)
-* [Risk & Compliance APIs overview](https://docs.getblock.io/crypto-address-audit/crypto-address-audit-risk-and-compliance-apis)
+* [Full Wallet Audit docs](../crypto-address-audit/wallet-audit.md)
+* [Risk & Compliance APIs overview](https://app.gitbook.com/s/FOeg95CadVyFvyLi70Bh/crypto-address-audit)
 * [Get an API key](https://account.getblock.io/products/address-audit#api-keys)
+* [Smart onboarding Tutorial Repo](https://github.com/GetBlock-io/guides/tree/main/smart-onboarding)

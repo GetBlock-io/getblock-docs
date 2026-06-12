@@ -374,6 +374,7 @@ You built a token-vetting gate that calls the GetBlock Rug Pull Check API direct
 
 ### Resources
 
-* [Rug Pull Checker docs](https://docs.getblock.io/crypto-address-audit/rug-pull-checker)
-* [Risk & Compliance APIs overview](https://docs.getblock.io/crypto-address-audit/crypto-address-audit-risk-and-compliance-apis)
+* [Rug Pull Checker docs](../crypto-address-audit/rug-pull-checker.md)
+* [Risk & Compliance APIs overview](https://app.gitbook.com/s/FOeg95CadVyFvyLi70Bh/crypto-address-audit)
 * [Get an API key](https://account.getblock.io/products/address-audit#api-keys)
+* [Token vet tutorial Repo](https://github.com/GetBlock-io/guides/tree/main/token-vetter)
