@@ -1,13 +1,12 @@
 ---
 description: >-
-  Example code for the delegateBandwidth JSON RPC method. Сomplete guide on how
-  to use delegateBandwidth JSON RPC in GetBlock Web3 documentation.
-hidden: true
+  Example code for the delegate-bandwidth JSON RPC method. Сomplete guide on how
+  to use delegate-bandwidth JSON RPC in GetBlock Web3 documentation.
 ---
 
-# delegateBandwidth - TRON energy
+# delegate-bandwidth - TRON energy
 
-This delegates bandwidth to a TRON address. Same flow as Energy — instant result in most cases.
+This is used to purchase and delegate TRON bandwidth to a target address. Unlike energy, bandwidth orders may be confirmed asynchronously: if the provider accepts the order but on-chain delivery is not yet confirmed, the API returns `202` Accepted and no charge is applied until delivery is confirmed.
 
 ### Body Parameter
 
@@ -19,13 +18,11 @@ This delegates bandwidth to a TRON address. Same flow as Energy — instant resu
 
 ### Request Sample
 
-#### Request
-
 {% tabs %}
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST https://api.getblock.io/tron-energy/delegateBandwidth \
+curl -X POST https://api.getblock.io/tron-energy/delegate-bandwidth \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -51,7 +48,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://api.getblock.io/tron-energy/delegateBandwidth',
+    url: 'https://api.getblock.io/tron-energy/delegate-bandwidth',
     headers: {
         'Content-Type': 'application/json',
         'Authorization: Bearer YOUR_API_KEY'
@@ -71,7 +68,7 @@ axios(config)
 import requests
 import json
 
-url = "https://api.getblock.io/tron-energy/delegateBandwidth"
+url = "https://api.getblock.io/tron-energy/delegate-bandwidth"
 
 payload = json.dumps({
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
@@ -99,7 +96,7 @@ use reqwest::header;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
 
-    let url = "https://api.getblock.io/tron-energy/delegateBandwidth";
+    let url = "https://api.getblock.io/tron-energy/delegate-bandwidth";
     let payload = r#"{
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
     "volume": 5000,
@@ -133,7 +130,7 @@ import (
     "net/http"
 )
 func main() {
-    url := "https://api.getblock.io/tron-energy/delegateBandwidth"
+    url := "https://api.getblock.io/tron-energy/delegate-bandwidth"
     payload := map[string]interface{}{
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
     "volume": 5000,
@@ -159,12 +156,14 @@ func main() {
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Bandwidth only supports "1h" duration.
 {% endhint %}
 
 ### Response Sample
 
+{% tabs %}
+{% tab title="200(Success)" %}
 ```bash
 {
   "order_id": "clxyz123...",
@@ -180,3 +179,36 @@ Bandwidth only supports "1h" duration.
   "message": "Order completed successfully."
 }
 ```
+{% endtab %}
+
+{% tab title="202(Accepted)" %}
+{% code overflow="wrap" %}
+```bash
+{
+  "data": {
+  "status": "accepted",
+  "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
+  "resource_type": "bandwidth",
+  "volume": 1000,
+  "duration": "1h",
+  "provider_order_id": "36898a97-a8b9-46ea-b4cb-38a81e28992d",
+  "message": "Order accepted by provider, awaiting on-chain confirmation."
+ }
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+### Idempotency
+
+Send a unique Idempotency-Key header (UUID format recommended) to ensure safe retries:
+
+| Scenario                        | Behavior                                         |
+| ------------------------------- | ------------------------------------------------ |
+| Same key + same body            |  Original response replayed, no duplicate charge |
+| Same key + different body       | 422                                              |
+| Same key on different endpoint  | 409                                              |
+| In-flight duplicate request     | 409 with Retry-After header                      |
+
+A retry of a 202 response replays the same 202 — it does not create a second order
