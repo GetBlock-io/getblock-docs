@@ -1,10 +1,14 @@
 ---
-hidden: true
+description: >-
+  This guide shows you how to check token for rug pull risk with GetBlock Rug
+  Pull Checker API
 ---
 
-# How to Check Tokens For Rug Pull Risk Before Listing with GetBlock  Rug Pull Check API
+# How to Check Tokens For Rug Pull Risk Before Listing with GetBlock  Rug Pull Checker API
 
-Listing a token is a promise to your users: "we vetted this." But a contract can hide a honeypot that lets people buy and never sell, a mint function that dilutes holders overnight, or a 40% sell tax buried in the code — and the creator's wallet may have rugged three tokens already. The **GetBlock Rug Pull Check API** runs both analyses at once: an AI probability based on the creator's and liquidity providers' on-chain history, _and_ a contract-level scan of taxes, owner privileges, honeypot traps, and holder concentration.
+Listing a token is a promise to your users: "we vetted this." But a contract can hide a honeypot that lets people buy and never sell, a mint function that dilutes holders overnight, or a 40% sell tax buried in the code — and the creator's wallet may have rugged three tokens already.&#x20;
+
+The **GetBlock Rug Pull Check API** runs both analyses at once: an AI-based probability assessment using the creator's and liquidity providers' on-chain history, _and_ a contract-level scan of taxes, owner privileges, honeypot traps, and holder concentration.
 
 In this guide, you'll build a **token-vetting gate that returns a clear GO/NO-GO verdict before you list a token (or before a user imports it), along** with the specific red flags that drove the decision.&#x20;
 
@@ -15,7 +19,7 @@ In this guide, you'll build a **token-vetting gate that returns a clear GO/NO-GO
 | Hidden taxes / mint rights are easy to miss | Taxes and owner privileges returned as fields       |
 | "Who holds this?" — manual digging          | Top-10 holders with % concentration                 |
 
-## What you'll build
+### What you'll build
 
 A `vetToken(contractAddress, network)` function that:
 
@@ -24,7 +28,7 @@ A `vetToken(contractAddress, network)` function that:
 3. Collects concrete red flags — honeypot, mint rights, high taxes, holder concentration.
 4. Returns **GO** (safe to list) or **NO-GO** (block) with the reasons.
 
-## How it works
+### How it works
 
 ```mermaid
 
@@ -46,23 +50,36 @@ The Rug Pull endpoint uses a **different request format** from the other Complia
 This endpoint is for **contracts only** — passing a wallet (EOA) returns empty results. The AI probability is behavioral (creator/LP history) and does **not** read the contract code; the `risk_indicators` block is the code-level scan. Use both together.
 {% endhint %}
 
-## Prerequisites
+### Prerequisites
 
 * **Node.js 18+**&#x20;
 * A [**GetBlock account** ](https://account.getblock.io)
 * A [**Risk & Compliance API key**](https://www.account.getblock.io/products/address-audit#api-keys)
 * Basic JavaScript / TypeScript knowledge.
 
+### Project Setup
+
 {% stepper %}
 {% step %}
-## Get your API key
-
-1. Log in to [account.getblock.io](https://account.getblock.io/).
-2. Open **Address Audit → API keys** and copy your key.
-3. Export it:
+#### Set up the project
 
 ```bash
-export GETBLOCK_KEY="your_api_key_here"
+mkdir token-vetter && cd token-vetter
+npm init -y
+npm pkg set type=module
+npm install dotenv
+```
+{% endstep %}
+
+{% step %}
+#### Get your API key
+
+1. Log in to [account.getblock.io](https://account.getblock.io/).
+2. Open **Address Audit → API keys.**
+3. Copy your key and save it in an `.env` file
+
+```bash
+GETBLOCK_KEY="your_api_key_here"
 ```
 
 {% hint style="warning" %}
@@ -134,25 +151,12 @@ Numeric flags are `0` (clean) or `1` (detected). `buy_tax`/`sell_tax` are fracti
 {% endstep %}
 
 {% step %}
-#### Set up the project
-
-```bash
-mkdir token-vetter && cd token-vetter
-npm init -y
-npm pkg set type=module
-```
-
-No dependencies — `fetch` is built into Node 18+.
-{% endstep %}
-
-{% step %}
 #### Write the API caller
 
 Create `rugpull.js`. Note the network is normalized to uppercase here so callers can pass `eth`, `ETH`, or `ethereum`.
 
-{% code overflow="wrap" %}
+{% code title="rugpull.js" overflow="wrap" %}
 ```js
-// rugpull.js
 const BASE_URL = "https://services.getblock.io/v1";
 
 // Rug Pull uses its own uppercase codes and a different alphabet (BNB, not BSC).
@@ -192,8 +196,8 @@ export async function checkRugPull(contractAddress, network = "eth") {
 
 The API gives you dozens of indicators. Create `flags.js` to turn them into a human-readable list, grouped by severity. Tune the thresholds to your own policy.
 
+{% code title="flags.js" overflow="wrap" %}
 ```js
-// flags.js
 const MAX_BUY_TAX = 10;            // percent
 const MAX_SELL_TAX = 10;           // percent
 const MAX_HOLDER_CONCENTRATION = 50; // percent held by the top holder
@@ -237,6 +241,7 @@ export function collectRedFlags(r) {
   return flags;
 }
 ```
+{% endcode %}
 {% endstep %}
 
 {% step %}
@@ -244,8 +249,8 @@ export function collectRedFlags(r) {
 
 Create `vet.js`. It blocks on the API's own `Fraud` verdict, a HIGH AI probability, **or** any disqualifying red flag.
 
+{% code title="vet.js" overflow="wrap" %}
 ```js
-// vet.js
 import { checkRugPull } from "./rugpull.js";
 import { collectRedFlags } from "./flags.js";
 
@@ -292,6 +297,7 @@ export async function vetToken(contractAddress, network = "eth") {
   }
 }
 ```
+{% endcode %}
 {% endstep %}
 
 {% step %}
@@ -299,21 +305,24 @@ export async function vetToken(contractAddress, network = "eth") {
 
 Create `index.js`:
 
+{% code title="index.js" overflow="wrap" %}
 ```js
-// index.js
 import { vetToken } from "./vet.js";
 
 const TOKEN = "0xdac17f958d2ee523a2206206994597c13d831ec7"; // candidate token
 await vetToken(TOKEN, "eth");
 ```
+{% endcode %}
 
+{% code title="bash" %}
 ```bash
 node index.js
 ```
+{% endcode %}
 
 Expected output for a clean token:
 
-```
+```bash
 Token:    Tether USD (USDT)
 Contract: 0xdac17f958d2ee523a2206206994597c13d831ec7 [ETH]
 
@@ -339,7 +348,7 @@ Notice the verdict is **NO-GO** even though the AI probability is LOW — the `i
 {% endstep %}
 {% endstepper %}
 
-## Understanding the response
+### Understanding the response
 
 | Field                        | Type                       | What it tells you                                                                  |
 | ---------------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
@@ -349,7 +358,7 @@ Notice the verdict is **NO-GO** even though the AI probability is LOW — the `i
 | `risk_indicators`            | object                     | Code-level scan: taxes, honeypot, mint/owner rights, liquidity, `holders[]`.       |
 | `forensic_details`           | object                     | Contract findings: `is_open_source`, `selfdestruct`, `approval_abuse`, owner type. |
 
-## Troubleshooting
+### Troubleshooting
 
 | Symptom                   | Likely cause                        | Fix                                                      |
 | ------------------------- | ----------------------------------- | -------------------------------------------------------- |
@@ -359,7 +368,7 @@ Notice the verdict is **NO-GO** even though the AI probability is LOW — the `i
 | `HTTP 401` / `403`        | Bad key / no Address Audit access   | Re-check `GETBLOCK_KEY` and your plan.                   |
 | `HTTP 402` / `429`        | Out of quota / rate limited         | Free tier is 5/day; back off or top up.                  |
 
-## Conclusion
+### Conclusion
 
 You built a token-vetting gate that calls the GetBlock Rug Pull Check API directly, combines AI behavioral probability with a code-level contract scan, and returns a GO/NO-GO verdict along with the exact red flags behind it. Drop `vetToken` into your listing pipeline, a "before you import this token" warning in a wallet, or a CLI your team runs against a candidate list — and fail closed whenever a check can't complete.
 
