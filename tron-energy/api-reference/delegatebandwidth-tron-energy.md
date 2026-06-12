@@ -22,7 +22,7 @@ This is used to purchase and delegate TRON bandwidth to a target address. Unlike
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST https://api.getblock.io/tron-energy/delegate-bandwidth \
+curl -X POST https://services.getblock.io/v1/tron-energy/delegate-bandwidth \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -48,7 +48,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://api.getblock.io/tron-energy/delegate-bandwidth',
+    url: 'https://services.getblock.io/v1/tron-energy/delegate-bandwidth',
     headers: {
         'Content-Type': 'application/json',
         'Authorization: Bearer YOUR_API_KEY'
@@ -68,7 +68,7 @@ axios(config)
 import requests
 import json
 
-url = "https://api.getblock.io/tron-energy/delegate-bandwidth"
+url = "https://services.getblock.io/v1/tron-energy/delegate-bandwidth"
 
 payload = json.dumps({
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
@@ -96,7 +96,7 @@ use reqwest::header;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
 
-    let url = "https://api.getblock.io/tron-energy/delegate-bandwidth";
+    let url = "https://services.getblock.io/v1/tron-energy/delegate-bandwidth";
     let payload = r#"{
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
     "volume": 5000,
@@ -130,7 +130,7 @@ import (
     "net/http"
 )
 func main() {
-    url := "https://api.getblock.io/tron-energy/delegate-bandwidth"
+    url := "https://services.getblock.io/v1/tron-energy/delegate-bandwidth"
     payload := map[string]interface{}{
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
     "volume": 5000,
