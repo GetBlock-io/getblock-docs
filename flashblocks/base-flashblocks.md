@@ -10,16 +10,18 @@ Flashblocks deliver \~200ms transaction preconfirmations on Base by streaming pa
 
 Base runs on the OP Stack (chain ID 8453). Flashblocks have been live on Base Mainnet since July 2025 and are also available on Base Sepolia (chain ID 84532). The feature is served over the standard Base RPC interface, so no separate endpoint or add-on is required to read preconfirmed state.
 
-## Endpoints
+### Endpoints
 
 | Transport | URL                                      |
 | --------- | ---------------------------------------- |
 | HTTP      | `https://go.getblock.io/<ACCESS-TOKEN>/` |
 | WebSocket | `wss://go.getblock.io/<ACCESS-TOKEN>/`   |
 
+{% hint style="info" %}
 The `pending` tag works over HTTP. Flashblocks subscriptions require the WebSocket endpoint.
+{% endhint %}
 
-## Flashblocks-Aware Methods
+### Flashblocks-Aware Methods
 
 | Method                      | Usage                                                                  |
 | --------------------------- | ---------------------------------------------------------------------- |
@@ -37,7 +39,9 @@ The `pending` tag works over HTTP. Flashblocks subscriptions require the WebSock
 | `eth_subscribe`             | Opens a Flashblocks WebSocket subscription                             |
 | `eth_unsubscribe`           | Cancels an active Flashblocks subscription                             |
 
-## Reading Preconfirmed State
+### Examples
+
+#### 1. Reading Preconfirmed State
 
 The example below reads the `pending` balance of the Base WETH contract `0x4200000000000000000000000000000000000006`. Substitute any supported method and parameters; the `"pending"` tag is what selects Flashblock state.
 
@@ -76,7 +80,7 @@ console.log(response.data.result);
 {% endcode %}
 {% endtab %}
 
-{% tab title="Request" %}
+{% tab title="Request(Python)" %}
 {% code title="example.py" %}
 ```python
 import requests
@@ -127,10 +131,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```
 {% endcode %}
 {% endtab %}
-{% endtabs %}
 
-### Response
-
+{% tab title="Response" %}
 ```json
 {
     "jsonrpc": "2.0",
@@ -138,13 +140,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "result": "0x3bdf5275488a29a8a57c"
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 The `result` is the hex-encoded balance in wei at the latest Flashblock. The same request with the `"latest"` tag returns the value at the last sealed block.
 
-## Streaming Flashblocks over WebSocket
+#### 2. Streaming Flashblocks over WebSocket
 
 Open a WebSocket connection and subscribe to `newFlashblocks` to receive each Flashblock as it is built, roughly every 200ms. Subscription notifications arrive as `eth_subscription` messages. Use `newFlashblockTransactions` to stream individual preconfirmed transactions, or `pendingLogs` to stream event logs from preconfirmed transactions.
 
+{% tabs %}
+{% tab title="Wss" %}
 {% code title="subscribe.js" %}
 ```javascript
 const WebSocket = require('ws');
@@ -169,7 +175,9 @@ ws.on('message', (data) => {
 });
 ```
 {% endcode %}
+{% endtab %}
 
+{% tab title="Response" %}
 The subscription confirmation returns a hex-encoded subscription ID:
 
 ```json
@@ -179,10 +187,12 @@ The subscription confirmation returns a hex-encoded subscription ID:
     "result": "0x3b8cd9e5f4a7b2c1d0e3f4a5b6c7d8e9"
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 Each notification payload is a Flashblock object containing `payload_id`, `index`, `diff`, and, on `index` 0, the `base` block context. If per-event handling is heavy, throttle or debounce the consumer to avoid blocking, since events arrive at 5 Hz.
 
-## Confirming Submission with base\_transactionStatus
+#### 3. Confirming Submission with base\_transactionStatus
 
 `base_transactionStatus` is a Base-specific method that reports whether a transaction hash is present in the node mempool. It is useful for confirming that a submitted transaction has been received before a preconfirmation lands.
 
@@ -202,8 +212,8 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% endcode %}
 {% endtab %}
 
-{% tab title="Request" %}
-{% code title="example.py" %}
+{% tab title="Request(Python)" %}
+{% code title="example.py" overflow="wrap" %}
 ```python
 import requests
 
@@ -222,8 +232,8 @@ print(response.json())
 ```
 {% endcode %}
 {% endtab %}
-{% endtabs %}
 
+{% tab title="Response" %}
 A `"Known"` status means the transaction is in the mempool; `"Unknown"` None
 
 ```json
@@ -235,6 +245,8 @@ A `"Known"` status means the transaction is in the mempool; `"Unknown"` None
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Use Cases
 
