@@ -131,7 +131,9 @@ For applications that need significantly **higher throughput** and **increased r
 
 #### Managing unused & extra CUs
 
-If you don’t use all your allocated CUs within a month, the unused amount **will carry over to the next month** as long as **your subscription is** **active and renewed**. If your subscription expires or is not renewed on time, the remaining CUs will be lost.
+Your monthly plan CUs (main balance) are **valid for the current billing cycle** only. The balance **is reset** when your subscription renews. Main-balance CUs don't carry over.
+
+Extra CUs (extra balance) — anything on top of your plan allocation — do **carry over to the next month**, as long as your subscription stays active and renews on time.
 
 {% hint style="success" %}
 If your demand exceeds the included limits, you can **purchase extra CU packages**. This means that even within a given plan, there’s room for scaling without an immediate need to move to a higher tier.
