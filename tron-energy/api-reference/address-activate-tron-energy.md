@@ -2,12 +2,14 @@
 description: >-
   Example code for the addressActivate JSON RPC method. Сomplete guide on how to
   use addressActivate JSON RPC in GetBlock Web3 documentation.
-hidden: true
 ---
 
-# addressActivate - TRON energy
+# address-activate - TRON energy
 
-This activates a TRON address on the blockchain. Required before delegating Energy or Bandwidth to a new (never-used) address.
+This activates (creates) a TRON address on-chain. This is required before delegating Energy or Bandwidth to a new (never-used) address.\
+A newly generated TRON address must be activated before it\
+can hold a balance or receive transfers. Activation is synchronous: the API returns 200 with the provider's\
+activation receipt, and the realised on-chain cost is charged from your prepaid balance.&#x20;
 
 {% hint style="info" %}
 Fixed cost: 1.87 TRX, charged in USD at the current TRX/USD rate.
@@ -19,17 +21,16 @@ Fixed cost: 1.87 TRX, charged in USD at the current TRX/USD rate.
 | --------------- | ------ | -------- | ------------------------------------------------------ |
 | target\_address | string | Yes      | TRON wallet to activate (starts with T, 34 characters) |
 
-
-
 ### Request Sample
 
 {% tabs %}
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST https://api.getblock.io/tron-energy/addressActivate \
+curl -X POST https://services.getblock.io/v1/tron-energy/address-activate \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
+  -H "Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44" \
   -d '{
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD"
   }'
@@ -48,10 +49,11 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://api.getblock.io/tron-energy/addressActivate',
+    url: 'https://services.getblock.io/v1/tron-energy/address-activate',
     headers: {
         'Content-Type': 'application/json',
         'Authorization: Bearer YOUR_API_KEY'
+        'Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44' \
     },
     data: data
 };
@@ -68,7 +70,7 @@ axios(config)
 import requests
 import json
 
-url = "https://api.getblock.io/tron-energy/addressActivate"
+url = "https://services.getblock.io/v1/tron-energy/address-activate"
 
 payload = json.dumps({
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD"
@@ -77,7 +79,8 @@ payload = json.dumps({
 
 headers = {
         'Content-Type': 'application/json',
-        'Authorization: Bearer YOUR_API_KEY'
+        'Authorization: Bearer YOUR_API_KEY',
+        'Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44' 
     },
 response = requests.post(url, headers=headers, data=payload)
 print(response.text)
@@ -94,7 +97,7 @@ use reqwest::header;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
 
-    let url = "https://api.getblock.io/tron-energy/addressActivate";
+    let url = "https://services.getblock.io/v1/tron-energy/address-activate";
     let payload = r#"{
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD"
   }
@@ -104,6 +107,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .post(url)
         .header(header::CONTENT_TYPE, "application/json")
         .header(header::AUTHORIZATION, "Bearer YOUR_API_KEY")
+        .header(header::IDEMPOTENCY_KEY: "6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44")
         .body(payload)
         .send()
         .await?;
@@ -126,7 +130,7 @@ import (
     "net/http"
 )
 func main() {
-    url := "https://api.getblock.io/tron-energy/addressActivate"
+    url := "https://services.getblock.io/v1/tron-energy/address-activate"
     payload := map[string]interface{}{
     "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD"
   }
@@ -135,6 +139,7 @@ func main() {
     req, _ := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
     req.Header.Set("Authorization", "Bearer YOUR_API_KEY")
     req.Header.Set("Content-Type", "application/json")
+    req.Header.Set("Idempotency-Key": "6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44")
     client := &http.Client{}
     resp, err := client.Do(req)
     if err != nil {
@@ -154,11 +159,33 @@ func main() {
 
 ```bash
 {
-  "order_id": 12345,
-  "status": "success",
-  "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
-  "trx_spent": 1.87,
-  "price_usd": "0.52",
-  "txid": "abc123def..."
+"data": {
+"id": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+"address_to": "TUo8pycbvje...zw67bpPs4GLFyD",
+"cost": 1700000,
+"created_at": "2026-06-18T10:42:00Z"
+        }
 }
 ```
+
+### Response Sample Definition
+
+| Field       | Type    | Charged | Description                                                                 |
+| ----------- | ------- | ------- | --------------------------------------------------------------------------- |
+| id          | string  | No      | provider activation/order id                                                |
+| address\_to | string  | No      | The TRON adrress that was activated                                         |
+| cost        | integer | Yes     | realised on-chain cost in sun(1 TRX = 1,000,000 sun); this what is deducted |
+| created\_at | string  | No      | RFC3339 timestamp of the activation                                         |
+
+### Idempotency
+
+Send a unique Idempotency-Key header (UUID format recommended) to ensure safe retries:
+
+| Scenario                        | Behavior                                         |
+| ------------------------------- | ------------------------------------------------ |
+| Same key + same body            |  Original response replayed, no duplicate charge |
+| Same key + different body       | 422                                              |
+| Same key on different endpoint  | 409                                              |
+| In-flight duplicate request     | 409 with Retry-After header                      |
+
+A retry with the same key + body replays the original activation receipt — it does not activate the address twice or charge a second time.

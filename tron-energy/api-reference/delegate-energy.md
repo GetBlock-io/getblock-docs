@@ -38,7 +38,10 @@ Always send an idempotency key on write endpoints. It is the difference between 
 
 #### Request Sample
 
-```json
+{% tabs %}
+{% tab title="cURL" %}
+{% code overflow="wrap" %}
+```bash
 curl -X POST https://services.getblock.io/v1/tron-energy/delegate-energy \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
@@ -49,6 +52,133 @@ curl -X POST https://services.getblock.io/v1/tron-energy/delegate-energy \
     "duration": "1h"
   }'
 ```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Axios" %}
+{% code overflow="wrap" %}
+```javascript
+import axios from 'axios';
+const data = JSON.stringify({
+    "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
+    "volume": 65000,
+    "duration": "1h"
+  }
+);
+
+const config = {
+    method: 'post',
+    url: 'https://services.getblock.io/v1/tron-energy/delegate-energy',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization: Bearer YOUR_API_KEY'
+        'Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44' \
+    },
+    data: data
+};
+axios(config)
+    .then(response => console.log(JSON.stringify(response.data)))
+    .catch(error => console.log(error));
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Request" %}
+{% code overflow="wrap" %}
+```python
+import requests
+import json
+
+url = "https://services.getblock.io/v1/tron-energy/delegate-energy"
+
+payload = json.dumps({
+    "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
+    "volume": 65000,
+    "duration": "1h"
+  }
+)
+
+headers = {
+        'Content-Type': 'application/json',
+        'Authorization: Bearer YOUR_API_KEY',
+        'Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44' 
+    },
+response = requests.post(url, headers=headers, data=payload)
+print(response.text)
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust" %}
+{% code overflow="wrap" %}
+```rust
+use reqwest::header;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+
+    let url = "https://services.getblock.io/v1/tron-energy/delegate-energy";
+    let payload = r#"{{
+    "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
+    "volume": 65000,
+    "duration": "1h"
+  }
+"#;
+
+    let response = client
+        .post(url)
+        .header(header::CONTENT_TYPE, "application/json")
+        .header(header::AUTHORIZATION, "Bearer YOUR_API_KEY")
+        .header(header::IDEMPOTENCY_KEY: "6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44")
+        .body(payload)
+        .send()
+        .await?;
+
+    println!("{}", response.text().await?);
+
+    Ok(())
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="GO" %}
+```go
+package main
+import (
+    "bytes"
+    "encoding/json"
+    "fmt"
+    "net/http"
+)
+func main() {
+    url := "https://services.getblock.io/v1/tron-energy/delegate-energy"
+    payload := map[string]interface{}{
+    "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
+    "volume": 65000,
+    "duration": "1h"
+  }
+
+    jsonData, _ := json.Marshal(payload)
+    req, _ := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
+    req.Header.Set("Authorization", "Bearer YOUR_API_KEY")
+    req.Header.Set("Content-Type", "application/json")
+    req.Header.Set("Idempotency-Key": "6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44")
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+    
+    var result map[string]interface{}
+    json.NewDecoder(resp.Body).Decode(&result)
+    fmt.Println(result)
+}
+```
+{% endtab %}
+{% endtabs %}
 
 #### &#x20;Response&#x20;
 
