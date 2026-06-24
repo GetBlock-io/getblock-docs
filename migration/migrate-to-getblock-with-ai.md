@@ -13,7 +13,7 @@ This page is both a migration guide and an executable runbook for AI coding agen
 Paste this into your AI agent:
 
 ```bash
-get docs.getblock.io/migrate-to-getblock-with-ai.md
+get docs.getblock.io/migration/migrate-to-getblock-with-ai.md
 ```
 
 The agent fetches this page and walks through the migration in three phases: **Assess**, **Plan**, and **Implement**. It stops after Plan and waits for your approval before making any changes to the code.
