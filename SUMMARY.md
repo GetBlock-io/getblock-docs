@@ -97,6 +97,7 @@
 
 ## Migration
 
+* [Migrate to Getblock with AI](migration/migrate-to-getblock-with-ai.md)
 * [How to Migrate from Alchemy to GetBlock — Step-by-Step](migration/how-to-migrate-from-alchemy-to-getblock-step-by-step.md)
 * [How to Migrate from Infura to GetBlock — Step-by-Step](migration/how-to-migrate-from-infura-to-getblock-step-by-step.md)
 * [How to Migrate from QuickNode to GetBlock — Step-by-Step](migration/how-to-migrate-from-quicknode-to-getblock-step-by-step.md)
