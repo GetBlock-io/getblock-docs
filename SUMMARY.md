@@ -52,6 +52,13 @@
 * [TradeFirst](solana-advanced-data-tools/tradefirst.md)
 * [Solana Indexed Archive](solana-advanced-data-tools/solana-indexed-archive.md)
 
+## Crypto AML
+
+* [Overview](crypto-aml/overview.md)
+* [How risk scoring works](crypto-aml/how-risk-scoring-works.md)
+* [Run a check in the dashboard](crypto-aml/run-a-check-in-the-dashboard.md)
+* [Run check via API](crypto-aml/run-check-via-api.md)
+
 ## Tron Energy
 
 * [Overview](tron-energy/introduction.md)
