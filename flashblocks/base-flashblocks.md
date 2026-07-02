@@ -35,7 +35,7 @@ The `pending` tag works over HTTP. Flashblocks subscriptions require the WebSock
 | `base_transactionStatus`        | Reports whether a transaction hash is present in the mempool           |
 | `eth_subscribe`                 | Opens a Flashblocks WebSocket subscription                             |
 | `eth_unsubscribe`               | Cancels an active Flashblocks subscription                             |
-| `eth_getLogs`                   |                                                                        |
+| `eth_getLogs`                   | Get array of all logs matching a given filter object.                  |
 
 ### Example
 
