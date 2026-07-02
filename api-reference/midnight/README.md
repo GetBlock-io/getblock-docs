@@ -80,6 +80,7 @@ All Midnight JSON-RPC methods are called by sending a `POST` request to the base
 
 | Network    | JSON-RPC | WSS | Frankfurt, Germany | New York, USA | Singapore, Singapore |
 | ---------- | -------- | --- | ------------------ | ------------- | -------------------- |
+| Mainnet    | ✅        | ✅   | ✅                  | ❌             | ❌                    |
 | testnet-02 | ✅        | ✅   | ✅                  | ✅             | ✅                    |
 
 Midnight mainnet has not yet been launched. This documentation targets **testnet-02**, the current stable development network.

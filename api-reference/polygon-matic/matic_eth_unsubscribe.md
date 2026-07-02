@@ -22,95 +22,90 @@ This method requires a WebSocket connection.
 
 {% tabs %}
 {% tab title="cURL" %}
-{% code title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "eth_unsubscribe",
-    "params": ["0x9cef478923ff08bf67fde6c64013158d"],
-    "id": "getblock.io"
-}'
+# WebSocket-only method. Use wscat (or similar) to connect first:
+wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
+
+# Then send:
+{"jsonrpc": "2.0", "method": "eth_unsubscribe", "params": ["0x9cef478923ff08bf67fde6c64013158d"], "id": "getblock.io"}
 ```
-{% endcode %}
 {% endtab %}
 
 {% tab title="JavaScript (Axios)" %}
-{% code title="example.js" %}
 ```javascript
-import axios from 'axios';
+import WebSocket from 'ws';
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
 
-const payload = {
-    jsonrpc: '2.0',
-    method: 'eth_unsubscribe',
-    params: ["0x9cef478923ff08bf67fde6c64013158d"],
-    id: 'getblock.io'
-};
-
-axios.post(url, payload, {
-    headers: { 'Content-Type': 'application/json' }
-})
-.then(response => console.log(response.data))
-.catch(error => console.error(error));
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Python (requests)" %}
-{% code title="example.py" %}
-```python
-import requests
-
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
-
-payload = {
+ws.on('open', () => {
+    ws.send(JSON.stringify({
     "jsonrpc": "2.0",
     "method": "eth_unsubscribe",
-    "params": ["0x9cef478923ff08bf67fde6c64013158d"],
+    "params": [
+        "0x9cef478923ff08bf67fde6c64013158d"
+    ],
     "id": "getblock.io"
-}
+}));
+});
 
-response = requests.post(url, headers={"Content-Type": "application/json"}, json=payload)
-print(response.json())
+ws.on('message', (data) => {
+    console.log(JSON.parse(data.toString()));
+});
 ```
-{% endcode %}
 {% endtab %}
 
-{% tab title="Rust (reqwest)" %}
-{% code title="example.rs" %}
+{% tab title="Python (Requests)" %}
+```python
+import asyncio
+import json
+import websockets
+
+async def main():
+    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/') as ws:
+        await ws.send(json.dumps({
+    "jsonrpc": "2.0",
+    "method": "eth_unsubscribe",
+    "params": [
+        "0x9cef478923ff08bf67fde6c64013158d"
+    ],
+    "id": "getblock.io"
+}))
+        async for message in ws:
+            print(json.loads(message))
+
+asyncio.run(main())
+```
+{% endtab %}
+
+{% tab title="Rust (Reqwest)" %}
 ```rust
-use reqwest::header;
+use tokio_tungstenite::connect_async;
+use tokio_tungstenite::tungstenite::Message;
+use serde_json::json;
+use futures_util::{SinkExt, StreamExt};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = reqwest::Client::new();
-    
-    let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
-        .header(header::CONTENT_TYPE, "application/json")
-        .body(r#"{
-            "jsonrpc": "2.0",
-            "method": "eth_unsubscribe",
-            "params": ["0x9cef478923ff08bf67fde6c64013158d"],
-            "id": "getblock.io"
-        }"#)
-        .send()
-        .await?;
-    
-    println!("{}", response.text().await?);
+    let (mut ws_stream, _) = connect_async("wss://go.getblock.io/<ACCESS-TOKEN>/").await?;
+
+    let payload = json!({
+        "jsonrpc": "2.0",
+        "method": "eth_unsubscribe",
+        "params": [
+                "0x9cef478923ff08bf67fde6c64013158d"
+        ],
+        "id": "getblock.io"
+});
+    ws_stream.send(Message::Text(payload.to_string())).await?;
+
+    while let Some(msg) = ws_stream.next().await {
+        println!("{:?}", msg?);
+    }
     Ok(())
 }
 ```
-{% endcode %}
 {% endtab %}
 {% endtabs %}
-
-{% hint style="info" %}
-This method requires a WebSocket connection for subscriptions created with eth\_subscribe. Use eth\_unsubscribe to cancel those subscriptions.
-{% endhint %}
 
 ## Response
 

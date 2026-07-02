@@ -67,5 +67,5 @@ The following methods reflect Flashblock state directly, without a block tag:
 
 Flashblocks are documented per network. Endpoints, method tables, and chain-specific methods are covered on the dedicated pages:
 
-* **Base**&#x20;
+* [**Base**](base-flashblocks.md)&#x20;
 * **Optimism**

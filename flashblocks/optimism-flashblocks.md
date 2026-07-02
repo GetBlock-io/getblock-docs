@@ -2,11 +2,11 @@
 hidden: true
 ---
 
-# optimism flashblocks
+# Optimism Flashblocks
 
-Flashblocks deliver near real-time transaction preconfirmations on Optimism by streaming partial blocks before the next full block is sealed. Preconfirmed state is exposed through the standard JSON-RPC `pending` block tag, reducing perceived confirmation time from the standard \~2-second block interval to roughly 250 milliseconds.
+Flashblocks deliver near-real-time transaction preconfirmations on Optimism by streaming partial blocks before the next full block is sealed. Preconfirmed state is exposed through the standard JSON-RPC `pending` block tag, reducing perceived confirmation time from the standard \~2-second block interval to roughly 250 milliseconds.
 
-Optimism runs on the OP Stack (chain ID 10), the reference implementation that Flashblocks' Rollup-Boost sidecar was built for. Flashblocks are available on Optimism Mainnet and Optimism Sepolia (chain ID 11155420), served over the standard Optimism RPC interface so existing tooling reads preconfirmed state without modification.
+Optimism runs on the OP Stack (chain ID 10), the reference implementation for which Flashblocks' Rollup-Boost sidecar was built. Flashblocks are available on Optimism Mainnet and Optimism Sepolia (chain ID 11155420), served over the standard Optimism RPC interface so existing tooling reads preconfirmed state without modification.
 
 ## Endpoints
 
@@ -232,7 +232,3 @@ console.log(balance);
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-{% hint style="info" %}
-GetBlock's RPC API reference documentation is provided exclusively for informational purposes and streamlined developer experience optimization. The canonical and normative specification for Flashblocks and Ethereum Virtual Machine (EVM) JSON-RPC methods is solely maintained and published through the official Optimism documentation portal at docs.optimism.io.
-{% endhint %}
