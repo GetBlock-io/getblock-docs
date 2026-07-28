@@ -48,6 +48,7 @@
 * [Custom Endpoint URL](extra-services-for-dedicated-nodes/custom-endpoint-url.md)
 * [Dedicated Ingress Proxy](extra-services-for-dedicated-nodes/dedicated-ingress-proxy.md)
 * [IP Allowlist](extra-services-for-dedicated-nodes/ip-allowlist.md)
+* [Solana Shreds Streaming](extra-services-for-dedicated-nodes/solana-shreds-streaming.md)
 * [Nonstandard Client Support](extra-services-for-dedicated-nodes/nonstandard-client-support.md)
 * [Unified Multichain Endpoint](extra-services-for-dedicated-nodes/unified-multichain-endpoint.md)
 * [Zero-hop Node Access](extra-services-for-dedicated-nodes/zero-hop-node-access.md)
