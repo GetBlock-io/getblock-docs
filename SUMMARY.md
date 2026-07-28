@@ -29,11 +29,28 @@
 * [Connect to GetBlock with MetaMask](getting-started/connect-to-getblock-with-metamask.md)
 * [Connect Brave Wallet to GetBlock](getting-started/connect-brave-wallet-to-getblock.md)
 
-## ADD-ONS
+## Add-ons
 
+* [Beacon API](add-ons/beacon-api.md)
+* [Blockbook](add-ons/blockbook.md)
+* [EIP-4337](add-ons/eip-4337.md)
+* [Overlay Method](add-ons/overlay-method.md)
+* [MEV Protection](add-ons/mev-protection.md)
 * [Yellowstone gRPC API](add-ons/yellowstone-grpc-api/README.md)
   * [Overview](add-ons/yellowstone-grpc-api/overview.md)
   * [Quickstart guide](add-ons/yellowstone-grpc-api/quickstart-guide.md)
+
+## Extra Services For Dedicated Nodes
+
+* [Overview](extra-services-for-dedicated-nodes/overview.md)
+* [Advanced Analytics](extra-services-for-dedicated-nodes/advanced-analytics.md)
+* [Automatic RPC failover](extra-services-for-dedicated-nodes/automatic-rpc-failover.md)
+* [Custom Endpoint URL](extra-services-for-dedicated-nodes/custom-endpoint-url.md)
+* [Dedicated Ingress Proxy](extra-services-for-dedicated-nodes/dedicated-ingress-proxy.md)
+* [IP Allowlist](extra-services-for-dedicated-nodes/ip-allowlist.md)
+* [Nonstandard Client Support](extra-services-for-dedicated-nodes/nonstandard-client-support.md)
+* [Unified Multichain Endpoint](extra-services-for-dedicated-nodes/unified-multichain-endpoint.md)
+* [Zero-hop Node Access](extra-services-for-dedicated-nodes/zero-hop-node-access.md)
 
 ## BSC Advanced Tooling
 
@@ -62,18 +79,6 @@
   * [Wallet Audit Endpoint](crypto-address-audit/api-reference/wallet-audit-endpoint.md)
   * [Wallet Risk Endpoint](crypto-address-audit/api-reference/wallet-risk-endpoint.md)
   * [Rug Pull Checker Endpoint](crypto-address-audit/api-reference/rug-pull-checker-endpoint.md)
-
-## Extra Services for Dedicated Nodes
-
-* [Overview](extra-services-for-dedicated-nodes/overview.md)
-* [Advanced Analytics](extra-services-for-dedicated-nodes/advanced-analytics.md)
-* [Automatic RPC failover](extra-services-for-dedicated-nodes/automatic-rpc-failover.md)
-* [Custom Endpoint URL](extra-services-for-dedicated-nodes/custom-endpoint-url.md)
-* [Dedicated Ingress Proxy](extra-services-for-dedicated-nodes/dedicated-ingress-proxy.md)
-* [IP Allowlist](extra-services-for-dedicated-nodes/ip-allowlist.md)
-* [Nonstandard Client Support](extra-services-for-dedicated-nodes/nonstandard-client-support.md)
-* [Unified Multichain Endpoint](extra-services-for-dedicated-nodes/unified-multichain-endpoint.md)
-* [Zero-hop Node Access](extra-services-for-dedicated-nodes/zero-hop-node-access.md)
 
 ## Flashblocks
 

@@ -247,7 +247,6 @@ GetBlock provides access to standard Solana JSON-RPC methods for the Solana netw
 | getBalance                        | Returns the lamport balance of an account          |
 | getMultipleAccounts               | Returns account information for a list of Pubkeys  |
 | getProgramAccounts                | Returns all accounts owned by a program            |
-| getLargestAccounts                | Returns the 20 largest accounts by lamport balance |
 | getMinimumBalanceForRentExemption | Returns the minimum balance for rent exemption     |
 
 #### Token Methods
