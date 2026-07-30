@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock dedicated ingress proxy lets your own routing layer, fully isolated
+  from all other traffic.
+---
+
 # Dedicated Ingress Proxy
 
 A Dedicated Ingress Proxy gives you your own routing layer in front of your node — a proxy fleet that serves only your traffic. It isolates the one part of the path that a standard dedicated node still shares with everyone else: the gateway.

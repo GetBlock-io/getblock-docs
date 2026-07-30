@@ -1,3 +1,7 @@
+---
+description: 'GetBlock Blockbook: an indexer for UTXO chains for standard Bitcoin node'
+---
+
 # Blockbook
 
 Blockbook is an indexer for UTXO chains. It answers questions about an address or a whole wallet — balances, transaction history, and unspent outputs — that a standard Bitcoin node cannot answer on its own.

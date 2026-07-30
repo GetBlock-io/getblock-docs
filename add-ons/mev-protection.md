@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock MEV Protection routes your transactions through a private mempool
+  against front-running and sandwich attacks
+---
+
 # MEV Protection
 
 MEV Protection routes your transactions through a private mempool so that MEV bots never see them. This stops front-running and sandwich attacks before they can happen. You enable it at the endpoint level, and your application code does not change.

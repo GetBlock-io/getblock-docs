@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock Nonstandard Client Support  allows extra namespaces, private forks,
+  exotic configs, all running on managed infrastructure.
+---
+
 # Nonstandard Client Support
 
 Nonstandard Client Support runs the namespaces, client builds, and configurations that a default node does not enable — extra RPC namespaces, a patched or forked client, or an exotic set of flags. GetBlock operates the setup for you on managed infrastructure, so you get the capability without taking on the operations.

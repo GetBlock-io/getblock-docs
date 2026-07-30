@@ -1,4 +1,10 @@
-# Automatic RPC failover
+---
+description: >-
+  GetBlock Automatic RPC Failover switch your dedicated node  to shared RPC
+  automatically
+---
+
+# Automatic RPC Failover
 
 Automatic RPC Failover keeps your application online when your dedicated node degrades. If the node falls behind or starts to fail, the system moves your traffic to **GetBlock shared RPC** and moves it back once the node recovers. The switch is automatic, and your endpoint URL never changes.
 

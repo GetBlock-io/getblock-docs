@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock Zero-hop Node Access: connect straight to your dedicated node,
+  bypassing the proxy layer entirely.
+---
+
 # Zero-hop Node Access
 
 Zero-Hop Node Access gives you a direct connection to your node, removing the routing layer that normally sits in the path. It is built for the workloads where latency is measured in milliseconds, and every one of them counts.

@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock Solana Shreds Streaming delivers raw block data straight from
+  validators, over UDP, before the block is assembled.
+---
+
 # Solana Shreds Streaming
 
 Solana Shreds Streaming delivers raw block data straight from validators, over UDP, before the block is assembled. It gives you the earliest possible view of what is happening on Solana — earlier than any standard RPC or gRPC feed.

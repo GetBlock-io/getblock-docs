@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock Unified Multichain Endpoint: use one URL for every node and chain in
+  your stack.
+---
+
 # Unified Multichain Endpoint
 
 A Unified Multichain Endpoint gives you one URL and one credential for every node and chain in your stack. Instead of managing a separate endpoint and key per network, you point at a single base address and name the chain you want in the request.

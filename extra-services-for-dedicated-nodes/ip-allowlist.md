@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock IP Allowlist: network security control that restricts access to your
+  RPC endpoint based on the source IP address of each request
+---
+
 # IP Allowlist
 
 An Internet Protocol (IP)  allowlist is a network security control that restricts access to your RPC endpoint based on the source IP address of each request. When the allowlist is active, only requests from addresses you have approved can reach your node. Every other request is blocked at the gateway, before it reaches the node and before any processing takes place. In effect, it is a "**friend** or **foe**" filter based on where the request comes from.

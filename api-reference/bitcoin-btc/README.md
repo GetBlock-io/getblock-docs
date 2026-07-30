@@ -7,8 +7,6 @@ description: >-
 
 # Bitcoin (BTC)
 
-### Overview
-
 Bitcoin is the first and largest decentralized cryptocurrency network, launched in 2009 by the pseudonymous Satoshi Nakamoto. It operates as a peer-to-peer electronic cash system, enabling trustless value transfer without intermediaries.
 
 #### Key Features

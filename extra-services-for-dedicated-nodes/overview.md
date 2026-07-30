@@ -1,3 +1,7 @@
+---
+description: Learn more about extra add-ons specifically for GetBlock dedicated nodes
+---
+
 # Overview
 
 A GetBlock dedicated node gives you isolated compute for one workload. These add-ons extend that node. Each add-on solves one specific problem that a standard node cannot solve on its own.

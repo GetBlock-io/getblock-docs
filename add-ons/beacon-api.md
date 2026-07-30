@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock Beacon API: access the Ethereum consensus layer (Proof-of-Stake),
+  separate from the usual JSON-RPC execution layer.
+---
+
 # Beacon API
 
 The Beacon API opens access to the Ethereum consensus layer — the Proof-of-Stake side of the network. This is a different layer from the one the standard `eth_*` JSON-RPC serves, and it exposes data that the execution layer simply does not hold.
