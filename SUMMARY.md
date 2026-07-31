@@ -33,7 +33,7 @@
 
 * [Beacon API](add-ons/beacon-api.md)
 * [Blockbook](add-ons/blockbook.md)
-* [ERC-4337](add-ons/erc-4337.md)
+* [ERC-4337](add-ons/eip-4337.md)
 * [Overlay Methods](add-ons/overlay-methods.md)
 * [MEV Protection](add-ons/mev-protection.md)
 * [Yellowstone gRPC API](add-ons/yellowstone-grpc-api/README.md)
