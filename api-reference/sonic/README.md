@@ -37,7 +37,9 @@ _GetBlock's Sonic API reference documentation is provided exclusively for inform
 https://go.getblock.io/<ACCESS-TOKEN>/
 ```
 
+{% hint style="info" %}
 All Sonic JSON-RPC methods are called by sending a `POST` request to the base URL with a standard JSON-RPC 2.0 body. For a WebSocket connection, use the WebSocket scheme: `wss://go.getblock.io/<ACCESS-TOKEN>/`.
+{% endhint %}
 
 ## Supported Networks
 
@@ -225,16 +227,7 @@ Sonic exposes the standard Ethereum JSON-RPC method set. All methods are POST-on
 
 ### Block & Chain Information
 
-| Method                                | Description                                                   |
-| ------------------------------------- | ------------------------------------------------------------- |
-| eth\_blockNumber                      | Returns the current latest block number                       |
-| eth\_chainId                          | Returns the chain ID (`0x92` = 146 for Sonic Mainnet)         |
-| eth\_getBlockByNumber                 | Returns block information by block number                     |
-| eth\_getBlockByHash                   | Returns block information by block hash                       |
-| eth\_getBlockTransactionCountByNumber | Returns the number of transactions in a block by block number |
-| eth\_getBlockTransactionCountByHash   | Returns the number of transactions in a block by block hash   |
-| eth\_getBlockReceipts                 | Returns all transaction receipts for a given block            |
-| eth\_syncing                          | Returns sync status or `false` if the node is fully synced    |
+<table data-search="false"><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>eth_blockNumber</td><td>Returns the current latest block number</td></tr><tr><td>eth_chainId</td><td>Returns the chain ID (<code>0x92</code> = 146 for Sonic Mainnet)</td></tr><tr><td>eth_getBlockByNumber</td><td>Returns block information by block number</td></tr><tr><td>eth_getBlockByHash</td><td>Returns block information by block hash</td></tr><tr><td>eth_getBlockTransactionCountByNumber</td><td>Returns the number of transactions in a block by block number</td></tr><tr><td>eth_getBlockTransactionCountByHash</td><td>Returns the number of transactions in a block by block hash</td></tr><tr><td>eth_getBlockReceipts</td><td>Returns all transaction receipts for a given block</td></tr><tr><td>eth_syncing</td><td>Returns sync status or <code>false</code> if the node is fully synced</td></tr></tbody></table>
 
 ### Account & State
 
@@ -247,15 +240,7 @@ Sonic exposes the standard Ethereum JSON-RPC method set. All methods are POST-on
 
 ### Transactions
 
-| Method                                   | Description                                      |
-| ---------------------------------------- | ------------------------------------------------ |
-| eth\_sendRawTransaction                  | Broadcasts a signed transaction                  |
-| eth\_getTransactionByHash                | Returns a transaction by its hash                |
-| eth\_getTransactionByBlockHashAndIndex   | Returns a transaction by block hash and index    |
-| eth\_getTransactionByBlockNumberAndIndex | Returns a transaction by block number and index  |
-| eth\_getTransactionReceipt               | Returns the receipt for a transaction by hash    |
-| eth\_call                                | Executes a read-only call against contract state |
-| eth\_estimateGas                         | Estimates gas required for a transaction         |
+<table data-search="false"><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>eth_sendRawTransaction</td><td>Broadcasts a signed transaction</td></tr><tr><td>eth_getTransactionByHash</td><td>Returns a transaction by its hash</td></tr><tr><td>eth_getTransactionByBlockHashAndIndex</td><td>Returns a transaction by block hash and index</td></tr><tr><td>eth_getTransactionByBlockNumberAndIndex</td><td>Returns a transaction by block number and index</td></tr><tr><td>eth_getTransactionReceipt</td><td>Returns the receipt for a transaction by hash</td></tr><tr><td>eth_call</td><td>Executes a read-only call against contract state</td></tr><tr><td>eth_estimateGas</td><td>Estimates gas required for a transaction</td></tr></tbody></table>
 
 ### Gas & Fee Market
 
