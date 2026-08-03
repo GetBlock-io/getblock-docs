@@ -31,6 +31,7 @@
 
 ## Add-ons
 
+* [Overview](add-ons/overview.md)
 * [Beacon API](add-ons/beacon-api.md)
 * [Blockbook](add-ons/blockbook.md)
 * [ERC-4337](add-ons/eip-4337.md)
