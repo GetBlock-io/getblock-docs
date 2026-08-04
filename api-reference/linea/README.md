@@ -232,13 +232,12 @@ Linea exposes the standard Ethereum JSON-RPC method set plus Linea-specific exte
 
 ### Account & State
 
-| Method                   | Description                                            |
-| ------------------------ | ------------------------------------------------------ |
-| eth\_getBalance          | Returns the native ETH balance of an account (in wei)  |
-| eth\_getCode             | Returns the contract bytecode at a given address       |
-| eth\_getStorageAt        | Returns the value at a specific storage slot           |
-| eth\_getTransactionCount | Returns the transaction count (nonce) for an account   |
-| linea\_getProof          | Returns a Sparse Merkle Trie proof for account/storage |
+| Method                   | Description                                           |
+| ------------------------ | ----------------------------------------------------- |
+| eth\_getBalance          | Returns the native ETH balance of an account (in wei) |
+| eth\_getCode             | Returns the contract bytecode at a given address      |
+| eth\_getStorageAt        | Returns the value at a specific storage slot          |
+| eth\_getTransactionCount | Returns the transaction count (nonce) for an account  |
 
 ### Transactions
 
