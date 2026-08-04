@@ -4,7 +4,7 @@ description: >-
   how to use debug_traceTransaction JSON-RPC in GetBlock Web3 documentation.
 ---
 
-# debug\_traceTransaction - Sonic
+# debug\_traceTransaction - Linea
 
 This method replays a transaction and returns a detailed execution trace, including opcode-level steps or a structured call trace depending on the tracer. It is used to debug transaction execution and reverts.
 
@@ -120,7 +120,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "id": "getblock.io",
     "result": {
         "from": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
-        "to": "0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38",
+        "to": "0xe5D7C2a44FfDDf6b295A15c148167daaAf5Cf34f",
         "value": "0xde0b6b3a7640000",
         "gas": "0x5208",
         "gasUsed": "0x5208",
@@ -184,9 +184,9 @@ console.log(trace);
 {% code title="viem-example.js" %}
 ```javascript
 import { createPublicClient, http } from 'viem';
-import { sonic } from 'viem/chains';
+import { linea } from 'viem/chains';
 
-const client = createPublicClient({ chain: sonic, transport: http('https://go.getblock.io/<ACCESS-TOKEN>/') });
+const client = createPublicClient({ chain: linea, transport: http('https://go.getblock.io/<ACCESS-TOKEN>/') });
 
 const trace = await client.request({ method: 'debug_traceTransaction', params: ['0x4a7b0c3d6e9f2a5b8c1d4e7f0a3b6c9d2e5f8a1b4c7d0e3f6a9b2c5d8e1f4a7b', { tracer: 'callTracer' }] });
 console.log(trace);
