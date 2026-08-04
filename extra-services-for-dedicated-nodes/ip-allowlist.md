@@ -1,7 +1,7 @@
 ---
 description: >-
-  GetBlock IP Allowlist: network security control that restricts access to your
-  RPC endpoint based on the source IP address of each request
+  GetBlock IP Allowlist: a network security control that restricts access to
+  your RPC endpoint based on the source IP address of each request.
 ---
 
 # IP Allowlist

@@ -1,7 +1,7 @@
 ---
 description: >-
-  GetBlock dedicated ingress proxy lets your own routing layer, fully isolated
-  from all other traffic.
+  GetBlock Dedicated Ingress Proxy gives you your own routing layer, fully
+  isolated from all other traffic.
 ---
 
 # Dedicated Ingress Proxy

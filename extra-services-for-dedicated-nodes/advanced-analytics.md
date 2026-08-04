@@ -1,7 +1,7 @@
 ---
 description: >-
   A private Grafana workspace for your dedicated node. It shows how your node is
-  used, in real time.
+  used in real time.
 ---
 
 # Advanced Analytics

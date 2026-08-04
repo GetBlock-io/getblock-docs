@@ -1,5 +1,7 @@
 ---
-description: 'GetBlock Blockbook: an indexer for UTXO chains for standard Bitcoin node'
+description: >-
+  GetBlock Blockbook: an address and wallet indexer for UTXO chains such as
+  Bitcoin.
 ---
 
 # Blockbook

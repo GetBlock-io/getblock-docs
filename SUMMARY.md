@@ -28,6 +28,7 @@
 * [Monitoring and analytics](getting-started/monitoring-and-analytics.md)
 * [Connect to GetBlock with MetaMask](getting-started/connect-to-getblock-with-metamask.md)
 * [Connect Brave Wallet to GetBlock](getting-started/connect-brave-wallet-to-getblock.md)
+* [GetBlock Docs MCP server](getting-started/getblock-docs-mcp-server.md)
 
 ## Add-ons
 

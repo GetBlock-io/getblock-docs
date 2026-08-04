@@ -1,7 +1,7 @@
 ---
 description: >-
-  GetBlock Nonstandard Client Support  allows extra namespaces, private forks,
-  exotic configs, all running on managed infrastructure.
+  GetBlock Nonstandard Client Support runs extra namespaces, private forks, and
+  exotic configs — all on managed infrastructure.
 ---
 
 # Nonstandard Client Support

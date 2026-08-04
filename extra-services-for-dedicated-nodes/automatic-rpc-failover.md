@@ -1,7 +1,7 @@
 ---
 description: >-
-  GetBlock Automatic RPC Failover switch your dedicated node  to shared RPC
-  automatically
+  GetBlock Automatic RPC Failover switches your traffic to shared RPC
+  automatically when your dedicated node degrades.
 ---
 
 # Automatic RPC Failover
