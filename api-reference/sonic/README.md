@@ -4,7 +4,7 @@ description: >-
   Connect to the Sonic network without running your own infrastructure.
 ---
 
-# Sonic
+# Sonic (S)
 
 Sonic is a high-performance, EVM-compatible Layer 1 blockchain built by Sonic Labs, the team behind the former Fantom network. It pairs a proof-of-stake consensus with full EVM compatibility, so Ethereum contracts and tooling run unmodified, and targets high transaction throughput with **sub-second finality**. The native token S is used for gas, staking, running validators, and governance.
 

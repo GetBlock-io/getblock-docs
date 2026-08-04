@@ -5,7 +5,7 @@ description: >-
   Linea.
 ---
 
-# Deploy A Smart Contract on Linea
+# How to Deploy A Smart Contract on Linea
 
 Linea is an EVM-equivalent zkEVM that runs standard EVM bytecode, so contracts deploy with the usual Ethereum tooling such as Foundry, Hardhat, and Remix without modification. This guide covers adding Linea to a wallet and deploying a first contract with Foundry and Hardhat through a GetBlock endpoint.
 

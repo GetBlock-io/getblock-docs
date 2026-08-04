@@ -10,19 +10,9 @@ A GetBlock dedicated node gives you isolated compute for one workload. These add
 The add-ons are for Dedicated Nodes and available to all blockchains. The one exception is Solana Shreds Streaming, which is Solana-specific and is also offered as a standalone, credit-based service without a node.
 {% endhint %}
 
-### The add-ons at a glance
+### Extra Services for Dedicated Nodes At a glance
 
-| Add-on                                                        | It solves                                               | Price/mo   |
-| ------------------------------------------------------------- | ------------------------------------------------------- | ---------- |
-| [Advanced Analytics](advanced-analytics.md)                   | You cannot see how your node is used                    | $199       |
-| [Automatic RPC Failover](automatic-rpc-failover.md)           | Your app breaks when the node degrades                  | $199       |
-| [Custom Endpoint URL](custom-endpoint-url.md)                 | Your endpoint URL exposes a random hash                 | $199       |
-| [Dedicated Ingress Proxy](dedicated-ingress-proxy.md)         | Other traffic shares your routing layer                 | $199       |
-| [IP Allowlist](ip-allowlist.md)                               | Anyone with the key can call the node                   | $199       |
-| [Nonstandard Client Support](nonstandard-client-support.md)   | You need a namespace or client we do not run by default | $500       |
-| [Solana Shreds Streaming](solana-shreds-streaming.md)         | Standard feeds report Solana activity too late          | On request |
-| [Unified Multichain Endpoint](unified-multichain-endpoint.md) | You manage one URL per chain                            | $199       |
-| [Zero-Hop Node Access](zero-hop-node-access.md)               | The proxy layer adds latency you cannot afford          | $199       |
+<table data-search="false"><thead><tr><th>Add-on</th><th>It solves</th><th>Price/mo</th></tr></thead><tbody><tr><td><a href="advanced-analytics.md">Advanced Analytics</a></td><td>You cannot see how your node is used</td><td>$199</td></tr><tr><td><a href="automatic-rpc-failover.md">Automatic RPC Failover</a></td><td>Your app breaks when the node degrades</td><td>$199</td></tr><tr><td><a href="custom-endpoint-url.md">Custom Endpoint URL</a></td><td>Your endpoint URL exposes a random hash</td><td>$199</td></tr><tr><td><a href="dedicated-ingress-proxy.md">Dedicated Ingress Proxy</a></td><td>Other traffic shares your routing layer</td><td>$199</td></tr><tr><td><a href="ip-allowlist.md">IP Allowlist</a></td><td>Anyone with the key can call the node</td><td>$199</td></tr><tr><td><a href="nonstandard-client-support.md">Nonstandard Client Support</a></td><td>You need a namespace or client we do not run by default</td><td>$500</td></tr><tr><td><a href="solana-shreds-streaming.md">Solana Shreds Streaming</a></td><td>Standard feeds report Solana activity too late</td><td>On request</td></tr><tr><td><a href="unified-multichain-endpoint.md">Unified Multichain Endpoint</a></td><td>You manage one URL per chain</td><td>$199</td></tr><tr><td><a href="zero-hop-node-access.md">Zero-Hop Node Access</a></td><td>The proxy layer adds latency you cannot afford</td><td>$199</td></tr></tbody></table>
 
 {% hint style="info" %}
 ### These prices are temporary
