@@ -40,6 +40,8 @@ A `shouldAllow(address, network)` function that:
 
 By the end you'll be able to drop this straight into a payout queue, a swap confirmation flow, or an Express route.
 
+{% embed url="https://youtu.be/SdgGWcc2PHw?si=BuD8xk4JpVDk8tFJ" %}
+
 ## How it works
 
 ```mermaid

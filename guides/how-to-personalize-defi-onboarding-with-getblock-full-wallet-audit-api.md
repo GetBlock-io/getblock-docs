@@ -32,6 +32,8 @@ An `onboardWallet(address, network)` function that:
 4. Reads **predicted intentions** — lend / trade / farm likelihoods.
 5. Surfaces **protocols already used** and the model's **recommendations**.
 
+{% embed url="https://youtu.be/pVRYtj69btU?si=l8i6iJfwY_IHYFtC" %}
+
 ## How it works
 
 ```mermaid
