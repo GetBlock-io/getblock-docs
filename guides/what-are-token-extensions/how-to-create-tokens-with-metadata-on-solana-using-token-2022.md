@@ -19,6 +19,8 @@ Before you begin, ensure you have the following:
 5. Basic knowledge of JavaScript and Typescript
 6. Basic understanding of Solana (wallets, transactions, lamports)
 
+{% embed url="https://youtu.be/Db-CSMJsLpM?si=ZK1LA3rHoEr7lSfN" %}
+
 ### Set up your environment&#x20;
 
 {% stepper %}
