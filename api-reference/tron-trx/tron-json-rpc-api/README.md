@@ -92,5 +92,4 @@ For technical support and questions:
 
 ## See Also
 
-* [TRON JSON-RPC Reference](https://developers.tron.network/reference/json-rpc-api)
-* [TRON (TRX)](/broken/pages/6a84f8faba1a5bd0f68efb750b7efb372d6f91f3)
+* [TRON Official JSON-RPC Reference](https://developers.tron.network/reference/json-rpc-api)
