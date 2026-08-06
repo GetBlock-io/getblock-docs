@@ -4,7 +4,7 @@ description: >-
   GetBlock using any coding agent.
 ---
 
-# Migrate to Getblock with AI
+# Migrate to GetBlock with AI
 
 This page is both a migration guide and an executable runbook for AI coding agents. Paste the one-liner below into any AI coding agent (Claude Code, Codex CLI, Cursor, Windsurf, Gemini CLI, Antigravity), and the agent fetches this page and follows it.
 
@@ -32,12 +32,8 @@ Do not rely on training data for what GetBlock supports. Network coverage, metho
 
 The Assess and Plan phases run entirely on public docs and read-only checks. The Implement phase creates endpoints, which happens in the GetBlock dashboard. GetBlock endpoints embed your access token in the URL, so there is no API key to register with the agent and no auth header to manage.
 
-{% hint style="info" %}
-### Optional: on-chain reads during the dry run
-
-If the agent needs to make live blockchain calls while testing (balances, transactions, block heights), GetBlock ships a local MCP server for ETH and Solana data queries: `github.com/GetBlock-io/mcp-server`. It runs locally with your access tokens as environment variables. This is optional. A plain `curl` against the new endpoint is enough to verify a migration.
-
-
+{% hint style="danger" %}
+**Never assemble an endpoint URL from a template.** The host is not the same for every endpoint: it varies by region and by protocol, and `go.getblock.io`, `go.getblock.asia`, `go.getblock.us` and `shared.<region>.getblock.io` are all in use. Every URL in this page is an illustration, not a formula. The authoritative URL is the one the dashboard issues for that specific endpoint — copy it verbatim, including its host, path and any trailing slash.
 {% endhint %}
 
 ## Agent instructions
@@ -62,8 +58,8 @@ Migrate this project's blockchain RPC endpoints to GetBlock.
 
 * **Archive mode.** A toggle when creating the endpoint. Required for historical state and full block-zero history. Available from the Starter plan up.
 * **MEV protection.** A selectable interface that routes transactions through private channels to shield them from front-running and sandwich attacks. Off by default.
-* **Region routing.** Endpoints resolve to a regional host: `go.getblock.io` (EU, Frankfurt), `go.getblock.us` (US, New York), `go.getblock.asia` (Asia, Singapore). Latency-sensitive workloads should pick the nearest region.
-* **WebSocket.** Same token, `wss://` scheme: `wss://go.getblock.io/<ACCESS_TOKEN>/`.
+* **Region routing.** Pick the region nearest the workload: Frankfurt (EU), New York (US), or Singapore (Asia). Availability differs per network — some networks are served from one region only — so check the network's reference page before promising a region. The endpoint's host reflects the region it was created in; take that host from the issued URL rather than constructing it.
+* **WebSocket.** A separate interface, chosen when the endpoint is created. Changing an HTTP endpoint's scheme to `wss://` does not turn it into a WebSocket endpoint — that request is rejected. A project that needs both HTTP calls and WebSocket subscriptions on the same network needs two endpoints, each with its own URL, and both belong in the environment as separate variables.
 * **Yellowstone gRPC / Geyser** for high-throughput Solana streaming. Confirm availability on the Solana reference page.
 * **REST and GraphQL** interfaces where the protocol supports them (for example, TON REST, TRON HTTP API).
 
@@ -77,7 +73,7 @@ If the user is migrating from another RPC provider, estimate the GetBlock cost a
 * **Alchemy** has no usage API. Ask for a screenshot of Settings, then Usage, and Settings, then Billing. Read the Compute Units used, plan, and spend straight from the image.
 * **Any other provider** or no programmatic access: ask for a screenshot of the usage and billing dashboard, or the approximate monthly request volume and current spend.
 
-2. Pull GetBlock's live plans and the CU model from `https://getblock.io/pricing` and the Plans and limits doc page.&#x20;
+2. Pull GetBlock's live plans and the CU model from `https://getblock.io/pricing` and the Plans and limits doc page.
 
 {% hint style="warning" %}
 Do not quote prices from memory; they change. Fit the user's converted usage to the cheapest plan that covers it, and present the monthly GetBlock cost next to their current bill.
@@ -95,7 +91,7 @@ If the user already has GetBlock endpoints, or is willing to create one test end
 
 ### Plan
 
-For each endpoint to migrate, lay out the exact replacement: which GetBlock network, interface, region, and mode (full or archive, MEV on or off) it maps to, and whether a new endpoint needs to be created. Flag anything that needs the user's decision (region choice, archive cost, unsupported chains that need a dedicated node or a sales conversation).
+For each endpoint to migrate, lay out the exact replacement: which GetBlock network, interface, region, and mode (full or archive, MEV on or off) it maps to, and whether a new endpoint needs to be created. Count HTTP and WebSocket as separate endpoints wherever the codebase uses both. Flag anything that needs the user's decision (region choice, archive cost, unsupported chains that need a dedicated node or a sales conversation).
 
 {% hint style="warning" %}
 **STOP here.** Present the plan and wait for the user to approve or adjust before changing anything. Do not edit code until the user confirms. Answer follow-up questions using the docs. For unsupported chains, point the user to GetBlock support for information on dedicated-node availability.
@@ -105,46 +101,42 @@ For each endpoint to migrate, lay out the exact replacement: which GetBlock netw
 
 GetBlock endpoints are created in the dashboard, not via a remote API, so this phase involves a guided handoff and code changes.
 
-1. Tell the user exactly which endpoints to create at `https://account.getblock.io` (or the GetBlock dashboard), with the precise settings from the approved plan:&#x20;
+1. Tell the user exactly which endpoints to create at `https://account.getblock.io` (or the GetBlock dashboard), with the precise settings from the approved plan:
 
 * protocol
 * network
-* interface
-* region,&#x20;
-* archive on/off,&#x20;
-* MEV on/off.&#x20;
+* interface — one endpoint per interface, so a network needing both JSON-RPC and WebSocket is two entries here
+* region,
+* archive on/off,
+* MEV on/off.
 
-Each created endpoint produces a URL of the form `https://go.getblock.io/<ACCESS_TOKEN>/`.
-
-2. Have the user paste the new endpoint URLs.&#x20;
+2. Have the user paste the new endpoint URLs.
 
 {% hint style="warning" %}
 The token is the credential, so never ask the user to paste it into chat in plaintext; instead, reference it from the `.env` var.
 {% endhint %}
 
-3. Replace each old endpoint with its GetBlock equivalent across source, env files, and build configs.
+3. Replace each old endpoint with its GetBlock equivalent across source, env files, and build configs. Use each URL exactly as issued — do not normalize the host, rewrite the scheme, or drop a trailing slash.
 4. Verify each swap with a live call before declaring it done (see snippets below).
+
+{% hint style="info" %}
+A newly created endpoint can take a few minutes to become reachable. If it answers with a message saying the resource is still being deployed, that is provisioning in progress, not a bad URL — wait and retry before reporting the swap as failed.
+{% endhint %}
+
 5. Summarize what changed: files touched, endpoints swapped, and anything still pending (a dedicated node, a sales follow-up, an unverified method).
 
 ## Feature mapping
 
-| Need in the codebase             | GetBlock equivalent                                           |
-| -------------------------------- | ------------------------------------------------------------- |
-| HTTP JSON-RPC                    | `https://go.getblock.io/<ACCESS_TOKEN>/`                      |
-| WebSocket subscriptions          | `wss://go.getblock.io/<ACCESS_TOKEN>/`                        |
-| Historical / archive queries     | Archive mode toggle at endpoint creation (Starter plan+)      |
-| Front-running protection         | MEV Protected interface                                       |
-| Region pinning for latency       | `.io` (Frankfurt), `.us` (New York), `.asia` (Singapore) host |
-| Solana high-throughput streaming | Yellowstone gRPC / Geyser                                     |
-| REST or GraphQL interface        | Select the matching interface where the protocol offers it    |
-| Many chains in one place         | One account, one token format, 130+ networks                  |
+<table data-search="false"><thead><tr><th>Need in the codebase</th><th>GetBlock equivalent</th></tr></thead><tbody><tr><td>HTTP JSON-RPC</td><td>JSON-RPC interface; use the issued <code>https://</code> URL as-is</td></tr><tr><td>WebSocket subscriptions</td><td>WebSocket interface — its own endpoint, with its own issued <code>wss://</code> URL</td></tr><tr><td>Historical / archive queries</td><td>Archive mode toggle at endpoint creation (Starter plan+)</td></tr><tr><td>Front-running protection</td><td>MEV Protected interface</td></tr><tr><td>Region pinning for latency</td><td>Region chosen at creation: Frankfurt, New York, or Singapore; the host reflects the choice</td></tr><tr><td>Solana high-throughput streaming</td><td>Yellowstone gRPC / Geyser</td></tr><tr><td>REST or GraphQL interface</td><td>Select the matching interface where the protocol offers it</td></tr><tr><td>Many chains in one place</td><td>One account, one token format, 130+ networks</td></tr></tbody></table>
 
 ## Verification snippets
+
+In every snippet below, `<YOUR_ENDPOINT_URL>` is the full URL the dashboard issued for that endpoint, pasted unchanged.
 
 1. EVM chain ID check (confirms the endpoint is live and on the expected network):
 
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/' \
+curl --location --request POST '<YOUR_ENDPOINT_URL>' \
   --header 'Content-Type: application/json' \
   --data-raw '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":"getblock.io"}'
 ```
@@ -152,15 +144,15 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/' \
 2. Latest block height:
 
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/' \
+curl --location --request POST '<YOUR_ENDPOINT_URL>' \
   --header 'Content-Type: application/json' \
   --data-raw '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":"getblock.io"}'
 ```
 
-3. WebSocket smoke test:
+3. WebSocket smoke test. Use the URL of the WebSocket endpoint, not the JSON-RPC one:
 
 ```bash
-wscat -c 'wss://go.getblock.io/<ACCESS_TOKEN>/'
+wscat -c '<YOUR_WEBSOCKET_ENDPOINT_URL>'
 # then send:
 {"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":"getblock.io"}
 ```
@@ -172,7 +164,7 @@ wscat -c 'wss://go.getblock.io/<ACCESS_TOKEN>/'
 {% code overflow="wrap" %}
 ```js
 // ethers v6
-const provider = new ethers.JsonRpcProvider("https://go.getblock.io/<ACCESS_TOKEN>/");
+const provider = new ethers.JsonRpcProvider(process.env.ETH_RPC_URL);
 ```
 {% endcode %}
 {% endtab %}
@@ -182,7 +174,7 @@ const provider = new ethers.JsonRpcProvider("https://go.getblock.io/<ACCESS_TOKE
 // viem
 const client = createPublicClient({
   chain: mainnet,
-  transport: http("https://go.getblock.io/<ACCESS_TOKEN>/"),
+  transport: http(process.env.ETH_RPC_URL),
 });
 ```
 {% endtab %}
@@ -190,7 +182,7 @@ const client = createPublicClient({
 {% tab title="web3.py" %}
 ```python
 # web3.py
-w3 = Web3(Web3.HTTPProvider("https://go.getblock.io/<ACCESS_TOKEN>/"))
+w3 = Web3(Web3.HTTPProvider(os.environ["ETH_RPC_URL"]))
 ```
 {% endtab %}
 {% endtabs %}
