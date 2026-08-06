@@ -1,4 +1,10 @@
-# eth\_estimateGas
+---
+description: >-
+  Example code for the eth_estimateGas JSON_RPC method. Complete guide on how to
+  use eth_estimateGas JSON_RPC method in GetBlock Web3 documentation.
+---
+
+# eth\_estimateGas - Tron
 
 This method returns an estimate of the Energy required to execute a transaction, expressed in the Ethereum-compatible gas field. On TRON, this maps to Energy rather than gas.
 

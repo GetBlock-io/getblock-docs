@@ -1,4 +1,10 @@
-# eth\_chainId
+---
+description: >-
+  Example code for the eth_chainId JSON_RPC method. Complete guide on how to use
+  eth_chainId JSON_RPC method in GetBlock Web3 documentation.
+---
+
+# eth\_chainId - Tron
 
 This method returns the chain ID of the TRON network for JSON-RPC clients. TRON mainnet returns `0x2b6653dc` (728126428).
 

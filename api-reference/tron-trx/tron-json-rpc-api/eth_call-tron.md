@@ -4,7 +4,7 @@ description: >-
   eth_call JSON_RPC method in GetBlock Web3 documentation.
 ---
 
-# eth\_call - TRon
+# eth\_call - Tron
 
 This method executes a read-only contract call locally without creating a transaction, in the Ethereum-compatible shape. It is used to read TVM contract state such as TRC-20 balances.
 
