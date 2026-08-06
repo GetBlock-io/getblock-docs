@@ -95,4 +95,4 @@ For technical support and questions:
 
 ## See Also
 
-* [TRON Official HTTP API Reference](https://developers.tron.network/reference/background)
+* [TRON Official HTTP API Reference](https://developers.tron.network/reference/full-node-api-overview)

@@ -91,5 +91,5 @@ For technical support and questions:
 
 ## See Also
 
-* [TRON Official Solidity Node HTTP API](https://developers.tron.network/reference/getaccount-1)
+* [TRON Official Solidity Node HTTP API](https://developers.tron.network/reference/solidity-node-http-api-overview)
 * [REST API (Fullnode)](../tron-rest-api/)

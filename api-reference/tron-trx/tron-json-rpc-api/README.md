@@ -92,4 +92,4 @@ For technical support and questions:
 
 ## See Also
 
-* [TRON Official JSON-RPC Reference](https://developers.tron.network/reference/json-rpc-api)
+* [TRON Official JSON-RPC Reference](https://developers.tron.network/reference/json-rpc-api-overview)
