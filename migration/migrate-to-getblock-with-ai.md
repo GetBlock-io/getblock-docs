@@ -129,64 +129,6 @@ A newly created endpoint can take a few minutes to become reachable. If it answe
 
 <table data-search="false"><thead><tr><th>Need in the codebase</th><th>GetBlock equivalent</th></tr></thead><tbody><tr><td>HTTP JSON-RPC</td><td>JSON-RPC interface; use the issued <code>https://</code> URL as-is</td></tr><tr><td>WebSocket subscriptions</td><td>WebSocket interface — its own endpoint, with its own issued <code>wss://</code> URL</td></tr><tr><td>Historical / archive queries</td><td>Archive mode toggle at endpoint creation (Starter plan+)</td></tr><tr><td>Front-running protection</td><td>MEV Protected interface</td></tr><tr><td>Region pinning for latency</td><td>Region chosen at creation: Frankfurt, New York, or Singapore; the host reflects the choice</td></tr><tr><td>Solana high-throughput streaming</td><td>Yellowstone gRPC / Geyser</td></tr><tr><td>REST or GraphQL interface</td><td>Select the matching interface where the protocol offers it</td></tr><tr><td>Many chains in one place</td><td>One account, one token format, 130+ networks</td></tr></tbody></table>
 
-## Verification snippets
-
-In every snippet below, `<YOUR_ENDPOINT_URL>` is the full URL the dashboard issued for that endpoint, pasted unchanged.
-
-1. EVM chain ID check (confirms the endpoint is live and on the expected network):
-
-```bash
-curl --location --request POST '<YOUR_ENDPOINT_URL>' \
-  --header 'Content-Type: application/json' \
-  --data-raw '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":"getblock.io"}'
-```
-
-2. Latest block height:
-
-```bash
-curl --location --request POST '<YOUR_ENDPOINT_URL>' \
-  --header 'Content-Type: application/json' \
-  --data-raw '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":"getblock.io"}'
-```
-
-3. WebSocket smoke test. Use the URL of the WebSocket endpoint, not the JSON-RPC one:
-
-```bash
-wscat -c '<YOUR_WEBSOCKET_ENDPOINT_URL>'
-# then send:
-{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":"getblock.io"}
-```
-
-4. Library swap examples the agent can apply directly:
-
-{% tabs %}
-{% tab title="ethers" %}
-{% code overflow="wrap" %}
-```js
-// ethers v6
-const provider = new ethers.JsonRpcProvider(process.env.ETH_RPC_URL);
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="viem" %}
-```js
-// viem
-const client = createPublicClient({
-  chain: mainnet,
-  transport: http(process.env.ETH_RPC_URL),
-});
-```
-{% endtab %}
-
-{% tab title="web3.py" %}
-```python
-# web3.py
-w3 = Web3(Web3.HTTPProvider(os.environ["ETH_RPC_URL"]))
-```
-{% endtab %}
-{% endtabs %}
-
 ## Support
 
 For implementation issues, unsupported chains, or dedicated-node and enterprise questions, point the user to [GetBlock support](mailto:support@getblock.io). Keep the token secret at every step: it is the full credential, embedded in the URL.
