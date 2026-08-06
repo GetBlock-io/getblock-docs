@@ -1,3 +1,9 @@
+---
+description: >-
+  Solidity API reference for TRON blockchain. Explore method list, request
+  examples, and how to connect to GetBlock's TRON RPC endpoints
+---
+
 # Tron Solidity API
 
 The Solidity node exposes a query-only subset of the native TRON HTTP API that returns only confirmed, irreversible data. It is the correct interface for balance and payment verification: reading from the Fullnode can surface transactions that are later rolled back, while the Solidity node returns only finalized state. Every endpoint is an HTTP `POST` to `/walletsolidity/{method}`.
@@ -31,7 +37,7 @@ https://shared.ap-southeast-1.getblock.io/<ACCESS_TOKEN/walletsolidity/{method}
 {% endtabs %}
 
 {% hint style="info" %}
-RReplace `<ACCESS-TOKEN>` with the access token from the GetBlock dashboard. Addresses may be supplied in base58 (`T...`) form by setting `visible` to true, or in hex (`41...`) form otherwise. TRX amounts are in SUN.
+Replace `<ACCESS-TOKEN>` with the access token from the GetBlock dashboard. Addresses may be supplied in base58 (`T...`) form by setting `visible` to true, or in hex (`41...`) form otherwise. TRX amounts are in SUN.
 {% endhint %}
 
 {% hint style="info" %}

@@ -1,0 +1,116 @@
+---
+description: >-
+  Example code for the TriggerConstantContract gRPC method. Complete guide on
+  how to use TriggerConstantContract gRPC method in GetBlock Web3 documentation.
+---
+
+# TriggerConstantContract - Tron
+
+This method executes a read-only smart-contract call locally, without creating a transaction. It is the primary method for reading contract state, such as a TRC-20 balance, and returns the result in `constant_result`.
+
+## Service
+
+This method is served by the `protocol.Wallet` and `protocol.WalletSolidity` service.
+
+{% hint style="info" %}
+This is a read method. It is also served by `protocol.WalletSolidity`, which returns only confirmed, irreversible data. Use the Solidity service for balance and payment verification.
+{% endhint %}
+
+## Method
+
+```protobuf
+rpc TriggerConstantContract (TriggerSmartContract) returns (TransactionExtention)
+```
+
+## Request Message
+
+`TriggerSmartContract`
+
+| Field             | Type  | Description                                         |
+| ----------------- | ----- | --------------------------------------------------- |
+| owner\_address    | bytes | Caller address as raw bytes                         |
+| contract\_address | bytes | Contract address as raw bytes                       |
+| data              | bytes | ABI-encoded call data (selector + arguments)        |
+| call\_value       | int64 | TRX in SUN to send with the call                    |
+| fee\_limit        | int64 | Maximum TRX in SUN to spend on Energy (write calls) |
+
+## Request
+
+{% tabs %}
+{% tab title="grpcurl" %}
+{% code overflow="wrap" %}
+```bash
+grpcurl -H 'x-api-key: <ACCESS-TOKEN>' \
+  -d '{"owner_address": "41f0cc5a2a84cd0f68ed1667070934542d673acbd8", "contract_address": "41a614f803b6fd780986a42c78ec9c7f77e6ded13c", "data": "70a08231000000000000000000000000f0cc5a2a84cd0f68ed1667070934542d673acbd8"}' \
+  go.getblock.io:443 protocol.Wallet/TriggerConstantContract
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="example.py" %}
+```python
+import grpc
+# Stubs generated from java-tron's api.proto with grpcio-tools
+from api import api_pb2_grpc
+from core import Contract_pb2, Tron_pb2
+
+creds = grpc.ssl_channel_credentials()
+channel = grpc.secure_channel('go.getblock.io:443', creds)
+metadata = [('x-api-key', '<ACCESS-TOKEN>')]
+stub = api_pb2_grpc.WalletStub(channel)
+
+response = stub.TriggerConstantContract(Contract_pb2.TriggerSmartContract(
+    owner_address=bytes.fromhex('41f0cc5a2a84cd0f68ed1667070934542d673acbd8'),
+    contract_address=bytes.fromhex('41a614f803b6fd780986a42c78ec9c7f77e6ded13c'),
+    data=bytes.fromhex('70a08231...')), metadata=metadata)
+print(response)
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Go" %}
+{% code title="example.go" %}
+```go
+conn, _ := grpc.Dial(
+    "go.getblock.io:443",
+    grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{})),
+)
+defer conn.Close()
+
+client := api.NewWalletClient(conn)
+ctx := metadata.AppendToOutgoingContext(
+    context.Background(), "x-api-key", "<ACCESS-TOKEN>")
+
+resp, _ := client.TriggerConstantContract(ctx, &core.TriggerSmartContract{OwnerAddress: owner, ContractAddress: contract, Data: callData})
+fmt.Println(resp)
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Response Message
+
+`TransactionExtention`
+
+| Field            | Type           | Description                                        |
+| ---------------- | -------------- | -------------------------------------------------- |
+| constant\_result | repeated bytes | ABI-encoded return data of the call                |
+| energy\_used     | int64          | Energy the call would consume as a transaction     |
+| result           | Return         | Execution result, with a result flag and any error |
+
+## Use Cases
+
+* **Token Balances**: Read a TRC-20 balance with balanceOf
+* **Contract State**: Read view and pure functions without a transaction
+* **Price Feeds**: Query on-chain oracle values
+* **Energy Estimation**: Read energy\_used to size a later transaction
+
+## Error Handling
+
+| Code | Status            | Description                                                 |
+| ---- | ----------------- | ----------------------------------------------------------- |
+| 3    | INVALID\_ARGUMENT | A request field is missing or malformed                     |
+| 5    | NOT\_FOUND        | The requested account, block, or transaction does not exist |
+| 16   | UNAUTHENTICATED   | The access token is missing or invalid                      |
+| 13   | INTERNAL          | The node failed to process the request                      |

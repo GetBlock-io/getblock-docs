@@ -1,22 +1,22 @@
 ---
 description: >-
-  Example code for the getblockbynum Solidity API method. Complete guide on how
-  to use getblockbynum Solidity API method in GetBlock Web3 documentation.
+  Example code for the getblockbyid Solidity API method. Complete guide on how
+  to use getblockbyid Solidity API method in GetBlock Web3 documentation.
 ---
 
-# /walletsolidity/getblockbynum - Tron
+# /walletsolidity/getblockbyid - Tron
 
-This endpoint returns a block by its height, including its header and transactions.
+This endpoint returns a block by its hash. It reads only confirmed data from the Solidity node.
 
 {% hint style="info" %}
-This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://go.getblock.io/<ACCESS-TOKEN>/wallet/getblockbynum` over the latest, possibly unconfirmed state.
+This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://go.getblock.io/<ACCESS-TOKEN>/wallet/getblockbyid` over the latest, possibly unconfirmed state.
 {% endhint %}
 
 ## Parameters
 
-| Parameter | Type    | Required | Description                  |
-| --------- | ------- | -------- | ---------------------------- |
-| num       | integer | Yes      | The block height to retrieve |
+| Parameter | Type   | Required | Description               |
+| --------- | ------ | -------- | ------------------------- |
+| value     | string | Yes      | The block hash (block id) |
 
 ## Request
 
@@ -24,10 +24,10 @@ This is a Solidity-node endpoint. It returns only confirmed, irreversible data, 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbynum' \
+curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbyid' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "num": 68000000
+  "value": "0000000002f3a5b0f6d2e6c9a1b4e7f0a3b6c9d2e5f8a1b4c7d0e3f6a9b2c5d8"
 }'
 ```
 {% endcode %}
@@ -37,11 +37,11 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsoli
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbynum',
+    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbyid',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({"num": 68000000})
+        body: JSON.stringify({"value": "0000000002f3a5b0f6d2e6c9a1b4e7f0a3b6c9d2e5f8a1b4c7d0e3f6a9b2c5d8"})
     }
 );
 console.log(await response.json());
@@ -55,9 +55,9 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbynum',
+    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbyid',
     headers={'Content-Type': 'application/json'},
-    json={"num": 68000000}
+    json={"value": "0000000002f3a5b0f6d2e6c9a1b4e7f0a3b6c9d2e5f8a1b4c7d0e3f6a9b2c5d8"}
 )
 
 print(response.json())
@@ -97,10 +97,10 @@ print(response.json())
 
 ## Use Cases
 
-* **Block Explorers**: Render a block by height
-* **Chain Indexing**: Stream blocks by height into a store
-* **USDT Tracking**: Scan a block's transactions for TRC-20 transfers
-* **Confirmation Context**: Read a block's time and producer
+* **Hash Lookups**: Fetch a confirmed block by its hash
+* **Verification**: Confirm a block's contents against its hash
+* **Explorer Links**: Resolve a block-hash link to block detail
+* **Reorg-Safe Reads**: Read a block that is final and irreversible
 
 ## Error Handling
 

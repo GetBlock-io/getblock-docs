@@ -1,3 +1,9 @@
+---
+description: >-
+  gRPC API reference for TRON blockchain. Explore service list, request
+  examples, and how to connect to GetBlock's TRON RPC endpoints
+---
+
 # Tron gRPC API
 
 TRON nodes expose the same operation set as the REST API over gRPC, using Protocol Buffers. gRPC is the transport used internally by java-tron and by performance-sensitive backends; the request and response messages mirror the REST endpoints one-to-one.
@@ -19,16 +25,16 @@ TRON's protobuf API is organized into two services that correspond to the two no
 
 Each gRPC method maps to a REST endpoint of the same name; the protobuf request and response messages carry the same fields documented on the REST pages.
 
-| gRPC method (Wallet service) | REST endpoint                     | Reference                                                              |
-| ---------------------------- | --------------------------------- | ---------------------------------------------------------------------- |
-| `GetAccount`                 | `/wallet/getaccount`              | [getaccount](../tron-rest-api/getaccount.md)                           |
-| `GetNowBlock`                | `/wallet/getnowblock`             | [getnowblock](../tron-rest-api/getnowblock.md)                         |
-| `GetBlockByNum`              | `/wallet/getblockbynum`           | [getblockbynum](../tron-rest-api/getblockbynum.md)                     |
-| `GetTransactionById`         | `/wallet/gettransactionbyid`      | [gettransactionbyid](../tron-rest-api/gettransactionbyid.md)           |
-| `TriggerConstantContract`    | `/wallet/triggerconstantcontract` | [triggerconstantcontract](../tron-rest-api/triggerconstantcontract.md) |
-| `TriggerContract`            | `/wallet/triggersmartcontract`    | [triggersmartcontract](../tron-rest-api/triggersmartcontract.md)       |
-| `BroadcastTransaction`       | `/wallet/broadcasttransaction`    | [broadcasttransaction](../tron-rest-api/broadcasttransaction.md)       |
-| `FreezeBalanceV2`            | `/wallet/freezebalancev2`         | [freezebalancev2](../tron-rest-api/freezebalancev2.md)                 |
+| gRPC method (Wallet service) | REST endpoint                     | Reference                                                                          |
+| ---------------------------- | --------------------------------- | ---------------------------------------------------------------------------------- |
+| `GetAccount`                 | `/wallet/getaccount`              | [getaccount](../tron-rest-api/wallet-getaccount-tron.md)                           |
+| `GetNowBlock`                | `/wallet/getnowblock`             | [getnowblock](../tron-rest-api/wallet-getnowblock-tron.md)                         |
+| `GetBlockByNum`              | `/wallet/getblockbynum`           | [getblockbynum](../tron-rest-api/wallet-getblockbynum-tron.md)                     |
+| `GetTransactionById`         | `/wallet/gettransactionbyid`      | [gettransactionbyid](../tron-rest-api/wallet-gettransactionbyid-tron.md)           |
+| `TriggerConstantContract`    | `/wallet/triggerconstantcontract` | [triggerconstantcontract](../tron-rest-api/wallet-triggerconstantcontract-tron.md) |
+| `TriggerContract`            | `/wallet/triggersmartcontract`    | [triggersmartcontract](../tron-rest-api/wallet-triggersmartcontract-tron.md)       |
+| `BroadcastTransaction`       | `/wallet/broadcasttransaction`    | [broadcasttransaction](../tron-rest-api/wallet-broadcasttransaction-tron.md)       |
+| `FreezeBalanceV2`            | `/wallet/freezebalancev2`         | [freezebalancev2](../tron-rest-api/wallet-freezebalancev2-tron.md)                 |
 
 The protobuf service and message definitions are maintained in the java-tron repository (`api/api.proto`, `core/*.proto`). Use those definitions to generate a gRPC client, then send requests to the GetBlock TRON endpoint.
 

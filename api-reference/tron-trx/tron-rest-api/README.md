@@ -1,3 +1,9 @@
+---
+description: >-
+  REST API reference for TRON blockchain. Explore method list, request examples,
+  and how to connect to GetBlock's TRON RPC endpoints
+---
+
 # Tron REST API
 
 The TRON REST (HTTP) API is TRON's native interface. Every endpoint is an HTTP `POST` to `/wallet/{method}` on the Fullnode, with a JSON body and a JSON response. Read endpoints are also served by the Solidity node at `/walletsolidity/{method}`, which returns only confirmed, irreversible data — use it for balance and payment verification.

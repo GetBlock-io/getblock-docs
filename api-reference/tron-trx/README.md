@@ -46,9 +46,11 @@ GetBlock's TRON API reference documentation is provided for informational purpos
 
 {% tabs %}
 {% tab title="REST (Fullnode)" %}
+{% code overflow="wrap" %}
 ```bash
 https://go.getblock.io/<ACCESS-TOKEN>/wallet/{method}
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="REST (Solidity)" %}
