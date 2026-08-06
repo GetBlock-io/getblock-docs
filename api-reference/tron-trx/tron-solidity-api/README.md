@@ -92,4 +92,5 @@ For technical support and questions:
 ## See Also
 
 * [TRON Official Solidity Node HTTP API](https://developers.tron.network/reference/solidity-node-http-api-overview)
-* [REST API (Fullnode)](../tron-rest-api/)
+* [REST API](../tron-rest-api/)
+* [JSON\_RPC API](../tron-json-rpc-api/)
