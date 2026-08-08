@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the theta.BroadcastRawTransaction json-rpc method. Сomplete
+  Example code for the theta.BroadcastRawTransaction JSON-RPC method. Сomplete
   guide on how to use theta.BroadcastRawTransaction json-rpc in GetBlock.io Web3
   documentation.
 ---
