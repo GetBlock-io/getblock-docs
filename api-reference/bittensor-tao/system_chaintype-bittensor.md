@@ -1,10 +1,16 @@
-# system\_chaintype bittensor
+---
+description: >-
+  Example code for the system_chainType JSON-RPC method. Complete guide on how
+  to use system_chainType JSON-RPC in GetBlock Web3 documentation.
+---
+
+# system\_chainType - Bittensor
+
+Returns the type of the chain — `Live` for production networks, `Development` or `Local` for development chains.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the type of the chain — `Live` for production networks, `Development` or `Local` for development chains.
 
 ## Parameters
 

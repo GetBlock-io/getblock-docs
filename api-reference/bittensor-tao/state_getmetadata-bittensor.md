@@ -1,10 +1,16 @@
-# state\_getmetadata bittensor
+---
+description: >-
+  Example code for the state_getMetadata JSON-RPC method. Complete guide on how
+  to use state_getMetadata JSON-RPC in GetBlock Web3 documentation.
+---
+
+# state\_getMetadata - Bittensor
+
+Returns the full SCALE-encoded runtime metadata — pallets, calls, events, storage layout, runtime APIs. Required by every Substrate client to know how to encode extrinsics and decode storage.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the full SCALE-encoded runtime metadata — pallets, calls, events, storage layout, runtime APIs. Required by every Substrate client to know how to encode extrinsics and decode storage.
 
 ## Parameters
 

@@ -1,10 +1,17 @@
-# delegateinfo\_getdelegates bittensor
+---
+description: >-
+  Example code for the delegateInfo_getDelegates JSON-RPC method. Complete guide
+  on how to use delegateInfo_getDelegates JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# delegateInfo\_getDelegates - Bittensor
+
+Returns all delegates available for TAO staking — hotkey, owner coldkey, take percentage, total stake delegated, validator permits per subnet, and more. Delegates are validators who accept stake from other TAO holders in exchange for a take of the rewards.
 
 {% hint style="info" %}
 **Bittensor-specific custom RPC method.** This method is implemented by the Subtensor runtime and is not part of the standard Substrate JSON-RPC surface. Call against a GetBlock endpoint configured for the Substrate interface. The [Bittensor Python SDK](https://github.com/opentensor/bittensor) provides typed wrappers; standard Polkadot.js and substrateinterface require the raw RPC interface (see SDK Integration tabs below).
 {% endhint %}
-
-Returns all delegates available for TAO staking — hotkey, owner coldkey, take percentage, total stake delegated, validator permits per subnet, and more. Delegates are validators who accept stake from other TAO holders in exchange for a take of the rewards.
 
 ## Parameters
 

@@ -1,10 +1,16 @@
-# eth\_blocknumber bittensor
+---
+description: >-
+  Example code for the eth_blockNumber JSON-RPC method. Complete guide on how to
+  use eth_blockNumber JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_blockNumber - Bittensor
+
+Returns the current block number on Subtensor EVM. Note: this is the same underlying block number as on the Substrate side — EVM blocks are produced 1:1 with Substrate blocks.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Returns the current block number on Subtensor EVM. Note: this is the same underlying block number as on the Substrate side — EVM blocks are produced 1:1 with Substrate blocks.
 
 ## Parameters
 

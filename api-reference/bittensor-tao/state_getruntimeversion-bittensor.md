@@ -1,10 +1,16 @@
-# state\_getruntimeversion bittensor
+---
+description: >-
+  Example code for the state_getRuntimeVersion JSON-RPC method. Complete guide
+  on how to use state_getRuntimeVersion JSON-RPC in GetBlock Web3 documentation.
+---
+
+# state\_getRuntimeVersion - Bittensor
+
+Returns the current runtime version — spec\_name, spec\_version, transaction\_version, and authoring\_version. Required for constructing signed extrinsics with correct version information.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the current runtime version — spec\_name, spec\_version, transaction\_version, and authoring\_version. Required for constructing signed extrinsics with correct version information.
 
 ## Parameters
 

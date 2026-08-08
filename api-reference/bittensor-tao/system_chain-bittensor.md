@@ -1,10 +1,16 @@
-# system\_chain bittensor
+---
+description: >-
+  Example code for the system_chain JSON-RPC method. Complete guide on how to
+  use system_chain JSON-RPC in GetBlock Web3 documentation.
+---
+
+# system\_chain - Bittensor
+
+Returns the human-readable name of the chain. For Bittensor mainnet this is `Bittensor`. Useful as a basic sanity check that you're connected to the right network.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the human-readable name of the chain. For Bittensor mainnet this is `Bittensor`. Useful as a basic sanity check that you're connected to the right network.
 
 ### Parameters
 

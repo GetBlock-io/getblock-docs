@@ -1,10 +1,16 @@
-# neuroninfo\_getneuron bittensor
+---
+description: >-
+  Example code for the neuronInfo_getNeuron JSON-RPC method. Complete guide on
+  how to use neuronInfo_getNeuron JSON-RPC in GetBlock Web3 documentation.
+---
+
+# neuronInfo\_getNeuron - Bittensor
+
+Returns information for a **single neuron** by subnet netUid and neuron UID. Same response shape as one element of `neuronInfo_getNeurons`. Cheaper than fetching the full metagraph when you only need one neuron.
 
 {% hint style="info" %}
 **Bittensor-specific custom RPC method.** This method is implemented by the Subtensor runtime and is not part of the standard Substrate JSON-RPC surface. Call against a GetBlock endpoint configured for the Substrate interface. The [Bittensor Python SDK](https://github.com/opentensor/bittensor) provides typed wrappers; standard Polkadot.js and substrateinterface require the raw RPC interface (see SDK Integration tabs below).
 {% endhint %}
-
-Returns information for a **single neuron** by subnet netUid and neuron UID. Same response shape as one element of `neuronInfo_getNeurons`. Cheaper than fetching the full metagraph when you only need one neuron.
 
 ## Parameters
 

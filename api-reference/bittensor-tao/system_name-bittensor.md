@@ -1,10 +1,16 @@
-# system\_name bittensor
+---
+description: >-
+  Example code for the system_name JSON-RPC method. Complete guide on how to use
+  system_name JSON-RPC in GetBlock Web3 documentation.
+---
+
+# system\_name - Bittensor
+
+Returns the node implementation name. For Subtensor nodes this is typically `subtensor` or `node-subtensor`.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the node implementation name. For Subtensor nodes this is typically `subtensor` or `node-subtensor`.
 
 ## Parameters
 

@@ -1,10 +1,16 @@
-# chain\_getblock bittensor
+---
+description: >-
+  Example code for the chain_getBlock JSON-RPC method. Complete guide on how to
+  use chain_getBlock JSON-RPC in GetBlock Web3 documentation.
+---
+
+# chain\_getBlock - Bittensor
+
+Returns the full block (header + body of extrinsics) for a given block hash. Pass `null` (or omit) to get the latest block.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the full block (header + body of extrinsics) for a given block hash. Pass `null` (or omit) to get the latest block.
 
 ## Parameters
 
@@ -173,6 +179,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Polkadot.js (TypeScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
@@ -186,9 +193,11 @@ console.log(result.toHuman());
 // Or use the raw RPC interface for any method:
 // const raw = await api.rpc.send({ method: 'chain_getBlock', params: ["0xc0a6cfca5d4f9e1cb8a5c4b3d2e7a9c4f1b8e6d5c3a2b1f9e8d7c6b5a4f3e2d1c"] });
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="substrateinterface (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from substrateinterface import SubstrateInterface
 
@@ -198,5 +207,6 @@ substrate = SubstrateInterface(url="wss://go.getblock.io/<ACCESS-TOKEN>/")
 result = substrate.rpc_request("chain_getBlock", ["0xc0a6cfca5d4f9e1cb8a5c4b3d2e7a9c4f1b8e6d5c3a2b1f9e8d7c6b5a4f3e2d1c"])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

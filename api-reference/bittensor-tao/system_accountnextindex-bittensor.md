@@ -1,10 +1,16 @@
-# system\_accountnextindex bittensor
+---
+description: >-
+  Example code for the system_accountNextIndex JSON-RPC method. Complete guide
+  on how to use system_accountNextIndex JSON-RPC in GetBlock Web3 documentation.
+---
+
+# system\_accountNextIndex - Bittensor
+
+Returns the next available transaction index (nonce) for a given account address. Required before constructing and signing a new extrinsic — the nonce must be sequential per account.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the next available transaction index (nonce) for a given account address. Required before constructing and signing a new extrinsic — the nonce must be sequential per account.
 
 ## Parameters
 
@@ -155,6 +161,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Polkadot.js (TypeScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
@@ -168,9 +175,11 @@ console.log(result.toHuman());
 // Or use the raw RPC interface for any method:
 // const raw = await api.rpc.send({ method: 'system_accountNextIndex', params: ["5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"] });
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="substrateinterface (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from substrateinterface import SubstrateInterface
 
@@ -180,5 +189,6 @@ substrate = SubstrateInterface(url="wss://go.getblock.io/<ACCESS-TOKEN>/")
 result = substrate.rpc_request("system_accountNextIndex", ["5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

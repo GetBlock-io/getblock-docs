@@ -1,10 +1,16 @@
-# author\_submitextrinsic bittensor
+---
+description: >-
+  Example code for the author_submitExtrinsic JSON-RPC method. Complete guide on
+  how to use author_submitExtrinsic JSON-RPC in GetBlock Web3 documentation.
+---
+
+# author\_submitExtrinsic - Bittensor
+
+Submits a SCALE-encoded, signed extrinsic to the network. Returns the extrinsic hash. Does NOT wait for inclusion — use `author_submitAndWatchExtrinsic` (WSS) if you need inclusion status.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Submits a SCALE-encoded, signed extrinsic to the network. Returns the extrinsic hash. Does NOT wait for inclusion — use `author_submitAndWatchExtrinsic` (WSS) if you need inclusion status.
 
 ## Parameters
 

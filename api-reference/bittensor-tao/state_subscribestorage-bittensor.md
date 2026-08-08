@@ -1,4 +1,12 @@
-# state\_subscribestorage bittensor
+---
+description: >-
+  Example code for the state_subscribeStorage JSON-RPC method. Complete guide on
+  how to use state_subscribeStorage JSON-RPC in GetBlock Web3 documentation.
+---
+
+# state\_subscribeStorage - Bittensor
+
+Subscribes to changes at given storage keys. Returns a subscription ID; updates arrive as separate WebSocket messages with method `state_storage`. Pass an array of keys to watch multiple slots in a single subscription.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
@@ -7,8 +15,6 @@
 {% hint style="warning" %}
 **WebSocket-only method.** This method requires the WebSocket transport at `wss://go.getblock.io/<ACCESS-TOKEN>/`. It will not work via HTTP POST.
 {% endhint %}
-
-Subscribes to changes at given storage keys. Returns a subscription ID; updates arrive as separate WebSocket messages with method `state_storage`. Pass an array of keys to watch multiple slots in a single subscription.
 
 ## Parameters
 
@@ -149,6 +155,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Polkadot.js (TypeScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
@@ -162,9 +169,11 @@ console.log(result.toHuman());
 // Or use the raw RPC interface for any method:
 // const raw = await api.rpc.send({ method: 'state_subscribeStorage', params: [["0x26aa394eea5630e07c48ae0c9558cef7b99d880ec681799c0cf30e8886371da9"]] });
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="substrateinterface (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from substrateinterface import SubstrateInterface
 
@@ -174,5 +183,6 @@ substrate = SubstrateInterface(url="wss://go.getblock.io/<ACCESS-TOKEN>/")
 result = substrate.rpc_request("state_subscribeStorage", [["0x26aa394eea5630e07c48ae0c9558cef7b99d880ec681799c0cf30e8886371da9"]])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

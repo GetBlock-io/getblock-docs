@@ -1,10 +1,16 @@
-# system\_health bittensor
+---
+description: >-
+  Example code for the system_health JSON-RPC method. Complete guide on how to
+  use system_health JSON-RPC in GetBlock Web3 documentation.
+---
+
+# system\_health - Bittensor
+
+Returns node health information — peer count, syncing state, and whether the node should have peers. A core liveness probe for Substrate infrastructure.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns node health information — peer count, syncing state, and whether the node should have peers. A core liveness probe for Substrate infrastructure.
 
 ## Parameters
 

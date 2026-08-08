@@ -1,10 +1,16 @@
-# eth\_getlogs bittensor
+---
+description: >-
+  Example code for the eth_getLogs JSON-RPC method. Complete guide on how to use
+  eth_getLogs JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getLogs - Bittensor
+
+Returns EVM event logs matching the given filter criteria — by address, topics, and block range. The primary way to read on-chain events from contracts deployed on Subtensor EVM.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Returns EVM event logs matching the given filter criteria — by address, topics, and block range. The primary way to read on-chain events from contracts deployed on Subtensor EVM.
 
 ## Parameters
 
@@ -200,6 +206,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="ethers.js" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ethers } from 'ethers';
 
@@ -212,6 +219,7 @@ console.log(result);
 // Most standard methods have typed wrappers:
 // provider.getBalance(addr), provider.getBlock(n), provider.getCode(addr), etc.
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="viem" %}

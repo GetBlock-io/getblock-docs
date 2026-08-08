@@ -1,10 +1,17 @@
-# subnetinfo\_getsubnetsinfo bittensor
+---
+description: >-
+  Example code for the subnetInfo_getSubnetsInfo JSON-RPC method. Complete guide
+  on how to use subnetInfo_getSubnetsInfo JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# subnetInfo\_getSubnetsInfo - Bittensor
+
+Returns information for **all active subnets** on Bittensor — netUid, owner, hyperparameters, validators count, total stake, emission rate, and more. This is the canonical query for getting a network-wide picture of subnet activity.
 
 {% hint style="info" %}
 **Bittensor-specific custom RPC method.** This method is implemented by the Subtensor runtime and is not part of the standard Substrate JSON-RPC surface. Call against a GetBlock endpoint configured for the Substrate interface. The [Bittensor Python SDK](https://github.com/opentensor/bittensor) provides typed wrappers; standard Polkadot.js and substrateinterface require the raw RPC interface (see SDK Integration tabs below).
 {% endhint %}
-
-Returns information for **all active subnets** on Bittensor — netUid, owner, hyperparameters, validators count, total stake, emission rate, and more. This is the canonical query for getting a network-wide picture of subnet activity.
 
 ## Parameters
 

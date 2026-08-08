@@ -1,10 +1,16 @@
-# eth\_getcode bittensor
+---
+description: >-
+  Example code for the eth_getCode JSON-RPC method. Complete guide on how to use
+  eth_getCode JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getCode - Bittensor
+
+Returns the bytecode at a contract address on Subtensor EVM. Returns `0x` for EOAs (externally-owned accounts) and addresses with no deployed code.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Returns the bytecode at a contract address on Subtensor EVM. Returns `0x` for EOAs (externally-owned accounts) and addresses with no deployed code.
 
 ## Parameters
 
@@ -159,6 +165,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="ethers.js" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ethers } from 'ethers';
 
@@ -171,6 +178,7 @@ console.log(result);
 // Most standard methods have typed wrappers:
 // provider.getBalance(addr), provider.getBlock(n), provider.getCode(addr), etc.
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="viem" %}

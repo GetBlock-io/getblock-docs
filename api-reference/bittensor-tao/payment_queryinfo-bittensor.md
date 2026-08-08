@@ -1,10 +1,16 @@
-# payment\_queryinfo bittensor
+---
+description: >-
+  Example code for the payment_queryInfo JSON-RPC method. Complete guide on how
+  to use payment_queryInfo JSON-RPC in GetBlock Web3 documentation.
+---
+
+# payment\_queryInfo - Bittensor
+
+Returns fee, weight, and class information for a given extrinsic — without submitting it. Used to estimate transaction costs before signing.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns fee, weight, and class information for a given extrinsic — without submitting it. Used to estimate transaction costs before signing.
 
 ## Parameters
 
@@ -166,6 +172,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Polkadot.js (TypeScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
@@ -179,9 +186,11 @@ console.log(result.toHuman());
 // Or use the raw RPC interface for any method:
 // const raw = await api.rpc.send({ method: 'payment_queryInfo', params: ["0x4502840022df56fa4a52f1eb96d4f1a9cdfb4cfbe5e7eb4..."] });
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="substrateinterface (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from substrateinterface import SubstrateInterface
 
@@ -191,5 +200,6 @@ substrate = SubstrateInterface(url="wss://go.getblock.io/<ACCESS-TOKEN>/")
 result = substrate.rpc_request("payment_queryInfo", ["0x4502840022df56fa4a52f1eb96d4f1a9cdfb4cfbe5e7eb4..."])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

@@ -1,10 +1,16 @@
-# system\_version bittensor
+---
+description: >-
+  Example code for the system_version JSON-RPC method. Complete guide on how to
+  use system_version JSON-RPC in GetBlock Web3 documentation.
+---
+
+# system\_version - Bittensor
+
+Returns the node implementation version string — useful for detecting which Subtensor runtime version a node is running and whether it includes specific feature releases.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the node implementation version string — useful for detecting which Subtensor runtime version a node is running and whether it includes specific feature releases.
 
 ## Parameters
 

@@ -1,10 +1,16 @@
-# net\_version bittensor
+---
+description: >-
+  Example code for the net_version JSON-RPC method. Complete guide on how to use
+  net_version JSON-RPC in GetBlock Web3 documentation.
+---
+
+# net\_version - Bittensor
+
+Returns the EVM network ID as a decimal string. For Bittensor mainnet's Subtensor EVM this is `"945"`.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Returns the EVM network ID as a decimal string. For Bittensor mainnet's Subtensor EVM this is `"945"`.
 
 ## Parameters
 

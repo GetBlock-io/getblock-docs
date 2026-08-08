@@ -1,4 +1,12 @@
-# chain\_subscribenewheads bittensor
+---
+description: >-
+  Example code for the chain_subscribeNewHeads JSON-RPC method. Complete guide
+  on how to use chain_subscribeNewHeads JSON-RPC in GetBlock Web3 documentation.
+---
+
+# chain\_subscribeNewHeads - Bittensor
+
+Subscribes to new block headers as they are produced. Returns a subscription ID; matching headers arrive as separate WebSocket messages with method `chain_newHead`.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
@@ -7,8 +15,6 @@
 {% hint style="warning" %}
 **WebSocket-only method.** This method requires the WebSocket transport at `wss://go.getblock.io/<ACCESS-TOKEN>/`. It will not work via HTTP POST.
 {% endhint %}
-
-Subscribes to new block headers as they are produced. Returns a subscription ID; matching headers arrive as separate WebSocket messages with method `chain_newHead`.
 
 ## Parameters
 

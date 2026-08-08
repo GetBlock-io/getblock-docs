@@ -1,10 +1,17 @@
-# chain\_unsubscribeallheads bittensor
+---
+description: >-
+  Example code for the chain_unsubscribeAllHeads JSON-RPC method. Complete guide
+  on how to use chain_unsubscribeAllHeads JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# chain\_unsubscribeAllHeads - Bittensor
+
+Cancels an active heads subscription created by `chain_subscribeNewHeads` or `chain_subscribeFinalizedHeads`. The subscription ID must match.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Cancels an active heads subscription created by `chain_subscribeNewHeads` or `chain_subscribeFinalizedHeads`. The subscription ID must match.
 
 ## Parameters
 
@@ -154,6 +161,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Polkadot.js (TypeScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
@@ -167,6 +175,7 @@ console.log(result.toHuman());
 // Or use the raw RPC interface for any method:
 // const raw = await api.rpc.send({ method: 'chain_unsubscribeAllHeads', params: ["9DZyB1n6BvF5dQ8wQRhgrxqCw"] });
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="substrateinterface (Python)" %}

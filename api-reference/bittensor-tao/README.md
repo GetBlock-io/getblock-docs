@@ -2,7 +2,6 @@
 description: >-
   GetBlock provides fast and reliable access to Bittensor nodes via JSON-RPC
   API. Connect to the Bittensor network without running your own infrastructure.
-hidden: true
 ---
 
 # Bittensor(TAO)

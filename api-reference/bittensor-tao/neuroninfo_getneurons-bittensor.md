@@ -1,4 +1,10 @@
-# neuroninfo\_getneurons bittensor
+---
+description: >-
+  Example code for the neuronInfo_getNeurons JSON-RPC method. Complete guide on
+  how to use neuronInfo_getNeurons JSON-RPC in GetBlock Web3 documentation.
+---
+
+# neuronInfo\_getNeurons - Bittensor
 
 {% hint style="info" %}
 **Bittensor-specific custom RPC method.** This method is implemented by the Subtensor runtime and is not part of the standard Substrate JSON-RPC surface. Call against a GetBlock endpoint configured for the Substrate interface. The [Bittensor Python SDK](https://github.com/opentensor/bittensor) provides typed wrappers; standard Polkadot.js and substrateinterface require the raw RPC interface (see SDK Integration tabs below).
@@ -193,22 +199,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Response Parameters
 
-| Field                     | Type    | Description                                                      |
-| ------------------------- | ------- | ---------------------------------------------------------------- |
-| result                    | array   | Array of neuron objects, one per registered neuron in the subnet |
-| result\[].hotkey          | string  | SS58-encoded hotkey (signing key for validator/miner ops)        |
-| result\[].coldkey         | string  | SS58-encoded coldkey (owns the hotkey, holds stake)              |
-| result\[].uid             | integer | Neuron UID within the subnet (0 to maxAllowedUids - 1)           |
-| result\[].stake           | array   | Stake breakdown — array of \[coldkey, amount] pairs              |
-| result\[].rank            | integer | Neuron rank (scaled 0..65535)                                    |
-| result\[].incentive       | integer | Incentive score (scaled 0..65535)                                |
-| result\[].consensus       | integer | Consensus score (scaled 0..65535)                                |
-| result\[].trust           | integer | Trust score (scaled 0..65535)                                    |
-| result\[].emission        | string  | Emission earned by this neuron in the last tempo, in rao         |
-| result\[].validatorPermit | boolean | Whether this neuron has validator permit                         |
-| result\[].axonInfo        | object  | Axon serving endpoint info — IP, port, version, protocol         |
-| result\[].weights         | array   | Outgoing weights this neuron has set on other neurons            |
-| result\[].bonds           | array   | EMA bonds this neuron holds with other neurons                   |
+<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>result</td><td>array</td><td>Array of neuron objects, one per registered neuron in the subnet</td></tr><tr><td>result[].hotkey</td><td>string</td><td>SS58-encoded hotkey (signing key for validator/miner ops)</td></tr><tr><td>result[].coldkey</td><td>string</td><td>SS58-encoded coldkey (owns the hotkey, holds stake)</td></tr><tr><td>result[].uid</td><td>integer</td><td>Neuron UID within the subnet (0 to maxAllowedUids - 1)</td></tr><tr><td>result[].stake</td><td>array</td><td>Stake breakdown — array of [coldkey, amount] pairs</td></tr><tr><td>result[].rank</td><td>integer</td><td>Neuron rank (scaled 0..65535)</td></tr><tr><td>result[].incentive</td><td>integer</td><td>Incentive score (scaled 0..65535)</td></tr><tr><td>result[].consensus</td><td>integer</td><td>Consensus score (scaled 0..65535)</td></tr><tr><td>result[].trust</td><td>integer</td><td>Trust score (scaled 0..65535)</td></tr><tr><td>result[].emission</td><td>string</td><td>Emission earned by this neuron in the last tempo, in rao</td></tr><tr><td>result[].validatorPermit</td><td>boolean</td><td>Whether this neuron has validator permit</td></tr><tr><td>result[].axonInfo</td><td>object</td><td>Axon serving endpoint info — IP, port, version, protocol</td></tr><tr><td>result[].weights</td><td>array</td><td>Outgoing weights this neuron has set on other neurons</td></tr><tr><td>result[].bonds</td><td>array</td><td>EMA bonds this neuron holds with other neurons</td></tr></tbody></table>
 
 ## Use Cases
 

@@ -1,10 +1,16 @@
-# web3\_clientversion bittensor
+---
+description: >-
+  Example code for the web3_clientVersion JSON-RPC method. Complete guide on how
+  to use web3_clientVersion JSON-RPC in GetBlock Web3 documentation.
+---
+
+# web3\_clientVersion - Bittensor
+
+Returns the EVM client software version. Subtensor EVM is built on Frontier (Substrate's EVM compatibility framework), so the response typically identifies the Frontier-based EVM runtime.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Returns the EVM client software version. Subtensor EVM is built on Frontier (Substrate's EVM compatibility framework), so the response typically identifies the Frontier-based EVM runtime.
 
 ## Parameters
 

@@ -1,10 +1,16 @@
-# eth\_chainid bittensor
+---
+description: >-
+  Example code for the eth_chainId JSON-RPC method. Complete guide on how to use
+  eth_chainId JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_chainId - Bittensor
+
+Returns the EVM chain ID used for EIP-155 transaction signing. For Bittensor Subtensor EVM mainnet this is `0x3b1` (945 decimal — UTF-8 for "Alpha"). Required for correctly signing transactions.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Returns the EVM chain ID used for EIP-155 transaction signing. For Bittensor Subtensor EVM mainnet this is `0x3b1` (945 decimal — UTF-8 for "Alpha"). Required for correctly signing transactions.
 
 ## Parameters
 

@@ -1,10 +1,16 @@
-# state\_getstorage bittensor
+---
+description: >-
+  Example code for the state_getStorage JSON-RPC method. Complete guide on how
+  to use state_getStorage JSON-RPC in GetBlock Web3 documentation.
+---
+
+# state\_getStorage - Bittensor
+
+Returns the raw storage value at a given storage key. Storage keys are constructed by hashing the pallet name + item name + (optionally) the parameter — typically computed by SDKs like Polkadot.js rather than constructed by hand.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the raw storage value at a given storage key. Storage keys are constructed by hashing the pallet name + item name + (optionally) the parameter — typically computed by SDKs like Polkadot.js rather than constructed by hand.
 
 ## Parameters
 
@@ -157,6 +163,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Polkadot.js (TypeScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
@@ -170,9 +177,11 @@ console.log(result.toHuman());
 // Or use the raw RPC interface for any method:
 // const raw = await api.rpc.send({ method: 'state_getStorage', params: ["0x26aa394eea5630e07c48ae0c9558cef7b99d880ec681799c0cf30e8886371da9"] });
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="substrateinterface (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from substrateinterface import SubstrateInterface
 
@@ -182,5 +191,6 @@ substrate = SubstrateInterface(url="wss://go.getblock.io/<ACCESS-TOKEN>/")
 result = substrate.rpc_request("state_getStorage", ["0x26aa394eea5630e07c48ae0c9558cef7b99d880ec681799c0cf30e8886371da9"])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

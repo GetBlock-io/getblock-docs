@@ -1,10 +1,16 @@
-# rpc\_methods bittensor
+---
+description: >-
+  Example code for the rpc_methods JSON-RPC method. Complete guide on how to use
+  rpc_methods JSON-RPC in GetBlock Web3 documentation.
+---
+
+# rpc\_methods - Bittensor
+
+Returns the list of all RPC methods exposed by the connected Subtensor node. Essential for API discovery, capability detection, and verifying that a node exposes the methods your application needs (including chain-specific custom methods like `subnetInfo_getSubnetsInfo`).
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the list of all RPC methods exposed by the connected Subtensor node. Essential for API discovery, capability detection, and verifying that a node exposes the methods your application needs (including chain-specific custom methods like `subnetInfo_getSubnetsInfo`).
 
 ## Parameters
 

@@ -1,10 +1,16 @@
-# chain\_getfinalizedhead bittensor
+---
+description: >-
+  Example code for the chain_getFinalizedHead JSON-RPC method. Complete guide on
+  how to use chain_getFinalizedHead JSON-RPC in GetBlock Web3 documentation.
+---
+
+# chain\_getFinalizedHead - Bittensor
+
+Returns the hash of the latest finalized block. Finalized blocks in Substrate are guaranteed not to be reorged — this is the safe reference for confirmed transaction reads.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the hash of the latest finalized block. Finalized blocks in Substrate are guaranteed not to be reorged — this is the safe reference for confirmed transaction reads.
 
 ## Parameters
 

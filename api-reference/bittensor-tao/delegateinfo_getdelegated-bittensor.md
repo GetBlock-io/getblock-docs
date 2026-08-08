@@ -1,10 +1,17 @@
-# delegateinfo\_getdelegated bittensor
+---
+description: >-
+  Example code for the delegateInfo_getDelegated JSON-RPC method. Complete guide
+  on how to use delegateInfo_getDelegated JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# delegateInfo\_getDelegated - Bittensor
+
+Returns all delegations made by a given coldkey — the inverse of `delegateInfo_getDelegate`. Shows which delegates a particular TAO holder has staked to and how much.
 
 {% hint style="info" %}
 **Bittensor-specific custom RPC method.** This method is implemented by the Subtensor runtime and is not part of the standard Substrate JSON-RPC surface. Call against a GetBlock endpoint configured for the Substrate interface. The [Bittensor Python SDK](https://github.com/opentensor/bittensor) provides typed wrappers; standard Polkadot.js and substrateinterface require the raw RPC interface (see SDK Integration tabs below).
 {% endhint %}
-
-Returns all delegations made by a given coldkey — the inverse of `delegateInfo_getDelegate`. Shows which delegates a particular TAO holder has staked to and how much.
 
 ## Parameters
 
@@ -172,6 +179,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Bittensor SDK (Python)" %}
+{% code overflow="wrap" %}
 ```python
 import bittensor as bt
 
@@ -187,6 +195,7 @@ subtensor = bt.subtensor(network="finney")  # or pass GetBlock URL
 result = subtensor.substrate.rpc_request("delegateInfo_getDelegated", ["5Hp1q5K7T8QYsxwBwYjqkZ1QzGqgYqU3pwMwYqDdjjEqLqJk"])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Polkadot.js raw (TypeScript)" %}

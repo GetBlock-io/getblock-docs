@@ -1,10 +1,16 @@
-# chain\_getheader bittensor
+---
+description: >-
+  Example code for the chain_getHeader JSON-RPC method. Complete guide on how to
+  use chain_getHeader JSON-RPC in GetBlock Web3 documentation.
+---
+
+# chain\_getHeader - Bittensor
+
+Returns the block header (without the body of extrinsics) for a given block hash. Lighter than `chain_getBlock` when only header data is needed.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns the block header (without the body of extrinsics) for a given block hash. Lighter than `chain_getBlock` when only header data is needed.
 
 ## Parameters
 

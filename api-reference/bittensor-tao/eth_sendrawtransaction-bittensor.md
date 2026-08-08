@@ -1,10 +1,16 @@
-# eth\_sendrawtransaction bittensor
+---
+description: >-
+  Example code for the eth_sendRawTransaction JSON-RPC method. Complete guide on
+  how to use eth_sendRawTransaction JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_sendRawTransaction - Bittensor
+
+Submits a signed EVM transaction to Subtensor EVM. Transaction must be RLP-encoded and signed with chain ID `945` (`0x3b1`) for EIP-155 replay protection.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Submits a signed EVM transaction to Subtensor EVM. Transaction must be RLP-encoded and signed with chain ID `945` (`0x3b1`) for EIP-155 replay protection.
 
 ## Parameters
 
@@ -158,6 +164,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="ethers.js" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ethers } from 'ethers';
 
@@ -170,9 +177,11 @@ console.log(result);
 // Most standard methods have typed wrappers:
 // provider.getBalance(addr), provider.getBlock(n), provider.getCode(addr), etc.
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="viem" %}
+{% code overflow="wrap" %}
 ```javascript
 import { createPublicClient, http } from 'viem';
 
@@ -186,5 +195,6 @@ const result = await client.request({
 });
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

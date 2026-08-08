@@ -1,10 +1,16 @@
-# eth\_estimategas bittensor
+---
+description: >-
+  Example code for the eth_estimateGas JSON-RPC method. Complete guide on how to
+  use eth_estimateGas JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_estimateGas - Bittensor
+
+Estimates gas needed to execute an EVM transaction on Subtensor without submitting it. Returns the minimum gas units the transaction would consume.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Estimates gas needed to execute an EVM transaction on Subtensor without submitting it. Returns the minimum gas units the transaction would consume.
 
 ## Parameters
 
@@ -170,6 +176,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="ethers.js" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ethers } from 'ethers';
 
@@ -182,9 +189,11 @@ console.log(result);
 // Most standard methods have typed wrappers:
 // provider.getBalance(addr), provider.getBlock(n), provider.getCode(addr), etc.
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="viem" %}
+{% code overflow="wrap" %}
 ```javascript
 import { createPublicClient, http } from 'viem';
 
@@ -198,5 +207,6 @@ const result = await client.request({
 });
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

@@ -1,10 +1,16 @@
-# state\_call bittensor
+---
+description: >-
+  Example code for the state_call JSON-RPC method. Complete guide on how to use
+  state_call JSON-RPC in GetBlock Web3 documentation.
+---
+
+# state\_call - Bittensor
+
+Executes a runtime API call — the bridge for accessing typed runtime APIs that aren't exposed as direct RPCs. This is how Polkadot.js routes calls like `api.call.subnetInfoRuntimeApi.getSubnetInfo(netuid)` under the hood. For Bittensor, the direct `subnetInfo_*` / `neuronInfo_*` / `delegateInfo_*` RPCs are often easier to use.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Executes a runtime API call — the bridge for accessing typed runtime APIs that aren't exposed as direct RPCs. This is how Polkadot.js routes calls like `api.call.subnetInfoRuntimeApi.getSubnetInfo(netuid)` under the hood. For Bittensor, the direct `subnetInfo_*` / `neuronInfo_*` / `delegateInfo_*` RPCs are often easier to use.
 
 ## Parameters
 
@@ -161,6 +167,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Polkadot.js (TypeScript)" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
@@ -174,9 +181,11 @@ console.log(result.toHuman());
 // Or use the raw RPC interface for any method:
 // const raw = await api.rpc.send({ method: 'state_call', params: ["SubnetInfoRuntimeApi_get_subnets_info", "0x"] });
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="substrateinterface (Python)" %}
+{% code overflow="wrap" %}
 ```python
 from substrateinterface import SubstrateInterface
 
@@ -186,5 +195,6 @@ substrate = SubstrateInterface(url="wss://go.getblock.io/<ACCESS-TOKEN>/")
 result = substrate.rpc_request("state_call", ["SubnetInfoRuntimeApi_get_subnets_info", "0x"])
 print(result)
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

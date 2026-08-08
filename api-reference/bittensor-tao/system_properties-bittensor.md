@@ -1,10 +1,16 @@
-# system\_properties bittensor
+---
+description: >-
+  Example code for the system_properties JSON-RPC method. Complete guide on how
+  to use system_properties JSON-RPC in GetBlock Web3 documentation.
+---
+
+# system\_properties - Bittensor
+
+Returns chain-specific properties — token decimals, SS58 address format prefix, and token symbol. For Bittensor: 9 decimals on the Substrate side, ss58Format 42, symbol TAO.
 
 {% hint style="info" %}
 **Substrate native JSON-RPC method.** Call against a GetBlock endpoint configured for the Substrate interface. For typed SDK access, use [Polkadot.js](https://polkadot.js.org/docs/api) (TypeScript) or [substrateinterface](https://github.com/polkascan/py-substrate-interface) (Python).
 {% endhint %}
-
-Returns chain-specific properties — token decimals, SS58 address format prefix, and token symbol. For Bittensor: 9 decimals on the Substrate side, ss58Format 42, symbol TAO.
 
 ### Parameters
 

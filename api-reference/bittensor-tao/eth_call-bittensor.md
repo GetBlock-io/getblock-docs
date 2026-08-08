@@ -1,10 +1,16 @@
-# eth\_call bittensor
+---
+description: >-
+  Example code for the eth_call JSON-RPC method. Complete guide on how to use
+  eth_call JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_call - Bittensor
+
+Executes a read-only Subtensor EVM contract call without creating a transaction. The canonical way to call view/pure functions on EVM contracts deployed on Bittensor.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Executes a read-only Subtensor EVM contract call without creating a transaction. The canonical way to call view/pure functions on EVM contracts deployed on Bittensor.
 
 ## Parameters
 
@@ -172,6 +178,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="ethers.js" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ethers } from 'ethers';
 
@@ -184,9 +191,11 @@ console.log(result);
 // Most standard methods have typed wrappers:
 // provider.getBalance(addr), provider.getBlock(n), provider.getCode(addr), etc.
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="viem" %}
+{% code overflow="wrap" %}
 ```javascript
 import { createPublicClient, http } from 'viem';
 
@@ -200,5 +209,6 @@ const result = await client.request({
 });
 console.log(result);
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}

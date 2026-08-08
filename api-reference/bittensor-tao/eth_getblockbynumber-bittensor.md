@@ -1,10 +1,16 @@
-# eth\_getblockbynumber bittensor
+---
+description: >-
+  Example code for the eth_getBlockByNumber JSON-RPC method. Complete guide on
+  how to use eth_getBlockByNumber JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getBlockByNumber - Bittensor
+
+Returns EVM block info by block number. Use tags `latest`, `safe`, `finalized`, or `earliest` for relative references. Pass `true` as the second parameter for full transaction objects; `false` for hashes only.
 
 {% hint style="info" %}
 **Subtensor EVM JSON-RPC method.** Call against a GetBlock endpoint configured for the **EVM interface** (not the Substrate interface). Subtensor EVM uses chain ID **945** (`0x3b1`). Standard Ethereum tooling — ethers.js, viem, Hardhat, Foundry, MetaMask — works unmodified.
 {% endhint %}
-
-Returns EVM block info by block number. Use tags `latest`, `safe`, `finalized`, or `earliest` for relative references. Pass `true` as the second parameter for full transaction objects; `false` for hashes only.
 
 ## Parameters
 
