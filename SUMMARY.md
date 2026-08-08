@@ -914,7 +914,7 @@
   * [walletpassphrasechange {disallowed} - Bitcoin SV](api-reference/bitcoin-sv-bsv/bsv_walletpassphrasechange.md)
   * [walletprocesspsbt {disallowed} - Bitcoin SV](api-reference/bitcoin-sv-bsv/bsv_walletprocesspsbt.md)
 * [Bittensor(TAO)](api-reference/bittensor-tao/README.md)
-  * [author\_pendingExtrinsics -Bittensor](api-reference/bittensor-tao/author_pendingextrinsics-bittensor.md)
+  * [author\_pendingExtrinsics - Bittensor](api-reference/bittensor-tao/author_pendingextrinsics-bittensor.md)
   * [author\_submitAndWatchExtrinsic - Bittensor](api-reference/bittensor-tao/author_submitandwatchextrinsic-bittensor.md)
   * [author\_submitextrinsic bittensor](api-reference/bittensor-tao/author_submitextrinsic-bittensor.md)
   * [chain\_getblock bittensor](api-reference/bittensor-tao/chain_getblock-bittensor.md)
