@@ -86,4 +86,4 @@ While node acceleration improves data reception passively, you can further impro
 
 * [Subscribing to real-time streams](how-to-subscribe-to-stream.md) for direct access to BDN data
 * [Submitting transactions to public mempool ](how-to-submit-transactions-to-public-mempool.md)with accelerated propagation
-* Using private transactions for [MEV protection ](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/)or [without MEV Protection](../bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md)
+* Using private transactions for [MEV protection ](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/)or [without MEV Protection](../bsc-accelerated-dedicated-node/how-to-submit-a-transaction-to-private-mempool.md)

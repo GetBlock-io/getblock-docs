@@ -6,9 +6,9 @@ description: >-
 
 # MEV Protection
 
-MEV Protection routes your transactions through a private mempool so that MEV bots never see them. This stops front-running and sandwich attacks before they can happen. You enable it at the endpoint level, and your application code does not change.
+Traditionally, when you send a transaction, your node validates it and places it in the mempool. The mempool is a public holding area for transactions that are not yet confirmed. The node then broadcasts the transaction to its peers, so the pending transaction is visible across the network while it waits.
 
-When you send a transaction, your node validates it and places it in the mempool. The mempool is a public holding area for transactions that are not yet confirmed. The node then broadcasts the transaction to its peers, so the pending transaction is visible across the network while it waits.
+MEV Protection routes your transactions through a private mempool so that MEV bots never see them. This stops front-running and sandwich attacks before they can happen. You enable it at the endpoint level, and your application code does not change.
 
 Block builders — the validators and searchers who assemble the next block — read the mempool and choose which transactions to include and in what order. That power to order, insert, and exclude transactions is where the risk begins.
 

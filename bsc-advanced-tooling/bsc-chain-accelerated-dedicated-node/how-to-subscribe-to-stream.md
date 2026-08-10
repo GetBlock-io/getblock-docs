@@ -548,4 +548,4 @@ _**Contact**_ [_**support**_](mailto:support@getblock.io) _**to upgrade your tie
 ### Next Step
 
 1. [Submitting transactions to public mempool ](how-to-submit-transactions-to-public-mempool.md)with accelerated propagation
-2. Using private transactions for [MEV protection ](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/)or [without MEV Protection](../bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md)
+2. Using private transactions for [MEV protection ](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/)or [without MEV Protection](../bsc-accelerated-dedicated-node/how-to-submit-a-transaction-to-private-mempool.md)

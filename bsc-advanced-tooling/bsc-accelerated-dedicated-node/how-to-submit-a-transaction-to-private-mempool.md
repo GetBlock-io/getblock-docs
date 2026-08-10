@@ -4,7 +4,7 @@ description: >-
   protecting you from MEV extraction until it's included in a block.
 ---
 
-# How to Submit Transaction to Private Mempool
+# How to Submit a Transaction to Private Mempool
 
 When you submit a transaction to the public mempool, it's visible to everyone. MEV bots can:
 
@@ -421,11 +421,7 @@ params: {
 
 ### Troubleshooting
 
-| Problem                  | Solution                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Transaction not included | <p></p><p>Without a priority tip, private transactions compete based on gas fees alone. If your transaction isn't being included:</p><ul><li>Increase gas price — Higher gas = higher priority for builders</li><li>Add a priority tip — See <a href="sending-transactions-to-private-mempool-priority-fee/">Private Transactions with Tips</a></li><li>Try specific builders — Some builders may be more responsive</li></ul> |
-| "Invalid transaction"    | <p></p><ul><li>Verify your transaction is properly signed</li><li>Check the chain ID is <code>56</code> (BSC Mainnet)</li><li>Ensure the nonce is correct</li></ul>                                                                                                                                                                                                                                                            |
-| Connection issues        | <p></p><ul><li>Verify your API key is valid</li><li>Check network connectivity</li><li>Try reconnecting after a few seconds</li></ul>                                                                                                                                                                                                                                                                                          |
+<table><thead><tr><th width="283.4609375">Problem</th><th>Solution</th></tr></thead><tbody><tr><td>Transaction not included</td><td><p></p><p>Without a priority tip, private transactions compete based on gas fees alone. If your transaction isn't being included:</p><ul><li>Increase gas price — Higher gas = higher priority for builders</li><li>Add a priority tip — See <a href="sending-transactions-to-private-mempool-priority-fee/">Private Transactions with Tips</a></li><li>Try specific builders — Some builders may be more responsive</li></ul></td></tr><tr><td>"Invalid transaction"</td><td><p></p><ul><li>Verify your transaction is properly signed</li><li>Check the chain ID is <code>56</code> (BSC Mainnet)</li><li>Ensure the nonce is correct</li></ul></td></tr><tr><td>Connection issues</td><td><p></p><ul><li>Verify your API key is valid</li><li>Check network connectivity</li><li>Try reconnecting after a few seconds</li></ul></td></tr></tbody></table>
 
 ### Next Steps
 

@@ -60,7 +60,7 @@
 * [BSC Accelerated Dedicated Node](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/README.md)
   * [How to Subscribe to Stream](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-subscribe-to-stream.md)
   * [How to Submit Transactions to Public Mempool](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-submit-transactions-to-public-mempool.md)
-  * [How to Submit Transaction to Private Mempool](bsc-advanced-tooling/bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md)
+  * [How to Submit a Transaction to Private Mempool](bsc-advanced-tooling/bsc-accelerated-dedicated-node/how-to-submit-a-transaction-to-private-mempool.md)
   * [Sending Transactions to Private Mempool (Priority Fee)](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/README.md)
     * [How to Use Multicall3](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-multicall3.md)
     * [How to use Bundle](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-bundle.md)
@@ -176,6 +176,7 @@
 * [How to Check Tokens For Rug Pull Risk Before Listing with GetBlock  Rug Pull Checker API](guides/how-to-check-tokens-for-rug-pull-risk-before-listing-with-getblock-rug-pull-checker-api.md)
 * [How to Personalize DeFi Onboarding with GetBlock Full Wallet Audit API](guides/how-to-personalize-defi-onboarding-with-getblock-full-wallet-audit-api.md)
 * [How To Build an AI Agent on Robinhood Chain with GetBlock RPC](guides/how-to-build-an-ai-agent-on-robinhood-chain-with-getblock-rpc.md)
+* [How to Protect Your Transactions from MEV with GetBlock RPC](guides/how-to-protect-your-transactions-from-mev-with-getblock-rpc.md)
 
 ## API REFERENCE
 
