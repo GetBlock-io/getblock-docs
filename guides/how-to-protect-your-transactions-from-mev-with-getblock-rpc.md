@@ -9,7 +9,7 @@ icon: shield-halved
 
 Every transaction you send to a public blockchain waits in the mempool before it is mined, and while it waits, anyone can read it. Searchers run bots that scan that queue for trades worth exploiting — buying ahead of your swap to push the price up, selling into it afterward, or wrapping it in a pair of their own trades so you fill at the worst price in the block. This is Maximal Extractable Value, and on a DEX swap it comes straight out of your output.&#x20;
 
-The frustrating part is that nothing in your code is wrong: the vulnerability is simply that your transaction was visible while pending. Every one of those attacks depends on that visibility, and nothing else.
+The frustrating part is that nothing in your code is wrong: the vulnerability is simply that your transaction was visible while pending(you can use [txpool\_content](../api-reference/bnb-smart-chain-bsc/txpool_content-bsc.md) to see pending transactions). Every one of those attacks depends on that visibility, and nothing else.
 
 _In this guide, you will learn how to protect your transactions from MEV on BNB Smart Chain by building a PancakeSwap swap CLI that routes through a GetBlock BSC endpoint with the_ [_**MEV Protection** add-on enabled_](../add-ons/mev-protection.md)_._
 

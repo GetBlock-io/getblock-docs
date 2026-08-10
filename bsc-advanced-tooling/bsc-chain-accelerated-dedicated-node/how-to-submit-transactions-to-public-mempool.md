@@ -406,5 +406,5 @@ const newGasPrice = existingGasPrice * 110n / 100n;
 
 For transactions that need MEV protection, see:
 
-* [Private Transactions](../bsc-accelerated-dedicated-node/how-to-submit-a-transaction-to-private-mempool.md) — Hidden from public mempool
+* [Private Transactions](../bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md) — Hidden from public mempool
 * [Private Transactions with Tips](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/) — Prioritized private submission
