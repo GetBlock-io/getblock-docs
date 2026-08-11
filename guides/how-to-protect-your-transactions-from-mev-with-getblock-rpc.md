@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn how to route a PancakeSwap swap through a private mempool so searchers
-  cannot front-run or sandwich it
+  Learn how to route a PancakeSwap swap through GetBlock MEV-protected RPC so
+  searchers cannot front-run or sandwich it
 icon: shield-halved
 ---
 
