@@ -60,7 +60,7 @@ In your [GetBlock dashboard](https://account.getblock.io), create a **BNB Smart 
 https://go.getblock.io/<YOUR_ACCESS_TOKEN>
 ```
 
-GetBlock routes transactions sent to this endpoint through a private mempool in partnership with **Merkle**, a trusted private builder. The transaction goes straight to the builder instead of being broadcast to the public queue.
+GetBlock routes transactions sent to this endpoint through a private mempool. The transaction goes straight to the builder instead of being broadcast to the public queue.
 {% endstep %}
 
 {% step %}
