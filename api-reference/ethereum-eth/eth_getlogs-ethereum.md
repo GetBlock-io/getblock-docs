@@ -187,11 +187,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Error Code | Message                                | Description                                               |
-| ---------- | -------------------------------------- | --------------------------------------------------------- |
-| -32602     | Invalid params                         | Filter is malformed or block range is invalid             |
-| -32005     | Query returned more than 10000 results | Block range too wide — narrow the range or use pagination |
-| -32603     | Internal error                         | Node failed to retrieve matching logs                     |
+| Error Code | Message                                            | Description                                               |
+| ---------- | -------------------------------------------------- | --------------------------------------------------------- |
+| -32602     | Invalid params                                     | Filter is malformed or block range is invalid             |
+| 403        | Request block range exceeds the limit(1500 blocks) | Block range too wide — narrow the range or use pagination |
+| -32603     | Internal error                                     | Node failed to retrieve matching logs                     |
 
 ## Web3 Integration
 
