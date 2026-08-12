@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Run check via API
 
 ## Using the AML API
@@ -70,73 +74,84 @@ curl -X POST "https://services.getblock.io/v1/aml/wallet-check" \
 ```json
 {
   "data": {
-    "overall_risk_score": 100,
-    "risk_score": 100,
-    "max_risk_score": 100,
-    "max_risk_token": "eth",
-    "balance": "101.80247578376705",
-    "report_risk":  { "risk_score": 100 },
-    "cluster_risk": { "risk_score": 100 },
-    "reputation_risk": {
-      "risk_score": 40.16,
-      "risk_tags": [
-        { "tag": "dex(de-fi)", "percent": 99.95 },
-        { "tag": "hacking",    "percent": 0.05 }
+    "contractVersion": "2",
+    "coverage": "walletOverall",
+    "overallRiskScore": 100,
+    "tokenList": [],
+    "breakdown": {
+      "history": {
+        "score": 40.15,
+        "tags": [
+          {
+            "category": "dex",
+            "share": 99.95
+          },
+          {
+            "category": "hacking",
+            "share": 0.05
+          }
+        ]
+      },
+      "externalReports": {
+        "score": 100
+      },
+      "fatf": {
+        "score": 100,
+        "flags": [
+          {
+            "flow": "out",
+            "reason": "hacking",
+            "count": 5,
+            "score": 75
+          },
+          {
+            "flow": "in",
+            "reason": "phishing",
+            "count": 1,
+            "score": 75
+          }
+        ]
+      },
+      "tokenFlags": {
+        "score": 0
+      }
+    },
+    "attribution": {
+      "cluster": {
+        "names": [
+          "Ronin Bridge Exploiter",
+          "OFAC SDN LAZARUS GROUP 13-09-2019"
+        ],
+        "score": 100
+      },
+      "categories": [
+        "blacklist-usdc",
+        "blacklist-usdt"
       ]
     },
-    "coins_risk": {
-      "risk_score": 100,
-      "risk_tags": [
-        { "tag": "hacking",        "percent": 96.3 },
-        { "tag": "sanction",       "percent": 1.96 },
-        { "tag": "dex(de-fi)",     "percent": 1.73 },
-        { "tag": "untrusted_vasp", "percent": 0.01 }
-      ]
-    },
-    "fatf_flags": {
-      "risk_score": 100,
-      "flags": [
-        { "direction": "out", "reason": "fpwmd",    "amount": 7, "risk_score": 100 },
-        { "direction": "out", "reason": "hacking",  "amount": 5, "risk_score": 75 },
-        { "direction": "in",  "reason": "phishing", "amount": 1, "risk_score": 75 }
-      ]
-    },
-    "internal_flags": {
-      "risk_score": 100,
-      "flags": [
-        { "direction": "in",  "reason": "100", "amount": 3,  "risk_score": 100 },
-        { "direction": "out", "reason": "100", "amount": 17, "risk_score": 75 }
-      ]
-    },
-    "token_flags": { "risk_score": 0 },
-    "categories": ["blacklist-usdc", "blacklist-usdt"],
-    "token_list": ["eth", "usdc"],
-    "clusters": ["Ronin Bridge Exploiter", "OFAC SDN LAZARUS GROUP 13-09-2019"],
-    "calculation_uid": "de08e914-d37a-4488-b5ca-df909136b0cb"
+    "tokenRisks": {},
+    "calculationUid": "2329ec43-8275-4e6f-a07c-0f27807fa586"
   }
 }
 
 ```
 
-| Field                | Type      | Description                                                     |
-| -------------------- | --------- | --------------------------------------------------------------- |
-| `overall_risk_score` | number    | The composite score, 0–100. **Your headline number.**           |
-| `risk_score`         | number    | Base score before composition.                                  |
-| `max_risk_score`     | number    | Highest score among tokens held.                                |
-| `max_risk_token`     | string    | Which token that was.                                           |
-| `balance`            | string    | Wallet balance. A string, not a number.                         |
-| `cluster_risk`       | object    | Risk of the cluster the address belongs to.                     |
-| `reputation_risk`    | object    | Historical exposure.                                            |
-| `coins_risk`         | object    | Current-balance exposure.                                       |
-| `report_risk`        | object    | Third-party reports.                                            |
-| `fatf_flags`         | object    | FATF category matches.                                          |
-| `internal_flags`     | object    | Directly flagged interactions.                                  |
-| `token_flags`        | object    | Token-level flags.                                              |
-| `owners`             | string\[] | Entities the address is attributed to.                          |
-| `clusters`           | string\[] | Cluster memberships.                                            |
-| `token_list`         | string\[] | Tokens the wallet holds.                                        |
-| `categories`         | string\[] | Category slugs, including issuer blacklists (`blacklist-usdt`). |
-| `calculation_uid`    | string    | Identifies this check. Store it with your decision.             |
+| Field                       | Type      | Description                                                                                                                |
+| --------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `contractVersion`           | string    | Response-contract version.                                                                                                 |
+| `coverage`                  | string    | Scope of the result. `walletOverall` means the score applies to the wallet as a whole on the selected network.             |
+| `overallRiskScore`          | number    | Wallet-wide risk score from `0` to `100`. This is the headline result.                                                     |
+| `tokenList`                 | string\[] | Assets included in token-specific exposure.                                                                                |
+| `breakdown`                 | object    | Wallet-wide evidence supporting the result.                                                                                |
+| `breakdown.history`         | object    | Historical wallet exposure. Read its risk value from `score`; `tags`, when present, describe the exposure composition.     |
+| `breakdown.externalReports` | object    | Risk derived from confirmed external reports.                                                                              |
+| `breakdown.fatf`            | object    | FATF-relevant counterparty indicators. Optional `flags` contain direction, reason, interaction count and individual score. |
+| `breakdown.tokenFlags`      | object    | Wallet-wide token-related flags. Present structurally, but may contain only `score: 0`.                                    |
+| `attribution`               | object    | Identity, cluster and external-list information associated with the address.                                               |
+| `attribution.owners`        | string\[] | Known entities believed to control the address. Owner is an identity signal and has no separate score. Optional.           |
+| `attribution.cluster`       | object    | On-chain cluster attribution. Its `score` is always present; `names` and `tags` are optional.                              |
+| `attribution.categories`    | string\[] | External-list labels such as issuer freezes, sanctions references or functional roles. Optional                            |
+| `calculationUid`            | string    | Identifier of this screening calculation. Store it with the result and decision. Optional.                                 |
 
 Each `*_risk` and `*_flags` field is an object — read `cluster_risk.risk_score`, not `cluster_risk`. Only `overall_risk_score` and `risk_score` are guaranteed; treat the rest as optional.
 

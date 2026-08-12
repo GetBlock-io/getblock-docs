@@ -1,12 +1,16 @@
+---
+hidden: true
+---
+
 # Run a check in the dashboard
 
 The web UI is the fastest way to screen a wallet or transaction — no code required.&#x20;
 
 {% hint style="info" %}
-Getting started takes three things: sign up with an email, top up a small balance, and start screening. **No KYB and no annual contract.**
+Getting started takes three things: sign up with an email, top up balance, and start screening. **No KYB and no annual contract.**
 {% endhint %}
 
-Entry point: [https://account.getblock.io/products/crypto-aml](https://account.getblock.io/products)→ **Run a check**.
+Entry point: [https://account.getblock.io/products/aml-check](https://account.getblock.io/products)→ **Run a check**.
 
 ### Screening in three steps
 
@@ -18,28 +22,23 @@ The individual flow is a simple, three-step screen:
 
 The report ("**Address risk — Detailed view**") surfaces:
 
-* **Risk score** — the `0–100` composite, with a colour-coded band (Low / Medium / High / Very high) and a short, human-readable **message**. See risk bands.
-* **Exposure breakdown** — a composition chart of where the risk comes from (sanctioned entity, darknet, mixer, ransomware, scam, clean counterparties).
-* **FATF flags** — discrete regulatory indicators (e.g. _Sanctions list match_, _Mixer / tumbler interaction_).
-* **Token-level breakdown** — for multi-token wallets, each asset is scored independently so a clean ETH balance doesn't mask a risky USDT flow.
-* **Historical vs current exposure** and **direct interaction risk** (incoming and outgoing flow scored separately).
+* **Total risk score** — the wallet-wide `0–100` result. It reflects the wallet’s complete screened history across the returned assets, not only its current balance or riskiest token. The interface groups it as **Low** (`0–24`), **Medium** (`25–49`), **High** (`50–74`), or **Very high** (`75–100`).
+* **Recommendation** — a plain-language interpretation and suggested review level based on the score. It highlights what to examine but does not automatically tell you to accept or reject the wallet.
+* **Owner** — the known entity believed to control the address, such as an exchange or service. An owner is an identity signal and does **not** have its own risk score.
+* **Cluster** — a group of addresses linked through common control or on-chain behaviour. Unlike an owner, a cluster has its own risk score and can raise the wallet’s total score even when the address has little history or no risky current balance.
+* **Labels** — external-list memberships associated with the address, such as an issuer freeze, sanctions reference, or functional role such as contract deployer. Critical labels are highlighted, but a label is not automatically a risk score or proof of wrongdoing.
+* **Why this score** — the principal wallet-wide drivers, including FATF category matches, cluster risk, and confirmed external reports. Each driver has its own impact level; these values do not add up directly to the total score.
+* **FATF indicators** — flagged counterparties grouped by category, direction of funds, interaction count, and risk level. Rows are evaluated independently and should not be added together.
+* **Wallet exposure** — when available, a composition view showing each category’s share of the screened historical exposure. These percentages are exposure shares, **not** risk scores and **not** percentages of the current wallet balance.
+* **Calculation ID and PDF export** — the calculation ID identifies the exact screening result. Save it with the PDF and timestamp so the decision can be reconstructed later.
 
 {% hint style="success" %}
 Every check can be **exported as a PDF** — address, score, exposure breakdown and flags — ready to attach to a case file. Checks are also stored server-side under your account.
 {% endhint %}
 
-#### Telegram bot
+#### Telegram bot (coming soon)
 
 Individuals can configure screenings and receive reports inside **@GetBlockAMLBot** — no separate dashboard needed (Coming soon).
-
-### UI states to expect
-
-| State                   | What you see                                                            |
-| ----------------------- | ----------------------------------------------------------------------- |
-| **Loading**             | The check runs server-side;                                             |
-| **Result**              | The report screen described above.                                      |
-| **Empty / new address** | A wallet with little on-chain history returns a low-signal result.      |
-| **Error**               | Invalid address/hash for the selected network, or insufficient balance. |
 
 {% hint style="warning" %}
 Reports are generated for informational purposes only. Risk scores are probabilistic and provided "as is" — they must not be the sole basis for regulatory, legal or financial decisions.
