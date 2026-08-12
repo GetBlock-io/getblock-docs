@@ -55,7 +55,7 @@ Choose the method that best matches your use case:
 | **Candles**           | OHLCV charts and price visualization      |
 | **Buy/Sell Activity** | Comparing buying and selling activity     |
 
-### 3. Select how you want to consume the data
+### 4. Select how you want to consume the data
 
 You can access **Solana Market Data** through several protocols.
 
@@ -86,7 +86,7 @@ Use the gRPC interface for server-side streaming and integrations that already u
 
 It provides processed Solana market data while allowing you to keep a familiar streaming integration model.
 
-### 4. Configure your request
+### 5. Configure your request
 
 The parameters depend on the selected method, but most requests start with a few common choices:
 
@@ -103,7 +103,7 @@ SOL / USDC
 
 and then choose whether you want Trades, VWAP, Candles, or another available metric.
 
-### 5. Try it in the Playground
+### Try it in the Playground
 
 The easiest way to explore Solana Market Data before writing code is through the **Playground**.
 
@@ -137,12 +137,3 @@ Use the data in your application
 
 For exact request parameters, response fields, and streaming behavior, continue to the documentation for the specific **Market Data method** or see the **API Reference**.
 
-### Next steps
-
-Continue with:
-
-* **Trades** — start with individual normalized trades.
-* **VWAP & TWAP** — work with calculated market prices.
-* **Volume** — monitor trading activity.
-* **Candles** — build charts and visualizations.
-* **API Access** — learn more about HTTP, WebSocket, and gRPC.

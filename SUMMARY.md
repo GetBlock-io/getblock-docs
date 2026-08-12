@@ -110,6 +110,8 @@
 
 * [Overview](solana-market-data/overview.md)
 * [Getting Started](solana-market-data/getting-started.md)
+* [Market data](solana-market-data/market-data.md)
+* [Priority fee](solana-market-data/priority-fee.md)
 
 ## Solana Advanced Data Tools
 

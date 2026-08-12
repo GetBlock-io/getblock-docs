@@ -14,12 +14,15 @@ Instead of working with raw blockchain transactions, decoding different DEX prog
 
 Depending on how much processing you want to handle yourself, you can work with:
 
-* **Trades** — normalized individual trades for custom calculations and analytics.
-* **Blocks** — trading activity aggregated for each Solana slot.
-* **TWAP & VWAP** — ready-to-use average price metrics.
-* **Volume** — buy, sell, and total trading activity over time.
-* **Candles (OHLCV)** — ready-made price candles for charts and market analysis.
-* **Buy/Sell Activity** — data for tracking the balance between buying and selling activity.
+| Topic    | Description                                     | Required parameters |
+| -------- | ----------------------------------------------- | ------------------- |
+| `trades` | Normalized individual trades                    | None                |
+| `block`  | Trading activity aggregated for one Solana slot | None                |
+| `ohlcv`  | Open, high, low, close, and volume candles      | `window`            |
+| `twap`   | Time-weighted average price                     | `window`            |
+| `vwap`   | Volume-weighted average price                   | `window`            |
+| `volume` | Trading volume and swap activity                | `window`            |
+| `token`  | Token metadata                                  | None                |
 
 You can choose between lower-level trade data and higher-level market metrics that are already calculated for you.
 
@@ -45,7 +48,21 @@ Getting started is straightforward:
 2. **Choose the data you need** — for example Trades, VWAP, Volume, or Candles.
 3. **Query or stream the data** using HTTP, WebSocket, or Yellowstone-compatible gRPC.
 
+{% hint style="info" %}
 You can also use the **Playground** to explore available methods and see the data before integrating it into your application.
+{% endhint %}
+
+### Which Topic Should I Use?
+
+| If you need                                           | Use      |
+| ----------------------------------------------------- | -------- |
+| Individual trades and maximum calculation flexibility | `trades` |
+| Market activity for each Solana slot                  | `block`  |
+| Candles or price charts                               | `ohlcv`  |
+| A price weighted by elapsed time                      | `twap`   |
+| A price weighted by traded volume                     | `vwap`   |
+| Buy, sell, and total market activity                  | `volume` |
+| Token metadata                                        | `token`  |
 
 ### Next steps
 
