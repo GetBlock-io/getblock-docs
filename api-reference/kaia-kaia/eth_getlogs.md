@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getLogs JSON RPC method. Complete guide on how to use
+  eth_getLogs JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getlogs
 
 This method returns event logs that match a filter over a range of blocks. It is the primary method for reading historical events such as ERC-20 transfers and contract events.

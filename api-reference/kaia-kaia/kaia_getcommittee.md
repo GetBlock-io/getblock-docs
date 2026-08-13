@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the kaia_getCommittee JSON RPC method. Complete guide on how
+  to use kaia_getCommittee JSON RPC in GetBlock Web3 documentation.
+---
+
 # kaia\_getcommittee
 
 This method returns the addresses of the validators selected as the committee for a given block. The committee is the subset of the council responsible for reaching consensus on that block.

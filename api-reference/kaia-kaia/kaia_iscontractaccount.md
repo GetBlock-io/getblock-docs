@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the kaia_isContractAccount JSON RPC method. Complete guide on
+  how to use kaia_isContractAccount JSON RPC in GetBlock Web3 documentation.
+---
+
 # kaia\_iscontractaccount
 
 This method returns true if the address is a Smart Contract Account and false if it is an Externally Owned Account. It reflects Kaia's explicit account-type model rather than inferring contract status from code length.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the debug_traceBlockByHash JSON RPC method. Complete guide on
+  how to use debug_traceBlockByHash JSON RPC in GetBlock Web3 documentation.
+---
+
 # debug\_traceblockbyhash
 
 This method replays every transaction in a block identified by hash and returns an execution trace for each. It is used to analyze all execution in a block at once.

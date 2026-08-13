@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getBlockReceipts JSON RPC method. Complete guide on
+  how to use eth_getBlockReceipts JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getblockreceipts
 
 This method returns all transaction receipts for a block in a single call. It is used to read every transaction outcome and log in a block without one call per transaction.

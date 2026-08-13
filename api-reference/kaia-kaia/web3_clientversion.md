@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the web3_clientVersion JSON RPC method. Complete guide on how
+  to use web3_clientVersion JSON RPC in GetBlock Web3 documentation.
+---
+
 # web3\_clientversion
 
 This method returns the version string of the Kaia client software the node is running. It identifies the node implementation and release.

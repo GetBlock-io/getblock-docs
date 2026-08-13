@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the kaia_getCouncil JSON RPC method. Complete guide on how to
+  use kaia_getCouncil JSON RPC in GetBlock Web3 documentation.
+---
+
 # kaia\_getcouncil
 
 This method returns the addresses of all validators in the governance council at a given block. The council is the full set of validators eligible to participate in consensus.

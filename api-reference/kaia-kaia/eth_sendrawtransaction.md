@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_sendRawTransaction JSON RPC method. Complete guide on
+  how to use eth_sendRawTransaction JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_sendrawtransaction
 
 This method submits a signed, serialized transaction to the Kaia network. On acceptance it returns the transaction hash; the transaction is then propagated to validators for inclusion.

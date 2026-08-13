@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the eth_getTransactionByHash JSON RPC method. Complete guide
+  on how to use eth_getTransactionByHash JSON RPC in GetBlock Web3
+  documentation.
+---
+
 # eth\_gettransactionbyhash
 
 This method returns information about a transaction identified by its hash, including its sender, recipient, value, and inclusion data.

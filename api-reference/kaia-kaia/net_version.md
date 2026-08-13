@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the net_version JSON RPC method. Complete guide on how to use
+  net_version JSON RPC in GetBlock Web3 documentation.
+---
+
 # net\_version
 
 This method returns the current network ID as a string. For Kaia mainnet the network ID is 8217.

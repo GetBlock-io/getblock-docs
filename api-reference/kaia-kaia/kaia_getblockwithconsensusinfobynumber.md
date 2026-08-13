@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the kaia_getBlockWithConsensusInfoByNumber JSON RPC method.
+  Complete guide on how to use kaia_getBlockWithConsensusInfoByNumber JSON RPC
+  in GetBlock Web3 documentation.
+---
+
 # kaia\_getblockwithconsensusinfobynumber
 
 This method returns a block along with its consensus information: the proposer that produced the block and the committee of validators that signed it. This exposes Kaia's BFT consensus for a given block.

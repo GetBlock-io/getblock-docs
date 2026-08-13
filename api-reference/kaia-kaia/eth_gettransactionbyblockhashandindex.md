@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the eth_getTransactionByBlockHashAndIndex JSON RPC method.
+  Complete guide on how to use eth_getTransactionByBlockHashAndIndex JSON RPC in
+  GetBlock Web3 documentation.
+---
+
 # eth\_gettransactionbyblockhashandindex
 
 This method returns a transaction by its position in a block identified by hash. The index is the transaction's zero-based position within the block.

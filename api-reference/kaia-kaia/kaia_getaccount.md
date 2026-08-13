@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the kaia_getAccount JSON RPC method. Complete guide on how to
+  use kaia_getAccount JSON RPC in GetBlock Web3 documentation.
+---
+
 # kaia\_getaccount
 
 This method returns the Kaia account object for an address. Kaia distinguishes an Externally Owned Account (accType 1) from a Smart Contract Account (accType 2), and exposes the account's balance in kei, nonce, and account key.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the debug_traceTransaction JSON RPC method. Complete guide on
+  how to use debug_traceTransaction JSON RPC in GetBlock Web3 documentation.
+---
+
 # debug\_tracetransaction
 
 This method replays a transaction and returns a detailed execution trace, including opcode-level steps or a structured call trace depending on the tracer. It is used to debug transaction execution and reverts.

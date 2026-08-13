@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getTransactionCount JSON RPC method. Complete guide
+  on how to use eth_getTransactionCount JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_gettransactioncount
 
 This method returns the number of transactions sent from an address, which is the account nonce. It is used to set the nonce for the next transaction.

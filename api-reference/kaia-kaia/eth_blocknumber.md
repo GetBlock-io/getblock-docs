@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_blockNumber JSON RPC method. Complete guide on how to
+  use eth_blockNumber JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_blocknumber
 
 This method returns the number of the most recent block on Kaia. It is the primary method for reading the current chain height.

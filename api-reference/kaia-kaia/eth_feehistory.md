@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_feeHistory JSON RPC method. Complete guide on how to
+  use eth_feeHistory JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_feehistory
 
 This method returns historical base fees and priority-fee percentiles over a range of blocks. It is used to model fees for EIP-1559 transactions.

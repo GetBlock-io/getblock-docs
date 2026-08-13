@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the kaia_getRewards JSON RPC method. Complete guide on how to
+  use kaia_getRewards JSON RPC in GetBlock Web3 documentation.
+---
+
 # kaia\_getrewards
 
 This method returns the block reward distribution for a given block, including the newly minted KAIA, transaction fees, and how the reward was split between the proposer, stakers, and the ecosystem funds. All amounts are in kei.

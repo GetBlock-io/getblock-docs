@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getCode JSON RPC method. Complete guide on how to use
+  eth_getCode JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getcode
 
 This method returns the compiled bytecode deployed at an address. An externally owned account returns `0x`, while a contract returns its runtime bytecode.

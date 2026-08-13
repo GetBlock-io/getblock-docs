@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getBlockByHash JSON RPC method. Complete guide on how
+  to use eth_getBlockByHash JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getblockbyhash
 
 This method returns information about a block by its hash. The second parameter controls whether full transaction objects or only transaction hashes are returned.

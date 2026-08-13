@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getBalance JSON RPC method. Complete guide on how to
+  use eth_getBalance JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getbalance
 
 This method returns the native KAIA balance of an address at a given block, in kei (1 KAIA = 10^18 kei). It is the primary method for reading an account's spendable balance.

@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the eth_maxPriorityFeePerGas JSON RPC method. Complete guide
+  on how to use eth_maxPriorityFeePerGas JSON RPC in GetBlock Web3
+  documentation.
+---
+
 # eth\_maxpriorityfeepergas
 
 This method returns a suggested priority fee, in wei, to include in an EIP-1559 transaction. The priority fee is the tip paid to validators above the base fee.

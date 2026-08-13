@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the kaia_getAccountKey JSON RPC method. Complete guide on how
+  to use kaia_getAccountKey JSON RPC in GetBlock Web3 documentation.
+---
+
 # kaia\_getaccountkey
 
 This method returns the account key of an Externally Owned Account. Kaia decouples the key from the address, so an account can use a public key, a weighted multisig key, or a role-based key. It returns null for a Legacy account or a Smart Contract Account.

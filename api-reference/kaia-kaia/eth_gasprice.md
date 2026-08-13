@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_gasPrice JSON RPC method. Complete guide on how to
+  use eth_gasPrice JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_gasprice
 
 This method returns the current gas price on Kaia in wei, derived from recent blocks. It is used to price legacy transactions.

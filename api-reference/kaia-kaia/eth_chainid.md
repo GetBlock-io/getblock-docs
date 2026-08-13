@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_chainId JSON RPC method. Complete guide on how to use
+  eth_chainId JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_chainid
 
 This method returns the chain ID of the Kaia network, used to sign replay-protected transactions under EIP-155. Kaia Mainnet returns 0x2019 (8217).

@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the eth_getTransactionReceipt JSON RPC method. Complete guide
+  on how to use eth_getTransactionReceipt JSON RPC in GetBlock Web3
+  documentation.
+---
+
 # eth\_gettransactionreceipt
 
 This method returns the receipt of a transaction identified by its hash. The receipt is available only after the transaction is mined and includes its status, gas used, and emitted logs.

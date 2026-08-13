@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the debug_traceBlockByNumber JSON RPC method. Complete guide
+  on how to use debug_traceBlockByNumber JSON RPC in GetBlock Web3
+  documentation.
+---
+
 # debug\_traceblockbynumber
 
 This method replays every transaction in a block identified by number and returns an execution trace for each. It is used to analyze all execution in a block at once.
