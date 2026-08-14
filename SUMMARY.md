@@ -1724,7 +1724,7 @@
   * [web3\_sha3 - Fantom](api-reference/fantom-ftm/ftm_web3_sha3.md)
 * [Filecoin (FIL)](api-reference/filecoin-fil/README.md)
   * [FEVM API](api-reference/filecoin-fil/fevm-api/README.md)
-    * [eth\_call](api-reference/filecoin-fil/fevm-api/eth_call.md)
+    * [eth\_call - Filecoin](api-reference/filecoin-fil/fevm-api/eth_call-filecoin.md)
     * [eth\_chainid](api-reference/filecoin-fil/fevm-api/eth_chainid.md)
     * [eth\_estimategas](api-reference/filecoin-fil/fevm-api/eth_estimategas.md)
     * [eth\_feehistory](api-reference/filecoin-fil/fevm-api/eth_feehistory.md)

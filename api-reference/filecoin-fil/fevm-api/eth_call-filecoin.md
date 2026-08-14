@@ -1,6 +1,6 @@
-# eth\_call
+# eth\_call - Filecoin
 
-This method executes a new message call immediately without creating a transaction on the blockchain. This is the primary method for reading data from smart contracts, including token balances, contract state, and view or pure function results.
+This method executes a new message call immediately without creating a transaction on the blockchain. This is the primary method for reading data from smart contracts, including token balances, contract state, and the results of view or pure functions.
 
 ## Parameters
 
