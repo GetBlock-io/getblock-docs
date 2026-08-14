@@ -1,34 +1,113 @@
----
-description: >-
-  Example code for the state_getMetadata json-rpc method. Сomplete guide on how
-  to use state_getMetadata json-rpc in GetBlock.io Web3 documentation.
----
+# dot\_state\_getmetadata
 
-# state\_getMetadata - Polkadot
+This method returns the SCALE-encoded runtime metadata at a given block. The metadata describes the pallets, calls, storage items, events, and types the runtime exposes, and is required to decode blocks and construct extrinsics.
 
-#### Parameters
+## Parameters
 
-`at` - BlockHash
+| Parameter | Type   | Required | Description                                           |
+| --------- | ------ | -------- | ----------------------------------------------------- |
+| hash      | string | No       | Block hash. Defaults to the latest block when omitted |
 
-block hash
+## Request
 
-#### Request
-
-```java
+{% tabs %}
+{% tab title="cURL" %}
+{% code overflow="wrap" %}
+```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0",
-"method": "state_getMetadata",
-"params": ["0x7e8691febbd7deeebcc48e4cdff335ce7c73c825b45661400fd9fea2fadee9b9"],
-"id": "getblock.io"}'
+--data-raw '{"jsonrpc": "2.0", "method": "state_getMetadata", "params": [], "id": "getblock.io"}'
 ```
+{% endcode %}
+{% endtab %}
 
-#### Response
+{% tab title="JavaScript" %}
+{% code title="example.js" %}
+```javascript
+const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        jsonrpc: '2.0',
+        method: 'state_getMetadata',
+        params: [],
+        id: 'getblock.io'
+    })
+});
 
-```java
+const data = await response.json();
+console.log(data.result);
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="example.py" %}
+```python
+import requests
+
+response = requests.post(
+    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    headers={'Content-Type': 'application/json'},
+    json={
+        'jsonrpc': '2.0',
+        'method': 'state_getMetadata',
+        'params': [],
+        'id': 'getblock.io'
+    }
+)
+
+print(response.json()['result'])
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+```json
 {
     "id": "getblock.io",
     "jsonrpc": "2.0",
-    "result": "0x6d6574610ed50c000c1c73705f636f72651863727970746f2c4163636f756e7449643332000004000401205b75383b2033325d0000040000032000000008000800000503000c08306672616d655f73797374656d2c4163636f756e74496e666f0814496e64657801102c4163636f756e74446174610114001401146e6f6e6365100114496e646578000124636f6e73756d657273100120526566436f756e7400012470726f766964657273100120526566436f756e7400012c73756666696369656e7473100120526566436f756e740001106461746114012c4163636f756e74446174610000100000050500140c3c70616c6c65745f62616c616e6365731474797065732c4163636f756e7444617461041c42616c616e63650118001001106672656518011c42616c616e6365000120726573c884850726576616c696461746541747465737473cd0c88d10c"
+    "result": "0x6d6574610e79151853797374656d011853797374656d34104163636f756e7401010..."
 }
 ```
+
+## Response Parameters
+
+| Parameter | Type   | Description                                                  |
+| --------- | ------ | ------------------------------------------------------------ |
+| id        | string | Request identifier matching the request                      |
+| jsonrpc   | string | JSON-RPC protocol version ("2.0")                            |
+| result    | string | SCALE-encoded runtime metadata, hex-encoded (truncated here) |
+
+## Use Cases
+
+* **Extrinsic Construction**: Decode metadata to build valid extrinsics
+* **Type Decoding**: Resolve runtime types for block decoding
+* **SDK Bootstrapping**: Initialize Polkadot.js with the current metadata
+* **Runtime Inspection**: Enumerate pallets, calls, and storage items
+
+## Error Handling
+
+| Error Code | Message          | Description                                            |
+| ---------- | ---------------- | ------------------------------------------------------ |
+| -32602     | Invalid params   | A parameter is missing or has the wrong type or format |
+| -32601     | Method not found | The method is not available on this endpoint           |
+| -32603     | Internal error   | The node failed to process the request                 |
+
+## Library Integration
+
+The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.state.getMetadata`.
+
+{% code title="polkadot-js.js" %}
+```javascript
+import { ApiPromise, WsProvider } from '@polkadot/api';
+
+const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const api = await ApiPromise.create({ provider });
+
+const result = await api.rpc.state.getMetadata();
+console.log(result.toHuman());
+```
+{% endcode %}
