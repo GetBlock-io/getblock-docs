@@ -71,6 +71,7 @@
 * [How risk scoring works](crypto-aml/how-risk-scoring-works.md)
 * [Run a check in the dashboard](crypto-aml/run-a-check-in-the-dashboard.md)
 * [Run check via API](crypto-aml/run-check-via-api.md)
+* [Risk categories](crypto-aml/risk-categories.md)
 
 ## Crypto Address Audit
 
