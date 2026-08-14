@@ -1,6 +1,6 @@
-# dot\_system\_syncstate
+# rpc\_methods - Polkadot
 
-This method returns the sync state of the node: the block it started syncing from, the current block, and the highest known block.
+This method returns the list of JSON-RPC methods the node exposes. It is used to discover the available API surface at runtime.
 
 ## Parameters
 
@@ -12,22 +12,22 @@ This method does not accept any parameters.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0", "method": "system_syncState", "params": [], "id": "getblock.io"}'
+--data-raw '{"jsonrpc": "2.0", "method": "rpc_methods", "params": [], "id": "getblock.io"}'
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="JavaScript" %}
-{% code title="example.js" %}
+{% code title="example.js" overflow="wrap" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
         jsonrpc: '2.0',
-        method: 'system_syncState',
+        method: 'rpc_methods',
         params: [],
         id: 'getblock.io'
     })
@@ -45,11 +45,11 @@ console.log(data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'system_syncState',
+        'method': 'rpc_methods',
         'params': [],
         'id': 'getblock.io'
     }
@@ -68,9 +68,19 @@ print(response.json()['result'])
     "id": "getblock.io",
     "jsonrpc": "2.0",
     "result": {
-        "startingBlock": 6750000,
-        "currentBlock": 6754362,
-        "highestBlock": 6754362
+        "methods": [
+            "chain_getBlock",
+            "chain_getBlockHash",
+            "chain_getFinalizedHead",
+            "chain_getHeader",
+            "state_getMetadata",
+            "state_getRuntimeVersion",
+            "system_chain",
+            "system_health",
+            "system_properties",
+            "system_version"
+        ],
+        "version": 1
     }
 }
 ```
@@ -81,22 +91,21 @@ print(response.json()['result'])
 | --------- | ------ | --------------------------------------- |
 | id        | string | Request identifier matching the request |
 | jsonrpc   | string | JSON-RPC protocol version ("2.0")       |
-| result    | object | Sync state object                       |
+| result    | object | Object listing the exposed RPC methods  |
 
 ### Result Object
 
-| Field         | Type    | Description                         |
-| ------------- | ------- | ----------------------------------- |
-| startingBlock | integer | Block the node started syncing from |
-| currentBlock  | integer | Block the node has synced to        |
-| highestBlock  | integer | Highest block known to the node     |
+| Field   | Type    | Description                                    |
+| ------- | ------- | ---------------------------------------------- |
+| methods | array   | Names of the JSON-RPC methods the node exposes |
+| version | integer | RPC method list version                        |
 
 ## Use Cases
 
-* **Sync Monitoring**: Track how far a node has synced
-* **Readiness Checks**: Confirm currentBlock has reached highestBlock
-* **Lag Detection**: Measure the gap between current and highest blocks
-* **Dashboards**: Display sync progress
+* **Capability Discovery**: Detect which methods an endpoint supports
+* **Client Configuration**: Adapt tooling to the available methods
+* **Diagnostics**: Confirm expected methods are exposed
+* **Compatibility**: Gate features on method availability
 
 ## Error Handling
 
@@ -108,16 +117,16 @@ print(response.json()['result'])
 
 ## Library Integration
 
-The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.syncState`.
+The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.rpc.methods`.
 
 {% code title="polkadot-js.js" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
-const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new WsProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
-const result = await api.rpc.system.syncState();
+const result = await api.rpc.rpc.methods();
 console.log(result.toHuman());
 ```
 {% endcode %}

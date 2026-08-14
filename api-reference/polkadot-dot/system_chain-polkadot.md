@@ -1,6 +1,6 @@
-# dot\_system\_health
+# system\_chain - Polkadot
 
-This method returns the health of the node, including its peer count, whether it is syncing, and whether it is expected to have peers.
+This method returns the human-readable name of the chain the node is connected to.
 
 ## Parameters
 
@@ -12,22 +12,22 @@ This method does not accept any parameters.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0", "method": "system_health", "params": [], "id": "getblock.io"}'
+--data-raw '{"jsonrpc": "2.0", "method": "system_chain", "params": [], "id": "getblock.io"}'
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="JavaScript" %}
-{% code title="example.js" %}
+{% code title="example.js" overflow="wrap" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
         jsonrpc: '2.0',
-        method: 'system_health',
+        method: 'system_chain',
         params: [],
         id: 'getblock.io'
     })
@@ -45,11 +45,11 @@ console.log(data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'system_health',
+        'method': 'system_chain',
         'params': [],
         'id': 'getblock.io'
     }
@@ -67,11 +67,7 @@ print(response.json()['result'])
 {
     "id": "getblock.io",
     "jsonrpc": "2.0",
-    "result": {
-        "isSyncing": false,
-        "peers": 21,
-        "shouldHavePeers": true
-    }
+    "result": "Polkadot"
 }
 ```
 
@@ -81,22 +77,14 @@ print(response.json()['result'])
 | --------- | ------ | --------------------------------------- |
 | id        | string | Request identifier matching the request |
 | jsonrpc   | string | JSON-RPC protocol version ("2.0")       |
-| result    | object | Node health object                      |
-
-### Result Object
-
-| Field           | Type    | Description                                |
-| --------------- | ------- | ------------------------------------------ |
-| peers           | integer | Number of connected peers                  |
-| isSyncing       | boolean | Whether the node is currently syncing      |
-| shouldHavePeers | boolean | Whether the node is expected to have peers |
+| result    | string | The chain name                          |
 
 ## Use Cases
 
-* **Health Checks**: Confirm a node is connected and synced
-* **Load Balancing**: Route away from syncing or peerless nodes
-* **Monitoring**: Alert on low peer counts
-* **Readiness Probes**: Gate traffic on node health
+* **Network Confirmation**: Confirm a node serves the expected chain
+* **Multi-Chain Routing**: Branch logic on the connected chain
+* **Diagnostics**: Log the chain name for support
+* **Dashboards**: Display the connected network
 
 ## Error Handling
 
@@ -108,16 +96,16 @@ print(response.json()['result'])
 
 ## Library Integration
 
-The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.health`.
+The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.chain`.
 
 {% code title="polkadot-js.js" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
-const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new WsProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
-const result = await api.rpc.system.health();
+const result = await api.rpc.system.chain();
 console.log(result.toHuman());
 ```
 {% endcode %}

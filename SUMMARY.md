@@ -2842,33 +2842,20 @@
   * [shh\_uninstallFilter {disallowed} - Optimism](api-reference/optimism-op/optimism_shh_uninstallfilter.md)
   * [shh\_version {disallowed} - Optimism](api-reference/optimism-op/optimism_shh_version.md)
 * [Polkadot (DOT)](api-reference/polkadot-dot/README.md)
-  * [polkadot](api-reference/polkadot-dot/polkadot.md)
-  * [dot\_chain\_getblock](api-reference/polkadot-dot/dot_chain_getblock.md)
-  * [dot\_chain\_getblockhash](api-reference/polkadot-dot/dot_chain_getblockhash.md)
-  * [dot\_chain\_getfinalizedhead](api-reference/polkadot-dot/dot_chain_getfinalizedhead.md)
-  * [dot\_chain\_getheader](api-reference/polkadot-dot/dot_chain_getheader.md)
-  * [dot\_grandpa\_roundstate](api-reference/polkadot-dot/dot_grandpa_roundstate.md)
-  * ```yaml
-    type: builtin:openapi
-    props:
-      models: true
-      downloadLink: true
-      grouping: by-operation
-    dependencies:
-      spec:
-        ref:
-          kind: openapi
-          spec: polkadot-api
-    ```
-  * [dot\_rpc\_methods](api-reference/polkadot-dot/dot_rpc_methods.md)
-  * [dot\_state\_getmetadata](api-reference/polkadot-dot/dot_state_getmetadata.md)
-  * [dot\_state\_getruntimeversion](api-reference/polkadot-dot/dot_state_getruntimeversion.md)
-  * [dot\_system\_chain](api-reference/polkadot-dot/dot_system_chain.md)
-  * [dot\_system\_chaintype](api-reference/polkadot-dot/dot_system_chaintype.md)
-  * [dot\_system\_health](api-reference/polkadot-dot/dot_system_health.md)
-  * [dot\_system\_properties](api-reference/polkadot-dot/dot_system_properties.md)
-  * [dot\_system\_syncstate](api-reference/polkadot-dot/dot_system_syncstate.md)
-  * [dot\_system\_version](api-reference/polkadot-dot/dot_system_version.md)
+  * [chain\_getBlock - Polkadot](api-reference/polkadot-dot/chain_getblock-polkadot.md)
+  * [chain\_getblockhash - Polkadot](api-reference/polkadot-dot/chain_getblockhash-polkadot.md)
+  * [chain\_getfinalizedhead - Polkadot](api-reference/polkadot-dot/chain_getfinalizedhead-polkadot.md)
+  * [chain\_getHeader - Polkadot](api-reference/polkadot-dot/chain_getheader-polkadot.md)
+  * [grandpa\_roundstate - Polkadot](api-reference/polkadot-dot/grandpa_roundstate-polkadot.md)
+  * [rpc\_methods - Polkadot](api-reference/polkadot-dot/rpc_methods-polkadot.md)
+  * [state\_getmetadata - Polkadot](api-reference/polkadot-dot/state_getmetadata-polkadot.md)
+  * [state\_getruntimeversion - Polkadot](api-reference/polkadot-dot/state_getruntimeversion-polkadot.md)
+  * [system\_chain - Polkadot](api-reference/polkadot-dot/system_chain-polkadot.md)
+  * [system\_chaintype - Polkadot](api-reference/polkadot-dot/system_chaintype-polkadot.md)
+  * [system\_health - Polkadot](api-reference/polkadot-dot/system_health-polkadot.md)
+  * [system\_properties - Polkadot](api-reference/polkadot-dot/system_properties-polkadot.md)
+  * [system\_syncstate - Polkadot](api-reference/polkadot-dot/system_syncstate-polkadot.md)
+  * [system\_version - Polkadot](api-reference/polkadot-dot/system_version-polkadot.md)
 * [Polygon (MATIC)](api-reference/polygon-matic/README.md)
   * [Deploy Smart Contract On Polygon](api-reference/polygon-matic/deploy-smart-contract-on-polygon.md)
   * [Polygon JSON-RPC API](api-reference/polygon-matic/polygon-json-rpc-api/README.md)

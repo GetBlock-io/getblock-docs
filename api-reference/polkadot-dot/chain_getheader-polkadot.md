@@ -1,4 +1,4 @@
-# dot\_chain\_getheader
+# chain\_getHeader - Polkadot
 
 This method returns the header of a block by its hash, without the extrinsics. If no hash is supplied, the latest block header is returned.
 
@@ -14,7 +14,7 @@ This method returns the header of a block by its hash, without the extrinsics. I
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "chain_getHeader", "params": ["0x255bc00927df8d33d561792635cbc6bde480a0a505eef5ff28630ece3fc15b32"], "id": "getblock.io"}'
 ```
@@ -22,9 +22,9 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% endtab %}
 
 {% tab title="JavaScript" %}
-{% code title="example.js" %}
+{% code title="example.js" overflow="wrap" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -42,12 +42,12 @@ console.log(data.result);
 {% endtab %}
 
 {% tab title="Python" %}
-{% code title="example.py" %}
+{% code title="example.py" overflow="wrap" %}
 ```python
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -65,6 +65,7 @@ print(response.json()['result'])
 
 ## Response
 
+{% code overflow="wrap" %}
 ```json
 {
     "id": "getblock.io",
@@ -83,6 +84,7 @@ print(response.json()['result'])
     }
 }
 ```
+{% endcode %}
 
 ## Response Parameters
 
@@ -121,11 +123,11 @@ print(response.json()['result'])
 
 The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.chain.getHeader`.
 
-{% code title="polkadot-js.js" %}
+{% code title="polkadot-js.js" overflow="wrap" %}
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
-const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new WsProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
 const result = await api.rpc.chain.getHeader('0x255bc00927df8d33d561792635cbc6bde480a0a505eef5ff28630ece3fc15b32');
