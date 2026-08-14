@@ -26,7 +26,7 @@ This method executes a new message call immediately without creating a transacti
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -39,11 +39,11 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% endtab %}
 
 {% tab title="Axios" %}
-{% code title="example.js" %}
+{% code title="example.js" overflow="wrap" %}
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'eth_call',
     params: [{"to": "0x60E1773636CF5E4A227d9AC24F20fEca034ee25A", "data": "0x70a08231000000000000000000000000d8da6bf26964af9d7eed9e03e53415d37aa96045"}, "latest"],
@@ -58,12 +58,12 @@ console.log(response.data.result);
 {% endtab %}
 
 {% tab title="Request" %}
-{% code title="example.py" %}
+{% code title="example.py" overflow="wrap" %}
 ```python
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -79,7 +79,7 @@ print(response.json())
 {% endtab %}
 
 {% tab title="Rust" %}
-{% code title="example.rs" %}
+{% code title="example.rs" overflow="wrap" %}
 ```rust
 use reqwest::Client;
 use serde_json::{json, Value};
@@ -89,7 +89,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -149,11 +149,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 {% tabs %}
 {% tab title="Ethers.js" %}
-{% code title="ethers-example.js" %}
+{% code title="ethers-example.js" overflow="wrap" %}
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const abi = ['function balanceOf(address) view returns (uint256)'];
 const token = new ethers.Contract('0x60E1773636CF5E4A227d9AC24F20fEca034ee25A', abi, provider);
@@ -164,12 +164,12 @@ console.log(ethers.formatUnits(balance, 18));
 {% endtab %}
 
 {% tab title="Viem" %}
-{% code title="viem-example.js" %}
+{% code title="viem-example.js" overflow="wrap" %}
 ```javascript
 import { createPublicClient, http } from 'viem';
 import { filecoin } from 'viem/chains';
 
-const client = createPublicClient({ chain: filecoin, transport: http('https://go.getblock.io/<ACCESS-TOKEN>/') });
+const client = createPublicClient({ chain: filecoin, transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') });
 
 const balance = await client.readContract({
     address: '0x60E1773636CF5E4A227d9AC24F20fEca034ee25A',
