@@ -9,13 +9,13 @@ On GetBlock's unified endpoint, **Asset Hub is the default network** and the **R
 {% tabs %}
 {% tab title="Asset Hub (default)" %}
 ```bash
-curl 'https://go.getblock.io/<ACCESS-TOKEN>/blocks/head'
+curl 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks/head'
 ```
 {% endtab %}
 
 {% tab title="Relaychain (/rc)" %}
 ```bash
-curl 'https://go.getblock.io/<ACCESS-TOKEN>/rc/blocks/head'
+curl 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/rc/blocks/head'
 ```
 {% endtab %}
 {% endtabs %}
