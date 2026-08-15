@@ -1,3 +1,9 @@
+---
+description: >-
+  JSON-RPC API reference for Polkadot Asset Hub. Explore method list, request
+  examples, and how to connect to GetBlock's Asset Hub RPC endpoints
+---
+
 # Asset Hub JSON-RPC API (Primary Network)
 
 Asset Hub is a system parachain and the primary network for fungible assets and NFTs on Polkadot. It runs the standard Substrate runtime plus the asset pallets (Assets, Foreign Assets, Pool Assets, and NFTs), and it is positioned to hold balances and tokens on behalf of the wider network.
@@ -9,13 +15,13 @@ Because Asset Hub is a Substrate chain, its JSON-RPC interface is the **same met
 {% tabs %}
 {% tab title="HTTPS" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 
 {% tab title="WebSocket" %}
 ```bash
-wss://go.getblock.io/<ACCESS-TOKEN>/
+wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 {% endtabs %}
@@ -82,6 +88,6 @@ For NFTs, the same pattern applies against the `Nfts` (and legacy `Uniques`) pal
 
 ## See Also
 
-* [**Polkadot JSON-RPC API (Relaychain)**](polkadot-json-rpc-api-relaychain/)&#x20;
+* [**Polkadot JSON-RPC API (Relaychain)**](polkadot-json-rpc-api-relaychain/)
 * [Substrate API Sidecar](substrate-api-sidecar-assethub-+-relaychain/)
 * [Asset Hub overview](https://wiki.polkadot.network/docs/learn-assets)

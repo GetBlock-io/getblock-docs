@@ -1,3 +1,9 @@
+---
+description: >-
+  JSON-RPC API reference for the Polkadot Relaychain. Explore method list,
+  request examples, and how to connect to GetBlock's Polkadot RPC endpoints
+---
+
 # Polkadot JSON-RPC API (Relaychain)
 
 The Polkadot JSON-RPC API exposes the relay chain's Substrate node interface over JSON-RPC 2.0. Methods are grouped into namespaces (`chain_`, `state_`, `system_`, `payment_`, `grandpa_`, and others). Requests `POST` a JSON-RPC 2.0 body to the endpoint; the method is selected by the body.

@@ -1,18 +1,16 @@
 ---
 description: >-
-  Example code for the account_nextIndex JSON RPC method. Complete guide on how
-  to use account_nextIndex JSON RPC in GetBlock Web3 documentation.
+  Example code for the system_syncState JSON RPC method. Complete guide on how
+  to use system_syncState JSON RPC in GetBlock Web3 documentation.
 ---
 
-# account\_nextIndex - Polkadot
+# system\_syncState - Polkadot
 
-This method returns the next nonce for an account, including any transactions already queued in the pool. It is an alias of `system_accountNextIndex`.
+This method returns the sync state of the node: the block it started syncing from, the current block, and the highest known block.
 
 ## Parameters
 
-| Parameter | Type   | Required | Description          |
-| --------- | ------ | -------- | -------------------- |
-| accountId | string | Yes      | SS58 account address |
+This method does not accept any parameters.
 
 ## Request
 
@@ -22,7 +20,7 @@ This method returns the next nonce for an account, including any transactions al
 ```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0", "method": "account_nextIndex", "params": ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"], "id": "getblock.io"}'
+--data-raw '{"jsonrpc": "2.0", "method": "system_syncState", "params": [], "id": "getblock.io"}'
 ```
 {% endcode %}
 {% endtab %}
@@ -35,8 +33,8 @@ const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
         jsonrpc: '2.0',
-        method: 'account_nextIndex',
-        params: ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
+        method: 'system_syncState',
+        params: [],
         id: 'getblock.io'
     })
 });
@@ -57,8 +55,8 @@ response = requests.post(
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'account_nextIndex',
-        'params': ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
+        'method': 'system_syncState',
+        'params': [],
         'id': 'getblock.io'
     }
 )
@@ -75,24 +73,36 @@ print(response.json()['result'])
 {
     "id": "getblock.io",
     "jsonrpc": "2.0",
-    "result": 1234
+    "result": {
+        "startingBlock": 6750000,
+        "currentBlock": 6754362,
+        "highestBlock": 6754362
+    }
 }
 ```
 
 ## Response Parameters
 
-| Parameter | Type    | Description                                               |
-| --------- | ------- | --------------------------------------------------------- |
-| id        | string  | Request identifier matching the request                   |
-| jsonrpc   | string  | JSON-RPC protocol version ("2.0")                         |
-| result    | integer | The next nonce (transaction index) to use for the account |
+| Parameter | Type   | Description                             |
+| --------- | ------ | --------------------------------------- |
+| id        | string | Request identifier matching the request |
+| jsonrpc   | string | JSON-RPC protocol version ("2.0")       |
+| result    | object | Sync state object                       |
+
+### Result Object
+
+| Field         | Type    | Description                         |
+| ------------- | ------- | ----------------------------------- |
+| startingBlock | integer | Block the node started syncing from |
+| currentBlock  | integer | Block the node has synced to        |
+| highestBlock  | integer | Highest block known to the node     |
 
 ## Use Cases
 
-* **Transaction Building**: Set the nonce for a new extrinsic
-* **Sequencing**: Order multiple extrinsics from one account
-* **Pool Awareness**: Account for pending transactions in the nonce
-* **Wallet Backends**: Compute nonces server-side before signing
+* **Sync Monitoring**: Track how far a node has synced
+* **Readiness Checks**: Confirm currentBlock has reached highestBlock
+* **Lag Detection**: Measure the gap between current and highest blocks
+* **Dashboards**: Display sync progress
 
 ## Error Handling
 
@@ -104,7 +114,7 @@ print(response.json()['result'])
 
 ## Library Integration
 
-The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.accountNextIndex`.
+The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.syncState`.
 
 {% code title="polkadot-js.js" %}
 ```javascript
@@ -113,7 +123,7 @@ import { ApiPromise, WsProvider } from '@polkadot/api';
 const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
-const result = await api.rpc.system.accountNextIndex('15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5');
+const result = await api.rpc.system.syncState();
 console.log(result.toHuman());
 ```
 {% endcode %}

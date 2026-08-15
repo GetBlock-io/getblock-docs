@@ -1,12 +1,12 @@
 ---
 description: >-
-  Example code for the account_nextIndex JSON RPC method. Complete guide on how
-  to use account_nextIndex JSON RPC in GetBlock Web3 documentation.
+  Example code for the system_accountNextIndex JSON RPC method. Complete guide
+  on how to use system_accountNextIndex JSON RPC in GetBlock Web3 documentation.
 ---
 
-# account\_nextIndex - Polkadot
+# system\_accountNextIndex - Polkadot
 
-This method returns the next nonce for an account, including any transactions already queued in the pool. It is an alias of `system_accountNextIndex`.
+This method returns the next nonce for an account, including transactions already in the pool. It is used to sequence extrinsics from a sender.
 
 ## Parameters
 
@@ -22,7 +22,7 @@ This method returns the next nonce for an account, including any transactions al
 ```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0", "method": "account_nextIndex", "params": ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"], "id": "getblock.io"}'
+--data-raw '{"jsonrpc": "2.0", "method": "system_accountNextIndex", "params": ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"], "id": "getblock.io"}'
 ```
 {% endcode %}
 {% endtab %}
@@ -35,7 +35,7 @@ const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
         jsonrpc: '2.0',
-        method: 'account_nextIndex',
+        method: 'system_accountNextIndex',
         params: ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
         id: 'getblock.io'
     })
@@ -57,7 +57,7 @@ response = requests.post(
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'account_nextIndex',
+        'method': 'system_accountNextIndex',
         'params': ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
         'id': 'getblock.io'
     }
@@ -81,18 +81,18 @@ print(response.json()['result'])
 
 ## Response Parameters
 
-| Parameter | Type    | Description                                               |
-| --------- | ------- | --------------------------------------------------------- |
-| id        | string  | Request identifier matching the request                   |
-| jsonrpc   | string  | JSON-RPC protocol version ("2.0")                         |
-| result    | integer | The next nonce (transaction index) to use for the account |
+| Parameter | Type    | Description                             |
+| --------- | ------- | --------------------------------------- |
+| id        | string  | Request identifier matching the request |
+| jsonrpc   | string  | JSON-RPC protocol version ("2.0")       |
+| result    | integer | The next nonce to use for the account   |
 
 ## Use Cases
 
 * **Transaction Building**: Set the nonce for a new extrinsic
-* **Sequencing**: Order multiple extrinsics from one account
-* **Pool Awareness**: Account for pending transactions in the nonce
-* **Wallet Backends**: Compute nonces server-side before signing
+* **Sequencing**: Order multiple extrinsics from one sender
+* **Pool Awareness**: Account for pending transactions
+* **Wallet Backends**: Compute nonces before signing
 
 ## Error Handling
 

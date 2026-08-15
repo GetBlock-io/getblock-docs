@@ -1,18 +1,16 @@
 ---
 description: >-
-  Example code for the account_nextIndex JSON RPC method. Complete guide on how
-  to use account_nextIndex JSON RPC in GetBlock Web3 documentation.
+  Example code for the system_nodeRoles JSON RPC method. Complete guide on how
+  to use system_nodeRoles JSON RPC in GetBlock Web3 documentation.
 ---
 
-# account\_nextIndex - Polkadot
+# system\_nodeRoles - Polkadot
 
-This method returns the next nonce for an account, including any transactions already queued in the pool. It is an alias of `system_accountNextIndex`.
+This method returns the roles the node performs on the network, such as Full or Authority.
 
 ## Parameters
 
-| Parameter | Type   | Required | Description          |
-| --------- | ------ | -------- | -------------------- |
-| accountId | string | Yes      | SS58 account address |
+This method does not accept any parameters.
 
 ## Request
 
@@ -22,7 +20,7 @@ This method returns the next nonce for an account, including any transactions al
 ```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0", "method": "account_nextIndex", "params": ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"], "id": "getblock.io"}'
+--data-raw '{"jsonrpc": "2.0", "method": "system_nodeRoles", "params": [], "id": "getblock.io"}'
 ```
 {% endcode %}
 {% endtab %}
@@ -35,8 +33,8 @@ const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
         jsonrpc: '2.0',
-        method: 'account_nextIndex',
-        params: ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
+        method: 'system_nodeRoles',
+        params: [],
         id: 'getblock.io'
     })
 });
@@ -57,8 +55,8 @@ response = requests.post(
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'account_nextIndex',
-        'params': ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
+        'method': 'system_nodeRoles',
+        'params': [],
         'id': 'getblock.io'
     }
 )
@@ -75,24 +73,26 @@ print(response.json()['result'])
 {
     "id": "getblock.io",
     "jsonrpc": "2.0",
-    "result": 1234
+    "result": [
+        "Full"
+    ]
 }
 ```
 
 ## Response Parameters
 
-| Parameter | Type    | Description                                               |
-| --------- | ------- | --------------------------------------------------------- |
-| id        | string  | Request identifier matching the request                   |
-| jsonrpc   | string  | JSON-RPC protocol version ("2.0")                         |
-| result    | integer | The next nonce (transaction index) to use for the account |
+| Parameter | Type   | Description                             |
+| --------- | ------ | --------------------------------------- |
+| id        | string | Request identifier matching the request |
+| jsonrpc   | string | JSON-RPC protocol version ("2.0")       |
+| result    | array  | Array of node roles                     |
 
 ## Use Cases
 
-* **Transaction Building**: Set the nonce for a new extrinsic
-* **Sequencing**: Order multiple extrinsics from one account
-* **Pool Awareness**: Account for pending transactions in the nonce
-* **Wallet Backends**: Compute nonces server-side before signing
+* **Role Detection**: Determine whether a node is an authority
+* **Routing**: Route requests based on node role
+* **Diagnostics**: Confirm the expected node role
+* **Monitoring**: Track roles across a fleet
 
 ## Error Handling
 
@@ -104,7 +104,7 @@ print(response.json()['result'])
 
 ## Library Integration
 
-The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.accountNextIndex`.
+The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.nodeRoles`.
 
 {% code title="polkadot-js.js" %}
 ```javascript
@@ -113,7 +113,7 @@ import { ApiPromise, WsProvider } from '@polkadot/api';
 const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
-const result = await api.rpc.system.accountNextIndex('15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5');
+const result = await api.rpc.system.nodeRoles();
 console.log(result.toHuman());
 ```
 {% endcode %}

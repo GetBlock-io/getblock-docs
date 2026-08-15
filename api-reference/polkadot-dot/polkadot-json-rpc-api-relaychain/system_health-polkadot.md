@@ -1,18 +1,16 @@
 ---
 description: >-
-  Example code for the account_nextIndex JSON RPC method. Complete guide on how
-  to use account_nextIndex JSON RPC in GetBlock Web3 documentation.
+  Example code for the system_health JSON RPC method. Complete guide on how to
+  use system_health JSON RPC in GetBlock Web3 documentation.
 ---
 
-# account\_nextIndex - Polkadot
+# system\_health - Polkadot
 
-This method returns the next nonce for an account, including any transactions already queued in the pool. It is an alias of `system_accountNextIndex`.
+This method returns the health of the node, including its peer count, whether it is syncing, and whether it is expected to have peers.
 
 ## Parameters
 
-| Parameter | Type   | Required | Description          |
-| --------- | ------ | -------- | -------------------- |
-| accountId | string | Yes      | SS58 account address |
+This method does not accept any parameters.
 
 ## Request
 
@@ -22,7 +20,7 @@ This method returns the next nonce for an account, including any transactions al
 ```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0", "method": "account_nextIndex", "params": ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"], "id": "getblock.io"}'
+--data-raw '{"jsonrpc": "2.0", "method": "system_health", "params": [], "id": "getblock.io"}'
 ```
 {% endcode %}
 {% endtab %}
@@ -35,8 +33,8 @@ const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
         jsonrpc: '2.0',
-        method: 'account_nextIndex',
-        params: ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
+        method: 'system_health',
+        params: [],
         id: 'getblock.io'
     })
 });
@@ -57,8 +55,8 @@ response = requests.post(
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'account_nextIndex',
-        'params': ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
+        'method': 'system_health',
+        'params': [],
         'id': 'getblock.io'
     }
 )
@@ -75,24 +73,36 @@ print(response.json()['result'])
 {
     "id": "getblock.io",
     "jsonrpc": "2.0",
-    "result": 1234
+    "result": {
+        "isSyncing": false,
+        "peers": 21,
+        "shouldHavePeers": true
+    }
 }
 ```
 
 ## Response Parameters
 
-| Parameter | Type    | Description                                               |
-| --------- | ------- | --------------------------------------------------------- |
-| id        | string  | Request identifier matching the request                   |
-| jsonrpc   | string  | JSON-RPC protocol version ("2.0")                         |
-| result    | integer | The next nonce (transaction index) to use for the account |
+| Parameter | Type   | Description                             |
+| --------- | ------ | --------------------------------------- |
+| id        | string | Request identifier matching the request |
+| jsonrpc   | string | JSON-RPC protocol version ("2.0")       |
+| result    | object | Node health object                      |
+
+### Result Object
+
+| Field           | Type    | Description                                |
+| --------------- | ------- | ------------------------------------------ |
+| peers           | integer | Number of connected peers                  |
+| isSyncing       | boolean | Whether the node is currently syncing      |
+| shouldHavePeers | boolean | Whether the node is expected to have peers |
 
 ## Use Cases
 
-* **Transaction Building**: Set the nonce for a new extrinsic
-* **Sequencing**: Order multiple extrinsics from one account
-* **Pool Awareness**: Account for pending transactions in the nonce
-* **Wallet Backends**: Compute nonces server-side before signing
+* **Health Checks**: Confirm a node is connected and synced
+* **Load Balancing**: Route away from syncing or peerless nodes
+* **Monitoring**: Alert on low peer counts
+* **Readiness Probes**: Gate traffic on node health
 
 ## Error Handling
 
@@ -104,7 +114,7 @@ print(response.json()['result'])
 
 ## Library Integration
 
-The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.accountNextIndex`.
+The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.health`.
 
 {% code title="polkadot-js.js" %}
 ```javascript
@@ -113,7 +123,7 @@ import { ApiPromise, WsProvider } from '@polkadot/api';
 const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
-const result = await api.rpc.system.accountNextIndex('15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5');
+const result = await api.rpc.system.health();
 console.log(result.toHuman());
 ```
 {% endcode %}

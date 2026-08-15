@@ -1,18 +1,18 @@
 ---
 description: >-
-  Example code for the account_nextIndex JSON RPC method. Complete guide on how
-  to use account_nextIndex JSON RPC in GetBlock Web3 documentation.
+  Example code for the grandpa_proveFinality JSON RPC method. Complete guide on
+  how to use grandpa_proveFinality JSON RPC in GetBlock Web3 documentation.
 ---
 
-# account\_nextIndex - Polkadot
+# grandpa\_proveFinality - Polkadot
 
-This method returns the next nonce for an account, including any transactions already queued in the pool. It is an alias of `system_accountNextIndex`.
+This method returns a GRANDPA finality proof for a given block number, if available. The proof can be used by light clients to verify finality.
 
 ## Parameters
 
-| Parameter | Type   | Required | Description          |
-| --------- | ------ | -------- | -------------------- |
-| accountId | string | Yes      | SS58 account address |
+| Parameter   | Type    | Required | Description                        |
+| ----------- | ------- | -------- | ---------------------------------- |
+| blockNumber | integer | Yes      | Block number to prove finality for |
 
 ## Request
 
@@ -22,7 +22,7 @@ This method returns the next nonce for an account, including any transactions al
 ```bash
 curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '{"jsonrpc": "2.0", "method": "account_nextIndex", "params": ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"], "id": "getblock.io"}'
+--data-raw '{"jsonrpc": "2.0", "method": "grandpa_proveFinality", "params": [6754000], "id": "getblock.io"}'
 ```
 {% endcode %}
 {% endtab %}
@@ -35,8 +35,8 @@ const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
         jsonrpc: '2.0',
-        method: 'account_nextIndex',
-        params: ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
+        method: 'grandpa_proveFinality',
+        params: [6754000],
         id: 'getblock.io'
     })
 });
@@ -57,8 +57,8 @@ response = requests.post(
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'account_nextIndex',
-        'params': ["15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"],
+        'method': 'grandpa_proveFinality',
+        'params': [6754000],
         'id': 'getblock.io'
     }
 )
@@ -75,24 +75,24 @@ print(response.json()['result'])
 {
     "id": "getblock.io",
     "jsonrpc": "2.0",
-    "result": 1234
+    "result": "0x0a01...c3"
 }
 ```
 
 ## Response Parameters
 
-| Parameter | Type    | Description                                               |
-| --------- | ------- | --------------------------------------------------------- |
-| id        | string  | Request identifier matching the request                   |
-| jsonrpc   | string  | JSON-RPC protocol version ("2.0")                         |
-| result    | integer | The next nonce (transaction index) to use for the account |
+| Parameter | Type   | Description                                      |
+| --------- | ------ | ------------------------------------------------ |
+| id        | string | Request identifier matching the request          |
+| jsonrpc   | string | JSON-RPC protocol version ("2.0")                |
+| result    | string | Encoded finality proof, or null if not available |
 
 ## Use Cases
 
-* **Transaction Building**: Set the nonce for a new extrinsic
-* **Sequencing**: Order multiple extrinsics from one account
-* **Pool Awareness**: Account for pending transactions in the nonce
-* **Wallet Backends**: Compute nonces server-side before signing
+* **Light Clients**: Verify block finality without a full node
+* **Bridges**: Prove finalized state to another chain
+* **Trust-Minimized Sync**: Follow the chain via finality proofs
+* **Audits**: Produce verifiable finality evidence
 
 ## Error Handling
 
@@ -104,7 +104,7 @@ print(response.json()['result'])
 
 ## Library Integration
 
-The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.system.accountNextIndex`.
+The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`), which connects over WebSocket and exposes the method as `api.rpc.grandpa.proveFinality`.
 
 {% code title="polkadot-js.js" %}
 ```javascript
@@ -113,7 +113,7 @@ import { ApiPromise, WsProvider } from '@polkadot/api';
 const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
-const result = await api.rpc.system.accountNextIndex('15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5');
+const result = await api.rpc.grandpa.proveFinality(6754000);
 console.log(result.toHuman());
 ```
 {% endcode %}

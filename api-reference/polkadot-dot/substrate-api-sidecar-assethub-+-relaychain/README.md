@@ -1,3 +1,10 @@
+---
+description: >-
+  Substrate API Sidecar REST reference for Polkadot Asset Hub and Relaychain.
+  Explore endpoint list, request examples, and how to connect to GetBlock's
+  Polkadot endpoints
+---
+
 # Substrate API Sidecar (AssetHub + Relaychain)
 
 Substrate API Sidecar is a REST service that runs on top of a Substrate node and returns decoded JSON, allowing clients to read chain data without computing storage keys or decoding SCALE. It complements the JSON-RPC surfaces with high-level, ready-to-use endpoints for accounts, blocks, staking, pallets, and transactions.
