@@ -1,4 +1,4 @@
-# account\_nextindex
+# account\_nextindex - Polkadot
 
 This method returns the next nonce for an account, including any transactions already queued in the pool. It is an alias of `system_accountNextIndex`.
 

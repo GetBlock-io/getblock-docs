@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Polkadot nodes via JSON-RPC API.
+  Connect to the Polkadot network without running your own infrastructure.
+---
+
 # Polkadot (DOT)
 
 Polkadot is a Layer 0 protocol that connects and secures a network of application-specific Layer 1 blockchains. It is a Substrate-based chain, so it does not use the EVM or the Ethereum JSON-RPC API. The native token is **DOT**, whose base unit is the Planck (1 DOT = 10^10 Planck). Consensus is Nominated Proof of Stake (NPoS), with BABE for block production and GRANDPA for finality.
