@@ -1,4 +1,10 @@
-# node\_transaction pool
+---
+description: >-
+  Example code for the /node/transaction-pool REST method. Complete guide on how
+  to use /node/transaction-pool REST in GetBlock Web3 documentation.
+---
+
+# /node/transaction-pool - Polkadot
 
 This endpoint returns the extrinsics currently in the node's transaction pool.
 
@@ -24,7 +30,7 @@ GET /node/transaction-pool
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/node/transaction-pool'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/node/transaction-pool'
 ```
 {% endcode %}
 {% endtab %}
@@ -32,7 +38,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/node/transaction-pool'
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/node/transaction-pool');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/node/transaction-pool');
 const data = await response.json();
 console.log(data);
 ```
@@ -44,7 +50,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/node/transaction-pool')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/node/transaction-pool')
 print(response.json())
 ```
 {% endcode %}

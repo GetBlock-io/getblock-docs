@@ -1,4 +1,11 @@
-# accounts\_asset balances
+---
+description: >-
+  Example code for the /accounts/{accountId}/asset-balances REST method.
+  Complete guide on how to use /accounts/{accountId}/asset-balances REST in
+  GetBlock Web3 documentation.
+---
+
+# /accounts/{accountId}/asset-balances - Polkadot
 
 This endpoint returns an account's balances for Asset Hub assets. Specific asset IDs can be requested with the assets query parameter.
 
@@ -31,7 +38,7 @@ GET /accounts/{accountId}/asset-balances
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/asset-balances?assets[]=1984'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/asset-balances?assets[]=1984'
 ```
 {% endcode %}
 {% endtab %}
@@ -39,7 +46,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW
 {% tab title="JavaScript" %}
 {% code title="example.js" overflow="wrap" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/asset-balances?assets[]=1984');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/asset-balances?assets[]=1984');
 const data = await response.json();
 console.log(data);
 ```
@@ -47,11 +54,11 @@ console.log(data);
 {% endtab %}
 
 {% tab title="Python" %}
-{% code title="example.py" %}
+{% code title="example.py" overflow="wrap" %}
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/asset-balances?assets[]=1984')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/asset-balances?assets[]=1984')
 print(response.json())
 ```
 {% endcode %}

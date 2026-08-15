@@ -1,4 +1,10 @@
-# transaction\_material
+---
+description: >-
+  Example code for the /transaction/material REST method. Complete guide on how
+  to use /transaction/material REST in GetBlock Web3 documentation.
+---
+
+# /transaction/material - Polkadot
 
 This endpoint returns the data needed to construct and sign a transaction offline: the genesis hash, chain name, spec and transaction versions, and metadata.
 
@@ -24,14 +30,14 @@ GET /transaction/material
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/transaction/material'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/transaction/material'
 ```
 {% endtab %}
 
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/transaction/material');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/transaction/material');
 const data = await response.json();
 console.log(data);
 ```
@@ -43,7 +49,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/transaction/material')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/transaction/material')
 print(response.json())
 ```
 {% endcode %}

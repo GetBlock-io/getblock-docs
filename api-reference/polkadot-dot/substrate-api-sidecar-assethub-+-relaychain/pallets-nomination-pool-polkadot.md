@@ -1,4 +1,11 @@
-# pallets\_nomination pool
+---
+description: >-
+  Example code for the /pallets/nomination-pools/{poolId} REST method. Complete
+  guide on how to use /pallets/nomination-pools/{poolId} REST in GetBlock Web3
+  documentation.
+---
+
+# /pallets/nomination-pools/{poolId} - Polkadot
 
 This endpoint returns the details of a nomination pool: its state, points, member count, and bonded account.
 
@@ -30,7 +37,7 @@ GET /pallets/nomination-pools/{poolId}
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/pallets/nomination-pools/12'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/nomination-pools/12'
 ```
 {% endcode %}
 {% endtab %}
@@ -38,7 +45,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/pallets/nomination-pools/
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/pallets/nomination-pools/12');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/nomination-pools/12');
 const data = await response.json();
 console.log(data);
 ```
@@ -50,7 +57,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/pallets/nomination-pools/12')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/nomination-pools/12')
 print(response.json())
 ```
 {% endcode %}

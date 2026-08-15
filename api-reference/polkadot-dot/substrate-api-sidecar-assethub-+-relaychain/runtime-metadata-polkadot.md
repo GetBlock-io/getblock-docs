@@ -1,4 +1,10 @@
-# runtime\_metadata
+---
+description: >-
+  Example code for the /runtime/metadata REST method. Complete guide on how to
+  use /runtime/metadata REST in GetBlock Web3 documentation.
+---
+
+# /runtime/metadata - Polkadot
 
 This endpoint returns the runtime metadata as decoded JSON. The metadata version can be selected with the version query parameter.
 
@@ -25,7 +31,7 @@ GET /runtime/metadata
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/runtime/metadata?version=15'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/runtime/metadata?version=15'
 ```
 {% endcode %}
 {% endtab %}
@@ -33,7 +39,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/runtime/metadata?version=
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/runtime/metadata?version=15');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/runtime/metadata?version=15');
 const data = await response.json();
 console.log(data);
 ```
@@ -45,7 +51,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/runtime/metadata?version=15')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/runtime/metadata?version=15')
 print(response.json())
 ```
 {% endcode %}

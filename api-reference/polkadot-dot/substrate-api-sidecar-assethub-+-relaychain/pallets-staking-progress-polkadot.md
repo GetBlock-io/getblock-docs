@@ -1,4 +1,10 @@
-# pallets\_staking progress
+---
+description: >-
+  Example code for the /pallets/staking/progress REST method. Complete guide on
+  how to use /pallets/staking/progress REST in GetBlock Web3 documentation.
+---
+
+# /pallets/staking/progress - Polkadot
 
 This endpoint returns the current staking system status: the active era, session progress, and the timing of the next era and unapplied slashes.
 
@@ -24,7 +30,7 @@ GET /pallets/staking/progress
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/progress'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/staking/progress'
 ```
 {% endcode %}
 {% endtab %}
@@ -32,7 +38,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/progress'
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/progress');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/staking/progress');
 const data = await response.json();
 console.log(data);
 ```
@@ -44,7 +50,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/progress')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/staking/progress')
 print(response.json())
 ```
 {% endcode %}

@@ -1,4 +1,10 @@
-# transaction\_submit
+---
+description: >-
+  Example code for the /transaction REST method. Complete guide on how to use
+  /transaction REST in GetBlock Web3 documentation.
+---
+
+# /transaction - Polkadot
 
 This endpoint submits a signed, SCALE-encoded transaction to the network and returns its hash.
 
@@ -24,7 +30,7 @@ POST /transaction
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/transaction' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/transaction' \
 --header 'Content-Type: application/json' \
 --data-raw '{"tx": "0x4d028400d43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d01..."}'
 ```
@@ -34,7 +40,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/transactio
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/transaction', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/transaction', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -53,7 +59,7 @@ console.log(data);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/transaction',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/transaction',
     json={
   "tx": "0x4d028400d43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d01..."
 }

@@ -1,4 +1,10 @@
-# blocks\_head
+---
+description: >-
+  Example code for the /blocks/head REST method. Complete guide on how to use
+  /blocks/head REST in GetBlock Web3 documentation.
+---
+
+# /blocks/head - Polkadot
 
 This endpoint returns the most recent block, including its extrinsics, events grouped by phase, and author. The finalized head can be requested with the finalized query parameter.
 
@@ -26,7 +32,7 @@ GET /blocks/head
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/blocks/head'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks/head'
 ```
 {% endcode %}
 {% endtab %}
@@ -34,7 +40,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/blocks/head'
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/blocks/head');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks/head');
 const data = await response.json();
 console.log(data);
 ```
@@ -46,7 +52,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/blocks/head')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks/head')
 print(response.json())
 ```
 {% endcode %}

@@ -1,4 +1,11 @@
-# accounts\_staking info
+---
+description: >-
+  Example code for the /accounts/{accountId}/staking-info REST method. Complete
+  guide on how to use /accounts/{accountId}/staking-info REST in GetBlock Web3
+  documentation.
+---
+
+# /accounts/{accountId}/staking-info - Polkadot
 
 This endpoint returns the staking information for a stash account, including the controller, reward destination, and the bonded, active, and unlocking amounts.
 
@@ -30,7 +37,7 @@ GET /accounts/{accountId}/staking-info
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/staking-info'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/staking-info'
 ```
 {% endcode %}
 {% endtab %}
@@ -38,7 +45,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/staking-info');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/staking-info');
 const data = await response.json();
 console.log(data);
 ```
@@ -50,7 +57,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/staking-info')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/staking-info')
 print(response.json())
 ```
 {% endcode %}

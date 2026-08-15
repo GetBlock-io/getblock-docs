@@ -1,4 +1,10 @@
-# node\_version
+---
+description: >-
+  Example code for the /node/version REST method. Complete guide on how to use
+  /node/version REST in GetBlock Web3 documentation.
+---
+
+# /node/version - Polkadot
 
 This endpoint returns the node's client version, implementation name, and the chain it is connected to.
 
@@ -18,7 +24,7 @@ GET /node/version
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/node/version'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/node/version'
 ```
 {% endcode %}
 {% endtab %}
@@ -26,7 +32,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/node/version'
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/node/version');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/node/version');
 const data = await response.json();
 console.log(data);
 ```
@@ -38,7 +44,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/node/version')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/node/version')
 print(response.json())
 ```
 {% endcode %}

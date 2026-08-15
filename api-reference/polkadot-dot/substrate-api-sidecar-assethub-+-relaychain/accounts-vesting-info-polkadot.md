@@ -1,4 +1,11 @@
-# accounts\_vesting info
+---
+description: >-
+  Example code for the /accounts/{accountId}/vesting-info REST method. Complete
+  guide on how to use /accounts/{accountId}/vesting-info REST in GetBlock Web3
+  documentation.
+---
+
+# /accounts/{accountId}/vesting-info - Polkadot
 
 This endpoint returns the vesting schedules for an account, including the locked amount, the per-block unlock, and the starting block of each schedule.
 
@@ -30,7 +37,7 @@ GET /accounts/{accountId}/vesting-info
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/vesting-info'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/vesting-info'
 ```
 {% endcode %}
 {% endtab %}
@@ -38,7 +45,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/vesting-info');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/vesting-info');
 const data = await response.json();
 console.log(data);
 ```
@@ -50,7 +57,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/vesting-info')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/accounts/15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5/vesting-info')
 print(response.json())
 ```
 {% endcode %}

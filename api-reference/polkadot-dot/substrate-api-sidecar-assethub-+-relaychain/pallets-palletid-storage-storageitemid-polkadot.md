@@ -1,4 +1,11 @@
-# pallets\_storage item
+---
+description: >-
+  Example code for the /pallets/{palletId}/storage/{storageItemId} REST method.
+  Complete guide on how to use/pallets/{palletId}/storage/{storageItemId} REST
+  in GetBlock Web3 documentation.
+---
+
+# /pallets/{palletId}/storage/{storageItemId} - Polkadot
 
 This endpoint returns the decoded value of a storage item in a pallet, resolving the required keys. It removes the need to compute storage keys or decode SCALE manually.
 
@@ -32,15 +39,15 @@ GET /pallets/{palletId}/storage/{storageItemId}
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/storage/ledger?keys[]=15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/staking/storage/ledger?keys[]=15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5'
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="JavaScript" %}
-{% code title="example.js" %}
+{% code title="example.js" overflow="wrap" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/storage/ledger?keys[]=15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/staking/storage/ledger?keys[]=15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5');
 const data = await response.json();
 console.log(data);
 ```
@@ -48,11 +55,11 @@ console.log(data);
 {% endtab %}
 
 {% tab title="Python" %}
-{% code title="example.py" %}
+{% code title="example.py" overflow="wrap" %}
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/storage/ledger?keys[]=15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/staking/storage/ledger?keys[]=15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5')
 print(response.json())
 ```
 {% endcode %}

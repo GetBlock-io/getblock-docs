@@ -1,4 +1,4 @@
-# blocks\_blockId
+# /blocks/{blockId} - Polkadot
 
 This endpoint returns a block by its number or hash, with decoded extrinsics and events. It is the historical counterpart of `/blocks/head`.
 
@@ -31,15 +31,15 @@ GET /blocks/{blockId}
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/blocks/6754362'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks/6754362'
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="JavaScript" %}
-{% code title="example.js" %}
+{% code title="example.js" overflow="wrap" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/blocks/6754362');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks/6754362');
 const data = await response.json();
 console.log(data);
 ```
@@ -47,11 +47,11 @@ console.log(data);
 {% endtab %}
 
 {% tab title="Python" %}
-{% code title="example.py" %}
+{% code title="example.py" overflow="wrap" %}
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/blocks/6754362')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks/6754362')
 print(response.json())
 ```
 {% endcode %}

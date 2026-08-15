@@ -1,4 +1,10 @@
-# runtime\_spec
+---
+description: >-
+  Example code for the /runtime/spec REST method. Complete guide on how to use
+  /runtime/spec REST in GetBlock Web3 documentation.
+---
+
+# /runtime/spec - Polkadot
 
 This endpoint returns the runtime specification: the spec name and version, transaction version, and chain properties such as token symbol and decimals.
 
@@ -24,7 +30,7 @@ GET /runtime/spec
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/runtime/spec'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/runtime/spec'
 ```
 {% endcode %}
 {% endtab %}
@@ -32,7 +38,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/runtime/spec'
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/runtime/spec');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/runtime/spec');
 const data = await response.json();
 console.log(data);
 ```
@@ -44,7 +50,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/runtime/spec')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/runtime/spec')
 print(response.json())
 ```
 {% endcode %}

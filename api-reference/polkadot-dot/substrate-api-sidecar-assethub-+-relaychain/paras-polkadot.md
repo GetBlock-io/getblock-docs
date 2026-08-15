@@ -1,4 +1,10 @@
-# paras
+---
+description: >-
+  Example code for the /paras REST method. Complete guide on how to use /paras
+  REST in GetBlock Web3 documentation.
+---
+
+# /paras - Polkadot
 
 This endpoint returns the parachains registered on the relay chain and their lifecycle status. It is a relay-chain endpoint.
 
@@ -20,7 +26,7 @@ GET /paras
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/paras'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/paras'
 ```
 {% endcode %}
 {% endtab %}
@@ -28,7 +34,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/paras'
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/paras');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/paras');
 const data = await response.json();
 console.log(data);
 ```
@@ -40,7 +46,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/paras')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/paras')
 print(response.json())
 ```
 {% endcode %}

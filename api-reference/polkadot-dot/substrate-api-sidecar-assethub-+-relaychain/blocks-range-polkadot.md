@@ -1,4 +1,10 @@
-# blocks\_range
+---
+description: >-
+  Example code for the /blocks REST method. Complete guide on how to use /blocks
+  REST in GetBlock Web3 documentation.
+---
+
+# /blocks - Polkadot
 
 This endpoint returns a range of blocks in a single call, decoded like /blocks/{blockId}. The range is limited to keep responses bounded.
 
@@ -24,7 +30,7 @@ GET /blocks
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/blocks?range=6754360-6754362'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks?range=6754360-6754362'
 ```
 {% endcode %}
 {% endtab %}
@@ -32,7 +38,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/blocks?range=6754360-6754
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/blocks?range=6754360-6754362');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks?range=6754360-6754362');
 const data = await response.json();
 console.log(data);
 ```
@@ -44,7 +50,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/blocks?range=6754360-6754362')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/blocks?range=6754360-6754362')
 print(response.json())
 ```
 {% endcode %}

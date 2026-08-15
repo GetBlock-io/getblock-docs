@@ -1,4 +1,11 @@
-# pallets\_assets info
+---
+description: >-
+  Example code for the /pallets/assets/{assetId}/asset-info REST method.
+  Complete guide on how to use /pallets/assets/{assetId}/asset-info REST in
+  GetBlock Web3 documentation.
+---
+
+# /pallets/assets/{assetId}/asset-info - Polkadot
 
 This endpoint returns the details and metadata of an Asset Hub asset, including its owner, total supply, minimum balance, and its name, symbol, and decimals.
 
@@ -30,7 +37,7 @@ GET /pallets/assets/{assetId}/asset-info
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/pallets/assets/1984/asset-info'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/assets/1984/asset-info'
 ```
 {% endcode %}
 {% endtab %}
@@ -38,7 +45,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/pallets/assets/1984/asset
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/pallets/assets/1984/asset-info');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/assets/1984/asset-info');
 const data = await response.json();
 console.log(data);
 ```
@@ -50,7 +57,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/pallets/assets/1984/asset-info')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/assets/1984/asset-info')
 print(response.json())
 ```
 {% endcode %}

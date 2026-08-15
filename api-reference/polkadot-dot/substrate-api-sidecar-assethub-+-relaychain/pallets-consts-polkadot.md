@@ -1,4 +1,10 @@
-# pallets\_consts
+---
+description: >-
+  Example code for the /pallets/{palletId}/consts REST method. Complete guide on
+  how to use /pallets/{palletId}/consts REST in GetBlock Web3 documentation.
+---
+
+# /pallets/{palletId}/consts - Polkadot
 
 This endpoint returns the constants defined by a pallet, such as bonding durations or deposit amounts.
 
@@ -30,7 +36,7 @@ GET /pallets/{palletId}/consts
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/consts'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/staking/consts'
 ```
 {% endcode %}
 {% endtab %}
@@ -38,7 +44,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/consts'
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/consts');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/staking/consts');
 const data = await response.json();
 console.log(data);
 ```
@@ -50,7 +56,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/pallets/staking/consts')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/pallets/staking/consts')
 print(response.json())
 ```
 {% endcode %}

@@ -1,4 +1,10 @@
-# paras\_leases current
+---
+description: >-
+  Example code for the /paras/leases/current REST method. Complete guide on how
+  to use /paras/leases/current REST in GetBlock Web3 documentation.
+---
+
+# /paras/leases/current - Polkadot
 
 This endpoint returns the current parachain lease period and the parachains that currently hold a lease. It is a relay-chain endpoint.
 
@@ -20,7 +26,7 @@ GET /paras/leases/current
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/paras/leases/current'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/paras/leases/current'
 ```
 {% endcode %}
 {% endtab %}
@@ -28,7 +34,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/paras/leases/current'
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/paras/leases/current');
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/paras/leases/current');
 const data = await response.json();
 console.log(data);
 ```
@@ -40,7 +46,7 @@ console.log(data);
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/paras/leases/current')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/paras/leases/current')
 print(response.json())
 ```
 {% endcode %}
