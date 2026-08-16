@@ -23,7 +23,7 @@ This method re-executes a block and returns storage access and event traces filt
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "state_traceBlock", "params": ["0x255bc00927df8d33d561792635cbc6bde480a0a505eef5ff28630ece3fc15b32", null, null, null], "id": "getblock.io"}'
 ```
@@ -33,7 +33,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -56,7 +56,7 @@ console.log(data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -119,7 +119,7 @@ The idiomatic way to call Polkadot RPC is the Polkadot.js API (`@polkadot/api`),
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
-const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new WsProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
 const result = await api.rpc.state.traceBlock('0x255bc00927df8d33d561792635cbc6bde480a0a505eef5ff28630ece3fc15b32', null, null, null);
