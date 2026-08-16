@@ -1,4 +1,10 @@
-# filecoin\_mpoolgetnonce
+---
+description: >-
+  Example code for the Filecoin.MpoolGetNonce JSON RPC method. Complete guide on
+  how to use Filecoin.MpoolGetNonce JSON RPC in GetBlock Web3 documentation.
+---
+
+# Filecoin.MpoolGetNonce - Filecoin
 
 This method returns the next nonce for an address, accounting for messages already in the message pool. It is used to construct the next message from a sender.
 
@@ -14,7 +20,7 @@ This method returns the next nonce for an address, accounting for messages alrea
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "Filecoin.MpoolGetNonce", "params": ["f1ne72cbn6r55wea7ifjv4ypyti7t2df5dumsjhzq"], "id": "getblock.io"}'
 ```
@@ -24,7 +30,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -47,7 +53,7 @@ console.log(data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',

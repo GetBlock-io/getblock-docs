@@ -1,4 +1,10 @@
-# eth\_feehistory
+---
+description: >-
+  Example code for the eth_feeHistory JSON RPC method. Complete guide on how to
+  use eth_feeHistory JSON RPC in GetBlock Web3 documentation.
+---
+
+# eth\_feeHistory - Filecoin
 
 This method returns historical base fees and priority-fee percentiles over a range of blocks. It is used to model fees for EIP-1559 transactions.
 
@@ -16,7 +22,7 @@ This method returns historical base fees and priority-fee percentiles over a ran
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -33,7 +39,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'eth_feeHistory',
     params: ["0x5", "latest", [25, 50, 75]],
@@ -53,7 +59,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -79,7 +85,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -173,7 +179,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const history = await provider.send('eth_feeHistory', ['0x5', 'latest', [25, 50, 75]]);
 console.log(history);
@@ -187,7 +193,7 @@ console.log(history);
 import { createPublicClient, http } from 'viem';
 import { filecoin } from 'viem/chains';
 
-const client = createPublicClient({ chain: filecoin, transport: http('https://go.getblock.io/<ACCESS-TOKEN>/') });
+const client = createPublicClient({ chain: filecoin, transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') });
 
 const history = await client.getFeeHistory({ blockCount: 5, rewardPercentiles: [25, 50, 75] });
 console.log(history);

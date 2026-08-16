@@ -1,4 +1,11 @@
-# filecoin\_gasestimatemessagegas
+---
+description: >-
+  Example code for the Filecoin.GasEstimateMessageGas JSON RPC method. Complete
+  guide on how to use Filecoin.GasEstimateMessageGas JSON RPC in GetBlock Web3
+  documentation.
+---
+
+# Filecoin.GasEstimateMessageGas - Filecoin
 
 This method fills in the unset gas fields of a message, estimating the gas limit, fee cap, and premium needed for timely inclusion. The message is returned with its gas fields populated.
 
@@ -16,7 +23,7 @@ This method fills in the unset gas fields of a message, estimating the gas limit
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "Filecoin.GasEstimateMessageGas", "params": [{"To": "f1ne72cbn6r55wea7ifjv4ypyti7t2df5dumsjhzq", "From": "f3ukhj6tpkgxjknu54opiaej2vrjz7nh7gzodkqlhpfphc6gxkogzmojv2cnlpgcuwkvnyhloctnc6lmlvceuq", "Value": "1000000000000000000", "Method": 0}, null, []], "id": "getblock.io"}'
 ```
@@ -26,7 +33,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -49,7 +56,7 @@ console.log(data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',

@@ -1,3 +1,9 @@
+---
+description: >-
+  JSON-RPC API reference for the Filecoin EVM (FEVM). Explore method list,
+  request examples, and how to connect to GetBlock's Filecoin RPC endpoints
+---
+
 # FEVM API
 
 The Filecoin EVM (FEVM) is an EVM-compatible runtime on Filecoin. It exposes the standard Ethereum JSON-RPC method set through the `eth_` namespace, so Solidity contracts and Ethereum tooling — Hardhat, Foundry, ethers.js, viem, and web3.py — work on Filecoin. The FEVM chain ID is `314` (Calibration testnet is `314159`), and the native token is FIL (base unit attoFIL).

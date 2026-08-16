@@ -1,4 +1,10 @@
-# eth\_getlogs
+---
+description: >-
+  Example code for the eth_getLogs JSON RPC method. Complete guide on how to use
+  eth_getLogs JSON RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getLogs - Filecoin
 
 This method returns event logs that match a filter over a range of blocks. It is the primary method for reading historical events such as ERC-20 transfers and contract events.
 
@@ -24,7 +30,7 @@ This method returns event logs that match a filter over a range of blocks. It is
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -41,7 +47,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'eth_getLogs',
     params: [{"fromBlock": "0x1e8400", "toBlock": "0x1e8480", "address": "0x60E1773636CF5E4A227d9AC24F20fEca034ee25A", "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}],
@@ -61,7 +67,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -87,7 +93,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -177,7 +183,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const filter = {
     address: '0x60E1773636CF5E4A227d9AC24F20fEca034ee25A',
@@ -196,7 +202,7 @@ console.log(logs);
 import { createPublicClient, http } from 'viem';
 import { filecoin } from 'viem/chains';
 
-const client = createPublicClient({ chain: filecoin, transport: http('https://go.getblock.io/<ACCESS-TOKEN>/') });
+const client = createPublicClient({ chain: filecoin, transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') });
 
 const logs = await client.getLogs({
     address: '0x60E1773636CF5E4A227d9AC24F20fEca034ee25A',

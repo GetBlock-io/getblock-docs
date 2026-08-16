@@ -1,4 +1,10 @@
-# filecoin\_statelookupid
+---
+description: >-
+  Example code for the Filecoin.StateLookupID JSON RPC method. Complete guide on
+  how to use Filecoin.StateLookupID JSON RPC in GetBlock Web3 documentation.
+---
+
+# Filecoin.StateLookupID - Filecoin
 
 This method returns the short ID address (f0...) for a given address at a tipset. ID addresses are compact and stable, and are used internally by the chain.
 
@@ -19,7 +25,7 @@ Many state methods take a tipset key as their final parameter: an array of block
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "Filecoin.StateLookupID", "params": ["f1ne72cbn6r55wea7ifjv4ypyti7t2df5dumsjhzq", []], "id": "getblock.io"}'
 ```
@@ -29,7 +35,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -52,7 +58,7 @@ console.log(data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',

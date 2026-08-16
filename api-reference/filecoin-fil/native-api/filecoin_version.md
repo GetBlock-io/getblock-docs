@@ -1,4 +1,10 @@
-# filecoin\_version
+---
+description: >-
+  Example code for the Filecoin.Version JSON RPC method. Complete guide on how
+  to use Filecoin.Version JSON RPC in GetBlock Web3 documentation.
+---
+
+# Filecoin.Version - Filecoin
 
 This method returns the version of the node software, its API version, and the block delay (epoch duration) of the network.
 
@@ -12,7 +18,7 @@ This method does not accept any parameters. Pass an empty array.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "Filecoin.Version", "params": [], "id": "getblock.io"}'
 ```
@@ -22,7 +28,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -45,7 +51,7 @@ console.log(data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',

@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_call JSON RPC method. Complete guide on how to use
+  eth_call JSON RPC in GetBlock Web3 documentation.
+---
+
 # eth\_call - Filecoin
 
 This method executes a new message call immediately without creating a transaction on the blockchain. This is the primary method for reading data from smart contracts, including token balances, contract state, and the results of view or pure functions.

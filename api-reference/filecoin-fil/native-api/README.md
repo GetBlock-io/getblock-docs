@@ -1,3 +1,10 @@
+---
+description: >-
+  JSON-RPC API reference for the Filecoin native (Lotus) API. Explore method
+  list, request examples, and how to connect to GetBlock's Filecoin RPC
+  endpoints
+---
+
 # Native API
 
 The Filecoin native API is the Lotus JSON-RPC interface. Methods use `Filecoin.<Method>` names and Filecoin data structures: CIDs (as `{"/": "bafy..."}`), tipsets, actors, and attoFIL balances (1 FIL = 10^18 attoFIL). Read methods require no authentication token.

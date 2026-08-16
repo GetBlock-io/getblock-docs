@@ -1,4 +1,11 @@
-# filecoin\_stateminerpower
+---
+description: >-
+  Example code for the Filecoin.StateMinerPower JSON RPC method. Complete guide
+  on how to use Filecoin.StateMinerPower JSON RPC in GetBlock Web3
+  documentation.
+---
+
+# Filecoin.StateMinerPower - Filecoin
 
 This method returns the storage power of a miner and the total network power at a tipset. Power determines a miner's chance of winning block rewards.
 
@@ -19,7 +26,7 @@ Many state methods take a tipset key as their final parameter: an array of block
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0", "method": "Filecoin.StateMinerPower", "params": ["f01234", []], "id": "getblock.io"}'
 ```
@@ -29,7 +36,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% tab title="JavaScript" %}
 {% code title="example.js" %}
 ```javascript
-const response = await fetch('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await fetch('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -52,7 +59,7 @@ console.log(data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',

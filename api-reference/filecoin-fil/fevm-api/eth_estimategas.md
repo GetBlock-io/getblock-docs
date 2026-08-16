@@ -1,4 +1,10 @@
-# eth\_estimategas
+---
+description: >-
+  Example code for the eth_estimateGas JSON RPC method. Complete guide on how to
+  use eth_estimateGas JSON RPC in GetBlock Web3 documentation.
+---
+
+# eth\_estimateGas - Filecoin
 
 This method returns an estimate of the gas required to execute a transaction, without submitting it. The estimate accounts for the current state and is commonly padded before sending.
 
@@ -26,7 +32,7 @@ This method returns an estimate of the gas required to execute a transaction, wi
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -43,7 +49,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'eth_estimateGas',
     params: [{"from": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045", "to": "0x60E1773636CF5E4A227d9AC24F20fEca034ee25A", "value": "0xde0b6b3a7640000"}],
@@ -63,7 +69,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -89,7 +95,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -152,7 +158,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const gas = await provider.estimateGas({
     from: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045', to: '0x60E1773636CF5E4A227d9AC24F20fEca034ee25A', value: ethers.parseEther('1.0')
@@ -168,7 +174,7 @@ console.log(gas);
 import { createPublicClient, http } from 'viem';
 import { filecoin } from 'viem/chains';
 
-const client = createPublicClient({ chain: filecoin, transport: http('https://go.getblock.io/<ACCESS-TOKEN>/') });
+const client = createPublicClient({ chain: filecoin, transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') });
 
 const gas = await client.estimateGas({
     account: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045', to: '0x60E1773636CF5E4A227d9AC24F20fEca034ee25A', value: 1000000000000000000n
