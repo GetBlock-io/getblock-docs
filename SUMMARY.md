@@ -184,6 +184,7 @@
 * [How to Personalize DeFi Onboarding with GetBlock Full Wallet Audit API](guides/how-to-personalize-defi-onboarding-with-getblock-full-wallet-audit-api.md)
 * [How To Build an AI Agent on Robinhood Chain with GetBlock RPC](guides/how-to-build-an-ai-agent-on-robinhood-chain-with-getblock-rpc.md)
 * [How to Protect Your Transactions from MEV with GetBlock RPC](guides/how-to-protect-your-transactions-from-mev-with-getblock-rpc.md)
+* [How to Plan and Price a Bitcoin Spend with GetBlock's Blockbook Add-on](guides/how-to-plan-and-price-a-bitcoin-spend-with-getblocks-blockbook-add-on.md)
 
 ## API REFERENCE
 
