@@ -700,9 +700,9 @@ And the two fee endpoints:
 
 Three changes turn this into a wallet's selection layer.
 
-1. **Plan across the whole wallet, not a single address.** The same `/api/v2/utxo/` path accepts an xpub, ypub or zpub in place of an address and returns the unspent outputs across every derived address, so selection runs over the real wallet rather than one slice of it. Selection logic is unchanged; what changes is that each chosen input has to carry the derivation path its signer will need, so check which fields your endpoint returns for an xpub before relying on them.
-2. **Mix script types honestly.** The sizing here assumes every input is the same type, which is true for one address and false for a real wallet. Carry a per-input vsize instead of a single `inputType`, and compute each input's effective value from its own cost — a Taproot input at 58 vB and a legacy input at 148 vB are worth genuinely different amounts of the same nominal value.
-3. **Turn the plan into a PSBT.** The plan already names the outpoints, the amounts and the change; a PSBT is that plus the metadata a signer needs. Building one keeps the split this guide relies on — the process that chooses coins never has to hold a key.
+1. **Plan across the whole wallet, not a single address:** The same `/api/v2/utxo/` path accepts an xpub, ypub or zpub in place of an address and returns the unspent outputs across every derived address, so selection runs over the real wallet rather than one slice of it. Selection logic is unchanged; what changes is that each chosen input has to carry the derivation path its signer will need, so check which fields your endpoint returns for an xpub before relying on them.
+2. **Mix script types honestly:** The sizing here assumes that every input is the same type, which is true for a single address but false for a real wallet. Carry a per-input vsize instead of a single `inputType`, and compute each input's effective value from its own cost — a Taproot input at 58 vB and a legacy input at 148 vB are worth genuinely different amounts of the same nominal value.
+3. **Turn the plan into a PSBT:** The plan already names the outpoints, the amounts and the change; a PSBT is that plus the metadata a signer needs. Building one keeps the split this guide relies on — the process that chooses coins never has to hold a key.
 
 Two limits worth knowing. The changeless search is capped at 100,000 attempts, so on a large UTXO set it may miss a combination that exists; Bitcoin Core's version also minimizes long-term waste rather than immediate excess, which matters when today's feerate is unusually far from normal. And every plan is a snapshot: an output can be spent by another process between the query and the broadcast, so a production wallet locks the outputs it has selected and re-checks before signing.
 
@@ -712,9 +712,9 @@ You built a Bitcoin coin selector and fee planner in one dependency-free file, u
 
 ### Resources
 
-* [Blockbook add-on](https://docs.getblock.io/add-ons/blockbook) — which chains it serves, and what the index answers
+* [Blockbook add-on](../add-ons/blockbook.md) — which chains it serves, and what the index answers
 * [Official Upstream Blockbook API reference](https://github.com/trezor/blockbook/blob/master/docs/api.md) — Trezor's own docs for the endpoints
 * [Official Upstream Blockbook fee documentation](https://github.com/trezor/blockbook/blob/master/docs/fees.md) — how the fee endpoints derive their numbers
 * [Bitcoin Core's coin selection](https://github.com/bitcoin/bitcoin/blob/master/src/wallet/coinselection.cpp) — branch-and-bound and the waste metric, in full
 * [Create an endpoint and enable add-ons](https://account.getblock.io)
-* [Project repo](https://github.com/GetBlock-io/guides)
+* [GitHub project repo](https://github.com/GetBlock-io/guides/tree/main/blockbook-utxo-planner)
