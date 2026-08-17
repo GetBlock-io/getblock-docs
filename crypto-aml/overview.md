@@ -8,7 +8,7 @@ description: >-
 
 GetBlock **Crypto** [**AML**](#user-content-fn-1)[^1] is a compliance-grade risk-screening service for crypto addresses and transactions. It evaluates wallet addresses or transaction hashes and sends a detailed structured risk report thats contains a composite score, an exposure breakdown, and FATF[^2]-aligned flags within seconds.
 
-It is built to give small teams, exchanges, OTC[^3] desks, and individual traders the same FATF-aligned data and scoring as large compliance vendors, but **without** [**KYB**](#user-content-fn-4)[^4]**, annual contracts, or lengthy onboarding**.
+It is built to give small teams, exchanges, OTC[^3] desks, and individual traders the same FATF[^2]-aligned data and scoring as large compliance vendors, but **without** [**KYB**](#user-content-fn-4)[^4]**, annual contracts, or lengthy onboarding**.
 
 {% hint style="info" %}
 Access this service through your GetBlock account using a browser or the REST API. Charges use your existing credit balance.
@@ -48,27 +48,30 @@ More networks are on the roadmap (Solana, Arbitrum, Optimism). The `currencyTag`
 
 The engine combines **on-chain** and **off-chain** data:
 
-* **On-chain —** behavioral patterns, wallet clusters, counterparty flow, smart contract exposure, etc.
-* **Off-chain** — sanctions feeds, public attribution data, law-enforcement intelligence.
+* **On-chain:** behavioral patterns, wallet clusters, counterparty flow, smart contract exposure, etc.
+* **Off-chain:** sanctions feeds, public attribution data, law-enforcement intelligence.
 
+{% hint style="info" %}
 For the full model, thresholds, and how these combine into a score, see [**How risk scoring works**](how-risk-scoring-works.md).
+{% endhint %}
 
-### How to use?
+### Access Crypto AML
 
-Crypto AML exposes the data through two paths:
+Choose the access method that fits your workflow:
 
-* **Web** — a convenient browser flow: pick a network, paste a wallet or transaction, read the report, export a PDF, and keep an audit-ready history under your account.
-* **REST API** — three bearer-authenticated endpoints for developers who want to wire screening into their own backend.
+* **Web** — Select a network, enter a wallet address or transaction hash, and view the report. Export a PDF and keep an audit-ready history in your account.
+* **REST API** — Integrate three bearer-authenticated screening endpoints into your backend.
 
 {% hint style="success" %}
-Prepaid credits are burned in the UI and via the API draw from the same balance.
+Web and API checks use the same prepaid credit balance.
 {% endhint %}
 
 ### Pricing
 
-Choose the model that fits how you work. With **Pay-as-you-go**, you top up a prepaid balance, and we deduct it per check — starting from \~$0.20 / check, with no subscriptions and no minimums. Top up anytime with a card or crypto.\
-\
-Prefer to buy in bulk? Let you purchase packages of checks upfront and pay a lower per-check rate — the larger the package, the bigger the discount.
+Choose a pricing model:
+
+* **Pay as you go:** Top up your prepaid balance with a card or crypto. Each check deducts credits, starting at about $0.20. There are no subscriptions or minimums.
+* **Bulk packages:** Buy checks upfront for a lower per-check rate. Larger packages receive larger discounts. Reach out to the [Sales team](mailto:support@getblock.io)
 
 [^1]: Anti-Money Laundering (AML) consists of the laws, rules, and procedures used to stop criminals from hiding illegal "dirty" money as clean, legal income.
 
