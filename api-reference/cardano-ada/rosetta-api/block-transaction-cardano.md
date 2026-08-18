@@ -24,7 +24,7 @@ The request body is a JSON object with the following fields.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/block/transaction' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/block/transaction' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "network_identifier": {
@@ -47,7 +47,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/block/tran
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/block/transaction',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/block/transaction',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -65,7 +65,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/block/transaction',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/block/transaction',
     headers={'Content-Type': 'application/json'},
     json={"network_identifier": {"blockchain": "cardano", "network": "mainnet"}, "block_identifier": {"index": 10453789, "hash": "6e9e89632bc5c72030d3a486647e889c48d63e4da0643191b13566ad816d2d57"}, "transaction_identifier": {"hash": "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642"}}
 )

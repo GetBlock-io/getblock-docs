@@ -45,12 +45,12 @@ Your endpoint URL looks like this:
 
 {% code overflow="wrap" %}
 ```bash
-https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 {% endcode %}
 
 {% hint style="warning" %}
-The long string after `go.getblock.io/` is your **access token** — keep it private.
+The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -61,7 +61,7 @@ The long string after `go.getblock.io/` is your **access token** — keep it pri
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/ \
   -H "Content-Type: application/json" \
   -d '{
   "jsonrpc":"2.0",
@@ -95,7 +95,7 @@ curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
 {% code overflow="wrap" %}
 ```bash
 # Get USDT balance on BSC using eth_call
-curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/ \
   -H "Content-Type: application/json" \
   -d '{
     "jsonrpc": "2.0",
@@ -116,7 +116,7 @@ curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
 import { JsonRpcProvider, formatEther } from "ethers";
 
 const provider = new JsonRpcProvider(
-  "https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"
+  "https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"
 );
 
 // Get BNB balance
@@ -143,7 +143,7 @@ const tokenBalance = await usdtContract.balanceOf("0x...");
 ```python
 from web3 import Web3
 
-w3 = Web3(Web3.HTTPProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"))
+w3 = Web3(Web3.HTTPProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"))
 
 print("Connected:", w3.is_connected())
 print("Chain ID:", w3.eth.chain_id)  # 56 for BSC Mainnet
@@ -162,7 +162,7 @@ print(f"Balance: {w3.from_wei(balance, 'ether')} BNB")
 1. Open MetaMask → **Add Network** → **Add manually**
 2. Enter:
    * **Network Name:** BSC Mainnet (GetBlock)
-   * **RPC URL:** `https://go.getblock.io/<YOUR-ACCESS-TOKEN>/`
+   * **RPC URL:** `https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/`
    * **Chain ID:** `56`
    * **Symbol:** `BNB`
    * **Explorer:** `https://bscscan.com`

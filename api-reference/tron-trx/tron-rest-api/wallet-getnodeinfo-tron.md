@@ -18,7 +18,7 @@ This endpoint does not require parameters.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getnodeinfo' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getnodeinfo' \
 --header 'Content-Type: application/json' \
 --data-raw '{}'
 ```
@@ -29,7 +29,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/get
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getnodeinfo',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getnodeinfo',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -47,7 +47,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getnodeinfo',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getnodeinfo',
     headers={'Content-Type': 'application/json'},
     json={}
 )

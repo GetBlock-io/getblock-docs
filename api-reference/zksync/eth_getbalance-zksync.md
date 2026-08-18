@@ -20,7 +20,7 @@ Returns the ETH balance of an account on zkSync Era, in wei. Divide by 10¹⁸ t
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -50,7 +50,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -68,7 +68,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -109,7 +109,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -165,7 +165,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 import { Provider } from 'zksync-ethers';
 import { ethers } from 'ethers';
 
-const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new Provider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const balance = await provider.getBalance('0x36615cf349d7f6344891b1e7ca7c72883f5dc049');
 console.log('Balance:', ethers.formatEther(balance), 'ETH');
@@ -177,7 +177,7 @@ console.log('Balance:', ethers.formatEther(balance), 'ETH');
 ```python
 from zksync2.module.module_builder import ZkSyncBuilder
 
-zk_web3 = ZkSyncBuilder.build('https://go.getblock.io/<ACCESS-TOKEN>/')
+zk_web3 = ZkSyncBuilder.build('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 
 balance = zk_web3.zksync.get_balance('0x36615cf349d7f6344891b1e7ca7c72883f5dc049')
 print(f'Balance: {balance / 10**18} ETH')

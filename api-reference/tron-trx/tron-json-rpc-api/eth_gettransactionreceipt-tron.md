@@ -21,7 +21,7 @@ This method returns the receipt of a transaction by its hash, including status a
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -38,7 +38,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc', {
     jsonrpc: '2.0',
     method: 'eth_getTransactionReceipt',
     params: ["0xd5ec749ecc2a615399d8a6c864ea4c74ff9f523c2be0e341ac9be5d47d7c2d62"],
@@ -58,7 +58,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -84,7 +84,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",

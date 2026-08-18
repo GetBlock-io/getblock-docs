@@ -23,7 +23,7 @@ Mints test stablecoins to the given address. On the public Moderato testnet, thi
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -51,7 +51,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -69,7 +69,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -108,7 +108,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -168,7 +168,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import axios from 'axios';
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     id: 'getblock.io',
     method: 'tempo_fundAddress',
@@ -182,7 +182,7 @@ console.log(response.data);
 ```python
 import requests
 
-response = requests.post('https://go.getblock.io/<ACCESS-TOKEN>/', json={
+response = requests.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', json={
     'jsonrpc': '2.0',
     'id': 'getblock.io',
     'method': 'tempo_fundAddress',

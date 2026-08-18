@@ -21,7 +21,7 @@ Returns historical gas information on the World Chain network, allowing analysis
 {% tabs %}
 {% tab title="curl" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -46,7 +46,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -66,7 +66,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -95,7 +95,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header(header::CONTENT_TYPE, "application/json")
         .body(r#"{
             "jsonrpc": "2.0",
@@ -159,7 +159,7 @@ The `eth_feeHistory` method on World Chain is typically used for:
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const feeHistory = await provider.send('eth_feeHistory', ['0x5', 'latest', [25, 50, 75]]);
 console.log('Fee History:', feeHistory);
@@ -175,7 +175,7 @@ import { worldchain } from 'viem/chains';
 
 const client = createPublicClient({
     chain: worldchain,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const feeHistory = await client.getFeeHistory({

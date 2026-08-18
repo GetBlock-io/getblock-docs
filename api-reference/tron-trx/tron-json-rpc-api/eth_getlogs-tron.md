@@ -20,7 +20,7 @@ This method returns event logs matching a filter over a range of blocks, in the 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -37,7 +37,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc', {
     jsonrpc: '2.0',
     method: 'eth_getLogs',
     params: [{"fromBlock": "0x40d2900", "toBlock": "0x40d2a00", "address": "0x41a614f803b6fd780986a42c78ec9c7f77e6ded13c", "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}],
@@ -57,7 +57,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -83,7 +83,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",

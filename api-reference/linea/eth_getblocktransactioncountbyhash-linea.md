@@ -21,7 +21,7 @@ This method returns the number of transactions in a block identified by its hash
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -38,7 +38,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'eth_getBlockTransactionCountByHash',
     params: ["0x8e3f5b2a9c1d4e7f0a6b3c8d5e2f9a1b4c7d0e3f6a9b2c5d8e1f4a7b0c3d6e9f"],
@@ -58,7 +58,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -84,7 +84,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -145,7 +145,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const count = await provider.send('eth_getBlockTransactionCountByHash', ['0x8e3f5b2a9c1d4e7f0a6b3c8d5e2f9a1b4c7d0e3f6a9b2c5d8e1f4a7b0c3d6e9f']);
 console.log(parseInt(count, 16));
@@ -159,7 +159,7 @@ console.log(parseInt(count, 16));
 import { createPublicClient, http } from 'viem';
 import { linea } from 'viem/chains';
 
-const client = createPublicClient({ chain: linea, transport: http('https://go.getblock.io/<ACCESS-TOKEN>/') });
+const client = createPublicClient({ chain: linea, transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') });
 
 const count = await client.getBlockTransactionCount({ blockHash: '0x8e3f5b2a9c1d4e7f0a6b3c8d5e2f9a1b4c7d0e3f6a9b2c5d8e1f4a7b0c3d6e9f' });
 console.log(count);

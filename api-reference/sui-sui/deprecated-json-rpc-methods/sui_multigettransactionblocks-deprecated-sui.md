@@ -23,7 +23,7 @@ The `sui_multiGetTransactionBlocks` method returns transaction block data for a 
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -60,7 +60,7 @@ const payload = {
   ]
 };
 
-axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', payload)
+axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', payload)
 .then(response => console.log(response.data));
 ```
 {% endtab %}
@@ -82,7 +82,7 @@ payload = {
     ]
 }
 
-response = requests.post("https://go.getblock.io/<ACCESS-TOKEN>/", json=payload)
+response = requests.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/", json=payload)
 print(response.json())
 ```
 {% endtab %}
@@ -104,7 +104,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             {"showInput": true, "showEffects": true}
         ]
     });
-    let response = client.post("https://go.getblock.io/<ACCESS-TOKEN>/")
+    let response = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .json(&payload).send().await?;
     println!("{}", response.text().await?);
     Ok(())
@@ -164,7 +164,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
 
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 const txs = await client.multiGetTransactionBlocks({
   digests: ['5PLgmQye6rraDYqpV3npV6H1cUXoJZgJh1dPCyRa3WCv'],
   options: { showInput: true, showEffects: true }
@@ -180,7 +180,7 @@ use sui_sdk::SuiClientBuilder;
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    let sui = SuiClientBuilder::default().build("https://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let sui = SuiClientBuilder::default().build("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
     let digests = vec!["5PLgmQye6rraDYqpV3npV6H1cUXoJZgJh1dPCyRa3WCv".parse()?];
     let txs = sui.read_api().multi_get_transactions_with_options(digests, None).await?;
     println!("{:?}", txs);

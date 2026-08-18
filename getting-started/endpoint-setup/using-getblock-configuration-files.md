@@ -17,7 +17,7 @@ Using GetBlock’s JSON configuration file with curl is particularly helpful whe
 4. Now, you can make a GET request to a selected node endpoint using the curl command:
 
 ```bash
-curl -X GET https://go.getblock.io/"$(jq -r '.shared.btc.mainnet.rest[0]' getblock.config.json)"/rest/chaininfo.json
+curl -X GET https://shared.eu-central-1.getblock.io/"$(jq -r '.shared.btc.mainnet.rest[0]' getblock.config.json)"/rest/chaininfo.json
 ```
 
 ## How to use GetBlock’s JavaScript config with Web3.js
@@ -50,7 +50,7 @@ var web3Rpc = new Web3(new Web3.providers.HttpProvider(
 
 // Create the WebSocket provider
 var web3Ws = new Web3.providers.WebsocketProvider(
-        `wss://go.getblock.io/${getblock.shared.eth.mainnet.ws[0].token()}`
+        `wss://shared.eu-central-1.getblock.io/${getblock.shared.eth.mainnet.ws[0].token()}`
 ));
 ```
 
@@ -84,10 +84,10 @@ module.exports = {
     hardhat: {
     },
     sepolia: {
-      url: getblock.shared.eth.sepolia.rpc[0].go() // https://go.getblock.io/<ACCESS-TOKEN>/
+      url: getblock.shared.eth.sepolia.rpc[0].go() // https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
     },
     goerli: {
-      url: `https://go.getblock.io/${getblock.shared.eth.goerli.rpc[0].token()}` // <ACCESS-TOKEN>
+      url: `https://shared.eu-central-1.getblock.io/${getblock.shared.eth.goerli.rpc[0].token()}` // <ACCESS-TOKEN>
     },
   },
   solidity: {

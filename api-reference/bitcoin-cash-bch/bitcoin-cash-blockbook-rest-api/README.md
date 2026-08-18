@@ -13,7 +13,7 @@ The Bitcoin Cash REST API serves indexed blockchain data over HTTP. Each endpoin
 All endpoints are served under the `/api/v2/` path on the Bitcoin Cash endpoint:
 
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/api/v2/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/
 ```
 
 Replace `<ACCESS-TOKEN>` with the access token from the GetBlock dashboard. Requests are standard HTTP: `GET` for queries and `POST` for transaction broadcasting.

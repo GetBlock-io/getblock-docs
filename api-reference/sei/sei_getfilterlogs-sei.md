@@ -19,7 +19,7 @@ Returns all logs matching a log filter on Sei, including synthetic logs from Cos
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -35,7 +35,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 import axios from 'axios';
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
     jsonrpc: '2.0',
@@ -59,7 +59,7 @@ axios.post(url, payload, {
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -89,7 +89,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -165,7 +165,7 @@ Common errors when using this method:
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // Using ethers provider methods
 const result = await provider.send('sei_getFilterLogs', ["0x1"]);
@@ -180,7 +180,7 @@ import { sei } from 'viem/chains';
 
 const client = createPublicClient({
     chain: sei,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 // Using viem's request method

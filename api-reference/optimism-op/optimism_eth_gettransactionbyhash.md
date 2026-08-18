@@ -20,7 +20,7 @@ This method retrieves comprehensive transaction data, including the sender, reci
 {% tabs %}
 {% tab title="curl" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -36,7 +36,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```bash
 const axios = require('axios');
 
-const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/";
 const headers = { "Content-Type": "application/json" };
 
 const payload = {
@@ -67,7 +67,7 @@ axios.post(url, payload, { headers })
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
@@ -95,7 +95,7 @@ else:
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
@@ -201,7 +201,7 @@ The `eth_getTransactionByHash` method helps developers to:
 {% tab title="Ethers.js" %}
 ```javascript
 import { ethers } from "ethers";
-const RPC_URL = "https://go.getblock.us/<ACCESS_TOKEN>";
+const RPC_URL = "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>";
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 async function Call() {
   try {
@@ -227,7 +227,7 @@ import { optimism } from 'viem/chains';
 // Create Viem client with GetBlock
 const client = createPublicClient({
   chain: optimism,
-  transport: http('https://go.getblock.us/<ACCESS_TOKEN>'),
+  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>'),
 });
 
 // Using the method through Viem

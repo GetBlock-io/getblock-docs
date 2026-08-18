@@ -26,7 +26,7 @@ This method returns a range of accounts from the state trie at a specific block,
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -51,7 +51,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'debug_accountRange',
     params: [
@@ -79,7 +79,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -113,7 +113,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -195,7 +195,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const range = await provider.send('debug_accountRange', ['latest', 0, '', 5, true, true, false]);
 console.log('Accounts:', Object.keys(range.accounts).length);
@@ -212,7 +212,7 @@ import { mainnet } from 'viem/chains';
 
 const client = createPublicClient({
     chain: mainnet,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/'),
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'),
 });
 
 const range = await client.request({

@@ -19,7 +19,7 @@ This method analyzes and provides information about the current status of a PSBT
 {% tabs %}
 {% tab title="Curl" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCES_TOKEN>' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCES_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -47,7 +47,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -65,7 +65,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -94,7 +94,7 @@ async fn main() -> Result> {
     let client = reqwest::Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS_TOKEN>")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
         .header(header::CONTENT_TYPE, "application/json")
         .body(r#"{
             "jsonrpc": "2.0",

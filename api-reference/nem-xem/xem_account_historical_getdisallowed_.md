@@ -28,7 +28,7 @@ The value by which the height is incremented between each data point. The value 
 #### Request
 
 ```java
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/account/historical/get?address=NCXIQA4FF5JB6AMQ53NQ3ZMRD3X3PJEWDJJJIGHT&startHeight=3943565&endHeight=3943570&increment=1' \
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/account/historical/get?address=NCXIQA4FF5JB6AMQ53NQ3ZMRD3X3PJEWDJJJIGHT&startHeight=3943565&endHeight=3943570&increment=1' \
 --header 'Content-Type: application/json'
 ```
 

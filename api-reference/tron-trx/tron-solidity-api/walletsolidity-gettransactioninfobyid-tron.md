@@ -10,7 +10,7 @@ description: >-
 This endpoint returns the execution result of a transaction: its block, Energy and Bandwidth used, fee, and any smart-contract logs. This is the TRON equivalent of a transaction receipt.
 
 {% hint style="info" %}
-This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://go.getblock.io/<ACCESS-TOKEN>/wallet/gettransactioninfobyid` over the latest, possibly unconfirmed state.
+This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/gettransactioninfobyid` over the latest, possibly unconfirmed state.
 {% endhint %}
 
 ## Parameters
@@ -25,7 +25,7 @@ This is a Solidity-node endpoint. It returns only confirmed, irreversible data, 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactioninfobyid' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactioninfobyid' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "value": "d5ec749ecc2a615399d8a6c864ea4c74ff9f523c2be0e341ac9be5d47d7c2d62"
@@ -38,7 +38,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsoli
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactioninfobyid',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactioninfobyid',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -56,7 +56,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactioninfobyid',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactioninfobyid',
     headers={'Content-Type': 'application/json'},
     json={"value": "d5ec749ecc2a615399d8a6c864ea4c74ff9f523c2be0e341ac9be5d47d7c2d62"}
 )

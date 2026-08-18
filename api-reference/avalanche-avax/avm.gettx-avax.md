@@ -20,7 +20,7 @@ Returns an X-Chain transaction by its ID. Useful for inspecting any past transfe
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/X' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/X' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -50,7 +50,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/X',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/X',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -68,7 +68,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/X"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/X"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -109,7 +109,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/X")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/X")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -228,7 +228,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 // For raw JSON-RPC access, use a generic HTTP client as in the Request Example.
 import axios from 'axios';
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/X', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/X', {
     jsonrpc: '2.0',
     id: 'getblock.io',
     method: 'avm.getTx',
@@ -247,7 +247,7 @@ console.log(response.data);
 import requests
 import json
 
-url = 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/X'
+url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/X'
 payload = {
     'jsonrpc': '2.0',
     'id': 'getblock.io',

@@ -20,7 +20,7 @@ This method returns the chain's genesis checkpoint digest (first four bytes as a
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -46,7 +46,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -66,7 +66,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -95,7 +95,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header(header::CONTENT_TYPE, "application/json")
         .body(r#"{
             "jsonrpc": "2.0",
@@ -151,7 +151,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {% code title="example.ts" %}
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 const chainId = await client.getChainIdentifier();
 console.log(chainId);
 ```

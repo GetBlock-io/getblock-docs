@@ -58,11 +58,11 @@ Once logged in:
 Your endpoint URL looks like this:
 
 ```
-https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 
 {% hint style="warning" %}
-The long string after `go.getblock.io/` is your **access token** — keep it private.
+The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -73,7 +73,7 @@ The long string after `go.getblock.io/` is your **access token** — keep it pri
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl "https://go.getblock.io/853387a2f5fb45938bc031b8dca61109/getTransactions?address=EQDtFpEwcFAEcRe5mLVh2N6C0x-_hJEM7W61_JLnSF74p4q2&limit=10"
+curl "https://shared.eu-central-1.getblock.io/853387a2f5fb45938bc031b8dca61109/getTransactions?address=EQDtFpEwcFAEcRe5mLVh2N6C0x-_hJEM7W61_JLnSF74p4q2&limit=10"
 ```
 {% endcode %}
 {% endtab %}
@@ -137,7 +137,7 @@ curl "https://go.getblock.io/853387a2f5fb45938bc031b8dca61109/getTransactions?ad
 import TonWeb from "tonweb";
 
 const tonweb = new TonWeb(
-  new TonWeb.HttpProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/")
+  new TonWeb.HttpProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/")
 );
 
 // Get balance
@@ -151,7 +151,7 @@ console.log(`Balance: ${TonWeb.utils.fromNano(balance)} TON`);
 ```python
 import requests
 
-base_url = "https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"
+base_url = "https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"
 
 # Get address info
 response = requests.get(

@@ -22,7 +22,7 @@ The `debug_traceCall` method lets you run `eth_call` with tracing on the BNB Sma
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -42,7 +42,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
     jsonrpc: '2.0',
@@ -68,7 +68,7 @@ axios.post(url, payload, {
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = {
     "jsonrpc": "2.0",
@@ -107,7 +107,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -174,7 +174,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const trace = await provider.send('debug_traceCall', [{
     to: '0x55d398326f99059fF775485246999027B3197955',
@@ -193,7 +193,7 @@ import { bsc } from 'viem/chains';
 
 const client = createPublicClient({
     chain: bsc,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const trace = await client.request({

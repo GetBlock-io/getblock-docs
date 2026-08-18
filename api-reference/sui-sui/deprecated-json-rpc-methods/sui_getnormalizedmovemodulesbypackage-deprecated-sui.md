@@ -22,7 +22,7 @@ This method returns all modules in a Move package on the SUI network. This provi
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -44,7 +44,7 @@ const payload = {
   params: ['0x61630d3505f8905a0f4d42c6ff39a78a6ba2b28f68a3299ec3417bbabc6717dc']
 };
 
-axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', payload)
+axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', payload)
 .then(response => console.log(response.data));
 ```
 {% endtab %}
@@ -60,7 +60,7 @@ payload = {
     "params": ["0x61630d3505f8905a0f4d42c6ff39a78a6ba2b28f68a3299ec3417bbabc6717dc"]
 }
 
-response = requests.post("https://go.getblock.io/<ACCESS-TOKEN>/", json=payload)
+response = requests.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/", json=payload)
 print(response.json())
 ```
 {% endtab %}
@@ -79,7 +79,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         "method": "sui_getNormalizedMoveModulesByPackage",
         "params": ["0x61630d3505f8905a0f4d42c6ff39a78a6ba2b28f68a3299ec3417bbabc6717dc"]
     });
-    let response = client.post("https://go.getblock.io/<ACCESS-TOKEN>/")
+    let response = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .json(&payload).send().await?;
     println!("{}", response.text().await?);
     Ok(())
@@ -143,7 +143,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
 
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 const modules = await client.getNormalizedMoveModulesByPackage({
   package: '0x61630d3505f8905a0f4d42c6ff39a78a6ba2b28f68a3299ec3417bbabc6717dc'
 });
@@ -157,7 +157,7 @@ use sui_sdk::SuiClientBuilder;
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    let sui = SuiClientBuilder::default().build("https://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let sui = SuiClientBuilder::default().build("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
     let modules = sui.read_api().get_normalized_move_modules_by_package(
         "0x61630d3505f8905a0f4d42c6ff39a78a6ba2b28f68a3299ec3417bbabc6717dc".parse()?
     ).await?;

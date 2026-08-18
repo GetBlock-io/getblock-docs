@@ -19,7 +19,7 @@ This cancels a subscription created with `eth_subscribe`. The subscription ID is
 {% code overflow="wrap" %}
 ```bash
 # WebSocket-only method. Use wscat (or similar) to connect first:
-wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
+wscat -c 'wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'
 
 # Then send:
 {"jsonrpc": "2.0", "method": "eth_unsubscribe", "params": ["0x9cef478923ff08bf67fde6c64013158d"], "id": "getblock.io"}
@@ -31,7 +31,7 @@ wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
 ```javascript
 import WebSocket from 'ws';
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
     ws.send(JSON.stringify({
@@ -57,7 +57,7 @@ import json
 import websockets
 
 async def main():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') as ws:
         await ws.send(json.dumps({
     "jsonrpc": "2.0",
     "method": "eth_unsubscribe",
@@ -82,7 +82,7 @@ use futures_util::{SinkExt, StreamExt};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let (mut ws_stream, _) = connect_async("wss://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let (mut ws_stream, _) = connect_async("wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
 
     let payload = json!({
         "jsonrpc": "2.0",
@@ -139,7 +139,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.WebSocketProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.WebSocketProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // Flashblocks subscription types aren't first-class in ethers — use the raw send interface:
 const subscriptionId = await provider.send('eth_usubscribe', ["0xf48bfa9af6a7f77897a0f0e59c1061bc"]);
@@ -153,7 +153,7 @@ console.log('Subscribed:', subscriptionId);
 import { createPublicClient, webSocket } from 'viem';
 
 const client = createPublicClient({
-    transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: webSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 // Flashblocks subscription types use the raw request interface:

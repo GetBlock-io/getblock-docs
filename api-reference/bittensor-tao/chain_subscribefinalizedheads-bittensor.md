@@ -14,7 +14,7 @@ Subscribes to new finalized block headers. Slower than `chain_subscribeNewHeads`
 {% endhint %}
 
 {% hint style="warning" %}
-**WebSocket-only method.** This method requires the WebSocket transport at `wss://go.getblock.io/<ACCESS-TOKEN>/`. It will not work via HTTP POST.
+**WebSocket-only method.** This method requires the WebSocket transport at `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`. It will not work via HTTP POST.
 {% endhint %}
 
 ## Parameters
@@ -27,7 +27,7 @@ Subscribes to new finalized block headers. Slower than `chain_subscribeNewHeads`
 {% tab title="cURL" %}
 ```bash
 # WebSocket-only method. Use wscat (or similar) to connect first:
-wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
+wscat -c 'wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'
 
 # Then send:
 {"jsonrpc": "2.0", "method": "chain_subscribeFinalizedHeads", "params": [], "id": "getblock.io"}
@@ -38,7 +38,7 @@ wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
 ```javascript
 import WebSocket from 'ws';
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
     ws.send(JSON.stringify({
@@ -62,7 +62,7 @@ import json
 import websockets
 
 async def main():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') as ws:
         await ws.send(json.dumps({
     "jsonrpc": "2.0",
     "method": "chain_subscribeFinalizedHeads",
@@ -85,7 +85,7 @@ use futures_util::{SinkExt, StreamExt};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let (mut ws_stream, _) = connect_async("wss://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let (mut ws_stream, _) = connect_async("wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
 
     let payload = json!({
         "jsonrpc": "2.0",
@@ -145,7 +145,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
-const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new WsProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
 // Typed wrapper: api.rpc.chain.subscribeFinalizedHeads(...)
@@ -161,7 +161,7 @@ console.log(result.toHuman());
 ```python
 from substrateinterface import SubstrateInterface
 
-substrate = SubstrateInterface(url="wss://go.getblock.io/<ACCESS-TOKEN>/")
+substrate = SubstrateInterface(url="wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
 
 # Generic RPC call:
 result = substrate.rpc_request("chain_subscribeFinalizedHeads", [])

@@ -29,7 +29,7 @@ This returns query logs from pre-confirmed transactions, updated every \~200ms.&
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -53,7 +53,7 @@ const axios = require('axios');
 // Query ERC-20 Transfer events
 const transferTopic = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     "jsonrpc": "2.0",
     "method": "eth_getLogs",
     "params": [{
@@ -84,7 +84,7 @@ import requests
 transfer_topic = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
     "jsonrpc": "2.0",
@@ -221,7 +221,7 @@ for log in logs:
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 async function getLogs() {
     // Using filter
@@ -278,7 +278,7 @@ import { base } from 'viem/chains';
 
 const client = createPublicClient({
     chain: base,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 async function getLogs() {

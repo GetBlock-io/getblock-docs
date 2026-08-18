@@ -11,7 +11,7 @@ Kaia is EVM-compatible, so contracts deploy with standard Ethereum tooling such 
 ## Prerequisites
 
 * A wallet holding KAIA for gas (see Add Network to Your Wallet below)
-* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://go.getblock.io/<ACCESS-TOKEN>/`
+* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`
 * Node.js version 20 or later, for Hardhat
 * A funded deployer address, on Kairos Testnet for testing (see Testnet Faucets)
 
@@ -20,7 +20,7 @@ Kaia is EVM-compatible, so contracts deploy with standard Ethereum tooling such 
 | Property        | Kaia Mainnet                             | Kairos Testnet                                    |
 | --------------- | ---------------------------------------- | ------------------------------------------------- |
 | Chain ID        | 8217 (0x2019)                            | 1001 (0x3e9)                                      |
-| RPC URL         | `https://go.getblock.io/<ACCESS-TOKEN>/` | `https://go.getblock.io/<ACCESS-TOKEN>/`          |
+| RPC URL         | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/` | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`          |
 | Currency Symbol | KAIA                                     | KAIA                                              |
 | Block Explorer  | [kaiascan.io](https://kaiascan.io/)      | [kairos.kaiascan.io](https://kairos.kaiascan.io/) |
 
@@ -113,7 +113,7 @@ contract HelloKaia {
 
 ```bash
 export PRIVATE_KEY=<your-deployer-private-key>
-export KAIA_RPC_URL=https://go.getblock.io/<ACCESS-TOKEN>/
+export KAIA_RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 forge create src/HelloKaia.sol:HelloKaia \
   --rpc-url $KAIA_RPC_URL \
@@ -168,12 +168,12 @@ module.exports = {
   solidity: '0.8.24',
   networks: {
     kaia: {
-      url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
       chainId: 8217,
       accounts: [PRIVATE_KEY]
     },
     kairos: {
-      url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
       chainId: 1001,
       accounts: [PRIVATE_KEY]
     }

@@ -19,7 +19,7 @@ If true it returns the full transaction objects, if false only the hashes of the
 #### Request
 
 ```java
-wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 # wait for connection and send the request body 
 {"jsonrpc": "2.0",
 "method": "eth_getBlockByNumber",

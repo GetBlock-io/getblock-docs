@@ -25,7 +25,7 @@ This method returns a structured representation of a Move function on the SUI ne
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "jsonrpc": "2.0",
@@ -59,7 +59,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -79,7 +79,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
   "jsonrpc": "2.0",
@@ -112,7 +112,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header(header::CONTENT_TYPE, "application/json")
         .body(r#"{
           "jsonrpc": "2.0",
@@ -191,7 +191,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
 
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 const func = await client.getNormalizedMoveFunction({
   package: '0x9c4eb6769ca8b6a23efeb7298cf0a8d0b837b78749c2cfc711c42036cc6b7621',
   module: 'moduleName',
@@ -209,7 +209,7 @@ use sui_sdk::SuiClientBuilder;
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    let sui = SuiClientBuilder::default().build("https://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let sui = SuiClientBuilder::default().build("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
     let func = sui.read_api().get_normalized_move_function(
         "0x9c4eb6769ca8b6a23efeb7298cf0a8d0b837b78749c2cfc711c42036cc6b7621".parse()?,
         "moduleName",

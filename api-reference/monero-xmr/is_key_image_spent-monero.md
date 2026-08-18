@@ -19,7 +19,7 @@ This non-JSON-RPC endpoint checks whether any key images have been spent. Key im
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/is_key_image_spent' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/is_key_image_spent' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "key_images": [
@@ -41,7 +41,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/is_key_image_spent',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/is_key_image_spent',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -59,7 +59,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/is_key_image_spent"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/is_key_image_spent"
 
 payload = json.dumps({
     "key_images": [
@@ -92,7 +92,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/is_key_image_spent")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/is_key_image_spent")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -149,7 +149,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 // Use a plain HTTP client as shown in the Request Example above.
 import axios from 'axios';
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/is_key_image_spent', {"key_images": ["8d1bd8181bf7d857bdb281e0153d84cd55a3fcaa57c3e570f4a49f935850b5e3"]});
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/is_key_image_spent', {"key_images": ["8d1bd8181bf7d857bdb281e0153d84cd55a3fcaa57c3e570f4a49f935850b5e3"]});
 console.log(response.data);
 ```
 {% endtab %}
@@ -160,7 +160,7 @@ console.log(response.data);
 # Use a plain HTTP client as shown in the Request Example above.
 import requests
 
-response = requests.post('https://go.getblock.io/<ACCESS-TOKEN>/is_key_image_spent', json={"key_images": ["8d1bd8181bf7d857bdb281e0153d84cd55a3fcaa57c3e570f4a49f935850b5e3"]})
+response = requests.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/is_key_image_spent', json={"key_images": ["8d1bd8181bf7d857bdb281e0153d84cd55a3fcaa57c3e570f4a49f935850b5e3"]})
 print(response.json())
 ```
 {% endtab %}

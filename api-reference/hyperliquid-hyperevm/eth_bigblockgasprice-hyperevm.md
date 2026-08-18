@@ -23,7 +23,7 @@ This method takes no parameters.
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -40,7 +40,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'eth_bigBlockGasPrice',
     params: [],
@@ -57,7 +57,7 @@ console.log('Big Block Gas Price:', response.data.result);
 ```python
 import requests
 
-response = requests.post('https://go.getblock.io/<ACCESS-TOKEN>/', json={
+response = requests.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', json={
     'jsonrpc': '2.0',
     'method': 'eth_bigBlockGasPrice',
     'params': [],
@@ -80,7 +80,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header(header::CONTENT_TYPE, "application/json")
         .body(r#"{
             "jsonrpc": "2.0",
@@ -138,7 +138,7 @@ The `eth_bigBlockGasPrice` method is essential for:
 {% tab title="Ether.js" %}
 ```javascript
 import { ethers } from "ethers";
-const RPC_URL = "https://go.getblock.io/<ACCESS_TOKEN>";
+const RPC_URL = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>";
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 
 async function Call() {

@@ -42,25 +42,25 @@ _GetBlock’s Midnight API reference documentation is provided exclusively for i
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 
 {% tab title="New York, USA" %}
 ```bash
-https://go.getblock.us/<ACCESS-TOKEN>/
+https://shared.us-east-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 
 {% tab title="Singapore, Singapore" %}
 ```bash
-https://go.getblock.asia/<ACCESS-TOKEN>/
+https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-All Midnight JSON-RPC methods are called by sending a `POST` request to the base URL with a standard JSON-RPC 2.0 body. For real-time subscriptions (new blocks, finalized heads, runtime events) use the WebSocket scheme: `wss://go.getblock.io/<ACCESS-TOKEN>/`.
+All Midnight JSON-RPC methods are called by sending a `POST` request to the base URL with a standard JSON-RPC 2.0 body. For real-time subscriptions (new blocks, finalized heads, runtime events) use the WebSocket scheme: `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`.
 {% endhint %}
 
 ## Supported Networks
@@ -132,7 +132,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -208,7 +208,7 @@ Create a file called `main.py` with the following content:
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",

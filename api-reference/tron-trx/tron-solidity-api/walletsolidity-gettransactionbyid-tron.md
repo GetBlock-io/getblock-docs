@@ -10,7 +10,7 @@ description: >-
 This endpoint returns a transaction by its id, including its contract data, signatures, and raw data.
 
 {% hint style="info" %}
-This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://go.getblock.io/<ACCESS-TOKEN>/wallet/gettransactionbyid` over the latest, possibly unconfirmed state.
+This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/gettransactionbyid` over the latest, possibly unconfirmed state.
 {% endhint %}
 
 ## Parameters
@@ -26,7 +26,7 @@ This is a Solidity-node endpoint. It returns only confirmed, irreversible data, 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactionbyid' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactionbyid' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "value": "d5ec749ecc2a615399d8a6c864ea4c74ff9f523c2be0e341ac9be5d47d7c2d62",
@@ -40,7 +40,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsoli
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactionbyid',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactionbyid',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -58,7 +58,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactionbyid',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactionbyid',
     headers={'Content-Type': 'application/json'},
     json={"value": "d5ec749ecc2a615399d8a6c864ea4c74ff9f523c2be0e341ac9be5d47d7c2d62", "visible": true}
 )

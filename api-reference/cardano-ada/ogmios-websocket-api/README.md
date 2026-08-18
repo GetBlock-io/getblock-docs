@@ -5,7 +5,7 @@ The Ogmios WebSocket interface carries the same JSON-RPC 2.0 protocol as the HTT
 ## Base URL
 
 ```
-wss://go.getblock.io/<ACCESS-TOKEN>/
+wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 
 Replace `<ACCESS-TOKEN>` with the access token from the GetBlock dashboard. Open a WebSocket to this URL and exchange JSON-RPC 2.0 messages.

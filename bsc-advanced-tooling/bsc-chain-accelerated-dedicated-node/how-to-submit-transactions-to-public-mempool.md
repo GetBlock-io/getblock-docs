@@ -24,7 +24,7 @@ _For MEV-sensitive transactions, see_ [_Private Transactions_](../bsc-accelerate
 {% tabs %}
 {% tab title="Endpoint" %}
 ```bash
-wss://go.getblock.io/<ACCESS_TOKEN>
+wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 {% endtab %}
 
@@ -320,7 +320,7 @@ async function swapBNBForToken(tokenAddress, amountBNB, minAmountOut) {
   console.log('  Min out:', ethers.formatEther(minAmountOut));
   
   // Submit via BDN
- const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
+ const ws = new WebSocket(`wss://shared.eu-central-1.getblock.io/${process.env.ACCESS_TOKEN}`);
   
   return new Promise((resolve, reject) => {
     ws.on('open', () => {

@@ -31,7 +31,7 @@ This method returns all Coin objects owned by an address on the SUI network with
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -51,7 +51,7 @@ curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 ```javascript
 const axios = require('axios');
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
   jsonrpc: '2.0',
@@ -79,7 +79,7 @@ axios.post(url, payload, {
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = {
     "jsonrpc": "2.0",
@@ -120,7 +120,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -198,7 +198,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
 
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 
 const coins = await client.getAllCoins({
   owner: '0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961',
@@ -217,7 +217,7 @@ use sui_sdk::SuiClientBuilder;
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
     let sui = SuiClientBuilder::default()
-        .build("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .build("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .await?;
     
     let address = "0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961".parse()?;

@@ -104,19 +104,19 @@ You'll receive an HTTPS-style gRPC endpoint URL based on your chosen region:
 {% tabs %}
 {% tab title="Europe (Frankfurt)" %}
 ```bash
-https://go.getblock.io/YOUR_ACCESS_TOKEN/
+https://shared.eu-central-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endtab %}
 
 {% tab title="USA (New York)" %}
 ```bash
-https://go.getblock.us/YOUR_ACCESS_TOKEN/
+https://shared.us-east-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endtab %}
 
 {% tab title="Asia (Singapore)" %}
 ```bash
-https://go.getblock.asia/YOUR_ACCESS_TOKEN/
+https://shared.ap-southeast-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endtab %}
 {% endtabs %}
@@ -184,7 +184,7 @@ const bs58 = require("bs58");
 
 ```javascript
 // GetBlock Configuration
-const ENDPOINT = "https://go.getblock.io";  // Your region's endpoint
+const ENDPOINT = "https://shared.eu-central-1.getblock.io";  // Your region's endpoint
 const TOKEN = "YOUR_ACCESS_TOKEN";           // Your generated token
 ```
 
@@ -195,7 +195,7 @@ const TOKEN = "YOUR_ACCESS_TOKEN";           // Your generated token
 {% hint style="danger" %}
 Replace **YOUR\_ACCESS\_TOKEN** with the actual token you generated in Step 1. &#x20;
 
-If you chose a different region, use that endpoint instead (e.g., `https://go.getblock.us/<ACCESS_TOKEN>` or `https://go.getblock.asia/<ACCESS_TOKEN>`.
+If you chose a different region, use that endpoint instead (e.g., `https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>` or `https://shared.ap-southeast-1.getblock.io/<ACCESS_TOKEN>`.
 {% endhint %}
 
 3. Add Pump.fun constants:

@@ -22,7 +22,7 @@ This endpoint returns the unspent transaction outputs for an address, extended p
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?confirmed=true'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?confirmed=true'
 ```
 {% endcode %}
 {% endtab %}
@@ -31,7 +31,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/utxo
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?confirmed=true'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?confirmed=true'
 );
 console.log(await response.json());
 ```
@@ -43,7 +43,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?confirmed=true')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?confirmed=true')
 
 print(response.json())
 ```

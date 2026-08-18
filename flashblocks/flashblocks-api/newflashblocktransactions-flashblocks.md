@@ -10,7 +10,7 @@ description: >-
 This subscribes to individual preconfirmed transactions as they land in Flashblocks. Each notification carries one transaction. Pass `true` as a second parameter to include full transaction objects with associated logs; omit or pass `false` to receive only transaction hashes. Lighter-weight than `newFlashblocks` when you only care about the transaction stream and not the full block state.
 
 {% hint style="warning" %}
-**WebSocket-only method.** This method requires the WebSocket transport at `wss://go.getblock.io/<ACCESS-TOKEN>/`. It will not work via HTTP POST. Preconfirmed events arrive at the Flashblock cadence — approximately every 200ms on Base, 250ms on Optimism.
+**WebSocket-only method.** This method requires the WebSocket transport at `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`. It will not work via HTTP POST. Preconfirmed events arrive at the Flashblock cadence — approximately every 200ms on Base, 250ms on Optimism.
 {% endhint %}
 
 ## Parameters
@@ -27,7 +27,7 @@ This subscribes to individual preconfirmed transactions as they land in Flashblo
 {% code overflow="wrap" %}
 ```bash
 # WebSocket-only. Use wscat (or similar) to connect first:
-wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
+wscat -c 'wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'
 
 # Then send:
 {"jsonrpc": "2.0", "method": "eth_subscribe", "params": ["newFlashblockTransactions", true], "id": "getblock.io"}
@@ -39,7 +39,7 @@ wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
 ```javascript
 import WebSocket from 'ws';
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
     ws.send(JSON.stringify({
@@ -73,7 +73,7 @@ import json
 import websockets
 
 async def main():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') as ws:
         await ws.send(json.dumps({
     "jsonrpc": "2.0",
     "method": "eth_subscribe",
@@ -105,7 +105,7 @@ use futures_util::{SinkExt, StreamExt};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let (mut ws_stream, _) = connect_async("wss://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let (mut ws_stream, _) = connect_async("wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
 
     let payload = json!({
         "jsonrpc": "2.0",
@@ -170,7 +170,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.WebSocketProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.WebSocketProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // Flashblocks subscription types aren't first-class in ethers — use the raw send interface:
 const subscriptionId = await provider.send('eth_subscribe', ["newFlashblockTransactions", true]);
@@ -192,7 +192,7 @@ provider.websocket.addEventListener('message', (event) => {
 import { createPublicClient, webSocket } from 'viem';
 
 const client = createPublicClient({
-    transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: webSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 // Flashblocks subscription types use the raw request interface:

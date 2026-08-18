@@ -22,7 +22,7 @@ This method estimates the network hashes per second based on the last N blocks. 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -38,7 +38,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% code title="example.js" %}
 ```javascript
 const axios = require('axios');
-const { data } = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const { data } = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
   jsonrpc: '2.0', method: 'getnetworkhashps',
   params: [120, -1], id: 'getblock.io'
 });
@@ -53,7 +53,7 @@ console.log(data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -79,7 +79,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",

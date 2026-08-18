@@ -8,7 +8,7 @@ title: const { ethers } = require(...
 ```javascript
 import  ethers from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io//');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io//');
 
 async function getCode() {
     const code = await provider.getCode('0xContractAddress');

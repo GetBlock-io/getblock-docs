@@ -51,7 +51,7 @@ If the network is already in your list but uses a default RPC provider, you can 
 <figure><img src="../.gitbook/assets/Docs_MM_Add_1.svg" alt="How to set up the custom RPC URL on MetaMask"><figcaption></figcaption></figure>
 
 3. Open the ‘**Default RPC URL**’ dropdown and select '**Add RPC URL'**.
-4. Paste the JSON-RPC endpoint URL from your GetBlock account (`https://go.getblock.io/<ACCESS_TOKEN>/`).
+4. Paste the JSON-RPC endpoint URL from your GetBlock account (`https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/`).
 5. Name the new RPC URL for easier identification.
 
 <figure><img src="../.gitbook/assets/Docs_MM_Add_2.svg" alt="How to change the RPC URL on MetaMask"><figcaption></figcaption></figure>
@@ -73,7 +73,7 @@ If the network isn’t in your list, you can add it as a custom network. For thi
 
 3. Fill in the required fields:
 
-<table><thead><tr><th width="147">Field</th><th width="256">Description</th><th width="353">Example</th></tr></thead><tbody><tr><td><strong>RPC URL</strong></td><td>The network's JSON-RPC URL from your GetBlock account</td><td><em><mark style="color:blue;">https://go.getblock.io/&#x3C;ACCESS_TOKEN>/</mark></em></td></tr><tr><td><strong>Chain ID</strong></td><td>The ID of the network</td><td><em><mark style="color:blue;">1101</mark></em></td></tr><tr><td><strong>Network name</strong></td><td>Fetched automatically based on Chain ID</td><td><em><mark style="color:blue;">Polygon zkEVM</mark></em></td></tr><tr><td><strong>Currency symbol</strong></td><td>Suggested automatically based on Chain ID</td><td><em><mark style="color:blue;">ETH</mark></em></td></tr><tr><td><strong>Block explorer URL</strong></td><td>Optional field</td><td><em><mark style="color:blue;">https://zkevm.polygonscan.com/</mark></em></td></tr></tbody></table>
+<table><thead><tr><th width="147">Field</th><th width="256">Description</th><th width="353">Example</th></tr></thead><tbody><tr><td><strong>RPC URL</strong></td><td>The network's JSON-RPC URL from your GetBlock account</td><td><em><mark style="color:blue;">https://shared.eu-central-1.getblock.io/&#x3C;ACCESS_TOKEN>/</mark></em></td></tr><tr><td><strong>Chain ID</strong></td><td>The ID of the network</td><td><em><mark style="color:blue;">1101</mark></em></td></tr><tr><td><strong>Network name</strong></td><td>Fetched automatically based on Chain ID</td><td><em><mark style="color:blue;">Polygon zkEVM</mark></em></td></tr><tr><td><strong>Currency symbol</strong></td><td>Suggested automatically based on Chain ID</td><td><em><mark style="color:blue;">ETH</mark></em></td></tr><tr><td><strong>Block explorer URL</strong></td><td>Optional field</td><td><em><mark style="color:blue;">https://zkevm.polygonscan.com/</mark></em></td></tr></tbody></table>
 
 4. Click 'Save', and the custom network will be added and selected as default.
 
@@ -81,7 +81,7 @@ If the network isn’t in your list, you can add it as a custom network. For thi
 You can get the Chain ID of an EVM-compatible network (e.g. Polygon zkEVM) sending a request to your endpoint with this curl command:
 
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
   --header 'Content-Type: application/json' \
   --data-raw '{
     "jsonrpc": "2.0",

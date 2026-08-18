@@ -10,7 +10,7 @@ description: >-
 This endpoint executes a read-only smart-contract call locally on the node, without creating a transaction. It is the primary method for reading contract state, such as a TRC-20 token balance, and returns the result in `constant_result`.
 
 {% hint style="info" %}
-This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://go.getblock.io/<ACCESS-TOKEN>/wallet/triggerconstantcontract` over the latest, possibly unconfirmed state.
+This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/triggerconstantcontract` over the latest, possibly unconfirmed state.
 {% endhint %}
 
 ## Parameters
@@ -29,7 +29,7 @@ This is a Solidity-node endpoint. It returns only confirmed, irreversible data, 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/triggerconstantcontract' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/triggerconstantcontract' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g",
@@ -46,7 +46,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsoli
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/triggerconstantcontract',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/triggerconstantcontract',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -64,7 +64,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/triggerconstantcontract',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/triggerconstantcontract',
     headers={'Content-Type': 'application/json'},
     json={"owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g", "contract_address": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t", "function_selector": "balanceOf(address)", "parameter": "0000000000000000000000004142b5e01c8c59a25d78acdbec2bfc7e89e5e863", "visible": true}
 )

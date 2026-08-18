@@ -12,8 +12,8 @@ Optimism runs on the OP Stack (chain ID 10), the reference implementation for wh
 
 | Transport | URL                                      |
 | --------- | ---------------------------------------- |
-| HTTP      | `https://go.getblock.io/<ACCESS-TOKEN>/` |
-| WebSocket | `wss://go.getblock.io/<ACCESS-TOKEN>/`   |
+| HTTP      | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/` |
+| WebSocket | `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`   |
 
 {% hint style="info" %}
 The `pending` tag works over HTTP. Flashblocks subscriptions require the WebSocket endpoint.
@@ -31,7 +31,7 @@ The example below reads the `pending` balance of the Optimism WETH contract `0x4
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -48,7 +48,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'eth_getBalance',
     params: ['0x4200000000000000000000000000000000000006', 'pending'],
@@ -68,7 +68,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -94,7 +94,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",

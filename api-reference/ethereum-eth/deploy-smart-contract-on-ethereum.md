@@ -22,7 +22,7 @@ Before deploying, you'll need:
 | Property        | Ethereum Mainnet                         | Sepolia Testnet                                       | Hoodi Testnet                                     |
 | --------------- | ---------------------------------------- | ----------------------------------------------------- | ------------------------------------------------- |
 | Chain ID        | 1 (`0x1`)                                | 11155111 (`0xaa36a7`)                                 | 560048 (`0x88bb0`)                                |
-| RPC URL         | `https://go.getblock.io/<ACCESS-TOKEN>/` | `https://go.getblock.io/<ACCESS-TOKEN>/`              | `https://go.getblock.io/<ACCESS-TOKEN>/`          |
+| RPC URL         | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/` | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`              | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`          |
 | Currency Symbol | ETH                                      | ETH                                                   | ETH                                               |
 | Block Explorer  | [etherscan.io](https://etherscan.io/)    | [sepolia.etherscan.io](https://sepolia.etherscan.io/) | [hoodi.etherscan.io](https://hoodi.etherscan.io/) |
 
@@ -102,7 +102,7 @@ Set environment variables, then deploy:
 ```bash
 # Set environment variables
 export PRIVATE_KEY=0x<your_private_key>
-export ETH_RPC_URL=https://go.getblock.io/<ACCESS-TOKEN>/
+export ETH_RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 # Deploy contract
 forge create HelloEthereum \
@@ -192,7 +192,7 @@ Set your environment variables before proceeding:
 
 ```bash
 export PRIVATE_KEY=0x<your_private_key>
-export ETH_RPC_URL=https://go.getblock.io/<ACCESS-TOKEN>/
+export ETH_RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 export ETHERSCAN_API_KEY=<your_etherscan_v2_api_key>
 ```
 {% endstep %}

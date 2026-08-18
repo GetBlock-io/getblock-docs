@@ -21,12 +21,12 @@ The method  provides detailed information about the **current state of the NEAR 
 **Base URL**
 
 ```bash
- https://go.getblock.io/<ACCESS_TOKEN>
+ https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 **Example(cURL)**
 
 ```bash
-  curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+  curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
   --header 'Content-Type: application/json' \ 
   --data-raw '{"jsonrpc": "2.0",
   "method": "network_info",
@@ -120,7 +120,7 @@ The method  provides detailed information about the **current state of the NEAR 
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -140,7 +140,7 @@ The method  provides detailed information about the **current state of the NEAR 
 ```python
   import requests
   import json
-  url = "https://go.getblock.io/<ACCESS_TOKEN>"
+  url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
   payload = json.dumps({
     "jsonrpc": "2.0",
     "method": "network_info",

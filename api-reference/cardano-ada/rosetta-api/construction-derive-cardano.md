@@ -24,7 +24,7 @@ The request body is a JSON object with the following fields.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/construction/derive' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/derive' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "network_identifier": {
@@ -45,7 +45,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/constructi
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/construction/derive',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/derive',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -63,7 +63,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/construction/derive',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/derive',
     headers={'Content-Type': 'application/json'},
     json={"network_identifier": {"blockchain": "cardano", "network": "mainnet"}, "public_key": {"hex_bytes": "b3c2a1d0e9f8...ed25519-public-key-hex", "curve_type": "edwards25519"}, "metadata": {}}
 )

@@ -62,7 +62,7 @@ GetBlock exposes three distinct APIs for Cosmos Hub:&#x20;
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 {% endtabs %}
@@ -71,7 +71,7 @@ CometBFT supports **three transports** for the same methods:
 
 * **JSON-RPC over HTTP (POST)** — sends a JSON-RPC 2.0 body to the base URL with the `method` field selecting the operation. **Default in this documentation.**
 * **URI over HTTP (GET)** — appends the method name as a path segment (e.g. `/status`, `/block?height=12345`). Useful for browser debugging and one-off cURL calls. Most pages include a GET variant in the cURL tab where applicable.
-* **JSON-RPC over WebSocket** — for real-time event subscriptions at `wss://go.getblock.io/<ACCESS-TOKEN>/websocket`. Used for `subscribe` / `unsubscribe` / `unsubscribe_all`.
+* **JSON-RPC over WebSocket** — for real-time event subscriptions at `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket`. Used for `subscribe` / `unsubscribe` / `unsubscribe_all`.
 
 ## Supported Networks
 
@@ -137,7 +137,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -250,7 +250,7 @@ pip install requests
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",

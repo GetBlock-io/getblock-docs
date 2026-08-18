@@ -27,7 +27,7 @@ This method returns balance and transaction data for a single Bitcoin Cash addre
 {% tab title="cURL (REST)" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?details=txids'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?details=txids'
 ```
 {% endcode %}
 {% endtab %}
@@ -35,7 +35,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/addr
 {% tab title="cURL (JSON-RPC)" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -58,7 +58,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?details=txids'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?details=txids'
 );
 console.log(await response.json());
 ```
@@ -70,7 +70,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?details=txids')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?details=txids')
 
 print(response.json())
 ```

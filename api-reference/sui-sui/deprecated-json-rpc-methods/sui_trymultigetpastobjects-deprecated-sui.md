@@ -24,7 +24,7 @@ This method returns object data for multiple objects at their specified versions
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -59,7 +59,7 @@ const payload = {
   ]
 };
 
-axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', payload)
+axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', payload)
 .then(response => console.log(response.data));
 ```
 {% endcode %}
@@ -80,7 +80,7 @@ payload = {
     ]
 }
 
-response = requests.post("https://go.getblock.io/<ACCESS-TOKEN>/", json=payload)
+response = requests.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/", json=payload)
 print(response.json())
 ```
 {% endcode %}
@@ -104,7 +104,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             {"showContent": true}
         ]
     });
-    let response = client.post("https://go.getblock.io/<ACCESS-TOKEN>/")
+    let response = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .json(&payload).send().await?;
     println!("{}", response.text().await?);
     Ok(())
@@ -162,7 +162,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
 
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 const pastObjects = await client.tryMultiGetPastObjects({
   pastObjects: [{ objectId: '0x53e4567...', version: '4' }],
   options: { showContent: true }
@@ -179,7 +179,7 @@ use sui_sdk::SuiClientBuilder;
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    let sui = SuiClientBuilder::default().build("https://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let sui = SuiClientBuilder::default().build("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
     // Use multi_try_get_parsed_past_object
     Ok(())
 }

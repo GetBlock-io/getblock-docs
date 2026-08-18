@@ -27,7 +27,7 @@ This endpoint returns balance and transaction data for a single Bitcoin Cash add
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?page=1&pageSize=1000&details=txids'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?page=1&pageSize=1000&details=txids'
 ```
 {% endcode %}
 {% endtab %}
@@ -36,7 +36,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/addr
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?page=1&pageSize=1000&details=txids'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?page=1&pageSize=1000&details=txids'
 );
 console.log(await response.json());
 ```
@@ -48,7 +48,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?page=1&pageSize=1000&details=txids')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?page=1&pageSize=1000&details=txids')
 
 print(response.json())
 ```

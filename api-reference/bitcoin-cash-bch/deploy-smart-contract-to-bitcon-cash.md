@@ -18,7 +18,7 @@ Bitcoin Cash smart contracts differ fundamentally from EVM contracts. A contract
 * Node.js version 20 or later
 * The CashScript compiler (`cashc`) and SDK (`cashscript`), version 0.10.0 or later, which introduces the `TransactionBuilder` API used below
 * A funded Bitcoin Cash address to seed the contract and pay miner fees, on chipnet for testing (see Chipnet Faucet)
-* A GetBlock access token from the GetBlock dashboard, used in the endpoint `https://go.getblock.io/<ACCESS-TOKEN>/`
+* A GetBlock access token from the GetBlock dashboard, used in the endpoint `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`
 
 ### Network Details
 
@@ -26,7 +26,7 @@ Bitcoin Cash smart contracts differ fundamentally from EVM contracts. A contract
 | -------------- | ------------------------------------------------------------------ | --------------------------------------------------------- |
 | Network name   | mainnet                                                            | chipnet                                                   |
 | Address type   | p2sh32 (default)                                                   | p2sh32 (default)                                          |
-| GetBlock RPC   | `https://go.getblock.io/<ACCESS-TOKEN>/`                           | Provisioned per dashboard (verify)                        |
+| GetBlock RPC   | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`                           | Provisioned per dashboard (verify)                        |
 | Block explorer | [blockchair.com/bitcoin-cash](https://blockchair.com/bitcoin-cash) | [chipnet.imaginary.cash](https://chipnet.imaginary.cash/) |
 
 {% hint style="warning" %}
@@ -137,7 +137,7 @@ Address-indexed UTXO retrieval (`getUtxos`) is not available on shared GetBlock 
 ```javascript
 import { ElectrumNetworkProvider } from 'cashscript';
 
-const ENDPOINT = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const ENDPOINT = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 async function rpc(method, params) {
     const response = await fetch(ENDPOINT, {

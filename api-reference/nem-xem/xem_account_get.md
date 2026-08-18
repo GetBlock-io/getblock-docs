@@ -15,7 +15,7 @@ The address of the account.
 #### Request
 
 ```java
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/account/get?address=NC4T246ALCPNBTAOCSC5EAVFMDFBOACSQAF6WKHV' \
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/account/get?address=NC4T246ALCPNBTAOCSC5EAVFMDFBOACSQAF6WKHV' \
 --header 'Content-Type: application/json'
 ```
 

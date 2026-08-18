@@ -11,7 +11,7 @@ Arbitrum One is the leading Ethereum L2 by TVL, hosting major DeFi protocols lik
 * **EVM-compatible** — use the same tools as Ethereum (ethers.js, web3.js, Hardhat, Foundry)
 * **Archive data** — full historical state queries
 * **Trace & Debug** — `debug_traceTransaction` and related methods (Starter+)
-* **WebSocket** — `wss://go.getblock.io/<TOKEN>/` for real-time subscriptions
+* **WebSocket** — `wss://shared.eu-central-1.getblock.io/<TOKEN>/` for real-time subscriptions
 * **Multi-region** — Frankfurt, New York, Singapore
 
 {% hint style="info" %}
@@ -54,11 +54,11 @@ Once logged in:
 Your endpoint URL looks like this:
 
 ```
-https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 
 {% hint style="warning" %}
-The long string after `go.getblock.io/` is your **access token** — keep it private.
+The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -69,7 +69,7 @@ The long string after `go.getblock.io/` is your **access token** — keep it pri
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/ \
   -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}'
 ```
@@ -94,7 +94,7 @@ curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
 ```javascript
 import { JsonRpcProvider } from "ethers";
 
-const provider = new JsonRpcProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/");
+const provider = new JsonRpcProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/");
 const block = await provider.getBlockNumber();
 console.log("Latest Arbitrum block:", block);
 ```
@@ -104,7 +104,7 @@ console.log("Latest Arbitrum block:", block);
 ```python
 from web3 import Web3
 
-w3 = Web3(Web3.HTTPProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"))
+w3 = Web3(Web3.HTTPProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"))
 print("Chain ID:", w3.eth.chain_id)  # 42161
 ```
 {% endtab %}
@@ -116,7 +116,7 @@ import { arbitrum } from "viem/chains";
 
 const client = createPublicClient({
   chain: arbitrum,
-  transport: http("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"),
+  transport: http("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"),
 });
 ```
 {% endtab %}

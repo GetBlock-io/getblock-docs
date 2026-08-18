@@ -17,7 +17,7 @@ This method returns a string identifying the current client implementation and v
 {% tabs %}
 {% tab title="curl" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -30,7 +30,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 
 {% tab title="wss" %}
 ```bash
-wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 # wait for connection and send the request body 
 {"jsonrpc": "2.0", "method": "web3_clientVersion", "params": [], "id": "getblock.io"}
@@ -79,7 +79,7 @@ The web3\_clientVersion method is commonly used for:
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const version = await provider.send('web3_clientVersion', []);
 console.log('Client Version:', version);
@@ -95,7 +95,7 @@ import { optimism } from 'viem/chains';
 
 const client = createPublicClient({
     chain: optimism,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const version = await client.request({ method: 'web3_clientVersion' });

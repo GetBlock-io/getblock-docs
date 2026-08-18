@@ -26,7 +26,7 @@ The maximum number of iterations that are tried to create the requested number o
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "generatetoaddress",

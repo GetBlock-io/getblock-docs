@@ -9,7 +9,7 @@ description: >-
 This method creates a real-time subscription over a WebSocket connection. Available subscription types are `newHeads` (new block headers), `logs` (matching contract events), and `newPendingTransactions` (pending transactions).&#x20;
 
 {% hint style="info" %}
-This method is only available over WebSocket transport — use `wss://go.getblock.io/<ACCESS-TOKEN>/`.
+This method is only available over WebSocket transport — use `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`.
 {% endhint %}
 
 ## Parameters
@@ -26,7 +26,7 @@ This method is only available over WebSocket transport — use `wss://go.getbloc
 {% code title="cURL (wscat)" overflow="wrap" %}
 ```bash
 # This method requires WebSocket connection
-wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 > {"jsonrpc":"2.0","method":"eth_subscribe","params":["newheads"],"id":"getblock.io"}
 ```
@@ -38,7 +38,7 @@ wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
 ```javascript
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
     ws.send(JSON.stringify({
@@ -64,7 +64,7 @@ import websockets
 import json
 
 async def unsubscribe():
-    uri = "wss://go.getblock.io/<ACCESS-TOKEN>/"
+    uri = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
     async with websockets.connect(uri) as ws:
         payload = {
             "jsonrpc": "2.0",
@@ -90,7 +90,7 @@ use serde_json::json;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let url = "wss://go.getblock.io/<ACCESS-TOKEN>/";
+    let url = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/";
     let (mut ws, _) = connect_async(url).await?;
     
     let payload = json!({
@@ -153,7 +153,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.WebSocketProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.WebSocketProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 provider.on('block', (blockNumber) => {
     console.log('New block:', blockNumber);
@@ -168,7 +168,7 @@ import { opBNB } from 'viem/chains';
 
 const client = createPublicClient({
     chain: opBNB,
-    transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: webSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const unwatch = client.watchBlockNumber({

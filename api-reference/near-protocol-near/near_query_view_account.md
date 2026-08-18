@@ -25,13 +25,13 @@ This method get **on-chain details** of a NEAR account, such as its **balance**,
 **Base URL**
 
 ```bash
-https://go.getblock.io/<ACCESS_TOKEN>
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 **Example(cURL)**
 
 ```curl
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>' \
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{"jsonrpc": "2.0",
 "method": "query",
@@ -95,7 +95,7 @@ curl --location 'https://go.getblock.io/<ACCESS_TOKEN>' \
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -114,7 +114,7 @@ curl --location 'https://go.getblock.io/<ACCESS_TOKEN>' \
   ```python
   import requests
   import json
-  url = "https://go.getblock.io/<ACCESS_TOKEN>"
+  url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
   payload = json.dumps({
     "jsonrpc": "2.0",
     "method": "query",

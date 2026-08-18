@@ -112,7 +112,7 @@ This creates a project directory named `near-api-quickstart` and initialises a N
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -181,7 +181,7 @@ Before you begin, you must have installed Python and Pip on your local machine.
      import requests
     import json
     
-    url = "https://go.getblock.io/<ACCESS_TOKEN>"
+    url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
     
     payload = json.dumps({
       "jsonrpc": "2.0",

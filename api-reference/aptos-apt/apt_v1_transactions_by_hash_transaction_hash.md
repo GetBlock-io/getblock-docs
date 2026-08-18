@@ -51,14 +51,14 @@ This endpoint gets a transaction from the Aptos blockchain by its **transaction 
 **Base URL**
 
 ```bash
-https://go.getblock.io/<ACCESS_TOKEN>
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 **Example(cURL)**
 
 
 ```curl
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_hash/0xd797b944ed8657406a1b09a5928048093399fc0a2f576d3e57c0f9cedbf95c4a'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_hash/0xd797b944ed8657406a1b09a5928048093399fc0a2f576d3e57c0f9cedbf95c4a'
 ```
 
 ## Response Example
@@ -515,7 +515,7 @@ const axios = require('axios');
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_hash/0xd797b944ed8657406a1b09a5928048093399fc0a2f576d3e57c0f9cedbf95c4a',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_hash/0xd797b944ed8657406a1b09a5928048093399fc0a2f576d3e57c0f9cedbf95c4a',
 };
 
 axios.request(config)
@@ -535,7 +535,7 @@ axios.request(config)
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_hash/0xd797b944ed8657406a1b09a5928048093399fc0a2f576d3e57c0f9cedbf95c4a"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_hash/0xd797b944ed8657406a1b09a5928048093399fc0a2f576d3e57c0f9cedbf95c4a"
 response = requests.request("GET", url, headers=headers, data=payload)
 
 print(response.text)

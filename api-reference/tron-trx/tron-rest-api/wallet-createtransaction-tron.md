@@ -23,7 +23,7 @@ This endpoint builds an unsigned TRX transfer transaction from a sender, recipie
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/createtransaction' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/createtransaction' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g",
@@ -39,7 +39,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/cre
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/createtransaction',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/createtransaction',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/createtransaction',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/createtransaction',
     headers={'Content-Type': 'application/json'},
     json={"owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g", "to_address": "TJmmqjb1DK9TTZbQXzRQ2AuA94z4gKAPFh", "amount": 1000000, "visible": true}
 )

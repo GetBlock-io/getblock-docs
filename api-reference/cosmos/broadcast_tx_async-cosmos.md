@@ -20,7 +20,7 @@ Broadcasts a signed transaction and returns immediately, without running CheckTx
 {% tab title="cURL" %}
 ```bash
 # JSON-RPC over HTTP POST (canonical)
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -32,7 +32,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/broadcast_
 }'
 
 # URI over HTTP GET (alternate, for simple methods)
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async?tx="Co0BCooBChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEmoKLWNvc21vczF0NnJsZ2Y4MGpkOHRhbnBubnZtbXhmcWRjbTljbjd3Y3RyczdoaxItY29zbW9zMWdoZDc1M3NoamVjajRpdjJ4Mmk4eHJrenphbnpqdnZjMjJ4MmtuGgoKBXVhdG9tEgExEnIKWg=="'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async?tx="Co0BCooBChwvY29zbW9zLmJhbmsudjFiZXRhMS5Nc2dTZW5kEmoKLWNvc21vczF0NnJsZ2Y4MGpkOHRhbnBubnZtbXhmcWRjbTljbjd3Y3RyczdoaxItY29zbW9zMWdoZDc1M3NoamVjajRpdjJ4Mmk4eHJrenphbnpqdnZjMjJ4MmtuGgoKBXVhdG9tEgExEnIKWg=="'
 ```
 {% endtab %}
 
@@ -51,7 +51,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -69,7 +69,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -108,7 +108,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/broadcast_tx_async")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -164,7 +164,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { Tendermint37Client, HttpClient } from '@cosmjs/tendermint-rpc';
 
-const httpClient = new HttpClient('https://go.getblock.io/<ACCESS-TOKEN>/');
+const httpClient = new HttpClient('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const client = await Tendermint37Client.create(httpClient);
 
 // CosmJS exposes typed methods on the client (e.g. client.status(), client.block()).
@@ -179,7 +179,7 @@ console.log(result);
 # cosmpy wraps Cosmos REST / gRPC. For raw CometBFT RPC access, use requests.
 import requests
 
-response = requests.post('https://go.getblock.io/<ACCESS-TOKEN>/', json={
+response = requests.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', json={
     'jsonrpc': '2.0',
     'id': 'getblock.io',
     'method': 'broadcast_tx_async',

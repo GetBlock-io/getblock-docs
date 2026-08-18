@@ -31,7 +31,7 @@ yarn add ethers
 const { ethers } = require('ethers');
 
 // Set up the provider (replace ACCESS_TOKEN with your actual token)
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/ACCESS_TOKEN');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/ACCESS_TOKEN');
 
 //Call a method using the provider
 const main = async () => {

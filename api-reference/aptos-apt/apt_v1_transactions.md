@@ -58,13 +58,13 @@ This endpoint gets the list of recent transactions from the Aptos blockchain.
 **Base URL**
 
 ```bash
-https://go.getblock.io/<ACCESS_TOKEN>
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 **Example(cURL)**
 
 ```curl
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions?limit=1'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/transactions?limit=1'
 ```
 
 ## Response Example
@@ -266,7 +266,7 @@ const axios = require('axios');
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions?limit=1',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/transactions?limit=1',
 };
 
 axios.request(config)
@@ -286,7 +286,7 @@ axios.request(config)
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions?limit=1"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/transactions?limit=1"
 
 response = requests.request("GET", url, headers=headers, data=payload)
 

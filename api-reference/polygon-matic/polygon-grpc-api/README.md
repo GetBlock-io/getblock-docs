@@ -57,7 +57,7 @@ Polygon Bor gRPC is exposed on GetBlock's standard TLS endpoint pattern — the 
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io/
+https://shared.eu-central-1.getblock.io/
 ```
 {% endtab %}
 

@@ -23,7 +23,7 @@ The request body is a JSON object with the following fields.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/construction/submit' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/submit' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "network_identifier": {
@@ -40,7 +40,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/constructi
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/construction/submit',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/submit',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -58,7 +58,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/construction/submit',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/submit',
     headers={'Content-Type': 'application/json'},
     json={"network_identifier": {"blockchain": "cardano", "network": "mainnet"}, "signed_transaction": "84a400818258200e...signed-cbor..."}
 )

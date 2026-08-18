@@ -22,7 +22,7 @@ This method reports whether a transaction with the given id is present in the ac
 ```javascript
 import WebSocket from 'ws';
 
-const client = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const client = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 client.once('open', () => {
     client.send(JSON.stringify({"jsonrpc": "2.0", "method": "hasTransaction", "params": {"id": "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642"}, "id": "getblock.io"}));
@@ -44,7 +44,7 @@ import json
 import websockets
 
 async def main():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') as ws:
         await ws.send(json.dumps({"jsonrpc": "2.0", "method": "hasTransaction", "params": {"id": "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642"}, "id": "getblock.io"}))
         print(json.loads(await ws.recv()))
 

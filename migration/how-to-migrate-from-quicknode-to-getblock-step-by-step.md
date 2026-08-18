@@ -41,7 +41,7 @@ https://your-endpoint-name.quiknode.pro/YOUR_TOKEN/
 **GetBlock format:**
 
 ```bash
-https://go.getblock.io/YOUR_ACCESS_TOKEN/
+https://shared.eu-central-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endstep %}
 
@@ -59,7 +59,7 @@ const provider = new JsonRpcProvider(
 
 // After (GetBlock)
 const provider = new JsonRpcProvider(
-  "https://go.getblock.io/YOUR_GETBLOCK_TOKEN/"
+  "https://shared.eu-central-1.getblock.io/YOUR_GETBLOCK_TOKEN/"
 );
 ```
 {% endcode %}
@@ -79,7 +79,7 @@ const client = createPublicClient({
 // After
 const client = createPublicClient({
   chain: mainnet,
-  transport: http("https://go.getblock.io/YOUR_GETBLOCK_TOKEN/"),
+  transport: http("https://shared.eu-central-1.getblock.io/YOUR_GETBLOCK_TOKEN/"),
 });
 ```
 {% endcode %}
@@ -92,7 +92,7 @@ const client = createPublicClient({
 w3 = Web3(Web3.HTTPProvider("https://xxx.quiknode.pro/YOUR_QN_TOKEN/"))
 
 # After
-w3 = Web3(Web3.HTTPProvider("https://go.getblock.io/YOUR_GETBLOCK_TOKEN/"))
+w3 = Web3(Web3.HTTPProvider("https://shared.eu-central-1.getblock.io/YOUR_GETBLOCK_TOKEN/"))
 ```
 {% endcode %}
 {% endtab %}
@@ -110,7 +110,7 @@ networks: {
 // hardhat.config.js — After
 networks: {
   mainnet: {
-    url: "https://go.getblock.io/YOUR_GETBLOCK_TOKEN/"
+    url: "https://shared.eu-central-1.getblock.io/YOUR_GETBLOCK_TOKEN/"
   }
 }
 ```
@@ -126,7 +126,7 @@ mainnet = "https://xxx.quiknode.pro/YOUR_QN_TOKEN/"
 
 # foundry.toml — After
 [rpc_endpoints]
-mainnet = "https://go.getblock.io/YOUR_GETBLOCK_TOKEN/"
+mainnet = "https://shared.eu-central-1.getblock.io/YOUR_GETBLOCK_TOKEN/"
 ```
 {% endcode %}
 {% endtab %}
@@ -138,7 +138,7 @@ mainnet = "https://go.getblock.io/YOUR_GETBLOCK_TOKEN/"
 const wsProvider = new WebSocketProvider("wss://xxx.quiknode.pro/YOUR_QN_TOKEN");
 
 // After
-const wsProvider = new WebSocketProvider("wss://go.getblock.io/YOUR_GETBLOCK_TOKEN/");
+const wsProvider = new WebSocketProvider("wss://shared.eu-central-1.getblock.io/YOUR_GETBLOCK_TOKEN/");
 ```
 {% endcode %}
 {% endtab %}
@@ -152,7 +152,7 @@ Best practice: use environment variables to switch providers without code change
 
 ```bash
 # .env
-RPC_URL=https://go.getblock.io/YOUR_GETBLOCK_TOKEN/
+RPC_URL=https://shared.eu-central-1.getblock.io/YOUR_GETBLOCK_TOKEN/
 ```
 
 ```javascript

@@ -52,12 +52,12 @@ Your endpoint URL looks like this:
 
 {% code overflow="wrap" %}
 ```bash
-https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 {% endcode %}
 
 {% hint style="warning" %}
-The long string after `go.getblock.io/` is your **access token** — keep it private.
+The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -68,7 +68,7 @@ The long string after `go.getblock.io/` is your **access token** — keep it pri
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/ \
   -H "Content-Type: application/json" \
   -d '{
   "jsonrpc":"2.0",
@@ -100,7 +100,7 @@ curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
 {% code overflow="wrap" %}
 ```javascript
 import { JsonRpcProvider } from "ethers";
-const provider = new JsonRpcProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/");
+const provider = new JsonRpcProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/");
 console.log("Block:", await provider.getBlockNumber());
 ```
 {% endcode %}
@@ -109,7 +109,7 @@ console.log("Block:", await provider.getBlockNumber());
 {% tab title="Python" %}
 ```python
 from web3 import Web3
-w3 = Web3(Web3.HTTPProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"))
+w3 = Web3(Web3.HTTPProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"))
 print("Chain ID:", w3.eth.chain_id)  # 43114
 ```
 {% endtab %}
@@ -121,7 +121,7 @@ import { arbitrum } from "viem/chains";
 
 const client = createPublicClient({
   chain: avalanche,
-  transport: http("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"),
+  transport: http("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"),
 });
 ```
 {% endtab %}

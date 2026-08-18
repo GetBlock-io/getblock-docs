@@ -17,7 +17,7 @@ Format: - data - The transaction data as string. The string is created by first 
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/YOUR-ACCESS-TOKEN/transaction/announce' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/YOUR-ACCESS-TOKEN/transaction/announce' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "data": "010100000100000000000000200000002b76078fa709bbe6752222b215abc7ec0152ffe831fb4f9aed3e7749a425900a00093d0000000000000000002800000054444e46555946584f5353334e4e4c4f35465a5348535a49354c33374b4e5149454850554d584c54c0d45407000000000b00000001000000030000000c3215",

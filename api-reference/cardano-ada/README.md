@@ -41,13 +41,13 @@ _GetBlock's Cardano API reference documentation is provided for informational pu
 {% tabs %}
 {% tab title="Rosetta / Ogmios (JSON_RPC)" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 
 {% tab title="Ogmios (WebSocket)" %}
 ```bash
-wss://go.getblock.io/<ACCESS-TOKEN>/
+wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 {% endtabs %}
@@ -119,7 +119,7 @@ Add the following code to `index.js`:
 ```javascript
 const axios = require('axios');
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
   jsonrpc: '2.0',
@@ -202,7 +202,7 @@ Create a file called `main.py` with the following content:
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",

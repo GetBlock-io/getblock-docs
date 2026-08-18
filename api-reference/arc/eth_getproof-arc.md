@@ -21,7 +21,7 @@ This method returns the Merkle-Patricia proof for an account and optional storag
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -57,7 +57,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -75,7 +75,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -122,7 +122,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -202,7 +202,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // Most methods are exposed directly on the provider.
 // For raw access, use provider.send(method, params).
@@ -220,13 +220,13 @@ const arcTestnet = defineChain({
     name: 'Arc Testnet',
     network: 'arc-testnet',
     nativeCurrency: { name: 'USD Coin', symbol: 'USDC', decimals: 6 },
-    rpcUrls: { default: { http: ['https://go.getblock.io/<ACCESS-TOKEN>/'] } },
+    rpcUrls: { default: { http: ['https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'] } },
     blockExplorers: { default: { name: 'arcscan', url: 'https://testnet.arcscan.app' } }
 });
 
 const client = createPublicClient({
     chain: arcTestnet,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const result = await client.request({ method: 'eth_getProof', params: ["0x4cef52a8f9d4b0c8b8d5f1a2b3c4d5e6f7a8b9c0", ["0x0000000000000000000000000000000000000000000000000000000000000000"], "latest"] });

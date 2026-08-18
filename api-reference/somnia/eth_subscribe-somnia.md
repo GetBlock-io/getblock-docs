@@ -32,7 +32,7 @@ This method requires a WebSocket connection (not HTTP).
 {% code title="cURL (wscat)" overflow="wrap" %}
 ```bash
 # This method requires WebSocket connection
-wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 > {"jsonrpc":"2.0","method":"eth_subscribe","params":["newheads"],"id":"getblock.io"}
 ```
@@ -44,7 +44,7 @@ wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
 ```javascript
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
     ws.send(JSON.stringify({
@@ -70,7 +70,7 @@ import websockets
 import json
 
 async def unsubscribe():
-    uri = "wss://go.getblock.io/<ACCESS-TOKEN>/"
+    uri = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
     async with websockets.connect(uri) as ws:
         payload = {
             "jsonrpc": "2.0",
@@ -96,7 +96,7 @@ use serde_json::json;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let url = "wss://go.getblock.io/<ACCESS-TOKEN>/";
+    let url = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/";
     let (mut ws, _) = connect_async(url).await?;
     
     let payload = json!({
@@ -184,7 +184,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.WebSocketProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.WebSocketProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 provider.on('block', (blockNumber) => {
   console.log('New block:', blockNumber);
@@ -207,7 +207,7 @@ import { somnia } from 'viem/chains';
 
 const client = createPublicClient({
   chain: somnia,
-  transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/')
+  transport: webSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const unwatch = client.watchBlocks({

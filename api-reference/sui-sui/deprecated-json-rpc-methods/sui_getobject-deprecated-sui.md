@@ -35,7 +35,7 @@ ObjectDataOptions
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl --location --request POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "jsonrpc": "2.0",
@@ -62,7 +62,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 headers = {"Content-Type": "application/json"}
 
 payload = {
@@ -94,7 +94,7 @@ else:
 ```javascript
 const axios = require('axios');
 
-const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/";
 const payload = {
   jsonrpc: "2.0",
   method: "sui_getObject",
@@ -149,7 +149,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -237,7 +237,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
 
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 
 const object = await client.getObject({
   id: '0x53e4567ccafa5f36ce84c80aa8bc9be64e0d5ae796884274aef3005ae6733809',
@@ -262,7 +262,7 @@ use sui_sdk::types::base_types::ObjectID;
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
     let sui = SuiClientBuilder::default()
-        .build("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .build("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .await?;
     
     let object_id: ObjectID = "0x53e4567ccafa5f36ce84c80aa8bc9be64e0d5ae796884274aef3005ae6733809".parse()?;

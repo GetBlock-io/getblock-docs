@@ -18,7 +18,7 @@ The **eth\_blockNumber** method returns the number of the most recent block on t
 {% tab title="First Tab" %}
 {% code title="curl" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -33,7 +33,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% tab title="Websocket" %}
 {% code title="wscat" %}
 ```bash
-wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 # wait for connection and send the request body 
 {"jsonrpc": "2.0", "method": "eth_blockNumber", "params": [], "id": "getblock.io"}
 ```
@@ -45,7 +45,7 @@ wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
 ```javascript
 import axios from 'axios';
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
     jsonrpc: '2.0',
@@ -72,7 +72,7 @@ axios.post(url, payload, {
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = {
     "jsonrpc": "2.0",
@@ -103,7 +103,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header(header::CONTENT_TYPE, "application/json")
         .body(r#"{
             "jsonrpc": "2.0",
@@ -160,7 +160,7 @@ import requests
 import time
 
 def wait_for_confirmations(target_block, confirmations=12):
-    url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+    url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
     payload = {"jsonrpc": "2.0", "method": "eth_blockNumber", "params": [], "id": 1}
     
     while True:
@@ -192,7 +192,7 @@ def wait_for_confirmations(target_block, confirmations=12):
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // Using provider method
 const blockNumber = await provider.getBlockNumber();
@@ -213,7 +213,7 @@ import { polygon } from 'viem/chains';
 
 const client = createPublicClient({
     chain: polygon,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const blockNumber = await client.getBlockNumber();
@@ -227,7 +227,7 @@ console.log('Current Block Number:', blockNumber);
 ```javascript
 import Web3 from 'web3';
 
-const web3 = new Web3('https://go.getblock.io/<ACCESS-TOKEN>/');
+const web3 = new Web3('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const blockNumber = await web3.eth.getBlockNumber();
 console.log('Current Block Number:', blockNumber);

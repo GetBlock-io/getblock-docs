@@ -67,12 +67,12 @@ This is fundamentally different from chains where the native gas token is a stab
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 {% endtabs %}
 
-All Tempo JSON-RPC methods are called by sending a `POST` request to the base URL with a JSON-RPC 2.0 body. For real-time subscriptions (new blocks, logs, consensus events) use the WebSocket scheme: `wss://go.getblock.io/<ACCESS-TOKEN>/`.
+All Tempo JSON-RPC methods are called by sending a `POST` request to the base URL with a JSON-RPC 2.0 body. For real-time subscriptions (new blocks, logs, consensus events) use the WebSocket scheme: `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`.
 
 ## Supported Networks
 
@@ -139,7 +139,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -215,7 +215,7 @@ pip install requests
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",

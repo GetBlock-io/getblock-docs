@@ -21,7 +21,7 @@ This non-JSON-RPC endpoint broadcasts a serialized signed transaction to the net
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/send_raw_transaction' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/send_raw_transaction' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "tx_as_hex": "de6a3\u2026",
@@ -42,7 +42,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/send_raw_transaction',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/send_raw_transaction',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -60,7 +60,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/send_raw_transaction"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/send_raw_transaction"
 
 payload = json.dumps({
     "tx_as_hex": "de6a3\u2026",
@@ -91,7 +91,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/send_raw_transaction")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/send_raw_transaction")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -165,7 +165,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 // Use a plain HTTP client as shown in the Request Example above.
 import axios from 'axios';
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/send_raw_transaction', {"tx_as_hex": "de6a3\u2026", "do_not_relay": false});
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/send_raw_transaction', {"tx_as_hex": "de6a3\u2026", "do_not_relay": false});
 console.log(response.data);
 ```
 {% endtab %}
@@ -176,7 +176,7 @@ console.log(response.data);
 # Use a plain HTTP client as shown in the Request Example above.
 import requests;
 
-response = requests.post('https://go.getblock.io/<ACCESS-TOKEN>/send_raw_transaction', json={"tx_as_hex": "de6a3\u2026", "do_not_relay": false})
+response = requests.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/send_raw_transaction', json={"tx_as_hex": "de6a3\u2026", "do_not_relay": false})
 print(response.json())
 ```
 {% endtab %}

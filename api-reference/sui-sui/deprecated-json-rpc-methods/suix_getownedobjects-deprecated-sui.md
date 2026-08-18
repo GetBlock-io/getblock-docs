@@ -24,7 +24,7 @@ This method returns a list of objects owned by an address on the SUI network wit
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl --location --request POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "jsonrpc": "2.0",
@@ -47,7 +47,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 {% code title="example.py" overflow="wrap" %}
 ```python
 import requests
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 payload = {
     "jsonrpc": "2.0",
     "method": "suix_getOwnedObjects",
@@ -64,7 +64,7 @@ print("Result:", response.json().get("result"))
 {% code title="example.js" %}
 ```javascript
 const axios = require('axios');
-axios.post("https://go.getblock.io/<ACCESS-TOKEN>/", {
+axios.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/", {
   jsonrpc: "2.0",
   method: "suix_getOwnedObjects",
   params: ["0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961", null, null, 10],
@@ -88,7 +88,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         "method": "suix_getOwnedObjects",
         "params": ["0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961", null, null, 10]
     });
-    let response = client.post("https://go.getblock.io/<ACCESS-TOKEN>/").json(&payload).send().await?;
+    let response = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&payload).send().await?;
     println!("Response: {:?}", response.text().await?);
     Ok(())
 }
@@ -154,7 +154,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {% code title="Sui TypeScript SDK" %}
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 const objects = await client.getOwnedObjects({
   owner: '0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961',
   options: { showType: true }

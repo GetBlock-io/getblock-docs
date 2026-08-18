@@ -11,7 +11,7 @@ Sonic is fully EVM-compatible, so contracts deploy with standard Ethereum toolin
 ### Prerequisites
 
 * A wallet holding the native S token for gas (see Add Network to Your Wallet below)
-* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://go.getblock.io/<ACCESS-TOKEN>/`
+* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`
 * Node.js version 20 or later, for Hardhat
 * A funded deployer address, on Sonic Blaze Testnet for testing (see Testnet Faucets)
 
@@ -20,7 +20,7 @@ Sonic is fully EVM-compatible, so contracts deploy with standard Ethereum toolin
 | Property        | Sonic Mainnet                            |
 | --------------- | ---------------------------------------- |
 | Chain ID        | 146 (0x92)                               |
-| RPC URL         | `https://go.getblock.io/<ACCESS-TOKEN>/` |
+| RPC URL         | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/` |
 | Currency Symbol | S                                        |
 | Block Explorer  | [sonicscan.org](https://sonicscan.org/)  |
 
@@ -113,7 +113,7 @@ contract HelloSonic {
 
 ```bash
 export PRIVATE_KEY=<your-deployer-private-key>
-export SONIC_RPC_URL=https://go.getblock.io/<ACCESS-TOKEN>/
+export SONIC_RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 forge create src/HelloSonic.sol:HelloSonic \
   --rpc-url $SONIC_RPC_URL \
@@ -167,7 +167,7 @@ module.exports = {
   solidity: '0.8.26',
   networks: {
     sonic: {
-      url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
       chainId: 146,
       accounts: [PRIVATE_KEY]
     },

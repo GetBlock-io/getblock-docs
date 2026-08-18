@@ -20,7 +20,7 @@ This non-JSON-RPC endpoint returns transaction outputs by their global output in
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/get_outs' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/get_outs' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "outputs": [
@@ -50,7 +50,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/get_outs',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/get_outs',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -68,7 +68,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/get_outs"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/get_outs"
 
 payload = json.dumps({
     "outputs": [
@@ -109,7 +109,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/get_outs")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/get_outs")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -178,7 +178,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 // Use a plain HTTP client as shown in the Request Example above.
 import axios from 'axios';
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/get_outs', {"outputs": [{"amount": 1000000000000, "index": 0}], "get_txid": true});
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/get_outs', {"outputs": [{"amount": 1000000000000, "index": 0}], "get_txid": true});
 console.log(response.data);
 ```
 {% endtab %}
@@ -189,7 +189,7 @@ console.log(response.data);
 // Use a plain HTTP client as shown in the Request Example above.
 import requests
 
-response = requests.post('https://go.getblock.io/<ACCESS-TOKEN>/get_outs', json={"outputs": [{"amount": 1000000000000, "index": 0}], "get_txid": true})
+response = requests.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/get_outs', json={"outputs": [{"amount": 1000000000000, "index": 0}], "get_txid": true})
 print(response.json())
 ```
 {% endtab %}

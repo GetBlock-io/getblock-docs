@@ -14,7 +14,7 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/debug/connections/incoming' \
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/debug/connections/incoming' \
 --header 'Content-Type: application/json'
 ```
 

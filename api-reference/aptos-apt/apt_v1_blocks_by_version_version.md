@@ -60,11 +60,11 @@ This endpoint gets a transaction by its ledger version number from Aptos blockch
 
 **Base URL**
 ```bash
-https://go.getblock.io/<ACCESS_TOKEN>
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 **Example(cURL)**
 ```curl
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_version/3556737308?with_transactions=false'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_version/3556737308?with_transactions=false'
 ```
 
 ## Response Example
@@ -129,7 +129,7 @@ const axios = require('axios');
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_version/3363904007',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_version/3363904007',
 };
 
 axios.request(config)
@@ -146,7 +146,7 @@ axios.request(config)
 ```python
 import requests
 
-url = 'https://go.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_version/3363904007'
+url = 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/transactions/by_version/3363904007'
 
 response = requests.request("GET", url, headers=headers, data=payload)
 

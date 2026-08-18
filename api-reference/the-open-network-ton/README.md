@@ -46,15 +46,15 @@ _GetBlock’s TON API reference documentation is provided exclusively for inform
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 {% endtabs %}
 
 The TON HTTP API exposes every method on **two parallel transports** behind your endpoint:
 
-* **REST (GET)**: `GET https://go.getblock.io/<ACCESS-TOKEN>/<method>?<query-params>`
-* **JSON-RPC (POST)**: `POST https://go.getblock.io/<ACCESS-TOKEN>/jsonRPC` with a standard JSON-RPC 2.0 body
+* **REST (GET)**: `GET https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/<method>?<query-params>`
+* **JSON-RPC (POST)**: `POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonRPC` with a standard JSON-RPC 2.0 body
 
 A handful of state-mutating methods (`sendBoc`, `sendBocReturnHash`, `runGetMethod`, `runGetMethodStd`, `estimateFee`) are POST-only.
 
@@ -118,7 +118,7 @@ Add the following code to `index.js`:
 import axios from 'axios';
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/getMasterchainInfo',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/getMasterchainInfo',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -214,7 +214,7 @@ Create a file called `main.py` with the following content:
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/getMasterchainInfo"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/getMasterchainInfo"
 headers = {
     'Content-Type': 'application/json'
 }

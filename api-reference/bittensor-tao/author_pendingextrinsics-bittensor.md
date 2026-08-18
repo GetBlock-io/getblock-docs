@@ -159,7 +159,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
-const provider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new WsProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider });
 
 // Typed wrapper: api.rpc.author.pendingExtrinsics(...)
@@ -176,7 +176,7 @@ console.log(result.toHuman());
 ```python
 from substrateinterface import SubstrateInterface
 
-substrate = SubstrateInterface(url="wss://go.getblock.io/<ACCESS-TOKEN>/")
+substrate = SubstrateInterface(url="wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
 
 # Generic RPC call:
 result = substrate.rpc_request("author_pendingExtrinsics", [])

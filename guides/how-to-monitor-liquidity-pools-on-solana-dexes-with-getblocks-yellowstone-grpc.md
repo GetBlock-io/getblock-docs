@@ -88,19 +88,19 @@ You'll receive an HTTPS-style gRPC endpoint URL based on your chosen region:
 {% tabs %}
 {% tab title="Frankfurt" %}
 ```css
-https://go.getblock.io/YOUR_ACCESS_TOKEN/
+https://shared.eu-central-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endtab %}
 
 {% tab title="New York" %}
 ```css
-https://go.getblock.us/YOUR_ACCESS_TOKEN/
+https://shared.us-east-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endtab %}
 
 {% tab title="Asia (Singapore)" %}
 ```css
-https://go.getblock.asia/YOUR_ACCESS_TOKEN/
+https://shared.ap-southeast-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endtab %}
 {% endtabs %}
@@ -202,13 +202,13 @@ What this does:
 
 ```javascript
 // GetBlock Configuration
-const ENDPOINT = "https://go.getblock.io";  // Your region's endpoint
+const ENDPOINT = "https://shared.eu-central-1.getblock.io";  // Your region's endpoint
 const TOKEN = process.env.GETBLOCK_TOKEN; ;           // Your generated token
 ```
 
 What this does:&#x20;
 
-* Stores your GetBlock credentials that you created in [Step 1.](how-to-monitor-liquidity-pools-on-solana-dexes-with-getblocks-yellowstone-grpc.md#step-1-set-up-your-getblocks-yellowstone-endpoint) Replace YOUR\_ACCESS\_TOKEN with the actual token you generated. If you chose a different region, use that endpoint instead (e.g., `https://go.getblock.us` or `https://go.getblock.asia`).
+* Stores your GetBlock credentials that you created in [Step 1.](how-to-monitor-liquidity-pools-on-solana-dexes-with-getblocks-yellowstone-grpc.md#step-1-set-up-your-getblocks-yellowstone-endpoint) Replace YOUR\_ACCESS\_TOKEN with the actual token you generated. If you chose a different region, use that endpoint instead (e.g., `https://shared.us-east-1.getblock.io` or `https://shared.ap-southeast-1.getblock.io`).
 
 #### Add Pool Configuration
 

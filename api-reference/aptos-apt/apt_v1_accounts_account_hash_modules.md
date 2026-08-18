@@ -27,12 +27,12 @@ This endpoint gets all modules(known as smart contracts)’ bytecode deployed un
 **Base URL**
 
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 **Example(cURL)**
 
 ```curl
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/modules?ledger_version=3362752463&limit=2'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/modules?ledger_version=3362752463&limit=2'
 ```
 ---
 
@@ -292,7 +292,7 @@ This endpoint can be used to:
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/modules?ledger_version=3362752463&limit=2"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/modules?ledger_version=3362752463&limit=2"
 response = requests.request("GET", url, headers=headers, data=payload)
 
 print(response.text)
@@ -305,7 +305,7 @@ import axios from ‘axios’;
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/modules?ledger_version=3362752463&limit=2',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/modules?ledger_version=3362752463&limit=2',
 };
 
 axios.request(config)

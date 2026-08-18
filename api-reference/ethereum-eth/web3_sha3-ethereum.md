@@ -20,7 +20,7 @@ This method returns the Keccak-256 (SHA3-256) hash of the given hex-encoded data
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -39,7 +39,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'web3_sha3',
     params: [
@@ -61,7 +61,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -89,7 +89,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -158,7 +158,7 @@ const hash = ethers.keccak256('0x68656c6c6f20776f726c64');
 console.log(hash);
 
 // For RPC-parity verification against the node:
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const nodeHash = await provider.send('web3_sha3', ['0x68656c6c6f20776f726c64']);
 console.log(nodeHash);
 ```
@@ -178,7 +178,7 @@ console.log(hash);
 // For RPC-parity verification against the node:
 const client = createPublicClient({
     chain: mainnet,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/'),
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'),
 });
 
 const nodeHash = await client.request({

@@ -23,13 +23,13 @@ This method is used to send a signed transaction to the NEAR blockchain and wait
 
 **Base URL**
   ```bash
-     https://go.getblock.io/<ACCESS_TOKEN>
+     https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
   ```
 
 **Example(cURL)**
 
   ```bash
-  curl -X POST https://go.getblock.io/<ACCESS_TOKEN>\
+  curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>\
   -H "Content-Type: application/json" \
   -d '{"jsonrpc": "2.0",
 "method": "broadcast_tx_commit",
@@ -172,7 +172,7 @@ This method is used to send a signed transaction to the NEAR blockchain and wait
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -193,7 +193,7 @@ This method is used to send a signed transaction to the NEAR blockchain and wait
   import requests
   import json
   
-  url = "https://go.getblock.io/<ACCESS_TOKEN>"
+  url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
   
   payload = json.dumps({
     "jsonrpc": "2.0",

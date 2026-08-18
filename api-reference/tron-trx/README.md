@@ -48,26 +48,26 @@ GetBlock's TRON API reference documentation is provided for informational purpos
 {% tab title="REST (Fullnode)" %}
 {% code overflow="wrap" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/wallet/{method}
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/{method}
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="REST (Solidity)" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/{method}
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/{method}
 ```
 {% endtab %}
 
 {% tab title="JSON-RPC" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 
 {% tab title="gRPC" %}
 ```bash
-go.getblock.io:443   (TLS, access token passed as request metadata)
+shared.eu-central-1.getblock.io:443   (TLS, access token passed as request metadata)
 ```
 {% endtab %}
 {% endtabs %}

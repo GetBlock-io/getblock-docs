@@ -18,7 +18,7 @@ Returns the suggested priority fee per gas (the "tip" portion of EIP-1559 transa
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -42,7 +42,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -60,7 +60,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -95,7 +95,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -146,7 +146,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc');
 
 // Most methods are exposed directly on the provider.
 // For raw access, use provider.send(method, params).
@@ -162,7 +162,7 @@ import { avalanche } from 'viem/chains';
 
 const client = createPublicClient({
     chain: avalanche,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc')
 });
 
 const result = await client.request({ method: 'eth_maxPriorityFeePerGas', params: [] });

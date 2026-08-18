@@ -20,7 +20,7 @@ The `eth_getTransactionReceipt` method returns the receipt of a transaction by t
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -37,7 +37,7 @@ const axios = require('axios');
 
 const txHash = '0x633982a26e0cfba940613c52b31c664fe977e05171e35f62da2426596007e249';
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
     method: 'eth_getTransactionReceipt',
     params: [txHash],
@@ -62,7 +62,7 @@ import requests
 tx_hash = '0x633982a26e0cfba940613c52b31c664fe977e05171e35f62da2426596007e249'
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -93,7 +93,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let tx_hash = "0x633982a26e0cfba940613c52b31c664fe977e05171e35f62da2426596007e249";
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -182,7 +182,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 async function getReceipt(txHash) {
     const receipt = await provider.getTransactionReceipt(txHash);
@@ -221,7 +221,7 @@ import { base } from 'viem/chains';
 
 const client = createPublicClient({
     chain: base,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 async function getReceipt(txHash) {

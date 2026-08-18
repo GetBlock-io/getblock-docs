@@ -50,7 +50,7 @@ https://shared.us-east-1.getblock.io/<ACCESS-TOKEN>/
 {% endtabs %}
 
 {% hint style="warning" %}
-All Robinhood Chain JSON-RPC methods are called by sending a `POST` request to the base URL with a JSON-RPC 2.0 body. For real-time subscriptions (`eth_subscribe` / `eth_unsubscribe`), use the WebSocket transport: `wss://go.getblock.io/<ACCESS-TOKEN>/`.
+All Robinhood Chain JSON-RPC methods are called by sending a `POST` request to the base URL with a JSON-RPC 2.0 body. For real-time subscriptions (`eth_subscribe` / `eth_unsubscribe`), use the WebSocket transport: `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`.
 {% endhint %}
 
 ### Supported Networks

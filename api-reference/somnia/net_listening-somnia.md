@@ -18,7 +18,7 @@ This method returns true if the client is actively listening for network connect
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -42,7 +42,7 @@ const payload = {
   params: []
 };
 
-axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', payload)
+axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', payload)
 .then(response => console.log(response.data));
 ```
 {% endcode %}
@@ -60,7 +60,7 @@ payload = {
     "params": []
 }
 
-response = requests.post("https://go.getblock.io/<ACCESS-TOKEN>/", json=payload)
+response = requests.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/", json=payload)
 print(response.json())
 ```
 {% endcode %}

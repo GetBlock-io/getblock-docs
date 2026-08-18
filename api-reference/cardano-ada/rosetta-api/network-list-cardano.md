@@ -22,7 +22,7 @@ The request body is a JSON object with the following fields.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/network/list' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/network/list' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "metadata": {}
@@ -35,7 +35,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/network/li
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/network/list',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/network/list',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -53,7 +53,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/network/list',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/network/list',
     headers={'Content-Type': 'application/json'},
     json={"metadata": {}}
 )

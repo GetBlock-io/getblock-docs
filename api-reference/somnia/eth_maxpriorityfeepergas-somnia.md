@@ -25,7 +25,7 @@ This method returns the current max priority fee per gas on the Somnia network (
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -49,7 +49,7 @@ const payload = {
   params: []
 };
 
-axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', payload)
+axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', payload)
 .then(response => console.log(response.data));
 ```
 {% endcode %}
@@ -67,7 +67,7 @@ payload = {
     "params": []
 }
 
-response = requests.post("https://go.getblock.io/<ACCESS-TOKEN>/", json=payload)
+response = requests.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/", json=payload)
 print(response.json())
 ```
 {% endcode %}
@@ -99,7 +99,7 @@ print(response.json())
 {% code title="ethers.js" %}
 ```javascript
 const { ethers } = require('ethers');
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const feeData = await provider.getFeeData();
 console.log(feeData.maxPriorityFeePerGas);
 ```

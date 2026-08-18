@@ -9,7 +9,7 @@ description: >-
 Creates a real-time subscription over a WebSocket connection on the C-Chain. Available subscription types: `newHeads` (new block headers), `logs` (matching contract events), `newPendingTransactions` (mempool), and `newAcceptedTransactions` (Avalanche-specific — fires when transactions are accepted by consensus).
 
 {% hint style="warning" %}
-Only available over WebSocket — use `wss://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/ws`. WebSocket is **not** available on P-Chain or X-Chain.
+Only available over WebSocket — use `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/ws`. WebSocket is **not** available on P-Chain or X-Chain.
 {% endhint %}
 
 ## Parameters
@@ -43,7 +43,7 @@ console.log('WebSocket message:', data);
 {% tab title="JavaScript (WebSocket & message format)" %}
 ```javascript
 // WebSocket connection required
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.onopen = () => {
     ws.send(JSON.stringify({
@@ -77,7 +77,7 @@ def on_open(ws):
     }))
 
 ws = websocket.WebSocketApp(
-    "wss://go.getblock.io/<ACCESS-TOKEN>/",
+    "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/",
     on_message=on_message,
     on_open=on_open
 )
@@ -141,7 +141,7 @@ let message = r#"{
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.WebSocketProvider('wss://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/ws');
+const provider = new ethers.WebSocketProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/ws');
 
 provider.on('block', (blockNumber) => {
     console.log('New block:', blockNumber);
@@ -158,7 +158,7 @@ import { avalanche } from 'viem/chains';
 
 const client = createPublicClient({
     chain: avalanche,
-    transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/ws')
+    transport: webSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/ws')
 });
 
 const unwatch = client.watchBlockNumber({

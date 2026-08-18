@@ -20,7 +20,7 @@ This endpoint returns the transaction exactly as the Bitcoin Cash node reports i
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tx-specific/10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tx-specific/10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642'
 ```
 {% endcode %}
 {% endtab %}
@@ -29,7 +29,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tx-s
 {% code title="example.js" overflow="wrap" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tx-specific/10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tx-specific/10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642'
 );
 console.log(await response.json());
 ```
@@ -41,7 +41,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tx-specific/10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tx-specific/10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642')
 
 print(response.json())
 ```

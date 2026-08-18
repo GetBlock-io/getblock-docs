@@ -21,7 +21,7 @@ This endpoint returns a block by height or hash, including its metadata and a pa
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/block/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc?page=1'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc?page=1'
 ```
 {% endcode %}
 {% endtab %}
@@ -30,7 +30,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/bloc
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/block/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc?page=1'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc?page=1'
 );
 console.log(await response.json());
 ```
@@ -42,7 +42,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/block/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc?page=1')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc?page=1')
 
 print(response.json())
 ```

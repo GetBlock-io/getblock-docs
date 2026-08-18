@@ -23,12 +23,12 @@ This method returns detailed information about a specific block on the NEAR bloc
 - **URL (endpoint)**
 
     ```bash
-    https://go.getblock.io/
+    https://shared.eu-central-1.getblock.io/
     ```
     
 - **Example (cURL)**
     ```java
-    curl --location 'https://go.getblock.io/<ACCESS_TOKEN>' \
+    curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>' \
     --header 'Content-Type: application/json' \
     --data '{"jsonrpc": "2.0",
     "method": "block",
@@ -410,7 +410,7 @@ The `block` method can be used for:
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -430,7 +430,7 @@ The `block` method can be used for:
     import requests
     import json
     
-    url = "https://go.getblock.io/<ACCESS_TOKEN>"
+    url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
     
     payload = json.dumps({
       "jsonrpc": "2.0",

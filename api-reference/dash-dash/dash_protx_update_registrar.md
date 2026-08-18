@@ -44,7 +44,7 @@ If specified, the wallet will only use coins from this address to fund the ProTx
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "protx",

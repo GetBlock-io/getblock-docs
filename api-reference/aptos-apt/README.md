@@ -86,7 +86,7 @@ This creates a project directory named `aptos-api-quickstart` and initialises a 
     
     let account = {
       method: 'get',
-      url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f',
     };
      
     axios.request(account)
@@ -146,7 +146,7 @@ Before you begin, you must have installed Python and Pip on your local machine.
     ```python
     import requests
     
-    url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f"
+    url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f"
     
     response = requests.get(url)
     

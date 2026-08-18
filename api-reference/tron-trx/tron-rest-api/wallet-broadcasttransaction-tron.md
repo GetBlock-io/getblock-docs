@@ -20,7 +20,7 @@ This endpoint submits a signed transaction to the network. It accepts the full s
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/broadcasttransaction' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/broadcasttransaction' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "txID": "d5ec749ecc2a615399d8a6c864ea4c74ff9f523c2be0e341ac9be5d47d7c2d62",
@@ -40,7 +40,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/bro
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/broadcasttransaction',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/broadcasttransaction',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -58,7 +58,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/broadcasttransaction',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/broadcasttransaction',
     headers={'Content-Type': 'application/json'},
     json={"txID": "d5ec749ecc2a615399d8a6c864ea4c74ff9f523c2be0e341ac9be5d47d7c2d62", "raw_data": {"contract": []}, "raw_data_hex": "0a02...", "signature": ["a1b2c3...signature"]}
 )

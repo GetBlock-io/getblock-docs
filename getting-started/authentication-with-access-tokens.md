@@ -10,7 +10,7 @@ icon: key
 Every [endpoint](endpoint-setup/) you create is assigned a unique access token:
 
 ```markup
-https://go.getblock.io/<ACCESS_TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/
 ```
 
 The \<ACCESS\_TOKEN> authenticates requests directly through the endpoint URL.
@@ -28,7 +28,7 @@ Access tokens **cannot** **be** **sent** in **headers**.
 For example, here’s how to fetch the latest Ethereum block number:
 
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",

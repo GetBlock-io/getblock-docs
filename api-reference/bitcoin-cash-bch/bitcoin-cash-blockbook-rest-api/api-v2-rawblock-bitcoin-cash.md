@@ -20,7 +20,7 @@ This endpoint returns the raw serialized hex of a block, selected by height or h
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc'
 ```
 {% endcode %}
 {% endtab %}
@@ -29,7 +29,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/rawb
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc'
 );
 console.log(await response.json());
 ```
@@ -41,7 +41,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc')
 
 print(response.json())
 ```

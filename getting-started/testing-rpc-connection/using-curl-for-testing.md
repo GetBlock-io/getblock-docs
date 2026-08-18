@@ -16,7 +16,7 @@ Before you start:
 Run the following command to retrieve the latest block number:
 
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -41,7 +41,7 @@ If successful, the response will include the current block number in hexadecimal
 Identify the blockchain network with the `eth_chainId` method:
 
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -68,7 +68,7 @@ In this example, `0x1` indicates the Ethereum Mainnet. The chain ID helps confir
 Retrieve the balance of an Ethereum address using `eth_getBalance`. Replace `<ACCOUNT_ADDRESS>` with the target wallet address:
 
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",

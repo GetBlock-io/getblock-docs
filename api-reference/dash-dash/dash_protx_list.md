@@ -42,7 +42,7 @@ List ProTxs from this height (default: current chain tip).
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"jsonrpc": "2.0",
 "method": "protx",

@@ -6,10 +6,10 @@ description: >-
 
 # eth\_subscribe - Tempo
 
-Creates a real-time subscription over a WebSocket connection. Available subscription types are `newHeads` (new block headers), `logs` (matching contract events), and `newPendingTransactions` (mempool). Only available over WebSocket transport — use `wss://go.getblock.io/<ACCESS-TOKEN>/`.
+Creates a real-time subscription over a WebSocket connection. Available subscription types are `newHeads` (new block headers), `logs` (matching contract events), and `newPendingTransactions` (mempool). Only available over WebSocket transport — use `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`.
 
 {% hint style="info" %}
-**WebSocket-only method.** Available only over the WebSocket transport at `wss://go.getblock.io/<ACCESS-TOKEN>/`. Calling it over HTTP POST returns an `Invalid Request` error.
+**WebSocket-only method.** Available only over the WebSocket transport at `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`. Calling it over HTTP POST returns an `Invalid Request` error.
 {% endhint %}
 
 ## Parameters
@@ -25,7 +25,7 @@ Creates a real-time subscription over a WebSocket connection. Available subscrip
 {% tab title="cURL" %}
 ```bash
 # WebSocket-only method. Use wscat (or similar) to connect first:
-wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
+wscat -c 'wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'
 
 # Then send:
 {"jsonrpc": "2.0", "method": "eth_subscribe", "params": ["newHeads"], "id": "getblock.io"}
@@ -36,7 +36,7 @@ wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
 ```javascript
 import WebSocket from 'ws';
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
     ws.send(JSON.stringify({
@@ -62,7 +62,7 @@ import json
 import websockets
 
 async def main():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') as ws:
         await ws.send(json.dumps({
     "jsonrpc": "2.0",
     "method": "eth_subscribe",
@@ -87,7 +87,7 @@ use futures_util::{SinkExt, StreamExt};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let (mut ws_stream, _) = connect_async("wss://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let (mut ws_stream, _) = connect_async("wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
 
     let payload = json!({
         "jsonrpc": "2.0",
@@ -148,7 +148,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const result = await provider.send('eth_subscribe', ["newHeads"]);
 console.log(result);
@@ -168,14 +168,14 @@ const tempo = defineChain({
     // type system; values shown here are a no-op placeholder — actual fees are paid in TIP-20.
     nativeCurrency: { name: 'USD Placeholder', symbol: 'USD', decimals: 18 },
     rpcUrls: {
-        default: { http: ['https://go.getblock.io/<ACCESS-TOKEN>/'] }
+        default: { http: ['https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'] }
     },
     blockExplorers: { default: { name: 'Tempo Explorer', url: 'https://explore.tempo.xyz' } }
 });
 
 const client = createPublicClient({
     chain: tempo,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const result = await client.request({ method: 'eth_subscribe', params: ["newHeads"] });

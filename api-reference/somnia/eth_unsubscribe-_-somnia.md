@@ -25,7 +25,7 @@ This method cancels an existing subscription created with `eth_subscribe` on the
 ```javascript
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
   const unsubscribeRequest = {
@@ -51,7 +51,7 @@ import websockets
 import json
 
 async def unsubscribe():
-    uri = "wss://go.getblock.io/<ACCESS-TOKEN>/"
+    uri = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
     async with websockets.connect(uri) as websocket:
         request = {
             "jsonrpc": "2.0",
@@ -106,7 +106,7 @@ asyncio.run(unsubscribe())
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.WebSocketProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.WebSocketProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // Subscribe and store unsubscribe function
 const listener = (blockNumber) => console.log('Block:', blockNumber);
@@ -124,7 +124,7 @@ import { somnia } from 'viem/chains';
 
 const client = createPublicClient({
   chain: somnia,
-  transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/')
+  transport: webSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const unwatch = client.watchBlocks({

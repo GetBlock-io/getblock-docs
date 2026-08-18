@@ -20,7 +20,7 @@ This method returns the byte size of the value at a given storage key. Useful fo
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -48,7 +48,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -66,7 +66,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -105,7 +105,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -159,7 +159,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ApiPromise, WsProvider } from '@polkadot/api';
 
-const wsProvider = new WsProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const wsProvider = new WsProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const api = await ApiPromise.create({ provider: wsProvider });
 
 // Call via the typed API:
@@ -176,7 +176,7 @@ const raw = await api.rpc.rpc.methods();
 ```python
 from substrateinterface import SubstrateInterface
 
-substrate = SubstrateInterface(url='wss://go.getblock.io/<ACCESS-TOKEN>/')
+substrate = SubstrateInterface(url='wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 
 # Generic RPC call:
 result = substrate.rpc_request('state_getStorageSize', ["0x26aa394eea5630e07c48ae0c9558cef7b99d880ec681799c0cf30e8886371da9"])

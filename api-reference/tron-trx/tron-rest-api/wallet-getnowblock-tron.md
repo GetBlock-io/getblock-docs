@@ -9,7 +9,7 @@ description: >-
 This endpoint returns the most recent block on the chain, including its header and transactions.
 
 {% hint style="info" %}
-This is a read endpoint. It is also served by the Solidity node at `https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getnowblock`, which returns only confirmed, irreversible data. Use the Solidity node for balance and payment verification.
+This is a read endpoint. It is also served by the Solidity node at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getnowblock`, which returns only confirmed, irreversible data. Use the Solidity node for balance and payment verification.
 {% endhint %}
 
 ## Parameters
@@ -22,7 +22,7 @@ This endpoint does not require parameters.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getnowblock' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getnowblock' \
 --header 'Content-Type: application/json' \
 --data-raw '{}'
 ```
@@ -33,7 +33,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/get
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getnowblock',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getnowblock',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -51,7 +51,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getnowblock',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getnowblock',
     headers={'Content-Type': 'application/json'},
     json={}
 )

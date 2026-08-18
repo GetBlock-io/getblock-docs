@@ -64,26 +64,26 @@ All Sui gRPC methods follow the pattern:
 
 {% code overflow="wrap" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/sui.rpc.v2.<ServiceName>/<MethodName>
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/sui.rpc.v2.<ServiceName>/<MethodName>
 ```
 {% endcode %}
 
 For example, to call `GetServiceInfo` on the `LedgerService`:
 
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/sui.rpc.v2.LedgerService/GetServiceInfo
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/sui.rpc.v2.LedgerService/GetServiceInfo
 ```
 
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 
 {% tab title="New York, USA" %}
 ```bash
-https://go.getblock.us/<ACCESS-TOKEN>/
+https://shared.us-east-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 {% endtabs %}
@@ -127,7 +127,7 @@ grpcurl \
   -proto sui/rpc/v2/ledger_service.proto \
   -H "x-grpc-web: 1" \
   -d '{}' \
-  go.getblock.io/ca7c1d40c31f4e589f9b9e0775adc054 \
+  shared.eu-central-1.getblock.io/ca7c1d40c31f4e589f9b9e0775adc054 \
   sui.rpc.v2.LedgerService/GetServiceInfo
 ```
 {% endcode %}
@@ -210,7 +210,7 @@ const metadata = new grpc.Metadata();
 metadata.add('authorization', `Bearer ${ACCESS_TOKEN}`);
 
 const client = new LedgerService(
-    'go.getblock.io:443',
+    'shared.eu-central-1.getblock.io:443',
     grpc.credentials.createSsl()
 );
 
@@ -253,7 +253,7 @@ import * as path from 'path';
 import * as protobuf from 'protobufjs';
 
 const ACCESS_TOKEN = "<ACCESS_TOKEN>";
-const HOST = "go.getblock.io";
+const HOST = "shared.eu-central-1.getblock.io";
 const PROTO_ROOT = path.join(__dirname, 'protos/proto');
 
 // Encode request + wrap in gRPC-Web 5-byte frame, then POST over HTTPS

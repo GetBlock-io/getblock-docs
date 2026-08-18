@@ -9,7 +9,7 @@ description: >-
 This endpoint returns a range of blocks between a start height (inclusive) and an end height (exclusive), in one call.
 
 {% hint style="info" %}
-This is a read endpoint. It is also served by the Solidity node at `https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbylimitnext`, which returns only confirmed, irreversible data. Use the Solidity node for balance and payment verification.
+This is a read endpoint. It is also served by the Solidity node at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbylimitnext`, which returns only confirmed, irreversible data. Use the Solidity node for balance and payment verification.
 {% endhint %}
 
 ## Parameters
@@ -25,7 +25,7 @@ This is a read endpoint. It is also served by the Solidity node at `https://go.g
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getblockbylimitnext' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getblockbylimitnext' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "startNum": 68000000,
@@ -39,7 +39,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/get
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getblockbylimitnext',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getblockbylimitnext',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getblockbylimitnext',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getblockbylimitnext',
     headers={'Content-Type': 'application/json'},
     json={"startNum": 68000000, "endNum": 68000005}
 )

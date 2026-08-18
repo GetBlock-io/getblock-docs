@@ -21,7 +21,7 @@ This estimates the gas needed to execute a transaction without submitting it. Wh
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -61,7 +61,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -81,7 +81,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -132,7 +132,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -190,7 +190,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // Generic JSON-RPC call — 'pending' returns Flashblocks-preconfirmed state:
 const result = await provider.send('eth_estimateGas', [{"from": "0x7a25d0f0Ff6a25f36De0a19C3d5f6dC2C6EAeD6a", "to": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913", "data": "0xa9059cbb0000000000000000000000007a25d0f0ff6a25f36de0a19c3d5f6dc2c6eaed6a00000000000000000000000000000000000000000000000000000000000186a0"}, "pending"]);
@@ -208,7 +208,7 @@ console.log(result);
 import { createPublicClient, http } from 'viem';
 
 const client = createPublicClient({
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 // viem's read methods accept blockTag: 'pending' for Flashblocks-preconfirmed state:

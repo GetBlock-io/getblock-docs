@@ -24,7 +24,7 @@ This method requires a WebSocket connection.
 {% tab title="cURL" %}
 ```bash
 # WebSocket-only method. Use wscat (or similar) to connect first:
-wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
+wscat -c 'wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'
 
 # Then send:
 {"jsonrpc": "2.0", "method": "eth_unsubscribe", "params": ["0x9cef478923ff08bf67fde6c64013158d"], "id": "getblock.io"}
@@ -35,7 +35,7 @@ wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/'
 ```javascript
 import WebSocket from 'ws';
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
     ws.send(JSON.stringify({
@@ -61,7 +61,7 @@ import json
 import websockets
 
 async def main():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') as ws:
         await ws.send(json.dumps({
     "jsonrpc": "2.0",
     "method": "eth_unsubscribe",
@@ -86,7 +86,7 @@ use futures_util::{SinkExt, StreamExt};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let (mut ws_stream, _) = connect_async("wss://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let (mut ws_stream, _) = connect_async("wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
 
     let payload = json!({
         "jsonrpc": "2.0",
@@ -148,7 +148,7 @@ The eth\_unsubscribe method is useful for:
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const result = await provider.send('eth_unsubscribe', ["0x9cef478923ff08bf67fde6c64013158d"]);
 console.log('Result:', result);
@@ -164,7 +164,7 @@ import { polygon } from 'viem/chains';
 
 const client = createPublicClient({
     chain: polygon,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const result = await client.request({

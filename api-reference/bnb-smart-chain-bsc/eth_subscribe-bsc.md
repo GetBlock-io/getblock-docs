@@ -27,7 +27,7 @@ This requires a WebSocket connection and is ideal for tracking new blocks, pendi
 ```javascript
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
   ws.send(JSON.stringify({
@@ -50,7 +50,7 @@ ws.on('message', (data) => {
 ```javascript
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
   ws.send(JSON.stringify({
@@ -82,7 +82,7 @@ import websockets
 import json
 
 async def subscribe():
-    uri = "wss://go.getblock.io/<ACCESS-TOKEN>/"
+    uri = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
     async with websockets.connect(uri) as ws:
         await ws.send(json.dumps({
             "jsonrpc": "2.0",
@@ -160,7 +160,7 @@ asyncio.run(subscribe())
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.WebSocketProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.WebSocketProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 provider.on('block', (blockNumber) => {
   console.log('New block:', blockNumber);
@@ -177,7 +177,7 @@ import { celo } from 'viem/chains';
 
 const client = createPublicClient({
   chain: celo,
-  transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/')
+  transport: webSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const unwatch = client.watchBlocks({

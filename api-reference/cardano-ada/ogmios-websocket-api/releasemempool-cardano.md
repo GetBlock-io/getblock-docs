@@ -20,7 +20,7 @@ This method does not require parameters.
 ```javascript
 import WebSocket from 'ws';
 
-const client = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const client = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 client.once('open', () => {
     client.send(JSON.stringify({"jsonrpc": "2.0", "method": "releaseMempool", "id": "getblock.io"}));
@@ -42,7 +42,7 @@ import json
 import websockets
 
 async def main():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') as ws:
         await ws.send(json.dumps({"jsonrpc": "2.0", "method": "releaseMempool", "id": "getblock.io"}))
         print(json.loads(await ws.recv()))
 

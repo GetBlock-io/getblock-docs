@@ -17,7 +17,7 @@ This method returns the chain ID of the connected network. This is useful to con
 {% tabs %}
 {% tab title="curl" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -32,7 +32,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```bash
 const axios = require('axios');
 
-const url = "https://go.getblock.io/<ACCESS-TOKEN>/";
+const url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/";
 const headers = { "Content-Type": "application/json" };
 
 const payload = {
@@ -61,7 +61,7 @@ axios.post(url, payload, { headers })
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
@@ -100,7 +100,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -151,7 +151,7 @@ The eth\_chainId method is commonly used for:
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const network = await provider.getNetwork();
 console.log('Chain ID:', network.chainId); // 56n for BSC Mainnet
@@ -167,7 +167,7 @@ import { optimism } from 'viem/chains';
 
 const client = createPublicClient({
     chain: optimism,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const chainId = await client.getChainId();

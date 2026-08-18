@@ -21,7 +21,7 @@ This endpoint returns the metadata and ABI of a smart contract deployed at an ad
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getcontract' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getcontract' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "value": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
@@ -35,7 +35,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/get
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getcontract',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getcontract',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -53,7 +53,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getcontract',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getcontract',
     headers={'Content-Type': 'application/json'},
     json={"value": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t", "visible": true}
 )

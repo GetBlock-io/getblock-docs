@@ -23,7 +23,7 @@ This endpoint returns fiat rate tickers for a comma-separated list of Unix times
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/multi-tickers/?timestamp=1617180599,1617184199&currency=usd'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/multi-tickers/?timestamp=1617180599,1617184199&currency=usd'
 ```
 {% endcode %}
 {% endtab %}
@@ -32,7 +32,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/mult
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/multi-tickers/?timestamp=1617180599,1617184199&currency=usd'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/multi-tickers/?timestamp=1617180599,1617184199&currency=usd'
 );
 console.log(await response.json());
 ```
@@ -44,7 +44,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/multi-tickers/?timestamp=1617180599,1617184199&currency=usd')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/multi-tickers/?timestamp=1617180599,1617184199&currency=usd')
 
 print(response.json())
 ```

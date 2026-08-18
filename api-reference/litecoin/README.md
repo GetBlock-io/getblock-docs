@@ -36,7 +36,7 @@ _GetBlock's RPC API reference documentation is provided exclusively for informat
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```
-https://go.getblock.io
+https://shared.eu-central-1.getblock.io
 ```
 {% endtab %}
 {% endtabs %}
@@ -122,7 +122,7 @@ Add the following code to `index.js`:
 ```javascript
 import axios from "axios";
 
-const url = `https://go.getblock.io/<ACCESS-TOKEN>/`;
+const url = `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`;
 
 const payload = {
   jsonrpc: '2.0',
@@ -204,7 +204,7 @@ Create a file called `main.py` with the following content:
 import requests
 
 # Replace <ACCESS-TOKEN> with your actual API key from GetBlock
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 # Create a JSON-RPC payload
 payload = {

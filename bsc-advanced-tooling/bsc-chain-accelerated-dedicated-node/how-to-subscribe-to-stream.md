@@ -21,7 +21,7 @@ Here, you will be checking if you are connected to streams
 {% tabs %}
 {% tab title="Endpoint" %}
 ```bash
-wss://go.getblock.io/<ACCESS_TOKEN>
+wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 {% endtab %}
 
@@ -33,7 +33,7 @@ import WebSocket from "ws";
 import "dotenv/config";
 
 const ws = new WebSocket(
-  `wss://go.getblock.io/${process.env.ACCESS_TOKEN}`,
+  `wss://shared.eu-central-1.getblock.io/${process.env.ACCESS_TOKEN}`,
 );
 
 ws.on("open", () => {
@@ -89,7 +89,7 @@ Subscribe to new blocks as they're produced.
 import WebSocket from "ws";
 import "dotenv/config";
 
-const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
+const ws = new WebSocket(`wss://shared.eu-central-1.getblock.io/${process.env.ACCESS_TOKEN}`);
 
 ws.on("open", () => {
   console.log("Connected");
@@ -189,7 +189,7 @@ const SWAP_METHODS = {
 };
 
 function monitorPancakeSwap() {
-  const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
+  const ws = new WebSocket(`wss://shared.eu-central-1.getblock.io/${process.env.ACCESS_TOKEN}`);
 
   ws.on("open", () => {
     console.log("🔌 Connected to BSC stream");
@@ -285,7 +285,7 @@ const SWAP_METHODS = {
 };
 
 function monitorNewTxs() {
-  const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
+  const ws = new WebSocket(`wss://shared.eu-central-1.getblock.io/${process.env.ACCESS_TOKEN}`);
 
   ws.on('open', () => {
     console.log('Connected to BSC stream');
@@ -374,7 +374,7 @@ Example:&#x20;
 <pre class="language-javascript"><code class="lang-javascript">import WebSocket from 'ws';
 import 'dotenv/config';
 
-const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
+const ws = new WebSocket(`wss://shared.eu-central-1.getblock.io/${process.env.ACCESS_TOKEN}`);
 
 ws.on("open", () => {
   console.log("Connected");
@@ -419,7 +419,7 @@ To stop receiving notifications, unsubscribe using the subscription ID:
 ```js
 import WebSocket from "ws";
 import "dotenv/config";
-const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
+const ws = new WebSocket(`wss://shared.eu-central-1.getblock.io/${process.env.ACCESS_TOKEN}`);
 ws.on("open", () => {
   console.log("Connected");
 

@@ -22,12 +22,12 @@ It provides details such as the **latest block**, **validator information**, **s
 **Base URL**
 
 ```bash
- https://go.getblock.io/<ACCESS_TOKEN>
+ https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 **Example(cURL)**
 
   ```curl
-  curl -X POST https://go.getblock.io/<ACCESS_TOKEN> \
+  curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN> \
   -H "Content-Type: application/json" \
   -d '{"jsonrpc": "2.0",
   "method": "status",
@@ -146,7 +146,7 @@ let data = JSON.stringify({
 let config = {
   method: 'post',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -168,7 +168,7 @@ axios.request(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 
 payload = json.dumps({
   "jsonrpc": "2.0",

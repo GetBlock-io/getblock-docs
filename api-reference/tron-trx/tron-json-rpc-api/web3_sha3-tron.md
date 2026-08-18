@@ -20,7 +20,7 @@ This method returns the Keccak-256 hash of the given data. It is used to compute
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -37,7 +37,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc' \
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc', {
     jsonrpc: '2.0',
     method: 'web3_sha3',
     params: ["0x68656c6c6f20776f726c64"],
@@ -57,7 +57,7 @@ console.log(response.data.result);
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
@@ -83,7 +83,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",

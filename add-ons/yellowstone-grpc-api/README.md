@@ -85,7 +85,7 @@ import Client, {
   CommitmentLevel
 } from "@triton-one/yellowstone-grpc";
 
-const client = new Client("https://go.getblock.io/", "YOUR_ACCESS_TOKEN");
+const client = new Client("https://shared.eu-central-1.getblock.io/", "YOUR_ACCESS_TOKEN");
 const stream = await client.subscribe();
 
 stream.write({

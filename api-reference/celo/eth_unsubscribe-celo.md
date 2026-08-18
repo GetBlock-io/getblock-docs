@@ -22,7 +22,7 @@ This method cancels an existing subscription on the Celo network. This should be
 ```javascript
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
   ws.send(JSON.stringify({
@@ -48,7 +48,7 @@ import websockets
 import json
 
 async def unsubscribe():
-    uri = "wss://go.getblock.io/<ACCESS-TOKEN>/"
+    uri = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
     async with websockets.connect(uri) as ws:
         await ws.send(json.dumps({
             "jsonrpc": "2.0",

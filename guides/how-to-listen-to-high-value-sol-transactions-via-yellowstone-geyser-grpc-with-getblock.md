@@ -77,19 +77,19 @@ You'll receive an HTTPS-style gRPC endpoint URL based on your chosen region:
 {% tabs %}
 {% tab title="Singapore" %}
 ```bash
-https://go.getblock.asia/YOUR_ACCESS_TOKEN/
+https://shared.ap-southeast-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endtab %}
 
 {% tab title="New York" %}
 ```bash
-https://go.getblock.us/YOUR_ACCESS_TOKEN/
+https://shared.us-east-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endtab %}
 
 {% tab title="Frankfurt" %}
 ```bash
-https://go.getblock.io/YOUR_ACCESS_TOKEN/
+https://shared.eu-central-1.getblock.io/YOUR_ACCESS_TOKEN/
 ```
 {% endtab %}
 {% endtabs %}
@@ -97,7 +97,7 @@ https://go.getblock.io/YOUR_ACCESS_TOKEN/
 {% hint style="warning" %}
 Save both pieces of information:
 
-* Base Endpoint: https://go.getblock.io (or your region)
+* Base Endpoint: https://shared.eu-central-1.getblock.io (or your region)
 * Access Token: The alphanumeric token generated
 
 You'll use these in your code to authenticate with GetBlock's Yellowstone service.
@@ -210,14 +210,14 @@ What this does:
 #### Add Your GetBlock Configuration
 
 ```javascript
-const ENDPOINT = "https://go.getblock.io";  // Your region's endpoint
+const ENDPOINT = "https://shared.eu-central-1.getblock.io";  // Your region's endpoint
 const TOKEN = process.env.GETBLOCK_TOKEN;           // Your generated token
 ```
 
 What this does: Stores your GetBlock credentials for authenticating your connection.
 
 {% hint style="warning" %}
-If you chose a different region during setup, use that base URL instead (e.g., https://go.getblock.us or https://go.getblock.asia).
+If you chose a different region during setup, use that base URL instead (e.g., https://shared.us-east-1.getblock.ioor https://shared.ap-southeast-1.getblock.io).
 {% endhint %}
 
 #### Add Solana System Program Constants

@@ -13,7 +13,7 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/chain/last-block' \
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/chain/last-block' \
 --header 'Content-Type: application/json'
 ```
 

@@ -22,7 +22,7 @@ Request Example
 {% tab title="cURL" %}
 {% code title="curl" %}
 ```bash
-curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl --location --request POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "jsonrpc": "2.0",
@@ -38,7 +38,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 {% code title="example.py" overflow="wrap" %}
 ```python
 import requests
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 payload = {"jsonrpc": "2.0", "method": "sui_getCheckpoint", "params": ["1000"], "id": "getblock.io"}
 response = requests.post(url, headers={"Content-Type": "application/json"}, json=payload)
 print("Result:", response.json().get("result"))
@@ -50,7 +50,7 @@ print("Result:", response.json().get("result"))
 {% code title="example.js" %}
 ```javascript
 const axios = require('axios');
-axios.post("https://go.getblock.io/<ACCESS-TOKEN>/", {
+axios.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/", {
   jsonrpc: "2.0", method: "sui_getCheckpoint", params: ["1000"], id: "getblock.io"
 }).then(r => console.log("Result:", r.data.result));
 ```
@@ -67,7 +67,7 @@ use serde_json::json;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
     let payload = json!({"jsonrpc": "2.0", "id": "getblock.io", "method": "sui_getCheckpoint", "params": ["1000"]});
-    let response = client.post("https://go.getblock.io/<ACCESS-TOKEN>/").json(&payload).send().await?;
+    let response = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&payload).send().await?;
     println!("Response: {:?}", response.text().await?);
     Ok(())
 }
@@ -127,7 +127,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {% code title="TypeScript (Sui SDK)" %}
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 const checkpoint = await client.getCheckpoint({ id: '1000' });
 console.log(checkpoint);
 ```

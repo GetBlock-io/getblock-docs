@@ -9,7 +9,7 @@ description: >-
 This endpoint returns the execution result of a transaction: its block, Energy and Bandwidth used, fee, and any smart-contract logs. This is the TRON equivalent of a transaction receipt.
 
 {% hint style="info" %}
-This is a read endpoint. It is also served by the Solidity node at `https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactioninfobyid`, which returns only confirmed, irreversible data. Use the Solidity node for balance and payment verification.
+This is a read endpoint. It is also served by the Solidity node at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/gettransactioninfobyid`, which returns only confirmed, irreversible data. Use the Solidity node for balance and payment verification.
 {% endhint %}
 
 ## Parameters
@@ -24,7 +24,7 @@ This is a read endpoint. It is also served by the Solidity node at `https://go.g
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/gettransactioninfobyid' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/gettransactioninfobyid' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "value": "d5ec749ecc2a615399d8a6c864ea4c74ff9f523c2be0e341ac9be5d47d7c2d62"
@@ -37,7 +37,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/get
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/gettransactioninfobyid',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/gettransactioninfobyid',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -55,7 +55,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/gettransactioninfobyid',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/gettransactioninfobyid',
     headers={'Content-Type': 'application/json'},
     json={"value": "d5ec749ecc2a615399d8a6c864ea4c74ff9f523c2be0e341ac9be5d47d7c2d62"}
 )

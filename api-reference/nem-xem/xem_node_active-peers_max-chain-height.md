@@ -14,7 +14,7 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://go.getblock.io/YOUR-ACCESS-TOKEN/node/active-peers/max-chain-height' \
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/YOUR-ACCESS-TOKEN/node/active-peers/max-chain-height' \
 --header 'Content-Type: application/json'
 ```
 

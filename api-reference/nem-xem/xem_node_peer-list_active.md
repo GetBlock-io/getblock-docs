@@ -13,7 +13,7 @@ description: >-
 #### Request
 
 ```java
-curl --location --request GET 'https://go.getblock.io/YOUR-ACCESS-TOKEN/node/peer-list/active' \
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/YOUR-ACCESS-TOKEN/node/peer-list/active' \
 --header 'Content-Type: application/json'
 ```
 

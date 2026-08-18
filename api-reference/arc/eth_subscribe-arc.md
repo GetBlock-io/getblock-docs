@@ -9,7 +9,7 @@ description: >-
 This method creates a real-time subscription over a WebSocket connection. Available subscription types are `newHeads` (new block headers), `logs` (matching contract events), and `newPendingTransactions` (pending transactions).&#x20;
 
 {% hint style="info" %}
-This method is only available over WebSocket transport — use `wss://go.getblock.io/<ACCESS-TOKEN>/`. With Arc's \~2 second block times, WebSocket subscriptions are the most efficient way to drive real-time payment UIs.
+This method is only available over WebSocket transport — use `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`. With Arc's \~2 second block times, WebSocket subscriptions are the most efficient way to drive real-time payment UIs.
 {% endhint %}
 
 ## Parameters
@@ -41,7 +41,7 @@ console.log('WebSocket message:', data);
 {% tab title="JavaScript (WebSocket & message format)" %}
 ```javascript
 // WebSocket connection required
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.onopen = () => {
     ws.send(JSON.stringify({
@@ -75,7 +75,7 @@ def on_open(ws):
     }))
 
 ws = websocket.WebSocketApp(
-    "wss://go.getblock.io/<ACCESS-TOKEN>/",
+    "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/",
     on_message=on_message,
     on_open=on_open
 )
@@ -139,7 +139,7 @@ let message = r#"{
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.WebSocketProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.WebSocketProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 provider.on('block', (blockNumber) => {
     console.log('New block:', blockNumber);
@@ -155,12 +155,12 @@ const arcTestnet = defineChain({
     id: 5042002,
     name: 'Arc Testnet',
     nativeCurrency: { name: 'USD Coin', symbol: 'USDC', decimals: 6 },
-    rpcUrls: { default: { http: ['https://go.getblock.io/<ACCESS-TOKEN>/'], webSocket: ['wss://go.getblock.io/<ACCESS-TOKEN>/'] } }
+    rpcUrls: { default: { http: ['https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'], webSocket: ['wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'] } }
 });
 
 const client = createPublicClient({
     chain: arcTestnet,
-    transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: webSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const unwatch = client.watchBlockNumber({

@@ -18,7 +18,7 @@ example: { "value": "68e4f79f886927de698df4f857de2aada41ccca6617e56bb0d61623b35b
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/YOUR-ACCESS-TOKEN/local/account/transfers/all' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/YOUR-ACCESS-TOKEN/local/account/transfers/all' \
 --header 'Content-Type: application/json'
 ```
 

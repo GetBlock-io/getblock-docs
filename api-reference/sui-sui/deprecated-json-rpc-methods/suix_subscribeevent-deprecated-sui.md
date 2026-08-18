@@ -39,7 +39,7 @@ This method requires a WebSocket connection, not HTTP.
 ```javascript
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
   const subscribeRequest = {
@@ -74,7 +74,7 @@ import websockets
 import json
 
 async def subscribe_events():
-    uri = "wss://go.getblock.io/<ACCESS-TOKEN>/"
+    uri = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
     async with websockets.connect(uri) as websocket:
         request = {
             "jsonrpc": "2.0",
@@ -107,7 +107,7 @@ use serde_json::json;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let (mut ws_stream, _) = connect_async("wss://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let (mut ws_stream, _) = connect_async("wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
     
     let request = json!({
         "jsonrpc": "2.0",
@@ -196,7 +196,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
 
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 
 const unsubscribe = await client.subscribeEvent({
   filter: { MoveModule: { package: '0x2', module: 'coin' } },
@@ -219,8 +219,8 @@ use sui_sdk::rpc_types::EventFilter;
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
     let sui = SuiClientBuilder::default()
-        .ws_url("wss://go.getblock.io/<ACCESS-TOKEN>/")
-        .build("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .ws_url("wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
+        .build("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .await?;
     
     let mut subscribe = sui.event_api().subscribe_event(

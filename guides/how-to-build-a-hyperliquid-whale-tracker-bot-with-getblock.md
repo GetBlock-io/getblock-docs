@@ -96,7 +96,7 @@ TELEGRAM_BATCH_INTERVAL=10000
 </strong>TRACKED_SYMBOLS=BTC,ETH,SOL,ARB,AVAX,HYPE
 
 <strong># Optional: HyperEVM WebSocket from GetBlock
-</strong>HYPEREVM_WSS=wss://go.getblock.io/&#x3C;ACCESS_TOKEN>
+</strong>HYPEREVM_WSS=wss://shared.eu-central-1.getblock.io/&#x3C;ACCESS_TOKEN>
 </code></pre>
 
 ### Step 5. Build Whale Tracker Bot
@@ -858,7 +858,7 @@ Reconnecting in 16 seconds... (Attempt 4)
 
 ```bash
 # correct format
-HYPEREVM_WSS=wss://go.getblock.io/<ACCESS_TOKEN>
+HYPEREVM_WSS=wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 Then, restart the server.&#x20;

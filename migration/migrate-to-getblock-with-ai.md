@@ -33,7 +33,7 @@ Do not rely on training data for what GetBlock supports. Network coverage, metho
 The Assess and Plan phases run entirely on public docs and read-only checks. The Implement phase creates endpoints, which happens in the GetBlock dashboard. GetBlock endpoints embed your access token in the URL, so there is no API key to register with the agent and no auth header to manage.
 
 {% hint style="danger" %}
-**Never assemble an endpoint URL from a template.** The host is not the same for every endpoint: it varies by region and by protocol, and `go.getblock.io`, `go.getblock.asia`, `go.getblock.us` and `shared.<region>.getblock.io` are all in use. Every URL in this page is an illustration, not a formula. The authoritative URL is the one the dashboard issues for that specific endpoint — copy it verbatim, including its host, path and any trailing slash.
+**Never assemble an endpoint URL from a template.** The host is not the same for every endpoint: it varies by region and by protocol, and `shared.eu-central-1.getblock.io`, `shared.ap-southeast-1.getblock.io`, `shared.us-east-1.getblock.io` and `shared.<region>.getblock.io` are all in use. Every URL in this page is an illustration, not a formula. The authoritative URL is the one the dashboard issues for that specific endpoint — copy it verbatim, including its host, path and any trailing slash.
 {% endhint %}
 
 ## Agent instructions

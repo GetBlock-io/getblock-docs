@@ -21,7 +21,7 @@ This method broadcasts a signed, serialized transaction to the Bitcoin Cash netw
 {% tab title="cURL (REST)" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/' \
 --header 'Content-Type: text/plain' \
 --data-raw '01000000000101e17e03d21d051aa2bd9d336c3ac0693cfa92ce71592ceec521b1c48019ff77a10100000017160014...signed...raw...tx...hex...00000000'
 ```
@@ -31,7 +31,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/sen
 {% tab title="cURL (JSON-RPC)" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -49,7 +49,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/',
     {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
@@ -67,7 +67,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/',
     headers={'Content-Type': 'text/plain'},
     data='01000000000101e17e03d21d051aa2bd9d336c3ac0693cfa92ce71592ceec521b1c48019ff77a10100000017160014...signed...raw...tx...hex...00000000'
 )

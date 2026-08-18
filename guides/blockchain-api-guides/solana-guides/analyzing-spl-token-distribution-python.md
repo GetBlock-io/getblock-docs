@@ -42,7 +42,7 @@ pip install solana solders matplotlib pandas requests
 _Example_:
 
 ```bash
-export GETBLOCK_RPC="https://go.getblock.io/<ACCESS_TOKEN>"
+export GETBLOCK_RPC="https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 ```
 
 Treat the [access token](../../../getting-started/authentication-with-access-tokens.md) like a password. Do not commit it to source control or expose it in client-side code. Rotate or revoke tokens from the GetBlock dashboard if they are compromised.
@@ -59,7 +59,7 @@ from solana.rpc.api import Client
 from solders.pubkey import Pubkey
 import os
 
-RPC_URL = os.environ.get("GETBLOCK_RPC") or "https://go.getblock.io/<ACCESS_TOKEN>"
+RPC_URL = os.environ.get("GETBLOCK_RPC") or "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 client = Client(RPC_URL)
 ```
 

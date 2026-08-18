@@ -9,7 +9,7 @@ description: >-
 This endpoint returns the on-chain data for an account, including its TRX balance in SUN, permissions, TRC-10 asset balances, and staking state.
 
 {% hint style="info" %}
-This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://go.getblock.io/<ACCESS-TOKEN>/wallet/getaccount` over the latest, possibly unconfirmed state.
+This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getaccount` over the latest, possibly unconfirmed state.
 {% endhint %}
 
 ## Parameters
@@ -25,7 +25,7 @@ This is a Solidity-node endpoint. It returns only confirmed, irreversible data, 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getaccount' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getaccount' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g",
@@ -39,7 +39,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsoli
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getaccount',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getaccount',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getaccount',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getaccount',
     headers={'Content-Type': 'application/json'},
     json={"address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g", "visible": true}
 )

@@ -21,7 +21,7 @@ Estimates the gas necessary to complete a transaction on the Sei network. The es
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data '{
     "jsonrpc": "2.0",
@@ -38,7 +38,7 @@ curl --location 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 ```javascript
 import axios from 'axios';
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
     jsonrpc: '2.0',
@@ -62,7 +62,7 @@ axios.post(url, payload, {
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -94,7 +94,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
@@ -164,7 +164,7 @@ Common errors when using this method:
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // Using ethers provider methods
 const result = await provider.send('eth_estimateGas', [{"from": "0x742d35Cc6634C0532925a3b844Bc9e7595f5bE21", "to": "0x1234567890abcdef1234567890abcdef12345678", "value": "0x9184e72a"}]);
@@ -181,7 +181,7 @@ import { sei } from 'viem/chains';
 
 const client = createPublicClient({
     chain: sei,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 // Using viem's request method

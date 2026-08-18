@@ -21,7 +21,7 @@ This endpoint returns the backend fee estimate for a target number of blocks to 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/estimatefee/6?conservative=true'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/estimatefee/6?conservative=true'
 ```
 {% endcode %}
 {% endtab %}
@@ -30,7 +30,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/esti
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/estimatefee/6?conservative=true'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/estimatefee/6?conservative=true'
 );
 console.log(await response.json());
 ```
@@ -42,7 +42,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/estimatefee/6?conservative=true')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/estimatefee/6?conservative=true')
 
 print(response.json())
 ```

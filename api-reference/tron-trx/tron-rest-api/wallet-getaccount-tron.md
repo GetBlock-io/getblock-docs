@@ -9,7 +9,7 @@ description: >-
 This endpoint returns the on-chain data for an account, including its TRX balance in SUN, permissions, TRC-10 asset balances, and staking state.
 
 {% hint style="info" %}
-This is a read endpoint. It is also served by the Solidity node at `https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getaccount`, which returns only confirmed, irreversible data. Use the Solidity node for balance and payment verification.
+This is a read endpoint. It is also served by the Solidity node at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getaccount`, which returns only confirmed, irreversible data. Use the Solidity node for balance and payment verification.
 {% endhint %}
 
 ## Parameters
@@ -25,7 +25,7 @@ This is a read endpoint. It is also served by the Solidity node at `https://go.g
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getaccount' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getaccount' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g",
@@ -39,7 +39,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/get
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getaccount',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getaccount',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/getaccount',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getaccount',
     headers={'Content-Type': 'application/json'},
     json={"address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g", "visible": true}
 )

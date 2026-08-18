@@ -13,7 +13,7 @@ Every request is an HTTP `POST` with a JSON-RPC 2.0 body: a `method`, optional `
 ## Base URL
 
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 
 {% hint style="warning" %}

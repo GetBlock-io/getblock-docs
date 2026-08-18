@@ -89,7 +89,7 @@ yarn add axios
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://go.getblock.io/<ACCESS_TOKEN>",
+      url: "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>",
       headers: {
         "Content-Type": "application/json",
       },
@@ -161,7 +161,7 @@ Before you begin, you must have installed Python and Pip on your local machine.
     import requests
     import json
 
-    url = "https://go.getblock.io/<ACCESS_TOKEN>"
+    url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 
     payload = json.dumps({
         "jsonrpc": "2.0",
@@ -193,7 +193,7 @@ Before you begin, you must have installed Python and Pip on your local machine.
 {% tabs %}
 {% tab title="Franfurt, Germany" %}
 ```bash
-https://go.getblock.io
+https://shared.eu-central-1.getblock.io
 ```
 {% endtab %}
 {% endtabs %}

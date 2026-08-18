@@ -29,7 +29,7 @@ This method returns a detailed trace of a transaction's execution on the Celo ne
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -49,7 +49,7 @@ curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 ```javascript
 const axios = require('axios');
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
   jsonrpc: '2.0',
@@ -76,7 +76,7 @@ axios.post(url, payload, {
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = {
     "jsonrpc": "2.0",
@@ -147,7 +147,7 @@ print(json.dumps(response.json(), indent=2))
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const trace = await provider.send('debug_traceTransaction', [
   '0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b',

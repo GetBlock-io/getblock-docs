@@ -21,7 +21,7 @@ Returns the list of current validators for a given subnet (defaults to the Prima
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/P' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/P' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -45,7 +45,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/P',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/P',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -63,7 +63,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/P"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/P"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -98,7 +98,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/P")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/P")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -186,7 +186,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 // For raw JSON-RPC access, use a generic HTTP client as in the Request Example.
 import axios from 'axios';
 
-const response = await axios.post('https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/P', {
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/P', {
     jsonrpc: '2.0',
     id: 'getblock.io',
     method: 'platform.getCurrentValidators',
@@ -202,7 +202,7 @@ console.log(response.data);
 import requests
 import json
 
-url = 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/P'
+url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/P'
 payload = {
     'jsonrpc': '2.0',
     'id': 'getblock.io',

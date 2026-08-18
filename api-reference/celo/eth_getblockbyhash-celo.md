@@ -20,7 +20,7 @@ This method gets information about a block by its hash on the Celo network. This
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -38,7 +38,7 @@ curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 ```javascript
 const axios = require('axios');
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
   jsonrpc: '2.0',
@@ -64,7 +64,7 @@ axios.post(url, payload, {
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = {
     "jsonrpc": "2.0",
@@ -140,7 +140,7 @@ print(response.json())
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const block = await provider.getBlock('0x4e3a3754410177e6937ef1f84bba68ea139e8d1a2258c5f85db9f1cd715a1bdd');
 console.log(block);
@@ -153,7 +153,7 @@ console.log(block);
 ```javascript
 const { newKit } = require('@celo/contractkit');
 
-const kit = newKit('https://go.getblock.io/<ACCESS-TOKEN>/');
+const kit = newKit('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const block = await kit.web3.eth.getBlock('0x4e3a3754410177e6937ef1f84bba68ea139e8d1a2258c5f85db9f1cd715a1bdd');
 console.log(block);

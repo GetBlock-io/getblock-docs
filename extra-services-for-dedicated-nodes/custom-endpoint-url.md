@@ -10,7 +10,7 @@ Custom Endpoint URL lets you serve your dedicated node from a domain you own ins
 
 ### How it works
 
-By default, your endpoint carries a random access token in the path, e.g a typical path from GetBlock `go.getblock.io/<ACCESS-TOKEN>/`. That works, but it ties your public configuration to a provider hash, and it places a secret inside a URL, where it tends to end up in server logs, browser history, and proxy records.
+By default, your endpoint carries a random access token in the path, e.g a typical path from GetBlock `shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`. That works, but it ties your public configuration to a provider hash, and it places a secret inside a URL, where it tends to end up in server logs, browser history, and proxy records.
 
 This add-on changes the address in two ways:
 

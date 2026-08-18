@@ -18,13 +18,13 @@ None: This method does not require any parameters.
 
 ### URL
 ```json
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 Here’s a sample cURL request using eth_chainId
 
 Request
 ```json
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc' 
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc' 
 --header 'Content-Type: application/json' 
 {"jsonrpc": "2.0", "method": "eth_chainId", "params": [], "id": "getblock.io"}
 ```
@@ -65,7 +65,7 @@ Here are some use-cases for the `eth_chainId` method:
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }

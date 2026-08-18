@@ -36,7 +36,7 @@ Create a .env file with your GetBlock endpoint:
 
 ```bash
 # Solana RPC by GetBlock (insert your actual access token)
-SOLANA_RPC_URL="https://go.getblock.io/<ACCESS_TOKEN>"
+SOLANA_RPC_URL="https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 
 # Jupiter endpoints (use the official dev.jup.ag host or new hostnames)
 JUP_QUOTE_API="https://quote-api.jup.ag/v1/quote"

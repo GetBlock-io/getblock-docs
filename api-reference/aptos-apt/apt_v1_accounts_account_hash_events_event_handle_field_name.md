@@ -31,13 +31,13 @@ This endpoint retrieves events for a given account using an event handle struct 
 **Base URL**
 
 ```bash
-https://go.getblock.io/<ACCESS\_TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS\_TOKEN>/
 ```
 
 **Example (cURL)**
 
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f/events/0x1::account::Account/coin_register_events'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f/events/0x1::account::Account/coin_register_events'
 ```
 
 ## Response Example
@@ -103,7 +103,7 @@ This endpoint can be used to:
 ```python
     import requests
     
-    url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f/events/0x1::account::Account/coin_register_events"
+    url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f/events/0x1::account::Account/coin_register_events"
     
     response = requests.get(url)
     
@@ -118,7 +118,7 @@ This endpoint can be used to:
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f/events/0x1::account::Account/coin_register_events'
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f/events/0x1::account::Account/coin_register_events'
     };
     
     axios.request(config)

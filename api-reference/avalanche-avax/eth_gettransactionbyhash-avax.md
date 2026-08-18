@@ -20,7 +20,7 @@ Returns C-Chain transaction details by transaction hash. Useful for inspecting a
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -48,7 +48,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -66,7 +66,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -105,7 +105,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -185,7 +185,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc');
 
 // Most methods are exposed directly on the provider.
 // For raw access, use provider.send(method, params).
@@ -201,7 +201,7 @@ import { avalanche } from 'viem/chains';
 
 const client = createPublicClient({
     chain: avalanche,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc')
 });
 
 const result = await client.request({ method: 'eth_getTransactionByHash', params: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"] });

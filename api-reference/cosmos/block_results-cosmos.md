@@ -20,7 +20,7 @@ Returns the results of all transactions executed in a block — ABCI codes, gas 
 {% tab title="cURL" %}
 ```bash
 # JSON-RPC over HTTP POST (canonical)
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/block_results' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/block_results' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -32,7 +32,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/block_resu
 }'
 
 # URI over HTTP GET (alternate, for simple methods)
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/block_results?height=23456789'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/block_results?height=23456789'
 ```
 {% endtab %}
 
@@ -51,7 +51,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/block_results',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/block_results',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -69,7 +69,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/block_results"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/block_results"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -108,7 +108,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/block_results")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/block_results")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -215,7 +215,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { Tendermint37Client, HttpClient } from '@cosmjs/tendermint-rpc';
 
-const httpClient = new HttpClient('https://go.getblock.io/<ACCESS-TOKEN>/');
+const httpClient = new HttpClient('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 const client = await Tendermint37Client.create(httpClient);
 
 // CosmJS exposes typed methods on the client (e.g. client.status(), client.block()).
@@ -230,7 +230,7 @@ console.log(result);
 # cosmpy wraps Cosmos REST / gRPC. For raw CometBFT RPC access, use requests.
 import requests
 
-response = requests.post('https://go.getblock.io/<ACCESS-TOKEN>/', json={
+response = requests.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', json={
     'jsonrpc': '2.0',
     'id': 'getblock.io',
     'method': 'block_results',

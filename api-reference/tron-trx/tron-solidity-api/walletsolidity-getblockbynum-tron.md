@@ -9,7 +9,7 @@ description: >-
 This endpoint returns a block by its height, including its header and transactions.
 
 {% hint style="info" %}
-This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://go.getblock.io/<ACCESS-TOKEN>/wallet/getblockbynum` over the latest, possibly unconfirmed state.
+This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getblockbynum` over the latest, possibly unconfirmed state.
 {% endhint %}
 
 ## Parameters
@@ -24,7 +24,7 @@ This is a Solidity-node endpoint. It returns only confirmed, irreversible data, 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbynum' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbynum' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "num": 68000000
@@ -37,7 +37,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsoli
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbynum',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbynum',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -55,7 +55,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbynum',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getblockbynum',
     headers={'Content-Type': 'application/json'},
     json={"num": 68000000}
 )

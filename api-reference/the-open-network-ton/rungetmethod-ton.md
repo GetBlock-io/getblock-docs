@@ -23,7 +23,7 @@ This method invokes a read-only get-method on a TON smart contract and returns t
 **JSON-RPC (POST):**
 
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -55,7 +55,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -73,7 +73,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -116,7 +116,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -195,7 +195,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 import { TonClient } from '@ton/ton';
 
 const client = new TonClient({
-    endpoint: 'https://go.getblock.io/<ACCESS-TOKEN>/'
+    endpoint: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'
 });
 
 // The @ton/ton client wraps the same JSON-RPC methods.

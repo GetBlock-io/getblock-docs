@@ -14,7 +14,7 @@ the address of the new identiy.
 
 #### Request
 
-<pre class="language-java"><code class="lang-java">curl --location --request POST 'https://go.getblock.io/&#x3C;ACCESS-TOKEN>' \
+<pre class="language-java"><code class="lang-java">curl --location --request POST 'https://shared.eu-central-1.getblock.io/&#x3C;ACCESS-TOKEN>' \
 <strong>--header 'Content-Type: application/json' \
 </strong>--data-raw '{
   "jsonrpc": "2.0",

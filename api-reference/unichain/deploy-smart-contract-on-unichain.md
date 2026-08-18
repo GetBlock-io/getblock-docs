@@ -11,7 +11,7 @@ Unichain is an EVM-equivalent OP Stack Layer 2 that runs standard EVM bytecode, 
 ## Prerequisites
 
 * A wallet holding ETH on Unichain for gas (see Add Network to Your Wallet below)
-* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://go.getblock.io/<ACCESS-TOKEN>/`
+* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`
 * Node.js version 20 or later, for Hardhat
 * A funded deployer address, on Unichain Sepolia for testing (see Testnet Faucets)
 
@@ -20,7 +20,7 @@ Unichain is an EVM-equivalent OP Stack Layer 2 that runs standard EVM bytecode, 
 | Property        | Unichain Mainnet                         | Unichain Sepolia Testnet                            |
 | --------------- | ---------------------------------------- | --------------------------------------------------- |
 | Chain ID        | 130 (0x82)                               | 1301 (0x515)                                        |
-| RPC URL         | `https://go.getblock.io/<ACCESS-TOKEN>/` | `https://go.getblock.io/<ACCESS-TOKEN>/`            |
+| RPC URL         | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/` | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`            |
 | Currency Symbol | ETH                                      | ETH                                                 |
 | Block Explorer  | [uniscan.xyz](https://uniscan.xyz/)      | [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz/) |
 
@@ -113,7 +113,7 @@ contract HelloUnichain {
 
 ```bash
 export PRIVATE_KEY=<your-deployer-private-key>
-export UNICHAIN_RPC_URL=https://go.getblock.io/<ACCESS-TOKEN>/
+export UNICHAIN_RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 forge create src/HelloUnichain.sol:HelloUnichain \
   --rpc-url $UNICHAIN_RPC_URL \
@@ -167,12 +167,12 @@ module.exports = {
   solidity: '0.8.30',
   networks: {
     unichain: {
-      url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
       chainId: 130,
       accounts: [PRIVATE_KEY]
     },
     unichainSepolia: {
-      url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
       chainId: 1301,
       accounts: [PRIVATE_KEY]
     }

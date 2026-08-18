@@ -60,7 +60,7 @@ The `eth_blockNumber` method is essential for:
 {% code overflow="wrap" %}
 ```javascript
 import { ethers } from "ethers";
-const RPC_URL = "https://go.getblock.us/<ACCESS_TOKEN>";
+const RPC_URL = "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>";
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 async function fetchBlockNumberFromProvider() {
   try {

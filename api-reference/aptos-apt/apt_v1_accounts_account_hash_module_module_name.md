@@ -33,13 +33,13 @@ This endpoint fetches detailed information about a single smart contract (module
 **Base URL**
 
 ```bash
-https://go.getblock.io/<ACCESS_TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/
 ```
 
 **Example (cURL)**
 
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/module/curves'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/module/curves'
 ```
 
 ### Response
@@ -142,7 +142,7 @@ This endpoint can be used to:
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/module/curves"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/module/curves"
 
 response = requests.get(url)
 
@@ -157,7 +157,7 @@ import axios from 'axios';
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/module/curves'
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12/module/curves'
 };
 
 axios.request(config)

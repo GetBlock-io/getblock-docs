@@ -20,7 +20,7 @@ This endpoint broadcasts a signed, serialized transaction to the Bitcoin Cash ne
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/' \
 --header 'Content-Type: text/plain' \
 --data-raw '01000000000101e17e03d21d051aa2bd9d336c3ac0693cfa92ce71592ceec521b1c48019ff77a10100000017160014...signed...raw...tx...hex...00000000'
 ```
@@ -31,7 +31,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/sen
 {% code title="example.js" overflow="wrap" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/',
     {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
@@ -49,7 +49,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/sendtx/',
     headers={'Content-Type': 'text/plain'},
     data='01000000000101e17e03d21d051aa2bd9d336c3ac0693cfa92ce71592ceec521b1c48019ff77a10100000017160014...signed...raw...tx...hex...00000000'
 )

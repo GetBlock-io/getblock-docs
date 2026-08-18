@@ -75,13 +75,13 @@ This endpoint gets the on-chain committed transactions associated with a specifi
 **Base URL**
 
 ```bash
-https://go.getblock.io/<ACCESS_TOKEN>
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 **Example(cURl)**
 
 ```
-curl -X GET "https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f
+curl -X GET "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f
 /transactions?limit=5"
 ```
 
@@ -330,7 +330,7 @@ This method can be used for:
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255/transactions"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255/transactions"
 
 response = requests.request("GET", url, headers=headers, data=payload)
 
@@ -346,7 +346,7 @@ import axios from 'axios';
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255/transactions',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc20ea5a196c81d8d7aff814aa37f8a5823acffbc4193efd3b2aafc9ef2803255/transactions',
   headers: { }
 };
 

@@ -21,7 +21,7 @@ This method returns the reference gas price for the current epoch on the SUI net
 {% tab title="curl" %}
 {% code title="curl" %}
 ```bash
-curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl --location --request POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "jsonrpc": "2.0",
@@ -37,7 +37,7 @@ curl --location --request POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 {% code title="example.js" %}
 ```javascript
 const axios = require('axios');
-axios.post("https://go.getblock.io/<ACCESS-TOKEN>/", {
+axios.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/", {
   jsonrpc: "2.0", method: "suix_getReferenceGasPrice", params: [], id: "getblock.io"
 }).then(r => console.log("Gas Price:", r.data.result));
 ```
@@ -48,7 +48,7 @@ axios.post("https://go.getblock.io/<ACCESS-TOKEN>/", {
 {% code title="example.py" overflow="wrap" %}
 ```python
 import requests
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 payload = {"jsonrpc": "2.0", "method": "suix_getReferenceGasPrice", "params": [], "id": "getblock.io"}
 response = requests.post(url, headers={"Content-Type": "application/json"}, json=payload)
 print("Gas Price:", response.json().get("result"))
@@ -66,7 +66,7 @@ use serde_json::json;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
     let payload = json!({"jsonrpc": "2.0", "id": "getblock.io", "method": "suix_getReferenceGasPrice", "params": []});
-    let response = client.post("https://go.getblock.io/<ACCESS-TOKEN>/").json(&payload).send().await?;
+    let response = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&payload).send().await?;
     println!("Response: {:?}", response.text().await?);
     Ok(())
 }
@@ -117,7 +117,7 @@ Network Error
 {% code title="Sui Typescript SDK" %}
 ```jsx
 import { SuiClient } from '@mysten/sui/client';
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 const gasPrice = await client.getReferenceGasPrice();
 console.log(gasPrice);
 ```

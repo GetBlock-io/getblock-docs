@@ -122,7 +122,7 @@ npm install @solana/web3.js ws dotenv
 Your WebSocket endpoint will look like:
 
 ```bash
-wss://go.getblock.us/<ACCESS_TOKEN>
+wss://shared.us-east-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 6. Also get the HTTP endpoint for transaction fetching:
@@ -133,14 +133,14 @@ wss://go.getblock.us/<ACCESS_TOKEN>
 Your HTTP endpoint will look like:
 
 ```bash
-https://go.getblock.us/<ACCESS_TOKEN>
+https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 7. Save both endpoints in a `.env` file in your project root:
 
 ```bash
-GETBLOCK_WS_ENDPOINT=wss://go.getblock.us/<ACCESS_TOKEN>
-GETBLOCK_HTTP_ENDPOINT=https://go.getblock.us/<ACCESS_TOKEN>
+GETBLOCK_WS_ENDPOINT=wss://shared.us-east-1.getblock.io/<ACCESS_TOKEN>
+GETBLOCK_HTTP_ENDPOINT=https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 {% hint style="warning" %}

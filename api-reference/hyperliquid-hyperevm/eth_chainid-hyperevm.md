@@ -18,7 +18,7 @@ This method gets the chain ID of the current network.
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -42,7 +42,7 @@ let data = JSON.stringify({
 let config = {
   method: 'post',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -65,7 +65,7 @@ axios.request(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 
 payload = json.dumps({
   "method": "eth_blockNumber",
@@ -93,7 +93,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header(header::CONTENT_TYPE, "application/json")
         .body(r#"{
             "jsonrpc": "2.0",

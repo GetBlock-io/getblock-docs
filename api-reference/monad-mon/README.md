@@ -45,19 +45,19 @@ _GetBlock's RPC API reference documentation is provided exclusively for informat
 {% tabs %}
 {% tab title="Franfurt, Germany" %}
 ```bash
-https://go.getblock.io
+https://shared.eu-central-1.getblock.io
 ```
 {% endtab %}
 
 {% tab title="New York, USA" %}
 ```bash
-https://go.getblock.us
+https://shared.us-east-1.getblock.io
 ```
 {% endtab %}
 
 {% tab title="Singapore, Singapore" %}
 ```bash
-https://go.getblock.asia
+https://shared.ap-southeast-1.getblock.io
 ```
 {% endtab %}
 {% endtabs %}
@@ -135,7 +135,7 @@ yarn add axios
 
     const config = {
         method: 'post',
-        url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+        url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -195,7 +195,7 @@ Before you begin, you must have installed Python and Pip on your local machine.
     import requests
     import json
 
-    url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+    url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
     payload = json.dumps({
         "jsonrpc": "2.0",

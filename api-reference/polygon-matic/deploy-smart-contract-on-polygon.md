@@ -22,7 +22,7 @@ Before deploying, you'll need:
 | Property        | Ethereum Mainnet                                     | amoy Testnet                                                   |
 | --------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
 | Chain ID        | 137 (`0x137`)                                        | 80002(0x13882)                                                 |
-| RPC URL         | `https://go.getblock.io/<ACCESS-TOKEN>/`             | `https://go.getblock.io/<ACCESS-TOKEN>/`                       |
+| RPC URL         | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`             | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`                       |
 | Currency Symbol | ETH                                                  | ETH                                                            |
 | Block Explorer  | [https://polygonscan.com/](https://polygonscan.com/) | [https://amoy.polygonscan.com/](https://amoy.polygonscan.com/) |
 
@@ -98,7 +98,7 @@ Set environment variables, then deploy:
 ```bash
 # Set environment variables
 export PRIVATE_KEY=0x<your_private_key>
-export POLY_RPC_URL=https://go.getblock.io/<ACCESS-TOKEN>/
+export POLY_RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 # Deploy contract
 forge create HelloEthereum \
@@ -179,7 +179,7 @@ Set your environment variables before proceeding:
 
 ```bash
 export PRIVATE_KEY=0x<your_private_key>
-export POLY_RPC_URL=https://go.getblock.io/<ACCESS-TOKEN>/
+export POLY_RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 export POLYSCAN_API_KEY=<your_polyscan_v2_api_key>
 ```
 {% endstep %}

@@ -13,7 +13,7 @@ description: >-
 
 #### Request
 
-<pre class="language-java"><code class="lang-java"><strong>curl --location --request POST 'https://go.getblock.io/&#x3C;ACCESS-TOKEN>/' \
+<pre class="language-java"><code class="lang-java"><strong>curl --location --request POST 'https://shared.eu-central-1.getblock.io/&#x3C;ACCESS-TOKEN>/' \
 </strong>--header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "babe_epochAuthorship",

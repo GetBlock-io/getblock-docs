@@ -7,7 +7,7 @@ Every endpoint is an HTTP `POST` whose body carries a `network_identifier` and e
 ## Base URL
 
 ```
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 
 Replace `<ACCESS-TOKEN>` with the access token from the GetBlock dashboard. The network identifier for mainnet is `{"blockchain": "cardano", "network": "mainnet"}`.

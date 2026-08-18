@@ -20,7 +20,7 @@ Returns information about a block by block number. Pass `"latest"`, `"earliest"`
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -50,7 +50,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -68,7 +68,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -109,7 +109,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -192,7 +192,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const result = await provider.send('eth_getBlockByNumber', ["latest", false]);
 console.log(result);
@@ -212,14 +212,14 @@ const tempo = defineChain({
     // type system; values shown here are a no-op placeholder — actual fees are paid in TIP-20.
     nativeCurrency: { name: 'USD Placeholder', symbol: 'USD', decimals: 18 },
     rpcUrls: {
-        default: { http: ['https://go.getblock.io/<ACCESS-TOKEN>/'] }
+        default: { http: ['https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'] }
     },
     blockExplorers: { default: { name: 'Tempo Explorer', url: 'https://explore.tempo.xyz' } }
 });
 
 const client = createPublicClient({
     chain: tempo,
-    transport: http('https://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const result = await client.request({ method: 'eth_getBlockByNumber', params: ["latest", false] });

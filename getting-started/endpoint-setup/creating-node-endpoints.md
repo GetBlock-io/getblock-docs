@@ -61,9 +61,9 @@ All GetBlock endpoints follow a predictable format. The visible difference is th
 **Endpoint examples**:
 
 ```markup
-EU (Frankfurt):   https://go.getblock.io/<ACCESS_TOKEN>/
-US (New York):    https://go.getblock.us/<ACCESS_TOKEN>/
-Asia (Singapore): https://go.getblock.asia/<ACCESS_TOKEN>/
+EU (Frankfurt):   https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/
+US (New York):    https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>/
+Asia (Singapore): https://shared.ap-southeast-1.getblock.io/<ACCESS_TOKEN>/
 ```
 
 The token encodes the protocol, networks, and routing on the server — clients don’t need to specify a chain in the URL.

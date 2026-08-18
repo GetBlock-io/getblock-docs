@@ -20,7 +20,7 @@ This endpoint returns fee statistics for the transactions in a single block, sel
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/684634'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/684634'
 ```
 {% endcode %}
 {% endtab %}
@@ -29,7 +29,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/fees
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/684634'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/684634'
 );
 console.log(await response.json());
 ```
@@ -41,7 +41,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/684634')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/684634')
 
 print(response.json())
 ```

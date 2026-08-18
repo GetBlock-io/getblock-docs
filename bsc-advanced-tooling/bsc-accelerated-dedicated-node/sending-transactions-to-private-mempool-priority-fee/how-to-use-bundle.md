@@ -27,7 +27,7 @@ Before submitting bundles, ensure you have:
 Connect to the MEV WebSocket endpoint with your API key:
 
 ```bash
-wss://go.getblock.io/<ACCESS_TOKEN>
+wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 {% endtab %}
 

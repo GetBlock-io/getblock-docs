@@ -22,7 +22,7 @@ This method returns current or historical fiat exchange rates for Bitcoin Cash a
 {% tab title="cURL (REST)" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tickers/?currency=usd'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers/?currency=usd'
 ```
 {% endcode %}
 {% endtab %}
@@ -30,7 +30,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tick
 {% tab title="cURL (JSON-RPC)" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -50,7 +50,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tickers/?currency=usd'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers/?currency=usd'
 );
 console.log(await response.json());
 ```
@@ -62,7 +62,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tickers/?currency=usd')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers/?currency=usd')
 
 print(response.json())
 ```

@@ -22,7 +22,7 @@ This method acquires a fixed ledger state at a given point, so that subsequent s
 ```javascript
 import WebSocket from 'ws';
 
-const client = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const client = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 client.once('open', () => {
     client.send(JSON.stringify({"jsonrpc": "2.0", "method": "acquireLedgerState", "params": {"point": {"slot": 123456789, "id": "3e6f2d8c9a1b4e7f0c2d5a8b1e4f7a0c3d6b9e2f5a8c1d4e7b0f3a6c9d2e5b8f"}}, "id": "getblock.io"}));
@@ -44,7 +44,7 @@ import json
 import websockets
 
 async def main():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/') as ws:
         await ws.send(json.dumps({"jsonrpc": "2.0", "method": "acquireLedgerState", "params": {"point": {"slot": 123456789, "id": "3e6f2d8c9a1b4e7f0c2d5a8b1e4f7a0c3d6b9e2f5a8c1d4e7b0f3a6c9d2e5b8f"}}, "id": "getblock.io"}))
         print(json.loads(await ws.recv()))
 

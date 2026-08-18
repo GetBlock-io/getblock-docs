@@ -24,7 +24,7 @@ This method returns the list of dynamic fields owned by an object on the SUI net
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -56,7 +56,7 @@ const payload = {
   ]
 };
 
-axios.post('https://go.getblock.io/<ACCESS-TOKEN>/', payload)
+axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', payload)
 .then(response => console.log(response.data));
 ```
 {% endcode %}
@@ -78,7 +78,7 @@ payload = {
     ]
 }
 
-response = requests.post("https://go.getblock.io/<ACCESS-TOKEN>/", json=payload)
+response = requests.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/", json=payload)
 print(response.json())
 ```
 {% endcode %}
@@ -99,7 +99,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         "method": "suix_getDynamicFields",
         "params": ["0x5612581eba57ebe7e594b809ccceec2be4dac6ff6945d49b3ecc043d049611f6", null, 10]
     });
-    let response = client.post("https://go.getblock.io/<ACCESS-TOKEN>/")
+    let response = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .json(&payload).send().await?;
     println!("{}", response.text().await?);
     Ok(())
@@ -171,7 +171,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```typescript
 import { SuiClient } from '@mysten/sui/client';
 
-const client = new SuiClient({ url: 'https://go.getblock.io/<ACCESS-TOKEN>/' });
+const client = new SuiClient({ url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' });
 const fields = await client.getDynamicFields({
   parentId: '0x5612581eba57ebe7e594b809ccceec2be4dac6ff6945d49b3ecc043d049611f6'
 });
@@ -187,7 +187,7 @@ use sui_sdk::SuiClientBuilder;
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    let sui = SuiClientBuilder::default().build("https://go.getblock.io/<ACCESS-TOKEN>/").await?;
+    let sui = SuiClientBuilder::default().build("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").await?;
     let parent = "0x5612581eba57ebe7e594b809ccceec2be4dac6ff6945d49b3ecc043d049611f6".parse()?;
     let fields = sui.read_api().get_dynamic_fields(parent, None, None).await?;
     println!("{:?}", fields);

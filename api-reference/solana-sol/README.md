@@ -44,7 +44,7 @@ _GetBlock's RPC API reference documentation is provided exclusively for informat
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io
+https://shared.eu-central-1.getblock.io
 ```
 {% endtab %}
 
@@ -131,7 +131,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -206,7 +206,7 @@ Create a file called `main.py` with the following code (replace `<ACCESS-TOKEN>`
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",

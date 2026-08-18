@@ -83,11 +83,11 @@ Once logged in:
 Your endpoint URL looks like this:
 
 ```
-https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 
 {% hint style="warning" %}
-The long string after `go.getblock.io/` is your **access token** — keep it private.
+The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -97,7 +97,7 @@ The long string after `go.getblock.io/` is your **access token** — keep it pri
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/ \
   -H "Content-Type: application/json" \
   -d '{
     "jsonrpc": "2.0",
@@ -131,7 +131,7 @@ curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
 import { JsonRpcProvider } from "ethers";
 
 const provider = new JsonRpcProvider(
-  "https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"
+  "https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"
 );
 
 // Get latest block number
@@ -149,7 +149,7 @@ console.log("Balance:", balance.toString(), "wei");
 ```python
 from web3 import Web3
 
-w3 = Web3(Web3.HTTPProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"))
+w3 = Web3(Web3.HTTPProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"))
 
 # Check connection
 print("Connected:", w3.is_connected())
@@ -168,7 +168,7 @@ print(f"Balance: {w3.from_wei(balance, 'ether')} ETH")
 ```python
 import requests
 
-url = "https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"
 headers = {"Content-Type": "application/json"}
 
 # Get gas price
@@ -193,7 +193,7 @@ For real-time events (new blocks, pending transactions, log subscriptions), use 
 **WebSocket endpoint format:**
 
 ```
-wss://go.getblock.io/<YOUR-ACCESS-TOKEN>/
+wss://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/
 ```
 
 #### Subscribe to new blocks
@@ -204,7 +204,7 @@ wss://go.getblock.io/<YOUR-ACCESS-TOKEN>/
 import { WebSocketProvider } from "ethers";
 
 const provider = new WebSocketProvider(
-  "wss://go.getblock.io/<YOUR-ACCESS-TOKEN>/"
+  "wss://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"
 );
 
 provider.on("block", (blockNumber) => {
@@ -220,7 +220,7 @@ import websockets
 import json
 
 async def listen_blocks():
-    uri = "wss://go.getblock.io/<YOUR-ACCESS-TOKEN>/"
+    uri = "wss://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"
     async with websockets.connect(uri) as ws:
         # Subscribe to new block headers
         await ws.send(json.dumps({
@@ -267,7 +267,7 @@ Archive mode is available on all paid plans and Dedicated Nodes.
 **Example — get balance at a specific historical block:**
 
 ```bash
-curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/ \
   -H "Content-Type: application/json" \
   -d '{
     "jsonrpc": "2.0",

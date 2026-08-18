@@ -8,7 +8,7 @@ description: >-
 
 ### Connection issues
 
-<table><thead><tr><th width="205">Code</th><th width="154">Error message</th><th>Solution</th></tr></thead><tbody><tr><td>401</td><td>Access denied</td><td>Double-check that <code>&#x3C;ACCESS_TOKEN></code> is correctly replaced with your actual token. Ensure there are no trailing spaces.</td></tr><tr><td>404</td><td>Could not resolve host</td><td>Verify that the URL <code>https://go.getblock.io/&#x3C;ACCESS_TOKEN>/</code> is correct.</td></tr><tr><td>429</td><td>Too many requests</td><td>Check your GetBlock account for usage limits. Upgrade your plan if necessary.</td></tr></tbody></table>
+<table><thead><tr><th width="205">Code</th><th width="154">Error message</th><th>Solution</th></tr></thead><tbody><tr><td>401</td><td>Access denied</td><td>Double-check that <code>&#x3C;ACCESS_TOKEN></code> is correctly replaced with your actual token. Ensure there are no trailing spaces.</td></tr><tr><td>404</td><td>Could not resolve host</td><td>Verify that the URL <code>https://shared.eu-central-1.getblock.io/&#x3C;ACCESS_TOKEN>/</code> is correct.</td></tr><tr><td>429</td><td>Too many requests</td><td>Check your GetBlock account for usage limits. Upgrade your plan if necessary.</td></tr></tbody></table>
 
 ### JSON-RPC errors
 

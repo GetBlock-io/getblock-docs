@@ -53,20 +53,20 @@ Example endpoint URLs:
 
 ```http
 // Europe (Frankfurt)
-https://go.getblock.io/<YOUR_ACCESS_TOKEN>/
+https://shared.eu-central-1.getblock.io/<YOUR_ACCESS_TOKEN>/
 
 // USA (New York)
-https://go.getblock.us/<YOUR_ACCESS_TOKEN>/
+https://shared.us-east-1.getblock.io/<YOUR_ACCESS_TOKEN>/
 
 // Asia (Singapore)
-https://go.getblock.asia/<YOUR_ACCESS_TOKEN>/
+https://shared.ap-southeast-1.getblock.io/<YOUR_ACCESS_TOKEN>/
 
 ```
 
 When establishing your gRPC channel, the authentication is handled via an access token:
 
 ```typescript
-ENDPOINT = 'https://go.getblock.io';
+ENDPOINT = 'https://shared.eu-central-1.getblock.io';
 TOKEN = 'YOUR_GETBLOCK_ACCESS_TOKEN';
 ```
 
@@ -111,17 +111,17 @@ A generic tool like grpcurl is perfect to just poke at the API and explore metho
 # 1) List services and methods 
 grpcurl \
   -insecure \
-  -authority go.getblock.io \
+  -authority shared.eu-central-1.getblock.io \
   -H "x-access-token: YOUR_ACCESS_TOKEN" \
-  go.getblock.io:443 \
+  shared.eu-central-1.getblock.io:443 \
   list
 
 # 2) Subscribe to slots
 grpcurl \
   -insecure \
-  -authority go.getblock.io \
+  -authority shared.eu-central-1.getblock.io \
   -H "x-access-token: YOUR_ACCESS_TOKEN" \
-  go.getblock.io:443 \
+  shared.eu-central-1.getblock.io:443 \
   geyser.Geyser/Subscribe \
   -d '{ "slots": { "slots": []{} } }'
 
@@ -155,7 +155,7 @@ import Client, {
 
 async function main() {
  // Initialize
- const ENDPOINT = "https://go.getblock.io/";
+ const ENDPOINT = "https://shared.eu-central-1.getblock.io/";
  const TOKEN    = "<YOUR_ACCESS_TOKEN>";
  const client   = new Client(ENDPOINT, TOKEN);
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-   endpoint := "go.getblock.io:443"
+   endpoint := "shared.eu-central-1.getblock.io:443"
    token := "YOUR_GETBLOCK_TOKEN"
 
    client, err := ygrpc.NewGrpcConnection(context.Background(), endpoint)
@@ -288,7 +288,7 @@ from examples.grpc import new_client
 import time
 from google.protobuf.json_format import MessageToDict
 
-endpoint = "go.getblock.io:443"
+endpoint = "shared.eu-central-1.getblock.io:443"
 token = "YOUR_GETBLOCK_TOKEN"
 
 channel, client = new_client(endpoint, token)
@@ -336,7 +336,7 @@ use yellowstone_grpc::client::{subscribe_with_token, SubscribeRequest};
 
 #[tokio::main]
 async fn main() {
-   let endpoint = "https://go.getblock.io";
+   let endpoint = "https://shared.eu-central-1.getblock.io";
    let token = "YOUR_GETBLOCK_TOKEN";
 
    let mut stream = subscribe_with_token(endpoint, token, SubscribeRequest {

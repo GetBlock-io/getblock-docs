@@ -19,7 +19,7 @@ Solana's JSON-RPC API follows a different specification than Ethereum — it's n
 **Endpoint format:**
 
 ```bash
-https://go.getblock.io/<YOUR-ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/
 ```
 
 ### Step-by-Step: Get Your Solana RPC Endpoint
@@ -58,11 +58,11 @@ Once logged in:
 Your endpoint URL looks like this:
 
 ```
-https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 
 {% hint style="warning" %}
-The long string after `go.getblock.io/` is your **access token** — keep it private.
+The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -72,7 +72,7 @@ The long string after `go.getblock.io/` is your **access token** — keep it pri
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/ \
   -H "Content-Type: application/json" \
   -d '{
     "jsonrpc": "2.0",
@@ -104,7 +104,7 @@ curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
 import { Connection, PublicKey, LAMPORTS_PER_SOL } from "@solana/web3.js";
 
 const connection = new Connection(
-  "https://go.getblock.io/<YOUR-ACCESS-TOKEN>/",
+  "https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/",
   "confirmed"
 );
 
@@ -128,7 +128,7 @@ console.log("Blockhash:", blockhash);
 from solana.rpc.api import Client
 from solders.pubkey import Pubkey
 
-client = Client("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/")
+client = Client("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/")
 
 # Get current slot
 slot = client.get_slot()
@@ -150,7 +150,7 @@ for sig in sigs.value:
 ```python
 import requests
 
-url = "https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"
 headers = {"Content-Type": "application/json"}
 
 # Get token accounts for a wallet
@@ -180,7 +180,7 @@ use solana_sdk::pubkey::Pubkey;
 use std::str::FromStr;
 
 fn main() {
-    let client = RpcClient::new("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/");
+    let client = RpcClient::new("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/");
     
     // Get current slot
     let slot = client.get_slot().unwrap();
@@ -202,7 +202,7 @@ Solana's WebSocket API is essential for real-time monitoring:
 {% tabs %}
 {% tab title="Base URL" %}
 ```bash
-wss://go.getblock.io/<YOUR-ACCESS-TOKEN>/
+wss://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/
 ```
 {% endtab %}
 
@@ -210,7 +210,7 @@ wss://go.getblock.io/<YOUR-ACCESS-TOKEN>/
 ```javascript
 import WebSocket from "ws";
 
-const ws = new WebSocket("wss://go.getblock.io/<YOUR-ACCESS-TOKEN>/");
+const ws = new WebSocket("wss://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/");
 
 ws.on("open", () => {
   // Subscribe to SOL balance changes for an address

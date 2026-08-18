@@ -15,7 +15,7 @@ Request and response shapes match the Fullnode endpoint of the same name; the di
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/{method}
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/{method}
 ```
 {% endtab %}
 

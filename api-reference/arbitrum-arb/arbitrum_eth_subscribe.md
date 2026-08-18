@@ -27,7 +27,7 @@ Note that subscriptions require a WebSocket connection and [WebSocket cat](https
 {% tabs %}
 {% tab title="WSCAT" %}
 ```bash
-$ wscat -c wss://go.getblock.us/<ACCESS_TOKEN>
+$ wscat -c wss://shared.us-east-1.getblock.io/<ACCESS_TOKEN>
 # Wait for the connection to be established
 
 Connected (press CTRL+C to quit)
@@ -40,7 +40,7 @@ Connected (press CTRL+C to quit)
 ```javascript
 import WebSocket from ('ws');
 
-const webSocket = new WebSocket('wss://go.getblock.us/<ACCESS_TOKEN>');
+const webSocket = new WebSocket('wss://shared.us-east-1.getblock.io/<ACCESS_TOKEN>');
 
 async function subscribeToNewBlocks() {
 

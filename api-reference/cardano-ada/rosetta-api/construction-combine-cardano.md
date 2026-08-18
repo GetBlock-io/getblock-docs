@@ -23,7 +23,7 @@ The request body is a JSON object with the following fields.
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/construction/combine' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/combine' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "network_identifier": {
@@ -54,7 +54,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/constructi
 {% tab title="JavaScript" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/construction/combine',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/combine',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -70,7 +70,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/construction/combine',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/combine',
     headers={'Content-Type': 'application/json'},
     json={"network_identifier": {"blockchain": "cardano", "network": "mainnet"}, "unsigned_transaction": "a400818258200e...unsigned-cbor...", "signatures": [{"signing_payload": {"account_identifier": {"address": "addr1qxy2lpan99fcnhhyzr8w8qk4dqz4mp7g6b8h3r2v5c9d0e1f2g3h4j5k6l7m8n9p0q"}, "hex_bytes": "3e6f2d8c...signing-payload"}, "public_key": {"hex_bytes": "b3c2a1d0e9f8...ed25519-public-key-hex", "curve_type": "edwards25519"}, "signature_type": "ed25519", "hex_bytes": "a1b2c3...signature"}]}
 )

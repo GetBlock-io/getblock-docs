@@ -21,7 +21,7 @@ This method returns the number of transactions sent from an address on the Celo 
 {% tab title="cURL" %}
 {% code title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -41,7 +41,7 @@ curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 ```javascript
 const axios = require('axios');
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
   jsonrpc: '2.0',
@@ -68,7 +68,7 @@ axios.post(url, payload, {
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = {
     "jsonrpc": "2.0",
@@ -125,7 +125,7 @@ print(response.json())
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const nonce = await provider.getTransactionCount('0x742d35Cc6634C0532925a3b844Bc9e7595f8bB45');
 console.log(nonce);
@@ -138,7 +138,7 @@ console.log(nonce);
 ```javascript
 const { newKit } = require('@celo/contractkit');
 
-const kit = newKit('https://go.getblock.io/<ACCESS-TOKEN>/');
+const kit = newKit('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const nonce = await kit.web3.eth.getTransactionCount('0x742d35Cc6634C0532925a3b844Bc9e7595f8bB45');
 console.log(nonce);

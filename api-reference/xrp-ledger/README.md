@@ -43,7 +43,7 @@ The canonical specification for XRP Ledger API methods is maintained in the offi
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```
-https://go.getblock.io/<ACCESS-TOKEN>/
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
 {% endtabs %}
@@ -121,7 +121,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -276,7 +276,7 @@ Create a file called `main.py` with the following content:
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 
 payload = json.dumps({
   "jsonrpc": "2.0",

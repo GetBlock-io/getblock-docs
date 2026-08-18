@@ -18,7 +18,7 @@ Returns the full consensus state including the full validator set, all votes, an
 {% tab title="cURL" %}
 ```bash
 # JSON-RPC over HTTP POST (canonical)
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/dump_consensus_state' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/dump_consensus_state' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -28,7 +28,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/dump_conse
 }'
 
 # URI over HTTP GET (alternate, for simple methods)
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/dump_consensus_state'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/dump_consensus_state'
 ```
 {% endtab %}
 
@@ -45,7 +45,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/dump_consensus_state',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/dump_consensus_state',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -63,7 +63,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/dump_consensus_state"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/dump_consensus_state"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -98,7 +98,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/dump_consensus_state")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/dump_consensus_state")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -166,7 +166,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { Tendermint37Client, HttpClient } from '@cosmjs/tendermint-rpc';
 
-const httpClient = new HttpClient('https://go.getblock.io/<ACCESS-TOKEN>/dump_consensus_state');
+const httpClient = new HttpClient('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/dump_consensus_state');
 const client = await Tendermint37Client.create(httpClient);
 
 // CosmJS exposes typed methods on the client (e.g. client.status(), client.block()).
@@ -181,7 +181,7 @@ console.log(result);
 # cosmpy wraps Cosmos REST / gRPC. For raw CometBFT RPC access, use requests.
 import requests
 
-response = requests.post('https://go.getblock.io/<ACCESS-TOKEN>/dump_consensus_state', json={
+response = requests.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/dump_consensus_state', json={
     'jsonrpc': '2.0',
     'id': 'getblock.io',
     'method': 'dump_consensus_state',

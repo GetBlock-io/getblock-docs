@@ -37,7 +37,7 @@ grpcurl \
     "package_id": "0x0000000000000000000000000000000000000000000000000000000000000002",
     "page_size": 20
 }' \
-  go.getblock.io:443/<ACCESS-TOKEN> \
+  shared.eu-central-1.getblock.io:443/<ACCESS-TOKEN> \
   sui.rpc.v2.MovePackageService/ListPackageVersions
 ```
 {% endtab %}
@@ -61,7 +61,7 @@ const ServiceClient = proto.sui.rpc.v2.MovePackageService;
 const metadata = new grpc.Metadata();
 metadata.add('authorization', `Bearer ${ACCESS_TOKEN}`);
 
-const client = new ServiceClient('go.getblock.io:443', grpc.credentials.createSsl());
+const client = new ServiceClient('shared.eu-central-1.getblock.io:443', grpc.credentials.createSsl());
 
 const request = {
     "package_id": "0x0000000000000000000000000000000000000000000000000000000000000002",
@@ -91,7 +91,7 @@ from google.protobuf.json_format import ParseDict, MessageToJson
 
 ACCESS_TOKEN = '<ACCESS-TOKEN>'
 
-channel = grpc.secure_channel('go.getblock.io:443', grpc.ssl_channel_credentials())
+channel = grpc.secure_channel('shared.eu-central-1.getblock.io:443', grpc.ssl_channel_credentials())
 stub = sui_rpc_v2_move_package_service_pb2_grpc.MovePackageServiceStub(channel)
 
 metadata = [('authorization', f'Bearer {ACCESS_TOKEN}')]
@@ -123,7 +123,7 @@ use sui_rpc_v2::move_package_service_client::MovePackageServiceClient;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let channel = Channel::from_static("https://go.getblock.io").connect().await?;
+    let channel = Channel::from_static("https://shared.eu-central-1.getblock.io").connect().await?;
     let mut client = MovePackageServiceClient::with_interceptor(channel, |mut req: Request<()>| {
         req.metadata_mut().insert("authorization", "Bearer <ACCESS-TOKEN>".parse().unwrap());
         Ok(req)
@@ -207,7 +207,7 @@ gRPC uses status codes rather than JSON-RPC numeric error codes. The most releva
 import { SuiClient } from '@mysten/sui/client';
 
 const client = new SuiClient({
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/'
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'
 });
 
 // Refer to the @mysten/sui API reference for the typed wrapper of this method;
@@ -225,7 +225,7 @@ const client = new SuiClient({
 from pysui import SuiConfig, SyncClient
 
 config = SuiConfig.user_config(
-    rpc_url='https://go.getblock.io/<ACCESS-TOKEN>/'
+    rpc_url='https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/'
 )
 client = SyncClient(config)
 

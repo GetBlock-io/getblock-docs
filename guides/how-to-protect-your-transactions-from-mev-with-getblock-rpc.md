@@ -57,7 +57,7 @@ npm pkg set scripts.swap="node index.js"
 In your [GetBlock dashboard](https://account.getblock.io), create a **BNB Smart Chain** endpoint on **Mainnet**, then enable the **MEV Protection** add-on for it. Copy the JSON-RPC URL, which looks like:
 
 ```bash
-https://go.getblock.io/<YOUR_ACCESS_TOKEN>
+https://shared.eu-central-1.getblock.io/<YOUR_ACCESS_TOKEN>
 ```
 
 GetBlock routes transactions sent to this endpoint through a private mempool. The transaction goes straight to the builder instead of being broadcast to the public queue.
@@ -71,7 +71,7 @@ Create a `.env` file with your key and endpoint:
 {% code title=".env" overflow="wrap" %}
 ```bash
 PRIVATE_KEY=0x...
-BSC_MEV_RPC=https://go.getblock.io/<YOUR_ACCESS_TOKEN>
+BSC_MEV_RPC=https://shared.eu-central-1.getblock.io/<YOUR_ACCESS_TOKEN>
 ```
 {% endcode %}
 

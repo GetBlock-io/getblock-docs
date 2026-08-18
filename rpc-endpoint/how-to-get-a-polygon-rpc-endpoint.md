@@ -10,7 +10,7 @@ Polygon PoS is one of the most widely used Ethereum scaling solutions, powering 
 
 * **Archive data:** query historical state at any block (all plans)
 * **Trace & Debug:** `debug_traceTransaction`, `trace_block` (Starter+)
-* **WebSocket: r**eal-time subscriptions via `wss://go.getblock.io/<TOKEN>/`
+* **WebSocket: r**eal-time subscriptions via `wss://shared.eu-central-1.getblock.io/<TOKEN>/`
 * **Multi-region:** Frankfurt, New York, Singapore
 * **Dedicated Nodes:** unlimited RPS, from $1,000/mo
 
@@ -52,11 +52,11 @@ Once logged in:
 Your endpoint URL looks like this:
 
 ```
-https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 
 {% hint style="warning" %}
-The long string after `go.getblock.io/` is your **access token** — keep it private.
+The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -66,7 +66,7 @@ The long string after `go.getblock.io/` is your **access token** — keep it pri
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/ \
   -H "Content-Type: application/json" \
   -d '{
  "jsonrpc":"2.0",
@@ -97,7 +97,7 @@ curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
 ```javascript
 import { JsonRpcProvider } from "ethers";
 
-const provider = new JsonRpcProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/");
+const provider = new JsonRpcProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/");
 const block = await provider.getBlockNumber();
 console.log("Latest Polygon block:", block);
 ```
@@ -107,7 +107,7 @@ console.log("Latest Polygon block:", block);
 ```python
 from web3 import Web3
 
-w3 = Web3(Web3.HTTPProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"))
+w3 = Web3(Web3.HTTPProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"))
 print("Chain ID:", w3.eth.chain_id)  # 137
 print("Block:", w3.eth.block_number)
 ```

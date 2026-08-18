@@ -41,7 +41,7 @@ console.log('WebSocket message:', data);
 {% tab title="JavaScript (WebSocket & message format)" %}
 ```javascript
 // WebSocket connection required
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.onopen = () => {
     ws.send(JSON.stringify({
@@ -75,7 +75,7 @@ def on_open(ws):
     }))
 
 ws = websocket.WebSocketApp(
-    "wss://go.getblock.io/<ACCESS-TOKEN>/",
+    "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/",
     on_message=on_message,
     on_open=on_open
 )
@@ -163,7 +163,7 @@ The `eth_subscribe` method is essential for:
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.WebSocketProvider('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.WebSocketProvider('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 provider.on('block', (blockNumber) => {
     console.log('New block:', blockNumber);
@@ -178,7 +178,7 @@ import { mantle } from 'viem/chains';
 
 const client = createPublicClient({
     chain: mantle,
-    transport: webSocket('wss://go.getblock.io/<ACCESS-TOKEN>/')
+    transport: webSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
 const unwatch = client.watchBlocks({

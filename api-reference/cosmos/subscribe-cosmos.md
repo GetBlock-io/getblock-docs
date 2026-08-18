@@ -9,7 +9,7 @@ description: >-
 Subscribes to events matching a Tendermint event query over WebSocket. Use queries like `tm.event='NewBlock'`, `tm.event='Tx'`, or `transfer.recipient='cosmos1...'`. Returns a subscription that streams matching events as separate WebSocket messages.
 
 {% hint style="info" %}
-**WebSocket-only method.** This method is only available over the WebSocket transport at `wss://go.getblock.io/<ACCESS-TOKEN>/websocket`. It will not work via HTTP POST. Use a WebSocket client such as wscat, the @cosmjs/tendermint-rpc WebSocketClient, or Python's websockets library.
+**WebSocket-only method.** This method is only available over the WebSocket transport at `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket`. It will not work via HTTP POST. Use a WebSocket client such as wscat, the @cosmjs/tendermint-rpc WebSocketClient, or Python's websockets library.
 {% endhint %}
 
 ## Parameters
@@ -24,7 +24,7 @@ Subscribes to events matching a Tendermint event query over WebSocket. Use queri
 {% tab title="cURL" %}
 ```bash
 # WebSocket-only method. Use wscat (or similar) to connect first:
-wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/websocket'
+wscat -c 'wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket'
 
 # Then send:
 {"jsonrpc": "2.0", "method": "subscribe", "params": {"query": "tm.event='NewBlock'"}, "id": "getblock.io"}
@@ -35,7 +35,7 @@ wscat -c 'wss://go.getblock.io/<ACCESS-TOKEN>/websocket'
 ```javascript
 import WebSocket from 'ws';
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/websocket');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket');
 
 ws.on('open', () => {
     ws.send(JSON.stringify({
@@ -61,7 +61,7 @@ import json
 import websockets
 
 async def main():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/websocket') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket') as ws:
         await ws.send(json.dumps({
     "jsonrpc": "2.0",
     "method": "subscribe",
@@ -86,7 +86,7 @@ use futures_util::{SinkExt, StreamExt};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let (mut ws_stream, _) = connect_async("wss://go.getblock.io/<ACCESS-TOKEN>/websocket").await?;
+    let (mut ws_stream, _) = connect_async("wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket").await?;
 
     let payload = json!({
         "jsonrpc": "2.0",
@@ -151,7 +151,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { Tendermint37Client, WebsocketClient } from '@cosmjs/tendermint-rpc';
 
-const wsClient = new WebsocketClient('wss://go.getblock.io/<ACCESS-TOKEN>/websocket');
+const wsClient = new WebsocketClient('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket');
 const client = await Tendermint37Client.create(wsClient);
 
 // Use the typed subscription methods on the client where available.
@@ -173,7 +173,7 @@ import json
 import websockets
 
 async def stream():
-    async with websockets.connect('wss://go.getblock.io/<ACCESS-TOKEN>/websocket') as ws:
+    async with websockets.connect('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket') as ws:
         await ws.send(json.dumps({'jsonrpc': '2.0', 'id': 'sub-1', 'method': 'subscribe', 'params': {"query": "tm.event='NewBlock'"}}))
         async for msg in ws:
             print(json.loads(msg))

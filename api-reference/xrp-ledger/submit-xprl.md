@@ -21,7 +21,7 @@ Submits a signed transaction to XRP Ledger.
 {% tab title="cURL" %}
 {% code title="curl" overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -40,7 +40,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/' \
 ```javascript
 const axios = require('axios');
 
-const url = 'https://go.getblock.io/<ACCESS_TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/';
 const headers = {
    
     'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ axios.post(url, payload, { headers })
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/"
 headers = {
     "Content-Type": "application/json"
 }
@@ -107,7 +107,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS_TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()

@@ -24,7 +24,7 @@ This endpoint estimates the Energy required to execute a smart-contract call, wi
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/estimateenergy' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/estimateenergy' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g",
@@ -41,7 +41,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/est
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/estimateenergy',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/estimateenergy',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -59,7 +59,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/estimateenergy',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/estimateenergy',
     headers={'Content-Type': 'application/json'},
     json={"owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g", "contract_address": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t", "function_selector": "transfer(address,uint256)", "parameter": "0000000000000000000000004142b5e01c8c59a25d78acdbec2bfc7e89e5e86300000000000000000000000000000000000000000000000000000000000f4240", "visible": true}
 )

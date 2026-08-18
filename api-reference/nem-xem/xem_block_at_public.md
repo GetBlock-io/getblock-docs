@@ -15,7 +15,7 @@ A BlockHeight JSON object. The block height describes the position of the block 
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/block/at/public' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/block/at/public' \
 --header 'Content-Type: application/json' \
 --data-raw '{"height":394311}'
 ```

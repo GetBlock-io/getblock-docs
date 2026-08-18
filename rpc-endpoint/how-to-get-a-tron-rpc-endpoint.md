@@ -43,12 +43,12 @@ Your endpoint URL looks like this:
 
 {% code overflow="wrap" %}
 ```bash
-https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 {% endcode %}
 
 {% hint style="warning" %}
-The long string after `go.getblock.io/` is your **access token** — keep it private.
+The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -59,7 +59,7 @@ The long string after `go.getblock.io/` is your **access token** — keep it pri
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST https://go.getblock.io/4ddcea01626040019722710f54259810/wallet/getaccount \
+curl -X POST https://shared.eu-central-1.getblock.io/4ddcea01626040019722710f54259810/wallet/getaccount \
   -H "Content-Type: application/json" \
   -d '{"address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g", "visible": true}'
 ```
@@ -85,7 +85,7 @@ curl -X POST https://go.getblock.io/4ddcea01626040019722710f54259810/wallet/geta
 import TronWeb from "tronweb";
 
 const tronWeb = new TronWeb({
-  fullHost: "https://go.getblock.io/<YOUR-ACCESS-TOKEN>/",
+  fullHost: "https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/",
 });
 
 // Get TRX balance
@@ -105,7 +105,7 @@ console.log(`USDT: ${usdtBalance / 1e6}`);
 ```python
 import requests
 
-url = "https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"
 
 # Get latest block
 response = requests.post(f"{url}wallet/getnowblock")

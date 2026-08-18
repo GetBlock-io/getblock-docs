@@ -20,7 +20,7 @@ sender account id, used to determine which shard to query for transaction.
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "EXPERIMENTAL_tx_status",

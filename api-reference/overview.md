@@ -19,7 +19,7 @@ To get started, follow these steps:
 {% code overflow="wrap" %}
 ```python
 import requests
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 headers = { "Content-Type": "application/json" }
 payload = { "jsonrpc": "2.0", "method": "eth_blockNumber", "params": [], "id": "getblock.io" }
 response = requests.post(url, headers=headers, json=payload)
@@ -73,7 +73,7 @@ curl -h
 Example of requesting the latest block number using the GetBlock API and cURL:
 
 ```json
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -96,7 +96,7 @@ Example:
 {% code overflow="wrap" %}
 ```python
 import requests
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 headers = { "Content-Type": "application/json" }
 payload = { "jsonrpc": "2.0", "method": "eth_blockNumber", "params": [], "id": "getblock.io" }
 response = requests.post(url, headers=headers, json=payload)

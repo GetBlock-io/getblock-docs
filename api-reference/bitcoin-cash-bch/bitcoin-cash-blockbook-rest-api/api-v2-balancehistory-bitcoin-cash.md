@@ -25,7 +25,7 @@ This endpoint returns aggregated balance-change history for an address, extended
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?from=1617100000&to=1617300000&fiatcurrency=usd'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?from=1617100000&to=1617300000&fiatcurrency=usd'
 ```
 {% endcode %}
 {% endtab %}
@@ -34,7 +34,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/bala
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?from=1617100000&to=1617300000&fiatcurrency=usd'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?from=1617100000&to=1617300000&fiatcurrency=usd'
 );
 console.log(await response.json());
 ```
@@ -46,7 +46,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?from=1617100000&to=1617300000&fiatcurrency=usd')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?from=1617100000&to=1617300000&fiatcurrency=usd')
 
 print(response.json())
 ```

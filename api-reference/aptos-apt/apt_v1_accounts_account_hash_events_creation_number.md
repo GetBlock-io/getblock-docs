@@ -32,14 +32,14 @@ This endpoint retrieves events for a given account based on the creation number 
 **Base URL**
 
 ```bash
-https://go.getblock.io/
+https://shared.eu-central-1.getblock.io/
 <ACCESS_TOKEN>
 ```
 
 **Request Example (cURL)**
 
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f/events/0'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xbf9239be9eb7e7a3d8e4c1f36083464fd47e6bd1f82a43b7c0f7ee958705a52f/events/0'
 ```
 
 #### Response
@@ -101,7 +101,7 @@ import axios from 'axios';
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc32f662cd9718f02d8a8e5628f8f642fa27cd9b5f457b406ed734901a4939e34/events/0?limit=1&start=1'
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc32f662cd9718f02d8a8e5628f8f642fa27cd9b5f457b406ed734901a4939e34/events/0?limit=1&start=1'
 };
 
 axios.request(config)
@@ -118,7 +118,7 @@ axios.request(config)
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc32f662cd9718f02d8a8e5628f8f642fa27cd9b5f457b406ed734901a4939e34/events/0?limit=1&start=1"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/accounts/0xc32f662cd9718f02d8a8e5628f8f642fa27cd9b5f457b406ed734901a4939e34/events/0?limit=1&start=1"
 
 response = requests.get(url)
 

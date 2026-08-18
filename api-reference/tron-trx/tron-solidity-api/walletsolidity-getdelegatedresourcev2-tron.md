@@ -10,7 +10,7 @@ description: >-
 This endpoint returns the Stake 2.0 resources delegated from one account to another, read from confirmed state on the Solidity node.
 
 {% hint style="info" %}
-This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://go.getblock.io/<ACCESS-TOKEN>/wallet/getdelegatedresourcev2` over the latest, possibly unconfirmed state.
+This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/getdelegatedresourcev2` over the latest, possibly unconfirmed state.
 {% endhint %}
 
 ## Parameters
@@ -27,7 +27,7 @@ This is a Solidity-node endpoint. It returns only confirmed, irreversible data, 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getdelegatedresourcev2' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getdelegatedresourcev2' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "fromAddress": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g",
@@ -42,7 +42,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsoli
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getdelegatedresourcev2',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getdelegatedresourcev2',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -60,7 +60,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/getdelegatedresourcev2',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/getdelegatedresourcev2',
     headers={'Content-Type': 'application/json'},
     json={"fromAddress": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g", "toAddress": "TJmmqjb1DK9TTZbQXzRQ2AuA94z4gKAPFh", "visible": true}
 )

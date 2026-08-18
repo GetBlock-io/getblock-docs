@@ -44,19 +44,19 @@ _GetBlock's RPC API reference documentation is provided exclusively for informat
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```
-https://go.getblock.io
+https://shared.eu-central-1.getblock.io
 ```
 {% endtab %}
 
 {% tab title="Singapore, Singapore" %}
 ```
-https://go.getblock.asia
+https://shared.ap-southeast-1.getblock.io
 ```
 {% endtab %}
 
 {% tab title="New York, USA" %}
 ```
-https://go.getblock.us
+https://shared.us-east-1.getblock.io
 ```
 {% endtab %}
 {% endtabs %}

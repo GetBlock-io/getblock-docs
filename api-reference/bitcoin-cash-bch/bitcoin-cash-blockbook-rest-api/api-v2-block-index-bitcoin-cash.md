@@ -20,7 +20,7 @@ This endpoint returns the block hash at a given block height. It converts a heig
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/684634'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/684634'
 ```
 {% endcode %}
 {% endtab %}
@@ -28,7 +28,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/bloc
 {% tab title="JavaScript" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/684634'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/684634'
 );
 console.log(await response.json());
 ```
@@ -38,7 +38,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/684634')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/684634')
 
 print(response.json())
 ```

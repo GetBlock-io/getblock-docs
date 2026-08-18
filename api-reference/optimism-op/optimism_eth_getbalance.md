@@ -20,7 +20,7 @@ This method retrieves the native ETH balance of any address on the Optimism netw
 {% tabs %}
 {% tab title="curl" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -47,7 +47,7 @@ let data = JSON.stringify({
 let config = {
   method: "post",
   maxBodyLength: Infinity,
-  url: "https://go.getblock.us/<ACCESS_TOKEN>",
+  url: "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>",
   headers: {
     "Content-Type": "application/json",
   },
@@ -72,7 +72,7 @@ axios
 import requests
 import json
 
-url = "https://go.getblock.us/<ACESS_TOKEN>"
+url = "https://shared.us-east-1.getblock.io/<ACESS_TOKEN>"
 
 payload = json.dumps({
   "jsonrpc": "2.0",
@@ -101,7 +101,7 @@ print(response.text)
 import requests
 import json
 
-url = "https://go.getblock.us/<ACESS_TOKEN>"
+url = "https://shared.us-east-1.getblock.io/<ACESS_TOKEN>"
 
 payload = json.dumps({
   "jsonrpc": "2.0",
@@ -174,7 +174,7 @@ The `eth_getBalance` can help developers:
 {% code overflow="wrap" %}
 ```javascript
 import { ethers } from "ethers";
-const RPC_URL = "https://go.getblock.us/<ACCESS_TOKEN>";
+const RPC_URL = "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>";
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 async function Call() {
   try {
@@ -198,7 +198,7 @@ import { optimism } from 'viem/chains';
 // Create Viem client with GetBlock
 const client = createPublicClient({
   chain: optimism,
-  transport: http('https://go.getblock.us/<ACCESS_TOKEN>'),
+  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>'),
 });
 
 // Using the method through Viem

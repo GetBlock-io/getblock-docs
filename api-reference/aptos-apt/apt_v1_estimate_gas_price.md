@@ -21,13 +21,13 @@ None
 **Base URL**
 
 ```bash
-https://go.getblock.io/<ACCESS_TOKEN>
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 **Example(cURL)***
 
 ```curl
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/estimate_gas_price'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/estimate_gas_price'
 ```
 ## Response Example
 
@@ -101,7 +101,7 @@ const axios = require('axios');
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/estimate_gas_price',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/estimate_gas_price',
 };
 
 axios.request(config)
@@ -121,7 +121,7 @@ axios.request(config)
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/estimate_gas_price"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/estimate_gas_price"
 response = requests.request("GET", url, headers=headers, data=payload)
 
 print(response.text)

@@ -17,7 +17,7 @@ The `eth_syncing` method returns an object with data about the sync status of th
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ \
 -H "Content-Type: application/json" \
 -d '{
   "jsonrpc": "2.0",
@@ -32,7 +32,7 @@ curl -X POST https://go.getblock.io/<ACCESS-TOKEN>/ \
 ```javascript
 const axios = require('axios');
 
-const url = 'https://go.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
   jsonrpc: '2.0',
@@ -54,7 +54,7 @@ axios.post(url, payload, {
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = {
     "jsonrpc": "2.0",
@@ -134,7 +134,7 @@ print(response.json())
 ```javascript
 const { ethers } = require('ethers');
 
-const provider = new ethers.JsonRpcProvider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const syncStatus = await provider.send('eth_syncing', []);
 console.log('Synced:', syncStatus === false);
@@ -145,7 +145,7 @@ console.log('Synced:', syncStatus === false);
 ```javascript
 const { newKit } = require('@celo/contractkit');
 
-const kit = newKit('https://go.getblock.io/<ACCESS-TOKEN>/');
+const kit = newKit('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 const syncing = await kit.web3.eth.isSyncing();
 console.log('Syncing:', syncing);

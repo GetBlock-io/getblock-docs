@@ -19,7 +19,7 @@ Returns all transaction receipts for an L2 block. More efficient than calling `e
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -47,7 +47,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -65,7 +65,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -104,7 +104,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -182,7 +182,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { Provider } from 'zksync-ethers';
 
-const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new Provider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // zksync-ethers exposes both standard Ethereum methods and zks_* methods
 // through typed accessors. For raw access:
@@ -195,7 +195,7 @@ console.log(result);
 ```python
 from zksync2.module.module_builder import ZkSyncBuilder
 
-zk_web3 = ZkSyncBuilder.build('https://go.getblock.io/<ACCESS-TOKEN>/')
+zk_web3 = ZkSyncBuilder.build('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 
 # zksync2-python exposes the JSON-RPC layer directly.
 result = zk_web3.zksync._zks_endpoints if 'eth_getBlockReceipts'.startswith('zks_') else None

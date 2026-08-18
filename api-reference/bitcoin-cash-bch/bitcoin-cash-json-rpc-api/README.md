@@ -12,7 +12,7 @@ The Bitcoin Cash (BCH) JSON-RPC API provides high-performance, indexed blockchai
 ### Base URL
 
 ```bash
-https://go.getblock.io/
+https://shared.eu-central-1.getblock.io/
 ```
 
 ### Available API Methods

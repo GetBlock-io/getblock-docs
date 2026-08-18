@@ -23,7 +23,7 @@ This endpoint builds an unsigned Stake 2.0 transaction that unstakes previously 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/unfreezebalancev2' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/unfreezebalancev2' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g",
@@ -39,7 +39,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/wallet/unf
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/unfreezebalancev2',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/unfreezebalancev2',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/wallet/unfreezebalancev2',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/unfreezebalancev2',
     headers={'Content-Type': 'application/json'},
     json={"owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g", "unfreeze_balance": 1000000000, "resource": "ENERGY", "visible": true}
 )

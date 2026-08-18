@@ -15,7 +15,7 @@ Addresses in this API use TRON's hex (`0x41...`) form, and balances are in SUN. 
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/jsonrpc
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/jsonrpc
 ```
 {% endtab %}
 

@@ -105,7 +105,7 @@ npm install @modelcontextprotocol/sdk zod ethers
     &#x20;    Your endpoint will look like:
 
     ```json
-    https://go.getblock.us/{YOUR-ACCESS-TOKEN}/
+    https://shared.us-east-1.getblock.io/{YOUR-ACCESS-TOKEN}/
     ```
 
     f. Save the token in `.env` file in this format:
@@ -146,7 +146,7 @@ const GETBLOCK_TOKEN = process.env.GETBLOCK_TOKEN;
 
 // Initialise Ethers provider with GetBlock
 const provider = new ethers.JsonRpcProvider(
-  `https://go.getblock.us/${GETBLOCK_TOKEN}/`
+  `https://shared.us-east-1.getblock.io/${GETBLOCK_TOKEN}/`
 );
 ```
 
@@ -601,19 +601,19 @@ Each location has a unique URL
 {% tabs %}
 {% tab title="New  York" %}
 ```bash
-https://go.getblock.us/7hys368hus...
+https://shared.us-east-1.getblock.io/7hys368hus...
 ```
 {% endtab %}
 
 {% tab title="Signapore" %}
 ```bash
-https://go.getblock.asia/f782e8ec54....
+https://shared.ap-southeast-1.getblock.io/f782e8ec54....
 ```
 {% endtab %}
 
 {% tab title="Frankfurt" %}
 ```bash
-https://go.getblock.io/d4067b3cc......
+https://shared.eu-central-1.getblock.io/d4067b3cc......
 ```
 {% endtab %}
 {% endtabs %}

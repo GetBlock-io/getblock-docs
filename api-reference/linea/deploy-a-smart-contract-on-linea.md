@@ -12,7 +12,7 @@ Linea is an EVM-equivalent zkEVM that runs standard EVM bytecode, so contracts d
 ## Prerequisites
 
 * A wallet holding ETH on Linea for gas (see Add Network to Your Wallet below)
-* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://go.getblock.io/<ACCESS-TOKEN>/`
+* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`
 * Node.js version 20 or later, for Hardhat
 * A funded deployer address, on Linea Sepolia for testing (see Testnet Faucets)
 
@@ -21,7 +21,7 @@ Linea is an EVM-equivalent zkEVM that runs standard EVM bytecode, so contracts d
 | Property        | Linea Mainnet                               | Linea Sepolia Testnet                                       |
 | --------------- | ------------------------------------------- | ----------------------------------------------------------- |
 | Chain ID        | 59144 (0xe708)                              | 59141 (0xe705)                                              |
-| RPC URL         | `https://go.getblock.io/<ACCESS-TOKEN>/`    | `https://go.getblock.io/<ACCESS-TOKEN>/`                    |
+| RPC URL         | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`    | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`                    |
 | Currency Symbol | ETH                                         | ETH                                                         |
 | Block Explorer  | [lineascan.build](https://lineascan.build/) | [sepolia.lineascan.build](https://sepolia.lineascan.build/) |
 
@@ -114,7 +114,7 @@ contract HelloLinea {
 
 ```bash
 export PRIVATE_KEY=<your-deployer-private-key>
-export LINEA_RPC_URL=https://go.getblock.io/<ACCESS-TOKEN>/
+export LINEA_RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 forge create src/HelloLinea.sol:HelloLinea \
   --rpc-url $LINEA_RPC_URL \
@@ -168,12 +168,12 @@ module.exports = {
   solidity: '0.8.30',
   networks: {
     linea: {
-      url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
       chainId: 59144,
       accounts: [PRIVATE_KEY]
     },
     lineaSepolia: {
-      url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
       chainId: 59141,
       accounts: [PRIVATE_KEY]
     }

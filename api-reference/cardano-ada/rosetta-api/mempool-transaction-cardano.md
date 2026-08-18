@@ -23,7 +23,7 @@ The request body is a JSON object with the following fields.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/mempool/transaction' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/mempool/transaction' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "network_identifier": {
@@ -42,7 +42,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/mempool/tr
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/mempool/transaction',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/mempool/transaction',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -60,7 +60,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/mempool/transaction',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/mempool/transaction',
     headers={'Content-Type': 'application/json'},
     json={"network_identifier": {"blockchain": "cardano", "network": "mainnet"}, "transaction_identifier": {"hash": "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642"}}
 )

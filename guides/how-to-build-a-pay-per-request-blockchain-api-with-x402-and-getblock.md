@@ -318,7 +318,7 @@ app.use((req, res, next) => {
 const payTo = process.env.PAYMENT_WALLET_ADDRESS;
 const GETBLOCK_API_KEY = process.env.GETBLOCK_API_KEY;
 const GETBLOCK_URL = GETBLOCK_API_KEY
-  ? `https://go.getblock.io/${GETBLOCK_API_KEY}`
+  ? `https://shared.eu-central-1.getblock.io/${GETBLOCK_API_KEY}`
   : null;
 
 console.log("\n📋 Configuration:");

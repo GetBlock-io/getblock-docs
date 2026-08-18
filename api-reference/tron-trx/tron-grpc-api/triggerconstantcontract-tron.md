@@ -42,7 +42,7 @@ rpc TriggerConstantContract (TriggerSmartContract) returns (TransactionExtention
 ```bash
 grpcurl -H 'x-api-key: <ACCESS-TOKEN>' \
   -d '{"owner_address": "41f0cc5a2a84cd0f68ed1667070934542d673acbd8", "contract_address": "41a614f803b6fd780986a42c78ec9c7f77e6ded13c", "data": "70a08231000000000000000000000000f0cc5a2a84cd0f68ed1667070934542d673acbd8"}' \
-  go.getblock.io:443 protocol.Wallet/TriggerConstantContract
+  shared.eu-central-1.getblock.io:443 protocol.Wallet/TriggerConstantContract
 ```
 {% endcode %}
 {% endtab %}
@@ -56,7 +56,7 @@ from api import api_pb2_grpc
 from core import Contract_pb2, Tron_pb2
 
 creds = grpc.ssl_channel_credentials()
-channel = grpc.secure_channel('go.getblock.io:443', creds)
+channel = grpc.secure_channel('shared.eu-central-1.getblock.io:443', creds)
 metadata = [('x-api-key', '<ACCESS-TOKEN>')]
 stub = api_pb2_grpc.WalletStub(channel)
 
@@ -73,7 +73,7 @@ print(response)
 {% code title="example.go" %}
 ```go
 conn, _ := grpc.Dial(
-    "go.getblock.io:443",
+    "shared.eu-central-1.getblock.io:443",
     grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{})),
 )
 defer conn.Close()

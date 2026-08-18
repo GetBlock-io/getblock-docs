@@ -25,7 +25,7 @@ This method estimates the fees that a given message would incur if applied to th
 **JSON-RPC (POST):**
 
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS_TOKEN>/estimateFee' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/estimateFee' \
 --header 'Content-Type: application/json' \
 --data-raw '{
         "address": "EQDtFpEwcFAEcRe5mLVh2N6C0x-_hJEM7W61_JLnSF74p4q2",
@@ -47,7 +47,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/estimateFee',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/estimateFee',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -65,7 +65,7 @@ axios(config)
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/estimateFee"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/estimateFee"
 
 payload = json.dumps({
         "address": "EQDtFpEwcFAEcRe5mLVh2N6C0x-_hJEM7W61_JLnSF74p4q2",
@@ -98,7 +98,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 });
 
     let response = client
-        .post("https://go.getblock.io/<ACCESS-TOKEN>/estimateFee")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/estimateFee")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -169,7 +169,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 import { TonClient } from '@ton/ton';
 
 const client = new TonClient({
-    endpoint: 'https://go.getblock.io/<ACCESS-TOKEN>/estimateFee'
+    endpoint: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/estimateFee'
 });
 
 // The @ton/ton client wraps the same JSON-RPC methods.

@@ -47,8 +47,8 @@ The access token is embedded in the endpoint URL. See examples below or visit ou
 
 #### Endpoints (example formats)
 
-* **WebSocket (PubSub)**: `wss://go.getblock.io/<ACCESS_TOKEN>`
-* **HTTP JSON-RPC**: `https://go.getblock.io/<ACCESS_TOKEN>`
+* **WebSocket (PubSub)**: `wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>`
+* **HTTP JSON-RPC**: `https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>`
 
 Use environment variables or a secrets manager for these strings (do not hardcode them in source).
 
@@ -73,8 +73,8 @@ Store secrets in environment variables or a secure vault. Never hardcode private
 _**Example env vars**:_
 
 ```bash
-export GETBLOCK_RPC="https://go.getblock.io/<ACCESS_TOKEN>"
-export GETBLOCK_WS="wss://go.getblock.io/<ACCESS_TOKEN>"
+export GETBLOCK_RPC="https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
+export GETBLOCK_WS="wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 export BOT_KEYFILE="/path/to/encrypted/key.json"   # or use a signer service / HSM
 ```
 
@@ -101,8 +101,8 @@ from solana.rpc.async_api import AsyncClient
 from solana.rpc.websocket_api import connect   # solana-py websocket helper
 from typing import Set
 
-RPC_URL = "https://go.getblock.io/<ACCESS_TOKEN>"
-WS_URL = "wss://go.getblock.io/<ACCESS_TOKEN>"
+RPC_URL = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
+WS_URL = "wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 PUMP_PROGRAM_ID = Pubkey.from_string("6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P")
 
 seen_signatures: Set[str] = set()

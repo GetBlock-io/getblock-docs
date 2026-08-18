@@ -11,7 +11,7 @@ Ronin is EVM-compatible, so contracts deploy with standard Ethereum tooling such
 ## Prerequisites
 
 * A wallet holding RON for gas (see Add Network to Your Wallet below)
-* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://go.getblock.io/<ACCESS-TOKEN>/`
+* A GetBlock access token from the GetBlock dashboard, used as `<ACCESS-TOKEN>` in the endpoint `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`
 * Node.js version 20 or later, for Hardhat
 * A funded deployer address, on Saigon Testnet for testing (see Testnet Faucets)
 
@@ -20,7 +20,7 @@ Ronin is EVM-compatible, so contracts deploy with standard Ethereum tooling such
 | Property        | Ronin Mainnet                                                      | Saigon Testnet                                                                   |
 | --------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | Chain ID        | 2020 (0x7e4)                                                       | 202601 (0x31769)                                                                 |
-| RPC URL         | `https://go.getblock.io/<ACCESS-TOKEN>/`                           | `https://go.getblock.io/<ACCESS-TOKEN>/`                                         |
+| RPC URL         | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`                           | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`                                         |
 | Currency Symbol | RON                                                                | RON                                                                              |
 | Block Explorer  | [app.roninchain.com/explorer](https://app.roninchain.com/explorer) | [saigon-app.roninchain.com/explorer](https://saigon-app.roninchain.com/explorer) |
 
@@ -113,7 +113,7 @@ contract HelloRonin {
 
 ```bash
 export PRIVATE_KEY=<your-deployer-private-key>
-export RONIN_RPC_URL=https://go.getblock.io/<ACCESS-TOKEN>/
+export RONIN_RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 forge create src/HelloRonin.sol:HelloRonin \
   --rpc-url $RONIN_RPC_URL \
@@ -168,12 +168,12 @@ module.exports = {
   solidity: '0.8.28',
   networks: {
     ronin: {
-      url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
       chainId: 2020,
       accounts: [PRIVATE_KEY]
     },
     saigon: {
-      url: 'https://go.getblock.io/<ACCESS-TOKEN>/',
+      url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
       chainId: 202601,
       accounts: [PRIVATE_KEY]
     }

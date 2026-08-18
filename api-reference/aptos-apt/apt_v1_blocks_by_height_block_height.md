@@ -58,13 +58,13 @@ This endpoint gets a specific block's information from the Aptos blockchain netw
 
 **Base URL**
 ```bash
-https://go.getblock.io/<ACCESS_TOKEN>
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 **Example(cURL)**
 
 ```curl
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/blocks/by_height/425737645?with_transactions=false'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/blocks/by_height/425737645?with_transactions=false'
 ```
 
 ## Response Example
@@ -236,7 +236,7 @@ This method can be used for:
 ```python
 import requests
 
-url = "https://go.getblock.io/<ACCESS_TOKEN>/v1/blocks/by_height/425737645?with_transactions=false"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/blocks/by_height/425737645?with_transactions=false"
 response = requests.request("GET", url, headers=headers, data=payload)
 
 print(response.text)
@@ -248,7 +248,7 @@ import axios from ‘axios’
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: "https://go.getblock.io/<ACCESS_TOKEN>/v1/blocks/by_height/425737645?with_transactions=false"
+  url: "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/blocks/by_height/425737645?with_transactions=false"
 };
 
 axios.request(config)

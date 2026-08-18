@@ -16,7 +16,7 @@ A PrivateKey JSON object. A private key is a key to an account. Anyone having th
 #### Request
 
 ```java
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/account/unlock' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/account/unlock' \
 --header 'Content-Type: application/json' \
 --data-raw '{"privateKey":{"value":"68e4f79f886927de698df4f857de2aada41ccca6617e56bb0d61623b35b08cc0"}}'
 ```

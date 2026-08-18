@@ -22,7 +22,7 @@ This endpoint returns the fiat currencies for which the indexer has rate data av
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1617180599'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1617180599'
 ```
 {% endcode %}
 {% endtab %}
@@ -31,7 +31,7 @@ curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tick
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1617180599'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1617180599'
 );
 console.log(await response.json());
 ```
@@ -43,7 +43,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://go.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1617180599')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1617180599')
 
 print(response.json())
 ```

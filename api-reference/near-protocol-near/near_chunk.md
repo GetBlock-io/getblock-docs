@@ -31,12 +31,12 @@ This method returns detailed information about a specific chunk. A chunk contain
 **Base URL**
 
 ```bash
-  https://go.getblock.io/<ACCESS-TOKEN>/
+  https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 **Example(cURL)**
 
 ```curl
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \ 
 --data-raw '{"jsonrpc": "2.0",
 "method": "chunk",
@@ -143,7 +143,7 @@ let data = JSON.stringify({
 let config = {
   method: 'post',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -161,7 +161,7 @@ axios.request(config)
   ```python
   import requests
   import json
-  url = "https://go.getblock.io/<ACCESS_TOKEN>"
+  url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
   payload = json.dumps({
     "jsonrpc": "2.0",
     "method": "chunk",

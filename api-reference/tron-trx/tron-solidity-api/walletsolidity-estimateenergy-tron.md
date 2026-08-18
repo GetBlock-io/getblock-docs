@@ -9,7 +9,7 @@ description: >-
 This endpoint estimates the Energy required to execute a smart-contract call, without submitting a transaction. It is used to set a fee limit before a call.
 
 {% hint style="info" %}
-This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://go.getblock.io/<ACCESS-TOKEN>/wallet/estimateenergy` over the latest, possibly unconfirmed state.
+This is a Solidity-node endpoint. It returns only confirmed, irreversible data, so it is the correct interface for balance and payment verification. The Fullnode serves the same operation at `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/estimateenergy` over the latest, possibly unconfirmed state.
 {% endhint %}
 
 ## Parameters
@@ -28,7 +28,7 @@ This is a Solidity-node endpoint. It returns only confirmed, irreversible data, 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/estimateenergy' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/estimateenergy' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g",
@@ -45,7 +45,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/walletsoli
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/estimateenergy',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/estimateenergy',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -63,7 +63,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/walletsolidity/estimateenergy',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/walletsolidity/estimateenergy',
     headers={'Content-Type': 'application/json'},
     json={"owner_address": "TZ4UXDV5ZhNW7fb2AMSbgfAEZ7hWsnYS2g", "contract_address": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t", "function_selector": "transfer(address,uint256)", "parameter": "0000000000000000000000004142b5e01c8c59a25d78acdbec2bfc7e89e5e86300000000000000000000000000000000000000000000000000000000000f4240", "visible": true}
 )

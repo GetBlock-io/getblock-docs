@@ -20,7 +20,7 @@ This method retrieves the EVM bytecode stored at a specific address. If the addr
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location 'https://go.getblock.us/<ACCESS_TOKEN>' \
+curl --location 'https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
    "jsonrpc": "2.0",
@@ -50,7 +50,7 @@ let data = JSON.stringify({
 let config = {
   method: "post",
   maxBodyLength: Infinity,
-  url: "https://go.getblock.us/<ACCESS_TOKEN>",
+  url: "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>",
   headers: {
     "Content-Type": "application/json",
   },
@@ -74,7 +74,7 @@ axios
 import requests
 import json
 
-url = "https://go.getblock.us/<ACESS_TOKEN>"
+url = "https://shared.us-east-1.getblock.io/<ACESS_TOKEN>"
 
 payload = json.dumps({
    "jsonrpc": "2.0",
@@ -119,7 +119,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let json: serde_json::Value = serde_json::from_str(&data)?;
 
-    let request = client.request(reqwest::Method::POST, "https://go.getblock.us/<ACCESS_TOKEN>")
+    let request = client.request(reqwest::Method::POST, "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>")
         .headers(headers)
         .json(&json);
 
@@ -185,7 +185,7 @@ The `eth_getCode` method helps developers to:
 {% tab title="Ethers.js" %}
 ```javascript
 import { ethers } from "ethers";
-const RPC_URL = "https://go.getblock.us/<ACCESS_TOKEN>";
+const RPC_URL = "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>";
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 async function Call() {
   try {
@@ -212,7 +212,7 @@ import { optimism } from 'viem/chains';
 // Create Viem client with GetBlock
 const client = createPublicClient({
   chain: optimism,
-  transport: http('https://go.getblock.us/<ACCESS_TOKEN>'),
+  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>'),
 });
 
 // Using the method through Viem

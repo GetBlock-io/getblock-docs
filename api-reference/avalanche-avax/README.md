@@ -79,14 +79,14 @@ GetBlock exposes all three Avalanche chains under a single regional base URL. Th
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```
-https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc
-https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/P
-https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/X
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/P
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/X
 ```
 {% endtab %}
 {% endtabs %}
 
-All methods are called by sending a `POST` request to the corresponding chain URL with a JSON-RPC 2.0 body. For real-time subscriptions on the C-Chain, use the WebSocket scheme: `wss://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/ws`. **WebSocket is only available on the C-Chain** — P-Chain and X-Chain are HTTP only.
+All methods are called by sending a `POST` request to the corresponding chain URL with a JSON-RPC 2.0 body. For real-time subscriptions on the C-Chain, use the WebSocket scheme: `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/ws`. **WebSocket is only available on the C-Chain** — P-Chain and X-Chain are HTTP only.
 
 ## Supported Networks
 
@@ -153,7 +153,7 @@ const data = JSON.stringify({
 
 const config = {
     method: 'post',
-    url: 'https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc',
+    url: 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc',
     headers: {
         'Content-Type': 'application/json'
     },
@@ -229,7 +229,7 @@ pip install requests
 import requests
 import json
 
-url = "https://go.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/ext/bc/C/rpc"
 
 payload = json.dumps({
     "jsonrpc": "2.0",

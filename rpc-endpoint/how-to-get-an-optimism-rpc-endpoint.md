@@ -53,12 +53,12 @@ Your endpoint URL looks like this:
 
 {% code overflow="wrap" %}
 ```bash
-https://go.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 {% endcode %}
 
 {% hint style="warning" %}
-The long string after `go.getblock.io/` is your **access token** — keep it private.
+The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -69,7 +69,7 @@ The long string after `go.getblock.io/` is your **access token** — keep it pri
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
+curl -X POST https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/ \
   -H "Content-Type: application/json" \
   -d '{
   "jsonrpc":"2.0",
@@ -104,7 +104,7 @@ curl -X POST https://go.getblock.io/<YOUR-ACCESS-TOKEN>/ \
 {% code overflow="wrap" %}
 ```javascript
 import { JsonRpcProvider } from "ethers";
-const provider = new JsonRpcProvider("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/");
+const provider = new JsonRpcProvider("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/");
 console.log("Block:", await provider.getBlockNumber());
 ```
 {% endcode %}
@@ -117,7 +117,7 @@ import { createPublicClient, http } from "viem";
 import { optimism } from "viem/chains";
 const client = createPublicClient({
   chain: optimism,
-  transport: http("https://go.getblock.io/<YOUR-ACCESS-TOKEN>/"),
+  transport: http("https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/"),
 });
 ```
 {% endcode %}

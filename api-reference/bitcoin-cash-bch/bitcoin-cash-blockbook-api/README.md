@@ -25,8 +25,8 @@ The REST interface is served under an `/api/v2/` path on the Blockbook endpoint,
 
 | Interface | Path                                            |
 | --------- | ----------------------------------------------- |
-| REST      | `https://go.getblock.io/<ACCESS-TOKEN>/api/v2/` |
-| JSON-RPC  | `https://go.getblock.io/<ACCESS-TOKEN>/`        |
+| REST      | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/` |
+| JSON-RPC  | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`        |
 
 {% hint style="info" %}
 Blockbook is provisioned as an add-on. Confirm from the GetBlock dashboard that you have chosen the Blockbook add-on.

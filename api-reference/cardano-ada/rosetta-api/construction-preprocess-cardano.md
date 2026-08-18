@@ -24,7 +24,7 @@ The request body is a JSON object with the following fields.
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/construction/preprocess' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/preprocess' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "network_identifier": {
@@ -65,7 +65,7 @@ curl --location --request POST 'https://go.getblock.io/<ACCESS-TOKEN>/constructi
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://go.getblock.io/<ACCESS-TOKEN>/construction/preprocess',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/preprocess',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -83,7 +83,7 @@ console.log(await response.json());
 import requests
 
 response = requests.post(
-    'https://go.getblock.io/<ACCESS-TOKEN>/construction/preprocess',
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/construction/preprocess',
     headers={'Content-Type': 'application/json'},
     json={"network_identifier": {"blockchain": "cardano", "network": "mainnet"}, "operations": [{"operation_identifier": {"index": 0}, "type": "input", "account": {"address": "addr1qxy2lpan99fcnhhyzr8w8qk4dqz4mp7g6b8h3r2v5c9d0e1f2g3h4j5k6l7m8n9p0q"}, "amount": {"value": "-9410563", "currency": {"symbol": "ADA", "decimals": 6}}, "coin_change": {"coin_identifier": {"identifier": "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642:0"}, "coin_action": "coin_spent"}}], "metadata": {}}
 )

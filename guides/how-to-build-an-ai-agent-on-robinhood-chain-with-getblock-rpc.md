@@ -78,8 +78,8 @@ In your [GetBlock dashboard](https://account.getblock.io/), click **Get an endpo
 
 {% code title=".env" %}
 ```bash
-GETBLOCK_RPC_URL=https://go.getblock.io/<YOUR_ACCESS_TOKEN>/
-GETBLOCK_WS_URL=wss://go.getblock.io/<YOUR_ACCESS_TOKEN>/
+GETBLOCK_RPC_URL=https://shared.eu-central-1.getblock.io/<YOUR_ACCESS_TOKEN>/
+GETBLOCK_WS_URL=wss://shared.eu-central-1.getblock.io/<YOUR_ACCESS_TOKEN>/
 OPENAI_API_KEY=sk-...
 ```
 {% endcode %}
@@ -543,7 +543,7 @@ The `⚙️` lines show each RPC-backed tool call as the model makes it. Try cha
 
 ## Troubleshooting
 
-<table data-search="false"><thead><tr><th>Problem</th><th>Likely cause</th><th>Fix</th></tr></thead><tbody><tr><td><code>GETBLOCK_RPC_URL is not set</code> on startup</td><td><code>.env</code> missing or not copied from the example</td><td>Copy <code>.env.example</code> to <code>.env</code> and paste your dashboard URLs.</td></tr><tr><td>Chain ID prints something other than <code>4663</code></td><td>The access token is for a different chain</td><td>Create a <strong>Robinhood Chain</strong> endpoint in the dashboard and use that token.</td></tr><tr><td><code>HTTP 401</code> / <code>403</code> from <code>go.getblock.io</code></td><td>Invalid, revoked, or mistyped access token</td><td>Re-copy the exact URL (including trailing <code>/</code>) from the dashboard.</td></tr><tr><td><code>GETBLOCK_WS_URL is not set</code> when running <code>npm run watch</code></td><td>Only the HTTP endpoint was configured</td><td>Add the WebSocket URL from the same endpoint page.</td></tr><tr><td><code>watchBlocks</code> prints <code>txs: ?</code></td><td><code>newHeads</code> delivers headers only on some nodes</td><td>Expected — fetch the full block with <code>get_block</code> when you need the tx list.</td></tr><tr><td>OpenAI <code>401</code> or model errors in <code>agent.js</code></td><td>Missing/invalid <code>OPENAI_API_KEY</code> or unavailable model</td><td>Set the key; override the model with <code>OPENAI_MODEL</code> if needed.</td></tr><tr><td>Agent answers without calling tools</td><td>Vague tool descriptions after edits</td><td>Keep the "Call this when…" phrasing in every tool description.</td></tr></tbody></table>
+<table data-search="false"><thead><tr><th>Problem</th><th>Likely cause</th><th>Fix</th></tr></thead><tbody><tr><td><code>GETBLOCK_RPC_URL is not set</code> on startup</td><td><code>.env</code> missing or not copied from the example</td><td>Copy <code>.env.example</code> to <code>.env</code> and paste your dashboard URLs.</td></tr><tr><td>Chain ID prints something other than <code>4663</code></td><td>The access token is for a different chain</td><td>Create a <strong>Robinhood Chain</strong> endpoint in the dashboard and use that token.</td></tr><tr><td><code>HTTP 401</code> / <code>403</code> from <code>shared.eu-central-1.getblock.io</code></td><td>Invalid, revoked, or mistyped access token</td><td>Re-copy the exact URL (including trailing <code>/</code>) from the dashboard.</td></tr><tr><td><code>GETBLOCK_WS_URL is not set</code> when running <code>npm run watch</code></td><td>Only the HTTP endpoint was configured</td><td>Add the WebSocket URL from the same endpoint page.</td></tr><tr><td><code>watchBlocks</code> prints <code>txs: ?</code></td><td><code>newHeads</code> delivers headers only on some nodes</td><td>Expected — fetch the full block with <code>get_block</code> when you need the tx list.</td></tr><tr><td>OpenAI <code>401</code> or model errors in <code>agent.js</code></td><td>Missing/invalid <code>OPENAI_API_KEY</code> or unavailable model</td><td>Set the key; override the model with <code>OPENAI_MODEL</code> if needed.</td></tr><tr><td>Agent answers without calling tools</td><td>Vague tool descriptions after edits</td><td>Keep the "Call this when…" phrasing in every tool description.</td></tr></tbody></table>
 
 ### Conclusion
 

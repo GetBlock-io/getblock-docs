@@ -24,13 +24,13 @@ In short, it provides an overview of Aptos and its health status.
 **URL (endpoint)**
 
 ```bash
-https://go.getblock.io/
+https://shared.eu-central-1.getblock.io/
 ```
 
 **Example (cURL)**
 
 ```bash
-curl --location 'https://go.getblock.io/<ACCESS_TOKEN>/v1/info'
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/info'
 ```
 
 ## Response
@@ -79,7 +79,7 @@ import axios from 'axios'
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://go.getblock.io/<ACCESS_TOKEN>/v1/info',
+  url: 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/v1/info',
   headers: {}
 };
 

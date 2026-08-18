@@ -13,7 +13,7 @@ The TRON REST (HTTP) API is TRON's native interface. Every endpoint is an HTTP `
 {% tabs %}
 {% tab title="Frankfurt, Germany" %}
 ```bash
-https://go.getblock.io/<ACCESS-TOKEN>/wallet/{method}
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/wallet/{method}
 ```
 {% endtab %}
 

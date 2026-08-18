@@ -21,7 +21,7 @@ Cancels an existing subscription created with `eth_subscribe`. Like `eth_subscri
 {% code title="cURL (wscat)" %}
 ```bash
 # This method requires WebSocket connection
-wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 > {"jsonrpc":"2.0","method":"eth_unsubscribe","params":["0x1"],"id":"getblock.io"}
 ```
@@ -33,7 +33,7 @@ wscat -c wss://go.getblock.io/<ACCESS-TOKEN>/
 ```javascript
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://go.getblock.io/<ACCESS-TOKEN>/');
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 ws.on('open', () => {
     ws.send(JSON.stringify({
@@ -59,7 +59,7 @@ import websockets
 import json
 
 async def unsubscribe():
-    uri = "wss://go.getblock.io/<ACCESS-TOKEN>/"
+    uri = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
     async with websockets.connect(uri) as ws:
         payload = {
             "jsonrpc": "2.0",
@@ -85,7 +85,7 @@ use serde_json::json;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let url = "wss://go.getblock.io/<ACCESS-TOKEN>/";
+    let url = "wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/";
     let (mut ws, _) = connect_async(url).await?;
     
     let payload = json!({
@@ -149,7 +149,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```javascript
 import { Provider } from 'zksync-ethers';
 
-const provider = new Provider('https://go.getblock.io/<ACCESS-TOKEN>/');
+const provider = new Provider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // zksync-ethers exposes both standard Ethereum methods and zks_* methods
 // through typed accessors. For raw access:
@@ -163,7 +163,7 @@ console.log(result);
 ```python
 from zksync2.module.module_builder import ZkSyncBuilder
 
-zk_web3 = ZkSyncBuilder.build('https://go.getblock.io/<ACCESS-TOKEN>/')
+zk_web3 = ZkSyncBuilder.build('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
 
 # zksync2-python exposes the JSON-RPC layer directly.
 result = zk_web3.zksync._zks_endpoints if 'eth_unsubscribe'.startswith('zks_') else None

@@ -27,7 +27,7 @@ The (optional) number of namespaces to be returned.
 #### Request
 
 ```java
-curl --location --request GET 'https://go.getblock.io/<ACCESS-TOKEN>/account/namespace/page?address=NC4T246ALCPNBTAOCSC5EAVFMDFBOACSQAF6WKHV&pageSize=5' \
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/account/namespace/page?address=NC4T246ALCPNBTAOCSC5EAVFMDFBOACSQAF6WKHV&pageSize=5' \
 --header 'Content-Type: application/json'
 ```
 

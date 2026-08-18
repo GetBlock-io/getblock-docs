@@ -39,7 +39,7 @@ Use private transactions when:
 {% tabs %}
 {% tab title="Endpoint" %}
 ```bash
-wss://go.getblock.io/<ACCESS_TOKEN>
+wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 {% endtab %}
 
@@ -172,7 +172,7 @@ const signedTx = await wallet.signTransaction(tx);
 Submit Privately
 
 ```javascript
-const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
+const ws = new WebSocket(`wss://shared.eu-central-1.getblock.io/${process.env.ACCESS_TOKEN}`);
 
 ws.on('open', () => {
   ws.send(JSON.stringify({
@@ -362,7 +362,7 @@ async function privateSwap(tokenAddress, amountBNB, minAmountOut) {
   console.log('  Mode: Private (MEV Protected)');
   
   // Submit privately
-  const ws = new WebSocket(`wss://go.getblock.io/${process.env.ACCESS_TOKEN}`);
+  const ws = new WebSocket(`wss://shared.eu-central-1.getblock.io/${process.env.ACCESS_TOKEN}`);
   
   return new Promise((resolve, reject) => {
     ws.on('open', () => {
