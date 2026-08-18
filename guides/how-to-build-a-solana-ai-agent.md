@@ -7,7 +7,7 @@ icon: message-bot
 
 # How to Build a Solana AI Agent
 
-AI agents are autonomous systems that perform operations or tasks without human intervention.  These agents act independently, as set up by users.  For example, if you set up your agent to send a reminder or a report to your friend, this agent will perform the task on your behalf without your friend knowing that the action was performed by itself.&#x20;
+AI agents are autonomous systems that perform operations or tasks without human intervention. These agents act independently, as set up by users. For example, if you set up your agent to send a reminder or a report to your friend, this agent will perform the task on your behalf without your friend knowing that the action was performed by itself.
 
 In the blockchain context, AI agents can:
 
@@ -22,9 +22,9 @@ In the blockchain context, AI agents can:
 
 Just like every area of development has its own stack for building applications, AI agent development has its own stack, typically consisting of three layers:
 
-1. **Large Language Models (LLMs):** The reasoning brain of every AI agent.  LMs handle natural language understanding, interpret user requests, process blockchain data, and decide which actions to take.
-2. **Agent Frameworks:** These define the agent's structure, personality, and interactions with external platforms.  Examples include ElizaOS, LangChain, Rig, and AgentiPy.
-3. **Blockchain Toolkits:** SDKs that enable agents to interact with networks like Solana.  Examples include the Solana Agent Kit and GOAT Toolkit.
+1. **Large Language Models (LLMs):** The reasoning brain of every AI agent. LMs handle natural language understanding, interpret user requests, process blockchain data, and decide which actions to take.
+2. **Agent Frameworks:** These define the agent's structure, personality, and interactions with external platforms. Examples include ElizaOS, LangChain, Rig, and AgentiPy.
+3. **Blockchain Toolkits:** SDKs that enable agents to interact with networks like Solana. Examples include the Solana Agent Kit and GOAT Toolkit.
 
 ### Why Are AI Agents Important in Blockchain?
 
@@ -32,9 +32,9 @@ Just like every area of development has its own stack for building applications,
 2. **Enhanced Security:** They provide continuous monitoring of vulnerabilities in smart contracts and wallets and detect fraudulent activity in real time.
 3. **Simplified User Experience (Web3 Adoption):** AI agents act as intermediaries, translating natural-language requests into complex on-chain actions, reducing technical barriers for users.
 4. **Decentralized Autonomous Interactions:** Agents can hold funds, sign transactions, and interact with dApps autonomously, creating new, self-sustaining, AI-driven economic ecosystems.
-5. **Intelligent Data Processing:** They provide an insightful report on vast, immutable datasets on the blockchain to support better decision-making.&#x20;
+5. **Intelligent Data Processing:** They provide an insightful report on vast, immutable datasets on the blockchain to support better decision-making.
 
-_**Now that you've learnt about AI agents, their core stack, and its importance.  In this guide, you will be learning how to build an AI agent on Solana, a fast and growing blockchain network.  This agent will be able to transfer  SOL to USDC and check your account balance as seen below:**_
+_**Now that you've learnt about AI agents, their core stack, and its importance. In this guide, you will be learning how to build an AI agent on Solana, a fast and growing blockchain network. This agent will be able to transfer SOL to USDC and check your account balance as seen below:**_
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-03-06 at 3.33.04 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -46,9 +46,10 @@ You must have the following:
 2. Solana Wallet, e.g., [Phantom](https://phantom.com/), [Solflare](https://www.solflare.com/), [MetaMask](https://metamask.io/), etc
 3. API keys such as [OpenAI](https://platform.openai.com/api-keys) (for the LLM) and Solana Devnet RPC URL (Optional: [GetBlock Solana RPC URL](https://account.getblock.io/))
 4. Package manager installed on your laptop(Preferrably [pnpm](https://pnpm.io/installation))
+5. [GetBlock Account](https://account.getblock.io/)
 
 {% hint style="info" %}
-Devnet RPC URL is used for this guide. If you want to interact with Mainnet, then make use of [GetBlock Solana RPC URL](https://account.getblock.io/)
+The GetBlock Devnet RPC URL is used in this guide. If you want to interact with Mainnet, then make use of [GetBlock Solana RPC URL](https://account.getblock.io/)
 {% endhint %}
 
 ## Project Setup
@@ -99,7 +100,7 @@ Create a `.env` file and add the following details:
 
 {% code overflow="wrap" %}
 ```bash
-RPC_URL=https://api.devnet.solana.com
+RPC_URL=https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 PRIVATE_KEY=your_wallet_private_key
 OPENAI_API_KEY=your_openai_secret_key
 ```
@@ -177,7 +178,7 @@ This:
 {% endstep %}
 
 {% step %}
-Create Interface for interaction:&#x20;
+Create Interface for interaction:
 
 {% code overflow="wrap" %}
 ```typescript
@@ -235,13 +236,13 @@ Agent: Ваш адрес кошелька: `5C7dUe5ZDWBCYQ5eqtGPRyz7CQYk2aK4FhZT
 ```
 {% endcode %}
 
-You can see that it interprets your natural language, uses the tools plugin to get the right response for it&#x20;
+You can see that it interprets your natural language, uses the tools plugin to get the right response for it
 {% endstep %}
 {% endstepper %}
 
 #### Extend AI Agent capacity
 
-&#x20;Improve the capacity of your agent by adding more tools:
+Improve the capacity of your agent by adding more tools:
 
 1. Mint NFT:
 
