@@ -123,17 +123,12 @@ Once you know which data you need, use the corresponding API method from your ap
 
 A typical integration looks like this:
 
-```
-Choose a token pair
-        ↓
-Choose a market data method
-        ↓
-Query current/recent data
-        ↓
-Subscribe to live updates if needed
-        ↓
-Use the data in your application
+```mermaid
+graph TD
+  A[Choose a token pair] --> B[Choose a market data method]
+  B --> C[Query current or recent data]
+  C --> D[Subscribe to live updates if needed]
+  D --> E[Use the data in your application]
 ```
 
 For exact request parameters, response fields, and streaming behavior, continue to the documentation for the specific **Market Data method** or see the **API Reference**.
-
