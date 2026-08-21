@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Taxonomy
 
 The GetBlock AML Risk Taxonomy provides a consistent, customer-facing language for describing the risk context of crypto wallets and transactions.

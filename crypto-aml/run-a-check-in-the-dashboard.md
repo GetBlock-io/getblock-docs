@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Run a check in the dashboard
 
 The web UI is the fastest way to screen a wallet or transaction — no code required.

@@ -60,7 +60,7 @@ For the full model, thresholds, and how these combine into a score, see [**How r
 Choose the access method that fits your workflow:
 
 * **Web** — Select a network, enter a wallet address or transaction hash, and view the report. Export a PDF and keep an audit-ready history in your account.
-* **REST API** — Integrate three bearer-authenticated screening endpoints into your backend.
+* **REST API** — Integrate bearer-authenticated screening endpoints into your backend.
 
 {% hint style="success" %}
 Web and API checks use the same prepaid credit balance.
@@ -70,7 +70,7 @@ Web and API checks use the same prepaid credit balance.
 
 Choose a pricing model:
 
-* **Pay as you go:** Top up your prepaid balance with a card or crypto. Each check deducts credits, starting at about $0.20. There are no subscriptions or minimums.
+* **Pay as you go:** Top up your prepaid balance with a card or crypto. Each check deducts credits.
 * **Bulk packages:** Buy checks upfront for a lower per-check rate. Larger packages receive larger discounts. Reach out to the [Sales team](mailto:support@getblock.io)
 
 [^1]: Anti-Money Laundering (AML) consists of the laws, rules, and procedures used to stop criminals from hiding illegal "dirty" money as clean, legal income.
