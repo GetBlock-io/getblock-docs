@@ -16,6 +16,7 @@ This method returns a list of addresses owned by the client. Note that this meth
 
 {% tabs %}
 {% tab title="curl" %}
+{% code overflow="wrap" %}
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
@@ -26,6 +27,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "id": "getblock.io"
 }'
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="JavaScript (axios)" %}
@@ -139,6 +141,7 @@ The `eth_accounts` method is typically used for:
 
 {% tabs %}
 {% tab title="Ethers.js" %}
+{% code overflow="wrap" %}
 ```javascript
 import { ethers } from 'ethers';
 
@@ -147,6 +150,7 @@ const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getbloc
 const accounts = await provider.listAccounts();
 console.log('Accounts:', accounts);
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Viem" %}
