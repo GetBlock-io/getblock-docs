@@ -16,11 +16,11 @@ _Wallet Audit provides automated risk indicators based on publicly available on-
 
 Wallet Audit provides a complete behavioral wallet profile, not just a "fraud / not fraud" check. Below are six key scenarios where a full audit creates measurable value.
 
-#### **1.  DeFi Protocol — Personalized Onboarding**
+#### **1. DeFi Protocol — Personalized Onboarding**
 
 All users connecting to the protocol see the same interface, regardless of their experience, preferences, or financial capabilities. Beginners get lost in complex products, while experienced users don't see what they need.
 
-With Wallet Audit, the moment a wallet connects, an audit runs instantly. Based on Risk Willingness, Experience, and Intentions, the protocol surfaces relevant products.&#x20;
+With Wallet Audit, the moment a wallet connects, an audit runs instantly. Based on Risk Willingness, Experience, and Intentions, the protocol surfaces relevant products.
 
 **Example**:
 
@@ -33,7 +33,7 @@ With Wallet Audit, the moment a wallet connects, an audit runs instantly. Based 
 
 In DeFi lending, all borrowers are assessed equally — only by collateral volume. There is no data on the borrower's financial stability or behavioral history.
 
-With Wallet Audit, Risk Capability, Total Balance, and Experience, determine maximum loan size and collateral requirements.&#x20;
+With Wallet Audit, Risk Capability, Total Balance, and Experience, determine maximum loan size and collateral requirements.
 
 **Example**:
 
@@ -46,7 +46,7 @@ With Wallet Audit, Risk Capability, Total Balance, and Experience, determine max
 
 Marketing campaigns in Web3 operate "blindly". The protocol only knows wallet addresses but doesn't understand who its users are, what they do, or what they need.
 
-With Wallet Audit, a mass audit of connected wallets uses Transaction Categories, Protocols, and Intentions to split the base into cohorts for targeted marketing.&#x20;
+With Wallet Audit, a mass audit of connected wallets uses Transaction Categories, Protocols, and Intentions to split the base into cohorts for targeted marketing.
 
 Example:
 
@@ -60,7 +60,7 @@ Example:
 
 Token sales are filled with airdrop farmers and bots who dump tokens on the first day of listing. Real investors don't receive allocation.
 
-With Wallet Audit, Wallet Rank, Experience, and Risk Capability, provide objective applicant scoring. Allocation priority goes to wallets with a verified history.&#x20;
+With Wallet Audit, Wallet Rank, Experience, and Risk Capability, provide objective applicant scoring. Allocation priority goes to wallets with a verified history.
 
 Example:
 
@@ -73,7 +73,7 @@ Example:
 
 Quest platforms (Layer3, Zealy, Galxe) offer the same tasks to everyone. Too difficult for beginners, too easy for experienced users. Bot farms collect rewards intended for real users.
 
-With Wallet Audit, Experience and Protocols determine different quests for different levels, while Wallet Rank filters sybil accounts from real users.&#x20;
+With Wallet Audit, Experience and Protocols determine different quests for different levels, while Wallet Rank filters sybil accounts from real users.
 
 Example:
 
@@ -110,7 +110,7 @@ Example:
 2. BNB Smart Chain(BSC)
 3. Base
 
-### How to Audit a Wallet Address&#x20;
+### How to Audit a Wallet Address
 
 1. Go to your [GetBlock Account Dashboard](https://account.getblock.io/products/address-audit#check)
 
@@ -126,11 +126,11 @@ Example:
 
 4. Click on **Run Check:**<br>
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 5. Scroll down to see the analysis:
 
-<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 <details>
 
@@ -139,15 +139,15 @@ Example:
 1. Wallet balance, age, and number of transactions
 2. Risk Willingness / Experience Level / Risk Capability scale
 
-&#x20;         i. Risk Willingness: This measures psychological willingness to take risks. Determined by on-chain behavior: leverage usage, volatile assets, experimental protocols.
+i. Risk Willingness: This measures psychological willingness to take risks. Determined by on-chain behavior: leverage usage, volatile assets, experimental protocols.
 
-&#x20;          ii. Experience Level: This measures the depth and duration of Web3 activity: number of protocols, activity duration, transaction complexity, and multi-chain activity.
+ii. Experience Level: This measures the depth and duration of Web3 activity: number of protocols, activity duration, transaction complexity, and multi-chain activity.
 
-&#x20;           iii. Risk Capability: This measures financial ability to withstand losses, weighted by behavioral risk appetite.&#x20;
+iii. Risk Capability: This measures financial ability to withstand losses, weighted by behavioral risk appetite.
 
-&#x20;      Roughly: available capital × Risk Willingness. A wallet with high willingness but a small balance gets a low Risk Capability — it can act riskily but cannot absorb meaningful loss.&#x20;
+Roughly: available capital × Risk Willingness. A wallet with high willingness but a small balance gets a low Risk Capability — it can act riskily but cannot absorb meaningful loss.
 
-&#x20;       The reverse is also true: a large balance with low willingness scores low because the capital stays idle. ChainAware does not disclose the exact formula but considers asset size, diversification, and portfolio composition.&#x20;
+The reverse is also true: a large balance with low willingness scores low because the capital stays idle. ChainAware does not disclose the exact formula but considers asset size, diversification, and portfolio composition.
 
 3.  Predicted trust score: The main safety indicator — the probability that the wallet is legitimate. Displayed as a percentage from 0% to 100%.
 
@@ -167,7 +167,7 @@ Example:
 If you want to interact with or integrate this service via API, check the [Wallet audit endpoint.](api-reference/wallet-audit-endpoint.md)
 
 {% hint style="info" %}
-**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).&#x20;
+**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).
 {% endhint %}
 
 ### Next Step

@@ -4,7 +4,7 @@ description: Step-by-step guide to getting a fast, reliable Solana RPC endpoint.
 
 # How to Get a Solana RPC Endpoint
 
-Solana is the go-to chain for high-frequency trading, DeFi, and real-time applications — which means your RPC infrastructure needs to keep up.&#x20;
+Solana is the go-to chain for high-frequency trading, DeFi, and real-time applications — which means your RPC infrastructure needs to keep up.
 
 A Solana RPC endpoint is a URL that connects your application to a Solana validator node. Through this endpoint, your app can:
 
@@ -28,7 +28,7 @@ https://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/
 {% step %}
 #### Create a GetBlock Account
 
-Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.&#x20;
+Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.
 {% endstep %}
 
 {% step %}
@@ -39,7 +39,7 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Select:
    * **Protocol:** Solana (SOL)
@@ -313,8 +313,8 @@ Combines StreamFirst (data) + LandFirst (execution) + Jito integration for high-
 
 ### What's Next?
 
-* [Full Solana API Reference ](https://docs.getblock.io/api-reference/solana-sol)
-* [Yellowstone gRPC Quickstart ](https://docs.getblock.io/add-ons/yellowstone-grpc-api/quickstart-guide)
+* [Full Solana API Reference](https://docs.getblock.io/api-reference/solana-sol)
+* [Yellowstone gRPC Quickstart](https://docs.getblock.io/add-ons/yellowstone-grpc-api/quickstart-guide)
 * [How to Track Pump.fun Token Mints](https://docs.getblock.io/guides/how-to-track-pump.fun-token-mints-with-getblocks-yellowstone-grpc)
 * [Sniping New Solana Tokens (Python Tutorial)](https://docs.getblock.io/guides/blockchain-api-guides/solana-guides/sniping-new-solana-tokens-python-bot-tutorial)
 * [Solana Indexed Archive](https://docs.getblock.io/solana-advanced-data-tools/solana-indexed-archive)

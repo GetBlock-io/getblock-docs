@@ -32,7 +32,7 @@ Every Limitless Node includes:
 * **Pricing is fixed and predictable** because it is throughput-based rather than usage-based
 
 {% hint style="success" %}
-Limitless Node is a standalone product. You don't need an existing Shared or Dedicated plan to use it. You get a fully isolated RPC endpoint from day one.&#x20;
+Limitless Node is a standalone product. You don't need an existing Shared or Dedicated plan to use it. You get a fully isolated RPC endpoint from day one.
 {% endhint %}
 
 ***
@@ -41,7 +41,7 @@ Limitless Node is a standalone product. You don't need an existing Shared or Ded
 
 One Limitless Node subscription corresponds to one blockchain network. The service is currently available on 11 high-demand blockchains:
 
-<table data-view="cards"><thead><tr><th></th></tr></thead><tbody><tr><td><img src="../../.gitbook/assets/Crypto Symbol=Ethereum.svg" alt="" data-size="line"> Ethereum</td></tr><tr><td><img src="../../.gitbook/assets/Logo=Solana (1).svg" alt="" data-size="line"> Solana</td></tr><tr><td><img src="../../.gitbook/assets/btc-logo.svg" alt="" data-size="line"> Bitcoin </td></tr><tr><td><img src="../../.gitbook/assets/base-logo.svg" alt="" data-size="line"> Base</td></tr><tr><td><img src="../../.gitbook/assets/bsc.svg" alt="" data-size="line"> BNB Smart Chain</td></tr><tr><td><img src="../../.gitbook/assets/Logo=Tron (1).svg" alt="" data-size="line"> Tron </td></tr><tr><td><img src="../../.gitbook/assets/pol-logo.svg" alt="" data-size="line"> Polygon</td></tr><tr><td><img src="../../.gitbook/assets/Logo=Avax (1).svg" alt="" data-size="line"> Avalanche  </td></tr><tr><td><img src="../../.gitbook/assets/arb-logomark (1).svg" alt="" data-size="line"> Arbitrum </td></tr><tr><td><img src="../../.gitbook/assets/Logo=OP (1).svg" alt="" data-size="line"> Optimism</td></tr><tr><td><img src="../../.gitbook/assets/sui-logomark.svg" alt="" data-size="line"> Sui</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th></tr></thead><tbody><tr><td><img src="../../.gitbook/assets/Crypto Symbol=Ethereum.svg" alt="" data-size="line"> Ethereum</td></tr><tr><td><img src="../../.gitbook/assets/Logo=Solana.svg" alt="" data-size="line"> Solana</td></tr><tr><td><img src="../../.gitbook/assets/btc-logo.svg" alt="" data-size="line"> Bitcoin</td></tr><tr><td><img src="../../.gitbook/assets/base-logo.svg" alt="" data-size="line"> Base</td></tr><tr><td><img src="../../.gitbook/assets/bsc.svg" alt="" data-size="line"> BNB Smart Chain</td></tr><tr><td><img src="../../.gitbook/assets/Logo=Tron.svg" alt="" data-size="line"> Tron</td></tr><tr><td><img src="../../.gitbook/assets/pol-logo.svg" alt="" data-size="line"> Polygon</td></tr><tr><td><img src="../../.gitbook/assets/Logo=Avax.svg" alt="" data-size="line"> Avalanche</td></tr><tr><td><img src="../../.gitbook/assets/arb-logomark (1).svg" alt="" data-size="line"> Arbitrum</td></tr><tr><td><img src="../../.gitbook/assets/Logo=OP.svg" alt="" data-size="line"> Optimism</td></tr><tr><td><img src="../../.gitbook/assets/sui-logomark.svg" alt="" data-size="line"> Sui</td></tr></tbody></table>
 
 {% hint style="info" %}
 Additional networks may be added over time. If you need a chain that isn't listed yet, a custom RPS ceiling, or multi-region redundancy,[ contact our team](https://getblock.io/contact/).
@@ -79,7 +79,7 @@ Supported Networks: Arbitrum, Base, BNB Smart Chain, Ethereum, Optimism, Polygon
 {% endtab %}
 {% endtabs %}
 
-#### Solana  - Full Node&#x20;
+#### Solana - Full Node
 
 | RPS Tier | Price (monthly) | Request   |
 | -------- | --------------- | --------- |
@@ -103,8 +103,8 @@ You can configure and launch a Limitless Node from your GetBlock **Dashboard** â
 1. In your account, open Limitless Nodes and click Create new node.
 2. Configure the node:
    1. The blockchain network
-   2. Mode - Full or Archiv&#x65;_\*_&#x20;
-   3. Node location&#x20;
+   2. Mode - Full or Archiv&#x65;_\*_
+   3. Node location
    4. API interface (all supported interfaces included by default)
 3. Select an RPS plan
 4. Choose a billing term: 1, 6, or 12 months
@@ -112,13 +112,13 @@ You can configure and launch a Limitless Node from your GetBlock **Dashboard** â
 
 _\*Not every network offers an archive tier. Check availability in your dashboard first._
 
-If you need a chain that isn't listed, [contact our team](https://getblock.io/contact/) directly.  We can also recommend a tier based on your workload.
+If you need a chain that isn't listed, [contact our team](https://getblock.io/contact/) directly. We can also recommend a tier based on your workload.
 
 ***
 
 #### Next steps
 
-* [Endpoint setup](../endpoint-setup/)&#x20;
+* [Endpoint setup](../endpoint-setup/)
 * [Testing RPC connection](../testing-rpc-connection/)
 * [API Reference](https://app.gitbook.com/s/FOeg95CadVyFvyLi70Bh/api-reference)
 * [Limitless Node Homepage](https://getblock.io/limitless-node/)

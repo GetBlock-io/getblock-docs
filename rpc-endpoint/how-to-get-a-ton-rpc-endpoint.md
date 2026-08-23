@@ -26,7 +26,7 @@ GetBlock supports the full TON HTTP API specification.
 {% step %}
 #### Create a GetBlock Account
 
-Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.&#x20;
+Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.
 {% endstep %}
 
 {% step %}
@@ -37,18 +37,15 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-3.  Select:
+3. Select:
+   * **Protocol:** TON
+   * **Network:** Mainnet
+   * **API Interface:** JSON-RPC or JSON-RPC(v3) or HTTP API(v4)
+   *   **Region:** Frankfurt (EU)
 
-    * **Protocol:** TON
-    * **Network:** Mainnet
-    * **API Interface:** JSON-RPC or JSON-RPC(v3) or HTTP API(v4)
-    *   **Region:** Frankfurt (EU)
-
-        <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
-
-
+       <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 4. Click **"Create":** Your endpoint URL will be generated immediately.
 {% endstep %}
 

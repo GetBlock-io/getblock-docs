@@ -4,7 +4,7 @@ description: Step-by-step guide to getting a fast, reliableBSC RPC endpoint
 
 # How to Get a BNB Smart Chain (BSC) RPC Endpoint
 
-BNB Smart Chain remains one of the most active blockchains for DeFi, trading bots, and dApp development. With block times under 3 seconds and significantly lower gas fees than Ethereum, BSC handles massive transaction volumes, and your RPC infrastructure needs to keep pace.&#x20;
+BNB Smart Chain remains one of the most active blockchains for DeFi, trading bots, and dApp development. With block times under 3 seconds and significantly lower gas fees than Ethereum, BSC handles massive transaction volumes, and your RPC infrastructure needs to keep pace.
 
 This guide walks you through setting up BSC RPC access with GetBlock, from free development endpoints to Accelerated Dedicated Nodes with private mempool support.
 
@@ -14,7 +14,7 @@ This guide walks you through setting up BSC RPC access with GetBlock, from free 
 {% step %}
 #### Create a GetBlock Account
 
-Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.&#x20;
+Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.
 {% endstep %}
 
 {% step %}
@@ -25,7 +25,7 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3.  Select:
 
@@ -214,7 +214,7 @@ Subscribe to real-time BSC data streams:
 * New blocks
 * Transaction receipts
 
-[How to Subscribe to Streams ](https://docs.getblock.io/bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-subscribe-to-stream)
+[How to Subscribe to Streams](https://docs.getblock.io/bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-subscribe-to-stream)
 
 ### Choosing Your Plan
 

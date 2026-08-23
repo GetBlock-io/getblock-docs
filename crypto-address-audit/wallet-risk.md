@@ -29,7 +29,7 @@ For a full behavioral profile (intentions, experience, protocols, transactions),
 | AML Screening (18 categories) | Yes                               | Yes                               |
 | Sanctions Check               | Yes                               | Yes                               |
 | Intentions (14 categories)    | No                                | Yes                               |
-| Experience / Risk Profile     |  No                               | Yes                               |
+| Experience / Risk Profile     | No                                | Yes                               |
 | Protocols / Categories        | No                                | Yes                               |
 | Wallet Overview / Rank        | No                                | Yes                               |
 | Networks                      | 5 (ETH, BNB, Base, Polygon, TRON) | 3 (ETH, BNB, Base)                |
@@ -63,7 +63,7 @@ Examples:
 
 1. Ethereum(ETH)
 2. BNB Smart Chain
-3. Base&#x20;
+3. Base
 4. Polygon
 5. TRON
 
@@ -83,7 +83,7 @@ Examples:
 
 4. Click on **Run Check:**
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 5. Scroll down to see the analysis:
 
@@ -102,7 +102,7 @@ Examples:
 | 0–49%           | High Risk   | Wallet is highly likely associated with fraudulent activity    |
 | 0% (auto)       | AML Flag    | At least one AML flag detected — score automatically set to 0% |
 
-2. AML Analysis: This shows 18 risk categories with each parameter displayed as  No (clean) or Yes (flag detected).
+2. AML Analysis: This shows 18 risk categories with each parameter displayed as No (clean) or Yes (flag detected).
 
 {% hint style="warning" %}
 _If at least one parameter forensic\_details = "1" → probabilityFraud is automatically set to 1.0 (i.e. Predicted Trust = 0%). This is a hard override; the ML model is not used._
@@ -115,7 +115,7 @@ _If at least one parameter forensic\_details = "1" → probabilityFraud is autom
 If you want to interact with or integrate this service via API, check the [Wallet risk endpoint.](api-reference/wallet-risk-endpoint.md)
 
 {% hint style="info" %}
-**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).&#x20;
+**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).
 {% endhint %}
 
 ### Next Step

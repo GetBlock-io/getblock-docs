@@ -4,7 +4,7 @@ description: Step-by-step guide to getting a fast, reliable Polygon RPC endpoint
 
 # How to Get a Polygon RPC Endpoint
 
-Polygon PoS is one of the most widely used Ethereum scaling solutions, powering DeFi protocols, NFT marketplaces, gaming applications, and enterprise solutions.&#x20;
+Polygon PoS is one of the most widely used Ethereum scaling solutions, powering DeFi protocols, NFT marketplaces, gaming applications, and enterprise solutions.
 
 ### Available Service on GetBlock
 
@@ -22,7 +22,7 @@ This guide shows you how to get a reliable Polygon RPC endpoint — from free de
 {% step %}
 #### Create a GetBlock Account
 
-Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.&#x20;
+Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.
 {% endstep %}
 
 {% step %}
@@ -33,7 +33,7 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3.  Select:
 
@@ -129,7 +129,7 @@ print("Block:", w3.eth.block_number)
 ### What's Next?
 
 * [Full Polygon API Reference](https://docs.getblock.io/api-reference/polygon-matic)
-* [Using Web3.js with GetBlock ](https://docs.getblock.io/guides/using-web3-libraries/web3.js-integration)
-* [Configure a Dedicated Polygon Node ](https://getblock.io/dedicated-nodes/)
+* [Using Web3.js with GetBlock](https://docs.getblock.io/guides/using-web3-libraries/web3.js-integration)
+* [Configure a Dedicated Polygon Node](https://getblock.io/dedicated-nodes/)
 
 _Need enterprise Polygon infrastructure?_ [_Contact us_](https://getblock.io/contact/)_._

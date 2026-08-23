@@ -56,7 +56,7 @@ Rug Pull Check provides automated risk indicators based on publicly available on
 2. BNB Smart Chain
 3. Base
 
-### How Rug Pull Probability Is Calculated&#x20;
+### How Rug Pull Probability Is Calculated
 
 There are four steps involved, which are:
 
@@ -99,7 +99,7 @@ The algorithm correctly identifies 68 out of 100 rug pulls based on purely behav
 
 2. Select the choice of your network using the dropdown:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Enter the contract address:
 
@@ -127,7 +127,7 @@ The algorithm correctly identifies 68 out of 100 rug pulls based on purely behav
 If you want to interact with or integrate this service via API, check the [Rug pull checker endpoint](api-reference/rug-pull-checker-endpoint.md).
 
 {% hint style="info" %}
-**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).&#x20;
+**Need a custom setup** (higher rate limits, dedicated infrastructure, SLA, or volume pricing)? [Contact the GetBlock team](https://getblock.io/contact/).
 {% endhint %}
 
 ### Next Step

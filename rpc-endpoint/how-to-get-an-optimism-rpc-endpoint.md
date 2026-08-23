@@ -20,7 +20,7 @@ Optimism (OP Mainnet) is a leading Ethereum L2 and the foundation of the Superch
 {% step %}
 #### Create a GetBlock Account
 
-Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.&#x20;
+Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.
 {% endstep %}
 
 {% step %}
@@ -31,18 +31,16 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3.  Select:
 
     * **Protocol:** Optimism
     * **Network:** Mainnet or Sepolia
-    * **API Interface:** JSON-RPC or Websocket or GraphQL&#x20;
+    * **API Interface:** JSON-RPC or Websocket or GraphQL
     * **Region:** Frankfurt (EU)
 
-    <figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
-
-
+    <figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 4. Click **"Create":** Your endpoint URL will be generated immediately.
 {% endstep %}
 

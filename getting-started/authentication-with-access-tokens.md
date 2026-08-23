@@ -15,13 +15,11 @@ https://shared.<region>.getblock.io/<ACCESS_TOKEN>/
 
 The \<ACCESS\_TOKEN> authenticates requests directly through the endpoint URL.
 
-***
-
 ### Making an authenticated request
 
 To make a request, include your full endpoint URL with the access token in the path.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Access tokens **cannot** **be** **sent** in **headers**.
 {% endhint %}
 
@@ -29,6 +27,7 @@ For example, here’s how to fetch the latest Ethereum block number:
 
 {% tabs %}
 {% tab title="Frankfurt endpoints" %}
+{% code overflow="wrap" %}
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
@@ -39,15 +38,13 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "id": "getblock.io"
 }'
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="New York endpoints" %}
-
-{% endtab %}
-{% endtabs %}
-
+{% code overflow="wrap" %}
 ```bash
-curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.us-east-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -56,14 +53,34 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "id": "getblock.io"
 }'
 ```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Singapore Endpoint" %}
+{% code overflow="wrap" %}
+```bash
+curl --location --request POST 'https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "eth_blockNumber",
+    "params": [],
+    "id": "getblock.io"
+}'
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 Response:
 
 ```json
-{"jsonrpc":"2.0","id":"getblock.io","result":"0x1449641"}
+{
+    "jsonrpc":"2.0",
+    "id":"getblock.io",
+    "result":"0x1449641"
+}
 ```
-
-***
 
 ### Access Token security
 

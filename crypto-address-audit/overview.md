@@ -53,7 +53,7 @@ Each user gets 5 free requests per day. After the free quota is used, each reque
 
 1. On your [account dashboard](https://account.getblock.io/), click on the credit balance as seen below:
 
-<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 2. Click on **Top Up**
 

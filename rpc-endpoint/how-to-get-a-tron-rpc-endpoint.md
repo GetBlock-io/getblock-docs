@@ -12,7 +12,7 @@ TRON processes more USDT transfers than any other blockchain. If you're building
 {% step %}
 #### Create a GetBlock Account
 
-Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.&#x20;
+Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.
 {% endstep %}
 
 {% step %}
@@ -23,7 +23,7 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3.  Select:
 
@@ -137,9 +137,9 @@ Most TRON developers use the HTTP API with TronWeb library.
 
 ### What's Next?
 
-* [Full TRON API Reference ](https://docs.getblock.io/api-reference/tron-trx)
+* [Full TRON API Reference](https://docs.getblock.io/api-reference/tron-trx)
 * [TronWeb Integration Guide](https://docs.getblock.io/guides/using-web3-libraries/connect-to-getblock-with-tronweb)
-* [Dedicated Nodes ](https://getblock.io/dedicated-nodes/)
+* [Dedicated Nodes](https://getblock.io/dedicated-nodes/)
 * [Learn more about our pricing](https://getblock.io/pricing/)
 
 _Processing USDT at scale?_ [_Contact us_](https://getblock.io/contact/) _for dedicated TRON infrastructure._

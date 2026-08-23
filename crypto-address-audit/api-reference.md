@@ -35,7 +35,7 @@ Authorization: Bearer <API_KEY>
 4. After that, select the **API key** tab
 5. On the **API Key** tab, click on the plus icon, and your API key will be generated for you automatically
 
-<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 Ensure you store your API Key securely
@@ -43,7 +43,7 @@ Ensure you store your API Key securely
 
 ### QuickStart
 
-In this example, you will be auditing a wallet address:&#x20;
+In this example, you will be auditing a wallet address:
 
 * **Axios** (JavaScript / Node.js)
 * **Python** (Requests library)

@@ -37,9 +37,9 @@ Tokens on Pump.fun start trading on a bonding curve mechanism. When the bonding 
 | **Raydium Liquidity Pool V4** | `675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8` |
 
 {% hint style="info" %}
-The Pump.fun migration account manages both types of migrations.&#x20;
+The Pump.fun migration account manages both types of migrations.
 
-* For PumpSwap migrations, it calls `migrate` instruction on the Pump.fun program.&#x20;
+* For PumpSwap migrations, it calls `migrate` instruction on the Pump.fun program.
 * For Raydium migrations, it calls the `initialize2` instruction on Raydium's Liquidity Pool V4 program.
 {% endhint %}
 
@@ -207,7 +207,7 @@ console.log('✅ Configuration loaded successfully');
 * Validates that the required configuration is present
 * Defines the key addresses we'll monitor for migrations
   * `MIGRATION_ACCOUNT` - This is the Pump.fun account that executes all migrations
-  * `RAYDIUM_PROGRAM` - The Raydium program ID to detect Raydium migrations.&#x20;
+  * `RAYDIUM_PROGRAM` - The Raydium program ID to detect Raydium migrations.
   * `PUMPFUN_PROGRAM` - The Pump.fun program ID to detect PumpSwap migrations.
 
 #### 2. Create the Migration Listener Class
@@ -269,7 +269,7 @@ The constructor initializes all the state we need to track. Let me explain each 
 
 **What this does:**
 
-* The `start()` method kicks everything off. It checks if the Websocket is connected or not.&#x20;
+* The `start()` method kicks everything off. It checks if the Websocket is connected or not.
 * The `checkRunning()` method creates a timer that runs every 60 seconds (60000 milliseconds). This serves two purposes:
   1. It shows the listener is still running
   2. It provides statistics: runtime, total logs received, and migrations detected by type
@@ -398,8 +398,8 @@ What this does:
 
 What this does:
 
-* Checks transaction logs for migration keywords like: \
-  ![](<../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png>)
+* Checks transaction logs for migration keywords like:\
+  ![](<../.gitbook/assets/image (8) (1).png>)
 * Skips failed transactions
 * Fetches full transaction details when migration is detected
 

@@ -4,7 +4,7 @@ description: Step-by-step guide to getting a fast, reliable Base RPC endpoint
 
 # How to Get a Base RPC Endpoint
 
-Base has become one of the most active Ethereum Layer 2 networks for DeFi, social apps, and onchain consumer products.&#x20;
+Base has become one of the most active Ethereum Layer 2 networks for DeFi, social apps, and onchain consumer products.
 
 If you're building on Base for the first time or scaling a production application, this guide gets you set up with a reliable RPC endpoint in minutes.
 
@@ -14,7 +14,7 @@ If you're building on Base for the first time or scaling a production applicatio
 {% step %}
 #### Create a GetBlock Account
 
-Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.&#x20;
+Go to [GetBlock Dashboard](https://account.getblock.io) and sign up. You can register with email or via Google/GitHub OAuth.
 {% endstep %}
 
 {% step %}
@@ -25,7 +25,7 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3.  Select:
 

@@ -18,6 +18,10 @@ get docs.getblock.io/migration/migrate-to-getblock-with-ai.md
 
 The agent fetches this page and walks through the migration in three phases: **Assess**, **Plan**, and **Implement**. It stops after Plan and waits for your approval before making any changes to the code.
 
+## Tool Used
+
+This runbook calls the GetBlock MCP Server
+
 ## How the agent works with GetBlock
 
 GetBlock's documentation is published as machine-readable Markdown. The agent does not need a custom integration to read it.

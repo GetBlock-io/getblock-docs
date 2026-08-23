@@ -1,0 +1,102 @@
+# api v2 block bitcoin
+
+This endpoint returns a block by height or hash, including its metadata and a paged list of the transactions it contains.
+
+## Parameters
+
+| Parameter | Type    | Location | Required | Description                                                |
+| --------- | ------- | -------- | -------- | ---------------------------------------------------------- |
+| blockHash | string  | path     | Yes      | Block height or block hash                                 |
+| page      | integer | query    | No       | 1-based page index for the block's transactions. Default 1 |
+
+## Request
+
+{% tabs %}
+{% tab title="cURL" %}
+{% code overflow="wrap" %}
+```bash
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428?page=1'
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="JavaScript" %}
+{% code title="example.js" %}
+```javascript
+const response = await fetch(
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428?page=1'
+);
+console.log(await response.json());
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="example.py" %}
+```python
+import requests
+
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428?page=1')
+
+print(response.json())
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+```json
+{
+    "page": 1,
+    "totalPages": 3,
+    "itemsOnPage": 1000,
+    "hash": "000000000000000000046b9302e08c16ea186950f42a5498320ddd1bd7ab3428",
+    "previousBlockHash": "000000000000000001d3a318372df5d1eec54462a0d7471ae1cdf49838f793dd",
+    "nextBlockHash": "000000000000000000006d8e1eb870bd281b30ed621acf6b8d6af2a3c7ab61f1",
+    "height": 830000,
+    "confirmations": 1197,
+    "size": 1350854,
+    "time": 1617180599,
+    "version": 1073733632,
+    "merkleRoot": "d14c9f467c4bdd5135837696150ab5f52f3f5043de324ca4e5766b195b9f8f37",
+    "nonce": "3669423616",
+    "bits": "170cdf6f",
+    "difficulty": "21865558044610.55",
+    "txCount": 2815,
+    "txs": [
+        {
+            "txid": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+            "value": "9407625",
+            "fees": "2938345"
+        }
+    ]
+}
+```
+
+## Response Parameters
+
+| Field             | Type    | Description                         |
+| ----------------- | ------- | ----------------------------------- |
+| hash              | string  | Block hash                          |
+| height            | integer | Block height                        |
+| confirmations     | integer | Number of confirmations             |
+| time              | integer | Block time as a Unix timestamp      |
+| txCount           | integer | Number of transactions in the block |
+| txs               | array   | Paged transactions in the block     |
+| previousBlockHash | string  | Hash of the parent block            |
+
+## Use Cases
+
+* **Block Explorers**: Render block metadata and its transaction list
+* **Chain Indexing**: Page through block transactions into an off-chain store
+* **Confirmation Context**: Read block height and time for a transaction's block
+* **Throughput Analysis**: Read transaction counts per block over a range
+
+## Error Handling
+
+| HTTP Status | Message        | Description                                   |
+| ----------- | -------------- | --------------------------------------------- |
+| 400         | Bad request    | The block height or hash is malformed         |
+| 404         | Not found      | No block matches the requested height or hash |
+| 500         | Internal error | The indexer failed to read the block          |
