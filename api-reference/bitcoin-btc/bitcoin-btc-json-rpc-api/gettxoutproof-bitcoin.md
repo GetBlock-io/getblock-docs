@@ -1,4 +1,10 @@
-# gettxoutproof bitcoin
+---
+description: >-
+  Example code for the gettxoutproof JSON-RPC method. Complete guide on how to
+  use gettxoutproof JSON-RPC in GetBlock Web3 documentation.
+---
+
+# gettxoutproof - Bitcoin
 
 This method returns a hex-encoded proof that one or more transactions were included in a block. An optional block hash restricts the proof to a specific block.
 

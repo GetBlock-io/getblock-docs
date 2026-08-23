@@ -1,4 +1,10 @@
-# api v2 tx specific bitcoin
+---
+description: >-
+  Example code for the api/v2/tx-specific REST method. Complete guide on how to
+  use the api/v2/tx-specific REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/tx-specific - Bitcoin
 
 This endpoint returns the transaction exactly as the Bitcoin node reports it, in the node's own JSON shape rather than the indexer's normalized schema.
 

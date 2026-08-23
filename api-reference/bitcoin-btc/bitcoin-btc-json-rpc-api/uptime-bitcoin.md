@@ -1,4 +1,10 @@
-# uptime bitcoin
+---
+description: >-
+  Example code for the uptime JSON-RPC method. Complete guide on how to use
+  uptime JSON-RPC in GetBlock Web3 documentation.
+---
+
+# uptime - Bitcoin
 
 This method returns the total number of seconds the node has been running.
 

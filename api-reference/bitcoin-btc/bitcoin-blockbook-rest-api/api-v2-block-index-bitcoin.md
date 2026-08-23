@@ -1,4 +1,10 @@
-# api v2 block index bitcoin
+---
+description: >-
+  Example code for the api/v2/block-index REST method. Complete guide on how to
+  use the api/v2/block-index REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/block-index - Bitcoin
 
 This endpoint returns the block hash at a given block height. It converts a height into the hash used by hash-based block lookups.
 

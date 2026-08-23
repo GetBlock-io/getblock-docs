@@ -1,4 +1,10 @@
-# api v2 block bitcoin
+---
+description: >-
+  Example code for the api/v2/block REST method. Complete guide on how to use
+  the api/v2/block REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/block - Bitcoin
 
 This endpoint returns a block by height or hash, including its metadata and a paged list of the transactions it contains.
 

@@ -1,4 +1,10 @@
-# bb\_gettickers bitcoin
+---
+description: >-
+  Example code for the bb_getTickers JSON-RPC method. Complete guide on how to
+  use the bb_getTickers JSON-RPC method in the GetBlock Web3 documentation.
+---
+
+# bb\_getTickers - Bitcoin
 
 This method returns fiat exchange rates for the coin at a given timestamp, or the latest rates when no timestamp is supplied.
 

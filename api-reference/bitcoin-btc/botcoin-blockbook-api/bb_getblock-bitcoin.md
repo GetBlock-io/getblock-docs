@@ -1,4 +1,10 @@
-# bb\_getblock bitcoin
+---
+description: >-
+  Example code for the bb_getBlock JSON-RPC method. Complete guide on how to use
+  the bb_getBlock JSON-RPC method in the GetBlock Web3 documentation.
+---
+
+# bb\_getBlock - Bitcoin
 
 This method returns a block by height or hash, including its metadata and a paged list of the transactions it contains.
 

@@ -1,4 +1,10 @@
-# getchaintips bitcoin
+---
+description: >-
+  Example code for the getchaintips JSON-RPC method. Complete guide on how to
+  use getchaintips JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getchaintips - Bitcoin
 
 This method returns information about all known tips in the block tree, including the main chain and any orphaned branches.
 

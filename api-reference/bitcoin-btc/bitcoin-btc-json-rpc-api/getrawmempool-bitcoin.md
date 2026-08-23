@@ -1,4 +1,10 @@
-# getrawmempool bitcoin
+---
+description: >-
+  Example code for the getrawmempool JSON-RPC method. Complete guide on how to
+  use getrawmempool JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getrawmempool - Bitcoin
 
 This method returns the transaction IDs in the memory pool. With `verbose=true` it returns detailed mempool entry data for each transaction.
 

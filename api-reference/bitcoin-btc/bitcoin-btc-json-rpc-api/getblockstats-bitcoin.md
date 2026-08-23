@@ -1,4 +1,10 @@
-# getblockstats bitcoin
+---
+description: >-
+  Example code for the getblockstats JSON-RPC method. Complete guide on how to
+  use getblockstats JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getblockstats - Bitcoin
 
 This method computes per-block statistics for a given block, identified by hash or height. Specific statistics can be selected with the stats parameter.
 

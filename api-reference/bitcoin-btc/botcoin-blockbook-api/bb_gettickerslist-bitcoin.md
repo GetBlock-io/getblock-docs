@@ -1,4 +1,11 @@
-# bb\_gettickerslist bitcoin
+---
+description: >-
+  Example code for the bb_getTickersList JSON-RPC method. Complete guide on how
+  to use the bb_getTickersList JSON-RPC method in the GetBlock Web3
+  documentation.
+---
+
+# bb\_getTickersList - Bitcoin
 
 This method returns the list of fiat currencies for which rates are available at a given timestamp.
 

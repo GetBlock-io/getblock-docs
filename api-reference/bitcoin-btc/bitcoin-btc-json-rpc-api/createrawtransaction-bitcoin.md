@@ -1,4 +1,10 @@
-# createrawtransaction bitcoin
+---
+description: >-
+  Example code for the createrawtransaction JSON-RPC method. Complete guide on
+  how to use createrawtransaction JSON-RPC in GetBlock Web3 documentation.
+---
+
+# createrawtransaction - Bitcoin
 
 This method creates an unsigned raw transaction from a set of inputs and outputs and returns it as hex. It does not sign the transaction or broadcast it.
 

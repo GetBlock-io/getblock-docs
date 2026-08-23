@@ -1,4 +1,10 @@
-# bb\_getxpub bitcoin
+---
+description: >-
+  Example code for the bb_getXpub JSON-RPC method. Complete guide on how to use
+  the bb_getXpub JSON-RPC method in the GetBlock Web3 documentation.
+---
+
+# bb\_getXpub - Bitcoin
 
 This method returns wallet-level balance and transaction data for an extended public key or output descriptor. The indexer derives the wallet's addresses and returns the combined result.
 

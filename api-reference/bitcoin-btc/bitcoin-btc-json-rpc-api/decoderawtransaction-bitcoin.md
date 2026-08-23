@@ -1,4 +1,10 @@
-# decoderawtransaction bitcoin
+---
+description: >-
+  Example code for the decoderawtransaction JSON-RPC method. Complete guide on
+  how to use decoderawtransaction JSON-RPC in GetBlock Web3 documentation.
+---
+
+# decoderawtransaction - Bitcoin
 
 This method decodes a serialized, hex-encoded transaction into a JSON object. It does not require the transaction to be in the blockchain or mempool.
 

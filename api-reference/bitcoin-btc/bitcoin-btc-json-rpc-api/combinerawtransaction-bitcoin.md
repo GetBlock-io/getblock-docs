@@ -1,4 +1,10 @@
-# combinerawtransaction bitcoin
+---
+description: >-
+  Example code for the combinerawtransaction JSON-RPC method. Complete guide on
+  how to use combinerawtransaction JSON-RPC in GetBlock Web3 documentation.
+---
+
+# combinerawtransaction - Bitcoin
 
 This method combines multiple partially signed transactions of the same transaction into one fully signed transaction, returning the combined hex.
 

@@ -1,4 +1,10 @@
-# getmempoolancestors bitcoin
+---
+description: >-
+  Example code for the getmempoolancestors JSON-RPC method. Complete guide on
+  how to use getmempoolancestors JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getmempoolancestors - Bitcoin
 
 This method returns the in-mempool ancestors of a transaction: the unconfirmed transactions it depends on.
 

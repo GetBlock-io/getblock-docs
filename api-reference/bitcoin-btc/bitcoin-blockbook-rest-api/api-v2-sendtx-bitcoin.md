@@ -1,4 +1,10 @@
-# api v2 sendtx bitcoin
+---
+description: >-
+  Example code for the api/v2/sendtx REST method. Complete guide on how to use
+  the api/v2/sendtx REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/sendtx - Bitcoin
 
 This endpoint broadcasts a signed, serialized transaction to the Bitcoin network through the backend node and returns the transaction id on acceptance. The raw hex is sent in the request body.
 

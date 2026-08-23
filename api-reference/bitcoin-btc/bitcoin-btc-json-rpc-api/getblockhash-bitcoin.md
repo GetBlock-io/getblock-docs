@@ -1,4 +1,10 @@
-# getblockhash bitcoin
+---
+description: >-
+  Example code for the getblockhash JSON-RPC method. Complete guide on how to
+  use getblockhash JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getblockhash - Bitcoin
 
 This method returns the hash of the block at the given height in the best-block chain.
 

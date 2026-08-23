@@ -1,4 +1,10 @@
-# getmempoolentry bitcoin
+---
+description: >-
+  Example code for the getmempoolentry JSON-RPC method. Complete guide on how to
+  use getmempoolentry JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getmempoolentry - Bitcoin
 
 This method returns mempool data for a specific transaction that is currently in the memory pool.
 

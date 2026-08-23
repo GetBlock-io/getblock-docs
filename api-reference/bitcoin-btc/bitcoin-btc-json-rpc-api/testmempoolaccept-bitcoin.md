@@ -1,4 +1,10 @@
-# testmempoolaccept bitcoin
+---
+description: >-
+  Example code for the testmempoolaccept JSON-RPC method. Complete guide on how
+  to use testmempoolaccept JSON-RPC in GetBlock Web3 documentation.
+---
+
+# testmempoolaccept - Bitcoin
 
 This method checks whether one or more raw transactions would be accepted into the mempool, without broadcasting them. It is used to validate a transaction before sending it.
 

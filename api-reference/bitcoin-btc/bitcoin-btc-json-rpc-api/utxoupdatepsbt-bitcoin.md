@@ -1,4 +1,10 @@
-# utxoupdatepsbt bitcoin
+---
+description: >-
+  Example code for the utxoupdatepsbt JSON-RPC method. Complete guide on how to
+  use utxoupdatepsbt JSON-RPC in GetBlock Web3 documentation.
+---
+
+# utxoupdatepsbt - Bitcoin
 
 This method updates a PSBT with UTXO information and, optionally, output descriptors, filling in the data needed for signing from the node's view of the chain.
 

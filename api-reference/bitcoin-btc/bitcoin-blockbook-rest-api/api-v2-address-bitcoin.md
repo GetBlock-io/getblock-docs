@@ -1,4 +1,10 @@
-# api v2 address - Bitcoin
+---
+description: >-
+  Example code for the api/v2/address REST method. Complete guide on how to use
+  the api/v2/address REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/address - Bitcoin
 
 This endpoint returns balance and transaction data for a single Bitcoin address. The details query parameter controls how much data is returned, from a balance-only summary to full transaction objects.
 

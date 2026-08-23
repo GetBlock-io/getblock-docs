@@ -1,4 +1,10 @@
-# getblockcount bitcoin
+---
+description: >-
+  Example code for the getblockcount JSON-RPC method. Complete guide on how to
+  use getblockcount JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getblockcount - Bitcoin
 
 This method returns the height of the most-work fully-validated chain. The genesis block has height 0.
 

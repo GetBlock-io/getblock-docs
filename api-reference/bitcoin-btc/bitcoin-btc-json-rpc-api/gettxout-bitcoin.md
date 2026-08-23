@@ -1,4 +1,10 @@
-# gettxout bitcoin
+---
+description: >-
+  Example code for the gettxout JSON-RPC method. Complete guide on how to use
+  gettxout JSON-RPC in GetBlock Web3 documentation.
+---
+
+# gettxout - Bitcoin
 
 This method returns details about an unspent transaction output (UTXO). If the output has been spent or does not exist, the result is null.
 

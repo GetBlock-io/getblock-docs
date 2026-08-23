@@ -1,4 +1,11 @@
-# bb\_sendtransaction bitcoin
+---
+description: >-
+  Example code for the bb_sendTransaction JSON-RPC method. Complete guide on how
+  to use the bb_sendTransaction JSON-RPC method in the GetBlock Web3
+  documentation.
+---
+
+# bb\_sendTransaction - Bitcoin
 
 This method broadcasts a signed, serialized transaction to the network through the indexer and returns its transaction id.
 

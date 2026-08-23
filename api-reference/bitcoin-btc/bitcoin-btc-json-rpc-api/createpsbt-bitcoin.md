@@ -1,4 +1,10 @@
-# createpsbt bitcoin
+---
+description: >-
+  Example code for the createpsbt JSON-RPC method. Complete guide on how to use
+  createpsbt JSON-RPC in GetBlock Web3 documentation.
+---
+
+# createpsbt - Bitcoin
 
 This method creates an empty Partially Signed Bitcoin Transaction (PSBT) from a set of inputs and outputs, returning it as a base64 string.
 

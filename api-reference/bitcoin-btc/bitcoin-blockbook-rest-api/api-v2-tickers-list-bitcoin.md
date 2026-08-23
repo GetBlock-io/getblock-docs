@@ -1,4 +1,10 @@
-# api v2 tickers list bitcoin
+---
+description: >-
+  Example code for the api/v2/tickers-list REST method. Complete guide on how to
+  use the api/v2/tickers-list REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/tickers-list - Bitcoin
 
 This endpoint returns the fiat currencies for which the indexer has rate data available at a given timestamp.
 

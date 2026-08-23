@@ -1,4 +1,10 @@
-# combinepsbt bitcoin
+---
+description: >-
+  Example code for the combinepsbt JSON-RPC method. Complete guide on how to use
+  combinepsbt JSON-RPC in GetBlock Web3 documentation.
+---
+
+# combinepsbt - Bitcoin
 
 This method combines multiple PSBTs of the same transaction into one, merging the data each contains. It is used to gather signatures from multiple signers.
 

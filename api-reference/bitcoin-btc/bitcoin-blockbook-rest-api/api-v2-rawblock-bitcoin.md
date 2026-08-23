@@ -1,4 +1,10 @@
-# api v2 rawblock bitcoin
+---
+description: >-
+  Example code for the api/v2/rawblock REST method. Complete guide on how to use
+  the api/v2/rawblock REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/rawblock - Bitcoin
 
 This endpoint returns the raw serialized hex of a block, selected by height or hash. The payload grows with block size.
 

@@ -1,4 +1,10 @@
-# api v2 tx bitcoin
+---
+description: >-
+  Example code for the api/v2/tx REST method. Complete guide on how to use the
+  api/v2/tx REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/tx - Bitcoin
 
 This endpoint returns a normalized transaction by its id, with inputs, outputs, addresses, and confirmation data in the indexer's unified schema.
 

@@ -1,4 +1,11 @@
-# bb\_getbalancehistory bitcoin
+---
+description: >-
+  Example code for the bb_getBalanceHistory JSON-RPC method. Complete guide on
+  how to use the bb_getBalanceHistory JSON-RPC method in the GetBlock Web3
+  documentation.
+---
+
+# bb\_getBalanceHistory - Bitcoin
 
 This method returns aggregated balance-change history for an address, extended public key, or descriptor over a time range. Results are grouped into intervals and can include fiat rates.
 

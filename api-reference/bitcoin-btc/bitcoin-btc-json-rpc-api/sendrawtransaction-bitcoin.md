@@ -1,4 +1,10 @@
-# sendrawtransaction bitcoin
+---
+description: >-
+  Example code for the sendrawtransaction JSON-RPC method. Complete guide on how
+  to use sendrawtransaction JSON-RPC in GetBlock Web3 documentation.
+---
+
+# sendrawtransaction - Bitcoin
 
 This method submits a raw, fully signed transaction (serialized as hex) to the network. On success it returns the transaction ID.
 

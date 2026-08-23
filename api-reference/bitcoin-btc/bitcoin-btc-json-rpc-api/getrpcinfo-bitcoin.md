@@ -1,4 +1,10 @@
-# getrpcinfo bitcoin
+---
+description: >-
+  Example code for the getrpcinfo JSON-RPC method. Complete guide on how to use
+  getrpcinfo JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getrpcinfo - Bitcoin
 
 This method returns runtime details about the RPC server, including the commands currently in progress and the path to the active logging file.
 

@@ -1,4 +1,10 @@
-# getblockheader bitcoin
+---
+description: >-
+  Example code for the getblockheader JSON-RPC method. Complete guide on how to
+  use getblockheader JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getblockheader - Bitcoin
 
 This method returns the block header for a given block hash. With `verbose=true` it returns a JSON object; with `verbose=false` it returns hex-encoded header data.
 

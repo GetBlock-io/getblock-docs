@@ -1,4 +1,10 @@
-# getdifficulty bitcoin
+---
+description: >-
+  Example code for the getdifficulty JSON-RPC method. Complete guide on how to
+  use getdifficulty JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getdifficulty - Bitcoin
 
 This method returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 

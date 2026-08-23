@@ -1,4 +1,11 @@
-# bb\_gettxspecific bitcoin
+---
+description: >-
+  Example code for the bb_getTxSpecific JSON-RPC method. Complete guide on how
+  to use the bb_getTxSpecific JSON-RPC method in the GetBlock Web3
+  documentation.
+---
+
+# bb\_getTxSpecific - Bitcoin
 
 This method returns the transaction exactly as the Bitcoin node reports it, in the node's own JSON shape rather than the indexer's normalized schema.
 

@@ -1,4 +1,10 @@
-# preciousblock bitcoin
+---
+description: >-
+  Example code for the preciousblock JSON-RPC method. Complete guide on how to
+  use preciousblock JSON-RPC in GetBlock Web3 documentation.
+---
+
+# preciousblock - Bitcoin
 
 This method treats a block as if it were received before others with the same work, changing tip selection. Its effect is not retained across restarts.
 

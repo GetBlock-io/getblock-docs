@@ -1,4 +1,10 @@
-# decodescript bitcoin
+---
+description: >-
+  Example code for the decodescript JSON-RPC method. Complete guide on how to
+  use decodescript JSON-RPC in GetBlock Web3 documentation.
+---
+
+# decodescript - Bitcoin
 
 This method decodes a hex-encoded script and returns details about it, including its assembly, type, and the addresses it pays to.
 

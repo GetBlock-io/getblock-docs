@@ -1,4 +1,10 @@
-# api v2 estimatefee bitcoin
+---
+description: >-
+  Example code for the api/v2/estimatefee REST method. Complete guide on how to
+  use the api/v2/estimatefee REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/estimatefee - Bitcoin
 
 This endpoint returns the backend fee estimate for a target number of blocks to confirmation. The result is a fee rate in BTC per kilobyte.
 

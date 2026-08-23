@@ -1,4 +1,10 @@
-# joinpsbts bitcoin
+---
+description: >-
+  Example code for the joinpsbts JSON-RPC method. Complete guide on how to use
+  joinpsbts JSON-RPC in GetBlock Web3 documentation.
+---
+
+# joinpsbts - Bitcoin
 
 This method joins multiple distinct PSBTs into a single PSBT by concatenating their inputs and outputs. The PSBTs must not share inputs.
 

@@ -1,4 +1,10 @@
-# api v2 feestats bitcoin
+---
+description: >-
+  Example code for the api/v2/feestats REST method. Complete guide on how to use
+  the api/v2/feestats REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/feestats - Bitcoin
 
 This endpoint returns fee statistics for the transactions in a single block, selected by height or hash. The load grows with the number of transactions in the block.
 

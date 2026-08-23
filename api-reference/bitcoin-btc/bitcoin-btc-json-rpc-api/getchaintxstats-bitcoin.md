@@ -1,4 +1,10 @@
-# getchaintxstats bitcoin
+---
+description: >-
+  Example code for the getchaintxstats JSON-RPC method. Complete guide on how to
+  use getchaintxstats JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getchaintxstats - Bitcoin
 
 This method computes statistics about the total number and rate of transactions in the chain over a window of blocks ending at a given block.
 

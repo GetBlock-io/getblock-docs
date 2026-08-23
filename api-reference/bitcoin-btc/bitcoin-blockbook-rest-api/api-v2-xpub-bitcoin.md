@@ -1,4 +1,10 @@
-# api v2 xpub bitcoin
+---
+description: >-
+  Example code for the api/v2/xpub REST method. Complete guide on how to use the
+  api/v2/xpub REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/xpub - Bitcoin
 
 This endpoint returns wallet-level balance and transaction data for an extended public key or output descriptor. The indexer derives the wallet's addresses and returns the combined result.
 

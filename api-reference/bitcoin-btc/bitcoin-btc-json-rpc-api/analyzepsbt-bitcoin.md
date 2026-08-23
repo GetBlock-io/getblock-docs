@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the analyzepsbt JSON-RPC method. Complete guide on how to use
+  analyzepsbt JSON-RPC in GetBlock Web3 documentation.
+---
+
 # analyzepsbt - Bitcoin
 
 This method analyzes a PSBT and reports what is missing for each input, the next role in the signing workflow, and the estimated fee and virtual size.

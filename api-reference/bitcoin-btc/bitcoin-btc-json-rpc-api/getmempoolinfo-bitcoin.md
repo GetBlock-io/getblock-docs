@@ -1,4 +1,10 @@
-# getmempoolinfo bitcoin
+---
+description: >-
+  Example code for the getmempoolinfo JSON-RPC method. Complete guide on how to
+  use getmempoolinfo JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getmempoolinfo - Bitcoin
 
 This method returns details about the active state of the transaction memory pool, including the number of transactions, total size, and minimum fee rate.
 

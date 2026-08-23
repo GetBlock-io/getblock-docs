@@ -1,4 +1,10 @@
-# estimatesmartfee bitcoin
+---
+description: >-
+  Example code for the estimatesmartfee JSON-RPC method. Complete guide on how
+  to use estimatesmartfee JSON-RPC in GetBlock Web3 documentation.
+---
+
+# estimatesmartfee - Bitcoin
 
 This method estimates the approximate fee rate per kilobyte needed for a transaction to begin confirmation within a given number of blocks.
 

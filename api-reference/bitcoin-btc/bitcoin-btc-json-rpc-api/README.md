@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Bitcoin nodes via JSON-RPC API.
+  Connect to the Bitcoin network without running your own infrastructure.
+---
+
 # Bitcoin (BTC) JSON-RPC API
 
 The Bitcoin (BTC) JSON-RPC API exposes the Bitcoin Core node interface: methods for reading blocks, transactions, and UTXOs, inspecting the mempool, building and broadcasting raw transactions, working with PSBTs, and estimating fees. Requests `POST` a JSON-RPC 2.0 body to the endpoint; the method is selected by the body.

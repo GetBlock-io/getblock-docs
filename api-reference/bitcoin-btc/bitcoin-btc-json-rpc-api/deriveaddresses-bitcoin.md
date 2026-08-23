@@ -1,4 +1,10 @@
-# deriveaddresses bitcoin
+---
+description: >-
+  Example code for the deriveaddresses JSON-RPC method. Complete guide on how to
+  use deriveaddresses JSON-RPC in GetBlock Web3 documentation.
+---
+
+# deriveaddresses - Bitcoin
 
 This method derives one or more addresses from an output descriptor. A range is required for descriptors that contain a wildcard.
 

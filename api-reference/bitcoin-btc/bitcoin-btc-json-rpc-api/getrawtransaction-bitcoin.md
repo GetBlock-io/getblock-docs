@@ -1,4 +1,10 @@
-# getrawtransaction bitcoin
+---
+description: >-
+  Example code for the getrawtransaction JSON-RPC method. Complete guide on how
+  to use getrawtransaction JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getrawtransaction - Bitcoin
 
 This method returns the raw transaction data for a given transaction ID. With verbose=true it returns a decoded JSON object; otherwise it returns the serialized hex.
 

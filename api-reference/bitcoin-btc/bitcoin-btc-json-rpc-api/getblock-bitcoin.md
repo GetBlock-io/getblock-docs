@@ -1,4 +1,10 @@
-# getblock bitcoin
+---
+description: >-
+  Example code for the getblock JSON-RPC method. Complete guide on how to use
+  getblock JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getblock - Bitcoin
 
 This method returns information about a block given its hash. The amount of detail depends on the verbosity level: 0 returns hex, 1 a JSON object, and 2 a JSON object including full transaction data.
 

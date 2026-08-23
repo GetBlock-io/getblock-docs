@@ -1,4 +1,10 @@
-# api v2 tickers bitcoin
+---
+description: >-
+  Example code for the api/v2/tickers REST method. Complete guide on how to use
+  the api/v2/tickers REST method in the GetBlock Web3 documentation.
+---
+
+# api/v2/tickers - Bitcoin
 
 This endpoint returns current or historical fiat exchange rates for Bitcoin. A timestamp or block selects historical rates.
 

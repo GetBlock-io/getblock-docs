@@ -1,4 +1,10 @@
-# getindexinfo bitcoin
+---
+description: >-
+  Example code for the getindexinfo JSON-RPC method. Complete guide on how to
+  use getindexinfo JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getindexinfo - Bitcoin
 
 This method returns the status of the optional block indexes, such as the transaction index and the coinstats index, including whether each is synced and its best block height.
 

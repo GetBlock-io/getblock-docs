@@ -1,4 +1,10 @@
-# getnetworkhashps bitcoin
+---
+description: >-
+  Example code for the getnetworkhashps JSON-RPC method. Complete guide on how
+  to use getnetworkhashps JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getnetworkhashps - Bitcoin
 
 This method estimates the network hashes per second based on the last n blocks. A height can be supplied to estimate the hash rate at a past point.
 

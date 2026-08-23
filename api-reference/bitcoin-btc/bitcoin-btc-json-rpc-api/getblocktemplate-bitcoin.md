@@ -1,4 +1,10 @@
-# getblocktemplate bitcoin
+---
+description: >-
+  Example code for the getblocktemplate JSON-RPC method. Complete guide on how
+  to use getblocktemplate JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getblocktemplate - Bitcoin
 
 This method returns data needed to construct a block to work on, following BIP 22, BIP 23, BIP 9, and BIP 145. It is used by mining software.
 

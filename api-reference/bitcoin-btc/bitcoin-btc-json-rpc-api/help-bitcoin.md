@@ -1,4 +1,10 @@
-# help bitcoin
+---
+description: >-
+  Example code for the help JSON-RPC method. Complete guide on how to use help
+  JSON-RPC in GetBlock Web3 documentation.
+---
+
+# help - Bitcoin
 
 This method lists all available RPC commands, or returns detailed help for a specific command when one is supplied.
 

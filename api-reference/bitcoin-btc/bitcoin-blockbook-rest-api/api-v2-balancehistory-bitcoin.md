@@ -1,4 +1,11 @@
-# api v2 balancehistory bitcoin
+---
+description: >-
+  Example code for the api/v2/balancehistory REST method. Complete guide on how
+  to use the api/v2/balancehistory REST method in the GetBlock Web3
+  documentation.
+---
+
+# api/v2/balancehistory - Bitcoin
 
 This endpoint returns aggregated balance-change history for an address, extended public key, or descriptor over a time range. Results are grouped into intervals and can include fiat rates.
 

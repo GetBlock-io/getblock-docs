@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Bitcoin nodes via REST API.
+  Connect to the Bitcoin network without running your own infrastructure.
+---
+
 # Bitcoin Blockbook REST API
 
 The Bitcoin Blockbook REST API serves indexed blockchain data over HTTP. Each endpoint is a path under `/api/v2/`, queried with path and query parameters, and returns JSON. It is the REST form of the same indexed data exposed by the [Blockbook `bb_` JSON-RPC methods](../botcoin-blockbook-api/).

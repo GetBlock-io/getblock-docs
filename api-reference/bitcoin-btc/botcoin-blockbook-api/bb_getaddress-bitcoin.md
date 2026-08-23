@@ -1,4 +1,10 @@
-# bb\_getaddress bitcoin
+---
+description: >-
+  Example code for the bb_getAddress JSON-RPC method. Complete guide on how to
+  use the bb_getAddress JSON-RPC method in the GetBlock Web3 documentation.
+---
+
+# bb\_getAddress - Bitcoin
 
 This method returns balance and transaction data for a single address. The details option controls how much data is returned, from a balance-only summary to full transaction objects.
 

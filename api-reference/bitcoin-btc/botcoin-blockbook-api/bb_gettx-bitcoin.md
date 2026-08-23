@@ -1,4 +1,10 @@
-# bb\_gettx bitcoin
+---
+description: >-
+  Example code for the bb_getTx JSON-RPC method. Complete guide on how to use
+  the bb_getTx JSON-RPC method in the GetBlock Web3 documentation.
+---
+
+# bb\_getTx - Bitcoin
 
 This method returns a normalized transaction by its id, with inputs, outputs, addresses, values, and confirmation data in the indexer's unified schema.
 

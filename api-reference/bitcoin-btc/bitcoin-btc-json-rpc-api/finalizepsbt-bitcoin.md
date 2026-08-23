@@ -1,4 +1,10 @@
-# finalizepsbt bitcoin
+---
+description: >-
+  Example code for the finalizepsbt JSON-RPC method. Complete guide on how to
+  use finalizepsbt JSON-RPC in GetBlock Web3 documentation.
+---
+
+# finalizepsbt - Bitcoin
 
 This method finalizes a PSBT once all inputs are signed and, if complete, extracts the network-ready transaction. It returns the finalized PSBT or the extracted hex.
 

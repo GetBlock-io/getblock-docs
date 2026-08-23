@@ -1,4 +1,10 @@
-# Botcoin Blockbook API
+---
+description: >-
+  GetBlock provides fast and reliable access to Bitcoin nodes via Blockbook API.
+  Connect to the Bitcoin network without running your own infrastructure.
+---
+
+# Bitcoin Blockbook API
 
 Blockbook is an address-indexed and xpub-indexed API for Bitcoin. A standard Bitcoin node tracks unspent outputs but does not organize them by address, so it cannot answer address-level questions on its own. Blockbook, built by Trezor, maintains that index on top of the chain and answers questions about an address or a whole wallet: balances, transaction history, and unspent outputs.
 

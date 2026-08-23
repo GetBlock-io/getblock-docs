@@ -1,4 +1,10 @@
-# decodepsbt bitcoin
+---
+description: >-
+  Example code for the decodepsbt JSON-RPC method. Complete guide on how to use
+  decodepsbt JSON-RPC in GetBlock Web3 documentation.
+---
+
+# decodepsbt - Bitcoin
 
 This method decodes a base64-encoded PSBT into a detailed JSON object, including the unsigned transaction, per-input data, and per-output data.
 

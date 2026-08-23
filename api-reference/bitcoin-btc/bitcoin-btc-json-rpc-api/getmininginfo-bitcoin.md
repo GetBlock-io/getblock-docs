@@ -1,4 +1,10 @@
-# getmininginfo bitcoin
+---
+description: >-
+  Example code for the getmininginfo JSON-RPC method. Complete guide on how to
+  use getmininginfo JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getmininginfo - Bitcoin
 
 This method returns mining-related information, including the current block height, difficulty, network hash rate, and mempool size.
 

@@ -1,4 +1,10 @@
-# getblockchaininfo bitcoin
+---
+description: >-
+  Example code for the getblockchaininfo JSON-RPC method. Complete guide on how
+  to use getblockchaininfo JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getblockchaininfo - Bitcoin
 
 This method returns an object with state information about blockchain processing, including the chain, height, best block hash, difficulty, verification progress, and softfork status.
 

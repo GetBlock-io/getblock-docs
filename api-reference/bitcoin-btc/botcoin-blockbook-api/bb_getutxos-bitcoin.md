@@ -1,4 +1,10 @@
-# bb\_getutxos bitcoin
+---
+description: >-
+  Example code for the bb_getUTXOs JSON-RPC method. Complete guide on how to use
+  the bb_getUTXOs JSON-RPC method in the GetBlock Web3 documentation.
+---
+
+# bb\_getUTXOs - Bitcoin
 
 This method returns the unspent transaction outputs for an address, extended public key, or descriptor. These outputs are the inputs available when constructing a spending transaction.
 

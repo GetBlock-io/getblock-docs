@@ -1,4 +1,10 @@
-# verifymessage bitcoin
+---
+description: >-
+  Example code for the verifymessage JSON-RPC method. Complete guide on how to
+  use verifymessage JSON-RPC in GetBlock Web3 documentation.
+---
+
+# verifymessage - Bitcoin
 
 This method verifies a signed message against a Bitcoin address, returning whether the signature is valid for the address and message.
 

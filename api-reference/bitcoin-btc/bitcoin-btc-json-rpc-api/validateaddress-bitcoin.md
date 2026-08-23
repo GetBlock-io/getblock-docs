@@ -1,4 +1,10 @@
-# validateaddress bitcoin
+---
+description: >-
+  Example code for the validateaddress JSON-RPC method. Complete guide on how to
+  use validateaddress JSON-RPC in GetBlock Web3 documentation.
+---
+
+# validateaddress - Bitcoin
 
 This method returns information about a Bitcoin address, including whether it is valid and its script type. It does not require the address to belong to the wallet.
 

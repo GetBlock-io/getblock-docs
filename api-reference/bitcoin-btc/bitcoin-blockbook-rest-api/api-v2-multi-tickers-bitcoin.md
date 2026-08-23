@@ -1,4 +1,11 @@
-# api v2 multi tickers bitcoin
+---
+description: >-
+  Example code for the api/v2/multi-tickers REST method. Complete guide on how
+  to use the api/v2/multi-tickers REST method in the GetBlock Web3
+  documentation.
+---
+
+# api/v2/multi-tickers - Bitcoin
 
 This endpoint returns fiat rate tickers for a comma-separated list of Unix timestamps. Work and payload grow with the number of timestamps requested.
 

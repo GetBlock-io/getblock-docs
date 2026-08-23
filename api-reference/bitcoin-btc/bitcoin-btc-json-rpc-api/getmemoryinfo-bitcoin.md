@@ -1,4 +1,10 @@
-# getmemoryinfo bitcoin
+---
+description: >-
+  Example code for the getmemoryinfo JSON-RPC method. Complete guide on how to
+  use getmemoryinfo JSON-RPC in GetBlock Web3 documentation.
+---
+
+# getmemoryinfo - Bitcoin
 
 This method returns information about memory usage, either as a human-readable summary or as raw malloc statistics depending on the mode.
 

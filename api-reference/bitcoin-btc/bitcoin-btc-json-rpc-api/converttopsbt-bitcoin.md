@@ -1,4 +1,10 @@
-# converttopsbt bitcoin
+---
+description: >-
+  Example code for the converttopsbt JSON-RPC method. Complete guide on how to
+  use converttopsbt JSON-RPC in GetBlock Web3 documentation.
+---
+
+# converttopsbt - Bitcoin
 
 This method converts a raw transaction to a PSBT. The original transaction must be unsigned, and its scriptSigs and witnesses are stripped.
 
