@@ -10,7 +10,7 @@ GIWA is fully EVM-equivalent, so contracts deploy using the standard Solidity to
 
 ## Prerequisites
 
-* An EVM wallet (such as MetaMask) with GIWA ETH for gas — see [Add Network to Your Wallet](deploy-smart-contract-giwa.md#add-network-to-your-wallet) and [Testnet Faucets](deploy-smart-contract-giwa.md#testnet-faucets)
+* An EVM wallet (such as MetaMask) with GIWA ETH for gas — see [Add Network to Your Wallet](deploy-smart-contract-giwa.md#add-network-to-your-wallet) and [Testnet Faucets](https://faucet.giwa.io/)
 * A GetBlock access token from the [GetBlock dashboard](https://getblock.io) — used as `<ACCESS-TOKEN>` in the RPC URL
 * Node.js 20+ (required for Hardhat)
 * A funded deployer address with GIWA ETH&#x20;
