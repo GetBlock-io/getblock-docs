@@ -1,6 +1,12 @@
-# net\_peerCount - GIWA Sepolia
+---
+description: >-
+  Example code for the eth_blobBaseFee JSON-RPC method. Complete guide on how to
+  use eth_blobBaseFee JSON-RPC in GetBlock Web3 documentation.
+---
 
-This method returns the number of peers currently connected to the client, as a hex-encoded integer. It is used to gauge how well a node is connected to the GIWA Sepolia network.
+# eth\_blobBaseFee - GIWA
+
+This method returns the current blob base fee in wei used to price EIP-4844 blob-carrying transactions. It is used when constructing transactions that post blob data.
 
 ## Parameters
 
@@ -13,27 +19,30 @@ This method does not require any parameters. Send the request with an empty `par
 {% tabs %}
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
+
 ```bash
-curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
-    "method": "net_peerCount",
+    "method": "eth_blobBaseFee",
     "params": [],
     "id": "getblock.io"
 }'
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Axios" %}
 {% code title="example.js" %}
+
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
-    method: 'net_peerCount',
+    method: 'eth_blobBaseFee',
     params: [],
     id: 'getblock.io'
 }, {
@@ -42,20 +51,22 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
 
 console.log(response.data.result);
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Request" %}
 {% code title="example.py" %}
+
 ```python
 import requests
 
 response = requests.post(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'net_peerCount',
+        'method': 'eth_blobBaseFee',
         'params': [],
         'id': 'getblock.io'
     }
@@ -63,11 +74,13 @@ response = requests.post(
 
 print(response.json())
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Rust" %}
 {% code title="example.rs" %}
+
 ```rust
 use reqwest::Client;
 use serde_json::{json, Value};
@@ -77,11 +90,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
-            "method": "net_peerCount",
+            "method": "eth_blobBaseFee",
             "params": [],
             "id": "getblock.io"
         }))
@@ -94,6 +107,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -104,58 +118,62 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {
     "jsonrpc": "2.0",
     "id": "getblock.io",
-    "result": "0x2f"
+    "result": "0x1"
 }
 ```
 
 ## Response Parameters
 
-| Parameter | Type   | Description                             |
-| --------- | ------ | --------------------------------------- |
-| jsonrpc   | string | JSON-RPC protocol version ("2.0")       |
-| id        | string | Request identifier matching the request |
-| result    | string | Hex-encoded count of connected peers    |
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| jsonrpc | string | JSON-RPC protocol version ("2.0") |
+| id | string | Request identifier matching the request |
+| result | string | Hex-encoded blob base fee in wei |
 
 ## Use Cases
 
-* **Connectivity Health**: Detect an isolated node with too few peers
-* **Sync Diagnostics**: Correlate a stalled sync with a low peer count
-* **Monitoring**: Track peer count trends across an endpoint fleet
-* **Failover Logic**: Prefer well-connected nodes when routing requests
+* **Blob Pricing**: Estimate the data-availability cost of a blob transaction
+* **Fee Estimation**: Combine blob base fee with execution fees for a total cost
+* **Cost Monitoring**: Track blob fee levels for data-heavy applications
+* **Submission Timing**: Defer blob submissions when the blob base fee spikes
 
 ## Error Handling
 
-| Error Code | Message          | Description                                    |
-| ---------- | ---------------- | ---------------------------------------------- |
-| -32603     | Internal error   | The node failed to report its peer count       |
-| -32601     | Method not found | The net module is disabled on the client build |
+| Error Code | Message | Description |
+| ---------- | ------- | ----------- |
+| -32603 | Internal error | The node failed to compute the blob base fee |
+| -32601 | Method not found | The client build does not expose blob fee data |
 
 ## Web3 Integration
 
 {% tabs %}
 {% tab title="Ethers.js" %}
 {% code title="ethers-example.js" %}
+
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/');
 
-const peers = parseInt(await provider.send('net_peerCount', []), 16);
+const fee = await provider.send('eth_blobBaseFee', []);
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Viem" %}
 {% code title="viem-example.js" %}
+
 ```javascript
 import { createPublicClient, http } from 'viem';
 
 const client = createPublicClient({
-  transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
+  transport: http('https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
-const peers = await client.request({ method: 'net_peerCount' });
+const fee = await client.getBlobBaseFee();
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}

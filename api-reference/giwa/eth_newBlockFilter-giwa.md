@@ -1,6 +1,12 @@
-# eth\_accounts - GIWA Sepolia
+---
+description: >-
+  Example code for the eth_newBlockFilter JSON-RPC method. Complete guide on how
+  to use eth_newBlockFilter JSON-RPC in GetBlock Web3 documentation.
+---
 
-This method returns the list of addresses owned by the connected client. On public GetBlock endpoints no keys are held, so it returns an empty array.
+# eth\_newBlockFilter - GIWA
+
+This method creates a filter that reports the hashes of new blocks as they are produced, and returns a filter ID.
 
 ## Parameters
 
@@ -13,27 +19,30 @@ This method does not require any parameters. Send the request with an empty `par
 {% tabs %}
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
+
 ```bash
-curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
+curl --location --request POST 'https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
-    "method": "eth_accounts",
+    "method": "eth_newBlockFilter",
     "params": [],
     "id": "getblock.io"
 }'
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Axios" %}
 {% code title="example.js" %}
+
 ```javascript
 const axios = require('axios');
 
-const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
+const response = await axios.post('https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
-    method: 'eth_accounts',
+    method: 'eth_newBlockFilter',
     params: [],
     id: 'getblock.io'
 }, {
@@ -42,20 +51,22 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
 
 console.log(response.data.result);
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Request" %}
 {% code title="example.py" %}
+
 ```python
 import requests
 
 response = requests.post(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/',
+    'https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/',
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'eth_accounts',
+        'method': 'eth_newBlockFilter',
         'params': [],
         'id': 'getblock.io'
     }
@@ -63,11 +74,13 @@ response = requests.post(
 
 print(response.json())
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Rust" %}
 {% code title="example.rs" %}
+
 ```rust
 use reqwest::Client;
 use serde_json::{json, Value};
@@ -77,11 +90,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
 
     let response = client
-        .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
+        .post("https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
-            "method": "eth_accounts",
+            "method": "eth_newBlockFilter",
             "params": [],
             "id": "getblock.io"
         }))
@@ -94,6 +107,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -104,58 +118,62 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {
     "jsonrpc": "2.0",
     "id": "getblock.io",
-    "result": []
+    "result": "0x9f3c7a1e5d2b8046c1a3f5e7d9b0c2a4"
 }
 ```
 
 ## Response Parameters
 
-| Parameter | Type   | Description                                             |
-| --------- | ------ | ------------------------------------------------------- |
-| jsonrpc   | string | JSON-RPC protocol version ("2.0")                       |
-| id        | string | Request identifier matching the request                 |
-| result    | array  | Array of client-managed addresses (empty on public RPC) |
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| jsonrpc | string | JSON-RPC protocol version ("2.0") |
+| id | string | Request identifier matching the request |
+| result | string | Hex-encoded filter ID |
 
 ## Use Cases
 
-* **Key Custody Check**: Confirm an endpoint holds no signing keys before assuming local signing
-* **Tooling Compatibility**: Satisfy libraries that probe for node-managed accounts
-* **Environment Detection**: Distinguish a managed node from a local dev node with unlocked keys
-* **Signing Path Selection**: Fall back to client-side signing when the array is empty
+* **New Block Polling**: Detect new blocks without a WebSocket subscription
+* **Cadence Sampling**: Observe the ~1 second block cadence via polling
+* **Trigger Pipelines**: Kick off work when a new block appears
+* **Lightweight Watching**: Track the chain tip where subscriptions are unavailable
 
 ## Error Handling
 
-| Error Code | Message          | Description                                   |
-| ---------- | ---------------- | --------------------------------------------- |
-| -32603     | Internal error   | The node failed to enumerate managed accounts |
-| -32601     | Method not found | The method is disabled on the client build    |
+| Error Code | Message | Description |
+| ---------- | ------- | ----------- |
+| -32603 | Internal error | The node failed to register the block filter |
+| -32601 | Method not found | Filters are disabled on the client build |
 
 ## Web3 Integration
 
 {% tabs %}
 {% tab title="Ethers.js" %}
 {% code title="ethers-example.js" %}
+
 ```javascript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
+const provider = new ethers.JsonRpcProvider('https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/');
 
-const accounts = await provider.send('eth_accounts', []);
+provider.on('block', (blockNumber) => console.log(blockNumber));
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Viem" %}
 {% code title="viem-example.js" %}
+
 ```javascript
 import { createPublicClient, http } from 'viem';
 
 const client = createPublicClient({
-  transport: http('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/')
+  transport: http('https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/')
 });
 
-const accounts = await client.request({ method: 'eth_accounts' });
+const unwatch = client.watchBlockNumber({ onBlockNumber: (n) => console.log(n) });
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}

@@ -1,6 +1,12 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to GIWA nodes via JSON-RPC API.
+  Connect to the GIWA network without running your own infrastructure.
+---
+
 # GIWA
 
-GIWA is an EVM-compatible Layer 2 built on the OP Stack as an optimistic rollup, developed by Dunamu — the operator of the Upbit exchange — together with the Optimism Foundation. GIWA Sepolia is its public test network, connected to Ethereum Sepolia for settlement and bridging, where developers validate contracts and integrations before mainnet. The network targets roughly one-second block times and supports Flashblocks preconfirmations for faster user-facing feedback. Because GIWA is EVM-equivalent, standard Ethereum JSON-RPC methods and tooling such as Foundry, Hardhat, Ethers.js, and Viem work without modification. Native gas is paid in ETH.
+GIWA is an EVM-compatible Layer 2 built on the OP Stack as an optimistic rollup, developed by Dunamu — the operator of the Upbit exchange — together with the Optimism Foundation. GIWA is its public test network, connected to Ethereum Sepolia for settlement and bridging, where developers validate contracts and integrations before mainnet. The network targets roughly one-second block times and supports Flashblocks preconfirmations for faster user-facing feedback. Because GIWA is EVM-equivalent, standard Ethereum JSON-RPC methods and tooling such as Foundry, Hardhat, Ethers.js, and Viem work without modification. Native gas is paid in ETH.
 
 ### Key Features
 
@@ -23,7 +29,7 @@ _GetBlock's RPC API reference documentation is provided exclusively for informat
 
 | Property        | Value                        |
 | --------------- | ---------------------------- |
-| Network Name    | GIWA Sepolia                 |
+| Network Name    | GIWA                 |
 | Chain ID        | 91342                        |
 | Native Currency | ETH                          |
 | Decimals        | 18                           |
@@ -89,7 +95,7 @@ Add `"type": "module"` to `package.json`.
 ```javascript
 const axios = require('axios');
 
-const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
+const url = 'https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
   jsonrpc: '2.0',
@@ -155,7 +161,7 @@ touch main.py
 import requests
 import json
 
-url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
+url = "https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
@@ -302,6 +308,6 @@ For technical support and questions:
 ## See Also
 
 * [GIWA Documentation](https://docs.giwa.io)
-* [GIWA Sepolia Explorer (Blockscout)](https://sepolia-explorer.giwa.io)
+* [GIWA Explorer (Blockscout)](https://sepolia-explorer.giwa.io)
 * [GIWA Website](https://giwa.io)
 * [Ethereum JSON-RPC Specification](https://ethereum.org/developers/docs/apis/json-rpc/)
