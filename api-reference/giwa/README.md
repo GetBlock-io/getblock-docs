@@ -6,7 +6,11 @@ description: >-
 
 # GIWA
 
-GIWA is an EVM-compatible Layer 2 built on the OP Stack as an optimistic rollup, developed by Dunamu — the operator of the Upbit exchange — together with the Optimism Foundation. GIWA is its public test network, connected to Ethereum Sepolia for settlement and bridging, where developers validate contracts and integrations before mainnet. The network targets roughly one-second block times and supports Flashblocks preconfirmations for faster user-facing feedback. Because GIWA is EVM-equivalent, standard Ethereum JSON-RPC methods and tooling such as Foundry, Hardhat, Ethers.js, and Viem work without modification. Native gas is paid in ETH.
+GIWA is an EVM-compatible Layer 2 built on the OP Stack as an optimistic rollup, developed by Dunamu — the operator of the Upbit exchange — together with the Optimism Foundation. \
+\
+GIWA Sepolia is its public test network, connected to Ethereum Sepolia for settlement and bridging, where developers validate contracts and integrations before mainnet. The network targets roughly one-second block times and supports Flashblocks preconfirmations for faster user-facing feedback.&#x20;
+
+Because GIWA is EVM-equivalent, standard Ethereum JSON-RPC methods and tooling such as Foundry, Hardhat, Ethers.js, and Viem work without modification. Native gas is paid in ETH.
 
 ### Key Features
 
@@ -27,15 +31,7 @@ _GetBlock's RPC API reference documentation is provided exclusively for informat
 
 ## Network Information
 
-| Property        | Value                        |
-| --------------- | ---------------------------- |
-| Network Name    | GIWA                 |
-| Chain ID        | 91342                        |
-| Native Currency | ETH                          |
-| Decimals        | 18                           |
-| Block Time      | \~1 second                   |
-| Consensus       | Optimistic Rollup (OP Stack) |
-| EVM Compatible  | Yes                          |
+<table data-search="false"><thead><tr><th>Property</th><th>Value</th></tr></thead><tbody><tr><td>Network Name</td><td>GIWA</td></tr><tr><td>Chain ID</td><td>91342</td></tr><tr><td>Native Currency</td><td>ETH</td></tr><tr><td>Decimals</td><td>18</td></tr><tr><td>Block Time</td><td>~1 second</td></tr><tr><td>Consensus</td><td>Optimistic Rollup (OP Stack)</td></tr><tr><td>EVM Compatible</td><td>Yes</td></tr></tbody></table>
 
 ## Base URL
 
@@ -49,9 +45,9 @@ https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/
 
 ## Supported Networks
 
-| Network | Chain ID | JSON-RPC | WSS | Singapore,&#xA;Singapore |
-| ------- | -------- | -------- | --- | ------------------------ |
-| Sepolia | 91342    | ✅        | ✅   | ✅                        |
+| Network | Chain ID | JSON-RPC | WSS | Singapore, Singapore |
+| ------- | -------- | -------- | --- | -------------------- |
+| Sepolia | 91342    | ✅        | ✅   | ✅                    |
 
 ## Quickstart
 
@@ -99,7 +95,7 @@ const url = 'https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
   jsonrpc: '2.0',
-  method: 'eth_blockNumber',
+  method: 'eth_chainId',
   params: [],
   id: 'getblock.io'
 };
@@ -122,6 +118,20 @@ axios.post(url, payload, {
 ```bash
 node index.js
 ```
+{% endstep %}
+
+{% step %}
+### Result
+
+{% code overflow="wrap" %}
+```bash
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": "0x164ce"
+}
+```
+{% endcode %}
 {% endstep %}
 {% endstepper %}
 {% endtab %}
@@ -165,7 +175,7 @@ url = "https://shared.ap-southeast-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
-    "method": "eth_blockNumber",
+    "method": "eth_chainId",
     "params": [],
     "id": "getblock.io"
 })
@@ -195,16 +205,7 @@ python main.py
 
 ### Chain & Client Info
 
-| Method              | Description                                       |
-| ------------------- | ------------------------------------------------- |
-| web3\_clientVersion | Client software version identifier                |
-| web3\_sha3          | Keccak-256 hash of hex-encoded data               |
-| net\_version        | Network ID as a decimal string                    |
-| net\_listening      | Whether the node is listening for P2P connections |
-| net\_peerCount      | Number of connected peers                         |
-| eth\_chainId        | Chain ID per EIP-155                              |
-| eth\_blockNumber    | Current chain tip block number                    |
-| eth\_syncing        | Sync status, or false if fully synced             |
+<table data-search="false"><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>web3_clientVersion</td><td>Client software version identifier</td></tr><tr><td>web3_sha3</td><td>Keccak-256 hash of hex-encoded data</td></tr><tr><td>net_version</td><td>Network ID as a decimal string</td></tr><tr><td>net_listening</td><td>Whether the node is listening for P2P connections</td></tr><tr><td>net_peerCount</td><td>Number of connected peers</td></tr><tr><td>eth_chainId</td><td>Chain ID per EIP-155</td></tr><tr><td>eth_blockNumber</td><td>Current chain tip block number</td></tr><tr><td>eth_syncing</td><td>Sync status, or false if fully synced</td></tr></tbody></table>
 
 ### Gas & Fees
 
@@ -287,17 +288,7 @@ python main.py
 
 ### Debug & Trace
 
-| Method                         | Description                                     |
-| ------------------------------ | ----------------------------------------------- |
-| debug\_accountRange            | Enumerate accounts from the state trie          |
-| debug\_batchSendRawTransaction | Submit multiple signed transactions in one call |
-| debug\_getBadBlocks            | List recently rejected invalid blocks           |
-| debug\_storageRangeAt          | Enumerate storage slots of a contract           |
-| debug\_traceBlock              | Trace execution of a block by RLP               |
-| debug\_traceBlockByHash        | Trace all transactions in a block by hash       |
-| debug\_traceBlockByNumber      | Trace all transactions in a block by number     |
-| debug\_traceCall               | Trace a simulated message call                  |
-| debug\_traceTransaction        | Trace execution of a mined transaction          |
+<table data-search="false"><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>debug_accountRange</td><td>Enumerate accounts from the state trie</td></tr><tr><td>debug_batchSendRawTransaction</td><td>Submit multiple signed transactions in one call</td></tr><tr><td>debug_getBadBlocks</td><td>List recently rejected invalid blocks</td></tr><tr><td>debug_storageRangeAt</td><td>Enumerate storage slots of a contract</td></tr><tr><td>debug_traceBlock</td><td>Trace execution of a block by RLP</td></tr><tr><td>debug_traceBlockByHash</td><td>Trace all transactions in a block by hash</td></tr><tr><td>debug_traceBlockByNumber</td><td>Trace all transactions in a block by number</td></tr><tr><td>debug_traceCall</td><td>Trace a simulated message call</td></tr><tr><td>debug_traceTransaction</td><td>Trace execution of a mined transaction</td></tr></tbody></table>
 
 ## Support
 
