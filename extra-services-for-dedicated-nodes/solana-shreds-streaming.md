@@ -6,7 +6,7 @@ description: >-
 
 # Solana Shreds Streaming
 
-Solana Shreds Streaming delivers raw block data straight from validators, over UDP, before the block is assembled. It gives you the earliest possible view of what is happening on Solana — earlier than any standard RPC or gRPC feed.
+Solana Shreds Streaming delivers raw block data directly from validators over UDP[^1] before the block is assembled. It gives you the earliest possible view of what is happening on Solana — earlier than any standard RPC[^2] or gRPC[^3] feed.
 
 ### What a shred is
 
@@ -23,18 +23,18 @@ flowchart LR
 
 ### What you receive
 
-From the shreds you reconstruct transaction intent as the leader is packing it: transaction signatures, the accounts involved, the instructions (program, accounts, data), address-lookup-table references, and slot numbers. This arrives roughly 100 to 500 milliseconds earlier than a standard commitment-based feed reports the same activity.
+From the shreds, you reconstruct transaction intent as the leader is packing it: transaction signatures, the accounts involved, the instructions (program, accounts, data), address lookup table references, and slot numbers. This arrives roughly 100 to 500 milliseconds earlier than a standard commitment-based feed reports the same activity.
 
 That head start is the entire point. In latency-sensitive strategies, seeing a transaction before it is confirmed is the difference between reacting first and reacting too late.
 
 ### Two ways to use it
 
-1. **As a dedicated node add-on.** You attach shreds streaming to your Solana dedicated node, giving your node and your workloads a faster, steadier source of block data.
-2. **As a standalone service — no node needed.** You top up credits, open a UDP port, and start receiving shreds. You do not run or rent a Solana node at all. Decoding the shreds gives you the transaction data directly, and your credit balance meters the usage.
+1. **As a dedicated node add-on:** You attach shreds streaming to your Solana dedicated node, giving your node and your workloads a faster, steadier source of block data.
+2. **As a standalone service — no node needed:** You top up credits, open a UDP[^1] port, and start receiving shreds. You do not run or rent a Solana node at all. Decoding the shreds gives you the transaction data directly, and your credit balance meters the usage.
 
 ### How the standalone service works
 
-The service connects to validators and forwards their shreds to your listener over UDP. UDP carries the data at wire speed: it has no handshake and no retransmission, so it removes the overhead that slows a TCP-based feed. You run a listener on an open UDP port, decode the incoming shreds into transactions, and act on them.
+The service connects to validators and forwards their shreds to your listener over UDP. UDP carries data at wire speed: it has no handshakes and no retransmissions, so it removes the overhead that slows a TCP-based feed. You run a listener on an open UDP port, decode the incoming shreds into transactions, and act on them.
 
 ### Benefits
 
@@ -53,7 +53,7 @@ The service connects to validators and forwards their shreds to your listener ov
 ### Limitations
 
 * **Pre-execution data only:** Shreds show intent, not results. You do not get success or failure, balance changes, logs, or compute usage, so some transactions you observe will later fail. Treat the stream as a signal, and confirm outcomes through a normal feed.
-* **Possible packet loss:** UDP trades reliability for speed, so a raw stream can drop a packet. This is acceptable for speed-critical work, but you design for it.
+* **Possible packet loss:** UDP trades reliability for speed, so a raw stream may drop packets. This is acceptable for speed-critical work, but you design for it.
 * **You decode the stream:** Raw shreds need a listener that decodes them. This is a low-level integration, not a single RPC call.
 * **Solana only:** Shreds are a Solana concept; the service does not apply to other chains.
 
@@ -64,3 +64,9 @@ The service connects to validators and forwards their shreds to your listener ov
 | Protocol          | UDP (raw shreds)                                        |
 | Access modes      | Dedicated node add-on · standalone credit-based service |
 | Available Regions | `eu-central-1`, `us-east-1`, `ap-southeast-1`           |
+
+[^1]: _UDP_ is a connectionless protocol, meaning that messages are sent without negotiating a connection and that _UDP_ does not keep track of what it has sent.
+
+[^2]: **Remote Procedure Call (RPC)** is a communication protocol that lets a computer program run a function or subroutine on another computer over a network as if it were running locally
+
+[^3]: gRPC is a high-performance, open-source universal remote procedure call (RPC) framework initially created by Google.

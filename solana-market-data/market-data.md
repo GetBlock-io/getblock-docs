@@ -1,10 +1,16 @@
 # Market data
 
-A **Solana Market Data** subscription describes three things: the market pair to observe, the type of data to receive, and how that data should be delivered. The `base` and `quote` mint addresses identify the pair and its direction. The `topic` selects the resulting data model, such as individual trades, **OHLCV** candles, or an aggregated price. Topics such as `ohlcv`, `twap`, `vwap`, and `volume` also use `window` to define their calculation period.
+A **Solana Market Data** subscription describes three things:&#x20;
+
+1. the market pair to observe,
+2. the type of data to receive,&#x20;
+3. and how that data should be delivered.&#x20;
+
+The `base` and `quote` mint addresses identify the pair and its direction. The `topic` selects the resulting data model, such as individual trades, **OHLCV** candles, or an aggregated price. Topics such as `ohlcv`, `twap`, `vwap`, and `volume` also use `window` to define their calculation period.
 
 After accepting a subscription, the service can first send recent rows requested through `hydrate` and then continue streaming live changes. The `throttle` option controls the minimum interval between those updates. It does not change the aggregation window or require the client to wait until that window closes.
 
-The example below subscribes to one-minute **OHLCV** data for the SOL/USDC pair. It requests up to ten initial rows and asks the service to push subsequent changes no more frequently than once per second. Replace the mint addresses, topic, and window to match the market data required by your application.
+The example below subscribes to one-minute **OHLCV** data for the SOL/USDC pair. It requests up to ten initial rows and asks the service to push subsequent changes no more frequently than once per second. Replace the mint addresses, topic, and window to match the market data your application requires.
 
 ### Subscribe Request
 
@@ -97,23 +103,7 @@ The `trades` topic streams normalized individual trades for the selected pair. U
 
 #### Response fields
 
-| Field            | Description                                            |
-| ---------------- | ------------------------------------------------------ |
-| `id`             | Row identifier.                                        |
-| `signature`      | Solana transaction signature.                          |
-| `signer`         | Wallet that signed the transaction.                    |
-| `slot`           | Solana slot in which the trade was observed.           |
-| `timestamp`      | Trade timestamp in ISO 8601 format.                    |
-| `base`           | Mint address of the base token.                        |
-| `quote`          | Mint address of the quote token.                       |
-| `base_amount`    | Base-token amount in the token's smallest units.       |
-| `quote_amount`   | Quote-token amount in the token's smallest units.      |
-| `base_decimals`  | Decimal precision of the base token.                   |
-| `quote_decimals` | Decimal precision of the quote token.                  |
-| `base_volume`    | Human-readable amount of the base token exchanged.     |
-| `quote_volume`   | Human-readable amount of the quote token exchanged.    |
-| `price`          | Trade price expressed in the quote token.              |
-| `is_buy`         | `true` when the observed trade is classified as a buy. |
+<table data-search="false"><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td>Row identifier.</td></tr><tr><td><code>signature</code></td><td>Solana transaction signature.</td></tr><tr><td><code>signer</code></td><td>Wallet that signed the transaction.</td></tr><tr><td><code>slot</code></td><td>Solana slot in which the trade was observed.</td></tr><tr><td><code>timestamp</code></td><td>Trade timestamp in ISO 8601 format.</td></tr><tr><td><code>base</code></td><td>Mint address of the base token.</td></tr><tr><td><code>quote</code></td><td>Mint address of the quote token.</td></tr><tr><td><code>base_amount</code></td><td>Base-token amount in the token's smallest units.</td></tr><tr><td><code>quote_amount</code></td><td>Quote-token amount in the token's smallest units.</td></tr><tr><td><code>base_decimals</code></td><td>Decimal precision of the base token.</td></tr><tr><td><code>quote_decimals</code></td><td>Decimal precision of the quote token.</td></tr><tr><td><code>base_volume</code></td><td>Human-readable amount of the base token exchanged.</td></tr><tr><td><code>quote_volume</code></td><td>Human-readable amount of the quote token exchanged.</td></tr><tr><td><code>price</code></td><td>Trade price expressed in the quote token.</td></tr><tr><td><code>is_buy</code></td><td><code>true</code> when the observed trade is classified as a buy.</td></tr></tbody></table>
 
 ### Block
 

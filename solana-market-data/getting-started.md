@@ -8,18 +8,27 @@ description: >-
 
 ### 1. Activate Solana Market Data
 
-Choose **Solana Market Data** in your GetBlock account and activate a subscription. You can pay using whichever option works best for you:
+1. Log in to your [GetBlock account](https://account.getblock.io/)
+2. Under Products, select **Solana Market Data**
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+3. To subscribe, select any payment option best for you: &#x20;
 
 * **Card**
 * **Crypto**
 * **Prepaid credits**
 
-Select your preferred payment method in the **side drawer** and complete the purchase.
+{% hint style="success" %}
+Click the **side drawer** to select your preferred payment method, then complete the purchase.
 
-Once the subscription is active, your API key will be enabled for **Solana Market Data**.
+![](<../.gitbook/assets/image (3).png>)
+{% endhint %}
+
+4. Once the subscription is active, your API key will be enabled for **Solana Market Data**.
 
 {% hint style="info" %}
-Need an API key? You can create one in **Settings → API Keys** in your GetBlock account.
+Need an API key? You can create one [API Key tab](https://account.getblock.io/products/solana-data-stream#api-keys)
 {% endhint %}
 
 ### 2. Select a token pair
@@ -33,10 +42,10 @@ To choose the market you want to track, provide the mint addresses for:
 
 For example, to receive market data for **SOL/USDC**, select the corresponding **SOL** and **USDC** mint addresses as your base and quote assets.
 
-The selected pair is then used across the available methods, such as **Trades, Blocks, VWAP, TWAP, Volume, and Candles**.
+The selected pair is then applied across the available methods, including **Trades, Blocks, VWAP, TWAP, Volume, and Candles**.
 
 {% hint style="info" %}
-You can select the Base Mint and Quote Mint directly in the **Playground** to explore the data for a specific pair before integrating it into your application.
+You can select the Base Mint and Quote Mint directly in the [**Playground**](https://account.getblock.io/products/solana-data-stream#playground) to explore the data for a specific pair before integrating it into your application.
 {% endhint %}
 
 ### 3. Choose the data you need
@@ -45,21 +54,13 @@ You can select the Base Mint and Quote Mint directly in the **Playground** to ex
 
 Choose the method that best matches your use case:
 
-| Method                | Best for                                  |
-| --------------------- | ----------------------------------------- |
-| **Trades**            | Individual normalized trades              |
-| **Blocks**            | Market activity aggregated by Solana slot |
-| **VWAP**              | Volume-weighted market price              |
-| **TWAP**              | Time-weighted market price                |
-| **Volume**            | Trading activity and traded volume        |
-| **Candles**           | OHLCV charts and price visualization      |
-| **Buy/Sell Activity** | Comparing buying and selling activity     |
+<table data-search="false"><thead><tr><th>Method</th><th>Best for</th></tr></thead><tbody><tr><td><strong>Trades</strong></td><td>Individual normalized trades</td></tr><tr><td><strong>Blocks</strong></td><td>Market activity aggregated by Solana slot</td></tr><tr><td><strong>VWAP</strong></td><td>Volume-weighted market price</td></tr><tr><td><strong>TWAP</strong></td><td>Time-weighted market price</td></tr><tr><td><strong>Volume</strong></td><td>Trading activity and traded volume</td></tr><tr><td><strong>Candles</strong></td><td>OHLCV charts and price visualization</td></tr><tr><td><strong>Buy/Sell Activity</strong></td><td>Comparing buying and selling activity</td></tr></tbody></table>
 
 ### 4. Select how you want to consume the data
 
 You can access **Solana Market Data** through several protocols.
 
-#### HTTP
+#### 1. HTTP
 
 Use HTTP when you need a single response or want to retrieve the latest available data.
 
@@ -69,7 +70,7 @@ Typical use cases include:
 * retrieving recent trades;
 * loading data when your application starts.
 
-#### WebSocket
+#### 2. WebSocket
 
 Use WebSocket when you need continuous live updates.
 
@@ -80,7 +81,7 @@ It is suitable for:
 * continuously updated charts;
 * real-time market monitoring.
 
-#### gRPC
+#### 3. gRPC
 
 Use the gRPC interface for server-side streaming and integrations that already use a Yellowstone-style workflow.
 
