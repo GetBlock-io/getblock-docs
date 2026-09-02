@@ -6,7 +6,7 @@ description: >-
 
 # Sonic (S)
 
-Sonic is a high-performance, EVM-compatible Layer 1 blockchain built by Sonic Labs, the team behind the former Fantom network. It pairs a proof-of-stake consensus with full EVM compatibility, so Ethereum contracts and tooling run unmodified, and targets high transaction throughput with **sub-second finality**. The native token S is used for gas, staking, running validators, and governance.
+**Sonic, previously known as Fantom(FTM),** is a high-performance, EVM-compatible Layer 1 blockchain built by Sonic Labs, the team behind the former Fantom network. It pairs a proof-of-stake consensus with full EVM compatibility, so Ethereum contracts and tooling run unmodified, and targets high transaction throughput with **sub-second finality**. The native token S is used for gas, staking, running validators, and governance.
 
 Sonic is designed for responsive DeFi and consumer applications: it retains the Ethereum developer experience while adding a Fee Monetization program that returns a share of network fees to the applications that generate them, and a native Sonic Gateway that bridges liquidity to and from Ethereum. This documentation targets Sonic Mainnet (Chain ID `146`).
 
