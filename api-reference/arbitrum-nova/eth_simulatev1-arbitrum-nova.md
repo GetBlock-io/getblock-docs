@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_simulateV1 JSON-RPC method. Complete guide on how to
+  use eth_simulateV1 JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_simulateV1 - Arbitrum Nova
 
 This method simulates one or more blocks of transactions against a base block, returning the resulting state changes, return values, and logs. It is used to preview multi-step interactions before broadcasting.

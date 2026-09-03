@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_createAccessList JSON-RPC method. Complete guide on
+  how to use eth_createAccessList JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_createAccessList - Arbitrum Nova
 
 This method returns an EIP-2930 access list for a transaction along with the gas used, which can reduce gas costs for transactions that touch many storage slots.

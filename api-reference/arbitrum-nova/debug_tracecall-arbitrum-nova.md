@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the debug_traceCall JSON-RPC method. Complete guide on how to
+  use debug_traceCall JSON-RPC in GetBlock Web3 documentation.
+---
+
 # debug\_traceCall - Arbitrum Nova
 
 This method traces a simulated message call against a given block without submitting a transaction, returning a detailed execution trace. It is a Dedicated Node tier method.

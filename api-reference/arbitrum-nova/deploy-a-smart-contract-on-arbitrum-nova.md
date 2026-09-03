@@ -1,3 +1,9 @@
+---
+description: >-
+  This guide covers adding the network to a browser wallet, then deploying a
+  simple contract using Foundry and Hardhat — pick whichever you prefer.
+---
+
 # Deploy a smart contract on Arbitrum Nova
 
 Arbitrum Nova is EVM-compatible, so contracts deploy with the standard Solidity toolchain — Foundry, Hardhat, or Remix — pointed at a GetBlock endpoint. This guide covers adding the network to a wallet and deploying a first contract to Arbitrum Nova.

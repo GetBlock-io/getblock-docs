@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_blobBaseFee JSON-RPC method. Complete guide on how to
+  use eth_blobBaseFee JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_blobBaseFee - Arbitrum Nova
 
 This method returns the current blob base fee in wei used to price EIP-4844 blob-carrying transactions. It is used when constructing transactions that post blob data.

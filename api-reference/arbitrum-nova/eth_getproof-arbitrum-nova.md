@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getProof JSON-RPC method. Complete guide on how to
+  use eth_getProof JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getProof - Arbitrum Nova
 
 This method returns the account and storage Merkle-Patricia proofs for an address at a given block. It is used to verify account state against a block's state root without trusting the node.
