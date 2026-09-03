@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the starknet_estimateFee JSON-RPC method. Complete guide on
+  how to use starknet_estimateFee JSON-RPC in GetBlock Web3 documentation.
+---
+
 # starknet\_estimateFee - STRK
 
 This method estimates the fee for one or more transactions without executing them on chain, at a given block. It returns gas consumption and overall fee per transaction.

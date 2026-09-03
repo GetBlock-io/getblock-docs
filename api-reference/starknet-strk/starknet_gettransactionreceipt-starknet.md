@@ -1,4 +1,11 @@
-# starknet\_getTransactionReceipt starknet
+---
+description: >-
+  Example code for the starknet_getTransactionReceipt JSON-RPC method. Complete
+  guide on how to use starknet_getTransactionReceipt JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# starknet\_getTransactionReceipt - STRK
 
 This method returns the execution receipt of a transaction: its status, actual fee, emitted events, and L2-to-L1 messages. It is used to confirm outcomes and read events.
 

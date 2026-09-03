@@ -1,4 +1,11 @@
-# starknet\_getTransactionByHash starknet
+---
+description: >-
+  Example code for the starknet_getTransactionByHash JSON-RPC method. Complete
+  guide on how to use starknet_getTransactionByHash JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# starknet\_getTransactionByHash - STRK
 
 This method returns the full body of a transaction identified by its hash, including its type, version, signature, and calldata.
 

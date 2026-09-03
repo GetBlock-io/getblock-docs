@@ -1,4 +1,11 @@
-# starknet\_getBlockWithTxs starknet
+---
+description: >-
+  Example code for the starknet_getBlockWithTxs JSON-RPC method. Complete guide
+  on how to use starknet_getBlockWithTxs JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# starknet\_getBlockWithTxs - STRK
 
 This method returns a block's header together with the full body of every transaction it contains, given a block\_id. It is used when transaction contents are needed alongside block metadata.
 

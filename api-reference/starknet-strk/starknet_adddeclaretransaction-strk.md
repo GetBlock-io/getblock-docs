@@ -1,4 +1,11 @@
-# starknet\_addDeclareTransaction -STRK
+---
+description: >-
+  Example code for the starknet_addDeclareTransaction JSON-RPC method. Complete
+  guide on how to use starknet_addDeclareTransaction JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# starknet\_addDeclareTransaction - STRK
 
 This method submits a signed DECLARE transaction, registering a new contract class on the network so it can be deployed, and returns the transaction hash and class hash.
 

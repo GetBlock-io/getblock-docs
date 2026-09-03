@@ -1,4 +1,10 @@
-# starknet\_specVersion starknet
+---
+description: >-
+  Example code for the starknet_specVersion JSON-RPC method. Complete guide on
+  how to use starknet_specVersion JSON-RPC in GetBlock Web3 documentation.
+---
+
+# starknet\_specVersion - STRK
 
 This method returns the version of the Starknet JSON-RPC specification that the node implements. It is used to confirm compatibility before issuing version-sensitive calls.
 

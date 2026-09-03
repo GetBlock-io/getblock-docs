@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the starknet_blockNumber JSON-RPC method. Complete guide on
+  how to use starknet_blockNumber JSON-RPC in GetBlock Web3 documentation.
+---
+
 # starknet\_blockNumber - STRK
 
 This method returns the number of the most recent block accepted on Starknet. It is the primary way to read the current chain tip.

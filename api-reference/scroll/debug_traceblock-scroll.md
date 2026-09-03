@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the debug_traceBlock JSON-RPC method. Complete guide on how
+  to use debug_traceBlock JSON-RPC in GetBlock Web3 documentation.
+---
+
 # debug\_traceBlock scroll
 
 This method replays and traces all transactions in an RLP-encoded block, returning per-transaction execution traces. It is a Dedicated Node tier method.

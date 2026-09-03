@@ -1,4 +1,10 @@
-# starknet\_getStorageAt starknet
+---
+description: >-
+  Example code for the starknet_getStorageAt JSON-RPC method. Complete guide on
+  how to use starknet_getStorageAt JSON-RPC in GetBlock Web3 documentation.
+---
+
+# starknet\_getStorageAt - STRK
 
 This method returns the felt value stored at a given storage key of a contract at a specific block. It is used to read raw contract state directly.
 

@@ -1,4 +1,11 @@
-# starknet\_getTransactionStatus starknet
+---
+description: >-
+  Example code for the starknet_getTransactionStatus JSON-RPC method. Complete
+  guide on how to use starknet_getTransactionStatus JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# starknet\_getTransactionStatus - STRK
 
 This method returns the finality status (received, accepted on L2, accepted on L1) and execution status (succeeded, reverted) of a transaction by hash. It is the lightweight way to poll a transaction.
 

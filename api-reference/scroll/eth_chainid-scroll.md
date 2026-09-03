@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_chainId JSON-RPC method. Complete guide on how to use
+  eth_chainId JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_chainId scroll
 
 This method returns the chain ID used for replay-protected transaction signing per EIP-155. On GIWA Sepolia it returns `0x164ce` (91342), which wallets and libraries use to build valid signatures.

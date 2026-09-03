@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the starknet_blockHashAndNumber JSON-RPC method. Complete
+  guide on how to use starknet_blockHashAndNumber JSON-RPC in GetBlock Web3
+  documentation.
+---
+
 # starknet\_blockHashAndNumber - STRK
 
 This method returns both the hash and the number of the most recent accepted block in a single call. It is used to pin reads to a known tip.

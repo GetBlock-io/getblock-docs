@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Starknet nodes via JSON-RPC API.
+  Connect to the Starknet network without running your own infrastructure.
+---
+
 # StarkNet (STRK)
 
 Starknet is a permissionless validity (ZK) rollup that settles to Ethereum, executing contracts on the Cairo VM and proving that execution with STARK proofs verified on Ethereum L1. It is not EVM-compatible: contracts are Cairo classes, values are felt252 field elements expressed as hex, and every account is itself a contract under Starknet's native account abstraction. Blocks are addressed by a `block_id` that is either an object (a block number or block hash) or a tag (`latest`, `pending`). The JSON-RPC surface is the standard `starknet_*` method set: block and state reads, transaction and receipt lookups, contract calls and class/storage reads, event queries, fee estimation, and the invoke/declare/deploy-account write methods.

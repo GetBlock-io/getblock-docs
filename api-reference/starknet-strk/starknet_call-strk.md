@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the starknet_call JSON-RPC method. Complete guide on how to
+  use starknet_call JSON-RPC in GetBlock Web3 documentation.
+---
+
 # starknet\_call - STRK
 
 This method executes a read-only function on a contract at a given block and returns its result as an array of felts. No transaction is created and no fee is charged.

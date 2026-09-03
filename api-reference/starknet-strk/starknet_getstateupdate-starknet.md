@@ -1,4 +1,10 @@
-# starknet\_getStateUpdate starknet
+---
+description: >-
+  Example code for the starknet_getStateUpdate JSON-RPC method. Complete guide
+  on how to use starknet_getStateUpdate JSON-RPC in GetBlock Web3 documentation.
+---
+
+# starknet\_getStateUpdate - STRK
 
 This method returns the state update for a block: the storage diffs, deployed contracts, declared classes, and nonces that changed. It is used to build state-diff indexers.
 

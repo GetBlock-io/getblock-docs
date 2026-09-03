@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the starknet_chainId JSON-RPC method. Complete guide on how
+  to use starknet_chainId JSON-RPC in GetBlock Web3 documentation.
+---
+
 # starknet\_chainId - STRK
 
 This method returns the chain ID of the network the node is connected to, encoded as a felt. Mainnet returns SN\_MAIN (0x534e5f4d41494e), used for transaction signing and network guards.

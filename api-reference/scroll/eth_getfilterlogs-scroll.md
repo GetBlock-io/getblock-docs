@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getFilterLogs JSON-RPC method. Complete guide on how
+  to use eth_getFilterLogs JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getFilterLogs scroll
 
 This method returns all logs matching a previously created log filter, regardless of when they were last polled. It is used to backfill the full history of a filter.

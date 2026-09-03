@@ -1,4 +1,10 @@
-# starknet\_getClass starknet
+---
+description: >-
+  Example code for the starknet_getClass JSON-RPC method. Complete guide on how
+  to use starknet_getClass JSON-RPC in GetBlock Web3 documentation.
+---
+
+# starknet\_getClass - STRK
 
 This method returns the class definition — the Sierra program, entry points, and ABI — for a given class hash at a block. It is used to load a contract's interface and code.
 

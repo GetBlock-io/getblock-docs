@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the starknet_estimateMessageFee JSON-RPC method. Complete
+  guide on how to use starknet_estimateMessageFee JSON-RPC in GetBlock Web3
+  documentation.
+---
+
 # starknet\_estimateMessageFee - STRK
 
 This method estimates the fee for a message sent from Ethereum L1 to a Starknet L2 contract, at a given block. It is used when bridging from L1.

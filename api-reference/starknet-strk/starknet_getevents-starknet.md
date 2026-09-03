@@ -1,4 +1,10 @@
-# starknet\_getEvents starknet
+---
+description: >-
+  Example code for the starknet_getEvents JSON-RPC method. Complete guide on how
+  to use starknet_getEvents JSON-RPC in GetBlock Web3 documentation.
+---
+
+# starknet\_getEvents - STRK
 
 This method returns events matching a filter over a block range, address, and key set, paginated by a chunk size and continuation token. It is the primary way to read logs on Starknet.
 

@@ -1,4 +1,11 @@
-# starknet\_getBlockWithTxHashes starknet
+---
+description: >-
+  Example code for the starknet_getBlockWithTxHashes JSON-RPC method. Complete
+  guide on how to use starknet_getBlockWithTxHashes JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# starknet\_getBlockWithTxHashes - STRK
 
 This method returns a block's header fields together with the list of transaction hashes it contains, given a block\_id. It is a lighter alternative to fetching full transactions.
 

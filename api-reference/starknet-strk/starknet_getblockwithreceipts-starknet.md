@@ -1,4 +1,11 @@
-# starknet\_getBlockWithReceipts starknet
+---
+description: >-
+  Example code for the starknet_getBlockWithReceipts JSON-RPC method. Complete
+  guide on how to use starknet_getBlockWithReceipts JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# starknet\_getBlockWithReceipts - STRK
 
 This method returns a block together with each transaction and its execution receipt, given a block\_id. It combines transaction bodies and outcomes in one response.
 

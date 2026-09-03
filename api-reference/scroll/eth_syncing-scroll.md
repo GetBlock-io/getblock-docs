@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_syncing JSON-RPC method. Complete guide on how to use
+  eth_syncing JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_syncing scroll
 
 This method returns an object describing sync progress while the node is catching up, or false once it is fully synced. It is used to confirm an endpoint is at the chain tip before relying on its data.

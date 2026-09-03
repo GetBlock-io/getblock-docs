@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the starknet_getBlockTransactionCount JSON-RPC method.
+  Complete guide on how to use starknet_getBlockTransactionCount JSON-RPC in
+  GetBlock Web3 documentation.
+---
+
 # starknet\_getBlockTransactionCount - STRK
 
 This method returns the number of transactions in the block identified by block\_id. It is used to size pagination or to sanity-check a block.

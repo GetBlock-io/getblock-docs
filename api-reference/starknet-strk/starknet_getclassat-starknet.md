@@ -1,4 +1,10 @@
-# starknet\_getClassAt starknet
+---
+description: >-
+  Example code for the starknet_getClassAt JSON-RPC method. Complete guide on
+  how to use starknet_getClassAt JSON-RPC in GetBlock Web3 documentation.
+---
+
+# starknet\_getClassAt - STRK
 
 This method returns the class definition of the contract deployed at a given address at a block, resolving the class hash for you. It combines class-hash lookup and class fetch.
 

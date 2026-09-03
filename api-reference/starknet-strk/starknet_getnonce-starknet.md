@@ -1,4 +1,10 @@
-# starknet\_getNonce starknet
+---
+description: >-
+  Example code for the starknet_getNonce JSON-RPC method. Complete guide on how
+  to use starknet_getNonce JSON-RPC in GetBlock Web3 documentation.
+---
+
+# starknet\_getNonce - STRK
 
 This method returns the nonce of an account contract at a given block. The nonce is required when building the account's next transaction.
 

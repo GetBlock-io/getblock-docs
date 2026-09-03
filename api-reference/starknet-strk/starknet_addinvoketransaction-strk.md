@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the starknet_addInvokeTransaction JSON-RPC method. Complete
+  guide on how to use starknet_addInvokeTransaction JSON-RPC in GetBlock Web3
+  documentation.
+---
+
 # starknet\_addInvokeTransaction - STRK
 
 This method submits a signed INVOKE transaction — an account calling one or more contracts — to the sequencer and returns its transaction hash. It is the primary write path for dApps.

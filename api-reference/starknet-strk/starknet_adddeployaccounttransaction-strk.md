@@ -1,3 +1,9 @@
+---
+description: >-
+  This guide covers adding the network to a browser wallet, then deploying a
+  simple contract using Foundry and Hardhat — pick whichever you prefer.
+---
+
 # starknet\_addDeployAccountTransaction - STRK
 
 This method submits a signed DEPLOY\_ACCOUNT transaction, deploying a new account contract at a counterfactual address, and returns the transaction hash and the deployed address.

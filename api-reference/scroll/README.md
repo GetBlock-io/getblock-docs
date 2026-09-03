@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Scroll nodes via JSON-RPC API.
+  Connect to the Scroll network without running your own infrastructure.
+---
+
 # Scroll
 
 Scroll is an EVM-equivalent zkEVM Layer 2 that settles to Ethereum using zero-knowledge validity proofs. It executes standard EVM bytecode, so existing Ethereum contracts, JSON-RPC methods, and tooling such as Foundry, Hardhat, Ethers.js, and Viem work without modification. Native gas is paid in ETH bridged from Ethereum L1. Transaction security is inherited from Ethereum: batches are proven with succinct validity proofs verified on L1, and the network targets roughly 3-second block times.

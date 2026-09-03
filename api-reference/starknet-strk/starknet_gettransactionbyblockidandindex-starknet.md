@@ -1,4 +1,11 @@
-# starknet\_getTransactionByBlockIdAndIndex starknet
+---
+description: >-
+  Example code for the starknet_getTransactionByBlockIdAndIndex JSON-RPC method.
+  Complete guide on how to use starknet_getTransactionByBlockIdAndIndex JSON-RPC
+  in GetBlock Web3 documentation.
+---
+
+# starknet\_getTransactionByBlockIdAndIndex - STRK
 
 This method returns the transaction at a given index within the block identified by block\_id. It is used to iterate a block's transactions positionally.
 
