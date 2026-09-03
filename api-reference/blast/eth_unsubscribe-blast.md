@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_unsubscribe JSON-RPC method. Complete guide on how to
+  use eth_unsubscribe JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_unsubscribe - Blast
 
 This method cancels an active WebSocket subscription by its ID and stops further notifications for that subscription.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getBalance JSON-RPC method. Complete guide on how to
+  use eth_getBalance JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getBalance - Blast
 
 This method returns the ETH balance of an address in wei at a given block. It is the primary way to read native balances on GIWA Sepolia.

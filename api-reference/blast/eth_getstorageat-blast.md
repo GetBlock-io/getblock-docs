@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getStorageAt JSON-RPC method. Complete guide on how
+  to use eth_getStorageAt JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getStorageAt - Blast
 
 This method returns the 32-byte value stored at a given storage slot of a contract at a specific block. It is used to read raw contract state that has no getter.

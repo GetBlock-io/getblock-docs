@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the net_listening JSON-RPC method. Complete guide on how to
+  use net_listening JSON-RPC in GetBlock Web3 documentation.
+---
+
 # net\_listening - Blast
 
 This method returns a boolean indicating whether the client is actively listening for network connections. It is used as a lightweight liveness check for an endpoint.

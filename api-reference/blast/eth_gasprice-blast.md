@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_gasPrice JSON-RPC method. Complete guide on how to
+  use eth_gasPrice JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_gasPrice - Blast
 
 This method returns the current legacy gas price in wei, as a hex-encoded integer. On GIWA Sepolia it reflects the L2 execution gas price and is used for legacy (non-EIP-1559) transactions.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the rpc_modules JSON-RPC method. Complete guide on how to use
+  rpc_modules JSON-RPC in GetBlock Web3 documentation.
+---
+
 # rpc\_modules - Blast
 
 This method returns the RPC modules enabled on the endpoint and their version strings. It is used to discover which method namespaces (eth, net, web3, debug) are available.
