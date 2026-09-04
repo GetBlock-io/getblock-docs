@@ -1,3 +1,10 @@
+---
+description: >-
+  JSON-RPC API reference for the Cronos Tendermint (CometBFT) RPC. Explore
+  method list, request examples, and how to connect to GetBlock's Cronos RPC
+  endpoints
+---
+
 # Tendermint RPC API - Cronos
 
 The CometBFT JSON-RPC interface for Cronos: consensus and node status, block and transaction data, mempool inspection, transaction broadcast, and `abci_query` for reading any module's state. All methods are JSON-RPC 2.0 POST requests to the endpoint base URL.

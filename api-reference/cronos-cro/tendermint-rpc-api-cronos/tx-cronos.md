@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the tx JSON-RPC method. Complete guide on how to use tx JSON-
+  RPC in GetBlock Web3 documentation.
+---
+
 # tx - Cronos
 
 Returns the execution result of a transaction by its hash, including its height, gas, ABCI code, and events, optionally with a Merkle proof.

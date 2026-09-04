@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the cosmos.staking.v1beta1.Query/Validators gRPC method.
+  Complete guide on how to use cosmos.staking.v1beta1.Query/Validators gRPC
+  method in GetBlock Web3 documentation.
+---
+
 # cosmos.staking.v1beta1.Query/Validators - Cronos
 
 Returns the paginated set of staking validators, optionally filtered by bond status. The gRPC equivalent of the REST validators query.

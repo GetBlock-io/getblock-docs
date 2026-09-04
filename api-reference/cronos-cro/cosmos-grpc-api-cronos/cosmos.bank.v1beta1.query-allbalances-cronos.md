@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the cosmos.bank.v1beta1.Query/AllBalances gRPC method.
+  Complete guide on how to use cosmos.bank.v1beta1.Query/AllBalances gRPC method
+  in GetBlock Web3 documentation.
+---
+
 # cosmos.bank.v1beta1.Query/AllBalances - Cronos
 
 Returns every coin balance held by an address, paginated. The gRPC equivalent of the REST balances query.

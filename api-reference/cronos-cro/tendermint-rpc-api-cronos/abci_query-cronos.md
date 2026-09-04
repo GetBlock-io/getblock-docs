@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the abci_query JSON-RPC method. Complete guide on how to use
+  abci_query JSON-RPC in GetBlock Web3 documentation.
+---
+
 # abci\_query - Cronos
 
 Executes an ABCI query against application state at a given path, returning the raw (base64) value and, optionally, a proof. This is the low-level way to read any Cosmos SDK module store, and underlies the REST and gRPC gateways.

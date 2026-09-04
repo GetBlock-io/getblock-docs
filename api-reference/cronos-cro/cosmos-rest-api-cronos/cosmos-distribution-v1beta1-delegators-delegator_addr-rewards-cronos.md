@@ -1,3 +1,12 @@
+---
+description: >-
+  Example code for the
+  cosmos/distribution/v1beta1/delegators/{delegator_addr}/rewards REST method.
+  Complete guide on how to use
+  cosmos/distribution/v1beta1/delegators/{delegator_addr}/rewards REST method in
+  GetBlock Web3 documentation.
+---
+
 # /cosmos/distribution/v1beta1/delegators/{delegator\_addr}/rewards - Cronos
 
 Returns the total outstanding staking rewards for a delegator across all validators, plus a per-validator breakdown.

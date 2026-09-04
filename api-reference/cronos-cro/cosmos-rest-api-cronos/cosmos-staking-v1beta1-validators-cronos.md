@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the cosmos/staking/v1beta1/validators REST method. Complete
+  guide on how to use cosmos/staking/v1beta1/validators REST method in GetBlock
+  Web3 documentation.
+---
+
 # /cosmos/staking/v1beta1/validators - Cronos
 
 Returns the paginated set of staking validators (operators), each with its operator address, commission, and bonded status. Filter by status with a query parameter.

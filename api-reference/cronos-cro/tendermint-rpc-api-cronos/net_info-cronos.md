@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the net_info JSON-RPC method. Complete guide on how to use
+  net_info JSON-RPC in GetBlock Web3 documentation.
+---
+
 # net\_info - Cronos
 
 Returns the node's current peer connections and listening status, including per-peer network address and node id.

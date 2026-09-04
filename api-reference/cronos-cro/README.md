@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Cronos nodes via JSON-RPC API.
+  Connect to the Cronos network without running your own infrastructure.
+---
+
 # Cronos (CRO)
 
 Cronos is an EVM-compatible Layer 1 blockchain built by Crypto.com on the Cosmos SDK with Ethermint, secured by CometBFT (Tendermint) BFT consensus for fast, deterministic finality. It runs a standard Ethereum execution layer, so Solidity contracts, the `eth_*` JSON-RPC surface, and tooling such as Foundry, Hardhat, Ethers.js, and Viem work unchanged, while IBC connectivity links it to the wider Cosmos ecosystem. The native gas token is CRO, and Cronos supports EIP-1559 fee-market pricing through Ethermint's feemarket module. This reference document describes the Ethereum-compatible `eth_*` surface of Cronos EVM (chain ID 25), which is distinct from Cronos zkEVM (chain ID 388).

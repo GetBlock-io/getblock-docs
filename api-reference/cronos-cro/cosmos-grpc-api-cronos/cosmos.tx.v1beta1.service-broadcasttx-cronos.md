@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the cosmos.tx.v1beta1.Service/BroadcastTx gRPC method.
+  Complete guide on how to use cosmos.tx.v1beta1.Service/BroadcastTx gRPC method
+  in GetBlock Web3 documentation.
+---
+
 # cosmos.tx.v1beta1.Service/BroadcastTx - Cronos
 
 Submits a signed, protobuf-encoded transaction and returns the broadcast result. The gRPC equivalent of the REST broadcast endpoint; the mode selects sync vs async behaviour.

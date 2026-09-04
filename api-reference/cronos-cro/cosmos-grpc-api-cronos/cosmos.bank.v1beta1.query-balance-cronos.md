@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the cosmos.bank.v1beta1.Query/Balance gRPC method. Complete
+  guide on how to use cosmos.bank.v1beta1.Query/Balance gRPC method in GetBlock
+  Web3 documentation.
+---
+
 # cosmos.bank.v1beta1.Query/Balance - Cronos
 
 Returns the balance of a single denom held by an address. The gRPC equivalent of the REST by-denom balance query.

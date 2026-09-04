@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the cosmos/bank/v1beta1/supply REST method. Complete guide on
+  how to use cosmos/bank/v1beta1/supply REST method in GetBlock Web3
+  documentation.
+---
+
 # /cosmos/bank/v1beta1/supply - Cronos
 
 Returns the total supply of every token denom on the chain, paginated.

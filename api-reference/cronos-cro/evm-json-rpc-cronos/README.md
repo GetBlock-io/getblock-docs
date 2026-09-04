@@ -1,4 +1,36 @@
+---
+description: >-
+  JSON-RPC API reference for the Cronos EVM. Explore method list, request
+  examples, and how to connect to GetBlock's Cronos RPC endpoints
+---
+
 # EVM JSON RPC - Cronos
+
+The Ethereum-compatible JSON-RPC interface for Cronos, served by the Ethermint execution layer: contract calls and simulation, account and block reads, transaction submission, filters and logs, WebSocket subscriptions, and `debug_*` tracing. Methods follow the standard Ethereum JSON-RPC specification, so Foundry, Hardhat, Ethers.js, Viem, and MetaMask work unchanged against chain ID 25.
+
+## Endpoints
+
+{% tabs %}
+{% tab title="HTTP" %}
+{% code overflow="wrap" %}
+```bash
+https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="WebSocket" %}
+{% code overflow="wrap" %}
+```bash
+wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+Replace `<ACCESS-TOKEN>` with the access token from the GetBlock dashboard. HTTP and WebSocket are provisioned as separate endpoints — select the API interface when you create the endpoint.
+{% endhint %}
 
 ## Available API Methods
 
@@ -91,3 +123,34 @@
 | debug\_traceBlockByNumber | Trace all transactions in a block by number |
 | debug\_traceCall          | Trace a simulated message call              |
 | debug\_traceTransaction   | Trace execution of a mined transaction      |
+
+## Cronos-specific behaviour
+
+Cronos runs a standard Ethereum execution layer on a Cosmos SDK chain, which changes a few assumptions carried over from Ethereum mainnet:
+
+| Topic | What to expect on Cronos |
+| ----- | ------------------------ |
+| Finality | CometBFT gives deterministic single-block finality, so a result read at `latest` is already final and is not subject to probabilistic reorgs |
+| Fees | EIP-1559 pricing comes from Ethermint's feemarket module — `eth_gasPrice`, `eth_maxPriorityFeePerGas`, and `eth_feeHistory` all apply, and gas is paid in CRO (18 decimals) |
+| Subscriptions | `eth_subscribe` and `eth_unsubscribe` work only over the `wss://` endpoint; calling them over HTTP returns error `-32601` |
+| Addresses | An account's `0x…` and bech32 `crc1…` forms are two encodings of the same key — the `eth_*` methods here take the `0x` form |
+| Chain identity | This is Cronos EVM (chain ID 25), which is a different network from Cronos zkEVM (chain ID 388) |
+
+{% hint style="info" %}
+_TECHNICAL DISCLAIMER: AUTHORITATIVE JSON-RPC API SPECIFICATION._
+
+_GetBlock's RPC API reference documentation is provided exclusively for informational purposes and to optimize the developer experience. Cronos implements the standard Ethereum JSON-RPC interface via Ethermint; the canonical specification for these methods is the Ethereum JSON-RPC specification at_ [_ethereum.org_](https://ethereum.org/en/developers/docs/apis/json-rpc/)_, and Cronos-specific behaviour is documented at_ [_docs.cronos.org_](https://docs.cronos.org/)_._
+{% endhint %}
+
+## Support
+
+For technical support and questions:
+
+* Support: [support@getblock.io](mailto:support@getblock.io)
+
+## See Also
+
+* [Cronos (CRO) overview](../) — network information, interfaces, and quickstart
+* [Deploy a Smart Contract on Cronos](deploy-a-smart-contract-on-cronos.md)
+* [Ethereum JSON-RPC Specification](https://ethereum.org/en/developers/docs/apis/json-rpc/)
+* [Official Cronos Documentation](https://docs.cronos.org/)

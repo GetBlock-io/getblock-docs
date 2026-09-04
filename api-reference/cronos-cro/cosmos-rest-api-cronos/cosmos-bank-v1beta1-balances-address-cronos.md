@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the cosmos/bank/v1beta1/balances/{address} REST method.
+  Complete guide on how to use cosmos/bank/v1beta1/balances/{address} REST
+  method in GetBlock Web3 documentation.
+---
+
 # /cosmos/bank/v1beta1/balances/{address} - Cronos
 
 Returns all coin balances held by a bech32 address, each as a denom and amount. Native CRO is reported in its base denom.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the validators JSON-RPC method. Complete guide on how to use
+  validators JSON-RPC in GetBlock Web3 documentation.
+---
+
 # validators - Cronos
 
 Returns the paginated validator set active at a given height, with each validator's consensus address, public key, and voting power.

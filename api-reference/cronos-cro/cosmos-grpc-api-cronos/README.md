@@ -1,3 +1,9 @@
+---
+description: >-
+  gRPC API reference for the Cronos Cosmos SDK modules. Explore service list,
+  request examples, and how to connect to GetBlock's Cronos RPC endpoints
+---
+
 # Cosmos gRPC API - Cronos
 
 The Cosmos SDK gRPC interface for Cronos: the same module query set as the REST API, exposed as typed Protocol Buffers services over HTTP/2. Examples use `grpcurl`.

@@ -1,3 +1,9 @@
+---
+description: >-
+  REST API reference for the Cronos Cosmos SDK modules. Explore method list,
+  request examples, and how to connect to GetBlock's Cronos RPC endpoints
+---
+
 # Cosmos REST API - Cronos
 
 The Cosmos SDK REST (LCD / gRPC-gateway) interface for Cronos: HTTP/JSON module queries for accounts, balances, staking, distribution, and governance, plus transaction broadcast and simulation. Addresses use the bech32 `crc1…` form.

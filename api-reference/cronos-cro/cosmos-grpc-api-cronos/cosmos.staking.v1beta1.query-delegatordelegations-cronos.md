@@ -1,3 +1,11 @@
+---
+description: >-
+  Example code for the cosmos.staking.v1beta1.Query/DelegatorDelegations gRPC
+  method. Complete guide on how to use
+  cosmos.staking.v1beta1.Query/DelegatorDelegations gRPC method in GetBlock Web3
+  documentation.
+---
+
 # cosmos.staking.v1beta1.Query/DelegatorDelegations - Cronos
 
 Returns all delegations made by a delegator address, each with the validator and the staked amount.

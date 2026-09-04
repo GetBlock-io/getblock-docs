@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the cosmos.gov.v1.Query/Proposals gRPC method. Complete guide
+  on how to use cosmos.gov.v1.Query/Proposals gRPC method in GetBlock Web3
+  documentation.
+---
+
 # cosmos.gov.v1.Query/Proposals - Cronos
 
 Returns the paginated list of governance proposals, optionally filtered by status, voter, or depositor. The gRPC equivalent of the REST proposals query.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the health JSON-RPC method. Complete guide on how to use
+  health JSON-RPC in GetBlock Web3 documentation.
+---
+
 # health - Cronos
 
 Returns an empty result when the node is running and able to serve requests. Used as a lightweight liveness probe.

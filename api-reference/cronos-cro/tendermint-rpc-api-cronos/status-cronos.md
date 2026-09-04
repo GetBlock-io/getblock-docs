@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the status JSON-RPC method. Complete guide on how to use
+  status JSON-RPC in GetBlock Web3 documentation.
+---
+
 # status - Cronos
 
 Returns the current node information, sync status (latest block height and time), and the validator info for the node. Used to confirm connectivity and the chain tip.

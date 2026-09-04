@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the block JSON-RPC method. Complete guide on how to use block
+  JSON-RPC in GetBlock Web3 documentation.
+---
+
 # block - Cronos
 
 Returns the block at a given height, or the latest block when height is omitted, including its header, data (transactions), and commit signatures.

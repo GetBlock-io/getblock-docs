@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the eth_getBlockTransactionCountByHash JSON-RPC method.
+  Complete guide on how to use eth_getBlockTransactionCountByHash JSON-RPC in
+  GetBlock Web3 documentation.
+---
+
 # eth\_getBlockTransactionCountByHash - Cronos
 
 This method returns the number of transactions in a block identified by its hash, as a hex-encoded integer.

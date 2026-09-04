@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_accounts JSON-RPC method. Complete guide on how to
+  use eth_accounts JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_accounts - Cronos
 
 This method returns the list of addresses owned by the connected client. On public GetBlock endpoints no keys are held, so it returns an empty array.

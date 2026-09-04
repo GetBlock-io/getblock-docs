@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the cosmos.auth.v1beta1.Query/Account gRPC method. Complete
+  guide on how to use cosmos.auth.v1beta1.Query/Account gRPC method in GetBlock
+  Web3 documentation.
+---
+
 # cosmos.auth.v1beta1.Query/Account - Cronos
 
 Returns the account at a bech32 address, including account number and sequence, as a typed protobuf response. The gRPC equivalent of the REST auth account query.

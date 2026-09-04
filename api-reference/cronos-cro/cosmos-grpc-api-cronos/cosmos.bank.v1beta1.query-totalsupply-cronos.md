@@ -1,4 +1,11 @@
-# cosmos.bank.v1beta1.Query/TotalSupply- Cronos
+---
+description: >-
+  Example code for the cosmos.bank.v1beta1.Query/TotalSupply gRPC method.
+  Complete guide on how to use cosmos.bank.v1beta1.Query/TotalSupply gRPC method
+  in GetBlock Web3 documentation.
+---
+
+# cosmos.bank.v1beta1.Query/TotalSupply - Cronos
 
 Returns the total supply of every denom, paginated. The gRPC equivalent of the REST supply query.
 
