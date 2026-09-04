@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the net_version JSON-RPC method. Complete guide on how to use
+  net_version JSON-RPC in GetBlock Web3 documentation.
+---
+
 # net\_version - Harmony
 
 This method returns the network ID as a decimal string. On Harmony the network ID matches the chain ID (1666600000) and is used to confirm which network an endpoint is connected to.

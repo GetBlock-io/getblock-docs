@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_chainId JSON-RPC method. Complete guide on how to use
+  eth_chainId JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_chainId - Moonbeam
 
 This method returns the chain ID used for replay-protected transaction signing per EIP-155. On Moonbeam it returns 0x504 (1284), which wallets and libraries use to build valid signatures.

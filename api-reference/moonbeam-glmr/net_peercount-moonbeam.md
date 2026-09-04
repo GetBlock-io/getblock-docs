@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the net_peerCount JSON-RPC method. Complete guide on how to
+  use net_peerCount JSON-RPC in GetBlock Web3 documentation.
+---
+
 # net\_peerCount - Moonbeam
 
 This method returns the number of peers currently connected to the client, as a hex-encoded integer. It is used to gauge how well a node is connected to the Moonbeam Sepolia network.

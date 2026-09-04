@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the eth_getTransactionReceipt JSON-RPC method. Complete guide
+  on how to use eth_getTransactionReceipt JSON-RPC in GetBlock Web3
+  documentation.
+---
+
 # eth\_getTransactionReceipt - Moonbeam
 
 This method returns the receipt of a mined transaction, including its status, gas used, and emitted logs. On Moonbeam the receipt also carries L1 fee fields. It returns null until the transaction is mined.

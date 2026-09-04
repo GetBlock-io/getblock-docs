@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the web3_sha3 JSON-RPC method. Complete guide on how to use
+  web3_sha3 JSON-RPC in GetBlock Web3 documentation.
+---
+
 # web3\_sha3 - Moonbeam
 
 This method returns the Keccak-256 (SHA3) hash of the given hex-encoded data. It is used to compute function selectors and event topic hashes without a local crypto library.

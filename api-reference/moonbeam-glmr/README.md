@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Moonbeam nodes via JSON-RPC API.
+  Connect to the Moonbeam network without running your own infrastructure.
+---
+
 # Moonbeam (GLMR)
 
 Moonbeam is an EVM-compatible smart contract parachain on Polkadot, built with Substrate and the Frontier EVM layer. It mirrors Ethereum's JSON-RPC API, so Solidity contracts, the `eth_*` surface, and tooling such as Foundry, Hardhat, Ethers.js, and Viem work unchanged, while the chain inherits shared security and deterministic finality from Polkadot's relay chain. Moonbeam uses unified Ethereum-style (H160) accounts — a single `0x` address per account, with no separate Substrate address to manage — and exposes Substrate functionality (staking, XCM, batching, native-asset ERC-20s) to Solidity through on-chain precompiles. The native gas token is GLMR, and Moonbeam supports EIP-1559 fee-market pricing.

@@ -1,3 +1,9 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Harmony nodes via JSON-RPC API.
+  Connect to the Harmony network without running your own infrastructure.
+---
+
 # Harmony (ONE)
 
 Harmony is an EVM-compatible, sharded Layer 1 blockchain secured by Effective Proof-of-Stake (EPoS) and Fast Byzantine Fault Tolerant (FBFT) consensus, which gives it roughly two-second blocks and fast, deterministic finality. Its beacon shard, Shard 0, runs an Ethereum-compatible execution layer: standard Ethereum contracts, the `eth_*` JSON-RPC surface, and tooling such as Foundry, Hardhat, Ethers.js, and Viem work directly against it. The native token is ONE. Harmony also exposes native `hmy_*` / `hmyv2_*` RPC methods and a dual address format (a bech32 `one1...` form alongside the Ethereum `0x` form); this reference covers the Ethereum-compatible `eth_*` surface on Shard 0.

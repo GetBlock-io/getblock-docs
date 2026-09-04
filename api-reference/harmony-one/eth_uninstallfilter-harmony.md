@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_uninstallFilter JSON-RPC method. Complete guide on
+  how to use eth_uninstallFilter JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_uninstallFilter - Harmony
 
 This method removes a filter by ID and stops the node from tracking it. Filters also expire automatically after a period of inactivity.

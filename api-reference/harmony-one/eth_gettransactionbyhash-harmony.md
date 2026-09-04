@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the eth_getTransactionByHash JSON-RPC method. Complete guide
+  on how to use eth_getTransactionByHash JSON-RPC in GetBlock Web3
+  documentation.
+---
+
 # eth\_getTransactionByHash - Harmony
 
 This method returns the transaction identified by its 32-byte hash, including its block placement once mined. It is the primary way to look up a specific transaction on Harmony.

@@ -1,3 +1,9 @@
+---
+description: >-
+  This guide covers adding the network to a browser wallet, then deploying a
+  simple contract using Foundry and Hardhat — pick whichever you prefer.
+---
+
 # Deploy a Smart Contract on Moonbeam
 
 Moonbeam is EVM-compatible, so contracts deploy using the standard Solidity toolchain — Foundry, Hardhat, or Remix — with a GetBlock endpoint. This guide covers adding the network to a wallet and deploying a first contract to Moonbeam.

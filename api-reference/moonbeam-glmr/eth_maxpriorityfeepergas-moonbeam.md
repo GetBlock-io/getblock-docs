@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the eth_maxPriorityFeePerGas JSON-RPC method. Complete guide
+  on how to use eth_maxPriorityFeePerGas JSON-RPC in GetBlock Web3
+  documentation.
+---
+
 # eth\_maxPriorityFeePerGas - Moonbeam
 
 This method returns a suggested max priority fee per gas (the miner/sequencer tip) in wei for EIP-1559 transactions. It is used to build type-2 transactions that confirm promptly on Moonbeam.
