@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_subscribe JSON-RPC method. Complete guide to using
+  eth_subscribe JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_subscribe - Ethereum Classic
 
 This method opens a push subscription over a WebSocket connection and returns a subscription ID. Supported event types are newHeads, logs, newPendingTransactions, and syncing. It requires a wss:// endpoint rather than HTTP.

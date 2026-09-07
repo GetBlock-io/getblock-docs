@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getWork JSON-RPC method. Complete guide to using
+  eth_getWork JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getWork - Ethereum Classic
 
 This method returns the current Proof-of-Work work package: the current block header pow-hash, the seed hash used for the DAG, and the boundary condition (target). Miners use it to find a valid nonce.

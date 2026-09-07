@@ -1,3 +1,7 @@
+---
+description: Explore Ethereum Classic GraphQL queries, mutations, and integration examples.
+---
+
 # GraphQL API
 
 Ethereum Classic exposes an EIP-1767 GraphQL API: a single endpoint (`/graphql`) that lets you request exactly the block, transaction, account, and log fields you need — with nesting — in one query, plus a mutation to broadcast transactions. It complements the JSON-RPC and WebSocket interfaces.

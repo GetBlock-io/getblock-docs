@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the web3_clientVersion JSON-RPC method. Complete guide to
+  using web3_clientVersion JSON-RPC in GetBlock Web3 documentation.
+---
+
 # web3\_clientVersion - Ethereum Classic
 
 This method returns the version string of the execution client serving the Ethereum Classic Sepolia endpoint. It is used to identify the node software and version behind a GetBlock endpoint for compatibility checks and debugging.

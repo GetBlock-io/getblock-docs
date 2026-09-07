@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_submitWork JSON-RPC method. Complete guide to using
+  eth_submitWork JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_submitWork - Ethereum Classic
 
 This method submits a Proof-of-Work solution — the found nonce, the pow-hash of the header, and the mix digest — and returns whether the solution was accepted as valid.

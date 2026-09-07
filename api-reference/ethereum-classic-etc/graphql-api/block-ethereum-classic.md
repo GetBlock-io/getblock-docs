@@ -1,3 +1,7 @@
+---
+description: Query a single Ethereum Classic block with the GraphQL API.
+---
+
 # block - Ethereum Classic
 
 Returns a block by its number or hash (or the latest block when neither is given), letting you select exactly the header fields and nested transactions you need in one request.

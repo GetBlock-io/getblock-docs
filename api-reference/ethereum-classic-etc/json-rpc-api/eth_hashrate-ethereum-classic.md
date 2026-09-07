@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_hashrate JSON-RPC method. Complete guide to using
+  eth_hashrate JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_hashrate - Ethereum Classic
 
 This method returns the number of hashes per second the node is mining with, as a hex quantity. It is zero on non-mining nodes.

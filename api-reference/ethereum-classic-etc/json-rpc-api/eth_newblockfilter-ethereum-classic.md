@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_newBlockFilter JSON-RPC method. Complete guide to
+  using eth_newBlockFilter JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_newBlockFilter - Ethereum Classic
 
 This method creates a filter that reports the hashes of new blocks as they are produced, and returns a filter ID.

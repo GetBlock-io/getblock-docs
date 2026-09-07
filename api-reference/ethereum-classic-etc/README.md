@@ -1,3 +1,10 @@
+---
+description: >-
+  GetBlock provides fast and reliable access to Ethereum Classic nodes via
+  JSON-RPC API. Connect to the Ethereum Classic network without running your own
+  infrastructure.
+---
+
 # Ethereum Classic (ETC)
 
 Ethereum Classic is the continuation of the original Ethereum chain, secured by Proof-of-Work (the Etchash algorithm) and governed by a strict code-is-law immutability ethos. It is EVM-compatible at the Spiral (Shanghai) opcode level, so standard Ethereum contracts, the `eth_*` JSON-RPC surface, and tooling such as Foundry, Hardhat, Ethers.js, and Viem work unchanged — with one important difference: Ethereum Classic did not adopt EIP-1559, so it uses legacy gas pricing with no base fee. The native token is ETC. Nodes (Core-Geth) expose three interfaces: JSON-RPC over HTTP, WebSocket, and an EIP-1767 GraphQL API.
@@ -203,7 +210,7 @@ python main.py
 ## APIs
 
 * [GraphQL API](graphql-api/) — the EIP-1767 GraphQL query interface
-* [JSON RPC API ](json-rpc-api/)
+* [JSON RPC API](json-rpc-api/)
 
 ## Support
 

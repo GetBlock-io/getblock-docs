@@ -1,3 +1,7 @@
+---
+description: Query Ethereum Classic account data with the GraphQL API.
+---
+
 # account - Ethereum Classic
 
 Returns an account's state — balance, transaction count (nonce), contract code, and storage — at a chosen block. Accessed within a block selection so the state is read at a specific height.

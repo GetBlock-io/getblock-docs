@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_uninstallFilter JSON-RPC method. Complete guide to
+  using eth_uninstallFilter JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_uninstallFilter - Ethereum Classic
 
 This method removes a filter by ID and stops the node from tracking it. Filters also expire automatically after a period of inactivity.

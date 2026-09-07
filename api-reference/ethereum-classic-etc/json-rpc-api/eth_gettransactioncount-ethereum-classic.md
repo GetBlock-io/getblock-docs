@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getTransactionCount JSON-RPC method. Complete guide
+  to using eth_getTransactionCount JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getTransactionCount - Ethereum Classic
 
 This method returns the number of transactions sent from an address, as a hex-encoded integer. It provides the nonce used when building the next transaction.

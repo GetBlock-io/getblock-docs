@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getBalance JSON-RPC method. Complete guide to using
+  eth_getBalance JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getBalance - Ethereum Classic
 
 This method returns the ETC balance of an address in wei at a given block. It is the primary way to read native balances on Ethereum Classic.

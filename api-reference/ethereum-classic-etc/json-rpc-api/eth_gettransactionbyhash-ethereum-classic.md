@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getTransactionByHash JSON-RPC method. Complete guide
+  to using eth_getTransactionByHash JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getTransactionByHash - Ethereum Classic
 
 This method returns the transaction identified by its 32-byte hash, including its block placement once mined. It is the primary way to look up a specific transaction on Ethereum Classic.

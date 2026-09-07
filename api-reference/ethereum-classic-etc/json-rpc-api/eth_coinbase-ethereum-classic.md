@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_coinbase JSON-RPC method. Complete guide to using
+  eth_coinbase JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_coinbase - Ethereum Classic
 
 This method returns the client's coinbase address — the account that receives mining rewards. It requires the node to have a coinbase configured.

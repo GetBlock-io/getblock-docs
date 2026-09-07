@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getLogs JSON-RPC method. Complete guide to using
+  eth_getLogs JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getLogs - Ethereum Classic
 
 This method returns an array of all logs matching a given filter object in a single call. It is the primary method for querying event logs from smart contracts, essential for tracking token transfers, DEX swaps, and other on-chain events.

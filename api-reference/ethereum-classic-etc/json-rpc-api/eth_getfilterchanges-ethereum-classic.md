@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getFilterChanges JSON-RPC method. Complete guide to
+  using eth_getFilterChanges JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getFilterChanges - Ethereum Classic
 
 This method returns the entries that have matched a filter since it was last polled: logs for a log filter, or hashes for block and pending-transaction filters.

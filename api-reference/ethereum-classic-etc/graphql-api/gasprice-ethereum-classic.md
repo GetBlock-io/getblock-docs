@@ -1,3 +1,7 @@
+---
+description: Retrieve the Ethereum Classic gas price with the GraphQL API.
+---
+
 # gasPrice - Ethereum Classic
 
 Returns the current gas price in wei. Ethereum Classic uses legacy gas pricing, so this is the price to set on a transaction.

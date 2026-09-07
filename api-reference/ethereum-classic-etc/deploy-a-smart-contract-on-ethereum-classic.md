@@ -1,3 +1,7 @@
+---
+description: Deploy Ethereum Classic smart contracts with Foundry or Hardhat.
+---
+
 # Deploy a Smart Contract on Ethereum Classic
 
 Ethereum Classic is EVM-compatible, so contracts deploy with the standard Solidity toolchain — Foundry, Hardhat, or Remix — pointed at a GetBlock endpoint. This guide covers adding the network to a wallet and deploying a first contract to Ethereum Classic.

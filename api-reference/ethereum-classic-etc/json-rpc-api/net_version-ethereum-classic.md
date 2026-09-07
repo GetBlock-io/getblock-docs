@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the net_version JSON-RPC method. Complete guide to using
+  net_version JSON-RPC in GetBlock Web3 documentation.
+---
+
 # net\_version - Ethereum Classic
 
 This method returns the network ID as a decimal string. On Ethereum Classic the network ID matches the chain ID (61) and is used to confirm which network an endpoint is connected to.

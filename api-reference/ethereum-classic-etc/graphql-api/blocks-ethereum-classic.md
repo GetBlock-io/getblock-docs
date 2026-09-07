@@ -1,3 +1,7 @@
+---
+description: Query Ethereum Classic blocks with the GraphQL API.
+---
+
 # blocks - Ethereum Classic
 
 Returns all blocks in an inclusive range from a starting number to an ending number (or the latest), each with the fields you select. Useful for batch indexing.

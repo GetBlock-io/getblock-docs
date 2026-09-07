@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_estimateGas JSON-RPC method. Complete guide to using
+  eth_estimateGas JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_estimateGas - Ethereum Classic
 
 This method returns an estimate of the gas required to execute a transaction, without submitting it. On Ethereum Classic the estimate covers L2 execution gas; the L1 data fee is separate.

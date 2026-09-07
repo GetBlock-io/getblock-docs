@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the net_listening JSON-RPC method. Complete guide to using
+  net_listening JSON-RPC in GetBlock Web3 documentation.
+---
+
 # net\_listening - Ethereum Classic
 
 This method returns a boolean indicating whether the client is actively listening for network connections. It is used as a lightweight liveness check for an endpoint.

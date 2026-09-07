@@ -1,3 +1,7 @@
+---
+description: Execute a read-only Ethereum Classic contract call with the GraphQL API.
+---
+
 # call - Ethereum Classic
 
 Executes a read-only message call against contract state at a chosen block and returns the output data, gas used, and status — the GraphQL equivalent of `eth_call`. Accessed within a block selection.

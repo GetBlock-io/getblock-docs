@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the debug_batchSendRawTransaction JSON-RPC method. Complete
+  guide to using debug_batchSendRawTransaction JSON-RPC in GetBlock Web3
+  documentation.
+---
+
 # debug\_batchSendRawTransaction - Ethereum Classic
 
 This method submits an array of signed, serialized transactions in a single request and returns a result per transaction. It is a Dedicated Node tier convenience for batch broadcasting.

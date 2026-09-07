@@ -1,3 +1,7 @@
+---
+description: Query Ethereum Classic event logs with the GraphQL API.
+---
+
 # logs - Ethereum Classic
 
 Returns event logs matching a filter over a block range, addresses, and topics, each with its data, topics, and originating transaction — the GraphQL equivalent of `eth_getLogs`.

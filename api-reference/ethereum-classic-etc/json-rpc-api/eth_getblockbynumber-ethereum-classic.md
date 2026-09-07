@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getBlockByNumber JSON-RPC method. Complete guide to
+  using eth_getBlockByNumber JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getBlockByNumber - Ethereum Classic
 
 This method returns block data for a hex-encoded block number or a tag such as latest, safe, finalized, earliest, or pending. It is the most common block-lookup method for indexers and explorers on Ethereum Classic.

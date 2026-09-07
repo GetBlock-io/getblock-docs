@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_gasPrice JSON-RPC method. Complete guide to using
+  eth_gasPrice JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_gasPrice - Ethereum Classic
 
 This method returns the current legacy gas price in wei, as a hex-encoded integer. On Ethereum Classic it reflects the L2 execution gas price and is used for legacy (non-EIP-1559) transactions.

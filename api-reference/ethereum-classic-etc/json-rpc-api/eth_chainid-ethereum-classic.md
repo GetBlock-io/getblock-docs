@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_chainId JSON-RPC method. Complete guide to using
+  eth_chainId JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_chainId - Ethereum Classic
 
 This method returns the chain ID used for replay-protected transaction signing per EIP-155. On Ethereum Classic it returns 0x3d (61), which wallets and libraries use to build valid signatures.

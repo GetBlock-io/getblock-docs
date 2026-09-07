@@ -1,3 +1,7 @@
+---
+description: Query an Ethereum Classic transaction with the GraphQL API.
+---
+
 # transaction - Ethereum Classic
 
 Returns a transaction by its hash, including sender, recipient, value, gas, status, and — when selected — its receipt logs, in a single query.

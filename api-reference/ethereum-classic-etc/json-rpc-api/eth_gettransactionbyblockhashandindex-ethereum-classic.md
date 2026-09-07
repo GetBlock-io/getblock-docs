@@ -1,3 +1,10 @@
+---
+description: >-
+  Example code for the eth_getTransactionByBlockHashAndIndex JSON-RPC method.
+  Complete guide to using eth_getTransactionByBlockHashAndIndex JSON-RPC in
+  GetBlock Web3 documentation.
+---
+
 # eth\_getTransactionByBlockHashAndIndex - Ethereum Classic
 
 This method returns the transaction at a given index within a block identified by its hash.

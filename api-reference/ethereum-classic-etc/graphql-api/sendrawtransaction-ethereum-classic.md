@@ -1,3 +1,7 @@
+---
+description: Broadcast a signed Ethereum Classic transaction with the GraphQL API.
+---
+
 # sendRawTransaction - Ethereum Classic
 
 Submits a signed, RLP-encoded transaction and returns its hash — the GraphQL equivalent of `eth_sendRawTransaction`. This is a mutation, not a query.

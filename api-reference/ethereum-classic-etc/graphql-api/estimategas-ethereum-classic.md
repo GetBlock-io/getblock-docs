@@ -1,3 +1,7 @@
+---
+description: Estimate Ethereum Classic transaction gas with the GraphQL API.
+---
+
 # estimateGas - Ethereum Classic
 
 Returns the estimated gas a call or transaction would consume at a chosen block, the GraphQL equivalent of `eth_estimateGas`. Accessed within a block selection.

@@ -1,3 +1,7 @@
+---
+description: Explore Ethereum Classic JSON-RPC methods, requests, and integration examples.
+---
+
 # JSON-RPC API
 
 ## Available API Methods

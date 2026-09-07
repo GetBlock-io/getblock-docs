@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_getTransactionReceipt JSON-RPC method. Complete guide
+  to using eth_getTransactionReceipt JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_getTransactionReceipt - Ethereum Classic
 
 This method returns the receipt of a mined transaction, including its status, gas used, and emitted logs. On Ethereum Classic the receipt also carries L1 fee fields. It returns null until the transaction is mined.

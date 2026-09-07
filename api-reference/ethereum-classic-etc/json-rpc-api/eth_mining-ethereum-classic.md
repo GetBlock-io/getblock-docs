@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the eth_mining JSON-RPC method. Complete guide to using
+  eth_mining JSON-RPC in GetBlock Web3 documentation.
+---
+
 # eth\_mining - Ethereum Classic
 
 This method returns whether the node is actively mining new blocks. On a shared RPC node this is typically false, since mining is performed by dedicated miners.

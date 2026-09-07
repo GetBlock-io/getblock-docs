@@ -1,3 +1,9 @@
+---
+description: >-
+  Example code for the debug_accountRange JSON-RPC method. Complete guide to
+  using debug_accountRange JSON-RPC in GetBlock Web3 documentation.
+---
+
 # debug\_accountRange - Ethereum Classic
 
 This method enumerates a range of accounts from the state trie at a given block, starting from a hashed key. It is a Dedicated Node tier method used for state export and analysis.
