@@ -1,4 +1,8 @@
 ---
+description: >-
+  GetBlock provides fast and reliable access to Kusama nodes via JSON-RPC and
+  WebSocket APIs. Connect to the Kusama network without running your own
+  infrastructure.
 tags:
   - kusama
 ---
@@ -17,8 +21,8 @@ Kusama is a Substrate-based, Nominated-Proof-of-Stake relay chain — Polkadot's
 
 The JSON-RPC and WebSocket interfaces share the same Substrate method set; "Substrate" refers to that method family. HTTP is best for one-off request/response calls, while WebSocket keeps a persistent connection and is required for subscriptions.
 
-* [Substrate JSON-RPC API ](substrate-json-rpc-api-kusama/)— request/response, HTTP + WS
-* [WebSocket Subscriptions](websocket-subscriptions-api-kusama/) — WS-only streams
+* [Substrate JSON-RPC API ](substrate-json_rpc-api/)— request/response, HTTP + WS
+* [WebSocket Subscriptions](websocket-subscriptions-api/) — WS-only streams
 
 ## Interface Endpoints
 
@@ -54,8 +58,8 @@ Replace `<ACCESS-TOKEN>` with the token from the GetBlock dashboard. Each interf
 
 ## APIs
 
-* [Substrate JSON-RPC API ](substrate-json-rpc-api-kusama/)— request/response methods (System, Chain, State, Author, Payment, RPC), over HTTP and WebSocket
-* [WebSocket Subscriptions](websocket-subscriptions-api-kusama/) — pub-sub streams (new heads, finalized heads, storage, extrinsic status)
+* [Substrate JSON-RPC API ](substrate-json_rpc-api/)— request/response methods (System, Chain, State, Author, Payment, RPC), over HTTP and WebSocket
+* [WebSocket Subscriptions](websocket-subscriptions-api/) — pub-sub streams (new heads, finalized heads, storage, extrinsic status)
 
 ## Support
 
