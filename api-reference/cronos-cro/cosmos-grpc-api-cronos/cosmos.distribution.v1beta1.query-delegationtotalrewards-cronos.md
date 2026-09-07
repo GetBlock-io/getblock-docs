@@ -3,7 +3,7 @@ description: >-
   Example code for the cosmos.distribution.v1beta1.Query/DelegationTotalRewards
   gRPC method. Complete guide on how to use
   cosmos.distribution.v1beta1.Query/DelegationTotalRewards gRPC method in
-  GetBlock Web3 documentation.
+  GetBlock
 ---
 
 # cosmos.distribution.v1beta1.Query/DelegationTotalRewards - Cronos

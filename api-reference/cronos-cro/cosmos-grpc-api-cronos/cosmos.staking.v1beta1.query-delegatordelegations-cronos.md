@@ -3,7 +3,7 @@ description: >-
   Example code for the cosmos.staking.v1beta1.Query/DelegatorDelegations gRPC
   method. Complete guide on how to use
   cosmos.staking.v1beta1.Query/DelegatorDelegations gRPC method in GetBlock Web3
-  documentation.
+  document
 ---
 
 # cosmos.staking.v1beta1.Query/DelegatorDelegations - Cronos
