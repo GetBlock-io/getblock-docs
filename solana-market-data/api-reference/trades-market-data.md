@@ -1,7 +1,7 @@
 ---
 description: >-
-  Stream normalized individual Solana trades for a token pair. Complete guide
-  on how to use the trades topic in GetBlock Solana Market Data documentation.
+  Stream normalized individual Solana trades for a token pair. Complete guide on
+  how to use the trades topic in GetBlock Solana Market Data documentation.
 ---
 
 # trades - Solana Market Data
@@ -16,12 +16,12 @@ The `trades` topic streams normalized individual trades for the selected pair, a
 
 Pass one structured request object to [`getblock_subscribe`](getblock_subscribe-market-data.md), with `"source": "market"` and `"topic": "trades"`. The fields below go inside the nested `params` object.
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| `base` | string | No | Base58-encoded mint address of the base token. Omit to receive every market. |
-| `quote` | string | No | Base58-encoded mint address of the quote token. Omit to receive every market. |
-| `hydrate` | integer | No | Size of the row set to maintain, `1`–`100`. Sent as an initial snapshot, then held at this size (see [Row set behavior](#row-set-behavior)). |
-| `throttle` | string | No | Minimum interval between pushes. A positive integer followed by `ms`, `s`, `m`, or `h` (for example `1s`). |
+| Parameter  | Type    | Required | Description                                                                                                                                                       |
+| ---------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `base`     | string  | No       | Base58-encoded mint address of the base token. Omit to receive every market.                                                                                      |
+| `quote`    | string  | No       | Base58-encoded mint address of the quote token. Omit to receive every market.                                                                                     |
+| `hydrate`  | integer | No       | Size of the row set to maintain, `1`–`100`. Sent as an initial snapshot, then held at this size (see [Row set behavior](trades-market-data.md#row-set-behavior)). |
+| `throttle` | string  | No       | Minimum interval between pushes. A positive integer followed by `ms`, `s`, `m`, or `h` (for example `1s`).                                                        |
 
 {% hint style="info" %}
 On an active pair `trades` moves quickly, so most notifications carry an equal number of `inserts` and `deletes` as older trades leave the `hydrate` window. Size `hydrate` to the depth of tape you actually want to keep.
@@ -180,23 +180,7 @@ Every later message is a change-set notification:
 
 Each object in `inserts`, `updates`, and `deletes` has the following shape.
 
-| Field | Type | Description |
-| --- | --- | --- |
-| `base` | string | Mint address of the base token. |
-| `base_amount` | string | Base-token amount in the token's smallest units. |
-| `base_decimals` | string | Decimal precision of the base token. |
-| `base_volume` | string | Human-readable amount of the base token exchanged. |
-| `id` | number | Row identifier. Stable across `updates` and `deletes` — use it as the key for local state. |
-| `is_buy` | boolean | `true` when the observed trade is classified as a buy. |
-| `price` | string | Trade price expressed in the quote token. |
-| `quote` | string | Mint address of the quote token. |
-| `quote_amount` | string | Quote-token amount in the token's smallest units. |
-| `quote_decimals` | string | Decimal precision of the quote token. |
-| `quote_volume` | string | Human-readable amount of the quote token exchanged. |
-| `signature` | string | Solana transaction signature. |
-| `signer` | string | Wallet that signed the transaction. |
-| `slot` | string | Solana slot in which the trade was observed. |
-| `timestamp` | string | Trade timestamp. |
+<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>base</code></td><td>string</td><td>Mint address of the base token.</td></tr><tr><td><code>base_amount</code></td><td>string</td><td>Base-token amount in the token's smallest units.</td></tr><tr><td><code>base_decimals</code></td><td>string</td><td>Decimal precision of the base token.</td></tr><tr><td><code>base_volume</code></td><td>string</td><td>Human-readable amount of the base token exchanged.</td></tr><tr><td><code>id</code></td><td>number</td><td>Row identifier. Stable across <code>updates</code> and <code>deletes</code> — use it as the key for local state.</td></tr><tr><td><code>is_buy</code></td><td>boolean</td><td><code>true</code> when the observed trade is classified as a buy.</td></tr><tr><td><code>price</code></td><td>string</td><td>Trade price expressed in the quote token.</td></tr><tr><td><code>quote</code></td><td>string</td><td>Mint address of the quote token.</td></tr><tr><td><code>quote_amount</code></td><td>string</td><td>Quote-token amount in the token's smallest units.</td></tr><tr><td><code>quote_decimals</code></td><td>string</td><td>Decimal precision of the quote token.</td></tr><tr><td><code>quote_volume</code></td><td>string</td><td>Human-readable amount of the quote token exchanged.</td></tr><tr><td><code>signature</code></td><td>string</td><td>Solana transaction signature.</td></tr><tr><td><code>signer</code></td><td>string</td><td>Wallet that signed the transaction.</td></tr><tr><td><code>slot</code></td><td>string</td><td>Solana slot in which the trade was observed.</td></tr><tr><td><code>timestamp</code></td><td>string</td><td>Trade timestamp.</td></tr></tbody></table>
 
 {% hint style="info" %}
 Numeric and timestamp values are serialized as **strings** to preserve precision. `id` is a JSON number and boolean fields are JSON booleans. Timestamps are ISO 8601 with nanosecond precision; durations such as `window_duration` use ISO 8601 duration format (`1m` is returned as `PT1M`). Ignore unknown fields for forward compatibility.
@@ -231,12 +215,4 @@ for (const row of result.deletes ?? []) {
 
 ## Error Handling
 
-| Code | Message | Cause |
-| --- | --- | --- |
-| `-32602` | `unsupported source "…": supported sources are "market" and "priorityfee"` | `source` is not a recognized value. |
-| `-32602` | `unsupported topic: supported topics are trades, ohlcv, block, twap, vwap, volume, token` | `topic` is not a recognized value. |
-| `-32602` | `window must be one of 1s, 10s, 30s, 1m, …` | `window` is missing or not an accepted value on a windowed topic. |
-| `-32602` | `hydrate must be an integer from 1 to 100` | `hydrate` is outside the accepted range. |
-| `-32602` | `throttle must be a positive integer followed by ms, s, m, or h` | `throttle` is malformed. |
-| `-32602` | `base must be a base58-encoded 32-byte Solana public key` | `base` or `quote` is not a valid mint address. |
-| HTTP `401` | `authorization failed` | API key missing, invalid, or Solana Market Data is not activated on it. WebSocket clients cannot read the handshake body and surface this as close code `1006`. |
+<table data-search="false"><thead><tr><th>Code</th><th>Message</th><th>Cause</th></tr></thead><tbody><tr><td><code>-32602</code></td><td><code>unsupported source "…": supported sources are "market" and "priorityfee"</code></td><td><code>source</code> is not a recognized value.</td></tr><tr><td><code>-32602</code></td><td><code>unsupported topic: supported topics are trades, ohlcv, block, twap, vwap, volume, token</code></td><td><code>topic</code> is not a recognized value.</td></tr><tr><td><code>-32602</code></td><td><code>window must be one of 1s, 10s, 30s, 1m, …</code></td><td><code>window</code> is missing or not an accepted value on a windowed topic.</td></tr><tr><td><code>-32602</code></td><td><code>hydrate must be an integer from 1 to 100</code></td><td><code>hydrate</code> is outside the accepted range.</td></tr><tr><td><code>-32602</code></td><td><code>throttle must be a positive integer followed by ms, s, m, or h</code></td><td><code>throttle</code> is malformed.</td></tr><tr><td><code>-32602</code></td><td><code>base must be a base58-encoded 32-byte Solana public key</code></td><td><code>base</code> or <code>quote</code> is not a valid mint address.</td></tr><tr><td>HTTP <code>401</code></td><td><code>authorization failed</code></td><td>API key missing, invalid, or Solana Market Data is not activated on it. WebSocket clients cannot read the handshake body and surface this as close code <code>1006</code>.</td></tr></tbody></table>

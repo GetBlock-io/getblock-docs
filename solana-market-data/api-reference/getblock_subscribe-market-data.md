@@ -1,49 +1,39 @@
 ---
 description: >-
-  Open a Solana Market Data subscription over WebSocket. Complete guide on how to
-  use getblock_subscribe in GetBlock Solana Market Data documentation.
+  Open a Solana Market Data subscription over WebSocket. Complete guide on how
+  to use getblock_subscribe in GetBlock Solana Market Data documentation.
 ---
 
 # getblock\_subscribe - Solana Market Data
 
-`getblock_subscribe` opens a streaming subscription. It is the only method used to start a stream — the topic you pass decides which data model you receive. The service replies with a subscription ID, optionally sends an initial snapshot, and then pushes change sets until you unsubscribe or the socket closes.
+`getblock_subscribe` opens a streaming subscription. It is the only method for starting a stream — the topic you pass determines which data model you receive. The service replies with a subscription ID, optionally sends an initial snapshot, and then pushes change sets until you unsubscribe or the socket closes.
 
 {% hint style="warning" %}
 **WebSocket-only method.** It will not work over HTTP POST.
 {% endhint %}
 
-## Endpoint
-
-{% code overflow="wrap" %}
-```
-wss://stream.eu-central-1.getblock.io/v1/solana-mainnet/stream?apiKey=<API-KEY>
-```
-{% endcode %}
-
-The API key is passed as a query parameter, not as a header. Create one in [Dashboard → API Keys](https://account.getblock.io/products/solana-data-stream#api-keys) and make sure Solana Market Data is activated on it.
-
 ## Parameters
 
 `params` is an array containing exactly **one** request object:
 
-| Parameter | Type   | Required | Description                                                                                              |
-| --------- | ------ | -------- | -------------------------------------------------------------------------------------------------------- |
-| `source`  | string | Yes      | Data source. `market` for Solana Market Data, or `priorityfee` for priority-fee data.                    |
-| `topic`   | string | Yes      | Data model to receive. One of `trades`, `block`, `ohlcv`, `twap`, `vwap`, `volume`, `token`.              |
-| `params`  | object | Yes      | Topic-specific parameters — the market pair, window, and delivery options. See the table below.          |
+| Parameter | Type   | Required | Description                                                                                     |
+| --------- | ------ | -------- | ----------------------------------------------------------------------------------------------- |
+| `source`  | string | Yes      | Data source. `market` for Solana Market Data, or `priorityfee` for priority-fee data.           |
+| `topic`   | string | Yes      | Data model to receive. One of `trades`, `block`, `ohlcv`, `twap`, `vwap`, `volume`, `token`.    |
+| `params`  | object | Yes      | Topic-specific parameters — the market pair, window, and delivery options. See the table below. |
 
 ### Market parameters
 
 These go inside the nested `params` object.
 
-| Field      | Type    | Required                | Description                                                                                                        |
-| ---------- | ------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `base`     | string  | No                      | Base58-encoded mint address of the base token.                                                                     |
-| `quote`    | string  | No                      | Base58-encoded mint address of the quote token.                                                                    |
-| `mint`     | string  | Yes for `token`         | Base58-encoded token mint, used only by the `token` topic.                                                         |
-| `window`   | string  | Yes for windowed topics | Aggregation period. Required by `ohlcv`, `twap`, `vwap`, and `volume`.                                             |
-| `hydrate`  | integer | No                      | Size of the row set to maintain, `1`–`100`. Sent as an initial snapshot, then held at this size.                   |
-| `throttle` | string  | No                      | Minimum interval between pushes. A positive integer followed by `ms`, `s`, `m`, or `h`.                            |
+| Field      | Type    | Required                | Description                                                                                      |
+| ---------- | ------- | ----------------------- | ------------------------------------------------------------------------------------------------ |
+| `base`     | string  | No                      | Base58-encoded mint address of the base token.                                                   |
+| `quote`    | string  | No                      | Base58-encoded mint address of the quote token.                                                  |
+| `mint`     | string  | Yes for `token`         | Base58-encoded token mint, used only by the `token` topic.                                       |
+| `window`   | string  | Yes for windowed topics | Aggregation period. Required by `ohlcv`, `twap`, `vwap`, and `volume`.                           |
+| `hydrate`  | integer | No                      | Size of the row set to maintain, `1`–`100`. Sent as an initial snapshot, then held at this size. |
+| `throttle` | string  | No                      | Minimum interval between pushes. A positive integer followed by `ms`, `s`, `m`, or `h`.          |
 
 Accepted `window` values for `market` topics:
 
@@ -192,13 +182,13 @@ Every message after that is a change-set notification. Note that the payload is 
 
 ## Response Parameters
 
-| Field                      | Type   | Description                                                                        |
-| -------------------------- | ------ | ------------------------------------------------------------------------------------ |
-| `result`                   | string | Hex-encoded subscription ID, returned once in reply to the subscribe request.      |
-| `params.subscription`      | string | The subscription ID a notification belongs to. Use it to demultiplex the socket.   |
-| `params.result.inserts`    | array  | New rows, including the initial `hydrate` snapshot.                                |
-| `params.result.updates`    | array  | Full replacement rows for previously emitted IDs whose values changed.             |
-| `params.result.deletes`    | array  | Rows to remove from local state by `id`. Carries the whole row, not just the ID.   |
+| Field                   | Type   | Description                                                                      |
+| ----------------------- | ------ | -------------------------------------------------------------------------------- |
+| `result`                | string | Hex-encoded subscription ID, returned once in reply to the subscribe request.    |
+| `params.subscription`   | string | The subscription ID a notification belongs to. Use it to demultiplex the socket. |
+| `params.result.inserts` | array  | New rows, including the initial `hydrate` snapshot.                              |
+| `params.result.updates` | array  | Full replacement rows for previously emitted IDs whose values changed.           |
+| `params.result.deletes` | array  | Rows to remove from local state by `id`. Carries the whole row, not just the ID. |
 
 A change-set property can be omitted when a notification contains no changes of that type. Process all three categories and ignore unknown row fields for forward compatibility.
 
@@ -236,15 +226,15 @@ Do not treat an `insert` as final merely because it was delivered first, and do 
 
 ## Error Handling
 
-| Code        | Message                                                                              | Cause                                                                                        |
-| ----------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
-| `-32602`    | `unsupported source "…": supported sources are "market" and "priorityfee"`           | `source` is not a recognized value.                                                          |
-| `-32602`    | `unsupported topic: supported topics are trades, ohlcv, block, twap, vwap, volume, token` | `topic` is not a recognized value.                                                       |
-| `-32602`    | `window must be one of 1s, 10s, 30s, 1m, …`                                          | `window` is missing or not accepted on a windowed topic.                                     |
-| `-32602`    | `hydrate must be an integer from 1 to 100`                                           | `hydrate` is outside the accepted range.                                                     |
-| `-32602`    | `throttle must be a positive integer followed by ms, s, m, or h`                     | `throttle` is malformed.                                                                     |
-| `-32602`    | `base must be a base58-encoded 32-byte Solana public key`                            | `base` or `quote` is not a valid mint address.                                               |
-| HTTP `401`  | `authorization failed`                                                               | API key missing, invalid, or the product is not activated on it.                             |
+| Code       | Message                                                                                   | Cause                                                            |
+| ---------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `-32602`   | `unsupported source "…": supported sources are "market" and "priorityfee"`                | `source` is not a recognized value.                              |
+| `-32602`   | `unsupported topic: supported topics are trades, ohlcv, block, twap, vwap, volume, token` | `topic` is not a recognized value.                               |
+| `-32602`   | `window must be one of 1s, 10s, 30s, 1m, …`                                               | `window` is missing or not accepted on a windowed topic.         |
+| `-32602`   | `hydrate must be an integer from 1 to 100`                                                | `hydrate` is outside the accepted range.                         |
+| `-32602`   | `throttle must be a positive integer followed by ms, s, m, or h`                          | `throttle` is malformed.                                         |
+| `-32602`   | `base must be a base58-encoded 32-byte Solana public key`                                 | `base` or `quote` is not a valid mint address.                   |
+| HTTP `401` | `authorization failed`                                                                    | API key missing, invalid, or the product is not activated on it. |
 
 {% hint style="info" %}
 **Socket closes immediately with code `1006` and no reason.** The server rejects unauthorized connections with HTTP `401` during the WebSocket handshake, but browser and Node `WebSocket` clients cannot read a handshake response body — they surface only `1006`. Check that the `apiKey` query parameter is present and correct, and that Solana Market Data is activated on that key.

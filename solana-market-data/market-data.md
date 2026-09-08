@@ -1,7 +1,7 @@
 ---
 description: >-
-  How a Solana Market Data subscription works — choosing a pair, a topic, and how
-  the data is delivered.
+  How a Solana Market Data subscription works — choosing a pair, a topic, and
+  how the data is delivered.
 ---
 
 # Market data
@@ -14,7 +14,7 @@ A **Solana Market Data** subscription describes three things:
 
 This page explains those three choices. For request and response formats, parameter tables, and the fields each topic returns, see the [**API Reference**](api-reference/).
 
-## 1. The market pair
+### 1. The market pair
 
 The `base` and `quote` mint addresses identify the pair and its direction. For SOL priced in USDC, `base` is the SOL mint and `quote` is the USDC mint.
 
@@ -24,23 +24,23 @@ Both are optional, but omitting them does not select a default pair — it subsc
 
 The `token` topic is the exception: it tracks a single token through a `mint` parameter and does not use a pair.
 
-## 2. The type of data
+### 2. The type of data
 
 The `topic` selects the data model you receive — individual trades, OHLCV candles, an aggregated price, and so on.
 
-| Topic                                                  | Use it for                                            | Requires |
-| ------------------------------------------------------ | ----------------------------------------------------- | -------- |
-| [`trades`](api-reference/trades-market-data.md)        | Individual trades and maximum calculation flexibility | —        |
-| [`block`](api-reference/block-market-data.md)          | Market activity for each Solana slot                  | —        |
-| [`ohlcv`](api-reference/ohlcv-market-data.md)          | Candles or price charts                               | `window` |
-| [`twap`](api-reference/twap-market-data.md)            | A price weighted by elapsed time                      | `window` |
-| [`vwap`](api-reference/vwap-market-data.md)            | A price weighted by traded volume                     | `window` |
-| [`volume`](api-reference/volume-market-data.md)        | Buy, sell, and total market activity                  | `window` |
-| [`token`](api-reference/token-market-data.md)          | Token metadata                                        | `mint`   |
+| Topic                                           | Use it for                                            | Requires |
+| ----------------------------------------------- | ----------------------------------------------------- | -------- |
+| [`trades`](api-reference/trades-market-data.md) | Individual trades and maximum calculation flexibility | —        |
+| [`block`](api-reference/block-market-data.md)   | Market activity for each Solana slot                  | —        |
+| [`ohlcv`](api-reference/ohlcv-market-data.md)   | Candles or price charts                               | `window` |
+| [`twap`](api-reference/twap-market-data.md)     | A price weighted by elapsed time                      | `window` |
+| [`vwap`](api-reference/vwap-market-data.md)     | A price weighted by traded volume                     | `window` |
+| [`volume`](api-reference/volume-market-data.md) | Buy, sell, and total market activity                  | `window` |
+| [`token`](api-reference/token-market-data.md)   | Token metadata                                        | `mint`   |
 
 Choosing between them is mostly a question of how much processing you want to do yourself. `trades` gives you raw fills to aggregate however you like; the windowed topics hand you a metric that is already calculated.
 
-### Aggregation windows
+#### Aggregation windows
 
 Topics such as `ohlcv`, `twap`, `vwap`, and `volume` use `window` to define their calculation period:
 
@@ -48,9 +48,9 @@ Topics such as `ohlcv`, `twap`, `vwap`, and `volume` use `window` to define thei
 1s, 10s, 30s, 1m, 5m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 24h
 ```
 
-`window` sets the aggregation period only. It does not decide how long you wait for a first result — see [Delivery](#3-delivery) below.
+`window` sets the aggregation period only. It does not decide how long you wait for a first result — see [Delivery](market-data.md#3-delivery) below.
 
-## 3. Delivery
+### 3. Delivery
 
 After accepting a subscription, the service can first send recent rows requested through `hydrate`, then continue streaming live changes. `throttle` controls the minimum interval between those updates.
 

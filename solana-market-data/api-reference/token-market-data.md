@@ -2,6 +2,7 @@
 description: >-
   Stream Solana token metadata by mint address. Complete guide on how to use the
   token topic in GetBlock Solana Market Data documentation.
+hidden: true
 ---
 
 # token - Solana Market Data
@@ -19,7 +20,7 @@ Do not build against this topic yet, and set a client-side timeout on the subscr
 Pass one structured request object to [`getblock_subscribe`](getblock_subscribe-market-data.md), with `"source": "market"` and `"topic": "token"`. The fields below go inside the nested `params` object.
 
 | Parameter  | Type    | Required | Description                                                                             |
-| ---------- | ------- | -------- | ----------------------------------------------------------------------------------------- |
+| ---------- | ------- | -------- | --------------------------------------------------------------------------------------- |
 | `mint`     | string  | Yes      | Base58-encoded mint address of the token to track.                                      |
 | `hydrate`  | integer | No       | Size of the row set to maintain, `1`–`100`.                                             |
 | `throttle` | string  | No       | Minimum interval between pushes. A positive integer followed by `ms`, `s`, `m`, or `h`. |
@@ -132,14 +133,14 @@ The shape below is the specified response for this topic. It could not be captur
 
 ## Response Parameters
 
-| Field      | Type   | Description                                                                     |
-| ---------- | ------ | --------------------------------------------------------------------------------- |
-| `id`       | number | Row identifier. Stable across `updates` and `deletes`.                          |
-| `mint`     | string | Token mint address.                                                             |
-| `name`     | string | Token name.                                                                     |
-| `symbol`   | string | Token ticker symbol.                                                            |
-| `decimals` | string | Decimal precision of the token.                                                 |
-| `supply`   | string | Current token supply.                                                           |
+| Field      | Type   | Description                                            |
+| ---------- | ------ | ------------------------------------------------------ |
+| `id`       | number | Row identifier. Stable across `updates` and `deletes`. |
+| `mint`     | string | Token mint address.                                    |
+| `name`     | string | Token name.                                            |
+| `symbol`   | string | Token ticker symbol.                                   |
+| `decimals` | string | Decimal precision of the token.                        |
+| `supply`   | string | Current token supply.                                  |
 
 ## Use Cases
 
@@ -150,9 +151,9 @@ The shape below is the specified response for this topic. It could not be captur
 
 ## Error Handling
 
-| Code       | Message                                                                                   | Cause                                                                          |
-| ---------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| *(none)*   | *No response*                                                                             | Known issue — the topic accepts the subscription but never acknowledges it.    |
-| `-32602`   | `base must be a base58-encoded 32-byte Solana public key`                                  | `mint` is not a valid mint address.                                            |
-| `-32602`   | `hydrate must be an integer from 1 to 100`                                                | `hydrate` is outside the accepted range.                                       |
-| HTTP `401` | `authorization failed`                                                                    | API key missing, invalid, or the product is not activated on it.               |
+| Code       | Message                                                   | Cause                                                                       |
+| ---------- | --------------------------------------------------------- | --------------------------------------------------------------------------- |
+| _(none)_   | _No response_                                             | Known issue — the topic accepts the subscription but never acknowledges it. |
+| `-32602`   | `base must be a base58-encoded 32-byte Solana public key` | `mint` is not a valid mint address.                                         |
+| `-32602`   | `hydrate must be an integer from 1 to 100`                | `hydrate` is outside the accepted range.                                    |
+| HTTP `401` | `authorization failed`                                    | API key missing, invalid, or the product is not activated on it.            |

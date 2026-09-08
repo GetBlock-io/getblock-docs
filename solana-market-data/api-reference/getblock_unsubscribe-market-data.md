@@ -16,9 +16,9 @@ description: >-
 
 `params` is an array containing exactly **one object**:
 
-| Parameter      | Type   | Required | Description                                                        |
-| -------------- | ------ | -------- | -------------------------------------------------------------------- |
-| `subscription` | string | Yes      | The subscription ID returned by `getblock_subscribe`.              |
+| Parameter      | Type   | Required | Description                                           |
+| -------------- | ------ | -------- | ----------------------------------------------------- |
+| `subscription` | string | Yes      | The subscription ID returned by `getblock_subscribe`. |
 
 {% hint style="danger" %}
 The subscription ID must be wrapped in an object — `[{"subscription": "0x…"}]`. Passing the ID as a bare string, as Solana's own `*Unsubscribe` methods accept, fails with `getblock_unsubscribe params must contain one object`.
@@ -30,6 +30,7 @@ The subscription ID must be wrapped in an object — `[{"subscription": "0x…"}
 {% tab title="wscat" %}
 {% code overflow="wrap" %}
 ```bash
+wscat -c 'wss://stream.eu-central-1.getblock.io/v1/solana-mainnet/stream?apiKey=<API-KEY>'
 # WebSocket-only. On the connection that owns the subscription, send:
 {"jsonrpc":"2.0","id":"getblock.io","method":"getblock_unsubscribe","params":[{"subscription":"0x4503d281ca474f3322ed277fde75db15"}]}
 ```
@@ -71,8 +72,8 @@ await ws.send(json.dumps({
 
 ## Response Parameters
 
-| Field    | Type    | Description                                                                          |
-| -------- | ------- | -------------------------------------------------------------------------------------- |
+| Field    | Type    | Description                                                                                |
+| -------- | ------- | ------------------------------------------------------------------------------------------ |
 | `result` | boolean | `true` when the subscription was cancelled. No further notifications are delivered for it. |
 
 ## Use Cases
@@ -84,7 +85,7 @@ await ws.send(json.dumps({
 
 ## Error Handling
 
-| Code     | Message                                                | Cause                                                                  |
-| -------- | ------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `-32602` | `getblock_unsubscribe params must contain one object`  | `params` was empty, held more than one entry, or the entry was not an object — for example a bare ID string. |
-| `-32602` | `subscription is required`                             | The object was passed without a `subscription` field. Note that `id` is not an accepted alias. |
+| Code     | Message                                               | Cause                                                                                                        |
+| -------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `-32602` | `getblock_unsubscribe params must contain one object` | `params` was empty, held more than one entry, or the entry was not an object — for example a bare ID string. |
+| `-32602` | `subscription is required`                            | The object was passed without a `subscription` field. Note that `id` is not an accepted alias.               |
