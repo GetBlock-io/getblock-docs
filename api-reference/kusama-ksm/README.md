@@ -52,9 +52,9 @@ Replace `<ACCESS-TOKEN>` with the token from the GetBlock dashboard. Each interf
 
 ## Supported Networks
 
-| Network | JSON-RPC (HTTP) | WebSocket (WSS) | Frankfurt, Germany | New York, USA | Singapore, Singapore |
-| ------- | --------------- | --------------- | ------------------ | ------------- | -------------------- |
-| Mainnet | ✅               | ✅               | ✅                  | ❌             | ❌                    |
+| Network | JSON-RPC (HTTP) | WebSocket (WSS) | Substrate | Frankfurt, Germany | New York, USA | Singapore, Singapore |
+| ------- | --------------- | --------------- | --------- | ------------------ | ------------- | -------------------- |
+| Mainnet | ✅               | ✅               | ✅         | ✅                  | ❌             | ❌                    |
 
 ## APIs
 
