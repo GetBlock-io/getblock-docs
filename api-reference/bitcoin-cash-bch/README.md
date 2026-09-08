@@ -51,7 +51,7 @@ https://shared.eu-central-1.getblock.io
 
 | Network | JSON RPC | REST | Blockbook (REST) | Blockbook (WebSocket) |
 | ------- | -------- | ---- | ---------------- | --------------------- |
-| Mainnet | ✅        | ✅    | <p></p><p>✅</p>  | ✅                     |
+| Mainnet | ✅        | ✅    | ✅                | ✅                     |
 
 ### Quickstart
 
@@ -124,7 +124,7 @@ axios.post(url, payload, {
 ```
 {% endcode %}
 
-Replace `<ACCESS-TOKEN>` with your actual access token from GetBlock.
+Replace `<ACCESS-TOKEN>` with your actual GetBlock access token.
 {% endstep %}
 
 {% step %}
@@ -137,11 +137,7 @@ node index.js
 Expected output (example):
 
 ```json
-{
-    "result": 961833,
-    "error": null,
-    "id": "getblock.io"
-}
+Current Block Number: 961833
 ```
 {% endstep %}
 {% endstepper %}

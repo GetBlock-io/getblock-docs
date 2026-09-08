@@ -139,11 +139,7 @@ node index.js
 
 {% code overflow="wrap" %}
 ```bash
-{
-    "jsonrpc": "2.0",
-    "result": "0x18201de",
-    "id": "getblock.io"
-}
+Latest block: 25303817
 ```
 {% endcode %}
 {% endstep %}
