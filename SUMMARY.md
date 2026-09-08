@@ -113,6 +113,16 @@
 * [Getting Started](solana-market-data/getting-started.md)
 * [Market data](solana-market-data/market-data.md)
 * [Priority fee](solana-market-data/priority-fee.md)
+* [API Reference](solana-market-data/api-reference/README.md)
+  * [getblock\_subscribe - Solana Market Data](solana-market-data/api-reference/getblock_subscribe-market-data.md)
+  * [getblock\_unsubscribe - Solana Market Data](solana-market-data/api-reference/getblock_unsubscribe-market-data.md)
+  * [trades - Solana Market Data](solana-market-data/api-reference/trades-market-data.md)
+  * [block - Solana Market Data](solana-market-data/api-reference/block-market-data.md)
+  * [ohlcv - Solana Market Data](solana-market-data/api-reference/ohlcv-market-data.md)
+  * [twap - Solana Market Data](solana-market-data/api-reference/twap-market-data.md)
+  * [vwap - Solana Market Data](solana-market-data/api-reference/vwap-market-data.md)
+  * [volume - Solana Market Data](solana-market-data/api-reference/volume-market-data.md)
+  * [token - Solana Market Data](solana-market-data/api-reference/token-market-data.md)
 
 ## Solana Advanced Data Tools
 
