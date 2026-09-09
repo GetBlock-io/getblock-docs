@@ -7,11 +7,11 @@ icon: chart-candlestick
 
 # How to Build a Live Solana Candlestick Chart with GetBlock Solana Market Data
 
-Every price chart starts the same way: you need candles, and Solana does not hand you any. What the chain gives you is raw transactions across dozens of DEX programs, each with its own instruction layout. To draw a single one-minute candle you have to subscribe to blocks, decode swaps from Raydium, Orca, Meteora and the rest, normalize them into a common trade shape, group those trades into time buckets, and keep the whole pipeline correct while slots keep arriving. That is weeks of work before you render a single wick.
+Every price chart starts the same way: you need candles, and Solana does not hand you any. What the chain gives you is raw transactions across dozens of DEX programs, each with its own instruction layout. To draw a single one-minute candle, you have to subscribe to blocks, decode swaps from Raydium, Orca, Meteora, and the rest, normalize them into a common trade shape, group those trades into time buckets, and keep the whole pipeline correct while slots keep arriving. That is weeks of work before you render a single wick.
 
-**GetBlock Solana Market Data** does that aggregation for you and streams the finished candles over WebSocket, complete with a backfill so your chart is populated the moment it opens.
+[**GetBlock Solana Market Data**](https://app.gitbook.com/s/FOeg95CadVyFvyLi70Bh/solana-market-data) does that aggregation for you and streams the finished candles over WebSocket, complete with a backfill so your chart is populated the moment it opens.
 
-In this guide, you'll build a **live SOL/USDC candlestick chart** that backfills the last hour on startup and then updates in real time as trades land — in about 120 lines of JavaScript.
+In this guide, you'll build a **live SOL/USDC candlestick chart** that backfills the last hour on startup and then updates in real time as trades land.
 
 ### What you'll build
 
@@ -21,7 +21,7 @@ A `createCandleStream(options, onSeries)` function that:
 2. Seeds the chart with the last 60 one-minute candles from the `hydrate` backfill.
 3. Upserts rows by their stable `id`, so the candle that is still open is revised in place.
 4. Removes rows that arrive in `deletes` as they fall out of the window.
-5. Emits a time-sorted candle array that the browser chart redraws on every change.
+5. Emits a time-sorted candle array that the browser chart redraws whenever it changes.
 
 ### How it works
 
@@ -77,41 +77,6 @@ GETBLOCK_API_KEY=your_api_key_here
 
 {% hint style="info" %}
 Solana Market Data passes the key as an `apiKey` **query parameter**, not an `Authorization` header. Because it sits in the URL, keep it server-side — never ship it to the browser.
-{% endhint %}
-{% endstep %}
-
-{% step %}
-### Confirm the stream before writing code
-
-Check the subscription works with `wscat` first, so that any later problem is in your code rather than your key.
-
-```bash
-npm install -g wscat
-wscat -c 'wss://stream.eu-central-1.getblock.io/v1/solana-mainnet/stream?apiKey=<API-KEY>'
-```
-
-Once connected, paste the subscribe request:
-
-{% code overflow="wrap" %}
-```json
-{"jsonrpc":"2.0","id":"getblock.io","method":"getblock_subscribe","params":[{"source":"market","topic":"ohlcv","params":{"base":"So11111111111111111111111111111111111111112","quote":"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v","window":"1m","hydrate":60,"throttle":"1s"}}]}
-```
-{% endcode %}
-
-You should get a subscription ID, then a burst of 60 candles, then a steady trickle of updates.
-
-| Parameter  | Type    | Description                                                                                                     |
-| ---------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| `source`   | string  | `market` for Solana Market Data.                                                                                |
-| `topic`    | string  | `ohlcv` for candles.                                                                                            |
-| `base`     | string  | Mint address of the asset being priced — here, SOL.                                                             |
-| `quote`    | string  | Mint address of the asset pricing it — here, USDC.                                                              |
-| `window`   | string  | Candle period. One of `1s`, `10s`, `30s`, `1m`, `5m`, `30m`, `1h`, `2h`, `4h`, `6h`, `8h`, `12h`, `24h`.         |
-| `hydrate`  | integer | How many candles to keep, `1`–`100`. Sent up front as a backfill, then held at that size.                       |
-| `throttle` | string  | Minimum gap between pushes — `1s` is plenty for a chart.                                                         |
-
-{% hint style="danger" %}
-`base` and `quote` are optional, but leaving them out does **not** give you a default pair — it subscribes you to every market on Solana at once. Always set both.
 {% endhint %}
 {% endstep %}
 
@@ -199,7 +164,7 @@ Candle rows arrive with the payload nested under `params.result`, not `result`. 
 {% step %}
 ### Serve the chart to a browser
 
-A small HTTP server hands out the page and relays each new series over a local WebSocket. Keeping the API key on this side means the browser never sees it.
+A small HTTP server serves the page and relays each new series via a local WebSocket. Keeping the API key on this side means the browser never sees it.
 
 {% code title="server.js" overflow="wrap" %}
 ```js
@@ -334,7 +299,13 @@ Start it:
 node index.js
 ```
 
-Then open [http://localhost:8080](http://localhost:8080). The terminal prints the candle currently being built:
+Then open `http://localhost:8080`
+
+The live URL page looks like this:
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-09-09 at 1.43.59 PM.png" alt=""><figcaption></figcaption></figure>
+
+The terminal prints the candle currently being built:
 
 {% code title="bash" %}
 ```bash
@@ -361,22 +332,7 @@ Read that output closely, because it shows the whole model working:
 
 Each row in `inserts`, `updates`, and `deletes` is one candle. These are the fields the chart uses, plus the ones worth knowing about.
 
-| Field             | Type   | What it tells you                                                                                          |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------ |
-| `id`              | number | Stable identifier for the candle. The key for your local state — the open candle keeps it while it changes. |
-| `window_start`    | string | Start of the candle's period. Use this as the chart's time axis.                                           |
-| `window_end`      | string | End of the candle's period.                                                                                |
-| `window_duration` | string | Period as an ISO 8601 duration — a `1m` window comes back as `PT1M`.                                       |
-| `open`            | string | First price traded in the window, in the quote token.                                                      |
-| `high`            | string | Highest price traded in the window.                                                                        |
-| `low`             | string | Lowest price traded in the window.                                                                         |
-| `close`           | string | Latest price traded — still moving while the window is open.                                               |
-| `open_usd`        | string | Same as `open`, converted to USD. `high_usd`, `low_usd`, `close_usd` follow the same pattern.               |
-| `base_volume`     | string | Volume traded, denominated in the base token.                                                              |
-| `quote_volume`    | string | Volume traded, denominated in the quote token.                                                             |
-| `volume_usd`      | string | Volume traded, expressed in USD.                                                                           |
-| `data_points`     | string | How many trades went into the candle. A low count means a thin, less reliable candle.                      |
-| `base` / `quote`  | string | Mint addresses of the pair, useful when one socket carries several markets.                                |
+<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>What it tells you</th></tr></thead><tbody><tr><td><code>id</code></td><td>number</td><td>Stable identifier for the candle. The key for your local state — the open candle keeps it while it changes.</td></tr><tr><td><code>window_start</code></td><td>string</td><td>Start of the candle's period. Use this as the chart's time axis.</td></tr><tr><td><code>window_end</code></td><td>string</td><td>End of the candle's period.</td></tr><tr><td><code>window_duration</code></td><td>string</td><td>Period as an ISO 8601 duration — a <code>1m</code> window comes back as <code>PT1M</code>.</td></tr><tr><td><code>open</code></td><td>string</td><td>First price traded in the window, in the quote token.</td></tr><tr><td><code>high</code></td><td>string</td><td>Highest price traded in the window.</td></tr><tr><td><code>low</code></td><td>string</td><td>Lowest price traded in the window.</td></tr><tr><td><code>close</code></td><td>string</td><td>Latest price traded — still moving while the window is open.</td></tr><tr><td><code>open_usd</code></td><td>string</td><td>Same as <code>open</code>, converted to USD. <code>high_usd</code>, <code>low_usd</code>, <code>close_usd</code> follow the same pattern.</td></tr><tr><td><code>base_volume</code></td><td>string</td><td>Volume traded, denominated in the base token.</td></tr><tr><td><code>quote_volume</code></td><td>string</td><td>Volume traded, denominated in the quote token.</td></tr><tr><td><code>volume_usd</code></td><td>string</td><td>Volume traded, expressed in USD.</td></tr><tr><td><code>data_points</code></td><td>string</td><td>How many trades went into the candle. A low count means a thin, less reliable candle.</td></tr><tr><td><code>base</code> / <code>quote</code></td><td>string</td><td>Mint addresses of the pair, useful when one socket carries several markets.</td></tr></tbody></table>
 
 {% hint style="info" %}
 Numbers arrive as **strings** so no precision is lost on very small token prices. Convert with `Number()` only at the point you draw or compare, and keep the string if you need to display the exact value.
@@ -384,28 +340,18 @@ Numbers arrive as **strings** so no precision is lost on very small token prices
 
 ## Troubleshooting
 
-| Symptom                                                           | Likely cause                                                                     | Fix                                                                                                    |
-| ----------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| Socket closes instantly with code `1006` and no reason            | The key is rejected during the handshake, and browsers can't surface the `401`   | Check `GETBLOCK_API_KEY` is set and that Solana Market Data is activated on that key.                   |
-| Chart fills with duplicate candles marching sideways              | Appending each message instead of upserting by `id`                              | Key your state by `row.id` and overwrite, as `candles.js` does.                                         |
-| `Cannot read properties of undefined (reading 'result')`          | Treating the subscription acknowledgement as a candle notification               | Return early when `typeof msg.result === 'string'`.                                                     |
-| `Value is null` or a blank chart from `setData`                   | Series not sorted by time, or duplicate timestamps                               | Sort ascending by `time` and keep one row per `id`.                                                     |
-| `window must be one of 1s, 10s, 30s, 1m, …`                       | An unsupported `window` such as `7m`                                             | Use a listed value.                                                                                     |
-| `hydrate must be an integer from 1 to 100`                        | `hydrate` outside the allowed range                                              | Pass a value between `1` and `100`.                                                                     |
-| `base must be a base58-encoded 32-byte Solana public key`         | A malformed or truncated mint address                                            | Copy the full base58 mint for both `base` and `quote`.                                                  |
-| Flooded with candles for pairs you didn't ask for                 | `base` and `quote` were omitted, subscribing you to every market                 | Always set both mints.                                                                                  |
-| Candle count never grows beyond `hydrate`                         | Not a bug — `hydrate` is the size of the retained set, not just a backfill        | Raise `hydrate` (max `100`), or keep evicted candles in your own store.                                 |
+<table data-search="false"><thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead><tbody><tr><td>Socket closes instantly with code <code>1006</code> and no reason</td><td>The key is rejected during the handshake, and browsers can't surface the <code>401</code></td><td>Check <code>GETBLOCK_API_KEY</code> is set and that Solana Market Data is activated on that key.</td></tr><tr><td>Chart fills with duplicate candles marching sideways</td><td>Appending each message instead of upserting by <code>id</code></td><td>Key your state by <code>row.id</code> and overwrite, as <code>candles.js</code> does.</td></tr><tr><td><code>Cannot read properties of undefined (reading 'result')</code></td><td>Treating the subscription acknowledgement as a candle notification</td><td>Return early when <code>typeof msg.result === 'string'</code>.</td></tr><tr><td><code>Value is null</code> or a blank chart from <code>setData</code></td><td>Series not sorted by time, or duplicate timestamps</td><td>Sort ascending by <code>time</code> and keep one row per <code>id</code>.</td></tr><tr><td><code>window must be one of 1s, 10s, 30s, 1m, …</code></td><td>An unsupported <code>window</code> such as <code>7m</code></td><td>Use a listed value.</td></tr><tr><td><code>hydrate must be an integer from 1 to 100</code></td><td><code>hydrate</code> outside the allowed range</td><td>Pass a value between <code>1</code> and <code>100</code>.</td></tr><tr><td><code>base must be a base58-encoded 32-byte Solana public key</code></td><td>A malformed or truncated mint address</td><td>Copy the full base58 mint for both <code>base</code> and <code>quote</code>.</td></tr><tr><td>Flooded with candles for pairs you didn't ask for</td><td><code>base</code> and <code>quote</code> were omitted, subscribing you to every market</td><td>Always set both mints.</td></tr><tr><td>Candle count never grows beyond <code>hydrate</code></td><td>Not a bug — <code>hydrate</code> is the size of the retained set, not just a backfill</td><td>Raise <code>hydrate</code> (max <code>100</code>), or keep evicted candles in your own store.</td></tr></tbody></table>
 
 ## Conclusion
 
-You built a live Solana price chart by subscribing to the `ohlcv` topic on GetBlock Solana Market Data, reconciling the `inserts`, `updates`, and `deletes` change sets into a `Map` keyed by each candle's stable `id`, and relaying the sorted series to a browser that redraws it on every change. The same reconciliation pattern works for every other topic in the product — swap `ohlcv` for `trades`, `vwap`, or `volume` and only the shape of the row changes.
+You built a live Solana price chart by subscribing to the `ohlcv` topic on GetBlock Solana Market Data, reconciling the `inserts`, `updates`, and `deletes` change sets into a `Map` keyed by each candle's stable `id`, and relaying the sorted series to a browser that redraws it on every change. The same reconciliation pattern works for every other topic in the product — swap `ohlcv` for `trades`, `vwap`, or `volume` and only the row's shape changes.
 
 ### Resources
 
 * [Solana Market Data overview](https://docs.getblock.io/solana-market-data/overview)
-* [Market data concepts](https://docs.getblock.io/solana-market-data/market-data)
-* [API Reference — the `ohlcv` topic](https://docs.getblock.io/solana-market-data/api-reference/ohlcv-market-data)
-* [API Reference — `getblock_subscribe`](https://docs.getblock.io/solana-market-data/api-reference/getblock_subscribe-market-data)
+* [Market data concepts](../solana-market-data/market-data.md)
+* [API Reference — the `ohlcv` topic](../solana-market-data/api-reference/ohlcv-market-data.md)
+* [API Reference — `getblock_subscribe`](../solana-market-data/api-reference/getblock_subscribe-market-data.md)
 * [Get an API key](https://account.getblock.io/products/solana-data-stream#api-keys)
 * [Solana Candles Repo](https://github.com/GetBlock-io/guides/tree/main/solana-candles)
 * [Lightweight Charts documentation](https://tradingview.github.io/lightweight-charts/)
