@@ -9,7 +9,7 @@ description: >-
 Before you start:
 
 1. Create a **JSON-RPC** endpoint for the Ethereum blockchain from your GetBlock account.
-2. Replace \<ACCESS\_TOKEN> in the examples below with your actual Access Token.
+2. Replace the endpoint URLs in the examples below with your actual URLs.
 
 {% hint style="info" %}
 Access tokens are region-bound and only work against the host for the region they were issued in. The examples below cover all three regions. Pick the tab that matches your endpoint, or copy the exact URL from your GetBlock Dashboard.
