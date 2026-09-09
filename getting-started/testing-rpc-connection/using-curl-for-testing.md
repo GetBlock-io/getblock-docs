@@ -11,10 +11,16 @@ Before you start:
 1. Create a **JSON-RPC** endpoint for the Ethereum blockchain from your GetBlock account.
 2. Replace \<ACCESS\_TOKEN> in the examples below with your actual Access Token.
 
+{% hint style="info" %}
+Access tokens are region-bound and only work against the host for the region they were issued in. The examples below cover all three regions. Pick the tab that matches your endpoint, or copy the exact URL from your GetBlock Dashboard.
+{% endhint %}
+
 ### Fetch the current block number
 
 Run the following command to retrieve the latest block number:
 
+{% tabs %}
+{% tab title="Frankfurt endpoints" %}
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
 --header 'Content-Type: application/json' \
@@ -25,6 +31,34 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_
     "id": "getblock.io"
 }'
 ```
+{% endtab %}
+
+{% tab title="New York endpoints" %}
+```bash
+curl --location --request POST 'https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "eth_blockNumber",
+    "params": [],
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+
+{% tab title="Singapore endpoints" %}
+```bash
+curl --location --request POST 'https://shared.ap-southeast-1.getblock.io/<ACCESS_TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "eth_blockNumber",
+    "params": [],
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+{% endtabs %}
 
 If successful, the response will include the current block number in hexadecimal value:
 
@@ -40,6 +74,8 @@ If successful, the response will include the current block number in hexadecimal
 
 Identify the blockchain network with the `eth_chainId` method:
 
+{% tabs %}
+{% tab title="Frankfurt endpoints" %}
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
 --header 'Content-Type: application/json' \
@@ -50,6 +86,34 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_
     "id": "getblock.io"
 }'
 ```
+{% endtab %}
+
+{% tab title="New York endpoints" %}
+```bash
+curl --location --request POST 'https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "eth_chainId",
+    "params": [],
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+
+{% tab title="Singapore endpoints" %}
+```bash
+curl --location --request POST 'https://shared.ap-southeast-1.getblock.io/<ACCESS_TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "eth_chainId",
+    "params": [],
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+{% endtabs %}
 
 Response example:
 
@@ -67,6 +131,8 @@ In this example, `0x1` indicates the Ethereum Mainnet. The chain ID helps confir
 
 Retrieve the balance of an Ethereum address using `eth_getBalance`. Replace `<ACCOUNT_ADDRESS>` with the target wallet address:
 
+{% tabs %}
+{% tab title="Frankfurt endpoints" %}
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
 --header 'Content-Type: application/json' \
@@ -77,6 +143,34 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_
     "id": "getblock.io"
 }'
 ```
+{% endtab %}
+
+{% tab title="New York endpoints" %}
+```bash
+curl --location --request POST 'https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "eth_getBalance",
+    "params": ["<ACCOUNT_ADDRESS>", "latest"],
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+
+{% tab title="Singapore endpoints" %}
+```bash
+curl --location --request POST 'https://shared.ap-southeast-1.getblock.io/<ACCESS_TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "method": "eth_getBalance",
+    "params": ["<ACCOUNT_ADDRESS>", "latest"],
+    "id": "getblock.io"
+}'
+```
+{% endtab %}
+{% endtabs %}
 
 Example response:
 

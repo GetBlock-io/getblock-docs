@@ -14,7 +14,11 @@ Using GetBlock’s JSON configuration file with curl is particularly helpful whe
 1. Download the `getblock.config.json` file from your GetBlock account;
 2. Make sure you have [jq](https://jqlang.github.io/jq/download/) installed. jq is a versatile command-line tool that enables extracting values from JSON files;
 3. Navigate to your workspace or directory where you have imported the `getblock.config.json` file and open a terminal;
-4. Now, you can make a GET request to a selected node endpoint using the curl command:
+4. Now, you can make a GET request to a selected node endpoint using the curl command.
+
+{% hint style="info" %}
+Replace `eu-central-1` below with the region your endpoint was actually created in (`us-east-1` for New York, `ap-southeast-1` for Singapore) — the config file's token is region-specific, and pairing it with the wrong host returns an "Unknown token" error even though the token itself is correct.
+{% endhint %}
 
 ```bash
 curl -X GET https://shared.eu-central-1.getblock.io/"$(jq -r '.shared.btc.mainnet.rest[0]' getblock.config.json)"/rest/chaininfo.json

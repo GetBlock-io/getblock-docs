@@ -19,8 +19,8 @@ First, initialize the Web3.js library and set up the connection to a blockchain 
 ```javascript
 const Web3 = require('web3');
 
-//Set up the provider (replace ACCESS-TOKEN with your actual token)
-const web3 = new Web3('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
+//Set up the provider (replace <region> and ACCESS_TOKEN with your actual values)
+const web3 = new Web3('https://shared.<region>.getblock.io/ACCESS_TOKEN');
 ```
 
 Next, we can create an account on the [BNB Smart Chain](https://getblock.io/nodes/bsc/) testnet:

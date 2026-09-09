@@ -51,12 +51,14 @@ Your endpoint URL looks like this:
 
 {% code overflow="wrap" %}
 ```bash
-https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.<region>.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 {% endcode %}
 
 {% hint style="warning" %}
-The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
+`<region>` is `eu-central-1` (Frankfurt), `us-east-1` (New York), or `ap-southeast-1` (Singapore) — whichever you picked in step 2.&#x20;
+
+The long string after the host is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 

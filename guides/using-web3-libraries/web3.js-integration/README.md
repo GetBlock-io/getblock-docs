@@ -38,8 +38,8 @@ dist/web3.min.js
 // Import the Web3 library
 const Web3 = require('web3');
 
-// Set GetBlock as the provider (replace ACCESS_TOKEN with your actual token)
-var web3 = new Web3('https://shared.eu-central-1.getblock.io/ACCESS_TOKEN');
+// Set GetBlock as the provider (replace <region> and ACCESS_TOKEN with your actual values)
+var web3 = new Web3('https://shared.<region>.getblock.io/ACCESS_TOKEN');
 
 // Initialize web3 method
 web3.eth.getBlockNumber().then(console.log);

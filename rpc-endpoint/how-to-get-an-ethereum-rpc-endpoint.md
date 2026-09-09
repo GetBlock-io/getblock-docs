@@ -83,11 +83,11 @@ Once logged in:
 Your endpoint URL looks like this:
 
 ```
-https://shared.eu-central-1.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
+https://shared.<region>.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 ```
 
 {% hint style="warning" %}
-The long string after `shared.eu-central-1.getblock.io/` is your **access token** — keep it private.
+`<region>` is `eu-central-1` (Frankfurt), `us-east-1` (New York), or `ap-southeast-1` (Singapore) — whichever you picked in step 2. The long string after the host is your **access token** — keep it private.
 {% endhint %}
 {% endstep %}
 
@@ -193,7 +193,7 @@ For real-time events (new blocks, pending transactions, log subscriptions), use 
 **WebSocket endpoint format:**
 
 ```
-wss://shared.eu-central-1.getblock.io/<YOUR-ACCESS-TOKEN>/
+wss://shared.<region>.getblock.io/<YOUR-ACCESS-TOKEN>/
 ```
 
 #### Subscribe to new blocks

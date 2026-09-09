@@ -56,7 +56,7 @@ Click 'Get' and have the endpoint URL with an access token generated.
 Generate and add as many access tokens as required for this protocol. Each token is a unique endpoint for you and your application to interact with the blockchain.
 
 {% hint style="info" %}
-All GetBlock endpoints follow a predictable format. The visible difference is the hostname reflecting the region selected during the setup.
+All GetBlock endpoints follow a predictable format. The visible difference is the hostname reflecting the **service** (`shared`, `dedicated`, `limitless`) and the **region** selected during the setup — `eu-central-1` (Frankfurt), `us-east-1` (New York), or `ap-southeast-1` (Singapore).
 
 **Endpoint examples**:
 

@@ -16,13 +16,13 @@ Firstly, you will need to add the TronWeb library to your project.
 npm install tronweb
 ```
 
-* Yarn:&#x20;
+* Yarn:
 
 ```bash
 yarn add tronweb
 ```
 
-In your javascript file, define TronWeb:&#x20;
+In your javascript file, define TronWeb:
 
 ```javascript
 const TronWeb = require('tronweb');
@@ -43,9 +43,13 @@ Which works as a jolly. If you do so, though, the more precise specification has
 
 ```javascript
 const tronWeb = new TronWeb({
-fullHost: "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
+fullHost: "https://shared.<region>.getblock.io/<ACCESS-TOKEN>/"
 })
 ```
+
+{% hint style="info" %}
+`<region>`  is `eu-central-1` (Frankfurt), `us-east-1` (New York), or `ap-southeast-1` (Singapore) — whichever your TRON endpoint was created in. Copy the exact URL from your GetBlock Dashboard.
+{% endhint %}
 
 For retro-compatibility, though, you can continue to use the old approach, where any parameter is passed separately (using the GetBlock node as an example here):
 
