@@ -181,6 +181,7 @@
 * [How to Track Pump.fun Token Mints with GetBlock’s Yellowstone gRPC](guides/how-to-track-pump.fun-token-mints-with-getblocks-yellowstone-grpc.md)
 * [How to Build Basic-level Model-Context Protocol with GetBlock API Endpoints](guides/how-to-build-basic-level-model-context-protocol-with-getblock-api-endpoints.md)
 * [How to Monitor Liquidity Pools on Solana DEXes with GetBlock's Yellowstone gRPC](guides/how-to-monitor-liquidity-pools-on-solana-dexes-with-getblocks-yellowstone-grpc.md)
+* [How to Build a Live Solana Candlestick Chart with GetBlock Solana Market Data](guides/how-to-build-a-live-solana-candlestick-chart-with-getblock-market-data.md)
 * [How to Build Pump.fun to PumpSwap and Raydium Migrations Listener with GetBlock](guides/how-to-build-pump.fun-to-pumpswap-and-raydium-migrations-listener-with-getblock.md)
 * [How to Listen to High-Value SOL Transactions via Yellowstone Geyser gRPC with GetBlock](guides/how-to-listen-to-high-value-sol-transactions-via-yellowstone-geyser-grpc-with-getblock.md)
 * [How to Build a Pay-Per-Request Blockchain API With x402 and GetBlock](guides/how-to-build-a-pay-per-request-blockchain-api-with-x402-and-getblock.md)
