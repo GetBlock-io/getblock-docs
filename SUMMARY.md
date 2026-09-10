@@ -111,7 +111,7 @@
 
 * [Overview](solana-market-data/overview.md)
 * [Getting Started](solana-market-data/getting-started.md)
-* [Market data](solana-market-data/market-data.md)
+* [Market Data](solana-market-data/market-data.md)
 * [Priority fee](solana-market-data/priority-fee.md)
 * [API Reference](solana-market-data/api-reference/README.md)
   * [getblock\_subscribe - Solana Market Data](solana-market-data/api-reference/getblock_subscribe-market-data.md)

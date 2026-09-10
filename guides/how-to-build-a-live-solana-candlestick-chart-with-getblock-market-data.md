@@ -11,6 +11,10 @@ Every price chart starts the same way: you need candles, and Solana does not han
 
 [**GetBlock Solana Market Data**](https://app.gitbook.com/s/FOeg95CadVyFvyLi70Bh/solana-market-data) does that aggregation for you and streams the finished candles over WebSocket, complete with a backfill so your chart is populated the moment it opens.
 
+{% hint style="info" %}
+The GetBlock Solana Market service is a billable service.&#x20;
+{% endhint %}
+
 In this guide, you'll build a **live SOL/USDC candlestick chart** that backfills the last hour on startup and then updates in real time as trades land.
 
 ### What you'll build

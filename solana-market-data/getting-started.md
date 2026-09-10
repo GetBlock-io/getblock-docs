@@ -42,7 +42,9 @@ To choose the market you want to track, provide the mint addresses for:
 
 For example, to receive market data for **SOL/USDC**, select the corresponding **SOL** and **USDC** mint addresses as your base and quote assets.
 
-The selected pair is then applied across the available methods, including **Trades, Blocks, VWAP, TWAP, Volume, and Candles**.
+<figure><img src="../.gitbook/assets/image (4).png" alt="Solana market data parameter on playground"><figcaption></figcaption></figure>
+
+The selected pair is then applied across the available methods, including **Trades, Blocks,** [**VWAP**](#user-content-fn-1)[^1]**,** [**TWAP**](#user-content-fn-2)[^2]**, Volume, and** [**OHLCV**](#user-content-fn-3)[^3].
 
 {% hint style="info" %}
 You can select the Base Mint and Quote Mint directly in the [**Playground**](https://account.getblock.io/products/solana-data-stream#playground) to explore the data for a specific pair before integrating it into your application.
@@ -54,7 +56,7 @@ You can select the Base Mint and Quote Mint directly in the [**Playground**](htt
 
 Choose the method that best matches your use case:
 
-<table data-search="false"><thead><tr><th>Method</th><th>Best for</th></tr></thead><tbody><tr><td><strong>Trades</strong></td><td>Individual normalized trades</td></tr><tr><td><strong>Blocks</strong></td><td>Market activity aggregated by Solana slot</td></tr><tr><td><strong>VWAP</strong></td><td>Volume-weighted market price</td></tr><tr><td><strong>TWAP</strong></td><td>Time-weighted market price</td></tr><tr><td><strong>Volume</strong></td><td>Trading activity and traded volume</td></tr><tr><td><strong>Candles</strong></td><td>OHLCV charts and price visualization</td></tr><tr><td><strong>Buy/Sell Activity</strong></td><td>Comparing buying and selling activity</td></tr></tbody></table>
+<table data-search="false"><thead><tr><th>Method</th><th>Best for</th></tr></thead><tbody><tr><td><strong>Trades</strong></td><td>Individual normalized trades</td></tr><tr><td><strong>Blocks</strong></td><td>Market activity aggregated by Solana slot</td></tr><tr><td><strong>VWAP</strong></td><td>Volume-weighted market price</td></tr><tr><td><strong>TWAP</strong></td><td>Time-weighted market price</td></tr><tr><td><strong>Volume</strong></td><td>Trading activity and traded volume</td></tr><tr><td><strong>OHLCV</strong></td><td>OHLCV charts and price visualization(candles)</td></tr><tr><td><strong>Token</strong></td><td>Comparing buying and selling activity</td></tr></tbody></table>
 
 ### 4. Select how you want to consume the data
 
@@ -116,6 +118,8 @@ Use it to:
 4. send a query or start a stream;
 5. inspect the returned data.
 
+<figure><img src="../.gitbook/assets/Screenshot 2026-09-10 at 3.20.16 PM.png" alt="Solana market data playground"><figcaption></figcaption></figure>
+
 The Playground uses the same concepts exposed through the API, making it useful for understanding a method before integrating it into your application.
 
 ### 6. Integrate it into your application
@@ -132,4 +136,10 @@ graph TD
   D --> E[Use the data in your application]
 ```
 
-For exact request parameters, response fields, and streaming behavior, continue to the documentation for the specific **Market Data method** or see the **API Reference**.
+For exact request parameters, response fields, and streaming behavior, continue to the documentation for the specific [**Market Data method** ](market-data.md)or see the [**API Reference**](api-reference/).
+
+[^1]: VWAP stands for **Volume-Weighted Average Price**, a technical analysis indicator that shows the average price a security has traded at throughout the day, weighted by its trading volume
+
+[^2]: TWAP stands for Time-Weighted Average Price, an algorithmic strategy that breaks a large trade into smaller pieces executed at regular time intervals.
+
+[^3]: **OHLCV** stands for **Open, High, Low, Close, and Volume**, which are the five core data points used to summarize price movement and trading activity for any financial asset over a specific time frame
