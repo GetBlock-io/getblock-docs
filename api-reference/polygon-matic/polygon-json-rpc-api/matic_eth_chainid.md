@@ -207,7 +207,7 @@ console.log('Chain ID:', chainId);
 {% tab title="Web3.js" %}
 {% code title="Web3.js" %}
 ```javascript
-import Web3 from 'web3';
+import { Web3 } from 'web3';
 
 const web3 = new Web3('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 

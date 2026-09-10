@@ -17,13 +17,12 @@ Instead of getting non-factual or hallucinated answers, your AI assistant connec
 
 ### What it can do
 
-The server exposes four tools to any connected agent:
+The server exposes three tools to any connected agent:
 
 | Tool                  | What the agent does with it                                                         |
 | --------------------- | ----------------------------------------------------------------------------------- |
 | `searchDocumentation` | Searches all of docs.getblock.io and returns matching pages with excerpts and links |
 | `getPage`             | Fetches the full markdown content of a specific docs page by URL                    |
-| `askQuestion`         | Asks a question and gets an answer grounded in the documentation                    |
 | `sendFeedback`        | Sends feedback about the documentation back to the GetBlock team                    |
 
 Once connected, ask your assistant things like:

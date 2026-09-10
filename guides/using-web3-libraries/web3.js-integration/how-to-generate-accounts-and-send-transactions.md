@@ -17,7 +17,7 @@ So, to broadcast transactions to a decentralized network, we need first to creat
 First, initialize the Web3.js library and set up the connection to a blockchain node:
 
 ```javascript
-const Web3 = require('web3');
+const { Web3 } = require('web3');
 
 //Set up the provider (replace <region> and ACCESS_TOKEN with your actual values)
 const web3 = new Web3('https://shared.<region>.getblock.io/ACCESS_TOKEN');

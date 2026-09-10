@@ -157,6 +157,8 @@ RPC_URL=https://shared.eu-central-1.getblock.io/YOUR_GETBLOCK_TOKEN/
 ```javascript
 const provider = new JsonRpcProvider(process.env.RPC_URL);
 ```
+
+Load the `.env` file when you run the script, either with `node --env-file=.env your-script.js` (Node.js 20.6+) or by calling `require('dotenv').config()` at the top of your code.
 {% endstep %}
 
 {% step %}
@@ -166,6 +168,9 @@ Run a quick check:
 
 {% code overflow="wrap" %}
 ```bash
+# Load .env into the current shell so $RPC_URL is set
+set -a && source .env && set +a
+
 curl -X POST $RPC_URL \
   -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'

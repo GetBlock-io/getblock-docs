@@ -35,8 +35,8 @@ dist/web3.min.js
 ### Set up your connection to GetBlock
 
 ```javascript
-// Import the Web3 library
-const Web3 = require('web3');
+// Import the Web3 library (v4 exports Web3 as a named export)
+const { Web3 } = require('web3');
 
 // Set GetBlock as the provider (replace <region> and ACCESS_TOKEN with your actual values)
 var web3 = new Web3('https://shared.<region>.getblock.io/ACCESS_TOKEN');
@@ -45,4 +45,4 @@ var web3 = new Web3('https://shared.<region>.getblock.io/ACCESS_TOKEN');
 web3.eth.getBlockNumber().then(console.log);
 ```
 
-For additional methods and options, refer to the official [Web3.js documentation](https://web3js.readthedocs.io/en/v1.10.0/index.html).
+For additional methods and options, refer to the official [Web3.js documentation](https://docs.web3js.org/).

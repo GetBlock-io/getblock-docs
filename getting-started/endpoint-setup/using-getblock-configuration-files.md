@@ -45,17 +45,17 @@ const { getblock } = require('./getblock.config.js');
 
 ```javascript
 const { getblock } = require('./getblock.config.js');
-var Web3 = require('web3');
+const { Web3, HttpProvider, WebSocketProvider } = require('web3');
 
 // Create the JSON-RPC provider
-var web3Rpc = new Web3(new Web3.providers.HttpProvider(
+var web3Rpc = new Web3(new HttpProvider(
         getblock.shared.eth.mainnet.rpc[0].go()
 ));
 
 // Create the WebSocket provider
-var web3Ws = new Web3.providers.WebsocketProvider(
+var web3Ws = new WebSocketProvider(
         `wss://shared.eu-central-1.getblock.io/${getblock.shared.eth.mainnet.ws[0].token()}`
-));
+);
 ```
 
 Use `go()` method to access an entire endpoint or `token()` to fetch the token.
