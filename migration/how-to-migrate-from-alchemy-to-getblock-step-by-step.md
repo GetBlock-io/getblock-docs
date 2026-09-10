@@ -11,15 +11,7 @@ Switching RPC providers sounds harder than it is. In most cases, it's literally 
 
 ## Why Teams Switch from Alchemy to GetBlock
 
-| Reason                   | Details                                                      |
-| ------------------------ | ------------------------------------------------------------ |
-| **More chains**          | GetBlock supports 130+ blockchains vs Alchemy's \~70         |
-| **Lower cost at scale**  | GetBlock Pro ($499/mo, 1B CU) vs comparable Alchemy tiers    |
-| **Geographic control**   | Choose your endpoint region (Frankfurt, New York, Singapore) |
-| **Archive on all plans** | Including the free tier — Alchemy requires paid plans        |
-| **Solana HFT tools**     | StreamFirst, LandFirst, TradeFirst — no Alchemy equivalent   |
-| **BSC private mempool**  | BloXroute BDN integration — not available on Alchemy         |
-| **Simpler pricing**      | Predictable CU tiers vs Alchemy's compute unit complexity    |
+<table data-search="false"><thead><tr><th>Reason</th><th>Details</th></tr></thead><tbody><tr><td><strong>More chains</strong></td><td>GetBlock supports 130+ blockchains vs Alchemy's ~70</td></tr><tr><td><strong>Lower cost at scale</strong></td><td>GetBlock Pro ($499/mo, 1B CU) vs comparable Alchemy tiers</td></tr><tr><td><strong>Geographic control</strong></td><td>Choose your endpoint region (Frankfurt, New York, Singapore)</td></tr><tr><td><strong>Archive on all plans</strong></td><td>Including the free tier — Alchemy requires paid plans</td></tr><tr><td><strong>Solana HFT tools</strong></td><td>StreamFirst, LandFirst, TradeFirst — no Alchemy equivalent</td></tr><tr><td><strong>BSC private mempool</strong></td><td>BloXroute BDN integration — not available on Alchemy</td></tr><tr><td><strong>Simpler pricing</strong></td><td>Predictable CU tiers vs Alchemy's compute unit complexity</td></tr></tbody></table>
 
 ### How to Switch From Alchemy To GetBlock
 
@@ -183,22 +175,7 @@ If you get a valid response with a block number, you're good.
 
 ## Feature Mapping: Alchemy → GetBlock
 
-| Alchemy Feature     | GetBlock Equivalent  | Notes                                           |
-| ------------------- | -------------------- | ----------------------------------------------- |
-| RPC Endpoints       | ✅ Shared Nodes       | Same JSON-RPC methods                           |
-| WebSocket           | ✅ WebSocket support  | Same subscription methods                       |
-| Archive data        | ✅ Archive mode       | Available on all plans (Alchemy requires paid)  |
-| Debug/Trace         | ✅ Trace & Debug      | Available on Starter+                           |
-| NFT API             | ❌ Not available      | Use third-party NFT APIs                        |
-| Token API           | ❌ Not available      | Use standard RPC methods or third-party         |
-| Notify (webhooks)   | ✅ Blockchain Tracker | GetBlock's webhook solution                     |
-| Enhanced APIs       | Standard RPC         | GetBlock focuses on RPC infrastructure          |
-| Alchemy SDK         | Standard libraries   | Use ethers.js, web3.js directly                 |
-| Dashboard analytics | ✅ Statistics         | Method tracking, CU monitoring                  |
-| Multi-chain         | ✅ 130+ chains        | More chains than Alchemy (\~70)                 |
-| Regional selection  | ✅ 3 regions          | Alchemy doesn't offer explicit region selection |
-| Dedicated Nodes     | ✅ Dedicated Nodes    | From $1,000/mo, unlimited requests              |
-| Team accounts       | ✅ Team accounts      | Up to 30 users, role-based access               |
+<table data-search="false"><thead><tr><th>Alchemy Feature</th><th>GetBlock Equivalent</th><th>Notes</th></tr></thead><tbody><tr><td>RPC Endpoints</td><td>✅ Shared Nodes</td><td>Same JSON-RPC methods</td></tr><tr><td>WebSocket</td><td>✅ WebSocket support</td><td>Same subscription methods</td></tr><tr><td>Archive data</td><td>✅ Archive mode</td><td>Available on all plans (Alchemy requires paid)</td></tr><tr><td>Debug/Trace</td><td>✅ Trace &#x26; Debug</td><td>Available on Starter+</td></tr><tr><td>NFT API</td><td>❌ Not available</td><td>Use third-party NFT APIs</td></tr><tr><td>Token API</td><td>❌ Not available</td><td>Use standard RPC methods or third-party</td></tr><tr><td>Notify (webhooks)</td><td>✅ Blockchain Tracker</td><td>GetBlock's webhook solution</td></tr><tr><td>Enhanced APIs</td><td>Standard RPC</td><td>GetBlock focuses on RPC infrastructure</td></tr><tr><td>Alchemy SDK</td><td>Standard libraries</td><td>Use ethers.js, web3.js directly</td></tr><tr><td>Dashboard analytics</td><td>✅ Statistics</td><td>Method tracking, CU monitoring</td></tr><tr><td>Multi-chain</td><td>✅ 130+ chains</td><td>More chains than Alchemy (~70)</td></tr><tr><td>Regional selection</td><td>✅ 3 regions</td><td>Alchemy doesn't offer explicit region selection</td></tr><tr><td>Dedicated Nodes</td><td>✅ Dedicated Nodes</td><td>From $1,000/mo, unlimited requests</td></tr><tr><td>Team accounts</td><td>✅ Team accounts</td><td>Up to 30 users, role-based access</td></tr></tbody></table>
 
 ### What You'll Gain
 
@@ -271,4 +248,4 @@ Yes. Create endpoints for each chain in your GetBlock dashboard and update the U
 
 </details>
 
-<a href="https://account.getblock.io" class="button primary"> Ready to switch? and have your new endpoints running in under 5 minutes.</a>
+<a href="https://account.getblock.io" class="button primary">Ready to switch? and have your new endpoints running in under 5 minutes.</a>
