@@ -54,7 +54,7 @@ If the network fees are insufficient or the transaction fails, the payment will 
 
 ### GetBlock Credits
 
-GetBlock Credits are a universal, USD-denominated prepaid balance you can use to pay for any service on the platform — Shared Node subscriptions, Dedicated Nodes, Limitless plans, CU top-ups, and on-demand Products in the dashboard's **Products** tab (Wallet Audit, AML Checks, TRON Energy delegation, Solana Shred Streaming, Solana Market Data, etc.)
+GetBlock Credits are a universal, USD-denominated prepaid balance you can use to pay for any service on the platform — Shared Node subscriptions, Dedicated Nodes, Limitless plans, CU top-ups, and on-demand Products (Wallet Audit, AML Checks, TRON Energy delegation, Solana Shred Streaming, Solana Market Data, etc.)
 
 **How it works:**
 
@@ -65,7 +65,7 @@ GetBlock Credits are a universal, USD-denominated prepaid balance you can use to
 
 #### How to top up Credits
 
-1. Go to **Billing** in your dashboard and select "**Top up Credits**."&#x20;
+1. Go to **Billing** in your dashboard and select "**Top up Credits**."
 2. Choose a preset amount (e.g. $10, $50, $100) or enter a custom value
 3. Pick a payment method to fund it: card payments via Stripe, or crypto via NOWPayments.
 
@@ -76,6 +76,6 @@ The Billing page shows your current balance, top-up history, and invoices.
 {% hint style="info" %}
 #### Paying for RPC services (Shared Node plans, Dedicated Nodes, Limitless Node) with Credits
 
-* Only **one-time payment** is supported — recurring billing via Credits isn't available yet.
+* At the payment step, enable the **Subscription** toggle to use recurring billing. Your subscription renews automatically, and Credits are deducted at the end of each billing period.
 * Your balance needs to cover tax as well as the plan price. Top up enough to cover the plan price _plus_ tax.
 {% endhint %}
