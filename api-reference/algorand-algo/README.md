@@ -211,7 +211,7 @@ python main.py
 
 ## APIs
 
-* [algod REST API](algod-rest-api/) — the node daemon: status, blocks, accounts, assets, applications, suggested params, submission, and TEAL compile
+* [Algod REST API](algod-rest-api/) — the node daemon: status, blocks, accounts, assets, applications, suggested params, submission, and TEAL compile
 * [Indexer REST API](indexer-rest-api/) — archival search over transactions, accounts, assets, applications, and blocks
 
 ## Support
