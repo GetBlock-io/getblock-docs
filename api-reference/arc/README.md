@@ -6,7 +6,7 @@ description: >-
 
 # ARC
 
-Arc is an open Layer 1 blockchain built by Circle (the company behind USDC), purpose-built for stablecoin finance, payments, and institutional use cases. Launched on public testnet in late 2025 with participation from 100+ institutions, including BlackRock, Visa, and HSBC, Arc takes a fundamentally different approach to gas economics: instead of a volatile native token, **USDC is the network's native gas token**, making transaction fees predictable and dollar-denominated.&#x20;
+Arc is an open Layer 1 blockchain built by Circle (the company behind USDC), purpose-built for stablecoin finance, payments, and institutional use cases. Launched in late 2026 with participation from 100+ institutions, including BlackRock, Visa, and HSBC, Arc takes a fundamentally different approach to gas economics: instead of a volatile native token, **USDC is the network's native gas token**, making transaction fees predictable and dollar-denominated.
 
 Arc is fully EVM-compatible, runs on Circle's Malachite consensus engine for deterministic sub-second finality, and ships with a built-in FX engine for 24/7 PvP stablecoin settlement plus opt-in compliance-friendly privacy. The result is a chain optimized for real-world financial activity — cross-border payments, capital markets, eCommerce checkout, and tokenized credit — that retains the developer experience of Ethereum.
 
@@ -39,8 +39,7 @@ Arc uses USDC as its native gas token, with **6 decimals** (not 18 like most EVM
 
 | Property          | Value                                               |
 | ----------------- | --------------------------------------------------- |
-| Network Name      | Arc Testnet                                         |
-| Stage             | Public testnet (mainnet not yet launched)           |
+| Network Name      | Arc                                                 |
 | Chain ID          | 5042002 (`0x4cef52`)                                |
 | Native Currency   | USDC                                                |
 | Decimals          | 6 (not 18 — see warning above)                      |
@@ -69,8 +68,7 @@ All Arc JSON-RPC methods are called by sending a `POST` request to the base URL 
 | Network | JSON-RPC | WSS | Frankfurt, Germany |
 | ------- | -------- | --- | ------------------ |
 | Testnet | ✅        | ✅   | ✅                  |
-
-Arc mainnet has not yet launched. This documentation targets the **public testnet** (Chain ID `5042002`), which is the current stable development environment.
+| Mainnet | ✅        | ✅   | ✅                  |
 
 ## Quickstart
 
