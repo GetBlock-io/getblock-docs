@@ -6,7 +6,7 @@ description: >-
 
 # net\_version - ARC
 
-This method returns the current network ID as a decimal string. For Arc testnet the value is `"5042002"`. Note this returns a decimal string, unlike `eth_chainId` which returns hex.
+This method returns the current network ID as a decimal string. For Arc mainnet the value is `"5042"`. Note this returns a decimal string, unlike `eth_chainId` which returns hex.
 
 ## Parameters
 
