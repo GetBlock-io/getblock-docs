@@ -37,19 +37,19 @@ Arc uses USDC as its native gas token, with **6 decimals** (not 18 like most EVM
 
 ## Network Information
 
-| Property          | Value                                               |
-| ----------------- | --------------------------------------------------- |
-| Network Name      | Arc                                                 |
-| Chain ID          | 5042002 (`0x4cef52`)                                |
-| Native Currency   | USDC                                                |
-| Decimals          | 6 (not 18 — see warning above)                      |
-| Block Time        | \~2 seconds                                         |
-| Consensus         | Malachite (deterministic sub-second finality)       |
-| Smart Contract VM | EVM (Ethereum Virtual Machine)                      |
-| EVM Compatible    | Yes (fully compatible)                              |
-| Address Format    | Ethereum-style (`0x…`, 20 bytes)                    |
-| Block Explorer    | [testnet.arcscan.app](https://testnet.arcscan.app/) |
-| Faucet            | [faucet.circle.com](https://faucet.circle.com/)     |
+| Property          | Value                                           |
+| ----------------- | ----------------------------------------------- |
+| Network Name      | Arc                                             |
+| Chain ID          | **5042** (`0x13b2`)                             |
+| Native Currency   | USDC                                            |
+| Decimals          | 6 (not 18 — see warning above)                  |
+| Block Time        | \~2 seconds                                     |
+| Consensus         | Malachite (deterministic sub-second finality)   |
+| Smart Contract VM | EVM (Ethereum Virtual Machine)                  |
+| EVM Compatible    | Yes (fully compatible)                          |
+| Address Format    | Ethereum-style (`0x…`, 20 bytes)                |
+| Block Explorer    | [arcexplorer.org](https://www.arcexplorer.org/) |
+| Faucet            | [faucet.circle.com](https://faucet.circle.com/) |
 
 ## Base URL
 
@@ -59,16 +59,24 @@ Arc uses USDC as its native gas token, with **6 decimals** (not 18 like most EVM
 https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 ```
 {% endtab %}
+
+{% tab title="New York, USA" %}
+{% code overflow="wrap" %}
+```bash
+https://shared.us-east-1.getblock.io/<ACCESS-TOKEN>/
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 All Arc JSON-RPC methods are called by sending a `POST` request to the base URL with a standard JSON-RPC 2.0 body. For real-time subscriptions (new blocks, finalized heads, logs) use the WebSocket scheme: `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`.
 
 ## Supported Networks
 
-| Network | JSON-RPC | WSS | Frankfurt, Germany |
-| ------- | -------- | --- | ------------------ |
-| Testnet | ✅        | ✅   | ✅                  |
-| Mainnet | ✅        | ✅   | ✅                  |
+| Network | JSON-RPC | WSS | Frankfurt, Germany | New York, USA | Singapore, Singapore |
+| ------- | -------- | --- | ------------------ | ------------- | -------------------- |
+| Mainnet | ✅        | ✅   | ✅                  | ✅             | ❌                    |
+| Testnet | ✅        | ✅   | ✅                  | ❌             | ❌                    |
 
 ## Quickstart
 
@@ -161,7 +169,7 @@ Expected output:
 {
     "jsonrpc": "2.0",
     "id": "getblock.io",
-    "result": "0x4cef52"
+    "result": "0x13b2"
 }
 ```
 
@@ -251,7 +259,7 @@ Arc exposes the full standard Ethereum JSON-RPC method set. All methods are POST
 | Method                                | Description                                                   |
 | ------------------------------------- | ------------------------------------------------------------- |
 | eth\_blockNumber                      | Returns the current latest block number                       |
-| eth\_chainId                          | Returns the chain ID (`0x4cef52` = 5042002 for Arc testnet)   |
+| eth\_chainId                          | Returns the chain ID                                          |
 | eth\_getBlockByNumber                 | Returns block information by block number                     |
 | eth\_getBlockByHash                   | Returns block information by block hash                       |
 | eth\_getBlockTransactionCountByNumber | Returns the number of transactions in a block by block number |
@@ -312,7 +320,7 @@ Arc exposes the full standard Ethereum JSON-RPC method set. All methods are POST
 
 | Method              | Description                                                        |
 | ------------------- | ------------------------------------------------------------------ |
-| net\_version        | Returns the network ID (`5042002` for Arc testnet)                 |
+| net\_version        | Returns the network ID                                             |
 | net\_listening      | Returns `true` if the client is actively listening for connections |
 | net\_peerCount      | Returns the number of peers connected to the node                  |
 | web3\_clientVersion | Returns the client software version                                |

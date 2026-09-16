@@ -6,7 +6,7 @@ description: >-
 
 # eth\_chainId - ARC
 
-This method returns the chain ID of the connected network. For Arc testnet, the result is `0x4cef52` (5042002 in decimal). Chain ID is used in EIP-155 signed transactions to prevent replay attacks across chains and is the canonical fingerprint for Arc.
+This method returns the chain ID of the connected network. Chain ID is used in EIP-155 signed transactions to prevent replay attacks across chains and is the canonical fingerprint for Arc.
 
 ## Parameters
 
@@ -116,16 +116,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {
     "jsonrpc": "2.0",
     "id": "getblock.io",
-    "result": "0x4cef52"
+    "result": "0x13b2"
 }
 ```
 {% endcode %}
 
 ## Response Parameters
 
-| Field  | Type   | Description                                                                                |
-| ------ | ------ | ------------------------------------------------------------------------------------------ |
-| result | string | Chain ID in hexadecimal (`0x4cef52` = 5042002 testnet; mainnet chain ID not yet published) |
+| Field  | Type   | Description                               |
+| ------ | ------ | ----------------------------------------- |
+| result | string | Chain ID in hexadecimal (`0x13b2` = 5042  |
 
 ## Use Cases
 
