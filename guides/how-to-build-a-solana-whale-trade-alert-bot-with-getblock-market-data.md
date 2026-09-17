@@ -1,8 +1,7 @@
 ---
 description: >-
-  A step-by-step guide to building a bot that alerts on large SOL/USDC trades
-  in real time, with buy/sell pressure context, using GetBlock Solana Market
-  Data.
+  A step-by-step guide to building a bot that alerts on large SOL/USDC trades in
+  real time, with buy/sell pressure context, using GetBlock Solana Market Data.
 icon: bell
 ---
 
@@ -12,7 +11,7 @@ When a wallet swaps $30,000 of SOL in one go, the traders watching know about it
 
 **GetBlock Solana Market Data** streams trades that are already decoded and normalized across venues, together with rolling buy/sell volume, over a single WebSocket.
 
-In this guide, you'll build a **whale trade alert bot that flags every SOL/USDC trade above a size you choose**, adds the market's current buy/sell pressure to each alert, and recovers trades it missed during a short disconnect.
+_In this guide, you'll build a **whale trade alert bot that flags every SOL/USDC trade above a size you choose**, adds the market's current buy/sell pressure to each alert, and recovers trades it missed during a short disconnect._
 
 ### What you'll build
 
@@ -76,51 +75,17 @@ npm install dotenv
 Create a `.env` file in the project root:
 
 ```bash
-GETBLOCK_API_KEY=your_api_key_here
+GETBLOCK_API_KEY=your_api_key_here 
 MIN_USDC=10000
 ```
 
-`MIN_USDC` is the smallest trade that triggers an alert, measured in the quote token. For SOL/USDC that is effectively US dollars. At `10000`, a test run produced eight alerts in four minutes, several landing in the same second. Raise it for fewer, bigger alerts.
-
 {% hint style="info" %}
 The API key travels in the `apiKey` query parameter of the WebSocket URL, not in a header. Keep it in `.env` and out of version control.
+
+Get your API KEY from [your GetBlock dashboard](https://account.getblock.io/products/solana-data-stream#api-keys)
 {% endhint %}
-{% endstep %}
 
-{% step %}
-### Confirm the stream with wscat
-
-Before writing code, check that your key can open both subscriptions on one connection.
-
-```bash
-npm install -g wscat
-wscat -c 'wss://stream.eu-central-1.getblock.io/v1/solana-mainnet/stream?apiKey=<API-KEY>'
-```
-
-Paste the two requests one after the other:
-
-{% code overflow="wrap" %}
-```json
-{"jsonrpc":"2.0","id":1,"method":"getblock_subscribe","params":[{"source":"market","topic":"trades","params":{"base":"So11111111111111111111111111111111111111112","quote":"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v","hydrate":100,"throttle":"250ms"}}]}
-{"jsonrpc":"2.0","id":2,"method":"getblock_subscribe","params":[{"source":"market","topic":"volume","params":{"base":"So11111111111111111111111111111111111111112","quote":"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v","window":"5m","hydrate":1,"throttle":"1s"}}]}
-```
-{% endcode %}
-
-Each request returns its own subscription ID. Every later message names one of those IDs in `params.subscription`, which is how the bot tells trades from volume on a single socket.
-
-| Parameter  | Type    | Description                                                                                                  |
-| ---------- | ------- | -------------------------------------------------------------------------------------------------------------- |
-| `source`   | string  | `market` for Solana Market Data.                                                                             |
-| `topic`    | string  | `trades` for individual fills, `volume` for windowed buy/sell activity.                                      |
-| `base`     | string  | Mint address of the asset being traded — here, SOL.                                                          |
-| `quote`    | string  | Mint address of the asset it is priced in — here, USDC.                                                      |
-| `window`   | string  | `volume` only. Aggregation period, one of `1s`, `10s`, `30s`, `1m`, `5m`, `30m`, `1h`, `2h`, `4h`, `6h`, `8h`, `12h`, `24h`. |
-| `hydrate`  | integer | Rows the subscription retains, `1`–`100`, sent first as a backfill. Defaults to `100` when omitted.          |
-| `throttle` | string  | Minimum gap between pushes, such as `250ms` or `1s`.                                                          |
-
-{% hint style="danger" %}
-Always set both `base` and `quote`. Leaving them out does not select a default pair — it subscribes you to every market on Solana at once.
-{% endhint %}
+`MIN_USDC` is the smallest trade that triggers an alert, measured in the quote token. For SOL/USDC that is effectively US dollars. At `10000`, a test run produced eight alerts in four minutes, several landing in the same second. Raise it for fewer, bigger alerts.
 {% endstep %}
 
 {% step %}
@@ -379,35 +344,11 @@ Each alert shows the side and size of the trade, its execution price, and how th
 
 The bot reads these fields from the two topics. Numbers arrive as strings to preserve precision, so convert them with `Number()` only where you compare or format them.
 
-| Field                   | Type    | What it tells you                                                                                          |
-| ----------------------- | ------- | ------------------------------------------------------------------------------------------------------------ |
-| `id`                    | number  | Stable identifier for the row. The bot's key for de-duplicating alerts.                                    |
-| `quote_volume`          | string  | `trades`: how much of the quote token changed hands. For SOL/USDC, the trade's size in dollars.           |
-| `base_volume`           | string  | `trades`: how much SOL changed hands, already adjusted for decimals.                                       |
-| `price`                 | string  | `trades`: execution price in the quote token.                                                              |
-| `is_buy`                | boolean | `trades`: `true` when the trade is classified as a buy.                                                    |
-| `signer`                | string  | `trades`: the wallet that signed the transaction — the "whale".                                            |
-| `signature`             | string  | `trades`: the transaction signature, used for the Solscan link.                                            |
-| `timestamp`             | string  | `trades`: when the trade happened, in ISO 8601 format.                                                     |
-| `slot`                  | string  | `trades`: the Solana slot the trade landed in.                                                             |
-| `buy_sell_ratio`        | string  | `volume`: buy volume divided by sell volume for the window. Above `1` means net buying.                    |
-| `total_swaps`           | string  | `volume`: how many swaps the window contains. A low count means the ratio rests on little data.            |
-| `buy_volume` / `sell_volume` | string | `volume`: the two sides of the ratio, in the base token.                                               |
-| `window_start`          | string  | `volume`: start of the window, used to pick the most recent one.                                            |
+<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>What it tells you</th></tr></thead><tbody><tr><td><code>id</code></td><td>number</td><td>Stable identifier for the row. The bot's key for de-duplicating alerts.</td></tr><tr><td><code>quote_volume</code></td><td>string</td><td><code>trades</code>: how much of the quote token changed hands. For SOL/USDC, the trade's size in dollars.</td></tr><tr><td><code>base_volume</code></td><td>string</td><td><code>trades</code>: how much SOL changed hands, already adjusted for decimals.</td></tr><tr><td><code>price</code></td><td>string</td><td><code>trades</code>: execution price in the quote token.</td></tr><tr><td><code>is_buy</code></td><td>boolean</td><td><code>trades</code>: <code>true</code> when the trade is classified as a buy.</td></tr><tr><td><code>signer</code></td><td>string</td><td><code>trades</code>: the wallet that signed the transaction — the "whale".</td></tr><tr><td><code>signature</code></td><td>string</td><td><code>trades</code>: the transaction signature, used for the Solscan link.</td></tr><tr><td><code>timestamp</code></td><td>string</td><td><code>trades</code>: when the trade happened, in ISO 8601 format.</td></tr><tr><td><code>slot</code></td><td>string</td><td><code>trades</code>: the Solana slot the trade landed in.</td></tr><tr><td><code>buy_sell_ratio</code></td><td>string</td><td><code>volume</code>: buy volume divided by sell volume for the window. Above <code>1</code> means net buying.</td></tr><tr><td><code>total_swaps</code></td><td>string</td><td><code>volume</code>: how many swaps the window contains. A low count means the ratio rests on little data.</td></tr><tr><td><code>buy_volume</code> / <code>sell_volume</code></td><td>string</td><td><code>volume</code>: the two sides of the ratio, in the base token.</td></tr><tr><td><code>window_start</code></td><td>string</td><td><code>volume</code>: start of the window, used to pick the most recent one.</td></tr></tbody></table>
 
 ## Troubleshooting
 
-| Symptom                                                                 | Likely cause                                                                          | Fix                                                                                                      |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `Stream closed (code 1006)` repeating with growing delays               | The key is rejected during the WebSocket handshake                                    | Check `GETBLOCK_API_KEY` and that Solana Market Data is activated on that key.                           |
-| No alerts for several minutes                                           | The threshold is above anything trading right now                                     | Lower `MIN_USDC` in `.env`, for example to `5000`, and restart.                                          |
-| A burst of alerts the moment the bot starts                             | The opening backfill is being treated as new trades                                   | Skip alerts for the first backfill only, as `whales.js` does with `primed`.                              |
-| The same trade is alerted twice after a reconnect                       | Trades aren't de-duplicated by `id`                                                   | Keep a set of processed IDs and skip any trade already in it.                                            |
-| Large trades you can see on-chain never alert during busy periods       | `hydrate` on the `trades` subscription was lowered                                    | Keep `hydrate: 100`. Smaller values drop trades when several land between pushes.                        |
-| Trades from an outage are missing after reconnecting                    | The outage outlasted the backfill, which holds only the last 100 trades               | Keep the reconnect delay short. For guaranteed coverage, add a second source for the gap.                |
-| Pressure shows an extreme value such as `0.00`                            | The five-minute window just rolled over and contains only a few swaps                 | Check the swap count in the alert, or use a longer `window` for a steadier reading.                      |
-| Pressure always shows `n/a`                                             | The `volume` subscription hasn't delivered yet, or was rejected                       | Look for a `Subscription 2 rejected` line in the output.                                                 |
-| `Subscription 2 rejected: … window must be one of …`                    | An unsupported `window` value, such as `15m`                                          | Use one of the listed values.                                                                            |
+<table data-search="false"><thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead><tbody><tr><td><code>Stream closed (code 1006)</code> repeating with growing delays</td><td>The key is rejected during the WebSocket handshake</td><td>Check <code>GETBLOCK_API_KEY</code> and that Solana Market Data is activated on that key.</td></tr><tr><td>No alerts for several minutes</td><td>The threshold is above anything trading right now</td><td>Lower <code>MIN_USDC</code> in <code>.env</code>, for example to <code>5000</code>, and restart.</td></tr><tr><td>A burst of alerts the moment the bot starts</td><td>The opening backfill is being treated as new trades</td><td>Skip alerts for the first backfill only, as <code>whales.js</code> does with <code>primed</code>.</td></tr><tr><td>The same trade is alerted twice after a reconnect</td><td>Trades aren't de-duplicated by <code>id</code></td><td>Keep a set of processed IDs and skip any trade already in it.</td></tr><tr><td>Large trades you can see on-chain never alert during busy periods</td><td><code>hydrate</code> on the <code>trades</code> subscription was lowered</td><td>Keep <code>hydrate: 100</code>. Smaller values drop trades when several land between pushes.</td></tr><tr><td>Trades from an outage are missing after reconnecting</td><td>The outage outlasted the backfill, which holds only the last 100 trades</td><td>Keep the reconnect delay short. For guaranteed coverage, add a second source for the gap.</td></tr><tr><td>Pressure shows an extreme value such as <code>0.00</code></td><td>The five-minute window just rolled over and contains only a few swaps</td><td>Check the swap count in the alert, or use a longer <code>window</code> for a steadier reading.</td></tr><tr><td>Pressure always shows <code>n/a</code></td><td>The <code>volume</code> subscription hasn't delivered yet, or was rejected</td><td>Look for a <code>Subscription 2 rejected</code> line in the output.</td></tr><tr><td><code>Subscription 2 rejected: … window must be one of …</code></td><td>An unsupported <code>window</code> value, such as <code>15m</code></td><td>Use one of the listed values.</td></tr></tbody></table>
 
 ## Conclusion
 
