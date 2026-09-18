@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the getpeerinfo JSON-RPC method. Сomplete guide on how to use
+  Example code for the getpeerinfo JSON-RPC method. Complete guide on how to use
   the getpeerinfo JSON-RPC method in GetBlock.io Web3 documentation.
 ---
 

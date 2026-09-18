@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the z_getsubtreesbyindex JSON-RPC method. Сomplete guide on
+  Example code for the z_getsubtreesbyindex JSON-RPC method. Complete guide on
   how to use the z_getsubtreesbyindex JSON-RPC method in GetBlock.io Web3
   documentation.
 ---

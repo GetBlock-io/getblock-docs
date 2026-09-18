@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the sendrawtransaction JSON-RPC method. Сomplete guide on how
+  Example code for the sendrawtransaction JSON-RPC method. Complete guide on how
   to use the sendrawtransaction JSON-RPC method in GetBlock.io Web3
   documentation.
 ---

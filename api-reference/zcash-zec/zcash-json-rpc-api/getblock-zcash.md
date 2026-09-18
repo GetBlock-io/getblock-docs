@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the getblock JSON-RPC method. Сomplete guide on how to use
+  Example code for the getblock JSON-RPC method. Complete guide on how to use
   the getblock JSON-RPC method in GetBlock.io Web3 documentation.
 ---
 

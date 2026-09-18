@@ -34,9 +34,11 @@ This method creates a raw transaction spending given inputs.
 
 ```json
 {
-    "address": amount
+    "DRv9o4XUK1DhNiuKPadPwkQNkPgtcniBFF": 10.5
 }
 ```
+
+Each key is a destination address and each value is the amount to send to it, in DOGE.
 
 ## Request
 

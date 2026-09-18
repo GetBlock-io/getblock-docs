@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the getblockheader JSON-RPC method. Сomplete guide on how to
+  Example code for the getblockheader JSON-RPC method. Complete guide on how to
   use the getblockheader JSON-RPC method in GetBlock.io Web3 documentation.
 ---
 

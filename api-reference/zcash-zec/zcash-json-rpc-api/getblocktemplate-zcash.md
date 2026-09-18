@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the getblocktemplate JSON-RPC method. Сomplete guide on how
+  Example code for the getblocktemplate JSON-RPC method. Complete guide on how
   to use the getblocktemplate JSON-RPC method in GetBlock.io Web3 documentation.
 ---
 

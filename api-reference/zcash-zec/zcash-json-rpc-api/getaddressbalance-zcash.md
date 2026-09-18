@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the getaddressbalance JSON-RPC method. Сomplete guide on how
+  Example code for the getaddressbalance JSON-RPC method. Complete guide on how
   to use the getaddressbalance JSON-RPC method in GetBlock.io Web3
   documentation.
 ---

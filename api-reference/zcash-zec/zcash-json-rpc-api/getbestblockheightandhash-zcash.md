@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the getbestblockheightandhash JSON-RPC method. Сomplete guide
+  Example code for the getbestblockheightandhash JSON-RPC method. Complete guide
   on how to use the getbestblockheightandhash JSON-RPC method in GetBlock.io
   Web3 documentation.
 ---

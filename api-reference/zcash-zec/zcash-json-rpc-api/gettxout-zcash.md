@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the gettxout JSON-RPC method. Сomplete guide on how to use
+  Example code for the gettxout JSON-RPC method. Complete guide on how to use
   the gettxout JSON-RPC method in GetBlock.io Web3 documentation.
 ---
 

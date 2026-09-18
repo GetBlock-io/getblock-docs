@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the z_validateaddress JSON-RPC method. Сomplete guide on how
+  Example code for the z_validateaddress JSON-RPC method. Complete guide on how
   to use the z_validateaddress JSON-RPC method in GetBlock.io Web3
   documentation.
 ---

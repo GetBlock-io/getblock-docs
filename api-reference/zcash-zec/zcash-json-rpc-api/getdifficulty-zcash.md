@@ -1,12 +1,12 @@
 ---
 description: >-
-  Example code for the getblockcount JSON-RPC method. Сomplete guide on how to
-  use the getblockcount JSON-RPC method in GetBlock.io Web3 documentation.
+  Example code for the getdifficulty JSON-RPC method. Complete guide on how to
+  use the getdifficulty JSON-RPC method in GetBlock.io Web3 documentation.
 ---
 
-# getblockcount - Zcash
+# getdifficulty - Zcash
 
-This method returns the height of the current chain tip as an integer. The simplest chain-progress read — commonly polled by wallets, indexers, and monitoring dashboards.
+This method returns the current proof-of-work difficulty as a floating-point multiple of the minimum difficulty. Zcash uses the Equihash proof-of-work algorithm; difficulty adjusts every block via a digishield-derived algorithm to target 75-second block times.
 
 ## Parameters
 
@@ -22,7 +22,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
-    "method": "getblockcount",
+    "method": "getdifficulty",
     "params": [],
     "id": "getblock.io"
 }'
@@ -37,7 +37,7 @@ const axios = require('axios');
 
 const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', {
     jsonrpc: '2.0',
-    method: 'getblockcount',
+    method: 'getdifficulty',
     params: [],
     id: 'getblock.io'
 }, {
@@ -59,7 +59,7 @@ response = requests.post(
     headers={'Content-Type': 'application/json'},
     json={
         'jsonrpc': '2.0',
-        'method': 'getblockcount',
+        'method': 'getdifficulty',
         'params': [],
         'id': 'getblock.io'
     }
@@ -85,7 +85,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .header("Content-Type", "application/json")
         .json(&json!({
             "jsonrpc": "2.0",
-            "method": "getblockcount",
+            "method": "getdifficulty",
             "params": [],
             "id": "getblock.io"
         }))
@@ -108,24 +108,24 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {
     "jsonrpc": "2.0",
     "id": "getblock.io",
-    "result": 3420501
+    "result": 229698549.25032642
 }
 ```
 
 ## Response Parameters
 
-| Parameter | Type    | Description                     |
-| --------- | ------- | ------------------------------- |
-| `result`  | integer | Height of the current chain tip |
+| Parameter | Type   | Description                                                   |
+| --------- | ------ | ------------------------------------------------------------- |
+| `result`  | number | Difficulty as a multiplier over the minimum difficulty target |
 
 ## Use Cases
 
-* **Chain Progress Polling**: Detect new blocks by comparing successive polls
-* **Confirmation Counting**: Compute `getblockcount() - txBlockHeight` to display confirmation counts in a wallet UI
-* **Sync Waiting**: Wait for the tip to reach a specific target height during backfills or migrations
+* **Mining Pool Statistics**: Display current difficulty on mining dashboards and calculators
+* **Historical Analysis**: Track difficulty over time to visualize network hashrate trends
+* **Reward Calculation**: Input to expected-reward calculations for miners choosing between chains
 
 ## Error Handling
 
-| Error Code | Message        | Description                 |
-| ---------- | -------------- | --------------------------- |
-| -32603     | Internal error | Node has no blocks in state |
+| Error Code | Message        | Description                                                 |
+| ---------- | -------------- | ----------------------------------------------------------- |
+| -32603     | Internal error | Node has no blocks in state or failed to compute difficulty |

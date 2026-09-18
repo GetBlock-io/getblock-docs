@@ -42,9 +42,11 @@ https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
 ### Supported Networks
 
-| Network | JSON-RPC | Blockbook(REST) | Frankfurt, Germany |
-| ------- | -------- | --------------- | ------------------ |
-| Mainnet | ✅        | ✅               | ✅                  |
+| Network | JSON-RPC | Blockbook (REST) | Blockbook (WebSocket) |
+| ------- | -------- | ---------------- | --------------------- |
+| Mainnet | ✅        | ✅                | ✅                     |
+
+Mainnet is served from the Frankfurt, Germany region.
 
 ### Quickstart
 
@@ -224,76 +226,23 @@ python main.py
 
 ### Available Methods
 
-#### Node & Client Info
+Zcash is documented across three interfaces, each provisioned as its own endpoint.
 
-| Method           | Description                                               |
-| ---------------- | --------------------------------------------------------- |
-| `getinfo`        | Basic node status, version, block height, connections     |
-| `getnetworkinfo` | Network status, peer info, protocol version (Zebra 3.0.0) |
+#### [Zcash JSON-RPC API](zcash-json-rpc-api/)
 
-#### Blockchain State
+The Zebra node interface: blocks, transactions, mempool, mining, transparent address queries, and `z_*` methods for the shielded pools.
 
-| Method                      | Description                                               |
-| --------------------------- | --------------------------------------------------------- |
-| `getblockchaininfo`         | Chain state, activated upgrades, value pool balances      |
-| `getbestblockhash`          | Hash of the chain tip                                     |
-| `getbestblockheightandhash` | Chain tip height and hash together (Zebra-specific)       |
-| `getblockcount`             | Chain tip height                                          |
-| `getblockhash`              | Block hash by height                                      |
-| `getblock`                  | Block by hash or height (verbosity 0/1/2, includes `nTx`) |
-| `getblockheader`            | Block header only                                         |
-| `getdifficulty`             | Proof-of-work difficulty multiplier                       |
+#### Zcash Blockbook REST API
 
-#### Transactions
+Address- and xpub-indexed queries over HTTP for transparent addresses: balances, transaction history, unspent outputs, balance history, and fiat rates.
 
-| Method               | Description                             |
-| -------------------- | --------------------------------------- |
-| `getrawtransaction`  | Raw transaction by txid (verbosity 0/1) |
-| `sendrawtransaction` | Submit a signed raw transaction         |
-| `gettxout`           | UTXO lookup (transparent outputs only)  |
+#### Zcash Blockbook (WebSocket) API
 
-#### Mempool
+The same indexed queries over a persistent connection, plus subscriptions to new blocks and to activity on a set of addresses.
 
-| Method           | Description                      |
-| ---------------- | -------------------------------- |
-| `getrawmempool`  | List transactions in the mempool |
-| `getmempoolinfo` | Mempool statistics (Zebra 3.0.0) |
-
-#### Mining & Difficulty
-
-| Method             | Description                                     |
-| ------------------ | ----------------------------------------------- |
-| `getblocktemplate` | Template for constructing candidate blocks      |
-| `getmininginfo`    | Mining status and current difficulty            |
-| `getnetworksolps`  | Estimated network Equihash solutions per second |
-
-#### Peer Info
-
-| Method        | Description                                             |
-| ------------- | ------------------------------------------------------- |
-| `getpeerinfo` | Connected peer details (extended fields in Zebra 3.0.0) |
-
-#### Address Queries (Zcash Extensions)
-
-| Method              | Description                                   |
-| ------------------- | --------------------------------------------- |
-| `getaddressbalance` | Transparent balance for one or more addresses |
-| `getaddresstxids`   | Transaction IDs involving an address          |
-| `getaddressutxos`   | UTXOs held by an address                      |
-
-#### Address & Script Utilities
-
-| Method              | Description                                     |
-| ------------------- | ----------------------------------------------- |
-| `validateaddress`   | Validate a transparent (t1/t3) address          |
-| `z_validateaddress` | Validate a Sapling, Orchard, or Unified address |
-
-#### Shielded Pool
-
-| Method                   | Description                                              |
-| ------------------------ | -------------------------------------------------------- |
-| `z_getsubtreesbyindex`   | Subtree roots by index (Ironwood NCT)                    |
-| `z_listunifiedreceivers` | Decompose a Unified Address into its component receivers |
+{% hint style="info" %}
+Every interface sees **transparent** (`t1`, `t3`) activity only. Shielded Sapling and Orchard notes are encrypted to the holder's viewing key, so no public endpoint can list their balances or history.
+{% endhint %}
 
 ### Support
 

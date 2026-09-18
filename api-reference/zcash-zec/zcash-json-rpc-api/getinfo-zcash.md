@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the getinfo JSON-RPC method. Сomplete guide on how to use the
+  Example code for the getinfo JSON-RPC method. Complete guide on how to use the
   getinfo JSON-RPC method in GetBlock.io Web3 documentation.
 ---
 

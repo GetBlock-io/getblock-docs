@@ -134,3 +134,32 @@ redirects:
   api-reference/dogecoin-doge/gethashespersec-dogecoin-disallowed: api-reference/dogecoin-doge/README.md
   api-reference/dogecoin-doge/gettransaction-dogecoin-disallowed: api-reference/dogecoin-doge/README.md
   api-reference/dogecoin-doge/signmessage-dogecoin-disallowed: api-reference/dogecoin-doge/README.md
+
+  # Zcash JSON-RPC method pages grouped into their own section.
+  api-reference/zcash-zec/getaddressbalance-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getaddressbalance-zcash.md
+  api-reference/zcash-zec/getaddresstxids-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getaddresstxids-zcash.md
+  api-reference/zcash-zec/getaddressutxos-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getaddressutxos-zcash.md
+  api-reference/zcash-zec/getbestblockhash-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getbestblockhash-zcash.md
+  api-reference/zcash-zec/getbestblockheightandhash-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getbestblockheightandhash-zcash.md
+  api-reference/zcash-zec/getblock-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getblock-zcash.md
+  api-reference/zcash-zec/getblockchaininfo-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getblockchaininfo-zcash.md
+  api-reference/zcash-zec/getblockcount-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getblockcount-zcash.md
+  api-reference/zcash-zec/getblockhash-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getblockhash-zcash.md
+  api-reference/zcash-zec/getblockheader-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getblockheader-zcash.md
+  api-reference/zcash-zec/getblocktemplate-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getblocktemplate-zcash.md
+  api-reference/zcash-zec/getdifficulty-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getdifficulty-zcash.md
+  api-reference/zcash-zec/getinfo-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getinfo-zcash.md
+  api-reference/zcash-zec/getmempoolinfo-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getmempoolinfo-zcash.md
+  api-reference/zcash-zec/getmininginfo-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getmininginfo-zcash.md
+  api-reference/zcash-zec/getnetworkinfo-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getnetworkinfo-zcash.md
+  api-reference/zcash-zec/getnetworksolps-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getnetworksolps-zcash.md
+  api-reference/zcash-zec/getpeerinfo-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getpeerinfo-zcash.md
+  api-reference/zcash-zec/getrawmempool-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getrawmempool-zcash.md
+  api-reference/zcash-zec/getrawtransaction-zcash: api-reference/zcash-zec/zcash-json-rpc-api/getrawtransaction-zcash.md
+  api-reference/zcash-zec/gettxout-zcash: api-reference/zcash-zec/zcash-json-rpc-api/gettxout-zcash.md
+  api-reference/zcash-zec/sendrawtransaction-zcash: api-reference/zcash-zec/zcash-json-rpc-api/sendrawtransaction-zcash.md
+  api-reference/zcash-zec/validateaddress-zcash: api-reference/zcash-zec/zcash-json-rpc-api/validateaddress-zcash.md
+  api-reference/zcash-zec/z_getsubtreesbyindex-zcash: api-reference/zcash-zec/zcash-json-rpc-api/z_getsubtreesbyindex-zcash.md
+  api-reference/zcash-zec/z_gettreestate-zcash: api-reference/zcash-zec/zcash-json-rpc-api/z_gettreestate-zcash.md
+  api-reference/zcash-zec/z_listunifiedreceivers-zcash: api-reference/zcash-zec/zcash-json-rpc-api/z_listunifiedreceivers-zcash.md
+  api-reference/zcash-zec/z_validateaddress-zcash: api-reference/zcash-zec/zcash-json-rpc-api/z_validateaddress-zcash.md

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the getrawtransaction JSON-RPC method. Сomplete guide on how
+  Example code for the getrawtransaction JSON-RPC method. Complete guide on how
   to use the getrawtransaction JSON-RPC method in GetBlock.io Web3
   documentation.
 ---

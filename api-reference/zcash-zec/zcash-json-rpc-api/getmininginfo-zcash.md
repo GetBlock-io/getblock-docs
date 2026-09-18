@@ -1,6 +1,6 @@
 ---
 description: >-
-  Example code for the getmininginfo JSON-RPC method. Сomplete guide on how to
+  Example code for the getmininginfo JSON-RPC method. Complete guide on how to
   use the getmininginfo JSON-RPC method in GetBlock.io Web3 documentation.
 ---
 
