@@ -51,3 +51,37 @@ redirects:
   api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-tx-specific-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-tx-specific-dash.md
   api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-utxo-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-utxo-dash.md
   api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-xpub-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-xpub-dash.md
+
+  # Litecoin JSON-RPC method pages grouped into their own section.
+  api-reference/litecoin/createmultisig-litecoin: api-reference/litecoin/litecoin-json-rpc-api/createmultisig-litecoin.md
+  api-reference/litecoin/createrawtransaction-litecoin: api-reference/litecoin/litecoin-json-rpc-api/createrawtransaction-litecoin.md
+  api-reference/litecoin/decoderawtransaction-litecoin: api-reference/litecoin/litecoin-json-rpc-api/decoderawtransaction-litecoin.md
+  api-reference/litecoin/decodescript-litecoin: api-reference/litecoin/litecoin-json-rpc-api/decodescript-litecoin.md
+  api-reference/litecoin/estimatesmartfee-litecoin: api-reference/litecoin/litecoin-json-rpc-api/estimatesmartfee-litecoin.md
+  api-reference/litecoin/getbestblockhash-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getbestblockhash-litecoin.md
+  api-reference/litecoin/getblock-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblock-litecoin.md
+  api-reference/litecoin/getblockchaininfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblockchaininfo-litecoin.md
+  api-reference/litecoin/getblockcount-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblockcount-litecoin.md
+  api-reference/litecoin/getblockhash-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblockhash-litecoin.md
+  api-reference/litecoin/getblockstats-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblockstats-litecoin.md
+  api-reference/litecoin/getblocktemplate-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblocktemplate-litecoin.md
+  api-reference/litecoin/getchaintips-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getchaintips-litecoin.md
+  api-reference/litecoin/getconnectioncount-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getconnectioncount-litecoin.md
+  api-reference/litecoin/getdifficulty-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getdifficulty-litecoin.md
+  api-reference/litecoin/getmemoryinfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmemoryinfo-litecoin.md
+  api-reference/litecoin/getmempoolancestors-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmempoolancestors-litecoin.md
+  api-reference/litecoin/getmempooldescendants-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmempooldescendants-litecoin.md
+  api-reference/litecoin/getmempoolentry-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmempoolentry-litecoin.md
+  api-reference/litecoin/getmempoolinfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmempoolinfo-litecoin.md
+  api-reference/litecoin/getmininginfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmininginfo-litecoin.md
+  api-reference/litecoin/getnettotals-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getnettotals-litecoin.md
+  api-reference/litecoin/getnetworkhashps-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getnetworkhashps-litecoin.md
+  api-reference/litecoin/getrawtransaction-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getrawtransaction-litecoin.md
+  api-reference/litecoin/gettxout-litecoin: api-reference/litecoin/litecoin-json-rpc-api/gettxout-litecoin.md
+  api-reference/litecoin/gettxoutproof-litecoin: api-reference/litecoin/litecoin-json-rpc-api/gettxoutproof-litecoin.md
+  api-reference/litecoin/gettxoutsetinfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/gettxoutsetinfo-litecoin.md
+  api-reference/litecoin/help-litecoin: api-reference/litecoin/litecoin-json-rpc-api/help-litecoin.md
+  api-reference/litecoin/listbanned-litecoin: api-reference/litecoin/litecoin-json-rpc-api/listbanned-litecoin.md
+  api-reference/litecoin/testmempoolaccept-litecoin: api-reference/litecoin/litecoin-json-rpc-api/testmempoolaccept-litecoin.md
+  api-reference/litecoin/validateaddress-litecoin: api-reference/litecoin/litecoin-json-rpc-api/validateaddress-litecoin.md
+  api-reference/litecoin/verifymessage-litecoin: api-reference/litecoin/litecoin-json-rpc-api/verifymessage-litecoin.md
