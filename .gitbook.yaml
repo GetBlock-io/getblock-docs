@@ -85,3 +85,52 @@ redirects:
   api-reference/litecoin/testmempoolaccept-litecoin: api-reference/litecoin/litecoin-json-rpc-api/testmempoolaccept-litecoin.md
   api-reference/litecoin/validateaddress-litecoin: api-reference/litecoin/litecoin-json-rpc-api/validateaddress-litecoin.md
   api-reference/litecoin/verifymessage-litecoin: api-reference/litecoin/litecoin-json-rpc-api/verifymessage-litecoin.md
+
+  # Dogecoin: JSON-RPC pages grouped; wallet methods unavailable on shared
+  # nodes were removed and now land on the chain overview.
+  api-reference/dogecoin-doge/createrawtransaction-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/createrawtransaction-dogecoin.md
+  api-reference/dogecoin-doge/decoderawtransaction-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/decoderawtransaction-dogecoin.md
+  api-reference/dogecoin-doge/getblock-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/getblock-dogecoin.md
+  api-reference/dogecoin-doge/getblockcount-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/getblockcount-dogecoin.md
+  api-reference/dogecoin-doge/getblockhash-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/getblockhash-dogecoin.md
+  api-reference/dogecoin-doge/getconnectioncount-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/getconnectioncount-dogecoin.md
+  api-reference/dogecoin-doge/getdifficulty-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/getdifficulty-dogecoin.md
+  api-reference/dogecoin-doge/getinfo-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/getinfo-dogecoin.md
+  api-reference/dogecoin-doge/getmininginfo-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/getmininginfo-dogecoin.md
+  api-reference/dogecoin-doge/getrawtransaction-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/getrawtransaction-dogecoin.md
+  api-reference/dogecoin-doge/gettxout-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/gettxout-dogecoin.md
+  api-reference/dogecoin-doge/signrawtransaction-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/signrawtransaction-dogecoin.md
+  api-reference/dogecoin-doge/validateaddress-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/validateaddress-dogecoin.md
+  api-reference/dogecoin-doge/verifymessage-dogecoin: api-reference/dogecoin-doge/dogecoin-json-rpc-api/verifymessage-dogecoin.md
+  api-reference/dogecoin-doge/doge_backupwallet: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_dumpprivkey: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getaccount: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getaccountaddress: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getaddressesbyaccount: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getbalance: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getblocknumber: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getgenerate: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getnewaddress: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getreceivedbyaccount: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getreceivedbyaddress: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_getwork: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_importprivkey: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_keypoolrefill: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_listaccounts: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_listreceivedbyaccount: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_listreceivedbyaddress: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_listtransactions: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_listunspent: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_move: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_sendfrom: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_sendmany: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_sendtoaddress: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_setaccount: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_setgenerate: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_stop: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_walletlock: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_walletpassphrase: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/doge_walletpassphrasechange: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/gethashespersec-dogecoin-disallowed: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/gettransaction-dogecoin-disallowed: api-reference/dogecoin-doge/README.md
+  api-reference/dogecoin-doge/signmessage-dogecoin-disallowed: api-reference/dogecoin-doge/README.md
