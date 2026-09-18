@@ -23,7 +23,11 @@ Sign in to [GetBlock](https://account.getblock.io) and start a new endpoint in t
 {% endstep %}
 
 {% step %}
-Select **Dogecoin → Mainnet → Full → Blockbook(REST)**. Do not use the standard Dogecoin JSON-RPC API for address-indexed queries — it has no address index and does not serve `/api/v2/` paths
+Select **Dogecoin → Mainnet → Full → Blockbook(REST)**.&#x20;
+
+{% hint style="warning" %}
+Do not use the standard Dogecoin JSON-RPC API for address-indexed queries — it has no address index and does not serve `/api/v2/` paths
+{% endhint %}
 {% endstep %}
 
 {% step %}
@@ -40,16 +44,6 @@ https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/
 ### Endpoints
 
 <table data-search="false"><thead><tr><th width="99">Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td>GET</td><td><code>/api/status</code></td><td>Returns the indexer's sync state and the connected node's metadata</td></tr><tr><td>GET</td><td><code>/api/v2/address/{address}</code></td><td>Returns balance and transaction data for a single Dogecoin address</td></tr><tr><td>GET</td><td><code>/api/v2/xpub/{xpub}</code></td><td>Returns wallet-level balance and transaction data for an extended public key or output descriptor</td></tr><tr><td>GET</td><td><code>/api/v2/utxo/{addressOrXpub}</code></td><td>Returns the unspent transaction outputs for an address, extended public key, or descriptor</td></tr><tr><td>GET</td><td><code>/api/v2/balancehistory/{address}</code></td><td>Returns aggregated balance-change history over a time range</td></tr><tr><td>GET</td><td><code>/api/v2/tx/{txid}</code></td><td>Returns a normalized transaction by its id</td></tr><tr><td>GET</td><td><code>/api/v2/tx-specific/{txid}</code></td><td>Returns the transaction in the node's own JSON shape</td></tr><tr><td>GET</td><td><code>/api/v2/block/{blockId}</code></td><td>Returns a block by height or hash with a paged list of its transactions</td></tr><tr><td>GET</td><td><code>/api/v2/block-index/{blockHeight}</code></td><td>Returns the block hash at a given block height</td></tr><tr><td>GET</td><td><code>/api/v2/rawblock/{blockId}</code></td><td>Returns the raw serialized hex of a block</td></tr><tr><td>GET</td><td><code>/api/v2/feestats/{blockId}</code></td><td>Returns fee statistics for the transactions in one block</td></tr><tr><td>GET</td><td><code>/api/v2/estimatefee/{blocks}</code></td><td>Returns the backend fee estimate for a confirmation target</td></tr><tr><td>POST</td><td><code>/api/v2/sendtx/</code></td><td>Broadcasts a signed, serialized transaction and returns its transaction id</td></tr><tr><td>GET</td><td><code>/api/v2/tickers/</code></td><td>Returns current or historical fiat exchange rates for Dogecoin</td></tr><tr><td>GET</td><td><code>/api/v2/tickers-list/</code></td><td>Returns the currencies with rate data at a given timestamp</td></tr><tr><td>GET</td><td><code>/api/v2/multi-tickers/</code></td><td>Returns fiat rate tickers for several timestamps at once</td></tr></tbody></table>
-
-### Quick check
-
-This request returns the confirmed unspent outputs of an address and confirms that a Blockbook REST endpoint is configured correctly:
-
-{% code overflow="wrap" %}
-```bash
-curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/DRv9o4XUK1DhNiuKPadPwkQNkPgtcniBFF?confirmed=true'
-```
-{% endcode %}
 
 ### Dogecoin specifics
 

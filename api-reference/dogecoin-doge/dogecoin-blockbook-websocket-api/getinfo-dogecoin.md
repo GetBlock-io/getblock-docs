@@ -29,6 +29,7 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 ## Response
 
+{% code overflow="wrap" %}
 ```json
 {
     "id": "getblock.io",
@@ -49,20 +50,21 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
     }
 }
 ```
+{% endcode %}
 
 ## Response Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| name | string | Coin name |
-| shortcut | string | Coin ticker |
-| network | string | Network identifier |
-| decimals | integer | Decimal places in the coin's base unit |
-| bestHeight | integer | Height of the best block the indexer has processed |
-| bestHash | string | Hash of the best block the indexer has processed |
-| block0Hash | string | Genesis block hash, used to confirm the expected chain |
-| testnet | boolean | True when the endpoint serves a test network |
-| backend | object | Dogecoin Core version and subversion |
+| Field      | Type    | Description                                            |
+| ---------- | ------- | ------------------------------------------------------ |
+| name       | string  | Coin name                                              |
+| shortcut   | string  | Coin ticker                                            |
+| network    | string  | Network identifier                                     |
+| decimals   | integer | Decimal places in the coin's base unit                 |
+| bestHeight | integer | Height of the best block the indexer has processed     |
+| bestHash   | string  | Hash of the best block the indexer has processed       |
+| block0Hash | string  | Genesis block hash, used to confirm the expected chain |
+| testnet    | boolean | True when the endpoint serves a test network           |
+| backend    | object  | Dogecoin Core version and subversion                   |
 
 {% hint style="info" %}
 The node identifies itself as `/Shibetoshi:1.14.9/` — that is Dogecoin Core's user agent, not a different implementation. `version` reports `unknown` on the shared deployment, so use `backend.subversion` to identify the node.
@@ -77,6 +79,6 @@ The node identifies itself as `/Shibetoshi:1.14.9/` — that is Dogecoin Core's 
 
 ## Error Handling
 
-| Error | Message | Description |
-| --- | --- | --- |
+| Error                     | Message       | Description                                       |
+| ------------------------- | ------------- | ------------------------------------------------- |
 | 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |
