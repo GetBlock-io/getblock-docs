@@ -39,44 +39,74 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 
 #### Blockchain information
 
-Methods that report the state of the chain and the node.
-
-| Method                                                 | Description                                                      |
-| ------------------------------------------------------ | ---------------------------------------------------------------- |
-| [`getblockcount`](getblockcount-dogecoin.md)           | Returns the number of blocks in the longest blockchain           |
-| [`getdifficulty`](getdifficulty-dogecoin.md)           | Returns the current mining difficulty                            |
-| [`getinfo`](getinfo-dogecoin.md)                       | Returns an object containing various state info about the node   |
-| [`getconnectioncount`](getconnectioncount-dogecoin.md) | Returns the number of connections to other nodes                 |
-| [`getmininginfo`](getmininginfo-dogecoin.md)           | Returns an object containing mining-related information          |
+| Method                                                 | Description                                                     |
+| ------------------------------------------------------ | ----------------------------------------------------------------- |
+| [`getblockchaininfo`](getblockchaininfo-dogecoin.md)   | Returns state information about blockchain processing           |
+| [`getbestblockhash`](getbestblockhash-dogecoin.md)     | Returns the hash of the current chain tip                       |
+| [`getblockcount`](getblockcount-dogecoin.md)           | Returns the number of blocks in the longest blockchain          |
+| [`getdifficulty`](getdifficulty-dogecoin.md)           | Returns the current mining difficulty                           |
+| [`getchaintips`](getchaintips-dogecoin.md)             | Returns information about all known tips in the block tree      |
+| [`getinfo`](getinfo-dogecoin.md)                       | Returns an object containing various state info about the node  |
+| [`getconnectioncount`](getconnectioncount-dogecoin.md) | Returns the number of connections to other nodes                |
+| [`getmemoryinfo`](getmemoryinfo-dogecoin.md)           | Returns information about the node's memory usage               |
+| [`help`](help-dogecoin.md)                             | Lists every command the node exposes, or describes one          |
 
 #### Block retrieval
 
-| Method                                         | Description                                                    |
-| ---------------------------------------------- | -------------------------------------------------------------- |
-| [`getblock`](getblock-dogecoin.md)             | Returns block data for a given block hash                      |
-| [`getblockhash`](getblockhash-dogecoin.md)     | Returns the hash of the block at a given height                |
+| Method                                             | Description                                                |
+| -------------------------------------------------- | ------------------------------------------------------------ |
+| [`getblock`](getblock-dogecoin.md)                 | Returns block data for a given block hash                  |
+| [`getblockhash`](getblockhash-dogecoin.md)         | Returns the hash of the block at a given height            |
+| [`getblockheader`](getblockheader-dogecoin.md)     | Returns a block header without its transactions            |
 
 #### Transaction methods
 
-| Method                                                       | Description                                                             |
-| ------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| [`getrawtransaction`](getrawtransaction-dogecoin.md)         | Returns the raw transaction data for a given transaction id             |
-| [`decoderawtransaction`](decoderawtransaction-dogecoin.md)   | Decodes a hex-encoded raw transaction and returns it as JSON            |
-| [`createrawtransaction`](createrawtransaction-dogecoin.md)   | Creates a raw transaction spending the given inputs                     |
-| [`signrawtransaction`](signrawtransaction-dogecoin.md)       | Signs inputs for a serialized, hex-encoded raw transaction              |
+| Method                                                     | Description                                                   |
+| ---------------------------------------------------------- | --------------------------------------------------------------- |
+| [`getrawtransaction`](getrawtransaction-dogecoin.md)       | Returns the raw transaction data for a given transaction id   |
+| [`decoderawtransaction`](decoderawtransaction-dogecoin.md) | Decodes a hex-encoded raw transaction and returns it as JSON  |
+| [`createrawtransaction`](createrawtransaction-dogecoin.md) | Creates a raw transaction spending the given inputs           |
+| [`signrawtransaction`](signrawtransaction-dogecoin.md)     | Signs inputs for a serialized, hex-encoded raw transaction    |
+| [`sendrawtransaction`](sendrawtransaction-dogecoin.md)     | Broadcasts a signed transaction and returns its id            |
+| [`decodescript`](decodescript-dogecoin.md)                 | Decodes a hex-encoded script                                  |
 
-#### UTXO methods
+#### Mempool methods
 
-| Method                                 | Description                                              |
-| -------------------------------------- | -------------------------------------------------------- |
-| [`gettxout`](gettxout-dogecoin.md)     | Returns details about a single unspent transaction output |
+| Method                                                       | Description                                                     |
+| ------------------------------------------------------------ | ----------------------------------------------------------------- |
+| [`getrawmempool`](getrawmempool-dogecoin.md)                 | Returns the transaction ids of everything in the memory pool    |
+| [`getmempoolinfo`](getmempoolinfo-dogecoin.md)               | Returns details on the active state of the memory pool          |
+| [`getmempoolentry`](getmempoolentry-dogecoin.md)             | Returns mempool data for a single queued transaction            |
+| [`getmempoolancestors`](getmempoolancestors-dogecoin.md)     | Returns the unconfirmed transactions a transaction depends on   |
+| [`getmempooldescendants`](getmempooldescendants-dogecoin.md) | Returns the unconfirmed transactions that depend on one         |
+
+#### UTXO and proofs
+
+| Method                                         | Description                                                      |
+| ---------------------------------------------- | ------------------------------------------------------------------ |
+| [`gettxout`](gettxout-dogecoin.md)             | Returns details about a single unspent transaction output        |
+| [`gettxoutproof`](gettxoutproof-dogecoin.md)   | Returns a merkle proof that transactions were included in a block |
+
+#### Mining methods
+
+| Method                                             | Description                                             |
+| -------------------------------------------------- | --------------------------------------------------------- |
+| [`getmininginfo`](getmininginfo-dogecoin.md)       | Returns mining-related information                      |
+| [`getnetworkhashps`](getnetworkhashps-dogecoin.md) | Returns the estimated network hashes per second         |
+| [`getblocktemplate`](getblocktemplate-dogecoin.md) | Returns the data needed to construct a candidate block  |
 
 #### Utility methods
 
-| Method                                             | Description                                          |
-| -------------------------------------------------- | ---------------------------------------------------- |
-| [`validateaddress`](validateaddress-dogecoin.md)   | Validates a Dogecoin address and returns information about it |
-| [`verifymessage`](verifymessage-dogecoin.md)       | Verifies a signed message                            |
+| Method                                           | Description                                          |
+| ------------------------------------------------ | ---------------------------------------------------- |
+| [`validateaddress`](validateaddress-dogecoin.md) | Validates a Dogecoin address and returns information |
+| [`verifymessage`](verifymessage-dogecoin.md)     | Verifies a signed message                            |
+
+{% hint style="info" %}
+**Dogecoin Core is based on an older Bitcoin Core release**, so methods added to Bitcoin Core later are not available here. The PSBT family (`createpsbt`, `decodepsbt`, `combinepsbt`, `finalizepsbt`, `converttopsbt`), `signrawtransactionwithkey`, `getblockstats`, `testmempoolaccept`, and `getrpcinfo` are absent; use `createrawtransaction` and `signrawtransaction` in place of the PSBT workflow. Methods specific to other forks, such as Bitcoin Cash Node's `getfinalizedblockhash`, do not exist on Dogecoin either.
+
+Call [`help`](help-dogecoin.md) with no parameter to get the authoritative list from the node itself.
+{% endhint %}
 
 ### Wallet methods are not available
 
