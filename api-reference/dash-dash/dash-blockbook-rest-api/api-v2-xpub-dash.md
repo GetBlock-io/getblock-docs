@@ -59,6 +59,10 @@ print(response.json())
 
 ## Response
 
+{% hint style="info" %}
+The extended public key in the request above is a documentation placeholder and has no Dash history; querying it returns a zeroed account. Substitute an xpub from a Dash wallet to get the response shown below. Dash derives at BIP44 coin type 5, so its account paths read `m/44'/5'/0'/...`.
+{% endhint %}
+
 {% code overflow="wrap" %}
 ```json
 {
@@ -76,8 +80,8 @@ print(response.json())
     "tokens": [
         {
             "type": "XPUBAddress",
-            "name": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
-            "path": "m/44'/145'/0'/0/0",
+            "name": "XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw",
+            "path": "m/44'/5'/0'/0/0",
             "transfers": 7,
             "balance": "9407625",
             "totalReceived": "45231890",

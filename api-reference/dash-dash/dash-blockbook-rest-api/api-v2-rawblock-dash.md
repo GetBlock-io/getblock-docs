@@ -20,7 +20,7 @@ This endpoint returns the raw serialized hex of a block, selected by height or h
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/00000000000000007409ab5be18f66b1f68795ff81d3b3b1d592574fae07c372'
 ```
 {% endcode %}
 {% endtab %}
@@ -29,7 +29,7 @@ curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-T
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/00000000000000007409ab5be18f66b1f68795ff81d3b3b1d592574fae07c372'
 );
 console.log(await response.json());
 ```
@@ -41,7 +41,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/rawblock/00000000000000007409ab5be18f66b1f68795ff81d3b3b1d592574fae07c372')
 
 print(response.json())
 ```
@@ -53,7 +53,7 @@ print(response.json())
 
 ```json
 {
-    "hex": "00000020dd93f73898f4cde11a47d7a06244c5eed1f52d3718a3d3010000000000000000..."
+    "hex": "0000002024c93230b6263646258d191468812edcde952f939717de4d0e00000000000000baa7eedf..."
 }
 ```
 

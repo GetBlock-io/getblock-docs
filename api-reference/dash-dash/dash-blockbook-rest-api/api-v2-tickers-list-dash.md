@@ -22,7 +22,7 @@ This endpoint returns the fiat currencies for which the indexer has rate data av
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1617180599'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1789687365'
 ```
 {% endcode %}
 {% endtab %}
@@ -31,7 +31,7 @@ curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-T
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1617180599'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1789687365'
 );
 console.log(await response.json());
 ```
@@ -43,7 +43,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1617180599')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tickers-list/?timestamp=1789687365')
 
 print(response.json())
 ```
@@ -55,16 +55,25 @@ print(response.json())
 
 ```json
 {
-    "ts": 1617180599,
+    "ts": 1789687500,
     "available_currencies": [
-        "usd",
-        "eur",
-        "gbp",
-        "jpy",
-        "btc"
+        "aed",
+        "ars",
+        "aud",
+        "bch",
+        "bdt",
+        "bhd",
+        "bits",
+        "bmd",
+        "bnb",
+        "brl",
+        "btc",
+        "cad"
     ]
 }
 ```
+
+The list is alphabetical and truncated above. At the time of writing the endpoint returns 62 currencies for Dash, mixing fiat codes with crypto denominations such as `btc`, `bch`, and `bnb`.
 
 ## Response Parameters
 

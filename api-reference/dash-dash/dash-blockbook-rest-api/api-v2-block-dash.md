@@ -21,7 +21,7 @@ This endpoint returns a block by height or hash, including its metadata and a pa
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc?page=1'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/00000000000000007409ab5be18f66b1f68795ff81d3b3b1d592574fae07c372?page=1'
 ```
 {% endcode %}
 {% endtab %}
@@ -30,7 +30,7 @@ curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-T
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc?page=1'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/00000000000000007409ab5be18f66b1f68795ff81d3b3b1d592574fae07c372?page=1'
 );
 console.log(await response.json());
 ```
@@ -42,7 +42,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc?page=1')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block/00000000000000007409ab5be18f66b1f68795ff81d3b3b1d592574fae07c372?page=1')
 
 print(response.json())
 ```
@@ -55,26 +55,30 @@ print(response.json())
 ```json
 {
     "page": 1,
-    "totalPages": 3,
+    "totalPages": 1,
     "itemsOnPage": 1000,
-    "hash": "0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc",
-    "previousBlockHash": "000000000000000001d3a318372df5d1eec54462a0d7471ae1cdf49838f793dd",
-    "nextBlockHash": "000000000000000000006d8e1eb870bd281b30ed621acf6b8d6af2a3c7ab61f1",
-    "height": 684634,
-    "confirmations": 1197,
-    "size": 1350854,
-    "time": 1617180599,
-    "version": 1073733632,
-    "merkleRoot": "d14c9f467c4bdd5135837696150ab5f52f3f5043de324ca4e5766b195b9f8f37",
-    "nonce": "3669423616",
-    "bits": "170cdf6f",
-    "difficulty": "21865558044610.55",
-    "txCount": 2815,
+    "hash": "00000000000000007409ab5be18f66b1f68795ff81d3b3b1d592574fae07c372",
+    "previousBlockHash": "000000000000000e4dde1797932f95dedc2e816814198d25463626b63032c924",
+    "nextBlockHash": "00000000000000078c1330105f565c0eca388b27773b2f11ed6b820b8c82b9be",
+    "height": 2540600,
+    "confirmations": 74,
+    "size": 1703,
+    "time": 1789687365,
+    "version": 536870912,
+    "merkleRoot": "229a9fb3df52a6aba325d36487ac4753124c1cbf6e84d8077466ddc2dfeea7ba",
+    "nonce": "2569085062",
+    "bits": "191b57db",
+    "difficulty": "157073936.0931894",
+    "txCount": 2,
     "txs": [
         {
-            "txid": "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642",
-            "value": "9407625",
-            "fees": "2938345"
+            "txid": "4c14fb8af18ee8370f8d5e1527d9314d323051b579e1acdadd54e6541cf19155",
+            "blockHeight": 2540600,
+            "confirmations": 74,
+            "blockTime": 1789687365,
+            "value": "164378041",
+            "valueIn": "0",
+            "fees": "0"
         }
     ]
 }

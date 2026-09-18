@@ -10,7 +10,7 @@ The Blockbook indexer REST interface for Dash provides address-indexed HTTP endp
 
 ### Base URL
 
-All endpoints are served under the `/api/v2/` path on the Dashendpoint:
+All endpoints are served under the `/api/v2/` path on the Dash endpoint:
 
 ```bash
 https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/

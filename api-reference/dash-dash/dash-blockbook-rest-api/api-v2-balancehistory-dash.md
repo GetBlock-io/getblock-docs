@@ -25,7 +25,7 @@ This endpoint returns aggregated balance-change history for an address, extended
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?from=1617100000&to=1617300000&fiatcurrency=usd'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?from=1789600000&to=1789690000&fiatcurrency=usd'
 ```
 {% endcode %}
 {% endtab %}
@@ -34,7 +34,7 @@ curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-T
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?from=1617100000&to=1617300000&fiatcurrency=usd'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?from=1789600000&to=1789690000&fiatcurrency=usd'
 );
 console.log(await response.json());
 ```
@@ -46,7 +46,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?from=1617100000&to=1617300000&fiatcurrency=usd')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?from=1789600000&to=1789690000&fiatcurrency=usd')
 
 print(response.json())
 ```
@@ -59,17 +59,29 @@ print(response.json())
 ```json
 [
     {
-        "time": 1617177600,
-        "txs": 1,
-        "received": "9407625",
+        "time": 1789599600,
+        "txs": 7,
+        "received": "287767781",
         "sent": "0",
         "sentToSelf": "0",
         "rates": {
-            "usd": 512.34
+            "usd": 54.960075
+        }
+    },
+    {
+        "time": 1789603200,
+        "txs": 17,
+        "received": "698730983",
+        "sent": "0",
+        "sentToSelf": "0",
+        "rates": {
+            "usd": 61.43
         }
     }
 ]
 ```
+
+The array is truncated above. With `groupBy` left at its 3600-second default, the documented range returns 25 hourly points.
 
 ## Response Parameters
 

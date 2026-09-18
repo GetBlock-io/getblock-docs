@@ -20,7 +20,7 @@ This endpoint returns the block hash at a given block height. It converts a heig
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/684634'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/2540600'
 ```
 {% endcode %}
 {% endtab %}
@@ -28,7 +28,7 @@ curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-T
 {% tab title="JavaScript" %}
 ```javascript
 const response = await fetch(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/684634'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/2540600'
 );
 console.log(await response.json());
 ```
@@ -38,7 +38,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/684634')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/block-index/2540600')
 
 print(response.json())
 ```
@@ -49,7 +49,7 @@ print(response.json())
 
 ```json
 {
-    "blockHash": "0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc"
+    "blockHash": "00000000000000007409ab5be18f66b1f68795ff81d3b3b1d592574fae07c372"
 }
 ```
 

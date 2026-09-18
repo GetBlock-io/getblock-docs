@@ -21,7 +21,7 @@ This endpoint returns a normalized transaction by its id, with inputs, outputs, 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tx/10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tx/eb0351c64cde2c42bcdf10b11a1ad44bb63631bb6487de70e78b90c2aa57137c'
 ```
 {% endcode %}
 {% endtab %}
@@ -30,7 +30,7 @@ curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-T
 {% code title="example.js" overflow="wrap" %}
 ```javascript
 const response = await fetch(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tx/10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tx/eb0351c64cde2c42bcdf10b11a1ad44bb63631bb6487de70e78b90c2aa57137c'
 );
 console.log(await response.json());
 ```
@@ -42,7 +42,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tx/10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/tx/eb0351c64cde2c42bcdf10b11a1ad44bb63631bb6487de70e78b90c2aa57137c')
 
 print(response.json())
 ```
@@ -54,41 +54,40 @@ print(response.json())
 
 ```json
 {
-    "txid": "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642",
-    "version": 1,
+    "txid": "eb0351c64cde2c42bcdf10b11a1ad44bb63631bb6487de70e78b90c2aa57137c",
+    "version": 2,
     "vin": [
         {
-            "txid": "780791bb2d5a8ccda4b5a707967a8e15b412814852c58c77299e85579bb65587",
-            "vout": 1,
+            "txid": "3d427a54eac26a3eb54ffa7ea41172043afd64963a810e5d1119e5cb503b6184",
+            "vout": 2,
             "sequence": 4294967295,
             "n": 0,
             "addresses": [
-                "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a"
+                "XqQ2uJrkHjVKvqTy6HSUNe6DMNB2KbRVMB"
             ],
             "isAddress": true,
-            "value": "12345970"
+            "value": "1000010"
         }
     ],
     "vout": [
         {
-            "value": "9407625",
+            "value": "1000010",
             "n": 0,
-            "spent": false,
+            "hex": "76a9144963929828681e590020340385bab2ae114bca9688ac",
             "addresses": [
-                "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a"
+                "XhNtSggaqVecdFxSFeDftR6GZk8D7Ms3JE"
             ],
-            "isAddress": true,
-            "type": "pubkeyhash"
+            "isAddress": true
         }
     ],
-    "blockHash": "0000000000000000023a561e1ea370153aac5d1504726d1a039032831c05fcfc",
-    "blockHeight": 684634,
-    "confirmations": 1197,
-    "blockTime": 1617180599,
-    "size": 226,
-    "value": "9407625",
-    "valueIn": "12345970",
-    "fees": "2938345"
+    "blockHash": "00000000000000007409ab5be18f66b1f68795ff81d3b3b1d592574fae07c372",
+    "blockHeight": 2540600,
+    "confirmations": 74,
+    "blockTime": 1789687365,
+    "size": 1278,
+    "value": "7000070",
+    "valueIn": "7000070",
+    "fees": "0"
 }
 ```
 

@@ -27,7 +27,7 @@ This endpoint returns balance and transaction data for a single Dash address. Th
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?page=1&pageSize=1000&details=txids'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?page=1&pageSize=1000&details=txids'
 ```
 {% endcode %}
 {% endtab %}
@@ -36,7 +36,7 @@ curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-T
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?page=1&pageSize=1000&details=txids'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?page=1&pageSize=1000&details=txids'
 );
 console.log(await response.json());
 ```
@@ -48,7 +48,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?page=1&pageSize=1000&details=txids')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/address/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?page=1&pageSize=1000&details=txids')
 
 print(response.json())
 ```
@@ -61,18 +61,19 @@ print(response.json())
 ```json
 {
     "page": 1,
-    "totalPages": 1,
+    "totalPages": 173,
     "itemsOnPage": 1000,
-    "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
-    "balance": "9407625",
-    "totalReceived": "45231890",
-    "totalSent": "35824265",
+    "address": "XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw",
+    "balance": "219706393531",
+    "totalReceived": "9426682599883",
+    "totalSent": "9206976206352",
     "unconfirmedBalance": "0",
     "unconfirmedTxs": 0,
-    "txs": 5,
+    "txs": 172602,
     "txids": [
-        "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642",
-        "780791bb2d5a8ccda4b5a707967a8e15b412814852c58c77299e85579bb65587"
+        "092fee8b2d026eb7959faa3e3c20dcc37c84b24378abf8904fc775b67b2a197a",
+        "28fd12e061c1e086e9861cfd396e6bc1afcdfc28c245cb487e4fe421cefbd926",
+        "200644c0a57556437ce3aa9b30fc9ac803496c3f182477f8886ffa00c6efdf89"
     ]
 }
 ```

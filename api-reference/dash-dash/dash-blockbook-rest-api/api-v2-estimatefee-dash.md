@@ -6,7 +6,7 @@ description: >-
 
 # api/v2/estimatefee - Dash
 
-This endpoint returns the backend fee estimate for a target number of blocks to confirmation. The result is a fee rate in BCH per kilobyte.
+This endpoint returns the backend fee estimate for a target number of blocks to confirmation. The result is a fee rate in DASH per kilobyte.
 
 ## Parameters
 
@@ -54,7 +54,7 @@ print(response.json())
 
 ```json
 {
-    "result": "0.00001000"
+    "result": "0.00001"
 }
 ```
 
@@ -62,7 +62,7 @@ print(response.json())
 
 | Field  | Type   | Description                                                |
 | ------ | ------ | ---------------------------------------------------------- |
-| result | string | Estimated fee rate as a decimal amount in BCH per kilobyte |
+| result | string | Estimated fee rate as a decimal amount in DASH per kilobyte |
 
 ## Use Cases
 

@@ -55,9 +55,9 @@ print(response.json())
 
 ```json
 {
-    "ts": 1785418362,
+    "ts": 1789700520,
     "rates": {
-        "usd": 211.79
+        "usd": 61.35
     }
 }
 ```
@@ -72,9 +72,9 @@ print(response.json())
 
 ## Use Cases
 
-* **Fiat Display**: Show a BCH amount in a user's local currency
+* **Fiat Display**: Show a DASH amount in a user's local currency
 * **Historical Valuation**: Read the rate at a past timestamp or block
-* **Invoicing**: Convert a fiat-priced invoice into BCH at the current rate
+* **Invoicing**: Convert a fiat-priced invoice into DASH at the current rate
 * **Reporting**: Attach fiat values to transaction histories
 
 ## Error Handling

@@ -20,7 +20,7 @@ This endpoint returns fee statistics for the transactions in a single block, sel
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/684634'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/2540670'
 ```
 {% endcode %}
 {% endtab %}
@@ -29,7 +29,7 @@ curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-T
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/684634'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/2540670'
 );
 console.log(await response.json());
 ```
@@ -41,7 +41,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/684634')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/feestats/2540670')
 
 print(response.json())
 ```
@@ -53,21 +53,21 @@ print(response.json())
 
 ```json
 {
-    "txCount": 2815,
-    "totalFeesSat": "12730055",
-    "averageFeePerKb": 1240.5,
+    "txCount": 30,
+    "totalFeesSat": "226187",
+    "averageFeePerKb": 6441,
     "decilesFeePerKb": [
-        500,
-        780,
-        900,
-        1050,
-        1180,
-        1240,
-        1310,
-        1500,
-        1820,
-        2200,
-        4200
+        0,
+        0,
+        1000,
+        1002,
+        1003,
+        1004,
+        1008,
+        2008,
+        6735,
+        32204,
+        64233
     ]
 }
 ```
