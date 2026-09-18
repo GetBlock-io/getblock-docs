@@ -8,6 +8,12 @@ description: >-
 
 The Bitcoin Cash REST API serves indexed blockchain data over HTTP. Each endpoint is a path under a versioned base, queried with path and query parameters, and returns JSON. The API is backed by an address- and xpub-indexed view of the chain, so it answers address, wallet, transaction, block, UTXO, and fiat-rate queries that a plain node cannot.
 
+GetBlock's Blockbook add-on is provisioned through separate REST and WebSocket endpoints. Use REST for address, transaction, balance, and UTXO queries. Use WebSocket when subscriptions are required. A standard Bitcoin Cash JSON-RPC endpoint does not support Blockbook methods.
+
+{% hint style="warning" %}
+**A Bitcoin Cash JSON-RPC access token and a Blockbook REST access token are different endpoint configurations.** Blockbook is not served over JSON-RPC on GetBlock. Method names with a `bb_` prefix, such as `bb_getAddress` and `bb_getUTXOs`, are upstream Blockbook names used by some other providers; sending them to a standard JSON-RPC endpoint returns `-32603 Internal error`. Use the REST paths below instead: `bb_getAddress` maps to `/api/v2/address/{address}`, `bb_getUTXOs` to `/api/v2/utxo/{addressOrXpub}`, and the remaining methods follow the same pattern. The Bitcoin Core wallet RPCs, including `listunspent`, are disabled on shared nodes and return `405 Method Not Allowed`.
+{% endhint %}
+
 ### Base URL
 
 All endpoints are served under the `/api/v2/` path on the Bitcoin Cash endpoint:

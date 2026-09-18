@@ -190,6 +190,31 @@ If you get a valid response with a block number, you're good.
 | Dedicated Nodes     | ✅ From $1,000/mo, unlimited                        |
 | Debug/Trace         | ✅ Starter+ plans                                   |
 | Multi-region        | ✅ 3 regions (explicit selection)                   |
+| Blockbook (`bb_*`)  | ✅ Blockbook add-on, served over REST — see below   |
+
+### Bitcoin Blockbook: `bb_*` methods → REST paths
+
+QuickNode exposes the Blockbook indexer as JSON-RPC methods with a `bb_` prefix. GetBlock provisions Blockbook as a separate add-on served over REST and WebSocket, so the method names do not carry over — the same index is queried by path instead. In the dashboard, select **Bitcoin → Mainnet → Full → Blockbook → REST**; the add-on gets its own endpoint URL, distinct from a Bitcoin JSON-RPC token.
+
+| QuickNode method       | GetBlock REST path                  |
+| ---------------------- | ----------------------------------- |
+| `bb_getAddress`        | `/api/v2/address/{address}`         |
+| `bb_getUTXOs`          | `/api/v2/utxo/{addressOrXpub}`      |
+| `bb_getXpub`           | `/api/v2/xpub/{xpub}`               |
+| `bb_getTx`             | `/api/v2/tx/{txid}`                 |
+| `bb_getTxSpecific`     | `/api/v2/tx-specific/{txid}`        |
+| `bb_getBlock`          | `/api/v2/block/{blockId}`           |
+| `bb_getBlockHash`      | `/api/v2/block-index/{blockHeight}` |
+| `bb_getBalanceHistory` | `/api/v2/balancehistory/{address}`  |
+| `bb_sendTransaction`   | `/api/v2/sendtx/`                   |
+
+{% code overflow="wrap" %}
+```bash
+curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq?confirmed=true'
+```
+{% endcode %}
+
+Sending a `bb_`-prefixed method to a standard Bitcoin JSON-RPC endpoint returns `-32603 Internal error`, because that endpoint has no address index and does not know the method. The Bitcoin Core wallet RPCs, including `listunspent`, are disabled on shared nodes and return `405 Method Not Allowed`; use `/api/v2/utxo/{address}` instead. Full reference: [Bitcoin Blockbook REST API](../api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/).
 
 ### What You Gain
 

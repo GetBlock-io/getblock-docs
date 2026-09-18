@@ -1,0 +1,35 @@
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+
+# The Blockbook bb_* JSON-RPC sections were removed: GetBlock serves Blockbook
+# over REST and WebSocket only, and those pages documented an unprovisionable
+# JSON-RPC interface. Each old URL points at the REST page returning the same data.
+redirects:
+  api-reference/bitcoin-btc/botcoin-blockbook-api: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/README.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getaddress-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-address-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getbalancehistory-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-balancehistory-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getblock-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-block-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getblockhash-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-block-index-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_gettickers-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-tickers-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_gettickerslist-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-tickers-list-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_gettx-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-tx-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_gettxspecific-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-tx-specific-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getutxos-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-utxo-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getxpub-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-xpub-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_sendtransaction-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-sendtx-bitcoin.md
+
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/README.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getaddress-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-address-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getbalancehistory-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-balancehistory-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getblock-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-block-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getblockhash-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-block-index-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_gettickers-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-tickers-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_gettickerslist-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-tickers-list-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_gettx-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-tx-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_gettxspecific-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-tx-specific-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getutxos-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-utxo-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getxpub-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-xpub-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_sendtransaction-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-sendtx-bitcoin-cash.md
