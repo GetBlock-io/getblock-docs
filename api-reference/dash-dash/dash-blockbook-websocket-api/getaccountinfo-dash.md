@@ -26,7 +26,7 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
     "id": "getblock.io",
     "method": "getAccountInfo",
     "params": {
-        "descriptor": "XvKqL8m3nP7rT2wZ5aB9cD4eF6gH1jK0mN",
+        "descriptor": "XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw",
         "details": "txids"
     }
 }
@@ -39,13 +39,19 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 {
     "id": "getblock.io",
     "data": {
-        "address": "XvKqL8m3nP7rT2wZ5aB9cD4eF6gH1jK0mN",
-        "balance": "150000000",
-        "totalReceived": "500000000",
-        "totalSent": "350000000",
-        "txs": 12,
+        "page": 1,
+        "totalPages": 173,
+        "itemsOnPage": 1000,
+        "address": "XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw",
+        "balance": "219747488042",
+        "totalReceived": "9426723694394",
+        "totalSent": "9206976206352",
+        "unconfirmedBalance": "0",
+        "unconfirmedTxs": 0,
+        "txs": 172603,
         "txids": [
-            "3a1f9c2e7b4d8a05f6c1e3d9b2a4c6e8f0d1b3a5c7e9f2d4b6a8c0e1f3d5b7a9c"
+            "f46a956ed9042654fc63fc67a1ac30b4914805659afabe814fa9c2dc65731c40",
+            "092fee8b2d026eb7959faa3e3c20dcc37c84b24378abf8904fc775b67b2a197a"
         ]
     }
 }

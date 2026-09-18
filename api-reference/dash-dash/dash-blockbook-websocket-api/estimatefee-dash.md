@@ -29,7 +29,11 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
             1,
             6,
             12
-        ]
+        ],
+        "specific": {
+            "conservative": true,
+            "txsize": 1278
+        }
     }
 }
 ```
@@ -42,13 +46,16 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
     "id": "getblock.io",
     "data": [
         {
-            "feePerUnit": "0.00002500"
+            "feePerTx": "1278",
+            "feePerUnit": "1000"
         },
         {
-            "feePerUnit": "0.00001500"
+            "feePerTx": "1278",
+            "feePerUnit": "1000"
         },
         {
-            "feePerUnit": "0.00001000"
+            "feePerTx": "1278",
+            "feePerUnit": "1000"
         }
     ]
 }
@@ -56,9 +63,18 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Response Fields
 
-| Field      | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| feePerUnit | string | Estimated fee rate per target in DASH/kB |
+| Field      | Type   | Description                                                            |
+| ---------- | ------ | ------------------------------------------------------------------------ |
+| feePerTx   | string | Estimated total fee in duffs for a transaction of the supplied `txsize` |
+| feePerUnit | string | Estimated fee rate in duffs per **kilobyte**, not per byte              |
+
+Results are returned in the same order as the requested `blocks` targets.
+
+{% hint style="warning" %}
+`feePerUnit` is quoted per 1000 bytes, following the backend's `estimatesmartfee`, which reports DASH per kilobyte. It is an integer count of duffs, not a decimal DASH amount. `feePerTx` is derived as `txsize x feePerUnit / 1000`; in the response above, `1278 x 1000 / 1000 = 1278` duffs.
+
+Dash's relay minimum keeps the estimate flat at 1000 duffs/kB across all three targets when the mempool is uncongested, so identical values for 1, 6 and 12 blocks are expected rather than a bug.
+{% endhint %}
 
 ## Use Cases
 

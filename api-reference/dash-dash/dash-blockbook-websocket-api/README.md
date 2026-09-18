@@ -11,13 +11,13 @@ The Blockbook indexer WebSocket interface for Dash: request/response queries (st
 
 ## Methods
 
-* [getInfo](/broken/pages/df274357ae03297262e0861a3c7bdd99550872c8) — Indexer and backend status
-* [getAccountInfo](/broken/pages/096ef7fc9d949189ca86e1ee8241a6b2770413f5) — Address balance and history (WS)
-* [getTransaction](/broken/pages/3853375ec7f9e61af6d7f42477ae45a3f9bdf12f) — Transaction by txid (WS)
-* [sendTransaction](/broken/pages/aeb30791c81d7a6ac65beaae6928e56c53127f25) — Broadcast a transaction (WS)
-* [estimateFee](/broken/pages/d023246893369494d5d1796713234b0ac1bb9cbe) — Fee estimate (WS)
-* [subscribeNewBlock](/broken/pages/e03182b5af49feec90f17fcb7bd5d2c1239f4f68) — Subscribe to new blocks (WS)
-* [subscribeAddresses](/broken/pages/d8a8ff5c82f0f5ea9ca41aa3ff6415a96b064767) — Subscribe to address activity (WS)
+* [getInfo](getinfo-dash.md) — Indexer and backend status
+* [getAccountInfo](getaccountinfo-dash.md) — Address balance and history (WS)
+* [getTransaction](gettransaction-dash.md) — Transaction by txid (WS)
+* [sendTransaction](sendtransaction-dash.md) — Broadcast a transaction (WS)
+* [estimateFee](estimatefee-dash.md) — Fee estimate (WS)
+* [subscribeNewBlock](subscribenewblock-dash.md) — Subscribe to new blocks (WS)
+* [subscribeAddresses](subscribeaddresses-dash.md) — Subscribe to address activity (WS)
 
 ## Support
 
