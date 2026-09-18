@@ -37,9 +37,17 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
     "data": {
         "name": "Dash",
         "shortcut": "DASH",
-        "bestHeight": 2100000,
-        "bestHash": "000000000000000abc12def34567890fedcba9876543210abcdef1234567890ff",
-        "version": "0.4.0"
+        "network": "DASH",
+        "decimals": 8,
+        "version": "unknown",
+        "bestHeight": 2540675,
+        "bestHash": "000000000000000344a8914b400c4d5e572ba8e1c25388f012104ec7d9b81b99",
+        "block0Hash": "00000ffd590b1485b3caadc19b22e6379c733355108f107a430458cdf3407ab6",
+        "testnet": false,
+        "backend": {
+            "version": "230108",
+            "subversion": "/Dash Core:23.1.8/"
+        }
     }
 }
 ```

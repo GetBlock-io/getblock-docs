@@ -4,7 +4,7 @@ description: >-
   api/v2/utxo REST method in the GetBlock Web3 documentation.
 ---
 
-# api/v2/utxo  - Bitcoin Cash
+# api/v2/utxo - Dash
 
 This endpoint returns the unspent transaction outputs for an address, extended public key, or descriptor. These outputs are the inputs available when constructing a spending transaction.
 
@@ -22,7 +22,7 @@ This endpoint returns the unspent transaction outputs for an address, extended p
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```bash
-curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?confirmed=true'
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?confirmed=true'
 ```
 {% endcode %}
 {% endtab %}
@@ -31,7 +31,7 @@ curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-T
 {% code title="example.js" %}
 ```javascript
 const response = await fetch(
-    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?confirmed=true'
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?confirmed=true'
 );
 console.log(await response.json());
 ```
@@ -43,7 +43,7 @@ console.log(await response.json());
 ```python
 import requests
 
-response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a?confirmed=true')
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/utxo/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?confirmed=true')
 
 print(response.json())
 ```
@@ -56,30 +56,25 @@ print(response.json())
 ```json
 [
     {
-        "txid": "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642",
-        "vout": 1,
-        "value": "9407625",
-        "height": 684634,
-        "confirmations": 1197
-    }
-]
-```
-
-An address query returns no `address` or `path`, because the owning address is the one in the request. Querying an xpub or descriptor adds both to each output, identifying which derived address owns it:
-
-```json
-[
+        "txid": "092fee8b2d026eb7959faa3e3c20dcc37c84b24378abf8904fc775b67b2a197a",
+        "vout": 0,
+        "value": "41098577",
+        "height": 2540673,
+        "confirmations": 1,
+        "coinbase": true
+    },
     {
-        "txid": "10b54fd708ab2e5703979b4ba27ca0339882abc2062e77fbe51e625203a49642",
-        "vout": 1,
-        "value": "9407625",
-        "height": 684634,
-        "confirmations": 1197,
-        "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
-        "path": "m/44'/145'/0'/0/0"
+        "txid": "28fd12e061c1e086e9861cfd396e6bc1afcdfc28c245cb487e4fe421cefbd926",
+        "vout": 0,
+        "value": "41098317",
+        "height": 2540671,
+        "confirmations": 3,
+        "coinbase": true
     }
 ]
 ```
+
+An address query returns no `address` or `path`, because the owning address is the one in the request. Querying an xpub or descriptor adds both to each output, identifying which derived address owns it.
 
 ## Response Parameters
 
@@ -87,11 +82,12 @@ An address query returns no `address` or `path`, because the owning address is t
 | ------------- | ------- | -------------------------------------------------------------------------- |
 | txid          | string  | Transaction id of the output                                             |
 | vout          | integer | Output index within the transaction                                      |
-| value         | string  | Output value in satoshis                                                 |
+| value         | string  | Output value in duffs                                                    |
 | height        | integer | Block height at which the output was confirmed. Omitted when unconfirmed |
 | confirmations | integer | Number of confirmations. 0 for unconfirmed outputs                       |
 | address       | string  | Owning address. Returned only for xpub and descriptor queries            |
 | path          | string  | Derivation path of the owning address. Only for xpub and descriptor queries |
+| coinbase      | boolean | True for coinbase outputs, up to the 100-block coinbase maturity limit    |
 
 ## Use Cases
 

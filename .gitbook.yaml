@@ -1,0 +1,87 @@
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+
+# The Blockbook bb_* JSON-RPC sections were removed: GetBlock serves Blockbook
+# over REST and WebSocket only, and those pages documented an unprovisionable
+# JSON-RPC interface. Each old URL points at the REST page returning the same data.
+redirects:
+  api-reference/bitcoin-btc/botcoin-blockbook-api: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/README.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getaddress-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-address-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getbalancehistory-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-balancehistory-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getblock-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-block-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getblockhash-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-block-index-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_gettickers-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-tickers-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_gettickerslist-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-tickers-list-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_gettx-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-tx-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_gettxspecific-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-tx-specific-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getutxos-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-utxo-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_getxpub-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-xpub-bitcoin.md
+  api-reference/bitcoin-btc/botcoin-blockbook-api/bb_sendtransaction-bitcoin: api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/api-v2-sendtx-bitcoin.md
+
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/README.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getaddress-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-address-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getbalancehistory-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-balancehistory-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getblock-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-block-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getblockhash-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-block-index-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_gettickers-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-tickers-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_gettickerslist-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-tickers-list-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_gettx-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-tx-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_gettxspecific-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-tx-specific-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getutxos-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-utxo-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getxpub-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-xpub-bitcoin-cash.md
+  api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_sendtransaction-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-sendtx-bitcoin-cash.md
+
+  # Dash REST section renamed out of its bitcoin-cash-named directory.
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api: api-reference/dash-dash/dash-blockbook-rest-api/README.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-address-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-address-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-balancehistory-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-balancehistory-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-block-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-block-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-block-index-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-block-index-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-estimatefee-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-estimatefee-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-feestats-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-feestats-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-multi-tickers-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-multi-tickers-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-rawblock-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-rawblock-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-sendtx-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-sendtx-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-tickers-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-tickers-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-tickers-list-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-tickers-list-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-tx-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-tx-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-tx-specific-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-tx-specific-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-utxo-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-utxo-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-xpub-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-xpub-dash.md
+
+  # Litecoin JSON-RPC method pages grouped into their own section.
+  api-reference/litecoin/createmultisig-litecoin: api-reference/litecoin/litecoin-json-rpc-api/createmultisig-litecoin.md
+  api-reference/litecoin/createrawtransaction-litecoin: api-reference/litecoin/litecoin-json-rpc-api/createrawtransaction-litecoin.md
+  api-reference/litecoin/decoderawtransaction-litecoin: api-reference/litecoin/litecoin-json-rpc-api/decoderawtransaction-litecoin.md
+  api-reference/litecoin/decodescript-litecoin: api-reference/litecoin/litecoin-json-rpc-api/decodescript-litecoin.md
+  api-reference/litecoin/estimatesmartfee-litecoin: api-reference/litecoin/litecoin-json-rpc-api/estimatesmartfee-litecoin.md
+  api-reference/litecoin/getbestblockhash-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getbestblockhash-litecoin.md
+  api-reference/litecoin/getblock-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblock-litecoin.md
+  api-reference/litecoin/getblockchaininfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblockchaininfo-litecoin.md
+  api-reference/litecoin/getblockcount-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblockcount-litecoin.md
+  api-reference/litecoin/getblockhash-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblockhash-litecoin.md
+  api-reference/litecoin/getblockstats-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblockstats-litecoin.md
+  api-reference/litecoin/getblocktemplate-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getblocktemplate-litecoin.md
+  api-reference/litecoin/getchaintips-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getchaintips-litecoin.md
+  api-reference/litecoin/getconnectioncount-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getconnectioncount-litecoin.md
+  api-reference/litecoin/getdifficulty-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getdifficulty-litecoin.md
+  api-reference/litecoin/getmemoryinfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmemoryinfo-litecoin.md
+  api-reference/litecoin/getmempoolancestors-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmempoolancestors-litecoin.md
+  api-reference/litecoin/getmempooldescendants-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmempooldescendants-litecoin.md
+  api-reference/litecoin/getmempoolentry-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmempoolentry-litecoin.md
+  api-reference/litecoin/getmempoolinfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmempoolinfo-litecoin.md
+  api-reference/litecoin/getmininginfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getmininginfo-litecoin.md
+  api-reference/litecoin/getnettotals-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getnettotals-litecoin.md
+  api-reference/litecoin/getnetworkhashps-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getnetworkhashps-litecoin.md
+  api-reference/litecoin/getrawtransaction-litecoin: api-reference/litecoin/litecoin-json-rpc-api/getrawtransaction-litecoin.md
+  api-reference/litecoin/gettxout-litecoin: api-reference/litecoin/litecoin-json-rpc-api/gettxout-litecoin.md
+  api-reference/litecoin/gettxoutproof-litecoin: api-reference/litecoin/litecoin-json-rpc-api/gettxoutproof-litecoin.md
+  api-reference/litecoin/gettxoutsetinfo-litecoin: api-reference/litecoin/litecoin-json-rpc-api/gettxoutsetinfo-litecoin.md
+  api-reference/litecoin/help-litecoin: api-reference/litecoin/litecoin-json-rpc-api/help-litecoin.md
+  api-reference/litecoin/listbanned-litecoin: api-reference/litecoin/litecoin-json-rpc-api/listbanned-litecoin.md
+  api-reference/litecoin/testmempoolaccept-litecoin: api-reference/litecoin/litecoin-json-rpc-api/testmempoolaccept-litecoin.md
+  api-reference/litecoin/validateaddress-litecoin: api-reference/litecoin/litecoin-json-rpc-api/validateaddress-litecoin.md
+  api-reference/litecoin/verifymessage-litecoin: api-reference/litecoin/litecoin-json-rpc-api/verifymessage-litecoin.md

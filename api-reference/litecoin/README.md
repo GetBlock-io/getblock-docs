@@ -43,9 +43,19 @@ https://shared.eu-central-1.getblock.io
 
 ## Supported Networks
 
-| Network | Chain ID | JSON RPC | Blockbook(WS) | Blockbook(REST) |
-| ------- | -------- | -------- | ------------- | --------------- |
-| Mainnet | 1329     | ✅        | ✅             | ✅               |
+| Network | JSON RPC | Blockbook (REST) | Blockbook (WebSocket) |
+| ------- | -------- | ---------------- | --------------------- |
+| Mainnet | ✅        | ✅                | ✅                     |
+
+{% hint style="info" %}
+JSON-RPC is the Litecoin Core node interface. Blockbook is a separate add-on providing an address- and xpub-indexed view of the chain, and its REST and WebSocket interfaces are provisioned as their own endpoints with their own URLs. A JSON-RPC endpoint does not answer address, UTXO, or wallet queries, and the Litecoin Core wallet RPCs such as `listunspent` are disabled on shared nodes. See the [Blockbook add-on](../../add-ons/blockbook.md).
+{% endhint %}
+
+| Interface                                                    | Use it for                                                                           |
+| ------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| JSON-RPC (this section)                                      | Node-level queries: blocks, raw transactions, mempool, mining, network state          |
+| [Blockbook REST](litecoin-blockbook-rest-api/)               | Address balances, UTXOs, wallet-level xpub queries, transaction history, fiat rates   |
+| [Blockbook WebSocket](litecoin-blockbook-websocket-api/)     | The same queries plus live subscriptions to new blocks and address activity           |
 
 ## Quickstart
 
@@ -249,72 +259,24 @@ python main.py
 
 ## Available Methods
 
-### Blockchain Information
+Litecoin is documented across three interfaces, each provisioned as its own endpoint.
 
-These methods allow users to retrieve information about the Litecoin blockchain state.
+### [Litecoin JSON-RPC API](litecoin-json-rpc-api/)
 
-* `getblockchaininfo`: Returns an object containing various state info regarding blockchain processing.
-* `getbestblockhash`: Returns the hash of the best (tip) block in the longest blockchain.
-* `getblockcount`: Returns the number of blocks in the longest blockchain.
-* `getdifficulty`: Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
+The Litecoin Core node interface: blocks, raw transactions, mempool inspection, mining data, network state, and fee estimation. Methods are grouped by area on the section page.
 
-### Block Retrieval
+### [Litecoin Blockbook REST API](litecoin-blockbook-rest-api/)
 
-Key methods to fetch block data from the blockchain.
+Address- and xpub-indexed queries over HTTP: balances, transaction history, unspent outputs, wallet-level xpub lookups, balance history, and fiat rates.
 
-* `getblock`: Returns an object with information about block for given hash.
-* `getblockhash`: Returns hash of block in best-block-chain at height provided.
-* `getblockstats`: Compute per block statistics for a given window.
+### [Litecoin Blockbook (WebSocket) API](litecoin-blockbook-websocket-api/)
 
-### Transaction Methods
+The same indexed queries over a persistent connection, plus subscriptions to new blocks and to activity on a set of addresses.
 
-Methods for creating, decoding, and broadcasting transactions.
+{% hint style="info" %}
+A JSON-RPC endpoint has no address index, so address balances and UTXO lookups belong on Blockbook. The Litecoin Core wallet RPCs, including `listunspent`, are disabled on shared nodes because those nodes carry no user wallets.
+{% endhint %}
 
-* `getrawtransaction`: Returns the raw transaction data.
-* `decoderawtransaction`: Returns a JSON object representing the serialized transaction.
-* `decodescript`: Decode a hex-encoded script.
-* `createrawtransaction`: Creates a transaction spending the given inputs.
-
-### Mempool Methods
-
-Methods for querying the memory pool of unconfirmed transactions.
-
-* `getmempoolinfo`: Returns details on the active state of the TX memory pool.
-* `getmempoolentry`: Returns mempool data for given transaction.
-* `getmempoolancestors`: Returns all in-mempool ancestors.
-* `getmempooldescendants`: Returns all in-mempool descendants.
-
-### Mining Methods
-
-Methods related to mining operations and statistics.
-
-* `getmininginfo`: Returns a json object containing mining-related information.
-* `getnetworkhashps`: Returns the estimated network hashes per second.
-* `getblocktemplate`: Returns data needed to construct a block to work on.
-
-### Network Methods
-
-Methods for querying network state and peer information.
-
-* `getconnectioncount`: Returns the number of connections to other nodes.
-* `getnettotals`: Returns information about network traffic.
-
-### Utility Methods
-
-General utility methods for validation and information.
-
-* `validateaddress`: Return information about the given Litecoin address.
-* `verifymessage`: Verify a signed message.
-* `estimatesmartfee`: Estimates the approximate fee per kilobyte.
-* `help`: List all commands, or get help for a specified command.
-
-### UTXO Methods
-
-Methods for querying unspent transaction outputs.
-
-* `gettxout`: Returns details about an unspent transaction output.
-* `gettxoutsetinfo`: Returns statistics about the unspent transaction output set.
-* `gettxoutproof`: Returns a hex-encoded proof that txids were included in a block.
 
 ## Support
 

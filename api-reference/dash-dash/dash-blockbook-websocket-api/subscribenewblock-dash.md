@@ -54,7 +54,7 @@ While subscribed, the server pushes messages of the form:
     "id": "getblock.io",
     "data": {
         "height": 2100001,
-        "hash": "000000000000000abc12def34567890fedcba9876543210abcdef1234567890ff"
+        "hash": "000000000000000344a8914b400c4d5e572ba8e1c25388f012104ec7d9b81b99"
     }
 }
 ```

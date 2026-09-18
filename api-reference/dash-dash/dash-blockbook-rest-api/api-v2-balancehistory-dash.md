@@ -1,0 +1,110 @@
+---
+description: >-
+  Example code for the api/v2/balancehistory REST method. Complete guide on how
+  to use the api/v2/balancehistory REST method in the GetBlock Web3
+  documentation.
+---
+
+# api/v2/balancehistory - Dash
+
+This endpoint returns aggregated balance-change history for an address, extended public key, or descriptor over a time range. Results are grouped into intervals and can include fiat rates.
+
+## Parameters
+
+| Parameter    | Type    | Location | Required | Description                                                         |
+| ------------ | ------- | -------- | -------- | ------------------------------------------------------------------- |
+| address      | string  | path     | Yes      | Address, extended public key, or descriptor. URL-encode descriptors |
+| from         | integer | query    | No       | Unix timestamp lower bound                                          |
+| to           | integer | query    | No       | Unix timestamp upper bound                                          |
+| fiatcurrency | string  | query    | No       | Fiat currency code to include in rates                              |
+| groupBy      | integer | query    | No       | Aggregation interval in seconds. Default 3600                       |
+
+## Request
+
+{% tabs %}
+{% tab title="cURL" %}
+{% code overflow="wrap" %}
+```bash
+curl --location --request GET 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?from=1789600000&to=1789690000&fiatcurrency=usd'
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="JavaScript" %}
+{% code title="example.js" %}
+```javascript
+const response = await fetch(
+    'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?from=1789600000&to=1789690000&fiatcurrency=usd'
+);
+console.log(await response.json());
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="example.py" %}
+```python
+import requests
+
+response = requests.get('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/balancehistory/XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw?from=1789600000&to=1789690000&fiatcurrency=usd')
+
+print(response.json())
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+```json
+[
+    {
+        "time": 1789599600,
+        "txs": 7,
+        "received": "287767781",
+        "sent": "0",
+        "sentToSelf": "0",
+        "rates": {
+            "usd": 54.960075
+        }
+    },
+    {
+        "time": 1789603200,
+        "txs": 17,
+        "received": "698730983",
+        "sent": "0",
+        "sentToSelf": "0",
+        "rates": {
+            "usd": 61.43
+        }
+    }
+]
+```
+
+The array is truncated above. With `groupBy` left at its 3600-second default, the documented range returns 25 hourly points.
+
+## Response Parameters
+
+| Field      | Type    | Description                                              |
+| ---------- | ------- | -------------------------------------------------------- |
+| time       | integer | Start of the interval as a Unix timestamp                |
+| txs        | integer | Number of transactions in the interval                   |
+| received   | string  | Total received in the interval, in duffs              |
+| sent       | string  | Total sent in the interval, in duffs                  |
+| sentToSelf | string  | Amount sent back to the same account, in duffs        |
+| rates      | object  | Fiat rates at the interval, when a currency is requested |
+
+## Use Cases
+
+* **Balance Charts**: Plot an address balance over time in intervals
+* **Fiat Valuation**: Attach historical fiat rates to balance changes
+* **Activity Windows**: Aggregate history by day, hour, or custom interval
+* **Reporting**: Produce time-bucketed received and sent totals
+
+## Error Handling
+
+| HTTP Status | Message        | Description                                      |
+| ----------- | -------------- | ------------------------------------------------ |
+| 400         | Bad request    | The address, XPUB, or descriptor is malformed    |
+| 404         | Not found      | No indexed data exists for the requested account |
+| 500         | Internal error | The indexer failed to read account data          |

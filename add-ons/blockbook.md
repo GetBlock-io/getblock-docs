@@ -37,12 +37,17 @@ Because Blockbook indexes unspent outputs by address, the configurator offers it
 | Bitcoin Cash | BCH    |
 | Dash         | DASH   |
 | Dogecoin     | DOGE   |
+| Litecoin     | LTC    |
 | Zcash        | ZEC    |
 
 Each chain's paths and methods are listed under its own entry in the API reference. The schema is shared across all of them, so a query written for one chain works on another with only the endpoint changed.
 
 {% hint style="info" %}
 **REST and WebSocket are provisioned separately.** Blockbook exposes the same index through two interfaces: a REST API for one-off queries, and a WebSocket API that also supports subscriptions. Each is its own endpoint with its own URL, so enabling Blockbook (REST) does not give you Blockbook (WS). A project that needs to watch an address as well as query it needs both.
+{% endhint %}
+
+{% hint style="warning" %}
+**Blockbook is not available over JSON-RPC.** REST and WebSocket are the two provisionable interfaces. Other providers expose Blockbook as JSON-RPC methods with a `bb_` prefix, such as `bb_getAddress` and `bb_getUTXOs`; those are upstream Blockbook method names and are not served by GetBlock. Sending them to a standard Bitcoin JSON-RPC endpoint returns `-32603 Internal error`, because that endpoint has no address index and does not know the method. Each chain's REST reference lists the path that returns the same data.
 {% endhint %}
 
 ### Benefits

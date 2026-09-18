@@ -31,7 +31,7 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
     "method": "subscribeAddresses",
     "params": {
         "addresses": [
-            "XvKqL8m3nP7rT2wZ5aB9cD4eF6gH1jK0mN"
+            "XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw"
         ]
     }
 }
@@ -57,9 +57,9 @@ While subscribed, the server pushes messages of the form:
 {
     "id": "getblock.io",
     "data": {
-        "address": "XvKqL8m3nP7rT2wZ5aB9cD4eF6gH1jK0mN",
+        "address": "XjszN1jZJthEoaQDhGthRkaHL9AqaG3Vzw",
         "tx": {
-            "txid": "3a1f9c2e7b4d8a05f6c1e3d9b2a4c6e8f0d1b3a5c7e9f2d4b6a8c0e1f3d5b7a9c",
+            "txid": "eb0351c64cde2c42bcdf10b11a1ad44bb63631bb6487de70e78b90c2aa57137c",
             "value": "150000000"
         }
     }

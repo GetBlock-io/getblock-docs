@@ -1,22 +1,16 @@
 ---
 description: >-
-  GetBlock provides fast and reliable access to Bitcoin Cash nodes via REST API
-  . Connect to the Bitcoin Cash network without running your own infrastructure.
+  GetBlock provides fast and reliable access to Dash nodes via REST API .
+  Connect to the Dash network without running your own infrastructure.
 ---
 
-# Bitcoin Cash Blockbook (REST) API
+# Dash Blockbook (REST) API
 
-The Bitcoin Cash REST API serves indexed blockchain data over HTTP. Each endpoint is a path under a versioned base, queried with path and query parameters, and returns JSON. The API is backed by an address- and xpub-indexed view of the chain, so it answers address, wallet, transaction, block, UTXO, and fiat-rate queries that a plain node cannot.
-
-GetBlock's Blockbook add-on is provisioned through separate REST and WebSocket endpoints. Use REST for address, transaction, balance, and UTXO queries. Use WebSocket when subscriptions are required. A standard Bitcoin Cash JSON-RPC endpoint does not support Blockbook methods.
-
-{% hint style="warning" %}
-**A Bitcoin Cash JSON-RPC access token and a Blockbook REST access token are different endpoint configurations.** Blockbook is not served over JSON-RPC on GetBlock. Method names with a `bb_` prefix, such as `bb_getAddress` and `bb_getUTXOs`, are upstream Blockbook names used by some other providers; sending them to a standard JSON-RPC endpoint returns `-32603 Internal error`. Use the REST paths below instead: `bb_getAddress` maps to `/api/v2/address/{address}`, `bb_getUTXOs` to `/api/v2/utxo/{addressOrXpub}`, and the remaining methods follow the same pattern. The Bitcoin Core wallet RPCs, including `listunspent`, are disabled on shared nodes and return `405 Method Not Allowed`.
-{% endhint %}
+The Blockbook indexer REST interface for Dash provides address-indexed HTTP endpoints under `/api/` for balances, UTXOs, address-resolved transactions and blocks, broadcast, and fee estimation—capabilities the raw node RPC does not index natively.
 
 ### Base URL
 
-All endpoints are served under the `/api/v2/` path on the Bitcoin Cash endpoint:
+All endpoints are served under the `/api/v2/` path on the Dash endpoint:
 
 ```bash
 https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/
@@ -25,7 +19,7 @@ https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/
 Replace `<ACCESS-TOKEN>` with the access token from the GetBlock dashboard. Requests are standard HTTP: `GET` for queries and `POST` for transaction broadcasting.
 
 {% hint style="info" %}
-The REST API is served by the indexer add-on. Confirm from the GetBlock dashboard that the add-on is enabled on the Bitcoin Cash endpoint, and confirm the exact base path, before relying on the paths below.
+The REST API is served by the indexer add-on. Confirm from the GetBlock dashboard that the add-on is enabled on the Dash endpoint, and confirm the exact base path, before relying on the paths below.
 {% endhint %}
 
 ### Endpoints
@@ -57,5 +51,5 @@ For technical support and questions:
 ### See Also
 
 * [Blockbook REST API Reference](https://github.com/trezor/blockbook/blob/master/openapi.yaml)
-* [Bitcoin Cash (BCH)](../)
+* [Dash](../)
 * [Blockbook Add-on](../../../add-ons/blockbook.md)
