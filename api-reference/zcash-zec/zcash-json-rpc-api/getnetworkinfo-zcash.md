@@ -6,7 +6,11 @@ description: >-
 
 # getnetworkinfo - Zcash
 
-This method returns detailed network status information: peer counts by direction, protocol version, active listening addresses, and negotiated services. Introduced in Zebra 3.0.0 (January 2026), it provides the rich network-layer diagnostics that Bitcoin Core-family tooling expects and that were previously unavailable in Zebra.
+This method returns network status information for the node, including its protocol version and connection count.
+
+{% hint style="info" %}
+Zebra returns a subset of Bitcoin Core's `getnetworkinfo`. The per-direction counts `connections_in` and `connections_out`, and the `localrelay`, `networkactive`, and `incrementalfee` fields, are not present.
+{% endhint %}
 
 ## Parameters
 
@@ -107,14 +111,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
-        "version": 6000000,
-        "subversion": "/Zebra:6.0.0/",
+        "version": 6030000,
+        "subversion": "/Zebra:6.3.0/",
         "protocolversion": 170160,
         "localservices": "0000000000000001",
         "timeoffset": 0,
-        "connections": 41,
+        "connections": 69,
         "networks": [
             {
                 "name": "ipv4",
@@ -138,10 +141,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 "proxy_randomize_credentials": false
             }
         ],
-        "relayfee": 1e-6,
+        "relayfee": 1e-06,
         "localaddresses": [],
         "warnings": ""
-    }
+    },
+    "id": "getblock.io"
 }
 ```
 
@@ -153,28 +157,23 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | `subversion`      | string          | User agent string sent to peers              |
 | `protocolversion` | integer         | P2P protocol version                         |
 | `localservices`   | string          | Hex-encoded services supported by this node  |
-| `localrelay`      | boolean         | Whether the node relays transactions         |
 | `timeoffset`      | integer         | Median time offset in seconds vs peer clocks |
 | `connections`     | integer         | Total active peer connections                |
-| `connections_in`  | integer         | Inbound peer connections                     |
-| `connections_out` | integer         | Outbound peer connections                    |
-| `networkactive`   | boolean         | Whether the P2P network layer is active      |
 | `networks`        | array of object | Per-network (IPv4, IPv6, Tor) status objects |
 | `relayfee`        | number          | Minimum relay fee in ZEC/kB                  |
-| `incrementalfee`  | number          | Minimum increment for fee bumping            |
 | `localaddresses`  | array of object | Locally-advertised addresses                 |
 | `warnings`        | string          | Any node warnings (empty if none)            |
 
 ## Use Cases
 
-* **Detailed Network Diagnostics**: Distinguish inbound vs outbound connection issues on a self-hosted node
-* **Kubernetes / Load Balancer Health Checks**: Use `networkactive` as a P2P readiness signal for orchestration
-* **Fee Estimation**: Read `relayfee` and `incrementalfee` for fee-bumping logic on stuck transactions
+* **Health Checks**: Read `connections` to confirm the node has peers
+* **Version Checks**: Read `subversion` and `protocolversion` to identify the node
+* **Fee Floors**: Read `relayfee` for the minimum relay fee in ZEC per kilobyte
 * **Node Warnings Monitoring**: Poll the `warnings` field to detect network-layer issues that don't stop the node
 
 ## Error Handling
 
 | Error Code | Message          | Description                                                                       |
 | ---------- | ---------------- | --------------------------------------------------------------------------------- |
-| -32601     | Method not found | Node runs an older Zebra version (pre-3.0.0) that doesn't expose `getnetworkinfo` |
+| -32601     | Method not found | Node does not expose `getnetworkinfo` |
 | -32603     | Internal error   | Node failed to compile the network info payload                                   |

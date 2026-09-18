@@ -26,7 +26,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "method": "validateaddress",
     "params": [
-        "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6"
+        "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
     ],
     "id": "getblock.io"
 }'
@@ -43,7 +43,7 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
     jsonrpc: '2.0',
     method: 'validateaddress',
     params: [
-        "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6"
+        "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
     ],
     id: 'getblock.io'
 }, {
@@ -67,7 +67,7 @@ response = requests.post(
         'jsonrpc': '2.0',
         'method': 'validateaddress',
         'params': [
-        "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6"
+        "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
     ],
         'id': 'getblock.io'
     }
@@ -95,7 +95,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "jsonrpc": "2.0",
             "method": "validateaddress",
             "params": [
-        "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6"
+        "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
     ],
             "id": "getblock.io"
         }))
@@ -117,13 +117,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
         "isvalid": true,
-        "address": "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6",
-        "scriptPubKey": "76a914c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X688ac",
+        "address": "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua",
         "isscript": false
-    }
+    },
+    "id": "getblock.io"
 }
 ```
 
@@ -133,7 +132,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | -------------- | ------- | ------------------------------------------------------------------- |
 | `isvalid`      | boolean | `true` if the address is well-formed                                |
 | `address`      | string  | The validated address                                               |
-| `scriptPubKey` | string  | Hex-encoded scriptPubKey for this address                           |
 | `isscript`     | boolean | `true` if the address is a P2SH (t3) address, `false` if P2PKH (t1) |
 
 ## Use Cases

@@ -6,7 +6,11 @@ description: >-
 
 # getpeerinfo - Zcash
 
-This method returns detailed information about each connected peer. Post-Zebra 3.0.0, the response was extended with `subver`, `version`, `services`, `lastrecv`, `banscore`, and `connection_state` fields — bringing parity with Bitcoin Core's peer info surface and enabling detailed network diagnostics.
+This method returns information about each peer the node is connected to, including its address, advertised services, protocol version, user agent, and connection state.
+
+{% hint style="info" %}
+Zebra returns fewer fields per peer than Bitcoin Core. Traffic counters such as `bytessent` and `bytesrecv`, and sync fields such as `synced_blocks` and `startingheight`, are not present.
+{% endhint %}
 
 ## Parameters
 
@@ -107,31 +111,31 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": [
         {
-            "addr": "213.136.68.237:8233",
+            "addr": "168.119.7.215:8233",
             "services": "0000000000000001",
-            "lastrecv": 1784671886,
+            "lastrecv": 1789744680,
             "inbound": false,
             "banscore": 0,
-            "subver": "/Zebra:5.1.0/",
-            "version": 170150,
-            "connection_state": "connected",
-            "pingtime": 0.031849273
-        },
-         {
-            "addr": "47.75.194.174:8233",
-            "services": "0000000000000001",
-            "lastrecv": 1784671855,
-            "inbound": false,
-            "banscore": 0,
-            "subver": "/Zakura:1.0.1/",
+            "subver": "/Zebra:6.3.0/",
             "version": 170160,
             "connection_state": "connected",
-            "pingtime": 0.183128632
+            "pingtime": 0.051483004
+        },
+        {
+            "addr": "65.109.86.46:8233",
+            "services": "0000000000000001",
+            "lastrecv": 1789744688,
+            "inbound": false,
+            "banscore": 0,
+            "subver": "/Zakura:1.2.0/",
+            "version": 170160,
+            "connection_state": "connected",
+            "pingtime": 0.032725716
         }
-    ]
+    ],
+    "id": "getblock.io"
 }
 ```
 
@@ -139,25 +143,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 | Parameter          | Type    | Description                                                  |
 | ------------------ | ------- | ------------------------------------------------------------ |
-| `id`               | integer | Peer identifier (per-node local ID)                          |
 | `addr`             | string  | IP and port of the peer                                      |
-| `addrbind`         | string  | Local bind address for this connection                       |
-| `addrlocal`        | string  | Local address as seen by the peer                            |
-| `services`         | string  | Hex-encoded service bitmask (Zebra 3.0.0+)                   |
-| `lastsend`         | integer | Unix timestamp of the last message sent                      |
-| `lastrecv`         | integer | Unix timestamp of the last message received (Zebra 3.0.0+)   |
-| `bytessent`        | integer | Total bytes sent to this peer                                |
-| `bytesrecv`        | integer | Total bytes received from this peer                          |
-| `conntime`         | integer | Unix timestamp of connection establishment                   |
+| `services`         | string  | Hex-encoded service bitmask                   |
+| `lastrecv`         | integer | Unix timestamp of the last message received   |
 | `pingtime`         | number  | Round-trip ping time in seconds                              |
-| `version`          | integer | Peer's protocol version (Zebra 3.0.0+)                       |
-| `subver`           | string  | Peer's user agent string (Zebra 3.0.0+)                      |
+| `version`          | integer | Peer's protocol version                       |
+| `subver`           | string  | Peer's user agent string                      |
 | `inbound`          | boolean | Whether this is an inbound connection                        |
-| `startingheight`   | integer | Peer's advertised starting height                            |
-| `banscore`         | integer | Misbehavior score (Zebra 3.0.0+)                             |
-| `synced_headers`   | integer | Last header height synced with this peer                     |
-| `synced_blocks`    | integer | Last block height synced with this peer                      |
-| `connection_state` | string  | Connection state (`Ready`, `Handshake`, etc.) (Zebra 3.0.0+) |
+| `banscore`         | integer | Misbehavior score                             |
+| `connection_state` | string  | Connection state, such as `connected`         |
 
 ## Use Cases
 

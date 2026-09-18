@@ -123,11 +123,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "result": {
         "orchard": "u1...orchard-only-receiver...",
         "sapling": "zs1z7rejlpsa98s2rrrfkwmaxu53e4ue0ulcrw0h4x5g8jl04tak0d3mm47vdtahatqrlkngh9sly",
-        "p2pkh": "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6"
+        "p2pkh": "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
     }
 }
 ```
 {% endcode %}
+
+{% hint style="warning" %}
+The Unified Address in the request above is a documentation placeholder and is not a valid address; sent as-is it returns `Address is not Bech32m encoded`. Substitute a Unified Address (`u1...`) from a Zcash wallet to see the response shown. The method only accepts Unified Addresses; transparent (`t1`, `t3`) and standalone Sapling addresses are rejected.
+{% endhint %}
 
 ## Response Parameters
 

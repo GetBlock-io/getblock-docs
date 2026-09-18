@@ -108,21 +108,21 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
-        "version": 6000000,
-        "build": "v6.0.0",
-        "subversion": "/Zebra:6.0.0/",
+        "version": 6030000,
+        "build": "v6.3.0",
+        "subversion": "/Zebra:6.3.0/",
         "protocolversion": 170160,
-        "blocks": 3420502,
-        "connections": 41,
-        "difficulty": 229698549.25032642,
+        "blocks": 3487829,
+        "connections": 75,
+        "difficulty": 283406385.74557334,
         "testnet": false,
         "paytxfee": 0.0,
-        "relayfee": 1e-6,
-        "errors": "chain updates have stalled, state height has not increased for 10 minutes. Hint: check your network connection, and your computer clock and time zone",
-        "errorstimestamp": 1784662715
-    }
+        "relayfee": 1e-06,
+        "errors": "chain tip metrics channel closed",
+        "errorstimestamp": 1789640906
+    },
+    "id": "getblock.io"
 }
 ```
 {% endcode %}
@@ -131,13 +131,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 | Parameter         | Type    | Description                                                          |
 | ----------------- | ------- | -------------------------------------------------------------------- |
-| `version`         | integer | Zebra numeric version (e.g. `3000000` = 3.0.0)                       |
+| `version`         | integer | Zebra numeric version (e.g. `6030000` = 6.3.0)                       |
 | `build`           | string  | Zebra semver build string                                            |
 | `subversion`      | string  | User agent string sent to peers                                      |
 | `protocolversion` | integer | P2P protocol version                                                 |
 | `blocks`          | integer | Current best-known chain tip height                                  |
 | `connections`     | integer | Number of active peer connections                                    |
-| `proxy`           | string  | Proxy in use for outbound connections (empty if none)                |
 | `difficulty`      | number  | Current proof-of-work difficulty as a multiple of the minimum        |
 | `testnet`         | boolean | `true` if this endpoint serves Testnet, `false` for Mainnet          |
 | `paytxfee`        | number  | Wallet fee setting — always `0.0` on Zebra (no wallet functionality) |

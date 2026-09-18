@@ -14,7 +14,7 @@ This method returns note commitment subtree roots by index. Introduced with the 
 | Parameter    | Type    | Required | Description                                                 |
 | ------------ | ------- | -------- | ----------------------------------------------------------- |
 | `pool`       | string  | Yes      | Shielded pool name: `sapling` or `orchard`                  |
-| `startIndex` | integer | Yes      | Zero-based index of the first subtree to return             |
+| `start_index` | integer | Yes      | Zero-based index of the first subtree to return             |
 | `limit`      | integer | No       | Maximum number of subtrees to return. Default all available |
 
 ## Request
@@ -129,25 +129,21 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
         "pool": "orchard",
-        "startIndex": 0,
+        "start_index": 0,
         "subtrees": [
             {
-                "root": "5eae9c5cbe0e8d3e2f5cd8b0a4e3b1f2c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4",
-                "end_height": 1687200
+                "root": "d4e323b3ae0cabfb6be4087fec8c66d9a9bbfc354bf1d9588b6620448182063b",
+                "end_height": 1707429
             },
             {
-                "root": "3a2b1c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b",
-                "end_height": 1701824
-            },
-            {
-                "root": "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f",
-                "end_height": 1716448
+                "root": "8c47d0ca43f323ac573ee57c90af4ced484682827248ca5f3eead95eb6415a14",
+                "end_height": 1708132
             }
         ]
-    }
+    },
+    "id": "getblock.io"
 }
 ```
 {% endcode %}
@@ -157,7 +153,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | Parameter               | Type            | Description                                      |
 | ----------------------- | --------------- | ------------------------------------------------ |
 | `pool`                  | string          | Pool name (`sapling` or `orchard`)               |
-| `startIndex`            | integer         | Starting subtree index                           |
+| `start_index`            | integer         | Starting subtree index                           |
 | `subtrees`              | array of object | List of subtree records                          |
 | `subtrees[].root`       | string          | Hex-encoded subtree root                         |
 | `subtrees[].end_height` | integer         | Block height at which this subtree was completed |
@@ -167,12 +163,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 * **Light Client Fast Sync**: Wallets download subtree roots to skip commitment-by-commitment iteration during initial sync
 * **Ironwood NCT Verification**: Independently verify note commitment tree state via subtree Merkle roots
 * **Shielded Pool Growth Analytics**: Track subtree completion cadence to visualize shielded-pool activity growth
-* **Zebra 3.0.0+ Feature Detection**: Post-Ironwood extension — availability confirms the endpoint runs a recent-enough Zebra version
+* **Feature Detection**: Post-Ironwood extension — availability confirms the endpoint runs a recent-enough Zebra version
 
 ## Error Handling
 
 | Error Code | Message        | Description                                  |
 | ---------- | -------------- | -------------------------------------------- |
 | -8         | Invalid pool   | Pool parameter is not `sapling` or `orchard` |
-| -32602     | Invalid params | startIndex or limit is out of range          |
+| -32602     | Invalid params | start_index or limit is out of range          |
 | -32603     | Internal error | Node failed to retrieve subtree data         |

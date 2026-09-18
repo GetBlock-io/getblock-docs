@@ -6,7 +6,11 @@ description: >-
 
 # getmempoolinfo - Zcash
 
-This method returns aggregate mempool statistics: transaction count, memory usage, and minimum fee thresholds. Introduced in Zebra 3.0.0 (January 2026) to match the Bitcoin Core interface and enable Kubernetes-friendly health monitoring of mempool state.
+This method returns aggregate mempool statistics: the number of transactions queued and the memory they occupy.
+
+{% hint style="info" %}
+Zebra returns a smaller object than Bitcoin Core's `getmempoolinfo`. The fee-threshold fields `mempoolminfee` and `minrelaytxfee`, and the `maxmempool` limit, are not present, so a client ported from Bitcoin Core must not depend on them.
+{% endhint %}
 
 ## Parameters
 
@@ -107,12 +111,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
-        "size": 0,
-        "bytes": 0,
-        "usage": 0
-    }
+        "size": 7,
+        "bytes": 55446,
+        "usage": 55446
+    },
+    "id": "getblock.io"
 }
 ```
 
@@ -123,9 +127,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | `size`          | integer | Number of transactions in the mempool                  |
 | `bytes`         | integer | Total serialized size of mempool transactions in bytes |
 | `usage`         | integer | Total memory usage of the mempool in bytes             |
-| `maxmempool`    | integer | Maximum configured mempool size in bytes               |
-| `mempoolminfee` | number  | Current dynamic mempool minimum fee in ZEC/kB          |
-| `minrelaytxfee` | number  | Configured minimum relay fee in ZEC/kB                 |
 
 ## Use Cases
 

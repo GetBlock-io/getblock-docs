@@ -42,7 +42,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 | Method           | Description                                               |
 | ---------------- | --------------------------------------------------------- |
 | [`getinfo`](getinfo-zcash.md)        | Basic node status, version, block height, connections     |
-| [`getnetworkinfo`](getnetworkinfo-zcash.md) | Network status, peer info, protocol version (Zebra 3.0.0) |
+| [`getnetworkinfo`](getnetworkinfo-zcash.md) | Network status, peer info, protocol version |
 
 #### Blockchain State
 
@@ -70,7 +70,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 | Method           | Description                      |
 | ---------------- | -------------------------------- |
 | [`getrawmempool`](getrawmempool-zcash.md)  | List transactions in the mempool |
-| [`getmempoolinfo`](getmempoolinfo-zcash.md) | Mempool statistics (Zebra 3.0.0) |
+| [`getmempoolinfo`](getmempoolinfo-zcash.md) | Mempool statistics |
 
 #### Mining & Difficulty
 
@@ -84,7 +84,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 
 | Method        | Description                                             |
 | ------------- | ------------------------------------------------------- |
-| [`getpeerinfo`](getpeerinfo-zcash.md) | Connected peer details (extended fields in Zebra 3.0.0) |
+| [`getpeerinfo`](getpeerinfo-zcash.md) | Connected peer details |
 
 #### Address Queries (Zcash Extensions)
 

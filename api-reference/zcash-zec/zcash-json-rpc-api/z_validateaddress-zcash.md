@@ -27,7 +27,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "method": "z_validateaddress",
     "params": [
-        "u1l8xunezsvhq8fgzfl7404m450nwnd76zshscn6nfys7vyz2ywyh4cc5daaq0c7q2su5lqfh23sp7fkf3kt27ve5948mzpfdvckzaext2jkbmhth7pnfhr37a3wpk3q6clhx"
+        "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
     ],
     "id": "getblock.io"
 }'
@@ -44,7 +44,7 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
     jsonrpc: '2.0',
     method: 'z_validateaddress',
     params: [
-        "u1l8xunezsvhq8fgzfl7404m450nwnd76zshscn6nfys7vyz2ywyh4cc5daaq0c7q2su5lqfh23sp7fkf3kt27ve5948mzpfdvckzaext2jkbmhth7pnfhr37a3wpk3q6clhx"
+        "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
     ],
     id: 'getblock.io'
 }, {
@@ -68,7 +68,7 @@ response = requests.post(
         'jsonrpc': '2.0',
         'method': 'z_validateaddress',
         'params': [
-        "u1l8xunezsvhq8fgzfl7404m450nwnd76zshscn6nfys7vyz2ywyh4cc5daaq0c7q2su5lqfh23sp7fkf3kt27ve5948mzpfdvckzaext2jkbmhth7pnfhr37a3wpk3q6clhx"
+        "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
     ],
         'id': 'getblock.io'
     }
@@ -96,7 +96,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "jsonrpc": "2.0",
             "method": "z_validateaddress",
             "params": [
-        "u1l8xunezsvhq8fgzfl7404m450nwnd76zshscn6nfys7vyz2ywyh4cc5daaq0c7q2su5lqfh23sp7fkf3kt27ve5948mzpfdvckzaext2jkbmhth7pnfhr37a3wpk3q6clhx"
+        "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
     ],
             "id": "getblock.io"
         }))
@@ -119,17 +119,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
         "isvalid": true,
-        "address_type": "unified",
-        "address": "u1l8xunezsvhq8fgzfl7404m450nwnd76zshscn6nfys7vyz2ywyh4cc5daaq0c7q2su5lqfh23sp7fkf3kt27ve5948mzpfdvckzaext2jkbmhth7pnfhr37a3wpk3q6clhx",
-        "receiver_types": [
-            "orchard",
-            "sapling",
-            "p2pkh"
-        ]
-    }
+        "address": "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua",
+        "address_type": "p2pkh",
+        "ismine": false
+    },
+    "id": "getblock.io"
 }
 ```
 {% endcode %}
@@ -141,7 +137,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | `isvalid`        | boolean         | `true` if the address is well-formed                                                           |
 | `address_type`   | string          | Address type: `sapling`, `orchard`, `unified`, or `p2pkh`/`p2sh` for transparent               |
 | `address`        | string          | The validated address                                                                          |
-| `receiver_types` | array of string | For unified addresses: list of receiver types included (`orchard`, `sapling`, `p2pkh`, `p2sh`) |
+| `receiver_types` | array of string | For unified addresses: list of receiver types included (`orchard`, `sapling`, `p2pkh`, `p2sh`). Returned for Unified Addresses only |
 
 ## Use Cases
 

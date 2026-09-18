@@ -28,8 +28,8 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "method": "gettxout",
     "params": [
-        "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f",
-        0,
+        "65951708c3d0087631c663179faf2b84e11d41b95fd56eae9dc4810e565415ee",
+        1,
         true
     ],
     "id": "getblock.io"
@@ -47,8 +47,8 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
     jsonrpc: '2.0',
     method: 'gettxout',
     params: [
-        "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f",
-        0,
+        "65951708c3d0087631c663179faf2b84e11d41b95fd56eae9dc4810e565415ee",
+        1,
         true
     ],
     id: 'getblock.io'
@@ -73,8 +73,8 @@ response = requests.post(
         'jsonrpc': '2.0',
         'method': 'gettxout',
         'params': [
-        "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f",
-        0,
+        "65951708c3d0087631c663179faf2b84e11d41b95fd56eae9dc4810e565415ee",
+        1,
         true
     ],
         'id': 'getblock.io'
@@ -103,8 +103,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "jsonrpc": "2.0",
             "method": "gettxout",
             "params": [
-        "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f",
-        0,
+        "65951708c3d0087631c663179faf2b84e11d41b95fd56eae9dc4810e565415ee",
+        1,
         true
     ],
             "id": "getblock.io"
@@ -127,23 +127,23 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
-        "bestblock": "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3",
-        "confirmations": 1,
-        "value": 1.49999,
-        "valueZat": 149999000,
+        "bestblock": "000000000044b7b0276f3baa73a690467eaff42379eaeeb197a983c6f1408ce1",
+        "confirmations": 17150,
+        "value": 3.17223382,
         "scriptPubKey": {
-            "asm": "OP_DUP OP_HASH160 abc... OP_EQUALVERIFY OP_CHECKSIG",
-            "hex": "76a914abc...88ac",
+            "asm": "OP_DUP OP_HASH160 13bbd8bc8df03a5a9cda88103f583aa8bc043e24 OP_EQUALVERIFY OP_CHECKSIG",
+            "hex": "76a91413bbd8bc8df03a5a9cda88103f583aa8bc043e2488ac",
             "reqSigs": 1,
             "type": "pubkeyhash",
             "addresses": [
-                "t1KG5xEeywXupj9dJHTvHzT5eN4RvpxaAJc"
+                "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
             ]
         },
+        "version": 6,
         "coinbase": false
-    }
+    },
+    "id": "getblock.io"
 }
 ```
 
@@ -154,7 +154,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | `bestblock`              | string          | Hash of the chain tip at query time                                        |
 | `confirmations`          | integer         | Number of confirmations (0 for mempool UTXOs)                              |
 | `value`                  | number          | Output value in ZEC                                                        |
-| `valueZat`               | integer         | Output value in zatoshi                                                    |
 | `scriptPubKey.asm`       | string          | Human-readable script disassembly                                          |
 | `scriptPubKey.hex`       | string          | Hex-encoded raw script                                                     |
 | `scriptPubKey.reqSigs`   | integer         | Required signature count for standard scripts                              |

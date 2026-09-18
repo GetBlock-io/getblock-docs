@@ -35,8 +35,8 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "params": [
         {
             "addresses": [
-                "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6",
-                "t1KG5xEeywXupj9dJHTvHzT5eN4RvpxaAJc"
+                "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua",
+                "t1XQZdZMnzXBcL8yx2PR27dSNrqctgwLgux"
             ]
         }
     ],
@@ -57,8 +57,8 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
     params: [
         {
             "addresses": [
-                "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6",
-                "t1KG5xEeywXupj9dJHTvHzT5eN4RvpxaAJc"
+                "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua",
+                "t1XQZdZMnzXBcL8yx2PR27dSNrqctgwLgux"
             ]
         }
     ],
@@ -86,8 +86,8 @@ response = requests.post(
         'params': [
             {
                 "addresses": [
-                    "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6",
-                    "t1KG5xEeywXupj9dJHTvHzT5eN4RvpxaAJc"
+                    "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua",
+                    "t1XQZdZMnzXBcL8yx2PR27dSNrqctgwLgux"
                 ]
             }
         ],
@@ -119,8 +119,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "params": [
                 {
                     "addresses": [
-                        "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6",
-                        "t1KG5xEeywXupj9dJHTvHzT5eN4RvpxaAJc"
+                        "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua",
+                        "t1XQZdZMnzXBcL8yx2PR27dSNrqctgwLgux"
                     ]
                 }
             ],
@@ -144,11 +144,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
-        "balance": 274999000,
-        "received": 500000000
-    }
+        "balance": 14004247856321,
+        "received": 749043876248469
+    },
+    "id": "getblock.io"
 }
 ```
 

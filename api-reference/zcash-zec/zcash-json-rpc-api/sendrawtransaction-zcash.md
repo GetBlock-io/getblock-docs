@@ -28,7 +28,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "method": "sendrawtransaction",
     "params": [
-        "0400008085202f89011234567890abcdef..."
+        "0400008085202f89..."
     ],
     "id": "getblock.io"
 }'
@@ -45,7 +45,7 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
     jsonrpc: '2.0',
     method: 'sendrawtransaction',
     params: [
-        "0400008085202f89011234567890abcdef..."
+        "0400008085202f89..."
     ],
     id: 'getblock.io'
 }, {
@@ -69,7 +69,7 @@ response = requests.post(
         'jsonrpc': '2.0',
         'method': 'sendrawtransaction',
         'params': [
-        "0400008085202f89011234567890abcdef..."
+        "0400008085202f89..."
     ],
         'id': 'getblock.io'
     }
@@ -97,7 +97,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "jsonrpc": "2.0",
             "method": "sendrawtransaction",
             "params": [
-        "0400008085202f89011234567890abcdef..."
+        "0400008085202f89..."
     ],
             "id": "getblock.io"
         }))
@@ -120,9 +120,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {
     "jsonrpc": "2.0",
     "id": "getblock.io",
-    "result": "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f"
+    "result": "80d21f43485fb5aed2bcb011a00fb70776b2f6b4ba05722dbf2dce6f53fc410f"
 }
 ```
+
+{% hint style="info" %}
+The hex in the request above is a truncated placeholder, so sending it unchanged returns error `-22`. Substitute a complete, signed transaction serialized as hex. Zcash transactions from NU5 onward are version 5 and begin with `05000080`; the `04000080` prefix shown is the older v4 Sapling format, which is still accepted.
+{% endhint %}
 
 ## Response Parameters
 

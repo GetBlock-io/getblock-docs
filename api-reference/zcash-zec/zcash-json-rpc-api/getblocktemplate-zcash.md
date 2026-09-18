@@ -155,14 +155,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "proposal"
         ],
         "version": 4,
-        "previousblockhash": "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3",
+        "previousblockhash": "00000000000f3c0bdf81aba0bf081c5c4882975cbc0a8ce35e70ddb5f265f1b1",
         "blockcommitmentshash": "5eae9c5cbe0e8d3e2f5cd8b0a4e3b1f2c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4",
         "lightclientroothash": "3a2b1c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b",
         "finalsaplingroothash": "01a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1",
         "defaultroots": {
-            "merkleroot": "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f",
+            "merkleroot": "80d21f43485fb5aed2bcb011a00fb70776b2f6b4ba05722dbf2dce6f53fc410f",
             "chainhistoryroot": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
-            "authdataroot": "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f"
+            "authdataroot": "80d21f43485fb5aed2bcb011a00fb70776b2f6b4ba05722dbf2dce6f53fc410f"
         },
         "transactions": [],
         "coinbasetxn": {
@@ -174,7 +174,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "sigops": 0,
             "required": true
         },
-        "longpollid": "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3-47",
+        "longpollid": "00000000000f3c0bdf81aba0bf081c5c4882975cbc0a8ce35e70ddb5f265f1b1-47",
         "target": "00000000005cea00000000000000000000000000000000000000000000000000",
         "mintime": 1747852500,
         "mutable": [
@@ -191,6 +191,19 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 }
 ```
+
+{% hint style="warning" %}
+**This method does not work on shared endpoints.** Zebra only builds a block template when the node is configured with a miner address, and shared nodes are not. The request returns:
+
+```json
+{
+    "code": 0,
+    "message": "miner parameters are required for get_block_template"
+}
+```
+
+The response above shows the template format for a node you operate yourself with mining configured.
+{% endhint %}
 
 ## Response Parameters
 

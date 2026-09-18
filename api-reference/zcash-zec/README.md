@@ -6,7 +6,7 @@ description: >-
 
 # Zcash(ZEC)
 
-Zcash is a proof-of-work privacy-preserving cryptocurrency built by the Electric Coin Company and the Zcash Foundation, using zk-SNARKs to enable optional shielded transactions with unlinkable senders, recipients, and amounts. The network exposes a Bitcoin Core-compatible JSON-RPC interface extended with `z_*` methods for shielded-pool operations. As of the Zebra 3.0.0 release (January 2026), the reference node implementation is `zebrad` — a Rust-based full node replacing the deprecated `zcashd` (end-of-life July 18, 2026) — with full support for NU6.3, the Ironwood note commitment tree extension, and three new RPCs (`getnetworkinfo`, `getmempoolinfo`, side chain queries).
+Zcash is a proof-of-work privacy-preserving cryptocurrency built by the Electric Coin Company and the Zcash Foundation, using zk-SNARKs to enable optional shielded transactions with unlinkable senders, recipients, and amounts. The network exposes a Bitcoin Core-compatible JSON-RPC interface extended with `z_*` methods for shielded-pool operations. GetBlock serves Zcash from `zebrad`, the Rust full node maintained by the Zcash Foundation, which has replaced the deprecated `zcashd`. Zebra's JSON-RPC interface follows Bitcoin Core's method names but returns a smaller set of fields for several of them, so clients ported from Bitcoin Core should check each method's response rather than assume parity.
 
 ### Key Features
 

@@ -35,7 +35,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "params": [
         {
             "addresses": [
-                "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6"
+                "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
             ],
             "chainInfo": true
         }
@@ -57,7 +57,7 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
     params: [
         {
             "addresses": [
-                "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6"
+                "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
             ],
             "chainInfo": true
         }
@@ -86,7 +86,7 @@ response = requests.post(
         'params': [
         {
             "addresses": [
-                "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6"
+                "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
             ],
             "chainInfo": true
         }
@@ -119,7 +119,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "params": [
         {
             "addresses": [
-                "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6"
+                "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua"
             ],
             "chainInfo": true
         }
@@ -144,21 +144,29 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
         "utxos": [
             {
-                "address": "t1c74RiTicVSKthLmn2c4WFLJdLDs5sQ4X6",
-                "txid": "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f",
+                "address": "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua",
+                "txid": "65951708c3d0087631c663179faf2b84e11d41b95fd56eae9dc4810e565415ee",
+                "outputIndex": 1,
+                "script": "76a91413bbd8bc8df03a5a9cda88103f583aa8bc043e2488ac",
+                "satoshis": 317223382,
+                "height": 3470680
+            },
+            {
+                "address": "t1KfwsnwJeNRVjQGBDZhwKskpQbih2qx5Ua",
+                "txid": "7c305b591fa0ffd3d3a4f2a27024d94d888c708a5a02f8006d378459c7ed706a",
                 "outputIndex": 0,
-                "script": "76a914abc...88ac",
-                "satoshis": 149999000,
-                "height": 2856337
+                "script": "76a91413bbd8bc8df03a5a9cda88103f583aa8bc043e2488ac",
+                "satoshis": 569684617,
+                "height": 3470680
             }
         ],
-        "hash": "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3",
-        "height": 2856342
-    }
+        "hash": "000000000044b7b0276f3baa73a690467eaff42379eaeeb197a983c6f1408ce1",
+        "height": 3487829
+    },
+    "id": "getblock.io"
 }
 ```
 

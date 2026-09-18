@@ -109,60 +109,35 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
         "chain": "main",
-        "blocks": 3420501,
-        "headers": 3420501,
-        "difficulty": 228671456.48084024,
+        "blocks": 3487829,
+        "headers": 3487829,
+        "difficulty": 283406385.74557334,
         "verificationprogress": 1.0,
         "chainwork": 0,
         "pruned": false,
-        "size_on_disk": 275502566707,
+        "size_on_disk": 278526085121,
         "commitments": 0,
-        "bestblockhash": "0000000000702274467e0acbc3420999a97cf6f8f9c579651e74cf850056a285",
-        "estimatedheight": 3420501,
+        "bestblockhash": "000000000044b7b0276f3baa73a690467eaff42379eaeeb197a983c6f1408ce1",
+        "estimatedheight": 3487829,
         "chainSupply": {
-            "chainValue": 16834165.7905448,
-            "chainValueZat": 1683416579054480,
+            "chainValue": 16939365.7905448,
+            "chainValueZat": 1693936579054480,
             "monitored": true
         },
         "valuePools": [
             {
                 "id": "transparent",
-                "chainValue": 12381989.41404258,
-                "chainValueZat": 1238198941404258,
+                "chainValue": 11959273.50520267,
+                "chainValueZat": 1195927350520267,
                 "monitored": true
             },
             {
                 "id": "sprout",
-                "chainValue": 25409.41766914,
-                "chainValueZat": 2540941766914,
+                "chainValue": 22481.46711837,
+                "chainValueZat": 2248146711837,
                 "monitored": true
-            },
-            {
-                "id": "sapling",
-                "chainValue": 590908.08661313,
-                "chainValueZat": 59090808661313,
-                "monitored": true
-            },
-            {
-                "id": "orchard",
-                "chainValue": 3784464.74721995,
-                "chainValueZat": 378446474721995,
-                "monitored": true
-            },
-            {
-                "id": "lockbox",
-                "chainValue": 51394.125,
-                "chainValueZat": 5139412500000,
-                "monitored": true
-            },
-            {
-                "id": "ironwood",
-                "chainValue": 0.0,
-                "chainValueZat": 0,
-                "monitored": false
             }
         ],
         "upgrades": {
@@ -214,14 +189,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "37a5165b": {
                 "name": "NU6.3",
                 "activationheight": 3428143,
-                "status": "pending"
+                "status": "active"
             }
         },
         "consensus": {
-            "chaintip": "5437f330",
-            "nextblock": "5437f330"
+            "chaintip": "37a5165b",
+            "nextblock": "37a5165b"
         }
-    }
+    },
+    "id": "getblock.io"
 }
 ```
 {% endcode %}

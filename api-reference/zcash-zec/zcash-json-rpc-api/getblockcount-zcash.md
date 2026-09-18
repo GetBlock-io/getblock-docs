@@ -107,8 +107,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
-    "result": 3420501
+    "result": 3487829,
+    "id": "getblock.io"
 }
 ```
 

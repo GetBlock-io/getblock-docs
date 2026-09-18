@@ -6,7 +6,7 @@ description: >-
 
 # getrawmempool - Zcash
 
-This method returns all transaction IDs currently in the node's mempool. Verbose mode returns full transaction metadata (fees, size, times) instead of just IDs. Post-Zebra 3.0.0, the mempool index bug that caused unnecessary per-transaction rebuilds during `getrawmempool` calls has been fixed, meaningfully improving performance under load.
+This method returns all transaction IDs currently in the node's mempool. Verbose mode returns full transaction metadata (fees, size, times) instead of just IDs.
 
 ## Parameters
 
@@ -115,11 +115,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": [
-        "9c8f0e4f8d2e7c6b5a4f3e2d1c0b9a8e7f6d5c4b3a2b1c9d8e7f6a5b4c3d2e1f",
-        "1cd7d1e5a67c7e4f1bb2d4c50a9c27c3b4a7f9e6b7a4919c2d5b0a6f3d9e1c4b"
-    ]
+        "0f8412adbf56a100861085e5d3f9080aa36f27d8c434f7972ed1b564d88bdb6d",
+        "293859588c97d1d3dede464f48656a45ae6b226a07b37925d8b5625a7c667099"
+    ],
+    "id": "getblock.io"
 }
 ```
 

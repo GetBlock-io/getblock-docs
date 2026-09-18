@@ -27,7 +27,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "method": "getblockheader",
     "params": [
-        "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3",
+        "00000000000f3c0bdf81aba0bf081c5c4882975cbc0a8ce35e70ddb5f265f1b1",
         true
     ],
     "id": "getblock.io"
@@ -45,7 +45,7 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
     jsonrpc: '2.0',
     method: 'getblockheader',
     params: [
-        "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3",
+        "00000000000f3c0bdf81aba0bf081c5c4882975cbc0a8ce35e70ddb5f265f1b1",
         true
     ],
     id: 'getblock.io'
@@ -70,7 +70,7 @@ response = requests.post(
         'jsonrpc': '2.0',
         'method': 'getblockheader',
         'params': [
-        "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3",
+        "00000000000f3c0bdf81aba0bf081c5c4882975cbc0a8ce35e70ddb5f265f1b1",
         true
     ],
         'id': 'getblock.io'
@@ -99,7 +99,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "jsonrpc": "2.0",
             "method": "getblockheader",
             "params": [
-        "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3",
+        "00000000000f3c0bdf81aba0bf081c5c4882975cbc0a8ce35e70ddb5f265f1b1",
         true
     ],
             "id": "getblock.io"
@@ -123,23 +123,23 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
-        "hash": "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3",
-        "confirmations": 1,
-        "height": 2856342,
+        "hash": "00000000000f3c0bdf81aba0bf081c5c4882975cbc0a8ce35e70ddb5f265f1b1",
+        "confirmations": 40,
+        "height": 3487790,
         "version": 4,
-        "merkleroot": "3a2b1c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b",
-        "blockcommitments": "5eae9c5cbe0e8d3e2f5cd8b0a4e3b1f2c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4",
-        "finalsaplingroot": "01a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1",
-        "time": 1747852800,
-        "nonce": "0000000000000000000000000000000000000000000000000000000000abcdef",
-        "solution": "008f2c6b5a1e2d4f9c...",
-        "bits": "1d00ffff",
-        "difficulty": 78421563.42,
-        "previousblockhash": "00000000019cc54dbe07a2f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3d2e1f0",
-        "nextblockhash": ""
-    }
+        "merkleroot": "2134e7beb96aac05105adbbe8ef04fab84739f8a90e22e73e44e6add4812ed35",
+        "blockcommitments": "50f7a4921c16db984372e06ebc91e971d9412926d50cea958e71d496fc58682e",
+        "finalsaplingroot": "59d2ea590d75d202eaa4690d627c21c56b59474991e197725804b25b8206133c",
+        "time": 1789741929,
+        "nonce": "a341002a000000000000000000000000000000000000000000000000d094f930",
+        "solution": "00ede59b1b273717f4ec030131a4bb48c4a0edc3181219faec7dd00dc5bf7fb19762f52384676b04bceb01881d81d606...",
+        "bits": "1b762f01",
+        "difficulty": 290731287.69865835,
+        "previousblockhash": "000000000007b84c009ac090a37dd74b23bcfa4aeb6620960c7d0ee3f5fb664a",
+        "nextblockhash": "00000000000aa124983da79c1e3bd8524b5b76da7b43bb1a88edd93ac5f61331"
+    },
+    "id": "getblock.io"
 }
 ```
 {% endcode %}

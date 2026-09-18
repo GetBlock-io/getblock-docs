@@ -107,16 +107,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
     "result": {
-        "blocks": 3420503,
-        "currentblocksize": 2051,
-        "currentblocktx": 2,
-        "networksolps": 20929098466,
-        "networkhashps": 20929098466,
+        "blocks": 3487829,
+        "currentblocksize": 203589,
+        "currentblocktx": 29,
+        "networksolps": 31709653247,
+        "networkhashps": 31709653247,
         "chain": "main",
         "testnet": false
-    }
+    },
+    "id": "getblock.io"
 }
 ```
 
@@ -127,13 +127,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 | `blocks`           | integer | Current chain tip height                                      |
 | `currentblocksize` | integer | Size of the current block being built by the miner (bytes)    |
 | `currentblocktx`   | integer | Transaction count in the current block being built            |
-| `difficulty`       | number  | Current network difficulty                                    |
-| `errors`           | string  | Most recent mining error (empty if none)                      |
-| `genproclimit`     | integer | Configured generation processor limit (-1 = no limit)         |
-| `localsolps`       | number  | Local Equihash solutions per second (0.0 on non-mining nodes) |
 | `networksolps`     | number  | Estimated network Equihash solutions per second               |
 | `networkhashps`    | number  | Same as `networksolps` (for Bitcoin-family compatibility)     |
-| `pooledtx`         | integer | Number of transactions in the mempool                         |
 | `testnet`          | boolean | `true` if serving Testnet                                     |
 | `chain`            | string  | Chain name (`main` or `test`)                                 |
 

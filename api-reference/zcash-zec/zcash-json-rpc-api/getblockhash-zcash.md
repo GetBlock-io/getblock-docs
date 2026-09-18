@@ -26,7 +26,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "method": "getblockhash",
     "params": [
-        2856342
+        3487790
     ],
     "id": "getblock.io"
 }'
@@ -43,7 +43,7 @@ const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCE
     jsonrpc: '2.0',
     method: 'getblockhash',
     params: [
-        2856342
+        3487790
     ],
     id: 'getblock.io'
 }, {
@@ -67,7 +67,7 @@ response = requests.post(
         'jsonrpc': '2.0',
         'method': 'getblockhash',
         'params': [
-            2856342
+            3487790
         ],
         'id': 'getblock.io'
     }
@@ -95,7 +95,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "jsonrpc": "2.0",
             "method": "getblockhash",
             "params": [
-                2856342
+                3487790
             ],
             "id": "getblock.io"
         }))
@@ -117,8 +117,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
-    "result": "00000000018bb43cadf5b4c8a2e7f9d0e1a6b3c8d5e4f2a1b0c9d8e7f6a5b4c3"
+    "result": "00000000000f3c0bdf81aba0bf081c5c4882975cbc0a8ce35e70ddb5f265f1b1",
+    "id": "getblock.io"
 }
 ```
 
