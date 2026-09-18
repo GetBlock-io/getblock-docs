@@ -78,7 +78,9 @@ While subscribed, the server pushes messages of the form:
 }
 ```
 
-A transaction is pushed twice over its lifetime: once on arrival in the mempool, with `confirmations` set to `0`, and again once mined, with the real block height and `confirmations` of `1`. Deeper confirmations are not pushed per address; track them with [subscribeNewBlock](subscribenewblock-bitcoin.md) and compare against the transaction's block height.
+A transaction is pushed as soon as it reaches the mempool, carrying `confirmations: 0`. Confirmation is not delivered as a per-transaction follow-up: subscribing with `newBlockTxs: true` adds a push covering the subscribed addresses' transactions in each new block, but a given transaction is not guaranteed a second notification on the block that mines it.
+
+Do not wait for a confirmation push to settle a payment. Subscribe to [subscribeNewBlock](subscribenewblock-bitcoin.md) as well, and on each block re-read the transaction with [getTransaction](gettransaction-bitcoin.md) or the address with [getAccountInfo](getaccountinfo-bitcoin.md) to read its current depth.
 
 ## Response Fields
 
@@ -101,7 +103,7 @@ Notifications reuse the `id` sent with the subscription request, not a fixed val
 ## Use Cases
 
 * **Payment Detection**: Get notified the instant a deposit reaches the mempool
-* **Confirmation Tracking**: Detect the transition from pending to first confirmation
+* **Confirmation Tracking**: Pair with subscribeNewBlock to re-read depth as blocks arrive
 * **Wallet UX**: Update balances on incoming transactions without polling
 * **Monitoring**: Watch hot wallets in real time
 

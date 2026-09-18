@@ -60,23 +60,24 @@ print(response.json())
         "vout": 1,
         "value": "9407625",
         "height": 684634,
-        "confirmations": 1197,
-        "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
-        "path": "m/44'/145'/0'/0/0"
+        "confirmations": 1197
     }
 ]
 ```
 
+An address query returns no `address` or `path`, because the owning address is the one in the request. Querying an xpub or descriptor adds both to each output, identifying which derived address owns it.
+
 ## Response Parameters
 
-| Field         | Type    | Description                                    |
-| ------------- | ------- | ---------------------------------------------- |
-| txid          | string  | Transaction id of the output                   |
-| vout          | integer | Output index within the transaction            |
-| value         | string  | Output value in satoshis                       |
-| height        | integer | Block height at which the output was confirmed |
-| confirmations | integer | Number of confirmations                        |
-| address       | string  | Address that owns the output, for xpub queries |
+| Field         | Type    | Description                                                              |
+| ------------- | ------- | -------------------------------------------------------------------------- |
+| txid          | string  | Transaction id of the output                                             |
+| vout          | integer | Output index within the transaction                                      |
+| value         | string  | Output value in duffs                                                    |
+| height        | integer | Block height at which the output was confirmed. Omitted when unconfirmed |
+| confirmations | integer | Number of confirmations. 0 for unconfirmed outputs                       |
+| address       | string  | Owning address. Returned only for xpub and descriptor queries            |
+| path          | string  | Derivation path of the owning address. Only for xpub and descriptor queries |
 
 ## Use Cases
 
