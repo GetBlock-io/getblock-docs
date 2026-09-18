@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the getAccountInfo WebSocket method. Complete guide on how to use
-  the getAccountInfo WebSocket method in the GetBlock Web3 documentation.
+  Example code for the getAccountInfo WebSocket method. Complete guide on how to
+  use the getAccountInfo WebSocket method in the GetBlock Web3 documentation.
 ---
 
 # getAccountInfo - Litecoin
@@ -10,22 +10,22 @@ Returns balance and transaction data for an address, extended public key, or des
 
 ## Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| descriptor | string | Yes | Address, extended public key, or descriptor to query |
-| details | string | No | Detail level: basic, txids, txslight, or txs. Default txids |
-| tokens | string | No | Which xpub-derived addresses to include: nonzero, used, or derived |
-| page | integer | No | 1-based page index for transaction history |
-| pageSize | integer | No | History items per page |
-| from | integer | No | First block height to include |
-| to | integer | No | Last block height to include |
-| gap | integer | No | Derivation gap limit for xpub queries |
+| Parameter  | Type    | Required | Description                                                        |
+| ---------- | ------- | -------- | ------------------------------------------------------------------ |
+| descriptor | string  | Yes      | Address, extended public key, or descriptor to query               |
+| details    | string  | No       | Detail level: basic, txids, txslight, or txs. Default txids        |
+| tokens     | string  | No       | Which xpub-derived addresses to include: nonzero, used, or derived |
+| page       | integer | No       | 1-based page index for transaction history                         |
+| pageSize   | integer | No       | History items per page                                             |
+| from       | integer | No       | First block height to include                                      |
+| to         | integer | No       | Last block height to include                                       |
+| gap        | integer | No       | Derivation gap limit for xpub queries                              |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -67,16 +67,16 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Response Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| address | string | The queried address or descriptor |
-| balance | string | Confirmed balance in litoshis |
-| totalReceived | string | Total received in litoshis |
-| totalSent | string | Total sent in litoshis |
-| unconfirmedBalance | string | Unconfirmed balance in litoshis |
-| unconfirmedTxs | integer | Number of unconfirmed transactions |
-| txs | integer | Number of confirmed transactions |
-| txids | array | Transaction ids, present when details is txids |
+| Field              | Type    | Description                                    |
+| ------------------ | ------- | ---------------------------------------------- |
+| address            | string  | The queried address or descriptor              |
+| balance            | string  | Confirmed balance in litoshis                  |
+| totalReceived      | string  | Total received in litoshis                     |
+| totalSent          | string  | Total sent in litoshis                         |
+| unconfirmedBalance | string  | Unconfirmed balance in litoshis                |
+| unconfirmedTxs     | integer | Number of unconfirmed transactions             |
+| txs                | integer | Number of confirmed transactions               |
+| txids              | array   | Transaction ids, present when details is txids |
 
 ## Use Cases
 
@@ -87,7 +87,7 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Error Handling
 
-| Error | Message | Description |
-| --- | --- | --- |
-| error | Invalid address | The descriptor is malformed |
-| 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |
+| Error                     | Message         | Description                                       |
+| ------------------------- | --------------- | ------------------------------------------------- |
+| error                     | Invalid address | The descriptor is malformed                       |
+| 403 / RBAC: access denied | Access denied   | The GetBlock access token is missing or incorrect |

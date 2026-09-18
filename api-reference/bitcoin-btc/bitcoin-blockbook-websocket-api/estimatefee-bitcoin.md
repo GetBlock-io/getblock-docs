@@ -10,16 +10,16 @@ Returns the backend fee estimate for one or more confirmation targets. Supplying
 
 ## Parameters
 
-| Parameter | Type   | Required | Description                                                              |
-| --------- | ------ | -------- | -------------------------------------------------------------------------- |
-| blocks    | array  | Yes      | Confirmation targets in blocks, one estimate returned per entry           |
+| Parameter | Type   | Required | Description                                                                   |
+| --------- | ------ | -------- | ----------------------------------------------------------------------------- |
+| blocks    | array  | Yes      | Confirmation targets in blocks, one estimate returned per entry               |
 | specific  | object | No       | Chain-specific options: `conservative` for smart fee mode, `txsize` in vbytes |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -61,9 +61,9 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 ## Response Fields
 
 | Field      | Type   | Description                                                                |
-| ---------- | ------ | ---------------------------------------------------------------------------- |
-| feePerTx   | string | Estimated total fee in satoshis for a transaction of the supplied `txsize`  |
-| feePerUnit | string | Estimated fee rate in satoshis per **kilobyte**, not per vbyte              |
+| ---------- | ------ | -------------------------------------------------------------------------- |
+| feePerTx   | string | Estimated total fee in satoshis for a transaction of the supplied `txsize` |
+| feePerUnit | string | Estimated fee rate in satoshis per **kilobyte**, not per vbyte             |
 
 Results are returned in the same order as the requested `blocks` targets.
 
@@ -86,7 +86,7 @@ Results are returned in the same order as the requested `blocks` targets.
 
 ## Error Handling
 
-| Error                     | Message       | Description                                       |
-| ------------------------- | ------------- | ------------------------------------------------- |
-| error                     | Invalid params | The blocks array is missing or malformed         |
-| 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |
+| Error                     | Message        | Description                                       |
+| ------------------------- | -------------- | ------------------------------------------------- |
+| error                     | Invalid params | The blocks array is missing or malformed          |
+| 403 / RBAC: access denied | Access denied  | The GetBlock access token is missing or incorrect |

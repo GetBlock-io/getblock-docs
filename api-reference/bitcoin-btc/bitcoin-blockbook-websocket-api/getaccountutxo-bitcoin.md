@@ -10,15 +10,15 @@ Returns the unspent transaction outputs for an address, extended public key, or 
 
 ## Parameters
 
-| Parameter  | Type   | Required | Description                                                         |
-| ---------- | ------ | -------- | ------------------------------------------------------------------- |
-| descriptor | string | Yes      | Address, extended public key, or descriptor to read outputs for     |
+| Parameter  | Type   | Required | Description                                                     |
+| ---------- | ------ | -------- | --------------------------------------------------------------- |
+| descriptor | string | Yes      | Address, extended public key, or descriptor to read outputs for |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -59,15 +59,15 @@ As with the REST endpoint, an address query returns no `address` or `path`; quer
 
 ## Response Fields
 
-| Field         | Type    | Description                                                            |
-| ------------- | ------- | ----------------------------------------------------------------------- |
-| txid          | string  | Transaction id of the output                                            |
-| vout          | integer | Output index within the transaction                                     |
-| value         | string  | Output value in satoshis                                                |
+| Field         | Type    | Description                                                              |
+| ------------- | ------- | ------------------------------------------------------------------------ |
+| txid          | string  | Transaction id of the output                                             |
+| vout          | integer | Output index within the transaction                                      |
+| value         | string  | Output value in satoshis                                                 |
 | height        | integer | Block height at which the output was confirmed. Omitted when unconfirmed |
-| confirmations | integer | Number of confirmations. 0 for unconfirmed outputs                      |
-| address       | string  | Address that owns the output, for xpub and descriptor queries           |
-| path          | string  | Derivation path of the owning address, for xpub and descriptor queries  |
+| confirmations | integer | Number of confirmations. 0 for unconfirmed outputs                       |
+| address       | string  | Address that owns the output, for xpub and descriptor queries            |
+| path          | string  | Derivation path of the owning address, for xpub and descriptor queries   |
 
 ## Use Cases
 

@@ -21,7 +21,7 @@ This method takes no parameters. Send an empty `params` object.
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -60,7 +60,7 @@ While subscribed, the server pushes one message per connected block:
 ## Response Fields
 
 | Field      | Type    | Description                                            |
-| ---------- | ------- | -------------------------------------------------------- |
+| ---------- | ------- | ------------------------------------------------------ |
 | subscribed | boolean | Confirms the subscription is active                    |
 | height     | integer | Height of the newly connected block (in notifications) |
 | hash       | string  | Hash of the newly connected block (in notifications)   |

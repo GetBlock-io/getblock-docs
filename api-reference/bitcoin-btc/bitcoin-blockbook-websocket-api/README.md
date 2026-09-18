@@ -22,46 +22,56 @@ Blockbook (WebSocket) is available on **Mainnet only**. Blockbook (REST) is avai
 ### Base URL
 
 ```bash
-wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 ```
 
-### Message Envelope
+### Quickstart
 
 Every request carries an `id` chosen by the client, a `method`, and a `params` object. The server echoes the same `id` on the matching response, so replies can be correlated on a multiplexed connection.
 
-```json
+{% tabs %}
+{% tab title="request" %}
+```bash
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
+
+# then send:
 {
     "id": "getblock.io",
     "method": "getInfo",
     "params": {}
 }
 ```
+{% endtab %}
 
-A failed request returns an `error` object in place of the result:
-
-```json
+{% tab title="successful response" %}
+{% code overflow="wrap" %}
+```bash
 {
     "id": "getblock.io",
     "data": {
-        "error": {
-            "message": "Invalid address"
+        "name": "Bitcoin",
+        "shortcut": "BTC",
+        "network": "BTC",
+        "decimals": 8,
+        "version": "unknown",
+        "bestHeight": 967494,
+        "bestHash": "00000000000000000000890e285e32408f9da4f2d58b620b5703839448b9c70c",
+        "block0Hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+        "testnet": false,
+        "backend": {
+            "version": "310100",
+            "subversion": "/Satoshi:31.1.0/"
         }
     }
 }
 ```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 ### Methods
 
-| Method                                                        | Description                                                     |
-| ------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [getInfo](getinfo-bitcoin.md)                                 | Indexer and backend status                                      |
-| [getAccountInfo](getaccountinfo-bitcoin.md)                   | Address or xpub balance and transaction history                 |
-| [getAccountUtxo](getaccountutxo-bitcoin.md)                   | Unspent outputs for an address, xpub, or descriptor             |
-| [getTransaction](gettransaction-bitcoin.md)                   | Normalized transaction by txid                                  |
-| [sendTransaction](sendtransaction-bitcoin.md)                 | Broadcast a signed, serialized transaction                      |
-| [estimateFee](estimatefee-bitcoin.md)                         | Fee estimate for one or more confirmation targets               |
-| [subscribeNewBlock](subscribenewblock-bitcoin.md)             | Subscribe to new blocks as they are connected                   |
-| [subscribeAddresses](subscribeaddresses-bitcoin.md)           | Subscribe to activity on a set of addresses                     |
+<table data-search="false"><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><a href="getinfo-bitcoin.md">getInfo</a></td><td>Indexer and backend status</td></tr><tr><td><a href="getaccountinfo-bitcoin.md">getAccountInfo</a></td><td>Address or xpub balance and transaction history</td></tr><tr><td><a href="getaccountutxo-bitcoin.md">getAccountUtxo</a></td><td>Unspent outputs for an address, xpub, or descriptor</td></tr><tr><td><a href="gettransaction-bitcoin.md">getTransaction</a></td><td>Normalized transaction by txid</td></tr><tr><td><a href="sendtransaction-bitcoin.md">sendTransaction</a></td><td>Broadcast a signed, serialized transaction</td></tr><tr><td><a href="estimatefee-bitcoin.md">estimateFee</a></td><td>Fee estimate for one or more confirmation targets</td></tr><tr><td><a href="subscribenewblock-bitcoin.md">subscribeNewBlock</a></td><td>Subscribe to new blocks as they are connected</td></tr><tr><td><a href="subscribeaddresses-bitcoin.md">subscribeAddresses</a></td><td>Subscribe to activity on a set of addresses</td></tr></tbody></table>
 
 ### Support
 

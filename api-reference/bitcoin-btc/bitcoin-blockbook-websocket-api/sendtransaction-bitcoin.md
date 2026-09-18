@@ -11,15 +11,15 @@ Broadcasts a signed, serialized transaction to the Bitcoin network through the b
 
 ## Parameters
 
-| Parameter | Type   | Required | Description                               |
-| --------- | ------ | -------- | ----------------------------------------- |
-| hex       | string | Yes      | Hex-encoded signed raw transaction        |
+| Parameter | Type   | Required | Description                        |
+| --------- | ------ | -------- | ---------------------------------- |
+| hex       | string | Yes      | Hex-encoded signed raw transaction |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -45,9 +45,9 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Response Fields
 
-| Field  | Type   | Description                                       |
-| ------ | ------ | ------------------------------------------------- |
-| result | string | Transaction id of the accepted transaction        |
+| Field  | Type   | Description                                |
+| ------ | ------ | ------------------------------------------ |
+| result | string | Transaction id of the accepted transaction |
 
 ## Use Cases
 
@@ -62,9 +62,9 @@ Acceptance means the backend node admitted the transaction to its mempool, not t
 
 ## Error Handling
 
-| Error                     | Message                     | Description                                                       |
-| ------------------------- | --------------------------- | ------------------------------------------------------------------- |
-| error                     | Transaction decode failed   | The hex is malformed or not a complete signed transaction         |
-| error                     | Transaction already in block chain | The transaction has already been mined                     |
-| error                     | min relay fee not met       | The fee is below the backend node's relay threshold               |
-| 403 / RBAC: access denied | Access denied               | The GetBlock access token is missing or incorrect                 |
+| Error                     | Message                            | Description                                               |
+| ------------------------- | ---------------------------------- | --------------------------------------------------------- |
+| error                     | Transaction decode failed          | The hex is malformed or not a complete signed transaction |
+| error                     | Transaction already in block chain | The transaction has already been mined                    |
+| error                     | min relay fee not met              | The fee is below the backend node's relay threshold       |
+| 403 / RBAC: access denied | Access denied                      | The GetBlock access token is missing or incorrect         |

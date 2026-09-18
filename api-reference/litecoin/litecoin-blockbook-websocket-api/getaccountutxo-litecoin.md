@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the getAccountUtxo WebSocket method. Complete guide on how to use
-  the getAccountUtxo WebSocket method in the GetBlock Web3 documentation.
+  Example code for the getAccountUtxo WebSocket method. Complete guide on how to
+  use the getAccountUtxo WebSocket method in the GetBlock Web3 documentation.
 ---
 
 # getAccountUtxo - Litecoin
@@ -10,15 +10,15 @@ Returns the unspent transaction outputs for an address, extended public key, or 
 
 ## Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| descriptor | string | Yes | Address, extended public key, or descriptor to read outputs for |
+| Parameter  | Type   | Required | Description                                                     |
+| ---------- | ------ | -------- | --------------------------------------------------------------- |
+| descriptor | string | Yes      | Address, extended public key, or descriptor to read outputs for |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -57,15 +57,15 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Response Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| txid | string | Transaction id of the output |
-| vout | integer | Output index within the transaction |
-| value | string | Output value in litoshis |
-| height | integer | Block height at which the output was confirmed |
-| confirmations | integer | Number of confirmations. 0 for unconfirmed outputs |
-| address | string | Owning address, for xpub and descriptor queries only |
-| path | string | Derivation path of the owning address, for xpub and descriptor queries only |
+| Field         | Type    | Description                                                                 |
+| ------------- | ------- | --------------------------------------------------------------------------- |
+| txid          | string  | Transaction id of the output                                                |
+| vout          | integer | Output index within the transaction                                         |
+| value         | string  | Output value in litoshis                                                    |
+| height        | integer | Block height at which the output was confirmed                              |
+| confirmations | integer | Number of confirmations. 0 for unconfirmed outputs                          |
+| address       | string  | Owning address, for xpub and descriptor queries only                        |
+| path          | string  | Derivation path of the owning address, for xpub and descriptor queries only |
 
 {% hint style="info" %}
 Unlike the REST endpoint, this method has no `confirmed` parameter: both confirmed and unconfirmed outputs are returned. Filter on `confirmations` in the client, or use REST with `confirmed=true` when only settled outputs are wanted.
@@ -80,7 +80,7 @@ Unlike the REST endpoint, this method has no `confirmed` parameter: both confirm
 
 ## Error Handling
 
-| Error | Message | Description |
-| --- | --- | --- |
-| error | Invalid address | The descriptor is malformed |
-| 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |
+| Error                     | Message         | Description                                       |
+| ------------------------- | --------------- | ------------------------------------------------- |
+| error                     | Invalid address | The descriptor is malformed                       |
+| 403 / RBAC: access denied | Access denied   | The GetBlock access token is missing or incorrect |

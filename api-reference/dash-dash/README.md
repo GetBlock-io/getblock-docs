@@ -180,7 +180,7 @@ python main.py
 
 * [JSON-RPC API](bitcoin-cash-json-rpc-api/) — Dash Core JSON-RPC (Bitcoin-style + masternode/quorum methods)
 * [REST API](dash-rest-api/) — Bitcoin Core-style REST endpoints (`/rest/...`)
-* [Blockbook REST API](bitcoin-cash-blockbook-rest-api/) — address-indexed indexer REST (`/api/...`)
+* [Blockbook REST API](dash-blockbook-rest-api/) — address-indexed indexer REST (`/api/...`)
 * [Blockbook WebSocket API](dash-blockbook-websocket-api/) — indexer WebSocket (queries + subscriptions)
 
 ### Support

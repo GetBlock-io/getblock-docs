@@ -39,80 +39,96 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 
 Methods that require wallet or node-administration privileges are not available on shared endpoints and are omitted below.
 
-#### Blockchain Information
+#### Blockchain information
 
 Methods that report the state of the chain.
 
-* [`getblockchaininfo`](getblockchaininfo-litecoin.md): Returns an object containing various state info regarding blockchain processing
-* [`getbestblockhash`](getbestblockhash-litecoin.md): Returns the hash of the best (tip) block in the longest blockchain
-* [`getblockcount`](getblockcount-litecoin.md): Returns the number of blocks in the longest blockchain
-* [`getdifficulty`](getdifficulty-litecoin.md): Returns the proof-of-work difficulty as a multiple of the minimum difficulty
-* [`getchaintips`](getchaintips-litecoin.md): Returns information about all known tips in the block tree
+| Method                                               | Description                                                                     |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [`getblockchaininfo`](getblockchaininfo-litecoin.md) | Returns an object containing various state info regarding blockchain processing |
+| [`getbestblockhash`](getbestblockhash-litecoin.md)   | Returns the hash of the best (tip) block in the longest blockchain              |
+| [`getblockcount`](getblockcount-litecoin.md)         | Returns the number of blocks in the longest blockchain                          |
+| [`getdifficulty`](getdifficulty-litecoin.md)         | Returns the proof-of-work difficulty as a multiple of the minimum difficulty    |
+| [`getchaintips`](getchaintips-litecoin.md)           | Returns information about all known tips in the block tree                      |
 
-#### Block Retrieval
+#### Block retrieval
 
 Methods that fetch block data.
 
-* [`getblock`](getblock-litecoin.md): Returns an object with information about the block for a given hash
-* [`getblockhash`](getblockhash-litecoin.md): Returns the hash of the block at the given height
-* [`getblockstats`](getblockstats-litecoin.md): Computes per-block statistics for a given window
-* [`getblocktemplate`](getblocktemplate-litecoin.md): Returns data needed to construct a block to work on
+| Method                                             | Description                                                         |
+| -------------------------------------------------- | ------------------------------------------------------------------- |
+| [`getblock`](getblock-litecoin.md)                 | Returns an object with information about the block for a given hash |
+| [`getblockhash`](getblockhash-litecoin.md)         | Returns the hash of the block at the given height                   |
+| [`getblockstats`](getblockstats-litecoin.md)       | Computes per-block statistics for a given window                    |
+| [`getblocktemplate`](getblocktemplate-litecoin.md) | Returns data needed to construct a block to work on                 |
 
-#### Transaction Methods
+#### Transaction methods
 
 Methods for reading, creating, decoding, and testing transactions.
 
-* [`getrawtransaction`](getrawtransaction-litecoin.md): Returns the raw transaction data
-* [`decoderawtransaction`](decoderawtransaction-litecoin.md): Returns a JSON object representing the serialized transaction
-* [`decodescript`](decodescript-litecoin.md): Decodes a hex-encoded script
-* [`createrawtransaction`](createrawtransaction-litecoin.md): Creates a transaction spending the given inputs
-* [`createmultisig`](createmultisig-litecoin.md): Creates a multi-signature address from a set of public keys
-* [`testmempoolaccept`](testmempoolaccept-litecoin.md): Tests whether a raw transaction would be accepted into the mempool
+| Method                                                     | Description                                                        |
+| ---------------------------------------------------------- | ------------------------------------------------------------------ |
+| [`getrawtransaction`](getrawtransaction-litecoin.md)       | Returns the raw transaction data                                   |
+| [`decoderawtransaction`](decoderawtransaction-litecoin.md) | Returns a JSON object representing the serialized transaction      |
+| [`decodescript`](decodescript-litecoin.md)                 | Decodes a hex-encoded script                                       |
+| [`createrawtransaction`](createrawtransaction-litecoin.md) | Creates a transaction spending the given inputs                    |
+| [`createmultisig`](createmultisig-litecoin.md)             | Creates a multi-signature address from a set of public keys        |
+| [`testmempoolaccept`](testmempoolaccept-litecoin.md)       | Tests whether a raw transaction would be accepted into the mempool |
 
-#### Mempool Methods
+#### Mempool methods
 
 Methods for querying the pool of unconfirmed transactions.
 
-* [`getmempoolinfo`](getmempoolinfo-litecoin.md): Returns details on the active state of the transaction memory pool
-* [`getmempoolentry`](getmempoolentry-litecoin.md): Returns mempool data for a given transaction
-* [`getmempoolancestors`](getmempoolancestors-litecoin.md): Returns all in-mempool ancestors of a transaction
-* [`getmempooldescendants`](getmempooldescendants-litecoin.md): Returns all in-mempool descendants of a transaction
+| Method                                                       | Description                                                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------------ |
+| [`getmempoolinfo`](getmempoolinfo-litecoin.md)               | Returns details on the active state of the transaction memory pool |
+| [`getmempoolentry`](getmempoolentry-litecoin.md)             | Returns mempool data for a given transaction                       |
+| [`getmempoolancestors`](getmempoolancestors-litecoin.md)     | Returns all in-mempool ancestors of a transaction                  |
+| [`getmempooldescendants`](getmempooldescendants-litecoin.md) | Returns all in-mempool descendants of a transaction                |
 
-#### Mining Methods
+#### Mining methods
 
 Methods related to mining operations and statistics.
 
-* [`getmininginfo`](getmininginfo-litecoin.md): Returns a JSON object containing mining-related information
-* [`getnetworkhashps`](getnetworkhashps-litecoin.md): Returns the estimated network hashes per second
+| Method                                             | Description                                                 |
+| -------------------------------------------------- | ----------------------------------------------------------- |
+| [`getmininginfo`](getmininginfo-litecoin.md)       | Returns a JSON object containing mining-related information |
+| [`getnetworkhashps`](getnetworkhashps-litecoin.md) | Returns the estimated network hashes per second             |
 
-#### Network Methods
+#### Network methods
 
 Methods for querying network state and peer information.
 
-* [`getconnectioncount`](getconnectioncount-litecoin.md): Returns the number of connections to other nodes
-* [`getnettotals`](getnettotals-litecoin.md): Returns information about network traffic
-* [`listbanned`](listbanned-litecoin.md): Lists all manually banned IP addresses and subnets
-* [`getmemoryinfo`](getmemoryinfo-litecoin.md): Returns information about memory usage
+| Method                                                 | Description                                        |
+| ------------------------------------------------------ | -------------------------------------------------- |
+| [`getconnectioncount`](getconnectioncount-litecoin.md) | Returns the number of connections to other nodes   |
+| [`getnettotals`](getnettotals-litecoin.md)             | Returns information about network traffic          |
+| [`listbanned`](listbanned-litecoin.md)                 | Lists all manually banned IP addresses and subnets |
+| [`getmemoryinfo`](getmemoryinfo-litecoin.md)           | Returns information about memory usage             |
 
-#### UTXO Methods
+#### UTXO methods
 
 Methods for querying unspent transaction outputs by outpoint.
 
-* [`gettxout`](gettxout-litecoin.md): Returns details about an unspent transaction output
-* [`gettxoutsetinfo`](gettxoutsetinfo-litecoin.md): Returns statistics about the unspent transaction output set
-* [`gettxoutproof`](gettxoutproof-litecoin.md): Returns a hex-encoded proof that txids were included in a block
+| Method                                           | Description                                                     |
+| ------------------------------------------------ | --------------------------------------------------------------- |
+| [`gettxout`](gettxout-litecoin.md)               | Returns details about an unspent transaction output             |
+| [`gettxoutsetinfo`](gettxoutsetinfo-litecoin.md) | Returns statistics about the unspent transaction output set     |
+| [`gettxoutproof`](gettxoutproof-litecoin.md)     | Returns a hex-encoded proof that txids were included in a block |
 
-#### Utility Methods
+#### Utility methods
 
 General validation and information methods.
 
-* [`validateaddress`](validateaddress-litecoin.md): Returns information about the given Litecoin address
-* [`verifymessage`](verifymessage-litecoin.md): Verifies a signed message
-* [`estimatesmartfee`](estimatesmartfee-litecoin.md): Estimates the approximate fee per kilobyte
-* [`help`](help-litecoin.md): Lists all commands, or gets help for a specified command
+| Method                                             | Description                                              |
+| -------------------------------------------------- | -------------------------------------------------------- |
+| [`validateaddress`](validateaddress-litecoin.md)   | Returns information about the given Litecoin address     |
+| [`verifymessage`](verifymessage-litecoin.md)       | Verifies a signed message                                |
+| [`estimatesmartfee`](estimatesmartfee-litecoin.md) | Estimates the approximate fee per kilobyte               |
+| [`help`](help-litecoin.md)                         | Lists all commands, or gets help for a specified command |
 
 {% hint style="warning" %}
-`gettxout` reports a single outpoint that the caller already knows. It cannot list the outputs belonging to an address. For that, use [api/v2/utxo](../litecoin-blockbook-rest-api/api-v2-utxo-litecoin.md) on the Blockbook add-on. The Litecoin Core wallet RPCs, including `listunspent`, are disabled on shared nodes because those nodes carry no user wallets.
+`gettxout` cannot list the outputs belonging to an address. For that, use [api/v2/utxo](../litecoin-blockbook-rest-api/api-v2-utxo-litecoin.md) on the Blockbook add-on. The Litecoin Core wallet RPCs, including `listunspent`, are disabled on shared nodes because those nodes carry no user wallets.
 {% endhint %}
 
 ### Support

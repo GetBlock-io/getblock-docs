@@ -10,22 +10,22 @@ Returns balance and transaction data for an address, extended public key, or des
 
 ## Parameters
 
-| Parameter  | Type    | Required | Description                                                                     |
-| ---------- | ------- | -------- | --------------------------------------------------------------------------------- |
-| descriptor | string  | Yes      | Address, extended public key, or descriptor to query                            |
-| details    | string  | No       | Detail level: basic, txids, txslight, or txs. Default txids                     |
-| tokens     | string  | No       | Which xpub-derived addresses to include: nonzero, used, or derived              |
-| page       | integer | No       | 1-based page index for transaction history                                      |
-| pageSize   | integer | No       | History items per page                                                          |
-| from       | integer | No       | First block height to include when filtering history                            |
-| to         | integer | No       | Last block height to include when filtering history                             |
-| gap        | integer | No       | Derivation gap limit for xpub queries, capped by the server                     |
+| Parameter  | Type    | Required | Description                                                        |
+| ---------- | ------- | -------- | ------------------------------------------------------------------ |
+| descriptor | string  | Yes      | Address, extended public key, or descriptor to query               |
+| details    | string  | No       | Detail level: basic, txids, txslight, or txs. Default txids        |
+| tokens     | string  | No       | Which xpub-derived addresses to include: nonzero, used, or derived |
+| page       | integer | No       | 1-based page index for transaction history                         |
+| pageSize   | integer | No       | History items per page                                             |
+| from       | integer | No       | First block height to include when filtering history               |
+| to         | integer | No       | Last block height to include when filtering history                |
+| gap        | integer | No       | Derivation gap limit for xpub queries, capped by the server        |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {

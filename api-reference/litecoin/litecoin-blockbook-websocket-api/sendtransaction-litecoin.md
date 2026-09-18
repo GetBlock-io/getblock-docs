@@ -1,7 +1,8 @@
 ---
 description: >-
-  Example code for the sendTransaction WebSocket method. Complete guide on how to use
-  the sendTransaction WebSocket method in the GetBlock Web3 documentation.
+  Example code for the sendTransaction WebSocket method. Complete guide on how
+  to use the sendTransaction WebSocket method in the GetBlock Web3
+  documentation.
 ---
 
 # sendTransaction - Litecoin
@@ -10,15 +11,15 @@ Broadcasts a signed, serialized transaction to the Litecoin network and returns 
 
 ## Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| hex | string | Yes | Hex-encoded signed raw transaction |
+| Parameter | Type   | Required | Description                        |
+| --------- | ------ | -------- | ---------------------------------- |
+| hex       | string | Yes      | Hex-encoded signed raw transaction |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -44,8 +45,8 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Response Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
+| Field  | Type   | Description                                |
+| ------ | ------ | ------------------------------------------ |
 | result | string | Transaction id of the accepted transaction |
 
 {% hint style="warning" %}
@@ -61,8 +62,8 @@ Acceptance means the node admitted the transaction to its mempool, not that it h
 
 ## Error Handling
 
-| Error | Message | Description |
-| --- | --- | --- |
-| error | Transaction decode failed | The hex is malformed or not a complete signed transaction |
-| error | min relay fee not met | The fee is below the node's relay threshold |
-| 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |
+| Error                     | Message                   | Description                                               |
+| ------------------------- | ------------------------- | --------------------------------------------------------- |
+| error                     | Transaction decode failed | The hex is malformed or not a complete signed transaction |
+| error                     | min relay fee not met     | The fee is below the node's relay threshold               |
+| 403 / RBAC: access denied | Access denied             | The GetBlock access token is missing or incorrect         |

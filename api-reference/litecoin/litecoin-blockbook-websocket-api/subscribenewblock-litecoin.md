@@ -1,7 +1,8 @@
 ---
 description: >-
-  Example code for the subscribeNewBlock WebSocket method. Complete guide on how to use
-  the subscribeNewBlock WebSocket method in the GetBlock Web3 documentation.
+  Example code for the subscribeNewBlock WebSocket method. Complete guide on how
+  to use the subscribeNewBlock WebSocket method in the GetBlock Web3
+  documentation.
 ---
 
 # subscribeNewBlock - Litecoin
@@ -16,7 +17,7 @@ This method takes no parameters. Send an empty `params` object.
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -54,11 +55,11 @@ While subscribed, the server pushes one message per connected block:
 
 ## Response Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| subscribed | boolean | Confirms the subscription is active |
-| height | integer | Height of the newly connected block (in notifications) |
-| hash | string | Hash of the newly connected block (in notifications) |
+| Field      | Type    | Description                                            |
+| ---------- | ------- | ------------------------------------------------------ |
+| subscribed | boolean | Confirms the subscription is active                    |
+| height     | integer | Height of the newly connected block (in notifications) |
+| hash       | string  | Hash of the newly connected block (in notifications)   |
 
 {% hint style="warning" %}
 During a chain reorganization a notification can carry a height equal to or lower than one already delivered. Treat the height as the current tip rather than a counter that only increases, and re-check any transaction that has not reached final settlement depth.
@@ -75,6 +76,6 @@ Litecoin targets a 2.5-minute block interval, roughly four times Bitcoin's rate,
 
 ## Error Handling
 
-| Error | Message | Description |
-| --- | --- | --- |
+| Error                     | Message       | Description                                       |
+| ------------------------- | ------------- | ------------------------------------------------- |
 | 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |

@@ -51,11 +51,11 @@ https://shared.eu-central-1.getblock.io
 JSON-RPC is the Litecoin Core node interface. Blockbook is a separate add-on providing an address- and xpub-indexed view of the chain, and its REST and WebSocket interfaces are provisioned as their own endpoints with their own URLs. A JSON-RPC endpoint does not answer address, UTXO, or wallet queries, and the Litecoin Core wallet RPCs such as `listunspent` are disabled on shared nodes. See the [Blockbook add-on](../../add-ons/blockbook.md).
 {% endhint %}
 
-| Interface                                                    | Use it for                                                                           |
-| ------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
-| JSON-RPC (this section)                                      | Node-level queries: blocks, raw transactions, mempool, mining, network state          |
-| [Blockbook REST](litecoin-blockbook-rest-api/)               | Address balances, UTXOs, wallet-level xpub queries, transaction history, fiat rates   |
-| [Blockbook WebSocket](litecoin-blockbook-websocket-api/)     | The same queries plus live subscriptions to new blocks and address activity           |
+| Interface                                                | Use it for                                                                          |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [JSON-RPC](litecoin-json-rpc-api/)                       | Node-level queries: blocks, raw transactions, mempool, mining, network state        |
+| [Blockbook REST](litecoin-blockbook-rest-api/)           | Address balances, UTXOs, wallet-level xpub queries, transaction history, fiat rates |
+| [Blockbook WebSocket](litecoin-blockbook-websocket-api/) | The same queries plus live subscriptions to new blocks and address activity         |
 
 ## Quickstart
 
@@ -261,22 +261,13 @@ python main.py
 
 Litecoin is documented across three interfaces, each provisioned as its own endpoint.
 
-### [Litecoin JSON-RPC API](litecoin-json-rpc-api/)
-
-The Litecoin Core node interface: blocks, raw transactions, mempool inspection, mining data, network state, and fee estimation. Methods are grouped by area on the section page.
-
-### [Litecoin Blockbook REST API](litecoin-blockbook-rest-api/)
-
-Address- and xpub-indexed queries over HTTP: balances, transaction history, unspent outputs, wallet-level xpub lookups, balance history, and fiat rates.
-
-### [Litecoin Blockbook (WebSocket) API](litecoin-blockbook-websocket-api/)
-
-The same indexed queries over a persistent connection, plus subscriptions to new blocks and to activity on a set of addresses.
+1. [Litecoin JSON-RPC API](litecoin-json-rpc-api/): The Litecoin Core node interface: blocks, raw transactions, mempool inspection, mining data, network state, and fee estimation. Methods are grouped by area on the section page.
+2. [Litecoin Blockbook REST API](litecoin-blockbook-rest-api/): Address- and xpub-indexed queries over HTTP: balances, transaction history, unspent outputs, wallet-level xpub lookups, balance history, and fiat rates.
+3. [Litecoin Blockbook (WebSocket) API](litecoin-blockbook-websocket-api/): The same indexed queries over a persistent connection, plus subscriptions to new blocks and to activity on a set of addresses.
 
 {% hint style="info" %}
 A JSON-RPC endpoint has no address index, so address balances and UTXO lookups belong on Blockbook. The Litecoin Core wallet RPCs, including `listunspent`, are disabled on shared nodes because those nodes carry no user wallets.
 {% endhint %}
-
 
 ## Support
 

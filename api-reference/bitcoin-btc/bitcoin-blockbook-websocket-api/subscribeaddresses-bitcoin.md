@@ -15,16 +15,16 @@ This is a WebSocket subscription. After the initial acknowledgement, the server 
 
 ## Parameters
 
-| Parameter   | Type    | Required | Description                                                                        |
-| ----------- | ------- | -------- | ----------------------------------------------------------------------------------- |
-| addresses   | array   | Yes      | Bitcoin addresses to watch                                                          |
+| Parameter   | Type    | Required | Description                                                                             |
+| ----------- | ------- | -------- | --------------------------------------------------------------------------------------- |
+| addresses   | array   | Yes      | Bitcoin addresses to watch                                                              |
 | newBlockTxs | boolean | No       | When true, also push the subscribed addresses' transactions contained in each new block |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -84,13 +84,13 @@ Do not wait for a confirmation push to settle a payment. Subscribe to [subscribe
 
 ## Response Fields
 
-| Field                  | Type    | Description                                                        |
-| ---------------------- | ------- | -------------------------------------------------------------------- |
-| subscribed             | boolean | Confirms the subscription is active                                |
-| address                | string  | Address that received activity (in notifications)                  |
-| tx                     | object  | The transaction touching the address (in notifications)            |
-| confirmationETABlocks  | integer | Estimated blocks until confirmation, on unconfirmed transactions   |
-| confirmationETASeconds | integer | Estimated seconds until confirmation, on unconfirmed transactions  |
+| Field                  | Type    | Description                                                       |
+| ---------------------- | ------- | ----------------------------------------------------------------- |
+| subscribed             | boolean | Confirms the subscription is active                               |
+| address                | string  | Address that received activity (in notifications)                 |
+| tx                     | object  | The transaction touching the address (in notifications)           |
+| confirmationETABlocks  | integer | Estimated blocks until confirmation, on unconfirmed transactions  |
+| confirmationETASeconds | integer | Estimated seconds until confirmation, on unconfirmed transactions |
 
 {% hint style="warning" %}
 An unconfirmed transaction arrives with **`blockHeight` set to `0`** in this notification, not `-1`. The REST [api/v2/tx](../bitcoin-blockbook-rest-api/api-v2-tx-bitcoin.md) endpoint reports `-1` for the same state. Detect pending status with `confirmations === 0` rather than by comparing `blockHeight`, so the same check works across both interfaces.

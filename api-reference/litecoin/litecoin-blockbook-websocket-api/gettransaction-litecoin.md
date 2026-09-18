@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the getTransaction WebSocket method. Complete guide on how to use
-  the getTransaction WebSocket method in the GetBlock Web3 documentation.
+  Example code for the getTransaction WebSocket method. Complete guide on how to
+  use the getTransaction WebSocket method in the GetBlock Web3 documentation.
 ---
 
 # getTransaction - Litecoin
@@ -10,15 +10,15 @@ Returns a normalized transaction by its id, with inputs, outputs, addresses, val
 
 ## Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| txid | string | Yes | Transaction id |
+| Parameter | Type   | Required | Description    |
+| --------- | ------ | -------- | -------------- |
+| txid      | string | Yes      | Transaction id |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -74,17 +74,17 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Response Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| txid | string | The transaction id |
-| vin | array | Inputs with addresses and values |
-| vout | array | Outputs with values, scripts, and destination addresses |
-| blockHeight | integer | Block height, or -1 while unconfirmed |
-| confirmations | integer | Number of confirmations. 0 while unconfirmed |
-| size | integer | Serialized size in bytes |
-| vsize | integer | Virtual size in vbytes |
-| value | string | Total output value in litoshis |
-| fees | string | Fee paid in litoshis |
+| Field         | Type    | Description                                             |
+| ------------- | ------- | ------------------------------------------------------- |
+| txid          | string  | The transaction id                                      |
+| vin           | array   | Inputs with addresses and values                        |
+| vout          | array   | Outputs with values, scripts, and destination addresses |
+| blockHeight   | integer | Block height, or -1 while unconfirmed                   |
+| confirmations | integer | Number of confirmations. 0 while unconfirmed            |
+| size          | integer | Serialized size in bytes                                |
+| vsize         | integer | Virtual size in vbytes                                  |
+| value         | string  | Total output value in litoshis                          |
+| fees          | string  | Fee paid in litoshis                                    |
 
 ## Use Cases
 
@@ -95,7 +95,7 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Error Handling
 
-| Error | Message | Description |
-| --- | --- | --- |
-| error | Not found | No transaction exists with the requested id |
+| Error                     | Message       | Description                                       |
+| ------------------------- | ------------- | ------------------------------------------------- |
+| error                     | Not found     | No transaction exists with the requested id       |
 | 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |

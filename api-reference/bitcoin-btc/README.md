@@ -40,7 +40,7 @@ _GetBlock's RPC API reference documentation is provided exclusively for informat
 ### Base URL
 
 ```bash
-https://shared.eu-central-1.getblock.io
+https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 
 ### Supported Networks

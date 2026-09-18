@@ -1,7 +1,8 @@
 ---
 description: >-
-  Example code for the subscribeAddresses WebSocket method. Complete guide on how to use
-  the subscribeAddresses WebSocket method in the GetBlock Web3 documentation.
+  Example code for the subscribeAddresses WebSocket method. Complete guide on
+  how to use the subscribeAddresses WebSocket method in the GetBlock Web3
+  documentation.
 ---
 
 # subscribeAddresses - Litecoin
@@ -10,16 +11,16 @@ Subscribes to activity on a set of addresses. When a transaction touches any sub
 
 ## Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| addresses | array | Yes | Litecoin addresses to watch |
-| newBlockTxs | boolean | No | When true, also push the subscribed addresses' transactions contained in each new block |
+| Parameter   | Type    | Required | Description                                                                             |
+| ----------- | ------- | -------- | --------------------------------------------------------------------------------------- |
+| addresses   | array   | Yes      | Litecoin addresses to watch                                                             |
+| newBlockTxs | boolean | No       | When true, also push the subscribed addresses' transactions contained in each new block |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -73,12 +74,12 @@ A transaction is pushed as soon as it reaches the mempool, carrying `confirmatio
 
 ## Response Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| subscribed | boolean | Confirms the subscription is active |
-| address | string | Address that received activity (in notifications) |
-| tx | object | The transaction touching the address (in notifications) |
-| confirmationETABlocks | integer | Estimated blocks until confirmation, on unconfirmed transactions |
+| Field                  | Type    | Description                                                       |
+| ---------------------- | ------- | ----------------------------------------------------------------- |
+| subscribed             | boolean | Confirms the subscription is active                               |
+| address                | string  | Address that received activity (in notifications)                 |
+| tx                     | object  | The transaction touching the address (in notifications)           |
+| confirmationETABlocks  | integer | Estimated blocks until confirmation, on unconfirmed transactions  |
 | confirmationETASeconds | integer | Estimated seconds until confirmation, on unconfirmed transactions |
 
 {% hint style="warning" %}
@@ -96,7 +97,7 @@ Notifications reuse the `id` sent with the subscription request, not a fixed val
 
 ## Error Handling
 
-| Error | Message | Description |
-| --- | --- | --- |
-| error | Invalid address | One of the addresses is invalid |
-| 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |
+| Error                     | Message         | Description                                       |
+| ------------------------- | --------------- | ------------------------------------------------- |
+| error                     | Invalid address | One of the addresses is invalid                   |
+| 403 / RBAC: access denied | Access denied   | The GetBlock access token is missing or incorrect |

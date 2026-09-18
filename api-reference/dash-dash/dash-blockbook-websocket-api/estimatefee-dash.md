@@ -18,7 +18,7 @@ Returns fee-rate estimates for one or more confirmation-block targets over WebSo
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -63,8 +63,8 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Response Fields
 
-| Field      | Type   | Description                                                            |
-| ---------- | ------ | ------------------------------------------------------------------------ |
+| Field      | Type   | Description                                                             |
+| ---------- | ------ | ----------------------------------------------------------------------- |
 | feePerTx   | string | Estimated total fee in duffs for a transaction of the supplied `txsize` |
 | feePerUnit | string | Estimated fee rate in duffs per **kilobyte**, not per byte              |
 

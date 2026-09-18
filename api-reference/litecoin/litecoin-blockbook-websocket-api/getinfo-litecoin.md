@@ -16,7 +16,7 @@ This method takes no parameters. Send an empty `params` object.
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -52,16 +52,16 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Response Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| name | string | Coin name |
-| shortcut | string | Coin ticker |
-| decimals | integer | Decimal places in the coin's base unit |
-| bestHeight | integer | Height of the best block the indexer has processed |
-| bestHash | string | Hash of the best block the indexer has processed |
-| block0Hash | string | Genesis block hash, used to confirm the expected chain |
-| testnet | boolean | True when the endpoint serves a test network |
-| backend | object | Litecoin Core version and subversion |
+| Field      | Type    | Description                                            |
+| ---------- | ------- | ------------------------------------------------------ |
+| name       | string  | Coin name                                              |
+| shortcut   | string  | Coin ticker                                            |
+| decimals   | integer | Decimal places in the coin's base unit                 |
+| bestHeight | integer | Height of the best block the indexer has processed     |
+| bestHash   | string  | Hash of the best block the indexer has processed       |
+| block0Hash | string  | Genesis block hash, used to confirm the expected chain |
+| testnet    | boolean | True when the endpoint serves a test network           |
+| backend    | object  | Litecoin Core version and subversion                   |
 
 {% hint style="info" %}
 `version` reports `unknown` on the shared deployment. Identify the node through `backend.subversion` instead.
@@ -76,6 +76,6 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Error Handling
 
-| Error | Message | Description |
-| --- | --- | --- |
+| Error                     | Message       | Description                                       |
+| ------------------------- | ------------- | ------------------------------------------------- |
 | 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |

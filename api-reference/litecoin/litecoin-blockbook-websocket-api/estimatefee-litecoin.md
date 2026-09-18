@@ -1,7 +1,7 @@
 ---
 description: >-
-  Example code for the estimateFee WebSocket method. Complete guide on how to use
-  the estimateFee WebSocket method in the GetBlock Web3 documentation.
+  Example code for the estimateFee WebSocket method. Complete guide on how to
+  use the estimateFee WebSocket method in the GetBlock Web3 documentation.
 ---
 
 # estimateFee - Litecoin
@@ -10,16 +10,16 @@ Returns the backend fee estimate for one or more confirmation targets. Supplying
 
 ## Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| blocks | array | Yes | Confirmation targets in blocks, one estimate returned per entry |
-| specific | object | No | Chain-specific options: `conservative` for smart fee mode, `txsize` in vbytes |
+| Parameter | Type   | Required | Description                                                                   |
+| --------- | ------ | -------- | ----------------------------------------------------------------------------- |
+| blocks    | array  | Yes      | Confirmation targets in blocks, one estimate returned per entry               |
+| specific  | object | No       | Chain-specific options: `conservative` for smart fee mode, `txsize` in vbytes |
 
 ## Message
 
 {% code overflow="wrap" %}
 ```bash
-wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>
 
 # then send:
 {
@@ -62,10 +62,10 @@ Results are returned in the same order as the requested `blocks` targets.
 
 ## Response Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| feePerTx | string | Estimated total fee in litoshis for a transaction of the supplied `txsize` |
-| feePerUnit | string | Estimated fee rate in litoshis per **kilobyte**, not per vbyte |
+| Field      | Type   | Description                                                                |
+| ---------- | ------ | -------------------------------------------------------------------------- |
+| feePerTx   | string | Estimated total fee in litoshis for a transaction of the supplied `txsize` |
+| feePerUnit | string | Estimated fee rate in litoshis per **kilobyte**, not per vbyte             |
 
 {% hint style="warning" %}
 `feePerUnit` is quoted per 1000 bytes, following the node's `estimatesmartfee`, which reports LTC per kilobyte. It is an integer count of litoshis, not a decimal LTC amount. Dividing by 1000 gives the litoshis/vB rate wallets display: the `994` above is roughly **0.99 litoshis/vB**, not 994. Treating it as a per-byte rate overpays by three orders of magnitude.
@@ -84,7 +84,7 @@ Litecoin's relay minimum keeps the estimate flat across targets when the mempool
 
 ## Error Handling
 
-| Error | Message | Description |
-| --- | --- | --- |
-| error | Invalid params | The blocks array is missing or malformed |
-| 403 / RBAC: access denied | Access denied | The GetBlock access token is missing or incorrect |
+| Error                     | Message        | Description                                       |
+| ------------------------- | -------------- | ------------------------------------------------- |
+| error                     | Invalid params | The blocks array is missing or malformed          |
+| 403 / RBAC: access denied | Access denied  | The GetBlock access token is missing or incorrect |
