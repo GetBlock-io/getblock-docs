@@ -12,7 +12,7 @@ Zcash is a proof-of-work privacy-preserving cryptocurrency built by the Electric
 
 * **Optional Shielded Transactions**: Sapling and Orchard pools provide zk-SNARK-backed transaction privacy alongside transparent Bitcoin-style UTXOs
 * **NU6.3 Consensus**: Latest Zcash network upgrade with Ironwood note commitment tree extension for improved shielded-pool queries
-* **Bitcoin Core-Style RPC**: Familiar interface for infrastructure developers — same method names, response formats, and authentication as `bitcoind`
+* **Bitcoin Core-Style RPC**: Familiar method names for infrastructure developers, though Zebra returns fewer fields than `bitcoind` for several methods
 * **Unified Addresses**: Standardized addresses combining transparent, Sapling, and Orchard receivers into a single string
 * **Equihash Proof-of-Work**: Memory-hard mining algorithm resistant to specialized ASIC dominance
 
@@ -92,13 +92,13 @@ Add the following code to `index.js`:
 
 {% code title="index.js" %}
 ```javascript
-const axios = require('axios');
+import axios from 'axios';
 
 const url = 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/';
 
 const payload = {
   jsonrpc: '2.0',
-  method: 'getinfo',
+  method: 'getblockcount',
   params: [],
   id: 'getblock.io'
 };
@@ -107,8 +107,7 @@ axios.post(url, payload, {
   headers: { 'Content-Type': 'application/json' }
 })
 .then(response => {
-  const blockNumber = parseInt(response.data.result, 16);
-  console.log('Current Block Number:', blockNumber);
+  console.log('Current block height:', response.data.result);
 })
 .catch(error => console.error(error));
 ```
@@ -130,21 +129,8 @@ Expected output (example):
 ```json
 {
     "jsonrpc": "2.0",
-    "id": "getblock.io",
-    "result": {
-        "version": 6000000,
-        "build": "v6.0.0",
-        "subversion": "/Zebra:6.0.0/",
-        "protocolversion": 170160,
-        "blocks": 3420502,
-        "connections": 41,
-        "difficulty": 229698549.25032642,
-        "testnet": false,
-        "paytxfee": 0.0,
-        "relayfee": 1e-6,
-        "errors": "chain updates have stalled, state height has not increased for 10 minutes. Hint: check your network connection, and your computer clock and time zone",
-        "errorstimestamp": 1784662715
-    }
+    "result": 3487840,
+    "id": "getblock.io"
 }
 ```
 {% endcode %}
@@ -196,7 +182,7 @@ url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
 payload = json.dumps({
     "jsonrpc": "2.0",
-    "method": "getinfo",
+    "method": "getblockcount",
     "params": [],
     "id": "getblock.io"
 })
@@ -232,7 +218,7 @@ Zcash is documented across three interfaces, each provisioned as its own endpoin
 
 The Zebra node interface: blocks, transactions, mempool, mining, transparent address queries, and `z_*` methods for the shielded pools.
 
-#### Zcash Blockbook REST API
+#### [Zcash Blockbook REST API](zcash-blockbook-rest-api/)
 
 Address- and xpub-indexed queries over HTTP for transparent addresses: balances, transaction history, unspent outputs, balance history, and fiat rates.
 
@@ -241,7 +227,7 @@ Address- and xpub-indexed queries over HTTP for transparent addresses: balances,
 The same indexed queries over a persistent connection, plus subscriptions to new blocks and to activity on a set of addresses.
 
 {% hint style="info" %}
-Every interface sees **transparent** (`t1`, `t3`) activity only. Shielded Sapling and Orchard notes are encrypted to the holder's viewing key, so no public endpoint can list their balances or history.
+Address lookups — the JSON-RPC `getaddress*` methods and every Blockbook address, UTXO, and xpub query — cover **transparent** (`t1`, `t3`) addresses only. Shielded Sapling and Orchard notes are encrypted to the holder's viewing key, so no public endpoint can list a shielded balance. Individual transactions still expose their shielded components, such as spends, outputs, and each pool's value balance, through JSON-RPC `getrawtransaction` and Blockbook `tx-specific`.
 {% endhint %}
 
 ### Support
