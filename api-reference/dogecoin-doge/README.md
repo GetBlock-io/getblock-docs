@@ -192,8 +192,6 @@ Before you begin, you must have installed Python and Pip on your local machine.
     print(response.text)
     ```
 
-
-
 {% hint style="info" %}
 Replace `<ACCESS_TOKEN>` with your actual access token from GetBlock.
 {% endhint %}
@@ -220,34 +218,33 @@ https://shared.eu-central-1.getblock.io
 
 ### Available API Interface
 
-* JSON RPC
-* Blockbook(WS)
-* REST
-* Blockbook(REST)
+| Network | JSON RPC | REST | Blockbook (REST) | Blockbook (WebSocket) |
+| ------- | -------- | ---- | ---------------- | --------------------- |
+| Mainnet | ✅        | ✅    | ✅                | ✅                     |
+
+{% hint style="info" %}
+JSON-RPC is the Dogecoin Core node interface. Blockbook is a separate add-on providing an address- and xpub-indexed view of the chain, and its REST and WebSocket interfaces are provisioned as their own endpoints with their own URLs. A JSON-RPC endpoint does not answer address, UTXO, or wallet queries, and the Dogecoin Core wallet RPCs such as `listunspent` are disabled on shared nodes. See the [Blockbook add-on](../../add-ons/blockbook.md).
+{% endhint %}
 
 ## Available API Methods
 
-GetBlock provides access to standard Dogecoin Core JSON-RPC methods.
+Dogecoin is documented across three interfaces, each provisioned as its own endpoint.
 
-| Method               | Description                             |
-| -------------------- | --------------------------------------- |
-| createrawtransaction | Creates a raw transaction               |
-| decoderawtransaction | Decodes a raw transaction               |
-| getblock             | Returns block data for a given hash     |
-| getblockcount        | Returns the current block height        |
-| getblockhash         | Returns block hash at given height      |
-| getconnectioncount   | Returns number of peer connections      |
-| getdifficulty        | Returns the current mining difficulty   |
-| gethashespersec      | Returns hash rate per second            |
-| getinfo              | Returns general node information        |
-| getmininginfo        | Returns mining-related information      |
-| getrawtransaction    | Returns raw transaction data            |
-| gettransaction       | Returns detailed transaction info       |
-| gettxout             | Returns details about an unspent output |
-| signmessage          | Signs a message with a private key      |
-| signrawtransaction   | Signs a raw transaction                 |
-| validateaddress      | Validates a Dogecoin address            |
-| verifymessage        | Verifies a signed message               |
+### [Dogecoin JSON-RPC API](dogecoin-json-rpc-api/)
+
+The Dogecoin Core node interface: blocks, raw transactions, individual unspent outputs, and node and mining state.
+
+### [Dogecoin Blockbook REST API](dogecoin-blockbook-rest-api/)
+
+Address- and xpub-indexed queries over HTTP: balances, transaction history, unspent outputs, balance history, and fiat rates.
+
+### [Dogecoin Blockbook (WebSocket) API](dogecoin-blockbook-websocket-api/)
+
+The same indexed queries over a persistent connection, plus subscriptions to new blocks and to activity on a set of addresses.
+
+{% hint style="warning" %}
+Two Dogecoin behaviours catch integrations out. A **one-block fee target returns `-1`**, which becomes a negative fee if multiplied out unchecked. And blocks target **one minute**, so a confirmation depth copied from a Bitcoin integration settles in roughly a tenth of the wall-clock time. Both are covered in the [Blockbook REST reference](dogecoin-blockbook-rest-api/).
+{% endhint %}
 
 ## Support
 
