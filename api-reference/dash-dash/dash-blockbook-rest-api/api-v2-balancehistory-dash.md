@@ -77,9 +77,9 @@ print(response.json())
 | ---------- | ------- | -------------------------------------------------------- |
 | time       | integer | Start of the interval as a Unix timestamp                |
 | txs        | integer | Number of transactions in the interval                   |
-| received   | string  | Total received in the interval, in satoshis              |
-| sent       | string  | Total sent in the interval, in satoshis                  |
-| sentToSelf | string  | Amount sent back to the same account, in satoshis        |
+| received   | string  | Total received in the interval, in duffs              |
+| sent       | string  | Total sent in the interval, in duffs                  |
+| sentToSelf | string  | Amount sent back to the same account, in duffs        |
 | rates      | object  | Fiat rates at the interval, when a currency is requested |
 
 ## Use Cases

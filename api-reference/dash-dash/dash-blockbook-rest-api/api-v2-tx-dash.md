@@ -101,8 +101,8 @@ print(response.json())
 | vout          | array   | Transaction outputs with addresses, values, and spent status |
 | blockHeight   | integer | Block height, or -1 when unconfirmed                         |
 | confirmations | integer | Number of confirmations                                      |
-| value         | string  | Total output value in satoshis                               |
-| fees          | string  | Transaction fee in satoshis                                  |
+| value         | string  | Total output value in duffs                               |
+| fees          | string  | Transaction fee in duffs                                  |
 
 ## Use Cases
 

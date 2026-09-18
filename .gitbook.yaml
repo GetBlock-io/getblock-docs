@@ -33,3 +33,21 @@ redirects:
   api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getutxos-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-utxo-bitcoin-cash.md
   api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_getxpub-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-xpub-bitcoin-cash.md
   api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-api/bb_sendtransaction-bitcoin-cash: api-reference/bitcoin-cash-bch/bitcoin-cash-blockbook-rest-api/api-v2-sendtx-bitcoin-cash.md
+
+  # Dash REST section renamed out of its bitcoin-cash-named directory.
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api: api-reference/dash-dash/dash-blockbook-rest-api/README.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-address-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-address-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-balancehistory-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-balancehistory-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-block-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-block-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-block-index-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-block-index-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-estimatefee-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-estimatefee-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-feestats-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-feestats-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-multi-tickers-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-multi-tickers-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-rawblock-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-rawblock-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-sendtx-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-sendtx-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-tickers-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-tickers-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-tickers-list-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-tickers-list-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-tx-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-tx-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-tx-specific-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-tx-specific-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-utxo-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-utxo-dash.md
+  api-reference/dash-dash/bitcoin-cash-blockbook-rest-api/api-v2-xpub-bitcoin-cash: api-reference/dash-dash/dash-blockbook-rest-api/api-v2-xpub-dash.md

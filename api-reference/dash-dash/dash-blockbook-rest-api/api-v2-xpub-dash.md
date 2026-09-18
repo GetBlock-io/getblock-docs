@@ -92,9 +92,9 @@ print(response.json())
 
 | Field         | Type    | Description                                                 |
 | ------------- | ------- | ----------------------------------------------------------- |
-| balance       | string  | Combined confirmed balance of the wallet in satoshis        |
-| totalReceived | string  | Combined total received in satoshis                         |
-| totalSent     | string  | Combined total sent in satoshis                             |
+| balance       | string  | Combined confirmed balance of the wallet in duffs        |
+| totalReceived | string  | Combined total received in duffs                         |
+| totalSent     | string  | Combined total sent in duffs                             |
 | txs           | integer | Number of confirmed transactions across the wallet          |
 | usedTokens    | integer | Number of derived addresses that have been used             |
 | tokens        | array   | Derived address rows with path, balance, and transfer count |

@@ -77,8 +77,8 @@ print(response.json())
 | Field           | Type    | Description                                      |
 | --------------- | ------- | ------------------------------------------------ |
 | txCount         | integer | Number of transactions in the block              |
-| totalFeesSat    | string  | Total fees in the block, in satoshis             |
-| averageFeePerKb | number  | Average fee rate in satoshis per kilobyte        |
+| totalFeesSat    | string  | Total fees in the block, in duffs             |
+| averageFeePerKb | number  | Average fee rate in duffs per kilobyte        |
 | decilesFeePerKb | array   | Fee-rate deciles across the block's transactions |
 
 ## Use Cases

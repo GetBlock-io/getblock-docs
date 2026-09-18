@@ -6,7 +6,7 @@ description: >-
 
 # api/v2/tickers/- Dash
 
-This endpoint returns current or historical fiat exchange rates for Bitcoin Cash. A timestamp or block selects historical rates.
+This endpoint returns current or historical fiat exchange rates for Dash. A timestamp or block selects historical rates.
 
 ## Parameters
 

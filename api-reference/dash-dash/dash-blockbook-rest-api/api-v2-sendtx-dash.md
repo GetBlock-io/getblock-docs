@@ -6,7 +6,7 @@ description: >-
 
 # api/v2/sendtx - Dash
 
-This endpoint broadcasts a signed, serialized transaction to the Bitcoin Cash network through the backend node and returns the transaction id on acceptance. The raw hex is sent in the request body.
+This endpoint broadcasts a signed, serialized transaction to the Dash network through the backend node and returns the transaction id on acceptance. The raw hex is sent in the request body.
 
 ## Parameters
 

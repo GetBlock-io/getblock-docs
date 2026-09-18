@@ -6,13 +6,13 @@ description: >-
 
 # api/v2/address - Dash
 
-This endpoint returns balance and transaction data for a single Bitcoin Cash address. The details query parameter controls how much data is returned, from a balance-only summary to full transaction objects.
+This endpoint returns balance and transaction data for a single Dash address. The details query parameter controls how much data is returned, from a balance-only summary to full transaction objects.
 
 ## Parameters
 
 | Parameter | Type    | Location | Required | Description                                                 |
 | --------- | ------- | -------- | -------- | ----------------------------------------------------------- |
-| address   | string  | path     | Yes      | The Bitcoin Cash address to query                           |
+| address   | string  | path     | Yes      | The Dash address to query                           |
 | page      | integer | query    | No       | 1-based page index for transaction history. Default 1       |
 | pageSize  | integer | query    | No       | History items per page. Default and maximum is 1000         |
 | from      | integer | query    | No       | First block height to include when filtering history        |
@@ -82,10 +82,10 @@ print(response.json())
 | Field              | Type    | Description                                           |
 | ------------------ | ------- | ----------------------------------------------------- |
 | address            | string  | The queried address                                   |
-| balance            | string  | Confirmed balance in satoshis                         |
-| totalReceived      | string  | Total received in satoshis                            |
-| totalSent          | string  | Total sent in satoshis                                |
-| unconfirmedBalance | string  | Unconfirmed balance in satoshis                       |
+| balance            | string  | Confirmed balance in duffs                         |
+| totalReceived      | string  | Total received in duffs                            |
+| totalSent          | string  | Total sent in duffs                                |
+| unconfirmedBalance | string  | Unconfirmed balance in duffs                       |
 | txs                | integer | Number of confirmed transactions                      |
 | txids              | array   | Transaction ids, present when details is txids        |
 | transactions       | array   | Full transaction objects, present when details is txs |
@@ -102,6 +102,6 @@ print(response.json())
 
 | HTTP Status | Message        | Description                                                  |
 | ----------- | -------------- | ------------------------------------------------------------ |
-| 400         | Bad request    | The address is malformed or not a valid Bitcoin Cash address |
+| 400         | Bad request    | The address is malformed or not a valid Dash address |
 | 404         | Not found      | No indexed data exists for the requested address             |
 | 500         | Internal error | The indexer failed to read address data                      |

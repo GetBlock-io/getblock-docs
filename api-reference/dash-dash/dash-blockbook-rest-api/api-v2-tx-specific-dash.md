@@ -6,7 +6,7 @@ description: >-
 
 # api/v2/tx-specific - Dash
 
-This endpoint returns the transaction exactly as the Bitcoin Cash node reports it, in the node's own JSON shape rather than the indexer's normalized schema.
+This endpoint returns the transaction exactly as the Dash node reports it, in the node's own JSON shape rather than the indexer's normalized schema.
 
 ## Parameters
 
