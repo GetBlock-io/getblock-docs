@@ -25,7 +25,7 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
     "id": "getblock.io",
     "method": "getTransaction",
     "params": {
-        "txid": "8c1e3dec662d1f2a5e322ccef5eca263f98eb16723c6f990be0c88c1db113fb1"
+        "txid": "1d51c696eab35d7dad7631516cc0845aaab317fe67cb182782752547541d30ea"
     }
 }
 ```
@@ -37,38 +37,37 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 {
     "id": "getblock.io",
     "data": {
-        "txid": "8c1e3dec662d1f2a5e322ccef5eca263f98eb16723c6f990be0c88c1db113fb1",
-        "version": 2,
-        "lockTime": 860729,
+        "txid": "1d51c696eab35d7dad7631516cc0845aaab317fe67cb182782752547541d30ea",
+        "version": 1,
         "vin": [
             {
-                "txid": "0eb7b574373de2c88d0dc1444f49947c681d0437d21361f9ebb4dd09c62f2a66",
+                "txid": "89ccda696344f877ec04fe165db294c218e95ac44d14f147eeae6eb76d80c2b3",
                 "vout": 1,
-                "sequence": 4294967293,
+                "sequence": 4294967295,
                 "n": 0,
-                "addresses": ["bc1qmgwnfjlda4ns3g6g3yz74w6scnn9yu2ts82yyc"],
+                "addresses": ["bc1q4pa6r4p8deecx0fspfr8r9y04ja6j5arq4fvc4"],
                 "isAddress": true,
-                "value": "10106300"
+                "value": "1186802"
             }
         ],
         "vout": [
             {
-                "value": "175000",
+                "value": "32323",
                 "n": 0,
-                "hex": "76a914ecc999d554eaa3efa5e871c28f58b549c36ec51788ac",
-                "addresses": ["1Nb1ykSD7J5k4RFjJQGsrD9gxBE6jzfNa9"],
+                "hex": "0014e8df018c7e326cc253faac7e46cdc51e68542c42",
+                "addresses": ["bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq"],
                 "isAddress": true
             }
         ],
-        "blockHash": "00000000000000000000effeb0c4460480e6a347deab95332c63007a68646ee5",
-        "blockHeight": 860730,
-        "confirmations": 1,
-        "blockTime": 1725956288,
-        "size": 225,
-        "vsize": 144,
-        "value": "10063100",
-        "valueIn": "10106300",
-        "fees": "43200"
+        "blockHash": "00000000000000000002260ebdc1d4355c5d5e3db4dec86190494f50485cf941",
+        "blockHeight": 967397,
+        "confirmations": 91,
+        "blockTime": 1789643130,
+        "size": 222,
+        "vsize": 141,
+        "value": "1186633",
+        "valueIn": "1186802",
+        "fees": "169"
     }
 }
 ```

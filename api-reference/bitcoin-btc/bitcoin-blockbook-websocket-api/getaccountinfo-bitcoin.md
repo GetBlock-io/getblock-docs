@@ -51,15 +51,15 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
         "totalPages": 1,
         "itemsOnPage": 1000,
         "address": "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq",
-        "balance": "9407625",
-        "totalReceived": "45231890",
-        "totalSent": "35824265",
+        "balance": "17938214",
+        "totalReceived": "17952507",
+        "totalSent": "14293",
         "unconfirmedBalance": "0",
         "unconfirmedTxs": 0,
-        "txs": 5,
+        "txs": 116,
         "txids": [
-            "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
-            "6a3e1f2b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e7f8091"
+            "1d51c696eab35d7dad7631516cc0845aaab317fe67cb182782752547541d30ea",
+            "a6494142e2e565b5e672d41a37a3eafec2fe5594f22efbb07f421a6cedf473c5"
         ]
     }
 }

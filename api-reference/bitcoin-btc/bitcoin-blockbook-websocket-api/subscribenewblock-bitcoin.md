@@ -25,7 +25,7 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 # then send:
 {
-    "id": "getblock.io",
+    "id": "newblock",
     "method": "subscribeNewBlock",
     "params": {}
 }
@@ -36,7 +36,7 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ```json
 {
-    "id": "getblock.io",
+    "id": "newblock",
     "data": {
         "subscribed": true
     }
@@ -49,23 +49,25 @@ While subscribed, the server pushes one message per connected block:
 
 ```json
 {
-    "id": "getblock.io",
+    "id": "newblock",
     "data": {
-        "height": 860730,
-        "hash": "00000000000000000000effeb0c4460480e6a347deab95332c63007a68646ee5",
-        "evmData": null
+        "height": 967488,
+        "hash": "000000000000000000004f71d28efeab2a13c7e8ba2f2946c20506d93ecd6f53"
     }
 }
 ```
 
 ## Response Fields
 
-| Field      | Type    | Description                                                     |
-| ---------- | ------- | ----------------------------------------------------------------- |
-| subscribed | boolean | Confirms the subscription is active                             |
-| height     | integer | Height of the newly connected block (in notifications)          |
-| hash       | string  | Hash of the newly connected block (in notifications)            |
-| evmData    | null    | EVM gas data, always null on Bitcoin and other non-EVM chains   |
+| Field      | Type    | Description                                            |
+| ---------- | ------- | -------------------------------------------------------- |
+| subscribed | boolean | Confirms the subscription is active                    |
+| height     | integer | Height of the newly connected block (in notifications) |
+| hash       | string  | Hash of the newly connected block (in notifications)   |
+
+{% hint style="info" %}
+Notifications reuse the `id` sent with the subscription request, not a fixed value. Give each subscription on a connection its own `id` — `newblock` above — so pushes can be routed by `id` without inspecting the payload.
+{% endhint %}
 
 ## Use Cases
 

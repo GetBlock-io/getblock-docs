@@ -8,7 +8,7 @@ description: >-
 
 This endpoint returns the indexer's sync state and the connected backend node's metadata. It is the first call to make against a new endpoint: it confirms the access token works, identifies the chain, and reports how far the index has caught up to the node.
 
-The same payload is served at `/api/` on full public interfaces.
+The same payload is served at `/api/`, `/api/v2`, and `/api/v2/`. All four paths are equivalent; `/api/status` is the canonical one.
 
 ## Parameters
 
@@ -56,38 +56,41 @@ print(response.json())
     "blockbook": {
         "coin": "Bitcoin",
         "network": "BTC",
-        "host": "backend5",
-        "version": "0.5.1",
-        "gitCommit": "a0960c8e",
-        "buildTime": "2024-08-08T12:32:50+00:00",
+        "host": "btc-blockbook-ax51-host145-mainnet-0",
+        "version": "unknown",
+        "gitCommit": "unknown",
+        "buildTime": "unknown",
         "syncMode": true,
         "initialSync": false,
         "inSync": true,
-        "bestHeight": 860730,
-        "lastBlockTime": "2024-09-10T08:19:04.471017534Z",
+        "bestHeight": 967487,
+        "lastBlockTime": "2026-09-18T02:39:02.680814461Z",
         "inSyncMempool": true,
-        "lastMempoolTime": "2024-09-10T08:42:39.38871351Z",
-        "mempoolSize": 232021,
+        "lastMempoolTime": "2026-09-18T02:46:27.090875355Z",
+        "mempoolSize": 67990,
         "decimals": 8,
-        "dbSize": 761283489075,
+        "dbSize": 619514712165,
         "hasFiatRates": true,
-        "currentFiatRatesTime": "2024-09-10T08:42:00.898792419Z",
-        "historicalFiatRatesTime": "2024-09-10T00:00:00Z",
-        "about": "Blockbook - blockchain indexer for Trezor Suite."
+        "currentFiatRatesTime": "2026-09-18T02:46:02.841087873Z",
+        "about": "Blockbook - blockchain indexer for Trezor Suite https://trezor.io/trezor-suite. Do not use for any other purpose."
     },
     "backend": {
         "chain": "main",
-        "blocks": 860730,
-        "headers": 860730,
-        "bestBlockHash": "00000000000000000000effeb0c4460480e6a347deab95332c63007a68646ee5",
-        "difficulty": "89471664776970.77",
-        "sizeOnDisk": 681584532221,
-        "version": "270100",
-        "subversion": "/Satoshi:27.1.0/",
+        "blocks": 967487,
+        "headers": 967487,
+        "bestBlockHash": "000000000000000000017cfd38e8af73159da4d9ab4c3f82ae183659f7b09793",
+        "difficulty": "127450789715843.1",
+        "sizeOnDisk": 877048058747,
+        "version": "310100",
+        "subversion": "/Satoshi:31.1.0/",
         "protocolVersion": "70016"
     }
 }
 ```
+
+{% hint style="info" %}
+`version`, `gitCommit`, and `buildTime` report `unknown` on GetBlock's shared Blockbook deployment. Use `backend.version` and `backend.subversion` to identify the node, and do not gate logic on the indexer build fields.
+{% endhint %}
 
 ## Response Parameters
 

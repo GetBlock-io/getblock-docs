@@ -43,16 +43,16 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
     "id": "getblock.io",
     "data": [
         {
-            "feePerTx": "3542",
-            "feePerUnit": "24"
+            "feePerTx": "171",
+            "feePerUnit": "1190"
         },
         {
-            "feePerTx": "1584",
-            "feePerUnit": "11"
+            "feePerTx": "74",
+            "feePerUnit": "511"
         },
         {
-            "feePerTx": "864",
-            "feePerUnit": "6"
+            "feePerTx": "40",
+            "feePerUnit": "278"
         }
     ]
 }
@@ -60,12 +60,18 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ## Response Fields
 
-| Field      | Type   | Description                                                                  |
-| ---------- | ------ | ------------------------------------------------------------------------------ |
-| feePerTx   | string | Estimated total fee in satoshis for a transaction of the supplied `txsize`    |
-| feePerUnit | string | Estimated fee rate in satoshis per vbyte                                      |
+| Field      | Type   | Description                                                                |
+| ---------- | ------ | ---------------------------------------------------------------------------- |
+| feePerTx   | string | Estimated total fee in satoshis for a transaction of the supplied `txsize`  |
+| feePerUnit | string | Estimated fee rate in satoshis per **kilobyte**, not per vbyte              |
 
 Results are returned in the same order as the requested `blocks` targets.
+
+{% hint style="warning" %}
+`feePerUnit` is quoted per 1000 bytes, following the backend's `estimatesmartfee`, which reports BTC per kilobyte. Dividing by 1000 gives the sat/vB rate wallets usually display: the `1190` above is **1.19 sat/vB**, not 1190. Treating it as sat/vB overpays by three orders of magnitude.
+
+`feePerTx` is derived as `txsize × feePerUnit / 1000`. In the response above, `144 × 1190 / 1000 = 171`.
+{% endhint %}
 
 ## Use Cases
 
@@ -75,7 +81,7 @@ Results are returned in the same order as the requested `blocks` targets.
 * **Batch Planning**: Size a consolidation against the current rate
 
 {% hint style="info" %}
-`feePerTx` is only meaningful when `txsize` is supplied. Without it, size the fee from `feePerUnit` multiplied by the transaction's virtual size in vbytes.
+`feePerTx` is only meaningful when `txsize` is supplied. Without it, size the fee as `vsize × feePerUnit / 1000`, keeping the per-kilobyte denominator in mind.
 {% endhint %}
 
 ## Error Handling

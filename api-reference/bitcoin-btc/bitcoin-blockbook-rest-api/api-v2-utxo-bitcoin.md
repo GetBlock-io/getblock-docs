@@ -58,13 +58,34 @@ print(response.json())
 ```json
 [
     {
-        "txid": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+        "txid": "1d51c696eab35d7dad7631516cc0845aaab317fe67cb182782752547541d30ea",
         "vout": 0,
-        "value": "50000000",
-        "height": 830000,
-        "confirmations": 152,
-        "address": "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq",
-        "path": "m/84'/0'/0'/0/0"
+        "value": "32323",
+        "height": 967397,
+        "confirmations": 91
+    },
+    {
+        "txid": "a6494142e2e565b5e672d41a37a3eafec2fe5594f22efbb07f421a6cedf473c5",
+        "vout": 1,
+        "value": "100000",
+        "height": 966724,
+        "confirmations": 764
+    }
+]
+```
+
+For an address query the outputs carry no `address` or `path`, because the owning address is the one in the request. Querying an xpub or descriptor adds both, identifying which derived address owns each output:
+
+```json
+[
+    {
+        "txid": "88aa69107bccdddb23df8b2635ff759cdc5e6873b91bef91325f70060973299a",
+        "vout": 0,
+        "value": "2446",
+        "height": 906576,
+        "confirmations": 60912,
+        "address": "1AWhq6hMWzwxEG1wGeR7Y9aTyoxEjw7Rjj",
+        "path": "m/44'/0'/0'/0/15"
     }
 ]
 ```

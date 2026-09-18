@@ -37,14 +37,14 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
         "shortcut": "BTC",
         "network": "BTC",
         "decimals": 8,
-        "version": "0.5.1",
-        "bestHeight": 860730,
-        "bestHash": "00000000000000000000effeb0c4460480e6a347deab95332c63007a68646ee5",
+        "version": "unknown",
+        "bestHeight": 967487,
+        "bestHash": "000000000000000000017cfd38e8af73159da4d9ab4c3f82ae183659f7b09793",
         "block0Hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
         "testnet": false,
         "backend": {
-            "version": "270100",
-            "subversion": "/Satoshi:27.1.0/"
+            "version": "310100",
+            "subversion": "/Satoshi:31.1.0/"
         }
     }
 }

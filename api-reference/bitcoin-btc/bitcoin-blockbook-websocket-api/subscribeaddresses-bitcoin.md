@@ -28,11 +28,11 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 # then send:
 {
-    "id": "getblock.io",
+    "id": "addr",
     "method": "subscribeAddresses",
     "params": {
         "addresses": [
-            "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq"
+            "bc1qm34lsc65zpw79lxes69zkqmk6ee3ewf0j77s3h"
         ],
         "newBlockTxs": true
     }
@@ -44,7 +44,7 @@ wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/websocket
 
 ```json
 {
-    "id": "getblock.io",
+    "id": "addr",
     "data": {
         "subscribed": true
     }
@@ -57,32 +57,46 @@ While subscribed, the server pushes messages of the form:
 
 ```json
 {
-    "id": "getblock.io",
+    "id": "addr",
     "data": {
-        "address": "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq",
+        "address": "bc1qm34lsc65zpw79lxes69zkqmk6ee3ewf0j77s3h",
         "tx": {
-            "txid": "8c1e3dec662d1f2a5e322ccef5eca263f98eb16723c6f990be0c88c1db113fb1",
-            "blockHeight": -1,
+            "txid": "34541782baf07b7523e52881a297f7d44eb6296443c56d9f500cc31f641c5455",
+            "version": 1,
+            "blockHeight": 0,
             "confirmations": 0,
-            "blockTime": 1725959035,
-            "value": "10063100",
-            "valueIn": "10106300",
-            "fees": "43200",
-            "rbf": true
+            "confirmationETABlocks": 1,
+            "confirmationETASeconds": 642,
+            "blockTime": 1789699761,
+            "size": 582,
+            "vsize": 501,
+            "value": "1430913425",
+            "valueIn": "1430915930",
+            "fees": "2505"
         }
     }
 }
 ```
 
-A transaction is pushed twice over its lifetime: once on arrival in the mempool, with `blockHeight` set to `-1` and `confirmations` set to `0`, and again once mined, with the real block height and `confirmations` of `1`. Deeper confirmations are not pushed per address; track them with [subscribeNewBlock](subscribenewblock-bitcoin.md) and compare against the transaction's block height.
+A transaction is pushed twice over its lifetime: once on arrival in the mempool, with `confirmations` set to `0`, and again once mined, with the real block height and `confirmations` of `1`. Deeper confirmations are not pushed per address; track them with [subscribeNewBlock](subscribenewblock-bitcoin.md) and compare against the transaction's block height.
 
 ## Response Fields
 
-| Field      | Type    | Description                                             |
-| ---------- | ------- | ------------------------------------------------------- |
-| subscribed | boolean | Confirms the subscription is active                     |
-| address    | string  | Address that received activity (in notifications)       |
-| tx         | object  | The transaction touching the address (in notifications) |
+| Field                  | Type    | Description                                                        |
+| ---------------------- | ------- | -------------------------------------------------------------------- |
+| subscribed             | boolean | Confirms the subscription is active                                |
+| address                | string  | Address that received activity (in notifications)                  |
+| tx                     | object  | The transaction touching the address (in notifications)            |
+| confirmationETABlocks  | integer | Estimated blocks until confirmation, on unconfirmed transactions   |
+| confirmationETASeconds | integer | Estimated seconds until confirmation, on unconfirmed transactions  |
+
+{% hint style="warning" %}
+An unconfirmed transaction arrives with **`blockHeight` set to `0`** in this notification, not `-1`. The REST [api/v2/tx](../bitcoin-blockbook-rest-api/api-v2-tx-bitcoin.md) endpoint reports `-1` for the same state. Detect pending status with `confirmations === 0` rather than by comparing `blockHeight`, so the same check works across both interfaces.
+{% endhint %}
+
+{% hint style="info" %}
+Notifications reuse the `id` sent with the subscription request, not a fixed value. Give each subscription on a connection its own `id` — `addr` above — so pushes can be routed by `id` without inspecting the payload.
+{% endhint %}
 
 ## Use Cases
 
@@ -92,7 +106,7 @@ A transaction is pushed twice over its lifetime: once on arrival in the mempool,
 * **Monitoring**: Watch hot wallets in real time
 
 {% hint style="info" %}
-`rbf: true` marks a transaction that signals replace-by-fee and can still be replaced while unconfirmed. Treat such a deposit as pending until it reaches the confirmation depth the payment flow requires.
+Empty fields are omitted rather than sent as null, so a field's absence is not a signal in itself. `rbf` appears only when the transaction signals replace-by-fee, meaning it can still be replaced while unconfirmed; treat such a deposit as pending until it reaches the confirmation depth the payment flow requires. `confirmationETASeconds` is likewise present only while the transaction is unconfirmed.
 {% endhint %}
 
 ## Error Handling
