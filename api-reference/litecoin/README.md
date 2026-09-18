@@ -43,9 +43,13 @@ https://shared.eu-central-1.getblock.io
 
 ## Supported Networks
 
-| Network | Chain ID | JSON RPC | Blockbook(WS) | Blockbook(REST) |
-| ------- | -------- | -------- | ------------- | --------------- |
-| Mainnet | 1329     | ✅        | ✅             | ✅               |
+| Network | JSON RPC | Blockbook (REST) | Blockbook (WebSocket) |
+| ------- | -------- | ---------------- | --------------------- |
+| Mainnet | ✅        | ✅                | ✅                     |
+
+{% hint style="info" %}
+JSON-RPC is the Litecoin Core node interface. Blockbook is a separate add-on providing an address- and xpub-indexed view of the chain, and its REST and WebSocket interfaces are provisioned as their own endpoints with their own URLs. A JSON-RPC endpoint does not answer address, UTXO, or wallet queries, and the Litecoin Core wallet RPCs such as `listunspent` are disabled on shared nodes. See the [Blockbook add-on](../../add-ons/blockbook.md).
+{% endhint %}
 
 ## Quickstart
 

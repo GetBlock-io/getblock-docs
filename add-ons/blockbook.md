@@ -37,6 +37,7 @@ Because Blockbook indexes unspent outputs by address, the configurator offers it
 | Bitcoin Cash | BCH    |
 | Dash         | DASH   |
 | Dogecoin     | DOGE   |
+| Litecoin     | LTC    |
 | Zcash        | ZEC    |
 
 Each chain's paths and methods are listed under its own entry in the API reference. The schema is shared across all of them, so a query written for one chain works on another with only the endpoint changed.
