@@ -118,7 +118,7 @@ print(response.json())
 
 | Field | Type | Description |
 | --- | --- | --- |
-| version | integer | Transaction version. 5 for NU5 and later |
+| version | integer | Transaction version. 5 from NU5, 6 from NU6 |
 | versiongroupid | string | Version group identifier for the transaction format |
 | expiryheight | integer | Height after which the transaction can no longer be mined |
 | vin | array | Transparent inputs, in node-native form |

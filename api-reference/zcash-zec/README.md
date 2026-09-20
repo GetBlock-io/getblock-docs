@@ -222,7 +222,7 @@ The Zebra node interface: blocks, transactions, mempool, mining, transparent add
 
 Address- and xpub-indexed queries over HTTP for transparent addresses: balances, transaction history, unspent outputs, balance history, and fiat rates.
 
-#### Zcash Blockbook (WebSocket) API
+#### [Zcash Blockbook (WebSocket) API](zcash-blockbook-websocket-api/)
 
 The same indexed queries over a persistent connection, plus subscriptions to new blocks and to activity on a set of addresses.
 

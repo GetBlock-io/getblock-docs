@@ -96,7 +96,7 @@ The `vin` and `vout` arrays are truncated to one entry each above.
 | Field | Type | Description |
 | --- | --- | --- |
 | txid | string | The transaction id |
-| version | integer | Transaction version: 4 for Sapling-era, 5 for NU5 and later |
+| version | integer | Transaction version: 4 for Sapling-era, 5 from NU5, 6 from NU6 |
 | vin | array | Transparent inputs with addresses and values. Empty when all inputs are shielded |
 | vout | array | Transparent outputs with values and destination addresses |
 | blockHeight | integer | Block height, or -1 while unconfirmed |
