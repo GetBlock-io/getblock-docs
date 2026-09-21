@@ -107,6 +107,10 @@
   * [eth\_unsubscribe - Flashblocks](flashblocks/flashblocks-api/eth_unsubscribe-flashblocks.md)
   * [base\_transactionStatus - Flashblocks](flashblocks/flashblocks-api/base_transactionstatus-flashblocks.md)
 
+## EVM DATA STREAM
+
+* [Overview](evm-data-stream/overview.md)
+
 ## Solana Market Data
 
 * [Overview](solana-market-data/overview.md)
@@ -3850,10 +3854,10 @@
     * [gettxout - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/gettxout-zcash.md)
     * [sendrawtransaction - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/sendrawtransaction-zcash.md)
     * [validateaddress - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/validateaddress-zcash.md)
-    * [z_getsubtreesbyindex - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/z_getsubtreesbyindex-zcash.md)
-    * [z_gettreestate - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/z_gettreestate-zcash.md)
-    * [z_listunifiedreceivers - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/z_listunifiedreceivers-zcash.md)
-    * [z_validateaddress - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/z_validateaddress-zcash.md)
+    * [z\_getsubtreesbyindex - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/z_getsubtreesbyindex-zcash.md)
+    * [z\_gettreestate - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/z_gettreestate-zcash.md)
+    * [z\_listunifiedreceivers - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/z_listunifiedreceivers-zcash.md)
+    * [z\_validateaddress - Zcash](api-reference/zcash-zec/zcash-json-rpc-api/z_validateaddress-zcash.md)
   * [Zcash Blockbook REST API](api-reference/zcash-zec/zcash-blockbook-rest-api/README.md)
     * [api/status - Zcash](api-reference/zcash-zec/zcash-blockbook-rest-api/api-status-zcash.md)
     * [api/v2/address - Zcash](api-reference/zcash-zec/zcash-blockbook-rest-api/api-v2-address-zcash.md)
