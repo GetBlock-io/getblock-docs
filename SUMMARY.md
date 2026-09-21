@@ -110,6 +110,26 @@
 ## EVM DATA STREAM
 
 * [Overview](evm-data-stream/overview.md)
+* [Getting Started](evm-data-stream/getting-started.md)
+* [Handling Chain Reorganizations](evm-data-stream/handling-chain-reorganizations.md)
+* [API Reference](evm-data-stream/api-reference/README.md)
+  * [getblock\_subscribe - EVM Data Stream](evm-data-stream/api-reference/getblock_subscribe-evm-data-stream.md)
+  * [getblock\_unsubscribe - EVM Data Stream](evm-data-stream/api-reference/getblock_unsubscribe-evm-data-stream.md)
+  * [newHeads - EVM Data Stream](evm-data-stream/api-reference/newheads-evm-data-stream.md)
+  * [newBlocks - EVM Data Stream](evm-data-stream/api-reference/newblocks-evm-data-stream.md)
+  * [logs - EVM Data Stream](evm-data-stream/api-reference/logs-evm-data-stream.md)
+  * [decodedLogs - EVM Data Stream](evm-data-stream/api-reference/decodedlogs-evm-data-stream.md)
+  * [erc20Transfers - EVM Data Stream](evm-data-stream/api-reference/erc20transfers-evm-data-stream.md)
+  * [erc20Allowence - EVM Data Stream](evm-data-stream/api-reference/erc20allowence-evm-data-stream.md)
+  * [nftTransfers - EVM Data Stream](evm-data-stream/api-reference/nfttransfers-evm-data-stream.md)
+  * [nftApprovals - EVM Data Stream](evm-data-stream/api-reference/nftapprovals-evm-data-stream.md)
+  * [nftMetadataUpdates - EVM Data Stream](evm-data-stream/api-reference/nftmetadataupdates-evm-data-stream.md)
+  * [transactionReceipts - EVM Data Stream](evm-data-stream/api-reference/transactionreceipts-evm-data-stream.md)
+  * [accountAbstractionOperations - EVM Data Stream](evm-data-stream/api-reference/accountabstractionoperations-evm-data-stream.md)
+  * [newMinedTransactions - EVM Data Stream](evm-data-stream/api-reference/newminedtransactions-evm-data-stream.md)
+  * [newPendingTransactions - EVM Data Stream](evm-data-stream/api-reference/newpendingtransactions-evm-data-stream.md)
+  * [newBlockTraces - EVM Data Stream](evm-data-stream/api-reference/newblocktraces-evm-data-stream.md)
+  * [newMinedTransactionsTraces - EVM Data Stream](evm-data-stream/api-reference/newminedtransactionstraces-evm-data-stream.md)
 
 ## Solana Market Data
 
