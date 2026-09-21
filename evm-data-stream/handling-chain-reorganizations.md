@@ -19,17 +19,18 @@ Reorg corrections are currently enabled on **Ethereum Mainnet** and **Polygon Ma
 
 Every event, including a correction, carries the same four fields:
 
-| Field      | Type    | Description                                                                                         |
-| ---------- | ------- | --------------------------------------------------------------------------------------------------- |
-| `eventId`  | string  | Stable identifier for the event. A correction reuses the `eventId` of the event it removes.         |
-| `removed`  | boolean | `false` for a canonical event, `true` for a correction that removes a previously delivered event.   |
-| `revision` | number  | Version number. For one `eventId`, a greater revision is always the newer state.                    |
-| `data`     | any     | The topic payload. A correction repeats the payload of the event it removes.                        |
+| Field      | Type    | Description                                                                                       |
+| ---------- | ------- | ------------------------------------------------------------------------------------------------- |
+| `eventId`  | string  | Stable identifier for the event. A correction reuses the `eventId` of the event it removes.       |
+| `removed`  | boolean | `false` for a canonical event, `true` for a correction that removes a previously delivered event. |
+| `revision` | number  | Version number. For one `eventId`, a greater revision is always the newer state.                  |
+| `data`     | any     | The topic payload. A correction repeats the payload of the event it removes.                      |
 
 A delivered event and its later correction:
 
 {% tabs %}
 {% tab title="Original event" %}
+{% code overflow="wrap" %}
 ```json
 {
   "eventId": "eth:mainnet:block:0x19ddc6864bd5ec1cdbd493e3d3653b529d79293a6773517018153cdff6ac0be2:newHeads:0x19ddc6864bd5ec1cdbd493e3d3653b529d79293a6773517018153cdff6ac0be2",
@@ -38,9 +39,11 @@ A delivered event and its later correction:
   "data": { "number": "0x18d1e1e", "hash": "0x19ddc6864bd5ec1cdbd493e3d3653b529d79293a6773517018153cdff6ac0be2", "…": "…" }
 }
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Reorg correction" %}
+{% code overflow="wrap" %}
 ```json
 {
   "eventId": "eth:mainnet:block:0x19ddc6864bd5ec1cdbd493e3d3653b529d79293a6773517018153cdff6ac0be2:newHeads:0x19ddc6864bd5ec1cdbd493e3d3653b529d79293a6773517018153cdff6ac0be2",
@@ -49,6 +52,7 @@ A delivered event and its later correction:
   "data": { "number": "0x18d1e1e", "hash": "0x19ddc6864bd5ec1cdbd493e3d3653b529d79293a6773517018153cdff6ac0be2", "…": "…" }
 }
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 

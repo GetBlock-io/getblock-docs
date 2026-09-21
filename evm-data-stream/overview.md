@@ -9,6 +9,10 @@ description: >-
 
 **GetBlock EVM Stream delivers blockchain events in real time for wallets, payment services, DeFi applications, and analytics platforms.** You select a network, event types, and filters, then receive updates over a persistent WebSocket connection.
 
+{% hint style="info" %}
+This service can also be accessed via WebSocket connection. You can check out the [playground](https://account.getblock.io/stream/playground) for more insight
+{% endhint %}
+
 This reduces the need to continuously poll RPC endpoints, extract events from blocks, and maintain event delivery infrastructure. Filters for addresses, contracts, and other parameters let applications receive the data they need while saving cost.
 
 {% hint style="warning" %}
@@ -42,7 +46,7 @@ Base and Avalanche are on the roadmap, and we will add more EVM-compatible chain
 
 ### Pricing
 
-EVM Data Stream is charged by usage in Compute Units (CU)[^1]. Standard pricing costs 10 CU per delivered event. Usage depends on the number of notifications delivered to the customer after filters are applied; for example;&#x20;
+EVM Data Stream is charged by usage in Compute Units (CU). Standard pricing costs 10 CU per delivered event. Usage depends on the number of notifications delivered to the customer after filters are applied; for example;
 
 * 1,000 events = **10,000 CU**.
 * 100,000 events = **1,000,000 CU**.
@@ -59,5 +63,4 @@ Successful subscription creation and cancellation cost 10 CU each
 * [Getting Started](getting-started.md): connect and receive your first events.
 * [Handling Chain Reorganizations](handling-chain-reorganizations.md): keep your state correct when blocks are replaced.
 * [API Reference](api-reference/): methods, all 15 topics, limits, and errors.
-
-[^1]: **Compute Unit (CU)** is a weighted metric used by GetBlock to measure the computational effort required to fulfill a specific JSON-RPC API request.
+* [Stream Home page](https://getblock.io/stream/)

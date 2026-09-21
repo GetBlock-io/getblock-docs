@@ -32,12 +32,12 @@ To use more than one network, open one connection per network.
 
 A **topic** decides what kind of event you receive; **filters** narrow it down. For example:
 
-| Goal                                     | Topic                    | Filters                                   |
-| ---------------------------------------- | ------------------------ | ----------------------------------------- |
-| New block headers                        | `newHeads`               | none                                      |
-| USDT transfers into one wallet           | `erc20Transfers`         | `tokenContract`, `to`                     |
-| Swap events from one pool, decoded       | `decodedLogs`            | `abi`, `address`                          |
-| Failed transactions sent by your wallet  | `transactionReceipts`    | `status: "failure"`, `from`               |
+| Goal                                    | Topic                 | Filters                     |
+| --------------------------------------- | --------------------- | --------------------------- |
+| New block headers                       | `newHeads`            | none                        |
+| USDT transfers into one wallet          | `erc20Transfers`      | `tokenContract`, `to`       |
+| Swap events from one pool, decoded      | `decodedLogs`         | `abi`, `address`            |
+| Failed transactions sent by your wallet | `transactionReceipts` | `status: "failure"`, `from` |
 
 See [API Reference → Topics](api-reference/#topics) for all 15 topics.
 
@@ -63,6 +63,7 @@ wscat -c 'wss://stream.eu-central-1.getblock.io/v1/eth-mainnet/stream' -H 'Autho
 {% endtab %}
 
 {% tab title="Node.js" %}
+{% code overflow="wrap" %}
 ```javascript
 // npm install ws
 import WebSocket from 'ws';
@@ -100,9 +101,11 @@ ws.on('message', (raw) => {
 
 ws.on('close', (code) => console.log('closed', code));
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
+{% code overflow="wrap" %}
 ```python
 # pip install "websockets>=14"
 import asyncio, json, os, websockets
@@ -138,6 +141,7 @@ async def main():
 
 asyncio.run(main())
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -186,17 +190,24 @@ Each event then arrives as a notification. The payload sits in `params.result.da
 
 Cancel one subscription and keep the socket open:
 
+{% code overflow="wrap" %}
 ```json
-{ "jsonrpc": "2.0", "id": 2, "method": "getblock_unsubscribe", "params": [{ "subscription": "0x573e3382e8ea7d534f267b232aae22dd" }] }
+{ 
+    "jsonrpc": "2.0", 
+    "id": 2, 
+    "method": "getblock_unsubscribe", 
+    "params": [{ "subscription": "0x573e3382e8ea7d534f267b232aae22dd" }] 
+}
 ```
+{% endcode %}
 
 Closing the socket ends all its subscriptions.
 
 ### Production checklist
 
-* **Let the server drive keepalive.** The server pings every 30 seconds. Disable client-side pings in Python `websockets` (`ping_interval=None`); see [Connection keepalive](api-reference/#connection-keepalive).
-* **Reconnect with backoff.** The stream does not replay events missed while disconnected. After reconnecting, resubscribe and backfill the gap from an RPC node if you need it.
-* **Handle `removed: true`.** Reorg corrections arrive on the same subscription. See [Handling Chain Reorganizations](handling-chain-reorganizations.md).
-* **Deduplicate by `eventId` and `revision`.** Delivery is at-least-once.
-* **Stay within limits:** 15 subscriptions and 50 connections per user, across all networks.
-* **Ignore unknown fields** so new payload fields don't break your parser.
+* [ ] **Let the server drive keepalive:** The server pings every 30 seconds. Disable client-side pings in Python `websockets` (`ping_interval=None`); see [Connection keepalive](api-reference/#connection-keepalive).
+* [ ] **Reconnect with backoff.** The stream does not replay events missed while disconnected. After reconnecting, resubscribe and backfill the gap from an RPC node if needed.
+* [ ] **Handle `removed: true`.** Reorg corrections arrive on the same subscription. See [Handling Chain Reorganizations](handling-chain-reorganizations.md).
+* [ ] **Deduplicate by `eventId` and `revision`.** Delivery is at-least-once.
+* [ ] **Stay within limits:** 15 subscriptions and 50 connections per user, across all networks.
+* [ ] **Ignore unknown fields** so new payload fields don't break your parser.
