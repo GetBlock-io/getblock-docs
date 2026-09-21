@@ -1,3 +1,10 @@
+---
+description: >-
+  GetBlock EVM Data Stream delivers real-time blockchain events such as blocks,
+  logs, token and NFT transfers, receipts, and traces over WebSocket on
+  Ethereum, BNB Smart Chain, Polygon, and Robinhood.
+---
+
 # Overview
 
 **GetBlock EVM Stream delivers blockchain events in real time for wallets, payment services, DeFi applications, and analytics platforms.** You select a network, event types, and filters, then receive updates over a persistent WebSocket connection.
