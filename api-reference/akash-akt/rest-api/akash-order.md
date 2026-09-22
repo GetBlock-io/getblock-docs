@@ -1,4 +1,11 @@
-# akash order
+---
+description: >-
+  Example code for the akash/market/v1beta4/orders/info REST method. Complete
+  guide on how to use akash/market/v1beta4/orders/info REST method in GetBlock
+  Web3 documentation.
+---
+
+# /akash/market/v1beta4/orders/info - Akash
 
 Returns a single marketplace order by its full id (owner, dseq, gseq, oseq).
 

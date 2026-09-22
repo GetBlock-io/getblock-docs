@@ -1,4 +1,10 @@
-# block
+---
+description: >-
+  Example code for the block JSON-RPC method. Complete guide on how to use
+  block JSON-RPC in GetBlock Web3 documentation.
+---
+
+# block - Akash
 
 Returns the block at a height, or the latest block when height is omitted, including its header, transactions, and commit.
 

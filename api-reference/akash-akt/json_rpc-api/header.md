@@ -1,4 +1,10 @@
-# header
+---
+description: >-
+  Example code for the header JSON-RPC method. Complete guide on how to use
+  header JSON-RPC in GetBlock Web3 documentation.
+---
+
+# header - Akash
 
 Returns the block header at a height (or latest), without transactions.
 

@@ -1,4 +1,11 @@
-# gov proposals
+---
+description: >-
+  Example code for the cosmos/gov/v1/proposals REST method. Complete guide on
+  how to use cosmos/gov/v1/proposals REST method in GetBlock Web3
+  documentation.
+---
+
+# /cosmos/gov/v1/proposals - Akash
 
 Returns the paginated list of governance proposals, each with its id, status, and tally.
 

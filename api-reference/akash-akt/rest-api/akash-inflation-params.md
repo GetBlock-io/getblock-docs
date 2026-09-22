@@ -1,4 +1,11 @@
-# akash inflation params
+---
+description: >-
+  Example code for the akash/inflation/v1beta3/params REST method. Complete
+  guide on how to use akash/inflation/v1beta3/params REST method in GetBlock
+  Web3 documentation.
+---
+
+# /akash/inflation/v1beta3/params - Akash
 
 Returns Akash's inflation module parameters, which govern token issuance and the community/provider incentive split.
 

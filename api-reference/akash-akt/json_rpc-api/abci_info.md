@@ -1,4 +1,10 @@
-# abci\_info
+---
+description: >-
+  Example code for the abci_info JSON-RPC method. Complete guide on how to use
+  abci_info JSON-RPC in GetBlock Web3 documentation.
+---
+
+# abci\_info - Akash
 
 Returns information about the ABCI application: its name, version, and last block height and app hash.
 

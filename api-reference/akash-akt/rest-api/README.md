@@ -1,4 +1,11 @@
-# REST API
+---
+description: >-
+  GetBlock provides fast and reliable access to Akash nodes via the Cosmos SDK
+  REST API. Connect to the Akash network without running your own
+  infrastructure.
+---
+
+# Cosmos REST API - Akash
 
 The Cosmos SDK REST (LCD) interface for Akash: HTTP/JSON queries for accounts, balances, staking, distribution, and governance, plus Akash's own marketplace modules — deployments, orders, bids, leases, and providers. Addresses use the bech32 `akash1…` form.
 

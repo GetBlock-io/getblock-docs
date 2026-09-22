@@ -1,4 +1,12 @@
-# gov tally
+---
+description: >-
+  Example code for the cosmos/gov/v1/proposals/{proposal_id}/tally REST
+  method. Complete guide on how to use
+  cosmos/gov/v1/proposals/{proposal_id}/tally REST method in GetBlock Web3
+  documentation.
+---
+
+# /cosmos/gov/v1/proposals/{proposal\_id}/tally - Akash
 
 Returns the current tally of votes for a proposal.
 

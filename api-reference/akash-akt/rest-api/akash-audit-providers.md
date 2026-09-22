@@ -1,4 +1,11 @@
-# akash audit providers
+---
+description: >-
+  Example code for the akash/audit/v1beta3/audit/attributes/list REST method.
+  Complete guide on how to use akash/audit/v1beta3/audit/attributes/list REST
+  method in GetBlock Web3 documentation.
+---
+
+# /akash/audit/v1beta3/audit/attributes/list - Akash
 
 Returns provider attributes that have been signed (audited) by auditors, letting tenants trust provider claims such as region or hardware.
 

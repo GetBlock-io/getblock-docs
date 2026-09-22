@@ -1,4 +1,11 @@
-# bank balances
+---
+description: >-
+  Example code for the cosmos/bank/v1beta1/balances/{address} REST method.
+  Complete guide on how to use cosmos/bank/v1beta1/balances/{address} REST
+  method in GetBlock Web3 documentation.
+---
+
+# /cosmos/bank/v1beta1/balances/{address} - Akash
 
 Returns all coin balances held by an address, each as a denom and amount. Native AKT is reported in uakt.
 

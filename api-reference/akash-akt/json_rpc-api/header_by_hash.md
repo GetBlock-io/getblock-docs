@@ -1,4 +1,10 @@
-# header\_by\_hash
+---
+description: >-
+  Example code for the header_by_hash JSON-RPC method. Complete guide on how
+  to use header_by_hash JSON-RPC in GetBlock Web3 documentation.
+---
+
+# header\_by\_hash - Akash
 
 Returns the block header for a given block hash.
 

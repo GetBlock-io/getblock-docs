@@ -1,4 +1,10 @@
-# consensus\_params
+---
+description: >-
+  Example code for the consensus_params JSON-RPC method. Complete guide on how
+  to use consensus_params JSON-RPC in GetBlock Web3 documentation.
+---
+
+# consensus\_params - Akash
 
 Returns the consensus parameters (block, evidence, validator) at a height.
 

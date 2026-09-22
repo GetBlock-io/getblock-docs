@@ -1,4 +1,11 @@
-# akash bids
+---
+description: >-
+  Example code for the akash/market/v1beta4/bids/list REST method. Complete
+  guide on how to use akash/market/v1beta4/bids/list REST method in GetBlock
+  Web3 documentation.
+---
+
+# /akash/market/v1beta4/bids/list - Akash
 
 Returns provider bids on marketplace orders. A bid is a provider's price offer to host a deployment's workload.
 

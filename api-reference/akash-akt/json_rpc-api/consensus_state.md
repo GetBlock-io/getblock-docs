@@ -1,4 +1,10 @@
-# consensus\_state
+---
+description: >-
+  Example code for the consensus_state JSON-RPC method. Complete guide on how
+  to use consensus_state JSON-RPC in GetBlock Web3 documentation.
+---
+
+# consensus\_state - Akash
 
 Returns the node's current CometBFT consensus state (round, step, votes). Primarily for debugging.
 

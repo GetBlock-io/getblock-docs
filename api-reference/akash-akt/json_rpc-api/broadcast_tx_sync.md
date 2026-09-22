@@ -1,4 +1,10 @@
-# broadcast\_tx\_sync
+---
+description: >-
+  Example code for the broadcast_tx_sync JSON-RPC method. Complete guide on
+  how to use broadcast_tx_sync JSON-RPC in GetBlock Web3 documentation.
+---
+
+# broadcast\_tx\_sync - Akash
 
 Submits a signed transaction and returns after CheckTx (mempool validation), without waiting for a block. Returns the transaction hash and CheckTx code.
 

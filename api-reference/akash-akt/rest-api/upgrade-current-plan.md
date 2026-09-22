@@ -1,4 +1,11 @@
-# upgrade current plan
+---
+description: >-
+  Example code for the cosmos/upgrade/v1beta1/current_plan REST method.
+  Complete guide on how to use cosmos/upgrade/v1beta1/current_plan REST method
+  in GetBlock Web3 documentation.
+---
+
+# /cosmos/upgrade/v1beta1/current\_plan - Akash
 
 Returns the currently scheduled chain upgrade plan, if any.
 

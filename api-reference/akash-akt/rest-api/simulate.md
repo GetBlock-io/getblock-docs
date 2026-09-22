@@ -1,4 +1,11 @@
-# simulate
+---
+description: >-
+  Example code for the cosmos/tx/v1beta1/simulate REST method. Complete guide
+  on how to use cosmos/tx/v1beta1/simulate REST method in GetBlock Web3
+  documentation.
+---
+
+# /cosmos/tx/v1beta1/simulate - Akash
 
 Simulates a signed transaction and returns the gas it would use and the resulting events, without broadcasting.
 

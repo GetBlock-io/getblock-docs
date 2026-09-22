@@ -1,4 +1,12 @@
-# base validatorsets latest
+---
+description: >-
+  Example code for the cosmos/base/tendermint/v1beta1/validatorsets/latest
+  REST method. Complete guide on how to use
+  cosmos/base/tendermint/v1beta1/validatorsets/latest REST method in GetBlock
+  Web3 documentation.
+---
+
+# /cosmos/base/tendermint/v1beta1/validatorsets/latest - Akash
 
 Returns the latest validator set via the Cosmos base service.
 

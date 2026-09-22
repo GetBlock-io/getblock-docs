@@ -1,4 +1,10 @@
-# check\_tx
+---
+description: >-
+  Example code for the check_tx JSON-RPC method. Complete guide on how to use
+  check_tx JSON-RPC in GetBlock Web3 documentation.
+---
+
+# check\_tx - Akash
 
 Runs CheckTx against a transaction (validating it against the mempool rules) and returns the result, without adding it to the mempool.
 

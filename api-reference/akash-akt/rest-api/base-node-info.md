@@ -1,4 +1,11 @@
-# base node info
+---
+description: >-
+  Example code for the cosmos/base/tendermint/v1beta1/node_info REST method.
+  Complete guide on how to use cosmos/base/tendermint/v1beta1/node_info REST
+  method in GetBlock Web3 documentation.
+---
+
+# /cosmos/base/tendermint/v1beta1/node\_info - Akash
 
 Returns node and application version info via the Cosmos base service.
 

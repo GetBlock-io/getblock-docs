@@ -1,4 +1,11 @@
-# mint inflation
+---
+description: >-
+  Example code for the cosmos/mint/v1beta1/inflation REST method. Complete
+  guide on how to use cosmos/mint/v1beta1/inflation REST method in GetBlock
+  Web3 documentation.
+---
+
+# /cosmos/mint/v1beta1/inflation - Akash
 
 Returns the current minting inflation rate.
 

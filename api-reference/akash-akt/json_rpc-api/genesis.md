@@ -1,4 +1,10 @@
-# genesis
+---
+description: >-
+  Example code for the genesis JSON-RPC method. Complete guide on how to use
+  genesis JSON-RPC in GetBlock Web3 documentation.
+---
+
+# genesis - Akash
 
 Returns the genesis document the chain was initialized from. Large; use genesis\_chunked for big genesis files.
 

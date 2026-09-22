@@ -1,4 +1,11 @@
-# bank supply denom
+---
+description: >-
+  Example code for the cosmos/bank/v1beta1/supply/by_denom REST method.
+  Complete guide on how to use cosmos/bank/v1beta1/supply/by_denom REST method
+  in GetBlock Web3 documentation.
+---
+
+# /cosmos/bank/v1beta1/supply/by\_denom - Akash
 
 Returns the total supply of one denom.
 

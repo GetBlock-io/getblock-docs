@@ -1,4 +1,10 @@
-# abci\_query
+---
+description: >-
+  Example code for the abci_query JSON-RPC method. Complete guide on how to
+  use abci_query JSON-RPC in GetBlock Web3 documentation.
+---
+
+# abci\_query - Akash
 
 Executes an ABCI query against application state at a path, returning the raw (base64) value. The low-level way to read any Cosmos SDK or Akash module store; underlies the REST gateway.
 

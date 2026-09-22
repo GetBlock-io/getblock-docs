@@ -1,4 +1,10 @@
-# tx\_search
+---
+description: >-
+  Example code for the tx_search JSON-RPC method. Complete guide on how to use
+  tx_search JSON-RPC in GetBlock Web3 documentation.
+---
+
+# tx\_search - Akash
 
 Returns transactions matching an event query (by sender, recipient, height, etc.), paginated. Requires transaction indexing.
 

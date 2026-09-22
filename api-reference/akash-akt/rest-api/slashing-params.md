@@ -1,4 +1,11 @@
-# slashing params
+---
+description: >-
+  Example code for the cosmos/slashing/v1beta1/params REST method. Complete
+  guide on how to use cosmos/slashing/v1beta1/params REST method in GetBlock
+  Web3 documentation.
+---
+
+# /cosmos/slashing/v1beta1/params - Akash
 
 Returns the slashing module parameters (signed-blocks window, min signed, slash fractions).
 

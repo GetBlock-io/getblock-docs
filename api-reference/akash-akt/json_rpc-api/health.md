@@ -1,4 +1,10 @@
-# health
+---
+description: >-
+  Example code for the health JSON-RPC method. Complete guide on how to use
+  health JSON-RPC in GetBlock Web3 documentation.
+---
+
+# health - Akash
 
 Returns an empty result when the node is up and serving requests. A lightweight liveness probe.
 

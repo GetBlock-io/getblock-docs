@@ -1,4 +1,11 @@
-# akash escrow accounts
+---
+description: >-
+  Example code for the akash/escrow/v1beta3/types/accounts/list REST method.
+  Complete guide on how to use akash/escrow/v1beta3/types/accounts/list REST
+  method in GetBlock Web3 documentation.
+---
+
+# /akash/escrow/v1beta3/types/accounts/list - Akash
 
 Returns escrow accounts, which hold funds that pay for deployments and leases over time.
 

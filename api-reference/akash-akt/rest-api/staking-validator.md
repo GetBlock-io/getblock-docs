@@ -1,4 +1,12 @@
-# staking validator
+---
+description: >-
+  Example code for the cosmos/staking/v1beta1/validators/{validator_addr} REST
+  method. Complete guide on how to use
+  cosmos/staking/v1beta1/validators/{validator_addr} REST method in GetBlock
+  Web3 documentation.
+---
+
+# /cosmos/staking/v1beta1/validators/{validator\_addr} - Akash
 
 Returns one staking validator by operator address.
 

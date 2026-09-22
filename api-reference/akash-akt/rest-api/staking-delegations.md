@@ -1,4 +1,12 @@
-# staking delegations
+---
+description: >-
+  Example code for the cosmos/staking/v1beta1/delegations/{delegator_addr}
+  REST method. Complete guide on how to use
+  cosmos/staking/v1beta1/delegations/{delegator_addr} REST method in GetBlock
+  Web3 documentation.
+---
+
+# /cosmos/staking/v1beta1/delegations/{delegator\_addr} - Akash
 
 Returns all delegations made by a delegator.
 

@@ -1,4 +1,10 @@
-# broadcast\_tx\_async
+---
+description: >-
+  Example code for the broadcast_tx_async JSON-RPC method. Complete guide on
+  how to use broadcast_tx_async JSON-RPC in GetBlock Web3 documentation.
+---
+
+# broadcast\_tx\_async - Akash
 
 Submits a signed transaction and returns immediately with its hash, without waiting for CheckTx or a block.
 

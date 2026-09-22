@@ -1,4 +1,11 @@
-# mint params
+---
+description: >-
+  Example code for the cosmos/mint/v1beta1/params REST method. Complete guide
+  on how to use cosmos/mint/v1beta1/params REST method in GetBlock Web3
+  documentation.
+---
+
+# /cosmos/mint/v1beta1/params - Akash
 
 Returns the mint module parameters (inflation bounds, goal bonded, blocks per year).
 

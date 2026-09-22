@@ -1,4 +1,11 @@
-# auth account
+---
+description: >-
+  Example code for the cosmos/auth/v1beta1/accounts/{address} REST method.
+  Complete guide on how to use cosmos/auth/v1beta1/accounts/{address} REST
+  method in GetBlock Web3 documentation.
+---
+
+# /cosmos/auth/v1beta1/accounts/{address} - Akash
 
 Returns the account at a bech32 address, including account number and sequence (nonce). The sequence is required to build a transaction.
 

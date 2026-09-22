@@ -1,4 +1,12 @@
-# latest block
+---
+description: >-
+  Example code for the cosmos/base/tendermint/v1beta1/blocks/latest REST
+  method. Complete guide on how to use
+  cosmos/base/tendermint/v1beta1/blocks/latest REST method in GetBlock Web3
+  documentation.
+---
+
+# /cosmos/base/tendermint/v1beta1/blocks/latest - Akash
 
 Returns the latest committed block via the Cosmos base-tendermint service, with the block id, header, and transaction data.
 

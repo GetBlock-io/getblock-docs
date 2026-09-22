@@ -1,4 +1,11 @@
-# akash escrow payments
+---
+description: >-
+  Example code for the akash/escrow/v1beta3/types/payments/list REST method.
+  Complete guide on how to use akash/escrow/v1beta3/types/payments/list REST
+  method in GetBlock Web3 documentation.
+---
+
+# /akash/escrow/v1beta3/types/payments/list - Akash
 
 Returns escrow payments — the streaming payments from escrow accounts to providers for active leases.
 

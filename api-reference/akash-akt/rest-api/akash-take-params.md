@@ -1,4 +1,11 @@
-# akash take params
+---
+description: >-
+  Example code for the akash/take/v1beta3/params REST method. Complete guide
+  on how to use akash/take/v1beta3/params REST method in GetBlock Web3
+  documentation.
+---
+
+# /akash/take/v1beta3/params - Akash
 
 Returns the marketplace take parameters — the protocol fee taken from lease payments, per denom.
 

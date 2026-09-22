@@ -1,4 +1,11 @@
-# akash deployments
+---
+description: >-
+  Example code for the akash/deployment/v1beta3/deployments/list REST method.
+  Complete guide on how to use akash/deployment/v1beta3/deployments/list REST
+  method in GetBlock Web3 documentation.
+---
+
+# /akash/deployment/v1beta3/deployments/list - Akash
 
 Returns Akash deployments, filterable by owner and state. A deployment is a user's request for cloud compute resources, described by a manifest and funded via escrow.
 

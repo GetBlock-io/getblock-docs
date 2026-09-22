@@ -1,4 +1,11 @@
-# tx by hash
+---
+description: >-
+  Example code for the cosmos/tx/v1beta1/txs/{hash} REST method. Complete
+  guide on how to use cosmos/tx/v1beta1/txs/{hash} REST method in GetBlock
+  Web3 documentation.
+---
+
+# /cosmos/tx/v1beta1/txs/{hash} - Akash
 
 Returns a decoded transaction and its response by hash via the Cosmos tx service.
 

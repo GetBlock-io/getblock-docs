@@ -1,4 +1,10 @@
-# broadcast\_evidence
+---
+description: >-
+  Example code for the broadcast_evidence JSON-RPC method. Complete guide on
+  how to use broadcast_evidence JSON-RPC in GetBlock Web3 documentation.
+---
+
+# broadcast\_evidence - Akash
 
 Submits evidence of validator misbehaviour (for example double-signing) to the node, returning the evidence hash.
 

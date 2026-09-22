@@ -1,4 +1,10 @@
-# broadcast tx
+---
+description: >-
+  Example code for the cosmos/tx/v1beta1/txs REST method. Complete guide on
+  how to use cosmos/tx/v1beta1/txs REST method in GetBlock Web3 documentation.
+---
+
+# /cosmos/tx/v1beta1/txs - Akash
 
 Submits a signed, protobuf-encoded transaction for inclusion. The broadcast mode selects how long the node waits.
 

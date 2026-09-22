@@ -1,4 +1,10 @@
-# validators
+---
+description: >-
+  Example code for the validators JSON-RPC method. Complete guide on how to
+  use validators JSON-RPC in GetBlock Web3 documentation.
+---
+
+# validators - Akash
 
 Returns the paginated validator set at a height, with each validator's address, public key, and voting power.
 

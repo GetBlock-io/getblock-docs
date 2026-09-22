@@ -1,4 +1,10 @@
-# unconfirmed\_txs
+---
+description: >-
+  Example code for the unconfirmed_txs JSON-RPC method. Complete guide on how
+  to use unconfirmed_txs JSON-RPC in GetBlock Web3 documentation.
+---
+
+# unconfirmed\_txs - Akash
 
 Returns the unconfirmed transactions currently in the mempool, up to a limit.
 

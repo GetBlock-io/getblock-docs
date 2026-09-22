@@ -1,4 +1,11 @@
-# akash certificates
+---
+description: >-
+  Example code for the akash/cert/v1beta3/certificates/list REST method.
+  Complete guide on how to use akash/cert/v1beta3/certificates/list REST
+  method in GetBlock Web3 documentation.
+---
+
+# /akash/cert/v1beta3/certificates/list - Akash
 
 Returns mTLS certificates registered on-chain. Deployments and providers use these certificates to authenticate the client-provider connection.
 

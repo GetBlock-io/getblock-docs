@@ -1,4 +1,10 @@
-# block\_by\_hash
+---
+description: >-
+  Example code for the block_by_hash JSON-RPC method. Complete guide on how to
+  use block_by_hash JSON-RPC in GetBlock Web3 documentation.
+---
+
+# block\_by\_hash - Akash
 
 Returns the block identified by its hash.
 

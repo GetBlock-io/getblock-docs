@@ -1,4 +1,11 @@
-# staking pool
+---
+description: >-
+  Example code for the cosmos/staking/v1beta1/pool REST method. Complete guide
+  on how to use cosmos/staking/v1beta1/pool REST method in GetBlock Web3
+  documentation.
+---
+
+# /cosmos/staking/v1beta1/pool - Akash
 
 Returns the staking pool totals: bonded and not-bonded tokens across the network.
 

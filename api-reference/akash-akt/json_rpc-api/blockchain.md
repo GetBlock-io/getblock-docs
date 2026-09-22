@@ -1,4 +1,10 @@
-# blockchain
+---
+description: >-
+  Example code for the blockchain JSON-RPC method. Complete guide on how to
+  use blockchain JSON-RPC in GetBlock Web3 documentation.
+---
+
+# blockchain - Akash
 
 Returns block headers for a range of heights (max 20 per call), newest first.
 

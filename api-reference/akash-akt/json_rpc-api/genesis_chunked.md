@@ -1,4 +1,10 @@
-# genesis\_chunked
+---
+description: >-
+  Example code for the genesis_chunked JSON-RPC method. Complete guide on how
+  to use genesis_chunked JSON-RPC in GetBlock Web3 documentation.
+---
+
+# genesis\_chunked - Akash
 
 Returns a base64 chunk of the genesis document, for genesis files too large to return at once.
 

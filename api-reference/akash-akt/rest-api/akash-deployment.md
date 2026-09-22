@@ -1,4 +1,11 @@
-# akash deployment
+---
+description: >-
+  Example code for the akash/deployment/v1beta3/deployments/info REST method.
+  Complete guide on how to use akash/deployment/v1beta3/deployments/info REST
+  method in GetBlock Web3 documentation.
+---
+
+# /akash/deployment/v1beta3/deployments/info - Akash
 
 Returns a single deployment by its owner and deployment sequence (dseq), including its groups (resource requirements) and escrow account.
 

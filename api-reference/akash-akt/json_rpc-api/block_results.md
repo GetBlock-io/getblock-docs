@@ -1,4 +1,10 @@
-# block\_results
+---
+description: >-
+  Example code for the block_results JSON-RPC method. Complete guide on how to
+  use block_results JSON-RPC in GetBlock Web3 documentation.
+---
+
+# block\_results - Akash
 
 Returns the ABCI results and events for every transaction in a block, plus block-level events. The primary source for indexing events.
 

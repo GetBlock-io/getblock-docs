@@ -1,4 +1,11 @@
-# akash bid
+---
+description: >-
+  Example code for the akash/market/v1beta4/bids/info REST method. Complete
+  guide on how to use akash/market/v1beta4/bids/info REST method in GetBlock
+  Web3 documentation.
+---
+
+# /akash/market/v1beta4/bids/info - Akash
 
 Returns a single provider bid by its full id.
 

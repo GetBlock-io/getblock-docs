@@ -1,4 +1,11 @@
-# akash orders
+---
+description: >-
+  Example code for the akash/market/v1beta4/orders/list REST method. Complete
+  guide on how to use akash/market/v1beta4/orders/list REST method in GetBlock
+  Web3 documentation.
+---
+
+# /akash/market/v1beta4/orders/list - Akash
 
 Returns marketplace orders. When a deployment's group is open, the market creates an order that providers bid on.
 

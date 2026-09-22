@@ -1,4 +1,10 @@
-# status
+---
+description: >-
+  Example code for the status JSON-RPC method. Complete guide on how to use
+  status JSON-RPC in GetBlock Web3 documentation.
+---
+
+# status - Akash
 
 Returns the node's status: latest block height and time, sync state, and validator info. The primary way to read the chain tip and confirm the node is synced.
 

@@ -1,4 +1,11 @@
-# akash provider
+---
+description: >-
+  Example code for the akash/provider/v1beta3/providers/{owner} REST method.
+  Complete guide on how to use akash/provider/v1beta3/providers/{owner} REST
+  method in GetBlock Web3 documentation.
+---
+
+# /akash/provider/v1beta3/providers/{owner} - Akash
 
 Returns a single provider by its owner address, with its host URI, attributes, and contact info.
 

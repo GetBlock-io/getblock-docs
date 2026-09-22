@@ -1,4 +1,11 @@
-# gov proposal
+---
+description: >-
+  Example code for the cosmos/gov/v1/proposals/{proposal_id} REST method.
+  Complete guide on how to use cosmos/gov/v1/proposals/{proposal_id} REST
+  method in GetBlock Web3 documentation.
+---
+
+# /cosmos/gov/v1/proposals/{proposal\_id} - Akash
 
 Returns one governance proposal by id, with its messages, status, and tally.
 

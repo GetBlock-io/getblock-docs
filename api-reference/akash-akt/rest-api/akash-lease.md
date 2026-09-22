@@ -1,4 +1,11 @@
-# akash lease
+---
+description: >-
+  Example code for the akash/market/v1beta4/leases/info REST method. Complete
+  guide on how to use akash/market/v1beta4/leases/info REST method in GetBlock
+  Web3 documentation.
+---
+
+# /akash/market/v1beta4/leases/info - Akash
 
 Returns a single lease by its full id, plus its escrow payment.
 

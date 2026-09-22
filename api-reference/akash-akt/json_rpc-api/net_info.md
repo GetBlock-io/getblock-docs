@@ -1,4 +1,10 @@
-# net\_info
+---
+description: >-
+  Example code for the net_info JSON-RPC method. Complete guide on how to use
+  net_info JSON-RPC in GetBlock Web3 documentation.
+---
+
+# net\_info - Akash
 
 Returns the node's peer connections and listening status, including per-peer address and node id.
 

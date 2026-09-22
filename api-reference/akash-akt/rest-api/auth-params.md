@@ -1,4 +1,11 @@
-# auth params
+---
+description: >-
+  Example code for the cosmos/auth/v1beta1/params REST method. Complete guide
+  on how to use cosmos/auth/v1beta1/params REST method in GetBlock Web3
+  documentation.
+---
+
+# /cosmos/auth/v1beta1/params - Akash
 
 Returns the auth module parameters, such as max memo characters and signature limits.
 

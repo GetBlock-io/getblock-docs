@@ -1,4 +1,10 @@
-# commit
+---
+description: >-
+  Example code for the commit JSON-RPC method. Complete guide on how to use
+  commit JSON-RPC in GetBlock Web3 documentation.
+---
+
+# commit - Akash
 
 Returns the commit and signed header for a height, including validator signatures.
 

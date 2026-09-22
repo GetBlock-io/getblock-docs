@@ -1,4 +1,11 @@
-# akash leases
+---
+description: >-
+  Example code for the akash/market/v1beta4/leases/list REST method. Complete
+  guide on how to use akash/market/v1beta4/leases/list REST method in GetBlock
+  Web3 documentation.
+---
+
+# /akash/market/v1beta4/leases/list - Akash
 
 Returns leases — accepted bids that bind a deployment to a provider. A lease is an active rental of compute from a provider.
 

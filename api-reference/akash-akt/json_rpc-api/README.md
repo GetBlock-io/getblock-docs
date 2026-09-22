@@ -1,4 +1,11 @@
-# JSON\_RPC API
+---
+description: >-
+  GetBlock provides fast and reliable access to Akash nodes via the CometBFT
+  JSON-RPC API. Connect to the Akash network without running your own
+  infrastructure.
+---
+
+# JSON-RPC API - Akash
 
 The CometBFT JSON-RPC interface for Akash: consensus and node status, block and transaction data, mempool, transaction broadcast, and `abci_query` for reading any Cosmos SDK or Akash module state. All methods are JSON-RPC 2.0 POST requests to the endpoint base URL.
 

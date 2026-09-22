@@ -1,4 +1,11 @@
-# distribution community pool
+---
+description: >-
+  Example code for the cosmos/distribution/v1beta1/community_pool REST method.
+  Complete guide on how to use cosmos/distribution/v1beta1/community_pool REST
+  method in GetBlock Web3 documentation.
+---
+
+# /cosmos/distribution/v1beta1/community\_pool - Akash
 
 Returns the coins held in the community pool.
 

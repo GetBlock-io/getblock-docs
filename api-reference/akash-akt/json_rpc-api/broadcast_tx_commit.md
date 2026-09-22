@@ -1,4 +1,10 @@
-# broadcast\_tx\_commit
+---
+description: >-
+  Example code for the broadcast_tx_commit JSON-RPC method. Complete guide on
+  how to use broadcast_tx_commit JSON-RPC in GetBlock Web3 documentation.
+---
+
+# broadcast\_tx\_commit - Akash
 
 Submits a signed transaction and waits for it to be included in a block, returning both the CheckTx and DeliverTx (execution) results. Slower; not recommended for high load.
 

@@ -1,4 +1,10 @@
-# block\_search
+---
+description: >-
+  Example code for the block_search JSON-RPC method. Complete guide on how to
+  use block_search JSON-RPC in GetBlock Web3 documentation.
+---
+
+# block\_search - Akash
 
 Returns blocks matching a block-event query (for example by begin/end-block events), paginated. Requires block indexing.
 

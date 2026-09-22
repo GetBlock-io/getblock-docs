@@ -1,4 +1,11 @@
-# akash deployment groups
+---
+description: >-
+  Example code for the akash/deployment/v1beta3/groups/info REST method.
+  Complete guide on how to use akash/deployment/v1beta3/groups/info REST
+  method in GetBlock Web3 documentation.
+---
+
+# /akash/deployment/v1beta3/groups/info - Akash
 
 Returns a single deployment group (a set of resource requirements within a deployment) by its owner, dseq, and gseq.
 

@@ -1,4 +1,10 @@
-# tx
+---
+description: >-
+  Example code for the tx JSON-RPC method. Complete guide on how to use tx
+  JSON-RPC in GetBlock Web3 documentation.
+---
+
+# tx - Akash
 
 Returns the execution result of a transaction by hash: height, gas, ABCI code, and events, optionally with a proof.
 
