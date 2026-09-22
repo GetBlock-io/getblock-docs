@@ -8,6 +8,12 @@ description: >-
 
 Returns the paginated validator set at a height, with each validator's address, public key, and voting power.
 
+{% hint style="warning" %}
+**Shared Akash nodes are pruned.** Heights below roughly 26,980,292 are not retained and return
+`-32603 Internal error` with a message naming the lowest available height. Read that floor from
+[status](status.md) under `sync_info.earliest_block_height` before requesting historical data.
+{% endhint %}
+
 ## Parameters
 
 | Parameter | Type   | Required | Description      |
@@ -28,7 +34,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "method": "validators",
-    "params": {"height": "19500000", "page": "1", "per_page": "100"}
+    "params": {"height": "28742282", "page": "1", "per_page": "100"}
 }'
 ```
 {% endcode %}
@@ -38,7 +44,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 {% code title="example.js" %}
 ```javascript
 const axios = require('axios');
-const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'validators', params: {"height": "19500000", "page": "1", "per_page": "100"} }, { headers: { 'Content-Type': 'application/json' } });
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'validators', params: {"height": "28742282", "page": "1", "per_page": "100"} }, { headers: { 'Content-Type': 'application/json' } });
 console.log(response.data.result);
 ```
 {% endcode %}
@@ -63,7 +69,7 @@ use serde_json::{json, Value};
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
-    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"validators","params":{"height": "19500000", "page": "1", "per_page": "100"}})).send().await?.json::<Value>().await?;
+    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"validators","params":{"height": "28742282", "page": "1", "per_page": "100"}})).send().await?.json::<Value>().await?;
     println!("{}", res["result"]);
     Ok(())
 }
@@ -79,14 +85,20 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "result": {
-        "block_height": "19500000",
+        "block_height": "28742282",
         "validators": [
             {
-                "address": "F00D...",
-                "voting_power": "5000000"
+                "address": "B1852D17FA66B5382A8F770725CC5B228B357750",
+                "pub_key": {
+                    "type": "tendermint/PubKeyEd25519",
+                    "value": "7AaTbVWTaspcBBsJHHoxGx8wZb0rZbYL4l7QkQT+uPM="
+                },
+                "voting_power": "10744784",
+                "proposer_priority": "8833654"
             }
         ],
-        "total": "100"
+        "count": "83",
+        "total": "83"
     }
 }
 ```

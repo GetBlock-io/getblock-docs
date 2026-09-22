@@ -8,6 +8,12 @@ description: >-
 
 Returns the consensus parameters (block, evidence, validator) at a height.
 
+{% hint style="warning" %}
+**Shared Akash nodes are pruned.** Heights below roughly 26,980,292 are not retained and return
+`-32603 Internal error` with a message naming the lowest available height. Read that floor from
+[status](status.md) under `sync_info.earliest_block_height` before requesting historical data.
+{% endhint %}
+
 ## Parameters
 
 | Parameter | Type   | Required | Description                   |
@@ -26,7 +32,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "method": "consensus_params",
-    "params": {"height": "19500000"}
+    "params": {"height": "28742282"}
 }'
 ```
 {% endcode %}
@@ -36,7 +42,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 {% code title="example.js" %}
 ```javascript
 const axios = require('axios');
-const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'consensus_params', params: {"height": "19500000"} }, { headers: { 'Content-Type': 'application/json' } });
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'consensus_params', params: {"height": "28742282"} }, { headers: { 'Content-Type': 'application/json' } });
 console.log(response.data.result);
 ```
 {% endcode %}
@@ -61,7 +67,7 @@ use serde_json::{json, Value};
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
-    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"consensus_params","params":{"height": "19500000"}})).send().await?.json::<Value>().await?;
+    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"consensus_params","params":{"height": "28742282"}})).send().await?.json::<Value>().await?;
     println!("{}", res["result"]);
     Ok(())
 }
@@ -77,14 +83,28 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "result": {
-        "block_height": "19500000",
+        "block_height": "28742282",
         "consensus_params": {
             "block": {
                 "max_bytes": "22020096",
                 "max_gas": "-1"
             },
-            "evidence": {},
-            "validator": {}
+            "evidence": {
+                "max_age_num_blocks": "279138",
+                "max_age_duration": "1814400000000000",
+                "max_bytes": "0"
+            },
+            "validator": {
+                "pub_key_types": [
+                    "ed25519"
+                ]
+            },
+            "version": {
+                "app": "0"
+            },
+            "abci": {
+                "vote_extensions_enable_height": "0"
+            }
         }
     }
 }

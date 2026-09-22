@@ -8,6 +8,13 @@ description: >-
 
 Runs CheckTx against a transaction (validating it against the mempool rules) and returns the result, without adding it to the mempool.
 
+{% hint style="info" %}
+**The transaction below is a placeholder and cannot be broadcast as written.** Sent unchanged it
+returns `-32602 Invalid params` with an `illegal base64` message. Substitute a real signed,
+protobuf-encoded transaction, base64-encoded. The response shown is the shape returned on
+acceptance.
+{% endhint %}
+
 ## Parameters
 
 | Parameter | Type   | Required | Description              |

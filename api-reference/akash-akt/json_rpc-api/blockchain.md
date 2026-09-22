@@ -8,6 +8,12 @@ description: >-
 
 Returns block headers for a range of heights (max 20 per call), newest first.
 
+{% hint style="warning" %}
+**Shared Akash nodes are pruned.** Heights below roughly 26,980,292 are not retained and return
+`-32603 Internal error` with a message naming the lowest available height. Read that floor from
+[status](status.md) under `sync_info.earliest_block_height` before requesting historical data.
+{% endhint %}
+
 ## Parameters
 
 | Parameter | Type   | Required | Description        |
@@ -27,7 +33,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "method": "blockchain",
-    "params": {"minHeight": "19499990", "maxHeight": "19500000"}
+    "params": {"minHeight": "28742272", "maxHeight": "28742282"}
 }'
 ```
 {% endcode %}
@@ -37,7 +43,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 {% code title="example.js" %}
 ```javascript
 const axios = require('axios');
-const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'blockchain', params: {"minHeight": "19499990", "maxHeight": "19500000"} }, { headers: { 'Content-Type': 'application/json' } });
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'blockchain', params: {"minHeight": "28742272", "maxHeight": "28742282"} }, { headers: { 'Content-Type': 'application/json' } });
 console.log(response.data.result);
 ```
 {% endcode %}
@@ -62,7 +68,7 @@ use serde_json::{json, Value};
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
-    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"blockchain","params":{"minHeight": "19499990", "maxHeight": "19500000"}})).send().await?.json::<Value>().await?;
+    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"blockchain","params":{"minHeight": "28742272", "maxHeight": "28742282"}})).send().await?.json::<Value>().await?;
     println!("{}", res["result"]);
     Ok(())
 }
@@ -78,16 +84,42 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "result": {
-        "last_height": "19500000",
+        "last_height": "28742444",
         "block_metas": [
             {
                 "block_id": {
-                    "hash": "E1F2..."
+                    "hash": "8F57F092FDEEFA889F07F20182E74627F64CAD8EE2AA43D39CFE36C40FC46FB8",
+                    "parts": {
+                        "total": 1,
+                        "hash": "899C82D6CD41758912C6BD7CCDFAC31DBD08A2874B1167F9157E3251DA0A9C4B"
+                    }
                 },
+                "block_size": "13352",
                 "header": {
-                    "height": "19500000",
-                    "time": "2025-11-01T12:00:00Z"
-                }
+                    "version": {
+                        "block": "11"
+                    },
+                    "chain_id": "akashnet-2",
+                    "height": "28742282",
+                    "time": "2026-09-22T18:08:00.55315049Z",
+                    "last_block_id": {
+                        "hash": "19D4712100648F95B35AC2F1CFB97F8134933549F99427AA5742D234376C1456",
+                        "parts": {
+                            "total": 1,
+                            "hash": "092A941C2935B95ADC3B43FB447CD915AF7C723795B553798F5AEBD1494896F7"
+                        }
+                    },
+                    "last_commit_hash": "60A5AC33FFA551E05B8C4FF1B7EF877A954067A6C9968C9CE3B5764D73C0DB5D",
+                    "data_hash": "10CD0CCD9E24F3C3AE818DC447F12FCB021F7C0E22294DB400A41BE532383EF5",
+                    "validators_hash": "98F9BA76ED248B252E5F94DFCC8999D279946F6E668B36876BFAF576BC0692BF",
+                    "next_validators_hash": "98F9BA76ED248B252E5F94DFCC8999D279946F6E668B36876BFAF576BC0692BF",
+                    "consensus_hash": "048091BC7DDC283F77BFBF91D73C44DA58C3DF8A9CBC867405D8B7F3DAADA22F",
+                    "app_hash": "C6BD49838677A50AA4A5CDD3C9601126B0E5B411F469E20E9E7DBBEAC6AF5327",
+                    "last_results_hash": "58C021D229E6FA80FC74D6590CAA50BAEDB7BB1C7CD2DDC4727E4507C9FA5A52",
+                    "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                    "proposer_address": "25B40FD5AE2AC26B4382B746F6CDDB8C73CE6025"
+                },
+                "num_txs": "4"
             }
         ]
     }

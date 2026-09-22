@@ -8,6 +8,13 @@ description: >-
 
 Submits a signed transaction and waits for it to be included in a block, returning both the CheckTx and DeliverTx (execution) results. Slower; not recommended for high load.
 
+{% hint style="info" %}
+**The transaction below is a placeholder and cannot be broadcast as written.** Sent unchanged it
+returns `-32602 Invalid params` with an `illegal base64` message. Substitute a real signed,
+protobuf-encoded transaction, base64-encoded. The response shown is the shape returned on
+acceptance.
+{% endhint %}
+
 ## Parameters
 
 | Parameter | Type   | Required | Description                     |

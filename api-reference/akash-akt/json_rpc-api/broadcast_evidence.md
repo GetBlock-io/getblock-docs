@@ -8,6 +8,12 @@ description: >-
 
 Submits evidence of validator misbehaviour (for example double-signing) to the node, returning the evidence hash.
 
+{% hint style="info" %}
+**The evidence below is a placeholder.** Sent unchanged it returns `-32602 Invalid params`.
+Real evidence is produced by a node that observes equivocation; this method exists so such a node
+can submit it, and is not part of a normal application flow.
+{% endhint %}
+
 ## Parameters
 
 | Parameter | Type   | Required | Description           |

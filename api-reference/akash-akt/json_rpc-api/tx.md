@@ -8,6 +8,14 @@ description: >-
 
 Returns the execution result of a transaction by hash: height, gas, ABCI code, and events, optionally with a proof.
 
+{% hint style="warning" %}
+**The hash is base64, not hex.** Passing the hex form, with or without a `0x` prefix, fails with
+`-32602 Invalid params`. Convert the hex hash to base64 before sending it.
+
+Note that this is not consistent across the interface: [header\_by\_hash](header_by_hash.md) takes the
+same hash as **plain hex** instead.
+{% endhint %}
+
 ## Parameters
 
 | Parameter | Type    | Required | Description            |
@@ -27,7 +35,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "method": "tx",
-    "params": {"hash": "3A1F9C2E7B4D8A05F6C1E3D9B2A4C6E8F0D1B3A5C7E9F2D4B6A8C0E1F3D5B7A9C", "prove": false}
+    "params": {"hash": "hMqQl9J7WY/ElL1svvU4pLXsg0QVU1ixKVA3S0Z+r54=", "prove": false}
 }'
 ```
 {% endcode %}
@@ -37,7 +45,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 {% code title="example.js" %}
 ```javascript
 const axios = require('axios');
-const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'tx', params: {"hash": "3A1F9C2E7B4D8A05F6C1E3D9B2A4C6E8F0D1B3A5C7E9F2D4B6A8C0E1F3D5B7A9C", "prove": false} }, { headers: { 'Content-Type': 'application/json' } });
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'tx', params: {"hash": "hMqQl9J7WY/ElL1svvU4pLXsg0QVU1ixKVA3S0Z+r54=", "prove": false} }, { headers: { 'Content-Type': 'application/json' } });
 console.log(response.data.result);
 ```
 {% endcode %}
@@ -62,7 +70,7 @@ use serde_json::{json, Value};
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
-    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"tx","params":{"hash": "3A1F9C2E7B4D8A05F6C1E3D9B2A4C6E8F0D1B3A5C7E9F2D4B6A8C0E1F3D5B7A9C", "prove": false}})).send().await?.json::<Value>().await?;
+    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"tx","params":{"hash": "hMqQl9J7WY/ElL1svvU4pLXsg0QVU1ixKVA3S0Z+r54=", "prove": false}})).send().await?.json::<Value>().await?;
     println!("{}", res["result"]);
     Ok(())
 }
@@ -78,14 +86,31 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "result": {
-        "hash": "3A1F9C2E7B4D8A05F6C1E3D9B2A4C6E8F0D1B3A5C7E9F2D4B6A8C0E1F3D5B7A9C",
-        "height": "19500000",
+        "hash": "84CA9097D27B598FC494BD6CBEF538A4B5EC8344155358B12950374B467EAF9E",
+        "height": "28742282",
+        "index": 0,
         "tx_result": {
             "code": 0,
-            "gas_used": "118000",
-            "events": []
+            "data": "Ei4KLC9jb3Ntd2FzbS53YXNtLnYxLk1zZ0V4ZWN1dGVDb250cmFjdFJlc3BvbnNl",
+            "log": "",
+            "info": "",
+            "gas_wanted": "423435",
+            "gas_used": "302162",
+            "events": [
+                {
+                    "type": "coin_spent",
+                    "attributes": [
+                        {
+                            "key": "spender",
+                            "value": "akash1qafvet3v5nlkqdrlrkayy0eenq80aprqvj6nap",
+                            "index": true
+                        }
+                    ]
+                }
+            ],
+            "codespace": ""
         },
-        "tx": "Cr0BC..."
+        "tx": "CrkICpMICiQvY29zbXdhc20ud2FzbS52MS5Nc2dFeGVjdXRlQ29udHJhY3QS6gcKLGFrYXNoMXFhZnZl..."
     }
 }
 ```

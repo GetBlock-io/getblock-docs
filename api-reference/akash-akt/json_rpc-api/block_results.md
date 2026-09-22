@@ -8,6 +8,12 @@ description: >-
 
 Returns the ABCI results and events for every transaction in a block, plus block-level events. The primary source for indexing events.
 
+{% hint style="warning" %}
+**Shared Akash nodes are pruned.** Heights below roughly 26,980,292 are not retained and return
+`-32603 Internal error` with a message naming the lowest available height. Read that floor from
+[status](status.md) under `sync_info.earliest_block_height` before requesting historical data.
+{% endhint %}
+
 ## Parameters
 
 | Parameter | Type   | Required | Description                   |
@@ -26,7 +32,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "method": "block_results",
-    "params": {"height": "19500000"}
+    "params": {"height": "28742282"}
 }'
 ```
 {% endcode %}
@@ -36,7 +42,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 {% code title="example.js" %}
 ```javascript
 const axios = require('axios');
-const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'block_results', params: {"height": "19500000"} }, { headers: { 'Content-Type': 'application/json' } });
+const response = await axios.post('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'block_results', params: {"height": "28742282"} }, { headers: { 'Content-Type': 'application/json' } });
 console.log(response.data.result);
 ```
 {% endcode %}
@@ -61,7 +67,7 @@ use serde_json::{json, Value};
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
-    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"block_results","params":{"height": "19500000"}})).send().await?.json::<Value>().await?;
+    let res = client.post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"block_results","params":{"height": "28742282"}})).send().await?.json::<Value>().await?;
     println!("{}", res["result"]);
     Ok(())
 }
@@ -77,24 +83,59 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "result": {
-        "height": "19500000",
+        "app_hash": "RmbhphlVUKC7xb6qRhf/BkVQbUzbrspBwBY83h+fDNs=",
+        "consensus_param_updates": {
+            "block": {
+                "max_bytes": "22020096",
+                "max_gas": "-1"
+            },
+            "evidence": {
+                "max_age_duration": "1814400000000000",
+                "max_age_num_blocks": "279138"
+            },
+            "validator": {
+                "pub_key_types": [
+                    "ed25519"
+                ]
+            }
+        },
+        "finalize_block_events": [
+            {
+                "attributes": [
+                    {
+                        "index": true,
+                        "key": "spender",
+                        "value": "akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
+                    }
+                ],
+                "type": "coin_spent"
+            }
+        ],
+        "height": "28742282",
         "txs_results": [
             {
                 "code": 0,
-                "gas_used": "120000",
+                "codespace": "",
+                "data": "Ei4KLC9jb3Ntd2FzbS53YXNtLnYxLk1zZ0V4ZWN1dGVDb250cmFjdFJlc3BvbnNl",
                 "events": [
                     {
-                        "type": "transfer",
                         "attributes": [
                             {
-                                "key": "amount",
-                                "value": "1000000uakt"
+                                "index": true,
+                                "key": "spender",
+                                "value": "akash1qafvet3v5nlkqdrlrkayy0eenq80aprqvj6nap"
                             }
-                        ]
+                        ],
+                        "type": "coin_spent"
                     }
-                ]
+                ],
+                "gas_used": "302162",
+                "gas_wanted": "423435",
+                "info": "",
+                "log": ""
             }
-        ]
+        ],
+        "validator_updates": null
     }
 }
 ```

@@ -8,6 +8,13 @@ description: >-
 
 Submits a signed transaction and returns after CheckTx (mempool validation), without waiting for a block. Returns the transaction hash and CheckTx code.
 
+{% hint style="info" %}
+**The transaction below is a placeholder and cannot be broadcast as written.** Sent unchanged it
+returns `-32602 Invalid params` with an `illegal base64` message. Substitute a real signed,
+protobuf-encoded transaction, base64-encoded. The response shown is the shape returned on
+acceptance.
+{% endhint %}
+
 ## Parameters
 
 | Parameter | Type   | Required | Description                     |
