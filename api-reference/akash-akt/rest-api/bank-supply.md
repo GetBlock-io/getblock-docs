@@ -21,7 +21,7 @@ GET /cosmos/bank/v1beta1/supply
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}cosmos/bank/v1beta1/supply"
+curl "${AKASH_REST}cosmos/bank/v1beta1/supply?pagination.limit=2"
 ```
 {% endcode %}
 
@@ -31,12 +31,13 @@ curl "${AKASH_REST}cosmos/bank/v1beta1/supply"
 {
     "supply": [
         {
-            "denom": "uakt",
-            "amount": "388539008000000"
+            "denom": "ibc/011C19FB6113363238248C55B985A92C0A0CAF9709162EAB838EACB6A629E6AA",
+            "amount": "1950000"
         }
     ],
     "pagination": {
-        "total": "1"
+        "next_key": "aWJjLzA0Qzk0NDAwMDZCNjU4Q0RDOEFGQUE4OTlCM0EzQ0NGQ0JENUE4NDY1N0U2MjdEQkI2MjIzM0I3RUZCRUI5NTg=",
+        "total": "0"
     }
 }
 ```

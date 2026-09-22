@@ -37,7 +37,7 @@ curl "${AKASH_REST}cosmos/bank/v1beta1/supply/by_denom?denom=uakt"
 {
     "amount": {
         "denom": "uakt",
-        "amount": "388539008000000"
+        "amount": "298085849902207"
     }
 }
 ```

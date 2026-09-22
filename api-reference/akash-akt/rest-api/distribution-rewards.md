@@ -29,7 +29,7 @@ GET /cosmos/distribution/v1beta1/delegators/{delegator_addr}/rewards
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}cosmos/distribution/v1beta1/delegators/akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p/rewards"
+curl "${AKASH_REST}cosmos/distribution/v1beta1/delegators/akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8/rewards"
 ```
 {% endcode %}
 
@@ -37,23 +37,8 @@ curl "${AKASH_REST}cosmos/distribution/v1beta1/delegators/akash1nl7dg3xj9j2y6q7z
 
 ```json
 {
-    "rewards": [
-        {
-            "validator_address": "akashvaloper1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p",
-            "reward": [
-                {
-                    "denom": "uakt",
-                    "amount": "1234567.000000000000000000"
-                }
-            ]
-        }
-    ],
-    "total": [
-        {
-            "denom": "uakt",
-            "amount": "1234567.000000000000000000"
-        }
-    ]
+    "rewards": [],
+    "total": []
 }
 ```
 

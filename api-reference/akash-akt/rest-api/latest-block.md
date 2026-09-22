@@ -31,17 +31,117 @@ curl "${AKASH_REST}cosmos/base/tendermint/v1beta1/blocks/latest"
 ```json
 {
     "block_id": {
-        "hash": "b64=="
+        "hash": "mBGPwqUUpWXU6I5YpGOM4A3HvdHJCxpfynbuI7epM3M=",
+        "part_set_header": {
+            "total": 1,
+            "hash": "2I/tEdMhmgJQVDMc0bWCU0m50ZBeFJPhEXgobsM5Q8E="
+        }
     },
     "block": {
         "header": {
+            "version": {
+                "block": "11",
+                "app": "0"
+            },
             "chain_id": "akashnet-2",
-            "height": "19500000",
-            "time": "2025-11-01T12:00:00Z"
+            "height": "28742381",
+            "time": "2026-09-22T18:17:41.262600678Z",
+            "last_block_id": {
+                "hash": "0YgS6R5SN+XZx3Zo4RxmijtM332074fauIlMizIHpnA=",
+                "part_set_header": {
+                    "total": 1,
+                    "hash": "1cPGFmYtbdhnNywolx4CaSOMoPnEZcRYOLN4TdOxNqU="
+                }
+            },
+            "last_commit_hash": "wkJbdkOaaKfJOKOKJv6mqEEFVSqzwskbHcJDyyUrEAo=",
+            "data_hash": "G92gk486iceRvZ1jPzv6TpoDHVgxjpkeITvPBr4r6+Y=",
+            "validators_hash": "RO+btMxni6gOn+atN4nd2+/BLM5/KBptk6Ss2ALMYlI=",
+            "next_validators_hash": "RO+btMxni6gOn+atN4nd2+/BLM5/KBptk6Ss2ALMYlI=",
+            "consensus_hash": "BICRvH3cKD93v7+R1zxE2ljD34qcvIZ0Bdi389qtoi8=",
+            "app_hash": "LllC+v0ZWS/cHyAfSqM2fPP2lZBs/oMtdu4uGAvzyEI=",
+            "last_results_hash": "MQeXV9iCQjnEDYzEn3m2cT/TaYYRAKaH2aC/VNld0Zg=",
+            "evidence_hash": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+            "proposer_address": "6rkde0AhPhToUKkNfCjmYkZt18Y="
         },
         "data": {
             "txs": [
-                "Cr0BC..."
+                "CogBCmcKLC9ha2FzaC5kZXBsb3ltZW50LnYxYmV0YTQuTXNnQ2xvc2VEZXBsb3ltZW50EjcKNQosYWth..."
+            ]
+        },
+        "evidence": {
+            "evidence": []
+        },
+        "last_commit": {
+            "height": "28742380",
+            "round": 0,
+            "block_id": {
+                "hash": "0YgS6R5SN+XZx3Zo4RxmijtM332074fauIlMizIHpnA=",
+                "part_set_header": {
+                    "total": 1,
+                    "hash": "1cPGFmYtbdhnNywolx4CaSOMoPnEZcRYOLN4TdOxNqU="
+                }
+            },
+            "signatures": [
+                {
+                    "block_id_flag": "BLOCK_ID_FLAG_COMMIT",
+                    "validator_address": "sYUtF/pmtTgqj3cHJcxbIos1d1A=",
+                    "timestamp": "2026-09-22T18:17:41.253803591Z",
+                    "signature": "AKppdq3t+00TM2Mlx+ttj4dLcvvadmh4e0HNd/rf08tjmxrqA7pvqF7w+TLudmY/exv3d5ZAPg0/42iQoG2RDQ=="
+                }
+            ]
+        }
+    },
+    "sdk_block": {
+        "header": {
+            "version": {
+                "block": "11",
+                "app": "0"
+            },
+            "chain_id": "akashnet-2",
+            "height": "28742381",
+            "time": "2026-09-22T18:17:41.262600678Z",
+            "last_block_id": {
+                "hash": "0YgS6R5SN+XZx3Zo4RxmijtM332074fauIlMizIHpnA=",
+                "part_set_header": {
+                    "total": 1,
+                    "hash": "1cPGFmYtbdhnNywolx4CaSOMoPnEZcRYOLN4TdOxNqU="
+                }
+            },
+            "last_commit_hash": "wkJbdkOaaKfJOKOKJv6mqEEFVSqzwskbHcJDyyUrEAo=",
+            "data_hash": "G92gk486iceRvZ1jPzv6TpoDHVgxjpkeITvPBr4r6+Y=",
+            "validators_hash": "RO+btMxni6gOn+atN4nd2+/BLM5/KBptk6Ss2ALMYlI=",
+            "next_validators_hash": "RO+btMxni6gOn+atN4nd2+/BLM5/KBptk6Ss2ALMYlI=",
+            "consensus_hash": "BICRvH3cKD93v7+R1zxE2ljD34qcvIZ0Bdi389qtoi8=",
+            "app_hash": "LllC+v0ZWS/cHyAfSqM2fPP2lZBs/oMtdu4uGAvzyEI=",
+            "last_results_hash": "MQeXV9iCQjnEDYzEn3m2cT/TaYYRAKaH2aC/VNld0Zg=",
+            "evidence_hash": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+            "proposer_address": "akashvalcons1a2u3676qyylpf6zs4yxhc28xvfrxm47xz7hr7n"
+        },
+        "data": {
+            "txs": [
+                "CogBCmcKLC9ha2FzaC5kZXBsb3ltZW50LnYxYmV0YTQuTXNnQ2xvc2VEZXBsb3ltZW50EjcKNQosYWth..."
+            ]
+        },
+        "evidence": {
+            "evidence": []
+        },
+        "last_commit": {
+            "height": "28742380",
+            "round": 0,
+            "block_id": {
+                "hash": "0YgS6R5SN+XZx3Zo4RxmijtM332074fauIlMizIHpnA=",
+                "part_set_header": {
+                    "total": 1,
+                    "hash": "1cPGFmYtbdhnNywolx4CaSOMoPnEZcRYOLN4TdOxNqU="
+                }
+            },
+            "signatures": [
+                {
+                    "block_id_flag": "BLOCK_ID_FLAG_COMMIT",
+                    "validator_address": "sYUtF/pmtTgqj3cHJcxbIos1d1A=",
+                    "timestamp": "2026-09-22T18:17:41.253803591Z",
+                    "signature": "AKppdq3t+00TM2Mlx+ttj4dLcvvadmh4e0HNd/rf08tjmxrqA7pvqF7w+TLudmY/exv3d5ZAPg0/42iQoG2RDQ=="
+                }
             ]
         }
     }

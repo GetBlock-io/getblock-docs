@@ -28,7 +28,7 @@ GET /cosmos/gov/v1/proposals/{proposal_id}/tally
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}cosmos/gov/v1/proposals/42/tally"
+curl "${AKASH_REST}cosmos/gov/v1/proposals/341/tally"
 ```
 {% endcode %}
 
@@ -37,9 +37,9 @@ curl "${AKASH_REST}cosmos/gov/v1/proposals/42/tally"
 ```json
 {
     "tally": {
-        "yes_count": "1000000",
-        "no_count": "0",
-        "abstain_count": "0",
+        "yes_count": "35102265275414",
+        "abstain_count": "763068307757",
+        "no_count": "8545777331",
         "no_with_veto_count": "0"
     }
 }

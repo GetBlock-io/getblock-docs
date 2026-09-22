@@ -9,6 +9,22 @@ description: >-
 
 Returns Akash's inflation module parameters, which govern token issuance and the community/provider incentive split.
 
+{% hint style="danger" %}
+**This endpoint is not available on GetBlock's Akash REST endpoint.** Every request returns `501 Not Implemented`:
+
+```json
+{
+    "jsonrpc": "",
+    "error": {
+        "code": -32701,
+        "message": "not implemented"
+    }
+}
+```
+
+The gateway returns that error for any path it does not route, and no module version resolves it: `v1`, `v1beta1` through `v1beta5` were all tried. The other Akash modules — deployment, market, provider, cert, and audit — do respond, so this is specific to the module below rather than to Akash paths in general.
+{% endhint %}
+
 ## Endpoint
 
 ```http

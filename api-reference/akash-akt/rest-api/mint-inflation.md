@@ -29,7 +29,7 @@ curl "${AKASH_REST}cosmos/mint/v1beta1/inflation"
 
 ```json
 {
-    "inflation": "0.120000000000000000"
+    "inflation": "0.040000000000000000"
 }
 ```
 

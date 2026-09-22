@@ -28,7 +28,7 @@ GET /cosmos/staking/v1beta1/delegations/{delegator_addr}
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}cosmos/staking/v1beta1/delegations/akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p"
+curl "${AKASH_REST}cosmos/staking/v1beta1/delegations/akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
 ```
 {% endcode %}
 
@@ -36,21 +36,10 @@ curl "${AKASH_REST}cosmos/staking/v1beta1/delegations/akash1nl7dg3xj9j2y6q7z0v4w
 
 ```json
 {
-    "delegation_responses": [
-        {
-            "delegation": {
-                "delegator_address": "akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p",
-                "validator_address": "akashvaloper1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p",
-                "shares": "1000000.0"
-            },
-            "balance": {
-                "denom": "uakt",
-                "amount": "1000000"
-            }
-        }
-    ],
+    "delegation_responses": [],
     "pagination": {
-        "total": "1"
+        "next_key": null,
+        "total": "0"
     }
 }
 ```

@@ -1,18 +1,18 @@
 ---
 description: >-
-  Example code for the akash/market/v1beta4/leases/info REST method. Complete
-  guide on how to use akash/market/v1beta4/leases/info REST method in GetBlock
+  Example code for the akash/market/v1beta5/leases/info REST method. Complete
+  guide on how to use akash/market/v1beta5/leases/info REST method in GetBlock
   Web3 documentation.
 ---
 
-# /akash/market/v1beta4/leases/info - Akash
+# /akash/market/v1beta5/leases/info - Akash
 
 Returns a single lease by its full id, plus its escrow payment.
 
 ## Endpoint
 
 ```http
-GET /akash/market/v1beta4/leases/info
+GET /akash/market/v1beta5/leases/info
 ```
 
 ## Query Parameters
@@ -31,7 +31,7 @@ GET /akash/market/v1beta4/leases/info
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}akash/market/v1beta4/leases/info?id.owner=akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p&id.dseq=12345678&id.gseq=1&id.oseq=1&id.provider=akashvaloper1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p"
+curl "${AKASH_REST}akash/market/v1beta5/leases/info?id.owner=akash102kdwsssl6jf4frdcz50mua6j0h6d8wdhjh7nq&id.dseq=25880666&id.gseq=1&id.oseq=1&id.provider=akash19zzh7whjt4vfwxd5wtj3tjtyatnpntfhldshd8"
 ```
 {% endcode %}
 
@@ -40,22 +40,51 @@ curl "${AKASH_REST}akash/market/v1beta4/leases/info?id.owner=akash1nl7dg3xj9j2y6
 ```json
 {
     "lease": {
-        "lease_id": {
-            "owner": "akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p",
-            "dseq": "12345678",
-            "provider": "akashvaloper1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p"
+        "id": {
+            "owner": "akash102kdwsssl6jf4frdcz50mua6j0h6d8wdhjh7nq",
+            "dseq": "25880666",
+            "gseq": 1,
+            "oseq": 1,
+            "provider": "akash19zzh7whjt4vfwxd5wtj3tjtyatnpntfhldshd8",
+            "bseq": 0
         },
         "state": "active",
         "price": {
-            "denom": "uakt",
-            "amount": "1.5"
-        }
+            "denom": "uact",
+            "amount": "4.826603000000000000"
+        },
+        "created_at": "25880690",
+        "closed_on": "0",
+        "reason": "lease_closed_invalid",
+        "reclamation": null
     },
     "escrow_payment": {
-        "state": "open",
-        "balance": {
-            "denom": "uakt",
-            "amount": "5000000"
+        "id": {
+            "aid": {
+                "scope": "deployment",
+                "xid": "akash102kdwsssl6jf4frdcz50mua6j0h6d8wdhjh7nq/25880666"
+            },
+            "xid": "1/1/akash19zzh7whjt4vfwxd5wtj3tjtyatnpntfhldshd8"
+        },
+        "state": {
+            "owner": "akash19zzh7whjt4vfwxd5wtj3tjtyatnpntfhldshd8",
+            "state": "open",
+            "rate": {
+                "denom": "uact",
+                "amount": "4.826603000000000000"
+            },
+            "balance": {
+                "denom": "uact",
+                "amount": "0.000000000000000000"
+            },
+            "unsettled": {
+                "denom": "uact",
+                "amount": "0.000000000000000000"
+            },
+            "withdrawn": {
+                "denom": "uact",
+                "amount": "13780746"
+            }
         }
     }
 }

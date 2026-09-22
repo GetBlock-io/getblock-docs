@@ -1,18 +1,18 @@
 ---
 description: >-
-  Example code for the akash/market/v1beta4/bids/info REST method. Complete
-  guide on how to use akash/market/v1beta4/bids/info REST method in GetBlock
+  Example code for the akash/market/v1beta5/bids/info REST method. Complete
+  guide on how to use akash/market/v1beta5/bids/info REST method in GetBlock
   Web3 documentation.
 ---
 
-# /akash/market/v1beta4/bids/info - Akash
+# /akash/market/v1beta5/bids/info - Akash
 
 Returns a single provider bid by its full id.
 
 ## Endpoint
 
 ```
-GET /akash/market/v1beta4/bids/info
+GET /akash/market/v1beta5/bids/info
 ```
 
 ## Query Parameters
@@ -31,7 +31,7 @@ GET /akash/market/v1beta4/bids/info
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}akash/market/v1beta4/bids/info?id.owner=akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p&id.dseq=12345678&id.gseq=1&id.oseq=1&id.provider=akashvaloper1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p"
+curl "${AKASH_REST}akash/market/v1beta5/bids/info?id.owner=akash1008l639687lnkcscsrha36n5zdt3qzz30yzc67&id.dseq=22804430&id.gseq=1&id.oseq=1&id.provider=akash13va9yxc8a7wlc882g72uj4g2fscj93hdk0uycp"
 ```
 {% endcode %}
 
@@ -40,21 +40,96 @@ curl "${AKASH_REST}akash/market/v1beta4/bids/info?id.owner=akash1nl7dg3xj9j2y6q7
 ```json
 {
     "bid": {
-        "bid_id": {
-            "owner": "akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p",
-            "dseq": "12345678",
-            "provider": "akashvaloper1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p"
+        "id": {
+            "owner": "akash1008l639687lnkcscsrha36n5zdt3qzz30yzc67",
+            "dseq": "22804430",
+            "gseq": 1,
+            "oseq": 1,
+            "provider": "akash13va9yxc8a7wlc882g72uj4g2fscj93hdk0uycp",
+            "bseq": 0
         },
         "state": "open",
         "price": {
-            "denom": "uakt",
-            "amount": "1.5"
-        }
+            "denom": "ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1",
+            "amount": "2.526488000000000000"
+        },
+        "created_at": "25930029",
+        "resources_offer": [
+            {
+                "resources": {
+                    "id": 1,
+                    "cpu": {
+                        "units": {
+                            "val": "100"
+                        },
+                        "attributes": []
+                    },
+                    "memory": {
+                        "quantity": {
+                            "val": "536870912"
+                        },
+                        "attributes": []
+                    },
+                    "storage": [
+                        {
+                            "name": "default",
+                            "quantity": {
+                                "val": "1073741824"
+                            },
+                            "attributes": []
+                        }
+                    ],
+                    "gpu": {
+                        "units": {
+                            "val": "0"
+                        },
+                        "attributes": []
+                    },
+                    "endpoints": [
+                        {
+                            "kind": "RANDOM_PORT",
+                            "sequence_number": 0
+                        }
+                    ]
+                },
+                "count": 1,
+                "prices": null
+            }
+        ],
+        "reclamation_window": null
     },
     "escrow_account": {
-        "balance": {
-            "denom": "uakt",
-            "amount": "5000000"
+        "id": {
+            "scope": "bid",
+            "xid": "akash1008l639687lnkcscsrha36n5zdt3qzz30yzc67/22804430/1/1/akash13va9yxc8a7wlc882g72uj4g2fscj93hdk0uycp"
+        },
+        "state": {
+            "owner": "akash13va9yxc8a7wlc882g72uj4g2fscj93hdk0uycp",
+            "state": "open",
+            "transferred": [
+                {
+                    "denom": "uakt",
+                    "amount": "0.000000000000000000"
+                }
+            ],
+            "settled_at": "25930029",
+            "funds": [
+                {
+                    "denom": "uakt",
+                    "amount": "500000.000000000000000000"
+                }
+            ],
+            "deposits": [
+                {
+                    "owner": "akash13va9yxc8a7wlc882g72uj4g2fscj93hdk0uycp",
+                    "height": "25930029",
+                    "source": "balance",
+                    "balance": {
+                        "denom": "uakt",
+                        "amount": "500000.000000000000000000"
+                    }
+                }
+            ]
         }
     }
 }

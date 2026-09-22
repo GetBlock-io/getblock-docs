@@ -1,18 +1,18 @@
 ---
 description: >-
-  Example code for the akash/provider/v1beta3/providers/{owner} REST method.
-  Complete guide on how to use akash/provider/v1beta3/providers/{owner} REST
+  Example code for the akash/provider/v1beta4/providers/{owner} REST method.
+  Complete guide on how to use akash/provider/v1beta4/providers/{owner} REST
   method in GetBlock Web3 documentation.
 ---
 
-# /akash/provider/v1beta3/providers/{owner} - Akash
+# /akash/provider/v1beta4/providers/{owner} - Akash
 
 Returns a single provider by its owner address, with its host URI, attributes, and contact info.
 
 ## Endpoint
 
 ```http
-GET /akash/provider/v1beta3/providers/{owner}
+GET /akash/provider/v1beta4/providers/{owner}
 ```
 
 ## Path Parameters
@@ -27,7 +27,7 @@ GET /akash/provider/v1beta3/providers/{owner}
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}akash/provider/v1beta3/providers/akashvaloper1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p"
+curl "${AKASH_REST}akash/provider/v1beta4/providers/akash1qpy7waukp7nxlcxmwjcgtmyzu2auk3p5dc3gg6"
 ```
 {% endcode %}
 
@@ -36,17 +36,17 @@ curl "${AKASH_REST}akash/provider/v1beta3/providers/akashvaloper1nl7dg3xj9j2y6q7
 ```json
 {
     "provider": {
-        "owner": "akashvaloper1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p",
-        "host_uri": "https://provider.example.com:8443",
+        "owner": "akash1qpy7waukp7nxlcxmwjcgtmyzu2auk3p5dc3gg6",
+        "host_uri": "https://provider.forgeelectronics.uk:8443",
         "attributes": [
             {
-                "key": "region",
-                "value": "us-west"
+                "key": "host",
+                "value": "akash"
             }
         ],
         "info": {
-            "email": "ops@example.com",
-            "website": "https://example.com"
+            "email": "christianpenrod@gmail.com",
+            "website": ""
         }
     }
 }

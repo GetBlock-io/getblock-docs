@@ -29,11 +29,7 @@ curl "${AKASH_REST}cosmos/upgrade/v1beta1/current_plan"
 
 ```json
 {
-    "plan": {
-        "name": "v0.38.0",
-        "height": "20000000",
-        "info": ""
-    }
+    "plan": null
 }
 ```
 

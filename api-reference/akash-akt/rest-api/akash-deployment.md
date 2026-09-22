@@ -1,18 +1,18 @@
 ---
 description: >-
-  Example code for the akash/deployment/v1beta3/deployments/info REST method.
-  Complete guide on how to use akash/deployment/v1beta3/deployments/info REST
+  Example code for the akash/deployment/v1beta4/deployments/info REST method.
+  Complete guide on how to use akash/deployment/v1beta4/deployments/info REST
   method in GetBlock Web3 documentation.
 ---
 
-# /akash/deployment/v1beta3/deployments/info - Akash
+# /akash/deployment/v1beta4/deployments/info - Akash
 
 Returns a single deployment by its owner and deployment sequence (dseq), including its groups (resource requirements) and escrow account.
 
 ## Endpoint
 
 ```http
-GET /akash/deployment/v1beta3/deployments/info
+GET /akash/deployment/v1beta4/deployments/info
 ```
 
 ## Query Parameters
@@ -28,7 +28,7 @@ GET /akash/deployment/v1beta3/deployments/info
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}akash/deployment/v1beta3/deployments/info?id.owner=akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p&id.dseq=12345678"
+curl "${AKASH_REST}akash/deployment/v1beta4/deployments/info?id.owner=akash100dwtg4hqnd240x583spjwnk4kanp559xwtvmg&id.dseq=16122570"
 ```
 {% endcode %}
 
@@ -37,24 +37,113 @@ curl "${AKASH_REST}akash/deployment/v1beta3/deployments/info?id.owner=akash1nl7d
 ```json
 {
     "deployment": {
-        "deployment_id": {
-            "owner": "akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p",
-            "dseq": "12345678"
+        "id": {
+            "owner": "akash100dwtg4hqnd240x583spjwnk4kanp559xwtvmg",
+            "dseq": "16122570"
         },
-        "state": "active"
+        "state": "active",
+        "hash": "bLTCo5xFV2obtovLJ/rUZDHLkzAbB8vlXpF2iJGKpaY=",
+        "created_at": "16122572",
+        "reclamation": null
     },
     "groups": [
         {
-            "group_id": {
+            "id": {
+                "owner": "akash100dwtg4hqnd240x583spjwnk4kanp559xwtvmg",
+                "dseq": "16122570",
                 "gseq": 1
             },
-            "state": "open"
+            "state": "open",
+            "group_spec": {
+                "name": "dcloud",
+                "requirements": {
+                    "signed_by": {
+                        "all_of": [],
+                        "any_of": []
+                    },
+                    "attributes": []
+                },
+                "resources": [
+                    {
+                        "resource": {
+                            "id": 1,
+                            "cpu": {
+                                "units": {
+                                    "val": "500"
+                                },
+                                "attributes": []
+                            },
+                            "memory": {
+                                "quantity": {
+                                    "val": "536870912"
+                                },
+                                "attributes": []
+                            },
+                            "storage": [
+                                {
+                                    "name": "default",
+                                    "quantity": {
+                                        "val": "536870912"
+                                    },
+                                    "attributes": []
+                                }
+                            ],
+                            "gpu": {
+                                "units": {
+                                    "val": "0"
+                                },
+                                "attributes": []
+                            },
+                            "endpoints": [
+                                {
+                                    "kind": "SHARED_HTTP",
+                                    "sequence_number": 0
+                                }
+                            ]
+                        },
+                        "count": 1,
+                        "price": {
+                            "denom": "uact",
+                            "amount": "584.635140000000000000"
+                        }
+                    }
+                ]
+            },
+            "created_at": "16122572"
         }
     ],
     "escrow_account": {
-        "balance": {
-            "denom": "uakt",
-            "amount": "5000000"
+        "id": {
+            "scope": "deployment",
+            "xid": "akash100dwtg4hqnd240x583spjwnk4kanp559xwtvmg/16122570"
+        },
+        "state": {
+            "owner": "akash100dwtg4hqnd240x583spjwnk4kanp559xwtvmg",
+            "state": "open",
+            "transferred": [
+                {
+                    "denom": "uakt",
+                    "amount": "0.000000000000000000"
+                }
+            ],
+            "settled_at": "16122572",
+            "funds": [
+                {
+                    "denom": "uact",
+                    "amount": "292317.570000000000000000"
+                }
+            ],
+            "deposits": [
+                {
+                    "owner": "akash100dwtg4hqnd240x583spjwnk4kanp559xwtvmg",
+                    "height": "0",
+                    "source": "balance",
+                    "balance": {
+                        "denom": "uact",
+                        "amount": "292317.570000000000000000"
+                    }
+                }
+            ]
         }
     }
 }

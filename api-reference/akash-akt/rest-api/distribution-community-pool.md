@@ -31,8 +31,8 @@ curl "${AKASH_REST}cosmos/distribution/v1beta1/community_pool"
 {
     "pool": [
         {
-            "denom": "uakt",
-            "amount": "5000000000.0"
+            "denom": "ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1",
+            "amount": "263775119968.000000000000000000"
         }
     ]
 }

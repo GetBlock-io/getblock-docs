@@ -33,7 +33,7 @@ GET /cosmos/bank/v1beta1/balances/{address}
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}cosmos/bank/v1beta1/balances/akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p"
+curl "${AKASH_REST}cosmos/bank/v1beta1/balances/akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
 ```
 {% endcode %}
 
@@ -44,10 +44,11 @@ curl "${AKASH_REST}cosmos/bank/v1beta1/balances/akash1nl7dg3xj9j2y6q7z0v4w8c2b5d
     "balances": [
         {
             "denom": "uakt",
-            "amount": "150000000"
+            "amount": "2311523"
         }
     ],
     "pagination": {
+        "next_key": null,
         "total": "1"
     }
 }

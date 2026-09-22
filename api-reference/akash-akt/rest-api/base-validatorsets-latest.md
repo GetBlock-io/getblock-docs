@@ -22,7 +22,7 @@ GET /cosmos/base/tendermint/v1beta1/validatorsets/latest
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}cosmos/base/tendermint/v1beta1/validatorsets/latest"
+curl "${AKASH_REST}cosmos/base/tendermint/v1beta1/validatorsets/latest?pagination.limit=2"
 ```
 {% endcode %}
 
@@ -30,15 +30,21 @@ curl "${AKASH_REST}cosmos/base/tendermint/v1beta1/validatorsets/latest"
 
 ```json
 {
-    "block_height": "19500000",
+    "block_height": "28742382",
     "validators": [
         {
-            "address": "akashvalcons1...",
-            "voting_power": "5000000"
+            "address": "akashvalcons1kxzj69l6v66ns250wurjtnzmy29n2a6s68zns2",
+            "pub_key": {
+                "@type": "/cosmos.crypto.ed25519.PubKey",
+                "key": "7AaTbVWTaspcBBsJHHoxGx8wZb0rZbYL4l7QkQT+uPM="
+            },
+            "voting_power": "10744784",
+            "proposer_priority": "-13780471"
         }
     ],
     "pagination": {
-        "total": "100"
+        "next_key": null,
+        "total": "83"
     }
 }
 ```

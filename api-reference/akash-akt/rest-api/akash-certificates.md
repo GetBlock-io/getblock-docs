@@ -1,18 +1,18 @@
 ---
 description: >-
-  Example code for the akash/cert/v1beta3/certificates/list REST method.
-  Complete guide on how to use akash/cert/v1beta3/certificates/list REST
-  method in GetBlock Web3 documentation.
+  Example code for the akash/cert/v1/certificates/list REST method. Complete
+  guide on how to use akash/cert/v1/certificates/list REST method in GetBlock
+  Web3 documentation.
 ---
 
-# /akash/cert/v1beta3/certificates/list - Akash
+# /akash/cert/v1/certificates/list - Akash
 
 Returns mTLS certificates registered on-chain. Deployments and providers use these certificates to authenticate the client-provider connection.
 
 ## Endpoint
 
 ```
-GET /akash/cert/v1beta3/certificates/list
+GET /akash/cert/v1/certificates/list
 ```
 
 ## Query Parameters
@@ -29,7 +29,7 @@ GET /akash/cert/v1beta3/certificates/list
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}akash/cert/v1beta3/certificates/list?filter.owner=akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p"
+curl "${AKASH_REST}akash/cert/v1/certificates/list?pagination.limit=1"
 ```
 {% endcode %}
 
@@ -41,13 +41,14 @@ curl "${AKASH_REST}akash/cert/v1beta3/certificates/list?filter.owner=akash1nl7dg
         {
             "certificate": {
                 "state": "valid",
-                "cert": "LS0tLS1CRUdJTi...",
-                "pubkey": "LS0tLS1CRUdJTi..."
+                "cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tDQpNSUlCbXpDQ0FVR2dBd0lCQWdJSEJpbURkQVhLR0RB...",
+                "pubkey": "LS0tLS1CRUdJTiBFQyBQVUJMSUMgS0VZLS0tLS0NCk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERB..."
             },
-            "serial": "12345"
+            "serial": "1734494424255000"
         }
     ],
     "pagination": {
+        "next_key": "rChFCQIBAgIRAR0UAABWKhORnoNQejBl+6jeybTC4AoHBi1xezFhIA==",
         "total": "1"
     }
 }

@@ -1,18 +1,18 @@
 ---
 description: >-
-  Example code for the akash/deployment/v1beta3/groups/info REST method.
-  Complete guide on how to use akash/deployment/v1beta3/groups/info REST
+  Example code for the akash/deployment/v1beta4/groups/info REST method.
+  Complete guide on how to use akash/deployment/v1beta4/groups/info REST
   method in GetBlock Web3 documentation.
 ---
 
-# /akash/deployment/v1beta3/groups/info - Akash
+# /akash/deployment/v1beta4/groups/info - Akash
 
 Returns a single deployment group (a set of resource requirements within a deployment) by its owner, dseq, and gseq.
 
 ## Endpoint
 
 ```http
-GET /akash/deployment/v1beta3/groups/info
+GET /akash/deployment/v1beta4/groups/info
 ```
 
 ## Query Parameters
@@ -29,7 +29,7 @@ GET /akash/deployment/v1beta3/groups/info
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}akash/deployment/v1beta3/groups/info?id.owner=akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p&id.dseq=12345678&id.gseq=1"
+curl "${AKASH_REST}akash/deployment/v1beta4/groups/info?id.owner=akash100dwtg4hqnd240x583spjwnk4kanp559xwtvmg&id.dseq=16122570&id.gseq=1"
 ```
 {% endcode %}
 
@@ -38,16 +38,68 @@ curl "${AKASH_REST}akash/deployment/v1beta3/groups/info?id.owner=akash1nl7dg3xj9
 ```json
 {
     "group": {
-        "group_id": {
-            "owner": "akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p",
-            "dseq": "12345678",
+        "id": {
+            "owner": "akash100dwtg4hqnd240x583spjwnk4kanp559xwtvmg",
+            "dseq": "16122570",
             "gseq": 1
         },
         "state": "open",
         "group_spec": {
-            "name": "westcoast",
-            "resources": []
-        }
+            "name": "dcloud",
+            "requirements": {
+                "signed_by": {
+                    "all_of": [],
+                    "any_of": []
+                },
+                "attributes": []
+            },
+            "resources": [
+                {
+                    "resource": {
+                        "id": 1,
+                        "cpu": {
+                            "units": {
+                                "val": "500"
+                            },
+                            "attributes": []
+                        },
+                        "memory": {
+                            "quantity": {
+                                "val": "536870912"
+                            },
+                            "attributes": []
+                        },
+                        "storage": [
+                            {
+                                "name": "default",
+                                "quantity": {
+                                    "val": "536870912"
+                                },
+                                "attributes": []
+                            }
+                        ],
+                        "gpu": {
+                            "units": {
+                                "val": "0"
+                            },
+                            "attributes": []
+                        },
+                        "endpoints": [
+                            {
+                                "kind": "SHARED_HTTP",
+                                "sequence_number": 0
+                            }
+                        ]
+                    },
+                    "count": 1,
+                    "price": {
+                        "denom": "uact",
+                        "amount": "584.635140000000000000"
+                    }
+                }
+            ]
+        },
+        "created_at": "16122572"
     }
 }
 ```

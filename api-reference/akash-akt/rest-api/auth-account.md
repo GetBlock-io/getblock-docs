@@ -27,7 +27,7 @@ GET /cosmos/auth/v1beta1/accounts/{address}
 ```bash
 export AKASH_REST=https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/
 
-curl "${AKASH_REST}cosmos/auth/v1beta1/accounts/akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p"
+curl "${AKASH_REST}cosmos/auth/v1beta1/accounts/akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8"
 ```
 {% endcode %}
 
@@ -36,10 +36,15 @@ curl "${AKASH_REST}cosmos/auth/v1beta1/accounts/akash1nl7dg3xj9j2y6q7z0v4w8c2b5d
 ```json
 {
     "account": {
-        "@type": "/cosmos.auth.v1beta1.BaseAccount",
-        "address": "akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p",
-        "account_number": "12345",
-        "sequence": "42"
+        "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+        "base_account": {
+            "address": "akash17xpfvakm2amg962yls6f84z3kell8c5lazw8j8",
+            "pub_key": null,
+            "account_number": "220",
+            "sequence": "0"
+        },
+        "name": "fee_collector",
+        "permissions": []
     }
 }
 ```

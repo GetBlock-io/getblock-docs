@@ -31,9 +31,10 @@ curl "${AKASH_REST}cosmos/mint/v1beta1/params"
 {
     "params": {
         "mint_denom": "uakt",
-        "inflation_max": "0.13",
-        "inflation_min": "0.01",
-        "goal_bonded": "0.67",
+        "inflation_rate_change": "1.000000000000000000",
+        "inflation_max": "0.040000000000000000",
+        "inflation_min": "0.030000000000000000",
+        "goal_bonded": "0.670000000000000000",
         "blocks_per_year": "5256000"
     }
 }

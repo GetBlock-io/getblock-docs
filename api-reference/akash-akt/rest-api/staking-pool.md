@@ -30,8 +30,8 @@ curl "${AKASH_REST}cosmos/staking/v1beta1/pool"
 ```json
 {
     "pool": {
-        "not_bonded_tokens": "5000000000000",
-        "bonded_tokens": "190000000000000"
+        "not_bonded_tokens": "14396906293295",
+        "bonded_tokens": "91424223477855"
     }
 }
 ```
