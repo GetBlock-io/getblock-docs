@@ -5,7 +5,7 @@ description: >-
   infrastructure.
 ---
 
-# JSON-RPC API - Akash
+# JSON-RPC API
 
 The CometBFT JSON-RPC interface for Akash: consensus and node status, block and transaction data, mempool, transaction broadcast, and `abci_query` for reading any Cosmos SDK or Akash module state. All methods are JSON-RPC 2.0 POST requests to the endpoint base URL.
 
@@ -17,7 +17,36 @@ The CometBFT JSON-RPC interface for Akash: consensus and node status, block and 
 
 ## Methods
 
-<table data-search="false"><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>status</td><td>Node, sync, and validator status</td></tr><tr><td>health</td><td>Node liveness check</td></tr><tr><td>net_info</td><td>Peer connections</td></tr><tr><td>block</td><td>Block by height (or latest)</td></tr><tr><td>block_results</td><td>Execution results and events for a block</td></tr><tr><td>validators</td><td>Validator set at a height</td></tr><tr><td>tx</td><td>Transaction result by hash</td></tr><tr><td>tx_search</td><td>Search transactions by event query</td></tr><tr><td>abci_query</td><td>Query any module state via ABCI</td></tr><tr><td>broadcast_tx_sync</td><td>Broadcast a transaction (CheckTx)</td></tr><tr><td>blockchain</td><td>Block headers in a height range</td></tr><tr><td>block_by_hash</td><td>Block by hash</td></tr><tr><td>commit</td><td>Commit (signed header) at a height</td></tr><tr><td>header</td><td>Block header at a height</td></tr><tr><td>header_by_hash</td><td>Block header by hash</td></tr><tr><td>genesis</td><td>Genesis document</td></tr><tr><td>genesis_chunked</td><td>Genesis document in chunks</td></tr><tr><td>consensus_params</td><td>Consensus parameters at a height</td></tr><tr><td>consensus_state</td><td>Current consensus state</td></tr><tr><td>dump_consensus_state</td><td>Detailed consensus state</td></tr><tr><td>unconfirmed_txs</td><td>Mempool transactions</td></tr><tr><td>num_unconfirmed_txs</td><td>Mempool transaction count</td></tr><tr><td>block_search</td><td>Search blocks by event query</td></tr><tr><td>abci_info</td><td>ABCI application info</td></tr><tr><td>check_tx</td><td>Check a transaction without broadcasting</td></tr><tr><td>broadcast_tx_async</td><td>Broadcast a transaction (fire-and-forget)</td></tr><tr><td>broadcast_tx_commit</td><td>Broadcast and wait for a block</td></tr><tr><td>broadcast_evidence</td><td>Submit misbehaviour evidence</td></tr></tbody></table>
+| Method                 | Description                               |
+| ---------------------- | ----------------------------------------- |
+| status                 | Node, sync, and validator status          |
+| health                 | Node liveness check                       |
+| net\_info              | Peer connections                          |
+| block                  | Block by height (or latest)               |
+| block\_results         | Execution results and events for a block  |
+| validators             | Validator set at a height                 |
+| tx                     | Transaction result by hash                |
+| tx\_search             | Search transactions by event query        |
+| abci\_query            | Query any module state via ABCI           |
+| broadcast\_tx\_sync    | Broadcast a transaction (CheckTx)         |
+| blockchain             | Block headers in a height range           |
+| block\_by\_hash        | Block by hash                             |
+| commit                 | Commit (signed header) at a height        |
+| header                 | Block header at a height                  |
+| header\_by\_hash       | Block header by hash                      |
+| genesis                | Genesis document                          |
+| genesis\_chunked       | Genesis document in chunks                |
+| consensus\_params      | Consensus parameters at a height          |
+| consensus\_state       | Current consensus state                   |
+| dump\_consensus\_state | Detailed consensus state                  |
+| unconfirmed\_txs       | Mempool transactions                      |
+| num\_unconfirmed\_txs  | Mempool transaction count                 |
+| block\_search          | Search blocks by event query              |
+| abci\_info             | ABCI application info                     |
+| check\_tx              | Check a transaction without broadcasting  |
+| broadcast\_tx\_async   | Broadcast a transaction (fire-and-forget) |
+| broadcast\_tx\_commit  | Broadcast and wait for a block            |
+| broadcast\_evidence    | Submit misbehaviour evidence              |
 
 ## Support
 
