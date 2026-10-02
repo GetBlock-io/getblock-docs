@@ -131,6 +131,18 @@
   * [newBlockTraces - EVM Data Stream](evm-data-stream/api-reference/newblocktraces-evm-data-stream.md)
   * [newMinedTransactionsTraces - EVM Data Stream](evm-data-stream/api-reference/newminedtransactionstraces-evm-data-stream.md)
 
+## Webhooks
+
+* [Overview](webhooks/overview.md)
+* [Getting Started](webhooks/getting-started.md)
+* [Triggers and Filters](webhooks/triggers-and-filters.md)
+* [Delivery Format](webhooks/delivery-format.md)
+* [Verifying Signatures](webhooks/verifying-signatures.md)
+* [Handling Chain Reorganizations](webhooks/handling-chain-reorganizations.md)
+* [Retries and Endpoint Protection](webhooks/retries-and-endpoint-protection.md)
+* [Pricing and Limits](webhooks/pricing-and-limits.md)
+* [API Reference](webhooks/api-reference.md)
+
 ## Solana Market Data
 
 * [Overview](solana-market-data/overview.md)
