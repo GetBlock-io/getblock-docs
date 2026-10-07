@@ -1,14 +1,14 @@
 ---
 description: >-
   GetBlock provides fast and reliable access to Tempo nodes via JSON-RPC API.
-  Connect to the ARC network without running your own infrastructure.
+  Connect to the Tempo network without running your own infrastructure.
 ---
 
 # Tempo
 
-Tempo is a Layer 1 blockchain purpose-built for stablecoin payments at scale, incubated by Stripe and Paradigm and launched on mainnet on March 18, 2026. It's designed from the ground up to handle high-throughput, low-cost real-world payment flows. Tempo introduces an unusual but coherent design choice: **no native gas token**.&#x20;
+Tempo is a Layer 1 blockchain purpose-built for stablecoin payments at scale, incubated by Stripe and Paradigm and launched on mainnet on March 18, 2026. It's designed from the ground up to handle high-throughput, low-cost real-world payment flows. Tempo introduces an unusual but coherent design choice: **no native gas token**.
 
-Instead of a volatile chain-native asset, transaction fees are paid in TIP-20 stablecoins (USD-denominated tokens), with a built-in stablecoin DEX maintaining liquidity. The chain runs on Paradigm's high-performance Reth execution client with deterministic sub-second finality (\~0.6-second blocks) and ships with dedicated payment lanes that reserve blockspace at the protocol level, so fees stay low even during congestion.&#x20;
+Instead of a volatile chain-native asset, transaction fees are paid in TIP-20 stablecoins (USD-denominated tokens), with a built-in stablecoin DEX maintaining liquidity. The chain runs on Paradigm's high-performance Reth execution client with deterministic sub-second finality (\~0.6-second blocks) and ships with dedicated payment lanes that reserve blockspace at the protocol level, so fees stay low even during congestion.
 
 The network is fully EVM-compatible, which means you can deploy any Solidity contract and extends the standard Ethereum JSON-RPC with three Tempo-specific namespaces (`tempo_*`, `consensus_*`, `admin_*`) for fork scheduling, consensus introspection, and validator administration.
 
