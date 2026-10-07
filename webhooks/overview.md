@@ -44,7 +44,7 @@ See [Triggers and Filters](triggers-and-filters.md) for the details and request 
 Testnets are not available for webhooks.
 
 {% hint style="info" %}
-More EVM networks are on the roadmap.
+**Coming next:** BNB Smart Chain, Polygon and Base. They cannot be selected yet: a webhook on another chain is refused with `unsupported_chain`.
 {% endhint %}
 
 ### Pricing
@@ -63,7 +63,7 @@ Your plan sets how many webhooks and addresses you can use and how many events p
 * **No replay.** An event whose 8 attempts all fail is not sent again, and events that happen while a webhook is paused are never delivered.
 * **No batching.** Every request carries exactly one event.
 * **No published list of delivery IP addresses.** Verify the signature instead.
-* **Ethereum Mainnet only.**
+* **Ethereum Mainnet only.** BNB Smart Chain, Polygon and Base come next.
 * **No automatic resume.** A webhook paused after repeated failures or an empty CU balance stays paused until you resume it.
 {% endhint %}
 
