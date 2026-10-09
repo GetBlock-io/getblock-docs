@@ -10,7 +10,7 @@ Market SQL gives you **curated, query-ready blockchain market data** you can exp
 
 Instead of learning which endpoint to call and reconstructing the information you need from raw blockchain data, you choose a dataset, connect a SQL-compatible client, and query the tables directly over the ClickHouse[^1] HTTPS protocol.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 **Market SQL** is designed for **research, backtesting, analytics, and the development of data products**. It is read-only and is not a live trading signal feed or WebSocket service. For live Solana market data, use [**Solana Market Data**](../solana-market-data/overview.md).
 {% endhint %}
 
@@ -60,7 +60,7 @@ You can browse every dataset and table in the [**Datasets**](https://account.get
 
 ### Pricing
 
-Pricing is applied per dataset, with query limits depending on the selected access plan.
+Pricing is per dataset, and query limits depend on the selected access plan.
 
 <table data-search="false"><thead><tr><th>Plan</th><th>Price</th><th>Best for</th></tr></thead><tbody><tr><td>Free trial</td><td>$0 for 2 hours</td><td>Exploring one dataset and running your first queries</td></tr><tr><td>24-hour trial</td><td>$29 for 24 hours</td><td>Validating a complete workflow or a specific investigation</td></tr><tr><td>Monthly</td><td>$299 per dataset per month</td><td>Ongoing research, analytics, bots, and model development</td></tr><tr><td>Custom</td><td>Contact sales</td><td>Custom query capacity and execution limits</td></tr></tbody></table>
 

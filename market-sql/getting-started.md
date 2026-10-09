@@ -29,9 +29,8 @@ Market SQL uses **HTTP Basic Auth** with your existing GetBlock credentials. Bot
 
 <table data-search="false"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><strong>Username</strong></td><td>Your GetBlock user ID</td></tr><tr><td><strong>Password</strong></td><td>A GetBlock API key in <code>gb_…</code> format</td></tr></tbody></table>
 
-The user ID must belong to the account that owns the API key.
-
 {% hint style="info" %}
+**The user ID must belong to the account that owns the API key.**\
 Need an API key? You can create one with **Create API key** on the [**API Docs**](https://account.getblock.io/products/sql#api-docs) tab.
 {% endhint %}
 
@@ -116,6 +115,60 @@ print(df)
 {% endtabs %}
 
 From there, you can filter, aggregate, and join tables to test a hypothesis without waiting for a new endpoint to be built.
+
+### 5. Response
+
+{% code overflow="wrap" %}
+```bash
+{
+    "block_time": "2025-10-13 04:54:17",
+    "block_date_utc": "2025-10-13",
+    "slot": 373090867,
+    "tx_idx": 3,
+    "swap_idx": 9,
+    "signature": "4BnrYwrNqVsbMQvdXrsjJAZCo24gmSDoU8tw13hgZm5u1P69HrYP4WT9FkfC4yF5EbCUoCteyeCQXK9o6LtDcPCL",
+    "fee_payer": "2BhC9q2cdKUehmtJXoHtMvyhQ1vxodUHm3fsDuMfZAHJ",
+    "provided_gas_fee": "10000",
+    "provided_gas_limit": "120000",
+    "fee": "6200",
+    "consumed_gas": "75291",
+    "pool_id": "D2izdr62stAqqmj7T9zJAJbX2oTRDAaYuap1zVHWMBCA",
+    "signer": "2BhC9q2cdKUehmtJXoHtMvyhQ1vxodUHm3fsDuMfZAHJ",
+    "direction": "B",
+    "base_coin": "7MLMicE9WaY1BT6UxTkSTPSbKMwL3QtxXqXQLastXNgQ",
+    "quote_coin": "So11111111111111111111111111111111111111112",
+    "base_coin_amount": "35725002561",
+    "quote_coin_amount": "502228929",
+    "base_coin_slippage": "-175076707",
+    "quote_coin_slippage": "0",
+    "parent_program": "",
+    "top_level_transfers_json": "[{\"from\":\"2BhC9q2cdKUehmtJXoHtMvyhQ1vxodUHm3fsDuMfZAHJ\",\"to\":\"7Ji8r5SrWQsGfAGgG1yckD4EzHwhcBwXhHEkK92EDc8T\",\"lamports\":\"502228929\"}]",
+    "orig_base_coin_amount": "35725002561",
+    "orig_quote_coin_amount": "502228929",
+    "config": "HcuvFfW3aHLgQA2c31bHEMWjV8Xxtphaeq84SKarssUh",
+    "trade_direction": "1",
+    "has_referral": 1,
+    "swap_amount0": "502228929",
+    "swap_amount1": "35549925854",
+    "swap_mode": "0",
+    "input_amount": "502228929",
+    "output_amount": "35725002561",
+    "base_mint": "7MLMicE9WaY1BT6UxTkSTPSbKMwL3QtxXqXQLastXNgQ",
+    "quote_mint": "So11111111111111111111111111111111111111112",
+    "referral": "dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN",
+    "blockhash_prefix": "",
+    "cu_price_ix_index": 0,
+    "cu_limit_ix_index": 0,
+    "num_signatures": 0,
+    "transaction_version": 0,
+    "lookup_tables": "",
+    "curve_complete": 0,
+    "base_reserve_after": "0",
+    "quote_reserve_after": "0",
+    "signers": []
+}
+```
+{% endcode %}
 
 ### Explore the catalog in the dashboard
 

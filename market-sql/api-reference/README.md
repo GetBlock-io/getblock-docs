@@ -9,7 +9,7 @@ description: >-
 
 This section documents how to connect to Market SQL and which tables each dataset exposes.
 
-Market SQL has a single endpoint. What you receive is decided by the [**dataset**](./#datasets) you select and the SQL you send. Each dataset has its own page below listing every table and what it contains.
+Market SQL has a single endpoint. What you receive depends on the [**dataset**](./#datasets) you select and the SQL you send. Each dataset has its own page below listing every table and what it contains.
 
 ### Quickstart
 
@@ -66,21 +66,18 @@ print(client.query_df(
 ))
 ```
 {% endtab %}
-
-{% tab title="Response" %}
-The service returns HTTP `200` and one JSON object per row:
-
-```json
-{"block_time":"…","direction":"…","base_token":"…","quote_token":"…"}
-{"block_time":"…","direction":"…","base_token":"…","quote_token":"…"}
-```
-{% endtab %}
 {% endtabs %}
 
 ### Response
 
 {% code overflow="wrap" %}
-```
+```json
+{"block_time":"2025-10-09 17:00:00","direction":"B","base_token":"HdbQVdtTh3gFuvmvVqHCh37w9ADPCiE9f24EX63npump","quote_token":"So11111111111111111111111111111111111111112"}
+{"block_time":"2025-10-09 17:00:00","direction":"S","base_token":"So11111111111111111111111111111111111111112","quote_token":"2oyFNVveXsgPZGgwSPMSASriv59M5ZqZ9CCewanK38Q8"}
+{"block_time":"2025-10-09 17:00:00","direction":"B","base_token":"So11111111111111111111111111111111111111112","quote_token":"5Dyr4rWsqGxJEtVRUM7HzgS6UQE93Babqot8mgevvHPh"}
+{"block_time":"2025-10-09 17:00:00","direction":"S","base_token":"2ktfSdqv5Te5XRFo4Do5U21RNGKiyuWbQatXp7p8pump","quote_token":"So11111111111111111111111111111111111111112"}
+{"block_time":"2025-10-09 17:00:00","direction":"S","base_token":"So11111111111111111111111111111111111111112","quote_token":"2rP2qcdjv3LFYvwU9Rp89TDm7EAf3Zv9iuRXP6Uckw2T"}
+
 ```
 {% endcode %}
 
@@ -92,15 +89,11 @@ https://market-sql.eu-central-1.getblock.io
 ```
 {% endcode %}
 
-Send requests as `POST` over HTTPS on port `443`, with the SQL statement as the request body. The native ClickHouse TCP protocol is not supported.
-
 ### Authentication
 
 Credentials go in **HTTP Basic Auth** on every request, not in the URL.
 
 <table data-search="false"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Username</td><td>Your GetBlock user ID</td></tr><tr><td>Password</td><td>A GetBlock API key in <code>gb_…</code> format</td></tr></tbody></table>
-
-Find both on the [**API Docs**](https://account.getblock.io/products/sql#api-docs) tab of Market SQL. The user ID must match the owner of the API key, and the key must have access to the requested dataset.
 
 ### Parameters
 

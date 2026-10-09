@@ -50,18 +50,25 @@ A query that runs longer than the execution limit is stopped. Filter on time or 
 
 The `default_format` parameter sets how rows are returned. All examples in this documentation use `JSONEachRow`, which returns one JSON object per line:
 
+{% code overflow="wrap" %}
 ```json
-{"block_time":"…","direction":"…","base_token":"…","quote_token":"…"}
-{"block_time":"…","direction":"…","base_token":"…","quote_token":"…"}
+{"block_time":"2025-10-09 17:00:00","direction":"B","base_token":"HdbQVdtTh3gFuvmvVqHCh37w9ADPCiE9f24EX63npump","quote_token":"So11111111111111111111111111111111111111112"}
+{"block_time":"2025-10-09 17:00:00","direction":"S","base_token":"So11111111111111111111111111111111111111112","quote_token":"2oyFNVveXsgPZGgwSPMSASriv59M5ZqZ9CCewanK38Q8"}
+{"block_time":"2025-10-09 17:00:00","direction":"B","base_token":"So11111111111111111111111111111111111111112","quote_token":"5Dyr4rWsqGxJEtVRUM7HzgS6UQE93Babqot8mgevvHPh"}
+{"block_time":"2025-10-09 17:00:00","direction":"S","base_token":"2ktfSdqv5Te5XRFo4Do5U21RNGKiyuWbQatXp7p8pump","quote_token":"So11111111111111111111111111111111111111112"}
+{"block_time":"2025-10-09 17:00:00","direction":"S","base_token":"So11111111111111111111111111111111111111112","quote_token":"2rP2qcdjv3LFYvwU9Rp89TDm7EAf3Zv9iuRXP6Uckw2T"}
 ```
+{% endcode %}
 
 A `FORMAT` clause at the end of the SQL statement takes precedence over `default_format`. The official ClickHouse clients set the format for you: `@clickhouse/client` through its `format` option, and `clickhouse-connect` through methods such as `query_df`.
 
+{% hint style="warning" %}
 ### Research, not live delivery
 
 Market SQL is built for research and analytics. It does not push updates and is not a live trading signal feed or WebSocket service.
 
 Applications that need continuously updated Solana prices, trades, or candles should use [**Solana Market Data**](../solana-market-data/overview.md), and use Market SQL to research and backtest the same markets.
+{% endhint %}
 
 ## Next steps
 
