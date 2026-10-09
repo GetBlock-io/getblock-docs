@@ -103,7 +103,7 @@ print(address_list["entry_count"])
 
 ## Response Parameters
 
-The answer is the [address list object](./#the-address-list-object) after the change. `entry_count` shows the new total.
+The answer is the [address list object](objects-and-conventions.md#the-address-list-object) after the change. `entry_count` shows the new total.
 
 ## Use Cases
 

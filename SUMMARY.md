@@ -142,6 +142,8 @@
 * [Retries and Endpoint Protection](webhooks/retries-and-endpoint-protection.md)
 * [Pricing and Limits](webhooks/pricing-and-limits.md)
 * [API Reference](webhooks/api-reference/README.md)
+  * [Objects and Conventions](webhooks/api-reference/objects-and-conventions.md)
+  * [Error Codes](webhooks/api-reference/error-codes.md)
   * [Create webhook - Webhooks](webhooks/api-reference/create-webhook.md)
   * [List webhooks - Webhooks](webhooks/api-reference/list-webhooks.md)
   * [Get webhook limits - Webhooks](webhooks/api-reference/get-webhook-limits.md)

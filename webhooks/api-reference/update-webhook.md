@@ -124,7 +124,7 @@ print(response.json())
 
 ## Response Parameters
 
-The answer is the updated [webhook object](./#the-webhook-object). The fields to check after an update:
+The answer is the updated [webhook object](objects-and-conventions.md#the-webhook-object). The fields to check after an update:
 
 | Field | Type | Description |
 | --- | --- | --- |
@@ -151,7 +151,7 @@ The change applies to the next event at once. Retries that are already scheduled
 | 400 | `invalid_webhook_name`, `invalid_phases`, `confirm_depth_out_of_range`, `invalid_batching` | A field has an invalid value. |
 | 400 | `filter_would_be_empty` | The change would leave the webhook with no condition. |
 | 400 | `filter_reserved_field` | `filters` still contains a leaf with `"src": "sugar"`. |
-| 400 | `target_url_*`, other `filter_*` codes | See [Error codes](./#error-codes). |
+| 400 | `target_url_*`, other `filter_*` codes | See [Error codes](error-codes.md). |
 | 404 | `not_found` | No such webhook among yours. |
 | 404 | `list_not_found` | A `list_refs` entry is not one of your address lists. |
 | 409 | `cap_addresses_exceeded`, `cap_inline_addresses_exceeded`, `cap_list_refs_exceeded`, `cap_account_addresses_exceeded` | The result does not fit your plan. |

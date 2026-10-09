@@ -98,7 +98,7 @@ print(address_list)
 
 ## Response Parameters
 
-The answer is the renamed [address list object](./#the-address-list-object).
+The answer is the renamed [address list object](objects-and-conventions.md#the-address-list-object).
 
 ## Use Cases
 

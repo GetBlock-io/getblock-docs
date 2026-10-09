@@ -107,7 +107,7 @@ else:
 
 ## Response Parameters
 
-The answer is the [webhook object](./#the-webhook-object). The fields that change:
+The answer is the [webhook object](objects-and-conventions.md#the-webhook-object). The fields that change:
 
 | Field | Type | Description |
 | --- | --- | --- |

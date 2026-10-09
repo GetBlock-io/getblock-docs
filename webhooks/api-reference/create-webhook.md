@@ -165,7 +165,7 @@ More request bodies, for wallet activity and transaction confirmations, are in [
 
 ## Response Parameters
 
-The answer is the [webhook object](./#the-webhook-object) plus `secret`:
+The answer is the [webhook object](objects-and-conventions.md#the-webhook-object) plus `secret`:
 
 | Field | Type | Description |
 | --- | --- | --- |
@@ -194,7 +194,7 @@ The answer is the [webhook object](./#the-webhook-object) plus `secret`:
 | 400 | `confirm_depth_out_of_range` | `confirm_depth` is outside 2 to 96. |
 | 400 | `unsupported_chain`, `unsupported_network` | Anything but `eth` / `mainnet`. |
 | 400 | `target_url_*` | `target_url` breaks one of the [target URL rules](../retries-and-endpoint-protection.md#target-url-rules). |
-| 400 | `filter_*`, `unknown_filter_leaf`, `abi_filter_not_supported` | The filter tree is invalid or does not suit the trigger. See [Error codes](./#error-codes). |
+| 400 | `filter_*`, `unknown_filter_leaf`, `abi_filter_not_supported` | The filter tree is invalid or does not suit the trigger. See [Error codes](error-codes.md). |
 | 400 | `invalid_webhook_name`, `invalid_batching` | `name` is empty after trimming, too long, or has control characters; `batching` has negative values. |
 | 403 | `plan_required` | A team account without a plan. |
 | 404 | `list_not_found` | A `list_refs` entry is not one of your address lists. |

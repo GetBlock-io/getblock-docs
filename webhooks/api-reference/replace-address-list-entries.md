@@ -110,7 +110,7 @@ print(address_list)
 
 ## Response Parameters
 
-The answer is the [address list object](./#the-address-list-object) after the change. `entry_count` is the size of the new set.
+The answer is the [address list object](objects-and-conventions.md#the-address-list-object) after the change. `entry_count` is the size of the new set.
 
 ## Use Cases
 
