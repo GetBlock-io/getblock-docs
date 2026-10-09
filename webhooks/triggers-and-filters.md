@@ -136,7 +136,7 @@ A notification when a transaction of the addresses in a named list is 12 blocks 
 {% endtab %}
 {% endtabs %}
 
-Send any of these bodies to `POST /api/v1/webhooks` — see [Create a webhook](api-reference.md#create-a-webhook).
+Send any of these bodies to `POST /api/v1/webhooks` — see [Create a webhook](api-reference/create-webhook.md).
 
 ### Address lists
 
@@ -147,7 +147,7 @@ A named address list (`al_…`) holds a set of addresses that any number of webh
 * A list that a webhook still references cannot be deleted (`409 list_in_use`): remove it from the webhook's `list_refs`, or delete the webhook, first.
 * Every address of a list counts towards the plan limits of every webhook that references it. See [Plan limits](pricing-and-limits.md#plan-limits).
 
-In the dashboard, lists are on the **Address lists** tab, where you can also import a `.txt` or `.csv` file. The endpoints are in the [API Reference](api-reference.md#address-lists).
+In the dashboard, lists are on the **Address lists** tab, where you can also import a `.txt` or `.csv` file. The endpoints are in the [API Reference](api-reference/README.md#address-lists).
 
 ### Changing a webhook
 

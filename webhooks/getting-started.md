@@ -90,7 +90,7 @@ Through the API, the answer is `201 Created` with the webhook and its signing `s
 ```
 {% endcode %}
 
-The `addresses` you send are kept in the webhook's own address list, which the filter references through `list_refs`. The field names and every other option are in [Triggers and Filters](triggers-and-filters.md) and the [API Reference](api-reference.md#create-a-webhook).
+The `addresses` you send are kept in the webhook's own address list, which the filter references through `list_refs`. The field names and every other option are in [Triggers and Filters](triggers-and-filters.md) and the [API Reference](api-reference/create-webhook.md).
 
 ### 3. Save the signing secret
 
