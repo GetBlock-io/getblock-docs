@@ -9,7 +9,7 @@ description: >-
 
 **GetBlock Webhooks push on-chain events to your own HTTPS endpoint, for payment services, wallets, exchanges and monitoring tools.** You describe what to watch — wallet addresses, a contract's events or a transaction's confirmations — and GetBlock sends every matching event to your URL as a signed `POST` request.
 
-There is nothing to poll and no connection to keep open: your server only has to accept HTTPS requests. You manage webhooks in the [GetBlock dashboard](https://account.getblock.io/products/webhooks) or through the [Public API](api-reference.md).
+There is nothing to poll and no connection to keep open: your server only has to accept HTTPS requests. You manage webhooks in the [GetBlock dashboard](https://account.getblock.io/products/webhooks) or through the [Public API](api-reference/README.md).
 
 ### How it works
 
@@ -76,5 +76,5 @@ Your plan sets how many webhooks and addresses you can use and how many events p
 * [Handling Chain Reorganizations](handling-chain-reorganizations.md): de-duplicate events and undo removed ones.
 * [Retries and Endpoint Protection](retries-and-endpoint-protection.md): the retry schedule, auto-pause and URL rules.
 * [Pricing and Limits](pricing-and-limits.md): CU per attempt, webhook statuses and plan limits.
-* [API Reference](api-reference.md): every endpoint of the Public API for webhooks and address lists.
+* [API Reference](api-reference/README.md): every endpoint of the Public API for webhooks and address lists.
 * [Webhooks in the dashboard](https://account.getblock.io/products/webhooks)

@@ -83,4 +83,4 @@ Test deliveries are free and are sent even at zero balance, as long as the webho
 
 Other limits, on every plan: 50 named address lists per account, 10 lists per webhook, 1,000 addresses written into the filter itself, and a request body of about 5 MiB — a list of 100,000 addresses (about 4.6 MB) fits in one request.
 
-A request over a limit is refused with `409` and the `cap_*` code of the limit reached (see [Error codes](api-reference.md#error-codes)). Your current limits and usage are on the **Pricing** and **Overview** tabs of the Webhooks page in the dashboard, and in `GET /api/v1/webhooks/limits`.
+A request over a limit is refused with `409` and the `cap_*` code of the limit reached (see [Error codes](api-reference/README.md#error-codes)). Your current limits and usage are on the **Pricing** and **Overview** tabs of the Webhooks page in the dashboard, and in `GET /api/v1/webhooks/limits`.
