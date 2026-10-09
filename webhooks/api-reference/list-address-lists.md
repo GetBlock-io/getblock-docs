@@ -91,7 +91,7 @@ for address_list in page["items"]:
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `items` | array | One page of [address list objects](./#the-address-list-object), newest first. Addresses are not included. |
+| `items` | array | One page of [address list objects](objects-and-conventions.md#the-address-list-object), newest first. Addresses are not included. |
 | `next_cursor` | string | Pass it as `cursor` for the next page. Absent on the last page. |
 
 ## Use Cases

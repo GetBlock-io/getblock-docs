@@ -119,7 +119,7 @@ for w in webhooks:
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `items` | array | One page of [webhook objects](./#the-webhook-object), newest first. |
+| `items` | array | One page of [webhook objects](objects-and-conventions.md#the-webhook-object), newest first. |
 | `next_cursor` | string | Pass it as `cursor` for the next page. Absent on the last page. |
 
 ## Use Cases
