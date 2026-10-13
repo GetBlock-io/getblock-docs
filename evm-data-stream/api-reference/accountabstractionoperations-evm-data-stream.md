@@ -1,6 +1,8 @@
 ---
 description: >-
-  Stream decoded ERC-4337 EntryPoint events: UserOperation results, account deployments, and revert reasons. Complete guide on how to use the accountAbstractionOperations topic in GetBlock EVM Data Stream documentation.
+  Stream decoded ERC-4337 EntryPoint events: UserOperation results, account
+  deployments, and revert reasons. Complete guide on how to use the
+  accountAbstractionOperations topic in GetBlock EVM Data Stre
 ---
 
 # accountAbstractionOperations - EVM Data Stream
@@ -13,23 +15,16 @@ The `accountAbstractionOperations` topic decodes the events of the canonical [ER
 
 ## Parameters
 
-<table data-search="false"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>filters.entryPoint</code></td><td>string</td><td>No</td><td>EntryPoint contract address. Omit to receive every canonical EntryPoint version.</td></tr>
-<tr><td><code>filters.sender</code></td><td>string</td><td>No</td><td>Smart account (UserOperation <code>sender</code>).</td></tr>
-<tr><td><code>filters.paymaster</code></td><td>string</td><td>No</td><td>Paymaster that sponsored the operation.</td></tr>
-<tr><td><code>filters.userOpHash</code></td><td>string</td><td>No</td><td>One UserOperation hash.</td></tr>
-<tr><td><code>filters.eventType</code></td><td>string</td><td>No</td><td>One of <code>userOperation</code>, <code>accountDeployed</code>, <code>revertReason</code>, or <code>beforeExecution</code>.</td></tr>
-<tr><td><code>filters.success</code></td><td>boolean</td><td>No</td><td>Filter <code>userOperation</code> events by execution result.</td></tr>
-</tbody></table>
+<table data-search="false"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>filters.entryPoint</code></td><td>string</td><td>No</td><td>EntryPoint contract address. Omit to receive every canonical EntryPoint version.</td></tr><tr><td><code>filters.sender</code></td><td>string</td><td>No</td><td>Smart account (UserOperation <code>sender</code>).</td></tr><tr><td><code>filters.paymaster</code></td><td>string</td><td>No</td><td>Paymaster that sponsored the operation.</td></tr><tr><td><code>filters.userOpHash</code></td><td>string</td><td>No</td><td>One UserOperation hash.</td></tr><tr><td><code>filters.eventType</code></td><td>string</td><td>No</td><td>One of <code>userOperation</code>, <code>accountDeployed</code>, <code>revertReason</code>, or <code>beforeExecution</code>.</td></tr><tr><td><code>filters.success</code></td><td>boolean</td><td>No</td><td>Filter <code>userOperation</code> events by execution result.</td></tr></tbody></table>
 
 `eventType` values map to the EntryPoint events:
 
-| `eventType`        | EntryPoint event               | When it fires                                                       |
-| ------------------ | ------------------------------ | ------------------------------------------------------------------- |
-| `userOperation`    | `UserOperationEvent`           | Once per UserOperation, after execution, with its result and gas cost. |
-| `accountDeployed`  | `AccountDeployed`              | When a UserOperation deploys its smart account.                     |
-| `revertReason`     | `UserOperationRevertReason`    | When a UserOperation's call reverted, with the revert data.         |
-| `beforeExecution`  | `BeforeExecution`              | Once per bundle, before the operations in it execute.               |
+| `eventType`       | EntryPoint event            | When it fires                                                          |
+| ----------------- | --------------------------- | ---------------------------------------------------------------------- |
+| `userOperation`   | `UserOperationEvent`        | Once per UserOperation, after execution, with its result and gas cost. |
+| `accountDeployed` | `AccountDeployed`           | When a UserOperation deploys its smart account.                        |
+| `revertReason`    | `UserOperationRevertReason` | When a UserOperation's call reverted, with the revert data.            |
+| `beforeExecution` | `BeforeExecution`           | Once per bundle, before the operations in it execute.                  |
 
 ## Request Example
 
@@ -200,28 +195,7 @@ A `beforeExecution` event carries only the EntryPoint and log context:
 
 The `result` object contains the event envelope and the payload in `data`.
 
-<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>eventId</code></td><td>string</td><td>Stable event identifier. A reorg correction reuses it.</td></tr>
-<tr><td><code>removed</code></td><td>boolean</td><td><code>true</code> when a reorg removed this previously delivered event.</td></tr>
-<tr><td><code>revision</code></td><td>number</td><td>Event version. For one <code>eventId</code>, a greater revision is newer.</td></tr>
-<tr><td><code>data.eventType</code></td><td>string</td><td><code>userOperation</code>, <code>accountDeployed</code>, <code>revertReason</code>, or <code>beforeExecution</code>. The other fields present depend on it.</td></tr>
-<tr><td><code>data.entryPoint</code></td><td>string</td><td>EntryPoint contract that emitted the event.</td></tr>
-<tr><td><code>data.userOpHash</code></td><td>string</td><td>UserOperation hash. Not present on <code>beforeExecution</code>.</td></tr>
-<tr><td><code>data.sender</code></td><td>string</td><td>Smart account address.</td></tr>
-<tr><td><code>data.paymaster</code></td><td>string</td><td>Paymaster address, or the zero address when the account paid for itself.</td></tr>
-<tr><td><code>data.nonce</code></td><td>string</td><td>UserOperation nonce, hex-encoded (<code>userOperation</code>).</td></tr>
-<tr><td><code>data.success</code></td><td>boolean</td><td>Whether the UserOperation's call succeeded (<code>userOperation</code>).</td></tr>
-<tr><td><code>data.actualGasCost</code></td><td>string</td><td>Total cost charged for the operation in wei, hex-encoded (<code>userOperation</code>).</td></tr>
-<tr><td><code>data.actualGasUsed</code></td><td>string</td><td>Gas used by the operation, hex-encoded (<code>userOperation</code>).</td></tr>
-<tr><td><code>data.address</code></td><td>string</td><td>Address of the contract that emitted the log.</td></tr>
-<tr><td><code>data.blockNumber</code></td><td>string</td><td>Block number, hex-encoded.</td></tr>
-<tr><td><code>data.blockHash</code></td><td>string</td><td>Hash of the block that contains the log.</td></tr>
-<tr><td><code>data.blockTimestamp</code></td><td>string</td><td>Block timestamp in Unix seconds, hex-encoded.</td></tr>
-<tr><td><code>data.transactionHash</code></td><td>string</td><td>Hash of the transaction that emitted the log.</td></tr>
-<tr><td><code>data.transactionIndex</code></td><td>string</td><td>Transaction's position in the block, hex-encoded.</td></tr>
-<tr><td><code>data.logIndex</code></td><td>string</td><td>Log's position in the block, hex-encoded.</td></tr>
-<tr><td><code>data.removed</code></td><td>boolean</td><td>The underlying log's <code>removed</code> flag. Use the envelope's <code>removed</code> for reorg handling.</td></tr>
-</tbody></table>
+<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>eventId</code></td><td>string</td><td>Stable event identifier. A reorg correction reuses it.</td></tr><tr><td><code>removed</code></td><td>boolean</td><td><code>true</code> when a reorg removed this previously delivered event.</td></tr><tr><td><code>revision</code></td><td>number</td><td>Event version. For one <code>eventId</code>, a greater revision is newer.</td></tr><tr><td><code>data.eventType</code></td><td>string</td><td><code>userOperation</code>, <code>accountDeployed</code>, <code>revertReason</code>, or <code>beforeExecution</code>. The other fields present depend on it.</td></tr><tr><td><code>data.entryPoint</code></td><td>string</td><td>EntryPoint contract that emitted the event.</td></tr><tr><td><code>data.userOpHash</code></td><td>string</td><td>UserOperation hash. Not present on <code>beforeExecution</code>.</td></tr><tr><td><code>data.sender</code></td><td>string</td><td>Smart account address.</td></tr><tr><td><code>data.paymaster</code></td><td>string</td><td>Paymaster address, or the zero address when the account paid for itself.</td></tr><tr><td><code>data.nonce</code></td><td>string</td><td>UserOperation nonce, hex-encoded (<code>userOperation</code>).</td></tr><tr><td><code>data.success</code></td><td>boolean</td><td>Whether the UserOperation's call succeeded (<code>userOperation</code>).</td></tr><tr><td><code>data.actualGasCost</code></td><td>string</td><td>Total cost charged for the operation in wei, hex-encoded (<code>userOperation</code>).</td></tr><tr><td><code>data.actualGasUsed</code></td><td>string</td><td>Gas used by the operation, hex-encoded (<code>userOperation</code>).</td></tr><tr><td><code>data.address</code></td><td>string</td><td>Address of the contract that emitted the log.</td></tr><tr><td><code>data.blockNumber</code></td><td>string</td><td>Block number, hex-encoded.</td></tr><tr><td><code>data.blockHash</code></td><td>string</td><td>Hash of the block that contains the log.</td></tr><tr><td><code>data.blockTimestamp</code></td><td>string</td><td>Block timestamp in Unix seconds, hex-encoded.</td></tr><tr><td><code>data.transactionHash</code></td><td>string</td><td>Hash of the transaction that emitted the log.</td></tr><tr><td><code>data.transactionIndex</code></td><td>string</td><td>Transaction's position in the block, hex-encoded.</td></tr><tr><td><code>data.logIndex</code></td><td>string</td><td>Log's position in the block, hex-encoded.</td></tr><tr><td><code>data.removed</code></td><td>boolean</td><td>The underlying log's <code>removed</code> flag. Use the envelope's <code>removed</code> for reorg handling.</td></tr></tbody></table>
 
 {% hint style="info" %}
 `accountDeployed` and `revertReason` events carry the fields of their EntryPoint event (for example the account `factory`, or the `revertReason` bytes) alongside `userOpHash` and `sender`. Read fields by name and ignore any you don't use.
@@ -236,11 +210,4 @@ The `result` object contains the event envelope and the payload in `data`.
 
 ## Error Handling
 
-<table data-search="false"><thead><tr><th>Code</th><th>Message</th><th>Cause</th></tr></thead><tbody>
-<tr><td><code>-32602</code></td><td><code>invalid eventType "…": must be userOperation, accountDeployed, revertReason, or beforeExecution</code></td><td><code>eventType</code> has an unsupported value.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid entryPoint: invalid EVM address "…"</code></td><td><code>entryPoint</code> is not a 20-byte hex address.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid sender: invalid EVM address "…"</code></td><td><code>sender</code> is not a 20-byte hex address.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid paymaster: invalid EVM address "…"</code></td><td><code>paymaster</code> is not a 20-byte hex address.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid accountAbstractionOperations request: json: unknown field "…"</code></td><td>The request has a field this topic does not accept.</td></tr>
-<tr><td><code>-32001</code></td><td><code>subscription limit exceeded</code></td><td>You already have 15 active or pending subscriptions.</td></tr>
-</tbody></table>
+<table data-search="false"><thead><tr><th>Code</th><th>Message</th><th>Cause</th></tr></thead><tbody><tr><td><code>-32602</code></td><td><code>invalid eventType "…": must be userOperation, accountDeployed, revertReason, or beforeExecution</code></td><td><code>eventType</code> has an unsupported value.</td></tr><tr><td><code>-32602</code></td><td><code>invalid entryPoint: invalid EVM address "…"</code></td><td><code>entryPoint</code> is not a 20-byte hex address.</td></tr><tr><td><code>-32602</code></td><td><code>invalid sender: invalid EVM address "…"</code></td><td><code>sender</code> is not a 20-byte hex address.</td></tr><tr><td><code>-32602</code></td><td><code>invalid paymaster: invalid EVM address "…"</code></td><td><code>paymaster</code> is not a 20-byte hex address.</td></tr><tr><td><code>-32602</code></td><td><code>invalid accountAbstractionOperations request: json: unknown field "…"</code></td><td>The request has a field this topic does not accept.</td></tr><tr><td><code>-32001</code></td><td><code>subscription limit exceeded</code></td><td>You already have 15 active or pending subscriptions.</td></tr></tbody></table>

@@ -1,9 +1,9 @@
 ---
 description: >-
-  Example code for the cosmos/staking/v1beta1/delegations/{delegator_addr}
-  REST method. Complete guide on how to use
+  Example code for the cosmos/staking/v1beta1/delegations/{delegator_addr} REST
+  method. Complete guide on how to use
   cosmos/staking/v1beta1/delegations/{delegator_addr} REST method in GetBlock
-  Web3 documentation.
+  Web3 docu
 ---
 
 # /cosmos/staking/v1beta1/delegations/{delegator\_addr} - Akash

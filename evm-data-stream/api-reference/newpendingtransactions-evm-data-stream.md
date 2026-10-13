@@ -1,6 +1,8 @@
 ---
 description: >-
-  Stream pending mempool transactions, as full objects or hashes, filtered by sender and recipient. Complete guide on how to use the newPendingTransactions topic in GetBlock EVM Data Stream documentation.
+  Stream pending mempool transactions, as full objects or hashes, filtered by
+  sender and recipient. Complete guide on how to use the newPendingTransactions
+  topic in GetBlock EVM Data Stream documentatio
 ---
 
 # newPendingTransactions - EVM Data Stream
@@ -17,11 +19,7 @@ Pending transactions are what GetBlock's nodes observe in the public mempool. Tr
 
 ## Parameters
 
-<table data-search="false"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>hashesOnly</code></td><td>boolean</td><td>No</td><td><code>true</code> to receive only the transaction hash. Default <code>false</code>: the full transaction object.</td></tr>
-<tr><td><code>fromAddress</code></td><td>string or array</td><td>No</td><td>Sender address, or an array of senders.</td></tr>
-<tr><td><code>toAddress</code></td><td>string or array</td><td>No</td><td>Recipient address, or an array of recipients.</td></tr>
-</tbody></table>
+<table data-search="false"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>hashesOnly</code></td><td>boolean</td><td>No</td><td><code>true</code> to receive only the transaction hash. Default <code>false</code>: the full transaction object.</td></tr><tr><td><code>fromAddress</code></td><td>string or array</td><td>No</td><td>Sender address, or an array of senders.</td></tr><tr><td><code>toAddress</code></td><td>string or array</td><td>No</td><td>Recipient address, or an array of recipients.</td></tr></tbody></table>
 
 These fields sit at the **top level** of the request object, not inside `filters`. Address matching is **OR**: a transaction matches if its sender is in `fromAddress` **or** its recipient is in `toAddress`. `fromAddress` and `toAddress` together accept at most 50 addresses.
 
@@ -195,27 +193,7 @@ The payload shape differs from `newMinedTransactions`. Here `data` **is** the tr
 
 The `result` object contains the event envelope and the payload in `data`.
 
-<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>eventId</code></td><td>string</td><td>Stable event identifier. A reorg correction reuses it.</td></tr>
-<tr><td><code>removed</code></td><td>boolean</td><td><code>true</code> when a reorg removed this previously delivered event.</td></tr>
-<tr><td><code>revision</code></td><td>number</td><td>Event version. For one <code>eventId</code>, a greater revision is newer.</td></tr>
-<tr><td><code>data</code></td><td>object or string</td><td>The pending transaction, in the same shape as <code>eth_getTransactionByHash</code>. With <code>hashesOnly</code>, the transaction hash as a string.</td></tr>
-<tr><td><code>data.hash</code></td><td>string</td><td>Transaction hash.</td></tr>
-<tr><td><code>data.from</code></td><td>string</td><td>Sender.</td></tr>
-<tr><td><code>data.to</code></td><td>string</td><td>Recipient. <code>null</code> for contract creation.</td></tr>
-<tr><td><code>data.value</code></td><td>string</td><td>Native value in wei, hex-encoded.</td></tr>
-<tr><td><code>data.input</code></td><td>string</td><td>Call data.</td></tr>
-<tr><td><code>data.nonce</code></td><td>string</td><td>Sender nonce, hex-encoded.</td></tr>
-<tr><td><code>data.gas</code></td><td>string</td><td>Gas limit, hex-encoded.</td></tr>
-<tr><td><code>data.gasPrice</code></td><td>string</td><td>Gas price in wei, hex-encoded. Equals <code>maxFeePerGas</code> for EIP-1559 transactions.</td></tr>
-<tr><td><code>data.maxFeePerGas</code></td><td>string</td><td>EIP-1559 max fee per gas.</td></tr>
-<tr><td><code>data.maxPriorityFeePerGas</code></td><td>string</td><td>EIP-1559 priority fee per gas.</td></tr>
-<tr><td><code>data.type</code></td><td>string</td><td>EIP-2718 transaction type, hex-encoded.</td></tr>
-<tr><td><code>data.chainId</code></td><td>string</td><td>Chain ID, hex-encoded.</td></tr>
-<tr><td><code>data.accessList</code></td><td>array</td><td>EIP-2930 access list.</td></tr>
-<tr><td><code>data.blockHash, blockNumber, blockTimestamp, transactionIndex</code></td><td>null</td><td>Always <code>null</code>: the transaction is not in a block yet.</td></tr>
-<tr><td><code>data.v, r, s, yParity</code></td><td>string</td><td>Signature values.</td></tr>
-</tbody></table>
+<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>eventId</code></td><td>string</td><td>Stable event identifier. A reorg correction reuses it.</td></tr><tr><td><code>removed</code></td><td>boolean</td><td><code>true</code> when a reorg removed this previously delivered event.</td></tr><tr><td><code>revision</code></td><td>number</td><td>Event version. For one <code>eventId</code>, a greater revision is newer.</td></tr><tr><td><code>data</code></td><td>object or string</td><td>The pending transaction, in the same shape as <code>eth_getTransactionByHash</code>. With <code>hashesOnly</code>, the transaction hash as a string.</td></tr><tr><td><code>data.hash</code></td><td>string</td><td>Transaction hash.</td></tr><tr><td><code>data.from</code></td><td>string</td><td>Sender.</td></tr><tr><td><code>data.to</code></td><td>string</td><td>Recipient. <code>null</code> for contract creation.</td></tr><tr><td><code>data.value</code></td><td>string</td><td>Native value in wei, hex-encoded.</td></tr><tr><td><code>data.input</code></td><td>string</td><td>Call data.</td></tr><tr><td><code>data.nonce</code></td><td>string</td><td>Sender nonce, hex-encoded.</td></tr><tr><td><code>data.gas</code></td><td>string</td><td>Gas limit, hex-encoded.</td></tr><tr><td><code>data.gasPrice</code></td><td>string</td><td>Gas price in wei, hex-encoded. Equals <code>maxFeePerGas</code> for EIP-1559 transactions.</td></tr><tr><td><code>data.maxFeePerGas</code></td><td>string</td><td>EIP-1559 max fee per gas.</td></tr><tr><td><code>data.maxPriorityFeePerGas</code></td><td>string</td><td>EIP-1559 priority fee per gas.</td></tr><tr><td><code>data.type</code></td><td>string</td><td>EIP-2718 transaction type, hex-encoded.</td></tr><tr><td><code>data.chainId</code></td><td>string</td><td>Chain ID, hex-encoded.</td></tr><tr><td><code>data.accessList</code></td><td>array</td><td>EIP-2930 access list.</td></tr><tr><td><code>data.blockHash, blockNumber, blockTimestamp, transactionIndex</code></td><td>null</td><td>Always <code>null</code>: the transaction is not in a block yet.</td></tr><tr><td><code>data.v, r, s, yParity</code></td><td>string</td><td>Signature values.</td></tr></tbody></table>
 
 ## Use Cases
 
@@ -226,10 +204,4 @@ The `result` object contains the event envelope and the payload in `data`.
 
 ## Error Handling
 
-<table data-search="false"><thead><tr><th>Code</th><th>Message</th><th>Cause</th></tr></thead><tbody>
-<tr><td><code>-32602</code></td><td><code>fromAddress and toAddress exceed the 50-address limit</code></td><td>More than 50 addresses in total.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid toAddress address "…"</code></td><td>An address is not a 20-byte hex address. The same applies to <code>fromAddress</code>.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid newPendingTransactions request: json: unknown field "filters"</code></td><td>The fields were nested in <code>filters</code>. Put them at the top level.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid newPendingTransactions request: json: unknown field "…"</code></td><td>The request has a field this topic does not accept.</td></tr>
-<tr><td><code>-32001</code></td><td><code>subscription limit exceeded</code></td><td>You already have 15 active or pending subscriptions.</td></tr>
-</tbody></table>
+<table data-search="false"><thead><tr><th>Code</th><th>Message</th><th>Cause</th></tr></thead><tbody><tr><td><code>-32602</code></td><td><code>fromAddress and toAddress exceed the 50-address limit</code></td><td>More than 50 addresses in total.</td></tr><tr><td><code>-32602</code></td><td><code>invalid toAddress address "…"</code></td><td>An address is not a 20-byte hex address. The same applies to <code>fromAddress</code>.</td></tr><tr><td><code>-32602</code></td><td><code>invalid newPendingTransactions request: json: unknown field "filters"</code></td><td>The fields were nested in <code>filters</code>. Put them at the top level.</td></tr><tr><td><code>-32602</code></td><td><code>invalid newPendingTransactions request: json: unknown field "…"</code></td><td>The request has a field this topic does not accept.</td></tr><tr><td><code>-32001</code></td><td><code>subscription limit exceeded</code></td><td>You already have 15 active or pending subscriptions.</td></tr></tbody></table>

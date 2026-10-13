@@ -1,6 +1,8 @@
 ---
 description: >-
-  Stream transactions as they are included in blocks, as full objects or hashes, filtered by from/to address rules. Complete guide on how to use the newMinedTransactions topic in GetBlock EVM Data Stream documentation.
+  Stream transactions as they are included in blocks, as full objects or hashes,
+  filtered by from/to address rules. Complete guide on how to use the
+  newMinedTransactions topic in GetBlock EVM Data Strea
 ---
 
 # newMinedTransactions - EVM Data Stream
@@ -13,10 +15,7 @@ The `newMinedTransactions` topic sends one notification per transaction **includ
 
 ## Parameters
 
-<table data-search="false"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>hashesOnly</code></td><td>boolean</td><td>No</td><td><code>true</code> to receive only the transaction hash. Default <code>false</code>: the full transaction object.</td></tr>
-<tr><td><code>addresses</code></td><td>array</td><td>No</td><td>Up to 50 match rules, each <code>{ "from": "0x…", "to": "0x…" }</code> with at least one of the two set.</td></tr>
-</tbody></table>
+<table data-search="false"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>hashesOnly</code></td><td>boolean</td><td>No</td><td><code>true</code> to receive only the transaction hash. Default <code>false</code>: the full transaction object.</td></tr><tr><td><code>addresses</code></td><td>array</td><td>No</td><td>Up to 50 match rules, each <code>{ "from": "0x…", "to": "0x…" }</code> with at least one of the two set.</td></tr></tbody></table>
 
 These fields sit at the **top level** of the request object, next to `topic`, not inside `filters`.
 
@@ -204,31 +203,7 @@ With `"hashesOnly": true`, `transaction` holds only the hash:
 
 The `result` object contains the event envelope and the payload in `data`.
 
-<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>eventId</code></td><td>string</td><td>Stable event identifier. A reorg correction reuses it.</td></tr>
-<tr><td><code>removed</code></td><td>boolean</td><td><code>true</code> when a reorg removed this previously delivered event.</td></tr>
-<tr><td><code>revision</code></td><td>number</td><td>Event version. For one <code>eventId</code>, a greater revision is newer.</td></tr>
-<tr><td><code>data.removed</code></td><td>boolean</td><td>Mirrors the envelope's <code>removed</code>. Use the envelope field for reorg handling.</td></tr>
-<tr><td><code>data.transaction</code></td><td>object</td><td>The transaction, in the same shape as <code>eth_getTransactionByHash</code>. With <code>hashesOnly</code>, only <code>hash</code>.</td></tr>
-<tr><td><code>data.transaction.hash</code></td><td>string</td><td>Transaction hash.</td></tr>
-<tr><td><code>data.transaction.blockHash</code></td><td>string</td><td>Hash of the block that included the transaction.</td></tr>
-<tr><td><code>data.transaction.blockNumber</code></td><td>string</td><td>Block number, hex-encoded.</td></tr>
-<tr><td><code>data.transaction.blockTimestamp</code></td><td>string</td><td>Block timestamp in Unix seconds, hex-encoded.</td></tr>
-<tr><td><code>data.transaction.transactionIndex</code></td><td>string</td><td>Transaction's position in the block, hex-encoded.</td></tr>
-<tr><td><code>data.transaction.from</code></td><td>string</td><td>Sender.</td></tr>
-<tr><td><code>data.transaction.to</code></td><td>string</td><td>Recipient. <code>null</code> for contract creation.</td></tr>
-<tr><td><code>data.transaction.value</code></td><td>string</td><td>Native value transferred in wei, hex-encoded.</td></tr>
-<tr><td><code>data.transaction.input</code></td><td>string</td><td>Call data.</td></tr>
-<tr><td><code>data.transaction.nonce</code></td><td>string</td><td>Sender nonce, hex-encoded.</td></tr>
-<tr><td><code>data.transaction.gas</code></td><td>string</td><td>Gas limit, hex-encoded.</td></tr>
-<tr><td><code>data.transaction.gasPrice</code></td><td>string</td><td>Effective gas price in wei, hex-encoded.</td></tr>
-<tr><td><code>data.transaction.maxFeePerGas</code></td><td>string</td><td>EIP-1559 max fee per gas, on type <code>0x2</code> and later.</td></tr>
-<tr><td><code>data.transaction.maxPriorityFeePerGas</code></td><td>string</td><td>EIP-1559 priority fee per gas, on type <code>0x2</code> and later.</td></tr>
-<tr><td><code>data.transaction.type</code></td><td>string</td><td>EIP-2718 transaction type, hex-encoded.</td></tr>
-<tr><td><code>data.transaction.chainId</code></td><td>string</td><td>Chain ID, hex-encoded.</td></tr>
-<tr><td><code>data.transaction.accessList</code></td><td>array</td><td>EIP-2930 access list, on type <code>0x1</code> and later.</td></tr>
-<tr><td><code>data.transaction.v, r, s, yParity</code></td><td>string</td><td>Signature values.</td></tr>
-</tbody></table>
+<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>eventId</code></td><td>string</td><td>Stable event identifier. A reorg correction reuses it.</td></tr><tr><td><code>removed</code></td><td>boolean</td><td><code>true</code> when a reorg removed this previously delivered event.</td></tr><tr><td><code>revision</code></td><td>number</td><td>Event version. For one <code>eventId</code>, a greater revision is newer.</td></tr><tr><td><code>data.removed</code></td><td>boolean</td><td>Mirrors the envelope's <code>removed</code>. Use the envelope field for reorg handling.</td></tr><tr><td><code>data.transaction</code></td><td>object</td><td>The transaction, in the same shape as <code>eth_getTransactionByHash</code>. With <code>hashesOnly</code>, only <code>hash</code>.</td></tr><tr><td><code>data.transaction.hash</code></td><td>string</td><td>Transaction hash.</td></tr><tr><td><code>data.transaction.blockHash</code></td><td>string</td><td>Hash of the block that included the transaction.</td></tr><tr><td><code>data.transaction.blockNumber</code></td><td>string</td><td>Block number, hex-encoded.</td></tr><tr><td><code>data.transaction.blockTimestamp</code></td><td>string</td><td>Block timestamp in Unix seconds, hex-encoded.</td></tr><tr><td><code>data.transaction.transactionIndex</code></td><td>string</td><td>Transaction's position in the block, hex-encoded.</td></tr><tr><td><code>data.transaction.from</code></td><td>string</td><td>Sender.</td></tr><tr><td><code>data.transaction.to</code></td><td>string</td><td>Recipient. <code>null</code> for contract creation.</td></tr><tr><td><code>data.transaction.value</code></td><td>string</td><td>Native value transferred in wei, hex-encoded.</td></tr><tr><td><code>data.transaction.input</code></td><td>string</td><td>Call data.</td></tr><tr><td><code>data.transaction.nonce</code></td><td>string</td><td>Sender nonce, hex-encoded.</td></tr><tr><td><code>data.transaction.gas</code></td><td>string</td><td>Gas limit, hex-encoded.</td></tr><tr><td><code>data.transaction.gasPrice</code></td><td>string</td><td>Effective gas price in wei, hex-encoded.</td></tr><tr><td><code>data.transaction.maxFeePerGas</code></td><td>string</td><td>EIP-1559 max fee per gas, on type <code>0x2</code> and later.</td></tr><tr><td><code>data.transaction.maxPriorityFeePerGas</code></td><td>string</td><td>EIP-1559 priority fee per gas, on type <code>0x2</code> and later.</td></tr><tr><td><code>data.transaction.type</code></td><td>string</td><td>EIP-2718 transaction type, hex-encoded.</td></tr><tr><td><code>data.transaction.chainId</code></td><td>string</td><td>Chain ID, hex-encoded.</td></tr><tr><td><code>data.transaction.accessList</code></td><td>array</td><td>EIP-2930 access list, on type <code>0x1</code> and later.</td></tr><tr><td><code>data.transaction.v, r, s, yParity</code></td><td>string</td><td>Signature values.</td></tr></tbody></table>
 
 Inclusion is not execution success: a mined transaction can still have reverted. To learn the outcome, use [`transactionReceipts`](transactionreceipts-evm-data-stream.md).
 
@@ -241,10 +216,4 @@ Inclusion is not execution success: a mined transaction can still have reverted.
 
 ## Error Handling
 
-<table data-search="false"><thead><tr><th>Code</th><th>Message</th><th>Cause</th></tr></thead><tbody>
-<tr><td><code>-32602</code></td><td><code>addresses[N] requires from or to</code></td><td>An <code>addresses</code> rule is empty.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid addresses[N].to: invalid EVM address "…"</code></td><td>An address in a rule is not a 20-byte hex address.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid newMinedTransactions request: json: unknown field "filters"</code></td><td>The fields were nested in <code>filters</code>. Put <code>hashesOnly</code> and <code>addresses</code> at the top level.</td></tr>
-<tr><td><code>-32602</code></td><td><code>invalid newMinedTransactions request: json: unknown field "…"</code></td><td>The request has a field this topic does not accept.</td></tr>
-<tr><td><code>-32001</code></td><td><code>subscription limit exceeded</code></td><td>You already have 15 active or pending subscriptions.</td></tr>
-</tbody></table>
+<table data-search="false"><thead><tr><th>Code</th><th>Message</th><th>Cause</th></tr></thead><tbody><tr><td><code>-32602</code></td><td><code>addresses[N] requires from or to</code></td><td>An <code>addresses</code> rule is empty.</td></tr><tr><td><code>-32602</code></td><td><code>invalid addresses[N].to: invalid EVM address "…"</code></td><td>An address in a rule is not a 20-byte hex address.</td></tr><tr><td><code>-32602</code></td><td><code>invalid newMinedTransactions request: json: unknown field "filters"</code></td><td>The fields were nested in <code>filters</code>. Put <code>hashesOnly</code> and <code>addresses</code> at the top level.</td></tr><tr><td><code>-32602</code></td><td><code>invalid newMinedTransactions request: json: unknown field "…"</code></td><td>The request has a field this topic does not accept.</td></tr><tr><td><code>-32001</code></td><td><code>subscription limit exceeded</code></td><td>You already have 15 active or pending subscriptions.</td></tr></tbody></table>

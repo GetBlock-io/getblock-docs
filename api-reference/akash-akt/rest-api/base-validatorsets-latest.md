@@ -1,9 +1,9 @@
 ---
 description: >-
-  Example code for the cosmos/base/tendermint/v1beta1/validatorsets/latest
-  REST method. Complete guide on how to use
+  Example code for the cosmos/base/tendermint/v1beta1/validatorsets/latest REST
+  method. Complete guide on how to use
   cosmos/base/tendermint/v1beta1/validatorsets/latest REST method in GetBlock
-  Web3 documentation.
+  Web3 docu
 ---
 
 # /cosmos/base/tendermint/v1beta1/validatorsets/latest - Akash
