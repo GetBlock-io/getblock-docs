@@ -30,6 +30,33 @@
 * [Connect Brave Wallet to GetBlock](getting-started/connect-brave-wallet-to-getblock.md)
 * [GetBlock Docs MCP server](getting-started/getblock-docs-mcp-server.md)
 
+## Platform API
+
+* [Overview](platform-api/overview.md)
+* [Getting Started](platform-api/getting-started.md)
+* [API Reference](platform-api/api-reference/README.md)
+  * [Objects and Conventions](platform-api/api-reference/objects-and-conventions.md)
+  * [Get caller identity - Platform API](platform-api/api-reference/get-me.md)
+  * [List access tokens - Platform API](platform-api/api-reference/list-tokens.md)
+  * [Create access token - Platform API](platform-api/api-reference/create-token.md)
+  * [Get access token - Platform API](platform-api/api-reference/get-token.md)
+  * [Delete access token - Platform API](platform-api/api-reference/delete-token.md)
+  * [Rotate access token - Platform API](platform-api/api-reference/rotate-token.md)
+  * [List Dedicated Nodes - Platform API](platform-api/api-reference/list-dedicated-nodes.md)
+  * [Get Dedicated Node - Platform API](platform-api/api-reference/get-dedicated-node.md)
+  * [Create Dedicated Node token - Platform API](platform-api/api-reference/create-dedicated-node-token.md)
+  * [List Limitless Nodes - Platform API](platform-api/api-reference/list-limitless-nodes.md)
+  * [Get Limitless Node - Platform API](platform-api/api-reference/get-limitless-node.md)
+  * [Create Limitless Node token - Platform API](platform-api/api-reference/create-limitless-node-token.md)
+  * [Get current plan - Platform API](platform-api/api-reference/get-subscription.md)
+  * [List subscriptions - Platform API](platform-api/api-reference/list-subscriptions.md)
+  * [Get subscription - Platform API](platform-api/api-reference/get-subscription-by-id.md)
+  * [List protocols - Platform API](platform-api/api-reference/list-protocols.md)
+  * [Get protocol - Platform API](platform-api/api-reference/get-protocol.md)
+  * [List add-ons - Platform API](platform-api/api-reference/list-addons.md)
+  * [Get pricing - Platform API](platform-api/api-reference/get-pricing.md)
+  * [Get balance - Platform API](platform-api/api-reference/get-balance.md)
+
 ## Add-ons
 
 * [Overview](add-ons/overview.md)
