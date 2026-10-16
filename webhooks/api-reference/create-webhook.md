@@ -23,19 +23,7 @@ POST https://public-api.getblock.io/api/v1/webhooks
 
 The body is a JSON object. Unknown fields are refused with `400 malformed_body`.
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| `chain` | string | Yes | `eth`. |
-| `network` | string | No | `mainnet`, the default. |
-| `trigger_type` | string | Yes | `address_activity`, `log_event`, or `tx_confirmation`. See [Triggers](../triggers-and-filters.md#triggers). |
-| `phases` | array of strings | Yes | `["unconfirmed"]`, `["confirmed"]`, or both. Ignored by `tx_confirmation`, but still required: send `["confirmed"]`. |
-| `target_url` | string | Yes | An `https` URL on a public domain, without credentials or a fragment. See [Target URL rules](../retries-and-endpoint-protection.md#target-url-rules). |
-| `filters` | object | One of `filters`, `addresses`, `list_refs` | The filter tree. See [Filters](../triggers-and-filters.md#filters). |
-| `addresses` | array of strings | One of `filters`, `addresses`, `list_refs` | Addresses to watch in both directions, as 0x-prefixed 20-byte hex. Stored in the webhook's own list. |
-| `list_refs` | array of strings | One of `filters`, `addresses`, `list_refs` | Ids of your [address lists](create-address-list.md) (`al_…`) to watch in both directions. |
-| `confirm_depth` | integer or null | No | Blocks before the `confirmed` delivery: 2 to 96. Leave it out or send `null` for the default, 96. |
-| `name` | string | No | Display name, at most 128 bytes. Surrounding spaces are trimmed. |
-| `batching` | object | No | Accepted and stored, but has no effect in this version. |
+<table data-search="false"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>chain</code></td><td>string</td><td>Yes</td><td><code>eth</code>.</td></tr><tr><td><code>network</code></td><td>string</td><td>No</td><td><code>mainnet</code>, the default.</td></tr><tr><td><code>trigger_type</code></td><td>string</td><td>Yes</td><td><code>address_activity</code>, <code>log_event</code>, or <code>tx_confirmation</code>. See <a href="../triggers-and-filters.md#triggers">Triggers</a>.</td></tr><tr><td><code>phases</code></td><td>array of strings</td><td>Yes</td><td><code>["unconfirmed"]</code>, <code>["confirmed"]</code>, or both. Ignored by <code>tx_confirmation</code>, but still required: send <code>["confirmed"]</code>.</td></tr><tr><td><code>target_url</code></td><td>string</td><td>Yes</td><td>An <code>https</code> URL on a public domain, without credentials or a fragment. See <a href="../retries-and-endpoint-protection.md#target-url-rules">Target URL rules</a>.</td></tr><tr><td><code>filters</code></td><td>object</td><td>One of <code>filters</code>, <code>addresses</code>, <code>list_refs</code></td><td>The filter tree. See <a href="../triggers-and-filters.md#filters">Filters</a>.</td></tr><tr><td><code>addresses</code></td><td>array of strings</td><td>One of <code>filters</code>, <code>addresses</code>, <code>list_refs</code></td><td>Addresses to watch in both directions, as 0x-prefixed 20-byte hex. Stored in the webhook's own list.</td></tr><tr><td><code>list_refs</code></td><td>array of strings</td><td>One of <code>filters</code>, <code>addresses</code>, <code>list_refs</code></td><td>Ids of your <a href="create-address-list.md">address lists</a> (<code>al_…</code>) to watch in both directions.</td></tr><tr><td><code>confirm_depth</code></td><td>integer or null</td><td>No</td><td>Blocks before the <code>confirmed</code> delivery: 2 to 96. Leave it out or send <code>null</code> for the default, 96.</td></tr><tr><td><code>name</code></td><td>string</td><td>No</td><td>Display name, at most 128 bytes. Surrounding spaces are trimmed.</td></tr><tr><td><code>batching</code></td><td>object</td><td>No</td><td>Accepted and stored, but has no effect in this version.</td></tr></tbody></table>
 
 You can combine the three condition fields. `addresses` and `list_refs` become one `address` leaf with `"dir": "any"` and `"src": "sugar"`; with `filters` as well, the stored tree is `{"all": [<your tree>, <that leaf>]}`. See [Shortcuts for addresses and lists](../triggers-and-filters.md#shortcuts-for-addresses-and-lists).
 
@@ -167,15 +155,15 @@ More request bodies, for wallet activity and transaction confirmations, are in [
 
 The answer is the [webhook object](objects-and-conventions.md#the-webhook-object) plus `secret`:
 
-| Field | Type | Description |
-| --- | --- | --- |
-| `id` | string | The new webhook's id (`wh_…`). Use it in every other `/webhooks/{id}` call. |
-| `status` | string | `active`. |
-| `filters` | object | The stored filter tree, including the leaf built from `addresses` and `list_refs`. Addresses are in lower case. |
-| `confirm_depth` | integer or null | `null` when you left it out: the chain default, 96, applies. |
-| `target_url` | string | Your URL in canonical form. Compare against this value, not the one you sent. |
-| `version` | integer | `1`. |
-| `secret` | string | The signing secret (`whsec_…`). **Shown only in this answer.** |
+| Field           | Type            | Description                                                                                                     |
+| --------------- | --------------- | --------------------------------------------------------------------------------------------------------------- |
+| `id`            | string          | The new webhook's id (`wh_…`). Use it in every other `/webhooks/{id}` call.                                     |
+| `status`        | string          | `active`.                                                                                                       |
+| `filters`       | object          | The stored filter tree, including the leaf built from `addresses` and `list_refs`. Addresses are in lower case. |
+| `confirm_depth` | integer or null | `null` when you left it out: the chain default, 96, applies.                                                    |
+| `target_url`    | string          | Your URL in canonical form. Compare against this value, not the one you sent.                                   |
+| `version`       | integer         | `1`.                                                                                                            |
+| `secret`        | string          | The signing secret (`whsec_…`). **Shown only in this answer.**                                                  |
 
 ## Use Cases
 
@@ -186,17 +174,17 @@ The answer is the [webhook object](objects-and-conventions.md#the-webhook-object
 
 ## Error Handling
 
-| HTTP | Code | Cause |
-| --- | --- | --- |
-| 400 | `empty_body`, `malformed_body` | No body, invalid JSON, an unknown field, or a wrong type. |
-| 400 | `invalid_trigger_type`, `trigger_type_not_supported` | Unknown `trigger_type`, or `dropped_replaced`, which is not available. |
-| 400 | `invalid_phases` | `phases` is empty or holds an unknown value. |
-| 400 | `confirm_depth_out_of_range` | `confirm_depth` is outside 2 to 96. |
-| 400 | `unsupported_chain`, `unsupported_network` | Anything but `eth` / `mainnet`. |
-| 400 | `target_url_*` | `target_url` breaks one of the [target URL rules](../retries-and-endpoint-protection.md#target-url-rules). |
-| 400 | `filter_*`, `unknown_filter_leaf`, `abi_filter_not_supported` | The filter tree is invalid or does not suit the trigger. See [Error codes](error-codes.md). |
-| 400 | `invalid_webhook_name`, `invalid_batching` | `name` is empty after trimming, too long, or has control characters; `batching` has negative values. |
-| 403 | `plan_required` | A team account without a plan. |
-| 404 | `list_not_found` | A `list_refs` entry is not one of your address lists. |
-| 409 | `cap_active_webhooks_exceeded`, `cap_addresses_exceeded`, `cap_inline_addresses_exceeded`, `cap_list_refs_exceeded`, `cap_account_addresses_exceeded` | The webhook does not fit your plan. Check [`GET /webhooks/limits`](get-webhook-limits.md). |
-| 413 | — | The body is larger than about 5 MiB. Move addresses into [address lists](create-address-list.md). |
+| HTTP | Code                                                                                                                                                  | Cause                                                                                                      |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 400  | `empty_body`, `malformed_body`                                                                                                                        | No body, invalid JSON, an unknown field, or a wrong type.                                                  |
+| 400  | `invalid_trigger_type`, `trigger_type_not_supported`                                                                                                  | Unknown `trigger_type`, or `dropped_replaced`, which is not available.                                     |
+| 400  | `invalid_phases`                                                                                                                                      | `phases` is empty or holds an unknown value.                                                               |
+| 400  | `confirm_depth_out_of_range`                                                                                                                          | `confirm_depth` is outside 2 to 96.                                                                        |
+| 400  | `unsupported_chain`, `unsupported_network`                                                                                                            | Anything but `eth` / `mainnet`.                                                                            |
+| 400  | `target_url_*`                                                                                                                                        | `target_url` breaks one of the [target URL rules](../retries-and-endpoint-protection.md#target-url-rules). |
+| 400  | `filter_*`, `unknown_filter_leaf`, `abi_filter_not_supported`                                                                                         | The filter tree is invalid or does not suit the trigger. See [Error codes](error-codes.md).                |
+| 400  | `invalid_webhook_name`, `invalid_batching`                                                                                                            | `name` is empty after trimming, too long, or has control characters; `batching` has negative values.       |
+| 403  | `plan_required`                                                                                                                                       | A team account without a plan.                                                                             |
+| 404  | `list_not_found`                                                                                                                                      | A `list_refs` entry is not one of your address lists.                                                      |
+| 409  | `cap_active_webhooks_exceeded`, `cap_addresses_exceeded`, `cap_inline_addresses_exceeded`, `cap_list_refs_exceeded`, `cap_account_addresses_exceeded` | The webhook does not fit your plan. Check [`GET /webhooks/limits`](get-webhook-limits.md).                 |
+| 413  | —                                                                                                                                                     | The body is larger than about 5 MiB. Move addresses into [address lists](create-address-list.md).          |
