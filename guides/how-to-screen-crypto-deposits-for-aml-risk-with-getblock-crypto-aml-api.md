@@ -113,7 +113,7 @@ curl -X POST "https://services.getblock.io/v1/aml/tx-check" \
   -H "Authorization: Bearer YOUR_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "tx": "0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060",
+    "tx": "0x2a8df19623bfbd437d2da47b5e680ab94b60236d004e2bd5b6cf2e34be978ed9",
     "network": "eth",
     "asset": "usdt"
   }'
@@ -240,10 +240,16 @@ export function decide(report) {
     review.push(`asset restriction on ${r.asset}`);
   }
 
-  // Wallet report: the address sits inside a risky cluster.
+  // Wallet report: the address sits inside a risky cluster (high band or above).
   const cluster = report.attribution?.cluster;
-  if (cluster?.score >= 75) {
-    review.push(`member of high-risk cluster ${cluster.names?.join(", ") ?? ""}`.trim());
+  if (cluster?.score >= 50) {
+    review.push(`member of high-risk cluster ${cluster.names?.join(", ") ?? ""} (score ${cluster.score})`.trim());
+  }
+
+  // Transaction report: no counterparties means the asset transfer wasn't found, so nothing was screened.
+  const cp = report.counterparties;
+  if (cp && !Object.keys(cp.in ?? {}).length && !Object.keys(cp.out ?? {}).length) {
+    review.push("no counterparties returned — check the tx hash and asset");
   }
 
   // Transaction report: any counterparty scoring in the very-high band.
@@ -381,43 +387,64 @@ Screen a wallet:
 node index.js wallet 0x8589427373D6D84E98730D7795D8f6f8731FDA16 eth
 ```
 
-Screen a USDT transfer inside a transaction:
-
-```bash
-node index.js tx 0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060 eth usdt
-```
-
-Expected output for a clean wallet:
-
-```bash
-Target:    0x... (eth)
-Score:     12 (low)
-Reasons:   none
-Report ID: 3b1f0c2e-...
-Decision:  ACCEPT
-```
-
-Expected output for a high-risk wallet, based on the sample report in the [API docs](../crypto-aml/run-check-via-api.md#response):
+Expected output for the wallet above. It scores in the high band but has no direct flags, so it goes to manual review:
 
 ```bash
 Target:    0x8589427373D6D84E98730D7795D8f6f8731FDA16 (eth)
+Score:     70 (high)
+Reasons:
+  - risk score 70 (high band)
+Report ID: 6aaaabeb-133d-4cec-98fd-7e61330658b9
+Decision:  REVIEW
+```
+
+Now screen an address on the OFAC sanctions list:
+
+```bash
+node index.js wallet 0x0330070FD38Ec3bB94F58FA55D40368271E9e54A eth
+```
+
+Expected output:
+
+```bash
+Target:    0x0330070FD38Ec3bB94F58FA55D40368271E9e54A (eth)
 Score:     100 (very-high)
 Reasons:
   - risk score 100 (very-high band)
-  - inbound sanctionsExposure x5
-  - outbound hacking x17
+  - asset restriction on usdc
   - asset restriction on usdt
-  - member of high-risk cluster Exploit-related cluster
-  - hacking exposure 12.3%
-  - sanctionsExposure exposure 11.5%
-Report ID: fa78dfdc-e69d-4bf6-a092-f824bbb24721
+  - member of high-risk cluster OFAC SDN AMNOKGANG TECH 12-03-2026 (score 70)
+Report ID: 17256fe8-fb42-46ad-8115-e93187ce3a44
 Decision:  REJECT
 ```
+
+Here, the exposure, external-report, FATF, and token-flag components all score `0`. The sanctions signal comes only from **attribution**: the address belongs to an OFAC SDN cluster, and USDT and USDC have restricted it. A policy that only looked at exposure or FATF flags would miss this, which is why `decide()` also checks the cluster and asset restrictions.
+
+Finally, screen a USDT deposit that this sanctioned address sent:
+
+```bash
+node index.js tx 0x2a8df19623bfbd437d2da47b5e680ab94b60236d004e2bd5b6cf2e34be978ed9 eth usdt
+```
+
+Expected output:
+
+```bash
+Target:    0x2a8df19623bfbd437d2da47b5e680ab94b60236d004e2bd5b6cf2e34be978ed9 (eth/usdt)
+Score:     100 (very-high)
+Reasons:
+  - risk score 100 (very-high band)
+  - in counterparty 0x0330070fd38ec3bb94f58fa55d40368271e9e54a scores 100
+  - sanctionsExposure exposure 100%
+Report ID: n/a
+Decision:  REJECT
+```
+
+The transaction report names the sender (`in`) and the receiver (`out`), each with its own score. The sanctioned sender scores `100`, and all of the transfer's exposure is `sanctionsExposure`. Transaction reports don't include a `reportId`, which is why the audit log saves the request alongside the decision.
 
 Each run also adds one line to `aml-audit.jsonl`:
 
 ```json
-{"checkedAt":"2026-10-26T11:29:08.400Z","kind":"wallet","request":{"address":"0x8589…DA16","network":"eth"},"decision":"REJECT","score":100,"band":"very-high","reasons":["…"],"reportId":"fa78dfdc-e69d-4bf6-a092-f824bbb24721"}
+{"checkedAt":"2026-10-26T11:52:41.000Z","kind":"wallet","request":{"address":"0x0330070FD38Ec3bB94F58FA55D40368271E9e54A","network":"eth"},"decision":"REJECT","score":100,"band":"very-high","reasons":["risk score 100 (very-high band)","asset restriction on usdc","asset restriction on usdt","member of high-risk cluster OFAC SDN AMNOKGANG TECH 12-03-2026 (score 70)"],"reportId":"17256fe8-fb42-46ad-8115-e93187ce3a44"}
 ```
 
 {% hint style="info" %}
@@ -445,7 +472,7 @@ Both endpoints return the report inside a `data` envelope. These are the fields 
 | `attribution.cluster`                | object                   | Cluster `names`, `score`, and exposure. A wallet with little activity of its own can still be risky because of the cluster it belongs to. |
 | `attribution.assetRestrictions`      | array                    | Asset restrictions linked to the wallet.                                                                     |
 | `counterparties.in` / `.out`         | object `address → score` | Transaction reports only. The addresses that sent or received the screened transfer, with each one's risk score.                    |
-| `reportId`                           | string                   | The unique ID of this screening. Save it with your decision for audits.                                            |
+| `reportId`                           | string                   | Wallet reports only. The unique ID of this screening. Save it with your decision for audits.                                          |
 
 Optional arrays, such as `flags`, `owners`, `authorities`, and `unclassifiedExposure`, only appear when there is data for them. If one is missing, the check still worked. For every category value, see the [Taxonomy](../crypto-aml/taxonomy.md).
 
@@ -455,10 +482,11 @@ Optional arrays, such as `flags`, `owners`, `authorities`, and `unclassifiedExpo
 | ---------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
 | `screening failed: Set GETBLOCK_AML_KEY`                   | `.env` is missing or in the wrong folder                         | Copy `.env.example` to `.env` in the project root and add your key.                                     |
 | `HTTP 401` / `403`                                         | Invalid, revoked, or missing API key                                 | Create a new key at [Settings → API Keys](https://account.getblock.io/settings/api-keys).                 |
-| `HTTP 402` or a balance error                              | Not enough prepaid credits                                         | Top up your balance in the GetBlock dashboard.                                                     |
+| `HTTP 402` `insufficient_balance`                          | Not enough prepaid credits for another check                       | Top up your balance in the GetBlock dashboard. Failed checks aren't charged.                       |
 | `HTTP 400` `Supported networks: bch, btc, eth, ltc, trx`   | The network isn't supported (for example, `sol`, `bsc`)                           | Use one of the five supported network values.                                                                   |
 | `HTTP 400` on `tx-check`                                   | The hash isn't 64 hex characters, or `asset` doesn't exist on that network | Check the hash and use a valid asset: `eth`/`usdt`/`usdc` on ETH, `trx`/`usdt` on TRX.                       |
 | A USDT deposit scores low, but you expected it to be flagged | `asset` was left out, so only the native coin was screened                   | Pass `asset: "usdt"` for token deposits.                                                                    |
+| `riskScore: 0` with empty `counterparties` (REVIEW: "no counterparties returned") | The transaction has no transfer of the `asset` you requested, so nothing was screened | Check the hash and make sure `asset` matches the transfer you're crediting. |
 | Score looks low but decision is `REVIEW`                   | A cluster, counterparty, FATF flag, or token restriction triggered the policy    | This is expected. Check `reasons` and look at the full report in the dashboard.                                  |
 | The same address scores differently on different days                         | New on-chain activity or updated attribution and sanctions data                   | This is expected. Base each decision on the `reportId` you saved, not on a new check.                                         |
 
