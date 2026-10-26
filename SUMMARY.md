@@ -297,6 +297,7 @@
 * [How To Build an AI Agent on Robinhood Chain with GetBlock RPC](guides/how-to-build-an-ai-agent-on-robinhood-chain-with-getblock-rpc.md)
 * [How to Protect Your Transactions from MEV with GetBlock RPC](guides/how-to-protect-your-transactions-from-mev-with-getblock-rpc.md)
 * [How to Plan and Price a Bitcoin Spend with GetBlock's Blockbook Add-on](guides/how-to-plan-and-price-a-bitcoin-spend-with-getblocks-blockbook-add-on.md)
+* [How to Screen Crypto Deposits for AML Risk with GetBlock Crypto AML API](guides/how-to-screen-crypto-deposits-for-aml-risk-with-getblock-crypto-aml-api.md)
 
 ## API REFERENCE
 
