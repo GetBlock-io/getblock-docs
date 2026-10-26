@@ -3,11 +3,14 @@ description: >-
   This guide teaches you how to screen incoming crypto deposits for money
   laundering, sanctions, and fraud exposure before crediting them, using the
   GetBlock Crypto AML API.
+icon: screencast
 ---
 
 # How to Screen Crypto Deposits for AML Risk with GetBlock Crypto AML API
 
-Once a crypto deposit lands in your wallet, you can't send it back. If those funds came from a sanctioned entity, a hack, or a darknet market, the problem is now yours. A downstream exchange may freeze your account, a regulator may ask for your screening records, and you may be left holding tainted funds. A blocklist doesn't catch this, because risky funds rarely come straight from a flagged address. They pass through clusters, mixers, and intermediate wallets first. To catch them, you need to check the sender's full on-chain history and counterparties before you credit the deposit, and keep a record of every check.
+Once a crypto deposit lands in your wallet, you can't send it back. If those funds came from a sanctioned entity, a hack, or a darknet market, the problem is now yours. A downstream exchange may freeze your account, a regulator may ask for your screening records, and you may be left holding tainted funds.&#x20;
+
+A blocklist doesn't catch this, because risky funds rarely come straight from a flagged address. They pass through clusters, mixers, and intermediate wallets first. To catch them, you need to check the sender's full on-chain history and counterparties before you credit the deposit, and keep a record of every check.
 
 In this guide, you'll learn how to build a deposit screener with the **GetBlock Crypto AML API**. It checks a sender wallet or an incoming transaction, turns the risk report into an **ACCEPT / REVIEW / REJECT** decision, and saves an audit record for every check.
 
@@ -21,25 +24,6 @@ A `screenDeposit({ address | tx, network, asset })` function that:
 4. Returns **ACCEPT**, **REVIEW**, or **REJECT**, along with the reasons.
 5. **Fails closed.** If the check errors, the deposit is held for REVIEW instead of being credited.
 6. Adds the request, decision, and `reportId` to an audit log (`aml-audit.jsonl`).
-
-### How it works
-
-```mermaid
-flowchart TD
-    A(Incoming deposit) --> B["screenDeposit(input)"]
-    B --> C{tx hash<br/>or address?}
-    C -->|"POST /v1/aml/wallet-check<br/>Authorization: Bearer API_KEY<br/>{ address, network }"| D[GetBlock Crypto AML]
-    C -->|"POST /v1/aml/tx-check<br/>Authorization: Bearer API_KEY<br/>{ tx, network, asset }"| D
-    D -->|"{ data: overallRiskScore / riskScore,<br/>breakdown, counterparties,<br/>attribution, reportId }"| E[Apply policy]
-    D -->|"HTTP error / no key"| H[REVIEW: fail closed]
-    E --> F{Band and flags}
-    F -->|"very-high or critical FATF flag"| G(REJECT)
-    F -->|"high, cluster, counterparty,<br/>or restriction flags"| H
-    F -->|"low / medium, no flags"| I(ACCEPT: credit deposit)
-    G --> J[Append to aml-audit.jsonl]
-    H --> J
-    I --> J
-```
 
 ## Prerequisites
 
@@ -83,50 +67,6 @@ GETBLOCK_AML_KEY="your_api_key_here"
 
 {% hint style="warning" %}
 The API key decides which account's balance gets charged. Never commit it. Add `.env` to `.gitignore`, and rotate the key from the dashboard if it leaks.
-{% endhint %}
-{% endstep %}
-
-{% step %}
-#### Make a raw API request
-
-Before writing any code, test your key with cURL. To screen a **wallet** across every supported asset on a network:
-
-```bash
-curl -X POST "https://services.getblock.io/v1/aml/wallet-check" \
-  -H "Authorization: Bearer YOUR_API_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "address": "0x8589427373D6D84E98730D7795D8f6f8731FDA16",
-    "network": "eth"
-  }'
-```
-
-| Parameter | Type   | Description                                                               |
-| --------- | ------ | ------------------------------------------------------------------------- |
-| `address` | string | The wallet address to screen.                                             |
-| `network` | string | One of `eth`, `trx`, `btc`, `ltc`, `bch`. Not case-sensitive. |
-
-To screen a single **transaction**, meaning one asset transfer inside it:
-
-```bash
-curl -X POST "https://services.getblock.io/v1/aml/tx-check" \
-  -H "Authorization: Bearer YOUR_API_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "tx": "0x2a8df19623bfbd437d2da47b5e680ab94b60236d004e2bd5b6cf2e34be978ed9",
-    "network": "eth",
-    "asset": "usdt"
-  }'
-```
-
-| Parameter | Type   | Description                                                                                                    |
-| --------- | ------ | -------------------------------------------------------------------------------------------------------------- |
-| `tx`      | string | Transaction hash: 64 hex characters, with or without a `0x` prefix.                                          |
-| `network` | string | One of `eth`, `trx`, `btc`, `ltc`, `bch`.                                                                       |
-| `asset`   | string | Optional. The transfer to screen: `eth`/`usdt`/`usdc` on Ethereum, `trx`/`usdt` on TRON. Defaults to the native coin. |
-
-{% hint style="warning" %}
-One Ethereum or TRON transaction can include both a native-coin transfer and a token transfer, and each one has its own counterparties. When you screen a USDT deposit, **always pass `"asset": "usdt"`**. Otherwise, only the ETH/TRX transfer is screened.
 {% endhint %}
 {% endstep %}
 
@@ -457,38 +397,13 @@ Risk scores are estimates, and they change over time. The same address can score
 
 Both endpoints return the report inside a `data` envelope. These are the fields the screener uses:
 
-| Field                                | Type                     | What it tells you                                                                                                    |
-| ------------------------------------ | ------------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| `schemaVersion`                      | string                   | Version of the response schema (currently `"1.0"`). Check it if your integration needs to handle future versions.               |
-| `overallRiskScore`                   | number `0–100`           | Wallet reports only. The headline score: `0–24` low, `25–49` medium, `50–74` high, `75–100` very high.          |
-| `riskScore`                          | number `0–100`           | Transaction reports only. The headline score for the asset transfer you screened.                                   |
-| `breakdown.exposure`                 | object                   | The wallet's exposure profile. Contains its own `score` and the `activityExposure`, `complianceExposure`, `counterpartyExposure`, and `unclassifiedExposure` arrays. |
-| `*Exposure[].share`                  | number                   | Each category's percentage of the exposure composition. This is **not** a risk score.                                        |
-| `complianceExposure[].authorities`   | array                    | For `sanctionsExposure`, the sanctions exposure split by authority (`UK`, `EU`, `UN`).                                       |
-| `breakdown.externalReports`          | object                   | Risk backed by confirmed external reports, with its own `score`.                                                      |
-| `breakdown.fatf.flags`               | array                    | Direct flags on counterparties. Each one has a `flow` (`in`/`out`), a `category`, and a `count`.                                     |
-| `breakdown.tokenFlags`               | object                   | Restrictions on specific tokens, such as an issuer freeze on USDT.                                                             |
-| `attribution.owners`                 | string\[]                | Known entities believed to control the wallet. Only present when available.                                                    |
-| `attribution.cluster`                | object                   | Cluster `names`, `score`, and exposure. A wallet with little activity of its own can still be risky because of the cluster it belongs to. |
-| `attribution.assetRestrictions`      | array                    | Asset restrictions linked to the wallet.                                                                     |
-| `counterparties.in` / `.out`         | object `address → score` | Transaction reports only. The addresses that sent or received the screened transfer, with each one's risk score.                    |
-| `reportId`                           | string                   | Wallet reports only. The unique ID of this screening. Save it with your decision for audits.                                          |
+<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>What it tells you</th></tr></thead><tbody><tr><td><code>schemaVersion</code></td><td>string</td><td>Version of the response schema (currently <code>"1.0"</code>). Check it if your integration needs to handle future versions.</td></tr><tr><td><code>overallRiskScore</code></td><td>number <code>0–100</code></td><td>Wallet reports only. The headline score: <code>0–24</code> low, <code>25–49</code> medium, <code>50–74</code> high, <code>75–100</code> very high.</td></tr><tr><td><code>riskScore</code></td><td>number <code>0–100</code></td><td>Transaction reports only. The headline score for the asset transfer you screened.</td></tr><tr><td><code>breakdown.exposure</code></td><td>object</td><td>The wallet's exposure profile. Contains its own <code>score</code> and the <code>activityExposure</code>, <code>complianceExposure</code>, <code>counterpartyExposure</code>, and <code>unclassifiedExposure</code> arrays.</td></tr><tr><td><code>*Exposure[].share</code></td><td>number</td><td>Each category's percentage of the exposure composition. This is <strong>not</strong> a risk score.</td></tr><tr><td><code>complianceExposure[].authorities</code></td><td>array</td><td>For <code>sanctionsExposure</code>, the sanctions exposure split by authority (<code>UK</code>, <code>EU</code>, <code>UN</code>).</td></tr><tr><td><code>breakdown.externalReports</code></td><td>object</td><td>Risk backed by confirmed external reports, with its own <code>score</code>.</td></tr><tr><td><code>breakdown.fatf.flags</code></td><td>array</td><td>Direct flags on counterparties. Each one has a <code>flow</code> (<code>in</code>/<code>out</code>), a <code>category</code>, and a <code>count</code>.</td></tr><tr><td><code>breakdown.tokenFlags</code></td><td>object</td><td>Restrictions on specific tokens, such as an issuer freeze on USDT.</td></tr><tr><td><code>attribution.owners</code></td><td>string[]</td><td>Known entities believed to control the wallet. Only present when available.</td></tr><tr><td><code>attribution.cluster</code></td><td>object</td><td>Cluster <code>names</code>, <code>score</code>, and exposure. A wallet with little activity of its own can still be risky because of the cluster it belongs to.</td></tr><tr><td><code>attribution.assetRestrictions</code></td><td>array</td><td>Asset restrictions linked to the wallet.</td></tr><tr><td><code>counterparties.in</code> / <code>.out</code></td><td>object <code>address → score</code></td><td>Transaction reports only. The addresses that sent or received the screened transfer, with each one's risk score.</td></tr><tr><td><code>reportId</code></td><td>string</td><td>Wallet reports only. The unique ID of this screening. Save it with your decision for audits.</td></tr></tbody></table>
 
 Optional arrays, such as `flags`, `owners`, `authorities`, and `unclassifiedExposure`, only appear when there is data for them. If one is missing, the check still worked. For every category value, see the [Taxonomy](../crypto-aml/taxonomy.md).
 
 ## Troubleshooting
 
-| Symptom                                                    | Likely cause                                                       | Fix                                                                                                         |
-| ---------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| `screening failed: Set GETBLOCK_AML_KEY`                   | `.env` is missing or in the wrong folder                         | Copy `.env.example` to `.env` in the project root and add your key.                                     |
-| `HTTP 401` / `403`                                         | Invalid, revoked, or missing API key                                 | Create a new key at [Settings → API Keys](https://account.getblock.io/settings/api-keys).                 |
-| `HTTP 402` `insufficient_balance`                          | Not enough prepaid credits for another check                       | Top up your balance in the GetBlock dashboard. Failed checks aren't charged.                       |
-| `HTTP 400` `Supported networks: bch, btc, eth, ltc, trx`   | The network isn't supported (for example, `sol`, `bsc`)                           | Use one of the five supported network values.                                                                   |
-| `HTTP 400` on `tx-check`                                   | The hash isn't 64 hex characters, or `asset` doesn't exist on that network | Check the hash and use a valid asset: `eth`/`usdt`/`usdc` on ETH, `trx`/`usdt` on TRX.                       |
-| A USDT deposit scores low, but you expected it to be flagged | `asset` was left out, so only the native coin was screened                   | Pass `asset: "usdt"` for token deposits.                                                                    |
-| `riskScore: 0` with empty `counterparties` (REVIEW: "no counterparties returned") | The transaction has no transfer of the `asset` you requested, so nothing was screened | Check the hash and make sure `asset` matches the transfer you're crediting. |
-| Score looks low but decision is `REVIEW`                   | A cluster, counterparty, FATF flag, or token restriction triggered the policy    | This is expected. Check `reasons` and look at the full report in the dashboard.                                  |
-| The same address scores differently on different days                         | New on-chain activity or updated attribution and sanctions data                   | This is expected. Base each decision on the `reportId` you saved, not on a new check.                                         |
+<table data-search="false"><thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead><tbody><tr><td><code>screening failed: Set GETBLOCK_AML_KEY</code></td><td><code>.env</code> is missing or in the wrong folder</td><td>Copy <code>.env.example</code> to <code>.env</code> in the project root and add your key.</td></tr><tr><td><code>HTTP 401</code> / <code>403</code></td><td>Invalid, revoked, or missing API key</td><td>Create a new key at <a href="https://account.getblock.io/settings/api-keys">Settings → API Keys</a>.</td></tr><tr><td><code>HTTP 402</code> <code>insufficient_balance</code></td><td>Not enough prepaid credits for another check</td><td>Top up your balance in the GetBlock dashboard. Failed checks aren't charged.</td></tr><tr><td><code>HTTP 400</code> <code>Supported networks: bch, btc, eth, ltc, trx</code></td><td>The network isn't supported (for example, <code>sol</code>, <code>bsc</code>)</td><td>Use one of the five supported network values.</td></tr><tr><td><code>HTTP 400</code> on <code>tx-check</code></td><td>The hash isn't 64 hex characters, or <code>asset</code> doesn't exist on that network</td><td>Check the hash and use a valid asset: <code>eth</code>/<code>usdt</code>/<code>usdc</code> on ETH, <code>trx</code>/<code>usdt</code> on TRX.</td></tr><tr><td>A USDT deposit scores low, but you expected it to be flagged</td><td><code>asset</code> was left out, so only the native coin was screened</td><td>Pass <code>asset: "usdt"</code> for token deposits.</td></tr><tr><td><code>riskScore: 0</code> with empty <code>counterparties</code> (REVIEW: "no counterparties returned")</td><td>The transaction has no transfer of the <code>asset</code> you requested, so nothing was screened</td><td>Check the hash and make sure <code>asset</code> matches the transfer you're crediting.</td></tr><tr><td>Score looks low but decision is <code>REVIEW</code></td><td>A cluster, counterparty, FATF flag, or token restriction triggered the policy</td><td>This is expected. Check <code>reasons</code> and look at the full report in the dashboard.</td></tr><tr><td>The same address scores differently on different days</td><td>New on-chain activity or updated attribution and sanctions data</td><td>This is expected. Base each decision on the <code>reportId</code> you saved, not on a new check.</td></tr></tbody></table>
 
 ## Conclusion
 
