@@ -27,6 +27,8 @@ layout:
     visible: true
   actions:
     visible: true
+  anchors:
+    visible: true
 ---
 
 # Welcome
@@ -35,7 +37,7 @@ layout:
 
 With our tools and services, you can focus on building your dApp without worrying about the technical details of setting up and managing blockchain nodes.
 
-From DeFi apps and NFT platforms to analytics tools, AppChains, and more, GetBlock provides the infrastructure to help you build, test, and scale your blockchain-powered solutions.
+From DeFi apps and NFT platforms to analytics tools, AppChains, and more, GetBlock provides the infrastructure you need to build, test, and scale your blockchain-powered solutions.
 
 {% embed url="https://www.youtube.com/watch?v=fl3NwMBIxOQ" %}
 GetBlock Product Demo
@@ -60,7 +62,7 @@ GetBlock Product Demo
 
 Get started with our most in-demand blockchain networks.
 
-| [<img src=".gitbook/assets/Crypto Symbol=Ethereum.svg" alt="" data-size="line">](api-reference/ethereum-eth/) [**Ethereum**](api-reference/ethereum-eth/)                    | [<img src=".gitbook/assets/Logo=Tron.svg" alt="" data-size="line">](/broken/pages/qpv9G2ZjzzyJVbPHk5S0) [**Tron**](/broken/pages/qpv9G2ZjzzyJVbPHk5S0)     | [<img src=".gitbook/assets/arb-logomark (1).svg" alt="" data-size="line">](api-reference/arbitrum-arb/) [**Arbitrum**](api-reference/arbitrum-arb/) |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<img src=".gitbook/assets/Logo=BNB Smart Chain.svg" alt="" data-size="line">](api-reference/bnb-smart-chain-bsc/) [**BNB Smart Chain**](api-reference/bnb-smart-chain-bsc/) | [<img src=".gitbook/assets/Logo=Solana.svg" alt="" data-size="line">](/broken/pages/ZHMjSxoQmr16o5LvhymF) [**Solana**](/broken/pages/ZHMjSxoQmr16o5LvhymF) | [<img src=".gitbook/assets/Logo=OP.svg" alt="" data-size="line">](api-reference/optimism-op/) [**Optimism**](api-reference/optimism-op/)            |
-| [<img src=".gitbook/assets/pol-logo.svg" alt="" data-size="line">](api-reference/polygon-matic/) [**Polygon**](api-reference/polygon-matic/)                                 | [<img src=".gitbook/assets/Logo=Avax.svg" alt="" data-size="line">](api-reference/avalanche-avax/) [**Avalanche**](api-reference/avalanche-avax/)          | [<img src=".gitbook/assets/base-logo.svg" alt="" data-size="line">](api-reference/base/) [**Base**](api-reference/base/)                            |
+| [<img src=".gitbook/assets/Crypto Symbol=Ethereum.svg" alt="" data-size="line">](api-reference/ethereum-eth/) [**Ethereum**](api-reference/ethereum-eth/)                    | [<img src=".gitbook/assets/Logo=Tron.svg" alt="" data-size="line">](/broken/pages/qpv9G2ZjzzyJVbPHk5S0) [**Tron**](api-reference/tron-trx/)       | [<img src=".gitbook/assets/arb-logomark (1).svg" alt="" data-size="line">](api-reference/arbitrum-arb/) [**Arbitrum**](api-reference/arbitrum-arb/) |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [<img src=".gitbook/assets/Logo=BNB Smart Chain.svg" alt="" data-size="line">](api-reference/bnb-smart-chain-bsc/) [**BNB Smart Chain**](api-reference/bnb-smart-chain-bsc/) | [<img src=".gitbook/assets/Logo=Solana.svg" alt="" data-size="line">](/broken/pages/ZHMjSxoQmr16o5LvhymF) [**Solana**](api-reference/solana-sol/) | [<img src=".gitbook/assets/Logo=OP.svg" alt="" data-size="line">](api-reference/optimism-op/) [**Optimism**](api-reference/optimism-op/)            |
+| [<img src=".gitbook/assets/pol-logo.svg" alt="" data-size="line">](api-reference/polygon-matic/) [**Polygon**](api-reference/polygon-matic/)                                 | [<img src=".gitbook/assets/Logo=Avax.svg" alt="" data-size="line">](api-reference/avalanche-avax/) [**Avalanche**](api-reference/avalanche-avax/) | [<img src=".gitbook/assets/base-logo.svg" alt="" data-size="line">](api-reference/base/) [**Base**](api-reference/base/)                            |
