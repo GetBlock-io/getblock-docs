@@ -1,4 +1,10 @@
-# eth\_sendRawTransaction stable
+---
+description: >-
+  Example code for the eth_sendRawTransaction JSON-RPC method. Complete guide on
+  how to use eth_sendRawTransaction JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_sendRawTransaction - Stable
 
 This method submits a signed, serialized transaction to the network for inclusion. It is the only write method on a public endpoint: the transaction must be signed client-side before submission.
 

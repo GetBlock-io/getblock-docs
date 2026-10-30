@@ -1,4 +1,10 @@
-# consensus\_state
+---
+description: >-
+  Example code for the consensus_state JSON-RPC method. Complete guide on how to
+  use consensus_state JSON-RPC in GetBlock Web3 documentation.
+---
+
+# consensus\_state - Stable
 
 Returns the current consensus state (round, step, and vote state) of the node.
 

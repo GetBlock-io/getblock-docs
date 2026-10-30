@@ -1,4 +1,11 @@
-# GraphQL
+---
+description: >-
+  Example code for the HashKey Chain GraphQL API (EIP-1767). Complete guide on
+  how to query blocks, transactions, accounts, and logs with GraphQL in GetBlock
+  Web3 documentation.
+---
+
+# GraphQL - HashKey Chain
 
 HashKey Chain exposes an EIP-1767 GraphQL API: a single `/graphql` endpoint that lets you request exactly the block, transaction, account, and log fields you need — with nesting — in one query, plus a mutation to broadcast transactions. It complements the JSON-RPC and WebSocket interfaces, and is useful when a single round-trip should return a precisely-shaped slice of chain data.
 

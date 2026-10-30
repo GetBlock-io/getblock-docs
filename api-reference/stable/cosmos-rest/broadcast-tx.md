@@ -4,7 +4,7 @@ description: >-
   broadcast tx REST method in GetBlock Web3 documentation.
 ---
 
-# broadcast tx
+# broadcast tx - Stable
 
 Broadcasts a signed, protobuf-encoded transaction. The body carries the base64 tx\_bytes and a broadcast mode (SYNC, ASYNC, or BLOCK).
 

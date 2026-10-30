@@ -1,4 +1,10 @@
-# num\_unconfirmed\_txs
+---
+description: >-
+  Example code for the num_unconfirmed_txs JSON-RPC method. Complete guide on
+  how to use num_unconfirmed_txs JSON-RPC in GetBlock Web3 documentation.
+---
+
+# num\_unconfirmed\_txs - Stable
 
 Returns the count and total size of transactions in the mempool, without the transaction bodies.
 

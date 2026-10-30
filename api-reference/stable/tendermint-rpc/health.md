@@ -1,4 +1,10 @@
-# health
+---
+description: >-
+  Example code for the health JSON-RPC method. Complete guide on how to use
+  health JSON-RPC in GetBlock Web3 documentation.
+---
+
+# health - Stable
 
 Returns an empty result if the node is healthy; otherwise an error.
 

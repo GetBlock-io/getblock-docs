@@ -1,4 +1,10 @@
-# net\_version hashkey
+---
+description: >-
+  Example code for the net_version JSON-RPC method. Complete guide on how to use
+  net_version JSON-RPC in GetBlock Web3 documentation.
+---
+
+# net\_version - HashKey Chain
 
 This method returns the network ID as a decimal string. On HashKey the network ID matches the chain ID (177) and is used to confirm which network an endpoint is connected to.
 

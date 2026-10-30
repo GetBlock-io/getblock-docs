@@ -1,4 +1,10 @@
-# debug\_traceBlockByHash stable
+---
+description: >-
+  Example code for the debug_traceBlockByHash JSON-RPC method. Complete guide on
+  how to use debug_traceBlockByHash JSON-RPC in GetBlock Web3 documentation.
+---
+
+# debug\_traceBlockByHash - Stable
 
 This method traces the execution of every transaction in a block identified by its hash. It is a Dedicated Node tier method commonly used with the callTracer.
 

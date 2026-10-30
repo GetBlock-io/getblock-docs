@@ -1,4 +1,10 @@
-# blockchain
+---
+description: >-
+  Example code for the blockchain JSON-RPC method. Complete guide on how to use
+  blockchain JSON-RPC in GetBlock Web3 documentation.
+---
+
+# blockchain - Stable
 
 Returns block metadata (headers) for a range of heights, newest first. The range is capped at 20 blocks per call.
 

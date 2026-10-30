@@ -4,7 +4,7 @@ description: >-
   gov proposals REST method in GetBlock Web3 documentation.
 ---
 
-# gov proposals
+# gov proposals - Stable
 
 Returns governance proposals, optionally filtered by status and paginated.
 

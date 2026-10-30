@@ -1,4 +1,11 @@
-# Hashkey
+---
+description: >-
+  GetBlock provides fast and reliable access to HashKey Chain nodes via
+  JSON-RPC, WebSocket, and GraphQL APIs. Connect to the HashKey Chain network
+  without running your own infrastructure.
+---
+
+# HashKey Chain
 
 HashKey Chain is an EVM-compatible Layer-2 blockchain from HashKey Group, aimed at compliant, institution-grade on-chain finance. It runs a standard Ethereum execution layer, so Solidity contracts and the `eth_*` JSON-RPC surface, along with tooling such as Foundry, Hardhat, Ethers.js, and Viem, work unchanged. The native gas token is HSK. GetBlock serves HashKey Chain over three interfaces: JSON-RPC (HTTP), WebSocket, and an EIP-1767 GraphQL API.
 

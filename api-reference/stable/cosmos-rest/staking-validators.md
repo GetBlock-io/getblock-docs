@@ -4,7 +4,7 @@ description: >-
   use staking validators REST method in GetBlock Web3 documentation.
 ---
 
-# staking validators
+# staking validators - Stable
 
 Returns all staking validators, optionally filtered by status, paginated.
 

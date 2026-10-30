@@ -4,7 +4,7 @@ description: >-
   use staking validator REST method in GetBlock Web3 documentation.
 ---
 
-# staking validator
+# staking validator - Stable
 
 Returns a single validator by its operator address.
 

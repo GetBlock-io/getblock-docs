@@ -1,4 +1,10 @@
-# tx
+---
+description: >-
+  Example code for the tx JSON-RPC method. Complete guide on how to use tx
+  JSON-RPC in GetBlock Web3 documentation.
+---
+
+# tx - Stable
 
 Returns a transaction by its hash, with its execution result and (optionally) a Merkle inclusion proof.
 

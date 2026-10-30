@@ -1,4 +1,10 @@
-# eth\_getBalance stable
+---
+description: >-
+  Example code for the eth_getBalance JSON-RPC method. Complete guide on how to
+  use eth_getBalance JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getBalance - Stable
 
 This method returns the USDT0 balance of an address in wei at a given block. It is the primary way to read native balances on Stable.
 

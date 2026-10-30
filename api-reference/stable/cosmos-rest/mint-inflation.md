@@ -4,7 +4,7 @@ description: >-
   mint inflation REST method in GetBlock Web3 documentation.
 ---
 
-# mint inflation
+# mint inflation - Stable
 
 Returns the current minting inflation rate.
 

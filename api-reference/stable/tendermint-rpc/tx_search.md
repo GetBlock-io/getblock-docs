@@ -1,4 +1,10 @@
-# tx\_search
+---
+description: >-
+  Example code for the tx_search JSON-RPC method. Complete guide on how to use
+  tx_search JSON-RPC in GetBlock Web3 documentation.
+---
+
+# tx\_search - Stable
 
 Searches transactions by an event-attribute query, with pagination and ordering. Useful for finding transactions by sender, recipient, or module events.
 

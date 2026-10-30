@@ -1,4 +1,11 @@
-# eth\_newPendingTransactionFilter stable
+---
+description: >-
+  Example code for the eth_newPendingTransactionFilter JSON-RPC method. Complete
+  guide on how to use eth_newPendingTransactionFilter JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# eth\_newPendingTransactionFilter - Stable
 
 This method creates a filter that reports the hashes of new pending transactions entering the mempool, and returns a filter ID.
 

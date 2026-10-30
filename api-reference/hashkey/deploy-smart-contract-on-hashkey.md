@@ -1,4 +1,11 @@
-# Deploy Smart Contract on Hashkey
+---
+description: >-
+  This guide covers adding HashKey Chain to a browser wallet, then deploying a
+  smart contract to HashKey Chain using Foundry, Hardhat, or Remix with a
+  GetBlock endpoint.
+---
+
+# Deploy a Smart Contract - HashKey Chain
 
 HashKey Chain is EVM-compatible, so contracts deploy with the standard Solidity toolchain — Foundry, Hardhat, or Remix — pointed at a GetBlock endpoint, with no chain-specific compiler or plugin required. Gas is paid in HSK. This guide covers adding the network to a wallet and deploying a first contract.
 

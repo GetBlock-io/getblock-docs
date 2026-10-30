@@ -1,4 +1,10 @@
-# status
+---
+description: >-
+  Example code for the status JSON-RPC method. Complete guide on how to use
+  status JSON-RPC in GetBlock Web3 documentation.
+---
+
+# status - Stable
 
 Returns node information: protocol and software version, network (chain id), latest block hash, app hash, block height and time, and the node's validator info and sync state.
 

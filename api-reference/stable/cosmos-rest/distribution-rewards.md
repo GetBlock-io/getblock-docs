@@ -4,7 +4,7 @@ description: >-
   to use distribution rewards REST method in GetBlock Web3 documentation.
 ---
 
-# distribution rewards
+# distribution rewards - Stable
 
 Returns the outstanding staking rewards for a delegator, per validator and in total.
 

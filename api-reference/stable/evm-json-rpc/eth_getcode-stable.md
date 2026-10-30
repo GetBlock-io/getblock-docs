@@ -1,4 +1,10 @@
-# eth\_getCode stable
+---
+description: >-
+  Example code for the eth_getCode JSON-RPC method. Complete guide on how to use
+  eth_getCode JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getCode - Stable
 
 This method returns the deployed bytecode at an address at a given block, or `0x` for an account with no code. It is used to distinguish contracts from externally owned accounts.
 

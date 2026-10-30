@@ -1,4 +1,10 @@
-# eth\_feeHistory hashkey
+---
+description: >-
+  Example code for the eth_feeHistory JSON-RPC method. Complete guide on how to
+  use eth_feeHistory JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_feeHistory - HashKey Chain
 
 This method returns a window of historical base fees, gas-used ratios, and requested priority-fee percentiles. It is the basis for building adaptive EIP-1559 fee strategies on HashKey.
 

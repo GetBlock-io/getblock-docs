@@ -1,4 +1,11 @@
-# debug\_batchSendRawTransaction hashkey
+---
+description: >-
+  Example code for the debug_batchSendRawTransaction JSON-RPC method. Complete
+  guide on how to use debug_batchSendRawTransaction JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# debug\_batchSendRawTransaction - HashKey Chain
 
 This method submits an array of signed, serialized transactions in a single request and returns a result per transaction. It is a Dedicated Node tier convenience for batch broadcasting.
 

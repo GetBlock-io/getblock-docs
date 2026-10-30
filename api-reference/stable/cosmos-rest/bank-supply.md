@@ -4,7 +4,7 @@ description: >-
   bank supply REST method in GetBlock Web3 documentation.
 ---
 
-# bank supply
+# bank supply - Stable
 
 Returns the total supply of all denominations on the chain, paginated.
 

@@ -4,7 +4,7 @@ description: >-
   auth account REST method in GetBlock Web3 documentation.
 ---
 
-# auth account
+# auth account - Stable
 
 Returns an account's details, including its account number and sequence (nonce), as a protobuf-Any wrapped account type.
 

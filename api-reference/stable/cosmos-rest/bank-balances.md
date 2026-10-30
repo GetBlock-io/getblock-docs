@@ -4,7 +4,7 @@ description: >-
   bank balances REST method in GetBlock Web3 documentation.
 ---
 
-# bank balances
+# bank balances - Stable
 
 Returns all token balances held by an address, paginated. Amounts are in the base denomination (ausdt0).
 

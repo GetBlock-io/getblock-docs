@@ -4,7 +4,7 @@ description: >-
   gov proposal REST method in GetBlock Web3 documentation.
 ---
 
-# gov proposal
+# gov proposal - Stable
 
 Returns a single governance proposal by its numeric identifier.
 

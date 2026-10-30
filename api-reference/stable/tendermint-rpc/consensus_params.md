@@ -1,4 +1,10 @@
-# consensus\_params
+---
+description: >-
+  Example code for the consensus_params JSON-RPC method. Complete guide on how
+  to use consensus_params JSON-RPC in GetBlock Web3 documentation.
+---
+
+# consensus\_params - Stable
 
 Returns the consensus parameters (block size, evidence, and validator params) at a given height.
 

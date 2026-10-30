@@ -1,4 +1,10 @@
-# eth\_chainId hashkey
+---
+description: >-
+  Example code for the eth_chainId JSON-RPC method. Complete guide on how to use
+  eth_chainId JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_chainId - HashKey Chain
 
 This method returns the chain ID used for replay-protected transaction signing per EIP-155. On HashKey it returns 0xb1 (177), which wallets and libraries use to build valid signatures.
 

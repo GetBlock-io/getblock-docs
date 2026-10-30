@@ -1,4 +1,11 @@
-# eth\_getBlockTransactionCountByNumber stable
+---
+description: >-
+  Example code for the eth_getBlockTransactionCountByNumber JSON-RPC method.
+  Complete guide on how to use eth_getBlockTransactionCountByNumber JSON-RPC in
+  GetBlock Web3 documentation.
+---
+
+# eth\_getBlockTransactionCountByNumber - Stable
 
 This method returns the number of transactions in a block identified by its number or tag, as a hex-encoded integer.
 

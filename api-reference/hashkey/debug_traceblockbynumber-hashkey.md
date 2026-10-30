@@ -1,4 +1,11 @@
-# debug\_traceBlockByNumber hashkey
+---
+description: >-
+  Example code for the debug_traceBlockByNumber JSON-RPC method. Complete guide
+  on how to use debug_traceBlockByNumber JSON-RPC in GetBlock Web3
+  documentation.
+---
+
+# debug\_traceBlockByNumber - HashKey Chain
 
 This method traces the execution of every transaction in a block identified by its number or tag. It is a Dedicated Node tier method commonly used with the callTracer.
 

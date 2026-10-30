@@ -4,7 +4,7 @@ description: >-
   latest block REST method in GetBlock Web3 documentation.
 ---
 
-# latest block
+# latest block - Stable
 
 Returns the latest block via the Cosmos base tendermint service, including its header and transactions.
 

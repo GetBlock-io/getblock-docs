@@ -1,4 +1,10 @@
-# debug\_storageRangeAt hashkey
+---
+description: >-
+  Example code for the debug_storageRangeAt JSON-RPC method. Complete guide on
+  how to use debug_storageRangeAt JSON-RPC in GetBlock Web3 documentation.
+---
+
+# debug\_storageRangeAt - HashKey Chain
 
 This method enumerates storage slots of a contract at a specific block and transaction index, starting from a hashed key. It is a Dedicated Node tier method for deep state inspection.
 

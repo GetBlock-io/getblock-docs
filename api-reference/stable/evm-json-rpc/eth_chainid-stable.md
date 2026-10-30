@@ -1,4 +1,10 @@
-# eth\_chainId stable
+---
+description: >-
+  Example code for the eth_chainId JSON-RPC method. Complete guide on how to use
+  eth_chainId JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_chainId - Stable
 
 This method returns the chain ID used for replay-protected transaction signing per EIP-155. On Stable it returns 0x3dc (988), which wallets and libraries use to build valid signatures.
 

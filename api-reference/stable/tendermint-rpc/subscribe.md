@@ -1,4 +1,10 @@
-# subscribe
+---
+description: >-
+  Example code for the subscribe JSON-RPC method. Complete guide on how to use
+  subscribe JSON-RPC in GetBlock Web3 documentation.
+---
+
+# subscribe - Stable
 
 Subscribes to events matching a Tendermint event query over the WebSocket endpoint. Matching events, such as new blocks and transactions, are streamed to the connection.
 

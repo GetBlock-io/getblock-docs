@@ -1,4 +1,10 @@
-# dump\_consensus\_state
+---
+description: >-
+  Example code for the dump_consensus_state JSON-RPC method. Complete guide on
+  how to use dump_consensus_state JSON-RPC in GetBlock Web3 documentation.
+---
+
+# dump\_consensus\_state - Stable
 
 Returns the full consensus state: the node's round state plus the state of all peers.
 

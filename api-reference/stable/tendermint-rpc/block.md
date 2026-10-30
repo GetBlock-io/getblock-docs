@@ -1,4 +1,10 @@
-# block
+---
+description: >-
+  Example code for the block JSON-RPC method. Complete guide on how to use block
+  JSON-RPC in GetBlock Web3 documentation.
+---
+
+# block - Stable
 
 Returns the block at a given height, including its header, data (transactions), and commit. Omitting height returns the latest block.
 

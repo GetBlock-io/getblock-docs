@@ -1,4 +1,10 @@
-# eth\_getBalance hashkey
+---
+description: >-
+  Example code for the eth_getBalance JSON-RPC method. Complete guide on how to
+  use eth_getBalance JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getBalance - HashKey Chain
 
 This method returns the HSK balance of an address in wei at a given block. It is the primary way to read native balances on HashKey.
 

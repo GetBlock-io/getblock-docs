@@ -1,4 +1,10 @@
-# debug\_getBadBlocks hashkey
+---
+description: >-
+  Example code for the debug_getBadBlocks JSON-RPC method. Complete guide on how
+  to use debug_getBadBlocks JSON-RPC in GetBlock Web3 documentation.
+---
+
+# debug\_getBadBlocks - HashKey Chain
 
 This method returns blocks the client recently rejected as invalid, with the reason. It is a Dedicated Node tier diagnostic used to investigate consensus or propagation issues.
 

@@ -1,4 +1,10 @@
-# broadcast\_tx\_async
+---
+description: >-
+  Example code for the broadcast_tx_async JSON-RPC method. Complete guide on how
+  to use broadcast_tx_async JSON-RPC in GetBlock Web3 documentation.
+---
+
+# broadcast\_tx\_async - Stable
 
 Broadcasts a transaction and returns immediately, without running CheckTx or waiting for inclusion. The transaction may still be rejected.
 

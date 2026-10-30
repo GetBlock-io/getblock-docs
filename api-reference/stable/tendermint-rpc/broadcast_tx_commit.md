@@ -1,4 +1,10 @@
-# broadcast\_tx\_commit
+---
+description: >-
+  Example code for the broadcast_tx_commit JSON-RPC method. Complete guide on
+  how to use broadcast_tx_commit JSON-RPC in GetBlock Web3 documentation.
+---
+
+# broadcast\_tx\_commit - Stable
 
 Broadcasts a transaction and waits until it is committed in a block, returning both the CheckTx and the execution results. Use sparingly — it blocks until commit.
 

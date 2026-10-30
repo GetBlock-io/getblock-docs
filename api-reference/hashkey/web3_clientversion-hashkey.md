@@ -1,4 +1,10 @@
-# web3\_clientVersion hashkey
+---
+description: >-
+  Example code for the web3_clientVersion JSON-RPC method. Complete guide on how
+  to use web3_clientVersion JSON-RPC in GetBlock Web3 documentation.
+---
+
+# web3\_clientVersion - HashKey Chain
 
 This method returns the version string of the execution client serving the HashKey endpoint. It is used to identify the node software and version behind a GetBlock endpoint for compatibility checks and debugging.
 

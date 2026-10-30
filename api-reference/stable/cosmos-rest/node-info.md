@@ -4,7 +4,7 @@ description: >-
   info REST method in GetBlock Web3 documentation.
 ---
 
-# node info
+# node info - Stable
 
 Returns the node's information and the application's version details via the Cosmos base tendermint service.
 

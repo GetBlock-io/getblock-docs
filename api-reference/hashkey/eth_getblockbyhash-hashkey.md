@@ -1,4 +1,10 @@
-# eth\_getBlockByHash hashkey
+---
+description: >-
+  Example code for the eth_getBlockByHash JSON-RPC method. Complete guide on how
+  to use eth_getBlockByHash JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getBlockByHash - HashKey Chain
 
 This method returns a block's data given its 32-byte hash. A boolean flag controls whether full transaction objects or only transaction hashes are returned.
 

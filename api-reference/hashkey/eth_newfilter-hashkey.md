@@ -1,4 +1,10 @@
-# eth\_newFilter hashkey
+---
+description: >-
+  Example code for the eth_newFilter JSON-RPC method. Complete guide on how to
+  use eth_newFilter JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_newFilter - HashKey Chain
 
 This method creates a log filter matching address and topic criteria and returns a filter ID. New matching logs are then retrieved with `eth_getFilterChanges`.
 

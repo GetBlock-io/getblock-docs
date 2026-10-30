@@ -1,4 +1,10 @@
-# net\_version stable
+---
+description: >-
+  Example code for the net_version JSON-RPC method. Complete guide on how to use
+  net_version JSON-RPC in GetBlock Web3 documentation.
+---
+
+# net\_version - Stable
 
 This method returns the network ID as a decimal string. On Stable the network ID matches the chain ID (988) and is used to confirm which network an endpoint is connected to.
 

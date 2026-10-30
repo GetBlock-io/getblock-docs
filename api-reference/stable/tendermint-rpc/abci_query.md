@@ -1,4 +1,10 @@
-# abci\_query
+---
+description: >-
+  Example code for the abci_query JSON-RPC method. Complete guide on how to use
+  abci_query JSON-RPC in GetBlock Web3 documentation.
+---
+
+# abci\_query - Stable
 
 Runs an ABCI query against the application at a given path, optionally at a historical height and with a Merkle proof. This is the low-level transport the Cosmos SDK gRPC/REST layer uses to read module state.
 

@@ -4,7 +4,7 @@ description: >-
   staking pool REST method in GetBlock Web3 documentation.
 ---
 
-# staking pool
+# staking pool - Stable
 
 Returns the staking pool: the total bonded and not-bonded token amounts.
 

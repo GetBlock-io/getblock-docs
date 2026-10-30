@@ -1,4 +1,10 @@
-# block\_search
+---
+description: >-
+  Example code for the block_search JSON-RPC method. Complete guide on how to
+  use block_search JSON-RPC in GetBlock Web3 documentation.
+---
+
+# block\_search - Stable
 
 Searches blocks by an event-attribute query (over finalize-block events), with pagination and ordering.
 

@@ -1,4 +1,10 @@
-# eth\_blockNumber hashkey
+---
+description: >-
+  Example code for the eth_blockNumber JSON-RPC method. Complete guide on how to
+  use eth_blockNumber JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_blockNumber - HashKey Chain
 
 This method returns the number of the most recent block, as a hex-encoded integer. It is the primary way to read the current chain tip on HashKey.
 

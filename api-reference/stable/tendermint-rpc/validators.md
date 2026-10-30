@@ -1,4 +1,10 @@
-# validators
+---
+description: >-
+  Example code for the validators JSON-RPC method. Complete guide on how to use
+  validators JSON-RPC in GetBlock Web3 documentation.
+---
+
+# validators - Stable
 
 Returns the validator set at a given height, paginated. Omitting height returns the latest set.
 

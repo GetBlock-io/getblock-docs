@@ -1,4 +1,10 @@
-# debug\_accountRange hashkey
+---
+description: >-
+  Example code for the debug_accountRange JSON-RPC method. Complete guide on how
+  to use debug_accountRange JSON-RPC in GetBlock Web3 documentation.
+---
+
+# debug\_accountRange - HashKey Chain
 
 This method enumerates a range of accounts from the state trie at a given block, starting from a hashed key. It is a Dedicated Node tier method used for state export and analysis.
 

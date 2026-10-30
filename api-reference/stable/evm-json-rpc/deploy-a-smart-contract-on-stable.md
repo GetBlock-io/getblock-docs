@@ -4,7 +4,7 @@ description: >-
   documentation.
 ---
 
-# Deploy a Smart Contract on Stable
+# Deploy a Smart Contract - Stable
 
 Stable is EVM-compatible, so contracts deploy with the standard Solidity toolchain — Foundry, Hardhat, or Remix — pointed at a GetBlock endpoint, with no chain-specific compiler or plugin required. Gas is paid in USDT0. This guide covers adding the network to a wallet and deploying a first contract.
 

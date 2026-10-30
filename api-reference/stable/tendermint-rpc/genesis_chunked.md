@@ -1,4 +1,10 @@
-# genesis\_chunked
+---
+description: >-
+  Example code for the genesis_chunked JSON-RPC method. Complete guide on how to
+  use genesis_chunked JSON-RPC in GetBlock Web3 documentation.
+---
+
+# genesis\_chunked - Stable
 
 Returns the genesis document in chunks, for chains (like Stable) whose genesis is too large to return in one response.
 

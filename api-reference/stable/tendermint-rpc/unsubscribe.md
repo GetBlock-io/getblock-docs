@@ -1,4 +1,10 @@
-# unsubscribe
+---
+description: >-
+  Example code for the unsubscribe JSON-RPC method. Complete guide on how to use
+  unsubscribe JSON-RPC in GetBlock Web3 documentation.
+---
+
+# unsubscribe - Stable
 
 Cancels a specific subscription on the WebSocket connection, identified by its event query.
 

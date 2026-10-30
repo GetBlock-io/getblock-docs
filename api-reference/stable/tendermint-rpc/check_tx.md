@@ -1,4 +1,10 @@
-# check\_tx
+---
+description: >-
+  Example code for the check_tx JSON-RPC method. Complete guide on how to use
+  check_tx JSON-RPC in GetBlock Web3 documentation.
+---
+
+# check\_tx - Stable
 
 Runs a CheckTx against the application for a transaction without broadcasting it, returning the validation result.
 

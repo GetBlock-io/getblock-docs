@@ -1,4 +1,10 @@
-# eth\_getBlockReceipts hashkey
+---
+description: >-
+  Example code for the eth_getBlockReceipts JSON-RPC method. Complete guide on
+  how to use eth_getBlockReceipts JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getBlockReceipts - HashKey Chain
 
 This method returns every transaction receipt in a block in a single call. It is used to index all logs and statuses for a block without one request per transaction.
 

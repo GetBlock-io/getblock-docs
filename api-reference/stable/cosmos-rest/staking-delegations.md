@@ -4,7 +4,7 @@ description: >-
   use staking delegations REST method in GetBlock Web3 documentation.
 ---
 
-# staking delegations
+# staking delegations - Stable
 
 Returns all delegations made by a delegator, paginated.
 

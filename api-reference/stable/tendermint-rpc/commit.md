@@ -1,4 +1,10 @@
-# commit
+---
+description: >-
+  Example code for the commit JSON-RPC method. Complete guide on how to use
+  commit JSON-RPC in GetBlock Web3 documentation.
+---
+
+# commit - Stable
 
 Returns the commit (validator signatures) for a block at a given height, with a flag indicating whether it is canonical.
 

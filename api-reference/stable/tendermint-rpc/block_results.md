@@ -1,4 +1,10 @@
-# block\_results
+---
+description: >-
+  Example code for the block_results JSON-RPC method. Complete guide on how to
+  use block_results JSON-RPC in GetBlock Web3 documentation.
+---
+
+# block\_results - Stable
 
 Returns the results of all transactions in a block: per-tx execution results, and the block's finalize-block events and validator/consensus-param updates.
 

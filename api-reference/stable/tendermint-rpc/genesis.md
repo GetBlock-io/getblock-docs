@@ -1,4 +1,10 @@
-# genesis
+---
+description: >-
+  Example code for the genesis JSON-RPC method. Complete guide on how to use
+  genesis JSON-RPC in GetBlock Web3 documentation.
+---
+
+# genesis - Stable
 
 Returns the genesis document. For Stable the genesis is large and exceeds the response limit — use genesis\_chunked instead.
 

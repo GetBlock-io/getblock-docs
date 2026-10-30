@@ -1,4 +1,10 @@
-# unsubscribe\_all
+---
+description: >-
+  Example code for the unsubscribe_all JSON-RPC method. Complete guide on how to
+  use unsubscribe_all JSON-RPC in GetBlock Web3 documentation.
+---
+
+# unsubscribe\_all - Stable
 
 Cancels all subscriptions on the current WebSocket connection.
 

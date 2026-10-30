@@ -1,4 +1,10 @@
-# debug\_traceTransaction stable
+---
+description: >-
+  Example code for the debug_traceTransaction JSON-RPC method. Complete guide on
+  how to use debug_traceTransaction JSON-RPC in GetBlock Web3 documentation.
+---
+
+# debug\_traceTransaction - Stable
 
 This method replays a mined transaction and returns a detailed execution trace, including internal calls and value transfers. It is a Dedicated Node tier method widely used for debugging and MEV analysis.
 

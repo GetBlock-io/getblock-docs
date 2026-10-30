@@ -4,7 +4,7 @@ description: >-
   to use bank balance by denom REST method in GetBlock Web3 documentation.
 ---
 
-# bank balance by denom
+# bank balance by denom - Stable
 
 Returns the balance of a single denomination for an address.
 
