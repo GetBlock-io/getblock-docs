@@ -499,7 +499,7 @@ Rented Energy stays on the address for the full hour. If you send several USDT t
 | resource\_type  | string  | `energy` or `bandwidth`                                                            |
 | volume          | integer | Energy delegated (on-chain it can show 1 unit less)                                |
 | duration        | string  | Rental period — Energy returns to GetBlock when it ends                            |
-| price\_usd      | string  | What was charged — can differ from the `price-estimate` quote                     |
+| price\_usd      | string  | What was charged — can differ from the `price-estimate` quote                      |
 | trx\_spent      | number  | TRX spent on the delegation; `0` while `accepted`                                  |
 | txid            | string  | The delegation transaction — look it up on [Tronscan](https://tronscan.org)        |
 
