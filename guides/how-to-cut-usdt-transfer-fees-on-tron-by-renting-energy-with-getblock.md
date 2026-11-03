@@ -1,7 +1,7 @@
 ---
 description: >-
   This guide shows you how to cut USDT (TRC-20) transfer fees on TRON by renting
-  Energy with the GetBlock TRON Energy API instead of burning TRX
+  Energy with the GetBlock TRON Energy API instead of burning TRX 
 ---
 
 # How to Cut USDT Transfer Fees on TRON by Renting Energy with GetBlock
