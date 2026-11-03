@@ -1,22 +1,26 @@
 ---
-description: Example code for the delegate-energy JSON RPC method
+description: Example code for the delegate-energy TRON Energy API endpoint
 ---
 
 # delegate-energy - TRON energy
 
-This endpoint delegates energy to a TRON address. In most cases, the order completes immediately with status "success".
+This endpoint delegates Energy to a TRON address. If the delegation lands immediately, the API returns `200` with status `"success"` and an on-chain `txid`. Otherwise it returns `202` with status `"accepted"` — poll [orders/{order\_id}](orders-order_id-tron-energy.md) with the returned `orderId` until the status becomes `"charged"` (7 seconds in our tests).
+
+{% hint style="info" %}
+The target address must already be activated on-chain. For a brand-new address, call [address-activate](address-activate-tron-energy.md) first.
+{% endhint %}
 
 #### Parameter
 
-| Parameter       | Type    | Required | Description                                        |
-| --------------- | ------- | -------- | -------------------------------------------------- |
-| target\_address | string  | Yes      | TRON wallet address (starts with T, 34 characters) |
-| volume          | integer | Yes      | Energy amount: 30,000 — 5,000,000                  |
-| duration        | string  | Yes      | "1h", "1d", "3d", "7d"                             |
+| Parameter       | Type    | Required | Description                                             |
+| --------------- | ------- | -------- | ------------------------------------------------------- |
+| target\_address | string  | Yes      | TRON wallet address (starts with T, 34 characters)      |
+| volume          | integer | Yes      | Energy amount: 32,000 — 5,000,000                       |
+| duration        | string  | Yes      | `"15m"`, `"1h"`, `"1d"`, `"3d"`, `"7d"`, `"14d"`        |
 
 ### Idempotency
 
-delegateEnergy charges your balance and may place an on-chain order. To make retries safe, send a unique key with each _intent_:
+This endpoint charges your balance and places an on-chain order. To make retries safe, send a unique `Idempotency-Key` header with each _intent_:
 
 ```
 Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44
@@ -24,13 +28,12 @@ Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44
 
 A UUID is recommended. Generate a **new** key for each purchase, and reuse the same key when retrying the exact same purchase.
 
-| Situation                                         | Result                                                                |
-| ------------------------------------------------- | --------------------------------------------------------------------- |
-| Same key + **same** body                          | The original response is replayed. No second charge, no second order. |
-| Same key + **different** body                     | `422`                                                                 |
-| Same key on a **different** endpoint              | `409`                                                                 |
-| Duplicate sent while the first is still in flight | `409` with a `Retry-After` header                                     |
-| Idempotency store temporarily unavailable         | `503` with a `Retry-After` header (retry shortly)                     |
+| Situation                                         | Result                                                                                                                       |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Same key + **same** body                          | The original response is replayed with the same `orderId`. No second charge, no second order.                                |
+| Same key + **different** body                     | `422` — `Idempotency-Key was previously used with a different request body. Generate a fresh key per distinct request.`      |
+| Same key on a **different** endpoint              | `409` — `Idempotency-Key was already used on a different endpoint (delegate-energy). Generate a fresh key per distinct intent.` |
+| Duplicate sent while the first is still in flight | `409` with `Retry-After: 2` — `A request with this Idempotency-Key is already in progress. Retry shortly.`                   |
 
 {% hint style="info" %}
 Always send an idempotency key on write endpoints. It is the difference between a safe retry and an accidental double on-chain charge.
@@ -47,10 +50,10 @@ curl -X POST https://services.getblock.io/v1/tron-energy/delegate-energy \
   -H "Content-Type: application/json" \
   -H "Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44" \
   -d '{
-    "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
-    "volume": 65000,
-    "duration": "1h"
-  }'
+  "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
+  "volume": 65000,
+  "duration": "1h"
+}'
 ```
 {% endcode %}
 {% endtab %}
@@ -59,26 +62,23 @@ curl -X POST https://services.getblock.io/v1/tron-energy/delegate-energy \
 {% code overflow="wrap" %}
 ```javascript
 import axios from 'axios';
-const data = JSON.stringify({
-    "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
+
+const response = await axios.post(
+  'https://services.getblock.io/v1/tron-energy/delegate-energy',
+  {
+    "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
     "volume": 65000,
     "duration": "1h"
+  },
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer YOUR_API_KEY',
+      'Idempotency-Key': '6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44',
+    },
   }
 );
-
-const config = {
-    method: 'post',
-    url: 'https://services.getblock.io/v1/tron-energy/delegate-energy',
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization: Bearer YOUR_API_KEY'
-        'Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44' \
-    },
-    data: data
-};
-axios(config)
-    .then(response => console.log(JSON.stringify(response.data)))
-    .catch(error => console.log(error));
+console.log(response.data);
 ```
 {% endcode %}
 {% endtab %}
@@ -87,24 +87,21 @@ axios(config)
 {% code overflow="wrap" %}
 ```python
 import requests
-import json
 
 url = "https://services.getblock.io/v1/tron-energy/delegate-energy"
-
-payload = json.dumps({
-    "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
-    "volume": 65000,
-    "duration": "1h"
-  }
-)
-
+payload = {
+  "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
+  "volume": 65000,
+  "duration": "1h"
+}
 headers = {
-        'Content-Type': 'application/json',
-        'Authorization: Bearer YOUR_API_KEY',
-        'Idempotency-Key: 6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44' 
-    },
-response = requests.post(url, headers=headers, data=payload)
-print(response.text)
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Idempotency-Key': '6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44',
+}
+
+response = requests.post(url, headers=headers, json=payload)
+print(response.json())
 ```
 {% endcode %}
 {% endtab %}
@@ -113,30 +110,25 @@ print(response.text)
 {% code overflow="wrap" %}
 ```rust
 use reqwest::header;
+use serde_json::json;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
 
-    let url = "https://services.getblock.io/v1/tron-energy/delegate-energy";
-    let payload = r#"{{
-    "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
-    "volume": 65000,
-    "duration": "1h"
-  }
-"#;
-
     let response = client
-        .post(url)
-        .header(header::CONTENT_TYPE, "application/json")
+        .post("https://services.getblock.io/v1/tron-energy/delegate-energy")
         .header(header::AUTHORIZATION, "Bearer YOUR_API_KEY")
-        .header(header::IDEMPOTENCY_KEY: "6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44")
-        .body(payload)
+        .header("Idempotency-Key", "6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44")
+        .json(&json!({
+          "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
+          "volume": 65000,
+          "duration": "1h"
+        }))
         .send()
         .await?;
 
     println!("{}", response.text().await?);
-
     Ok(())
 }
 ```
@@ -144,57 +136,100 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 {% endtab %}
 
 {% tab title="GO" %}
+{% code overflow="wrap" %}
 ```go
 package main
+
 import (
     "bytes"
     "encoding/json"
     "fmt"
+    "io"
     "net/http"
 )
-func main() {
-    url := "https://services.getblock.io/v1/tron-energy/delegate-energy"
-    payload := map[string]interface{}{
-    "target_address": "TUo8pycbvje...zw67bpPs4GLFyD",
-    "volume": 65000,
-    "duration": "1h"
-  }
 
-    jsonData, _ := json.Marshal(payload)
-    req, _ := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
+func main() {
+    payload, _ := json.Marshal(map[string]interface{}{
+        "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
+        "volume": 65000,
+        "duration": "1h",
+    })
+
+    req, _ := http.NewRequest("POST", "https://services.getblock.io/v1/tron-energy/delegate-energy", bytes.NewBuffer(payload))
     req.Header.Set("Authorization", "Bearer YOUR_API_KEY")
     req.Header.Set("Content-Type", "application/json")
-    req.Header.Set("Idempotency-Key": "6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44")
-    client := &http.Client{}
-    resp, err := client.Do(req)
+    req.Header.Set("Idempotency-Key", "6f9c2a1e-3b7d-4c08-9f21-2e5a7c0b1d44")
+
+    resp, err := http.DefaultClient.Do(req)
     if err != nil {
         panic(err)
     }
     defer resp.Body.Close()
-    
-    var result map[string]interface{}
-    json.NewDecoder(resp.Body).Decode(&result)
-    fmt.Println(result)
+
+    body, _ := io.ReadAll(resp.Body)
+    fmt.Println(string(body))
 }
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
-#### &#x20;Response&#x20;
+#### Response
 
-```bash
+{% tabs %}
+{% tab title="200 (Success)" %}
+```json
 {
   "data": {
+    "orderId": "0a6d59c4-9486-45b1-bf3f-74d075ad9b4c",
     "status": "success",
-    "target_address": "TUo8...",
+    "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
     "resource_type": "energy",
     "volume": 65000,
     "duration": "1h",
-    "price_usd": "0.59",
-    "trx_spent": 3,
-    "order_id": "1H76d06176b8",
-    "txid": "db47c131876a504ceee32f023a4aa3aa23629362e...",
-    "message": "Delegation completed successfully."
+    "price_usd": "0.40",
+    "trx_spent": 2,
+    "txid": "63285f35942a0a8552fa7664b5fd8d4c2140640e9c766fe44fda7e01c97233df"
   }
 }
 ```
+{% endtab %}
+
+{% tab title="202 (Accepted)" %}
+```json
+{
+  "data": {
+    "orderId": "822448b4-88de-4a27-865b-5a2a17973ecd",
+    "status": "accepted",
+    "target_address": "TUo8pycbvje9w2XYsNnnzw67bpPs4GLFyD",
+    "resource_type": "energy",
+    "volume": 32000,
+    "duration": "1h",
+    "price_usd": "",
+    "trx_spent": 0,
+    "txid": ""
+  }
+}
+```
+
+`price_usd`, `trx_spent`, and `txid` are filled in once the order reaches `charged`.
+{% endtab %}
+{% endtabs %}
+
+### Response Sample Definition
+
+| Field           | Type    | Description                                                         |
+| --------------- | ------- | ------------------------------------------------------------------- |
+| orderId         | string  | Order ID. Pass it to [orders/{order\_id}](orders-order_id-tron-energy.md) |
+| status          | string  | `"success"` (delivered, `200`) or `"accepted"` (pending, `202`)     |
+| target\_address | string  | Address that received the Energy                                    |
+| resource\_type  | string  | `"energy"`                                                          |
+| volume          | integer | Energy delegated                                                    |
+| duration        | string  | Rental period                                                       |
+| price\_usd      | string  | Amount charged to your balance. Empty while `accepted`              |
+| trx\_spent      | number  | TRX spent on the delegation. `0` while `accepted`                   |
+| txid            | string  | Delegation transaction hash on TRON. Empty while `accepted`         |
+
+{% hint style="info" %}
+The on-chain amount can be rounded down by 1 unit (for example, 65,000 ordered shows as `EnergyLimit: 64999`). Add a small buffer if a transaction needs an exact amount.
+{% endhint %}

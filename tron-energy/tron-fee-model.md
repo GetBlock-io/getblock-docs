@@ -123,5 +123,5 @@ After being used, Energy on an account recovers linearly over 24 hours. This mea
 
 ### Next Steps
 
-1. [Pricing](/broken/pages/e7LJxCH0Sl7Chxp5lyqW)
+1. [Pricing](api-reference/#pricing)
 2. [API Reference](api-reference/)
