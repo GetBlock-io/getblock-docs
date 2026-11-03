@@ -6,7 +6,7 @@ description: >-
 
 # getTransaction - Solana
 
-This method returns a confirmed transaction by signature, including its instructions, account keys, logs, and balance changes. Versioned transactions require `maxSupportedTransactionVersion` to be set.
+This method returns a confirmed transaction by signature, including its instructions, account keys, logs, and balance changes. Versioned transactions require `maxSupportedTransactionVersion`: set it to 1 to read legacy, v0 and v1 transactions. With `@solana/web3.js` use version 1.99.0 or later, as earlier versions fail to parse a v1 response.
 
 ## Parameters
 
@@ -17,11 +17,11 @@ This method returns a confirmed transaction by signature, including its instruct
 
 ### Config Object
 
-| Field                          | Type   | Required | Description                                                                            |
-| ------------------------------ | ------ | -------- | -------------------------------------------------------------------------------------- |
-| encoding                       | string | No       | Transaction encoding: json, jsonParsed, base58, or base64                              |
-| commitment                     | string | No       | Commitment level: processed, confirmed, or finalized. Defaults to finalized            |
-| maxSupportedTransactionVersion | number | No       | Highest transaction version the client can decode. Set to 0 for versioned transactions |
+| Field                          | Type   | Required | Description                                                                                                              |
+| ------------------------------ | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| encoding                       | string | No       | Transaction encoding: json, jsonParsed, base58, or base64                                                                |
+| commitment                     | string | No       | Commitment level: processed, confirmed, or finalized. Defaults to finalized                                              |
+| maxSupportedTransactionVersion | number | No       | Highest transaction version the client can decode. Set to 1: a request capped at 0 fails with -32015 on a v1 transaction |
 
 ## Request
 
@@ -34,7 +34,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "getTransaction",
-    "params": ["5wHu1qwD4kLwYqPmy1uDCgpiJ1qGpVYU3n5aHT6bSWUE1JzcbQCPSDLDPGrFyqmLLzQjLNPTPtRZbNbUJQNMkaWq", {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 0}],
+    "params": ["5wHu1qwD4kLwYqPmy1uDCgpiJ1qGpVYU3n5aHT6bSWUE1JzcbQCPSDLDPGrFyqmLLzQjLNPTPtRZbNbUJQNMkaWq", {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 1}],
     "id": "getblock.io"
 }'
 ```
@@ -50,7 +50,7 @@ const connection = new Connection('https://shared.eu-central-1.getblock.io/<ACCE
 
 const transaction = await connection.getParsedTransaction(
   '5wHu1qwD4kLwYqPmy1uDCgpiJ1qGpVYU3n5aHT6bSWUE1JzcbQCPSDLDPGrFyqmLLzQjLNPTPtRZbNbUJQNMkaWq',
-  { maxSupportedTransactionVersion: 0 }
+  { maxSupportedTransactionVersion: 1 }
 );
 
 console.log(transaction?.meta?.fee);
@@ -69,7 +69,7 @@ response = requests.post(
     json={
         'jsonrpc': '2.0',
         'method': 'getTransaction',
-        'params': ["5wHu1qwD4kLwYqPmy1uDCgpiJ1qGpVYU3n5aHT6bSWUE1JzcbQCPSDLDPGrFyqmLLzQjLNPTPtRZbNbUJQNMkaWq", {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 0}],
+        'params': ["5wHu1qwD4kLwYqPmy1uDCgpiJ1qGpVYU3n5aHT6bSWUE1JzcbQCPSDLDPGrFyqmLLzQjLNPTPtRZbNbUJQNMkaWq", {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 1}],
         'id': 'getblock.io'
     }
 )
@@ -95,7 +95,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .json(&json!({
             "jsonrpc": "2.0",
             "method": "getTransaction",
-            "params": ["5wHu1qwD4kLwYqPmy1uDCgpiJ1qGpVYU3n5aHT6bSWUE1JzcbQCPSDLDPGrFyqmLLzQjLNPTPtRZbNbUJQNMkaWq", {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 0}],
+            "params": ["5wHu1qwD4kLwYqPmy1uDCgpiJ1qGpVYU3n5aHT6bSWUE1JzcbQCPSDLDPGrFyqmLLzQjLNPTPtRZbNbUJQNMkaWq", {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 1}],
             "id": "getblock.io"
         }))
         .send()
@@ -184,9 +184,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Error Code | Message                                                           | Description                                                              |
-| ---------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| -32602     | Invalid params                                                    | Signature is malformed or an unsupported encoding was requested          |
-| -32015     | Transaction version (0) is not supported by the requesting client | `maxSupportedTransactionVersion` was omitted for a versioned transaction |
-| -32011     | Transaction history is not available from this node               | The node does not retain the ledger range containing the signature       |
-| -32603     | Internal error                                                    | Node failed to read the transaction from blockstore                      |
+| Error Code | Message                                                           | Description                                                                                  |
+| ---------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| -32602     | Invalid params                                                    | Signature is malformed or an unsupported encoding was requested                              |
+| -32015     | Transaction version (1) is not supported by the requesting client | `maxSupportedTransactionVersion` was omitted or is lower than the version of the transaction |
+| -32011     | Transaction history is not available from this node               | The node does not retain the ledger range containing the signature                           |
+| -32603     | Internal error                                                    | Node failed to read the transaction from blockstore                                          |

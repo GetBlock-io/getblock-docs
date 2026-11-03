@@ -100,7 +100,7 @@ npm install @solana/web3.js ws dotenv
   "author": "GetBlock",
   "license": "MIT",
  "dependencies": {
-  "@solana/web3.js": "^1.98.4",
+  "@solana/web3.js": "^1.99.0",
   "dotenv": "^17.2.3",
   "ws": "^8.18.3"
 }
@@ -411,7 +411,7 @@ What this does:
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const tx = await this.connection.getTransaction(signature, {
-        maxSupportedTransactionVersion: 0,
+        maxSupportedTransactionVersion: 1,
         commitment: 'confirmed'
       });
 
