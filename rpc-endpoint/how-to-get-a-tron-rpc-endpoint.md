@@ -23,7 +23,7 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 3.  Select:
 
@@ -32,7 +32,7 @@ Once logged in:
     * **API Interface:** gRPC (Fullnode) or JSON-RPC (Fullnode) or REST (Fullnode) or gRPC (Solidity) or JSON-RPC (Solidity)
     * **Region:** Frankfurt (EU) or New York or Singapore
 
-    <figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 4. Click **"Create":** Your endpoint URL will be generated immediately.
 {% endstep %}
 
@@ -48,7 +48,7 @@ https://shared.<region>.getblock.io/a1b2c3d4e5f6789012345678abcdef01/
 {% endcode %}
 
 {% hint style="warning" %}
-`<region>` is `eu-central-1` (Frankfurt), `us-east-1` (New York), or `ap-southeast-1` (Singapore) — whichever you picked in step 2.&#x20;
+`<region>` is `eu-central-1` (Frankfurt), `us-east-1` (New York), or `ap-southeast-1` (Singapore) — whichever you picked in step 2.
 
 The long string after the host is your **access token** — keep it private.
 {% endhint %}

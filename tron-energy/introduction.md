@@ -10,30 +10,31 @@ GetBlock Tron Energy is a service that lets you rent TRON Energy and Bandwidth v
 
 ### Key Benefits
 
-* Save about 80% compared to burning TRX for fees: 65,000 Energy for 1 hour costs about 1.2–1.4 TRX versus 6.5 TRX burned
+* Save up to 68% compared to burning TRX for fees
 * Pay in USD: no need to hold or stake TRX
 * Instant delegation: resources are available immediately
-* Flexible durations: 15 minutes to 14 days
+* Flexible durations: 1 hour to 14 days
 * RESTful API for automation: ideal for exchanges and payment services
 * Dashboard UI for manual operations and monitoring
+* Rate limit: 30 requests/min per API key
 
 ### **How It Works**
 
-1. **You top up** your GetBlock Credits balance
+1. **You top up** your GetBlock account with USD (using your card)
 2. **You request delegation** via API or dashboard — specifying target address, Energy amount, and duration
 3. **GetBlock delegates Energy** from their staked TRX pool to your target address instantly
 4. **Your target address transacts** using the delegated Energy (no TRX burning)
 5. **Energy recovers** over 24 hours if partially used
 6. **Delegation expires** at the end of the rental period — resources return to GetBlock
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 #### Available Operations
 
 | Operation          | Description                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------- |
-| Delegate Energy    | Delegate 32,000–5,000,000 Energy for 15m–14d to any TRON address                               |
-| Delegate Bandwidth | Delegate 1,000–50,000 Bandwidth for 1h, 3d, 7d, or 14d to any TRON address                    |
+| Delegate Energy    | Delegate 32,000–5,000,000 Energy for 1h–14d to any TRON address                                |
+| Delegate Bandwidth | Delegate 1,000–200,000 Bandwidth for 1 hour to any TRON address                                |
 | Activate Address   | Activate a new TRON address on the blockchain (required before delegation to unused addresses) |
 | Check Price        | Get a real-time price estimate for Energy delegation                                           |
 | Check Order Status | Retrieve details of a previously placed order                                                  |
@@ -42,5 +43,5 @@ GetBlock Tron Energy is a service that lets you rent TRON Energy and Bandwidth v
 
 1. [Getting started](getting-started.md)
 2. [Tron Fee Model](tron-fee-model.md)
-3. [Pricing](api-reference/#pricing)
+3. [Pricing](api-reference/)
 4. [API Reference](api-reference/)

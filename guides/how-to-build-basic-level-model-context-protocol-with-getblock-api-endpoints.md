@@ -5,7 +5,7 @@ icon: message-bot
 
 # How to Build Basic-level Model-Context Protocol with GetBlock API Endpoints
 
-The Model-Context Protocol (MCP) is an open standard created by [Anthropic](https://www.anthropic.com/news/model-context-protocol) that provides a universal way for AI assistants to connect to external data sources and tools.&#x20;
+The Model-Context Protocol (MCP) is an open standard created by [Anthropic](https://www.anthropic.com/news/model-context-protocol) that provides a universal way for AI assistants to connect to external data sources and tools.
 
 With MCP, AI applications can connect to various data sources (e.g., local files, databases), tools (e.g., search engines, calculators), and workflows (e.g., specialized prompts)—enabling them to access key information and perform tasks effectively.
 
@@ -16,9 +16,9 @@ You can picture MCP as a "USB-C for AI":
 
 Similarly, MCP creates a universal "port" for AI assistants to connect to data.
 
-In short, MCP helps AI applications access the right information at the right time, thereby reducing the likelihood of incorrect or misleading responses.&#x20;
+In short, MCP helps AI applications access the right information at the right time, thereby reducing the likelihood of incorrect or misleading responses.
 
-In this guide, you will learn how to:&#x20;
+In this guide, you will learn how to:
 
 * Get a GetBlock Access Token for Ethereum's API endpoint
 * A basic MCP server with three core capabilities:
@@ -102,7 +102,7 @@ npm install @modelcontextprotocol/sdk zod ethers
     4. Under **API Interface,** select JSON-RPC
     5. Click on **Create** to get your endpoint
 
-    &#x20;    Your endpoint will look like:
+    Your endpoint will look like:
 
     ```json
     https://shared.us-east-1.getblock.io/{YOUR-ACCESS-TOKEN}/
@@ -113,8 +113,6 @@ npm install @modelcontextprotocol/sdk zod ethers
     ```javascript
     GETBLOCK_TOKEN=your_token
     ```
-
-
 
     <div data-gb-custom-block data-tag="hint" data-style="warning" class="hint hint-warning"><p>Keep your endpoint safe, as it contains an access token</p></div>
 5. Project Structure
@@ -174,7 +172,7 @@ console.error("✅ Ethereum MCP Server initialized");
 * `version` - Semantic version for tracking updates
 * `console.error()` - Logs to stderr (separate from data output)
 
-#### 4.  Implement Blockchain Query Tools
+#### 4. Implement Blockchain Query Tools
 
 **Tool 1: Get ETH Balance**
 
@@ -232,7 +230,7 @@ This tool fetches the ETH balance for any Ethereum address:
 );
 </code></pre>
 
-**What this does:**&#x20;
+**What this does:**
 
 * Register the tool
 * Validates Ethereum address format
@@ -245,7 +243,7 @@ This tool fetches the ETH balance for any Ethereum address:
 
 **Tool 2: Get Gas Price**
 
-This tool retrieves current Ethereum gas prices:&#x20;
+This tool retrieves current Ethereum gas prices:
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>server.tool("get_gas_price", {}, async () => {
 </strong>  try {
@@ -291,7 +289,7 @@ This tool retrieves current Ethereum gas prices:&#x20;
 });
 </code></pre>
 
-**What it does:**&#x20;
+**What it does:**
 
 * Register the tool
 * Fetch gas price
@@ -365,14 +363,12 @@ async function main() {
 }
 ```
 
-What this does:&#x20;
+What this does:
 
 * `const transport = new StdioServerTransport()`: create communication channel between the client(Claude Desktop) and the server(script)
 * Links MCP server to transport mechanism
 * Registers all tools with MCP client
 * Starts listening for incoming requests
-
-
 
 2. Start the server and shut down:
 
@@ -390,7 +386,7 @@ main().catch((error) => {
 });
 ```
 
-**What this does:**&#x20;
+**What this does:**
 
 * `SIGINT` - Handles Ctrl+C interrupts
 * When the user runs `npm run start` , this will start the server.
@@ -402,7 +398,7 @@ main().catch((error) => {
 3. Scroll down and Click on **Developer**
 4. Under **Local MCP Server**, click on `Edit Config`
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 5. Add the following **configuration**:
 
@@ -463,8 +459,6 @@ code ~/Library/Application\ Support/Claude/claude_desktop_config.json
   }
 }
 ```
-
-
 {% endtab %}
 
 {% tab title="linux" %}
@@ -506,7 +500,7 @@ What's the ETH balance of 0xd1af2dac4e0a9d1f58b99e2f42bc0320ed74a7cd?
 Permit Claude to query the data
 {% endhint %}
 
-**Expected:** Claude calls `get_eth_balance` tool and shows balance e.g&#x20;
+**Expected:** Claude calls `get_eth_balance` tool and shows balance e.g
 
 > **The ETH balance for address 0xd1af2dac4e0a9d1f58b99e2f42bc0320ed74a7cd is 0.000104792219532 ETH (approximately 104,792,219,532,000 wei).**
 
@@ -516,7 +510,7 @@ Permit Claude to query the data
 What's the current Ethereum gas price?
 ```
 
-**Expected:** Claude calls `get_gas_price` tool and shows price in Gwei e.g&#x20;
+**Expected:** Claude calls `get_gas_price` tool and shows price in Gwei e.g
 
 > The current Ethereum gas price is **0.071638489 Gwei** (or about 71.6 million wei).
 >
@@ -533,7 +527,7 @@ What's the current Ethereum gas price?
 What's the latest Ethereum block number?
 ```
 
-**Expected:** Claude calls `get_block_number` tool and shows block e.g&#x20;
+**Expected:** Claude calls `get_block_number` tool and shows block e.g
 
 > The latest Ethereum block number is **23,811,857** on the Ethereum Mainnet, as of 2025-11-16 at 12:50:34 UTC.
 
@@ -546,7 +540,7 @@ Check the balance for 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045
 and tell me if the current gas price is high or low
 ```
 
-**Expected:** Claude calls both tools and provides analysis e.g&#x20;
+**Expected:** Claude calls both tools and provides analysis e.g
 
 > **Balance for 0xd1af2dac4e0a9d1f58b99e2f42bc0320ed74a7cd:**
 >
@@ -569,7 +563,7 @@ and tell me if the current gas price is high or low
 Is now a good time to send an Ethereum transaction?
 ```
 
-**Expected:** Claude checks gas price and provides a recommendation e.g&#x20;
+**Expected:** Claude checks gas price and provides a recommendation e.g
 
 > Yes, **now is an excellent time** to send an Ethereum transaction! Here's why:
 >
@@ -585,14 +579,14 @@ Is now a good time to send an Ethereum transaction?
 
 ### Troubleshooting
 
-If you experience this error:&#x20;
+If you experience this error:
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-11-14 at 1.37.56 PM.png" alt=""><figcaption></figcaption></figure>
 
 This means that:
 
 1. Your GetBlock token is missing or incorrect
-2. The base URL is not correct.&#x20;
+2. The base URL is not correct.
 
 {% hint style="warning" %}
 Each location has a unique URL
@@ -620,7 +614,7 @@ https://shared.eu-central-1.getblock.io/d4067b3cc......
 
 ### Conclusion
 
-In this guide, you've successfully functional MCP server that connects AI assistants to blockchain data using the GetBlock API. Now you know what MCP is, how to set up your project, get your GetBlock Token and get a response directly from your Claude.&#x20;
+In this guide, you've successfully functional MCP server that connects AI assistants to blockchain data using the GetBlock API. Now you know what MCP is, how to set up your project, get your GetBlock Token and get a response directly from your Claude.
 
 #### Additional Resources
 

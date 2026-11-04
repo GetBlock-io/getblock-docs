@@ -4,7 +4,7 @@
 
 ## GETTING STARTED
 
-* [How to set up an account](getting-started/how-to-set-up-an-account.md)
+* [How to set up an account](getting-started/how-to-set-up-an-account/README.md)
   * [Team accounts setup](getting-started/how-to-set-up-an-account/team-accounts-setup.md)
 * [Access token management](getting-started/authentication-with-access-tokens.md)
 * [Plans and limits](getting-started/plans-and-limits/README.md)
@@ -88,10 +88,10 @@
 * [BSC Accelerated Dedicated Node](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/README.md)
   * [How to Subscribe to Stream](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-subscribe-to-stream.md)
   * [How to Submit Transactions to Public Mempool](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-submit-transactions-to-public-mempool.md)
-  * [How to Submit a Transaction to Private Mempool](bsc-advanced-tooling/bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md)
-  * [Sending Transactions to Private Mempool (Priority Fee)](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/README.md)
-    * [How to Use Multicall3](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-multicall3.md)
-    * [How to use Bundle](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-bundle.md)
+  * [How to Submit a Transaction to Private Mempool](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md)
+  * [Sending Transactions to Private Mempool (Priority Fee)](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/README.md)
+    * [How to Use Multicall3](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-multicall3.md)
+    * [How to use Bundle](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-bundle.md)
 
 ## Crypto AML
 
@@ -107,7 +107,7 @@
 * [Wallet Audit](crypto-address-audit/wallet-audit.md)
 * [Wallet Risk](crypto-address-audit/wallet-risk.md)
 * [Rug Pull Checker](crypto-address-audit/rug-pull-checker.md)
-* [API Reference](crypto-address-audit/api-reference.md)
+* [API Reference](crypto-address-audit/api-reference/README.md)
   * [Wallet Audit Endpoint](crypto-address-audit/api-reference/wallet-audit-endpoint.md)
   * [Wallet Risk Endpoint](crypto-address-audit/api-reference/wallet-risk-endpoint.md)
   * [Rug Pull Checker Endpoint](crypto-address-audit/api-reference/rug-pull-checker-endpoint.md)
@@ -241,6 +241,7 @@
   * [delegate-bandwidth - TRON energy](tron-energy/api-reference/delegatebandwidth-tron-energy.md)
   * [address-activate - TRON energy](tron-energy/api-reference/address-activate-tron-energy.md)
   * [orders/{order\_id} - TRON energy](tron-energy/api-reference/orders-order_id-tron-energy.md)
+  * [Copy of price-estimate](tron-energy/api-reference/copy-of-price-estimate.md)
 
 ## RPC ENDPOINT
 
@@ -297,7 +298,6 @@
 * [How to Protect Your Transactions from MEV with GetBlock RPC](guides/how-to-protect-your-transactions-from-mev-with-getblock-rpc.md)
 * [How to Plan and Price a Bitcoin Spend with GetBlock's Blockbook Add-on](guides/how-to-plan-and-price-a-bitcoin-spend-with-getblocks-blockbook-add-on.md)
 * [How to Screen Crypto Deposits for AML Risk with GetBlock Crypto AML API](guides/how-to-screen-crypto-deposits-for-aml-risk-with-getblock-crypto-aml-api.md)
-* [How to Cut USDT Transfer Fees on TRON by Renting Energy with GetBlock](guides/how-to-cut-usdt-transfer-fees-on-tron-by-renting-energy-with-getblock.md)
 
 ## API REFERENCE
 

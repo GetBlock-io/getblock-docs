@@ -26,7 +26,7 @@ Tokens on Pump.fun start trading on a bonding curve mechanism. When the bonding 
    * **PumpSwap** (Pump.fun's DEX) - Most common since March 2025
    * **Raydium AMM** - Less common, but still happens
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 #### Key Addresses
 
@@ -100,7 +100,7 @@ npm install @solana/web3.js ws dotenv
   "author": "GetBlock",
   "license": "MIT",
  "dependencies": {
-  "@solana/web3.js": "^1.99.0",
+  "@solana/web3.js": "^1.98.4",
   "dotenv": "^17.2.3",
   "ws": "^8.18.3"
 }
@@ -399,7 +399,7 @@ What this does:
 What this does:
 
 * Checks transaction logs for migration keywords like:\
-  ![](<../.gitbook/assets/image (8) (1).png>)
+  ![](<../.gitbook/assets/image (25).png>)
 * Skips failed transactions
 * Fetches full transaction details when migration is detected
 
@@ -411,7 +411,7 @@ What this does:
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const tx = await this.connection.getTransaction(signature, {
-        maxSupportedTransactionVersion: 1,
+        maxSupportedTransactionVersion: 0,
         commitment: 'confirmed'
       });
 

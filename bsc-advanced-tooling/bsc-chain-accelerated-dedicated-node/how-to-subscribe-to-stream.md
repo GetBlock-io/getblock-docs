@@ -6,7 +6,7 @@ description: >-
 
 # How to Subscribe to Stream
 
-Stream subscription provides you with direct access to blockchain data as it propagates through the BDN network. This is very good for users e.g traders who want to get data earlier e.g new released token \
+Stream subscription provides you with direct access to blockchain data as it propagates through the BDN network. This is very good for users e.g traders who want to get data earlier e.g new released token\
 \
 With a stream subscription, you enjoy:
 
@@ -59,7 +59,7 @@ Connected to BSC streams
 
 ### How to Subscribe to Streams
 
-To subscribe to streams, there are four parameters you can make use of as seen below:&#x20;
+To subscribe to streams, there are four parameters you can make use of as seen below:
 
 | Stream       | Description                              | Use Case                    |
 | ------------ | ---------------------------------------- | --------------------------- |
@@ -367,7 +367,7 @@ Subscribe to transaction confirmations.
 | `receipt` | Full transaction receipt |
 | `logs`    | Event logs emitted       |
 
-Example:&#x20;
+Example:
 
 {% tabs %}
 {% tab title="Code" %}
@@ -538,14 +538,14 @@ _**Contact**_ [_**support**_](mailto:support@getblock.io) _**to upgrade your tie
 
 ## Troubleshooting
 
-| Problem              | Solution                                                                                                                                                                                 |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| No messages received | <p></p><ul><li>Check subscription response—did you receive a subscription ID?</li><li>Verify filters aren't too restrictive</li><li>Confirm your API key is valid and active</li></ul>   |
-| High latency         | <p></p><ul><li>Reduce the number of <code>include</code> fields</li><li>Add filters to reduce message volume</li><li>Check your network connection</li></ul>                             |
-| Missed messages      | <p></p><ul><li>Process messages asynchronously</li><li>Increase your message queue buffer</li><li>Consider multiple connections for different streams</li></ul>                          |
-| Connection Drop      | <p></p><ul><li>Implement automatic reconnection (see example above)</li><li>Re-subscribe after each reconnect—subscriptions don't persist</li><li>Check your network stability</li></ul> |
+| Problem              | Solution                                                                                                                                                                          |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| No messages received | <ul><li>Check subscription response—did you receive a subscription ID?</li><li>Verify filters aren't too restrictive</li><li>Confirm your API key is valid and active</li></ul>   |
+| High latency         | <ul><li>Reduce the number of <code>include</code> fields</li><li>Add filters to reduce message volume</li><li>Check your network connection</li></ul>                             |
+| Missed messages      | <ul><li>Process messages asynchronously</li><li>Increase your message queue buffer</li><li>Consider multiple connections for different streams</li></ul>                          |
+| Connection Drop      | <ul><li>Implement automatic reconnection (see example above)</li><li>Re-subscribe after each reconnect—subscriptions don't persist</li><li>Check your network stability</li></ul> |
 
 ### Next Step
 
 1. [Submitting transactions to public mempool ](how-to-submit-transactions-to-public-mempool.md)with accelerated propagation
-2. Using private transactions for [MEV protection ](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/)or [without MEV Protection](../bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md)
+2. Using private transactions for [MEV protection ](sending-transactions-to-private-mempool-priority-fee/)or [without MEV Protection](how-to-submit-transaction-to-private-mempool.md)

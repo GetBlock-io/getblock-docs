@@ -103,12 +103,12 @@ The algorithm correctly identifies 68 out of 100 rug pulls based on purely behav
 
 3. Enter the contract address:
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 4. Click on **Run Check**
 5. Scroll down to see the analysis:
 
-<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 <details>
 
@@ -132,7 +132,7 @@ If you want to interact with or integrate this service via API, check the [Rug p
 
 ### Next Step
 
-* [Address Audit API Reference](api-reference.md)
+* [Address Audit API Reference](api-reference/)
 * [Wallet Audit Homepage](https://getblock.io/wallet-audit-check/)
 * [Wallet Risk Homepage](https://getblock.io/wallet-risk-check/)
 * [Rug Pull Checker Homepage](https://getblock.io/rug-pull-check/)

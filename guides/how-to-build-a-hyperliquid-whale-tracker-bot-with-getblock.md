@@ -7,15 +7,15 @@ icon: telegram
 
 # How to Build a Hyperliquid Whale Tracker Bot with GetBlock
 
-Whales are entities, such as DAOs or companies, that hold a large amount of a particular cryptocurrency, sufficient to influence the market price through their transactions. Their trade alone can either deflate or inflate the market price. While some whales engage in large trades that have a natural market effect, others may intentionally try to manipulate the market for profit. \
+Whales are entities, such as DAOs or companies, that hold a large amount of a particular cryptocurrency, sufficient to influence the market price through their transactions. Their trade alone can either deflate or inflate the market price. While some whales engage in large trades that have a natural market effect, others may intentionally try to manipulate the market for profit.\
 \
 The Whale Tracking Bot is a bot that monitors on-chain activities of whales. It reports their transactions to you, thereby providing a clear analysis to inform predictions about potential market movements.
 
-In this guide, you will learn:&#x20;
+In this guide, you will learn:
 
 * Create a Telegram bot using [Botfather](https://telegram.me/BotFather)
 * Get a GetBlock API access token
-* Build the Hyperliquid whale tracker bot that:&#x20;
+* Build the Hyperliquid whale tracker bot that:
   * Tracks all trades on Hyperliquid as they happen
   * Identifies large trades based on configurable thresholds
   * Detects whale walls in the orderbook
@@ -39,7 +39,7 @@ In this guide, you will learn:&#x20;
    * Copy the token provided and save it in `.env` file
 2. **Chat ID**:
    * Search for `@raw_data_bot` in Telegram
-   * Send `/start`&#x20;
+   * Send `/start`
    * Copy your user ID
 
 ### Step 2. Set up Development Environment
@@ -841,7 +841,7 @@ Bot stopped
 
 3. Expected result in Telegram:
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 ### Troubleshooting
 
@@ -854,14 +854,14 @@ WebSocket connection closed
 Reconnecting in 16 seconds... (Attempt 4)
 ```
 
-* This means that your WebSocket endpoint is incorrect.  Check your `.env` file and ensure it's in this pattern:
+* This means that your WebSocket endpoint is incorrect. Check your `.env` file and ensure it's in this pattern:
 
 ```bash
 # correct format
 HYPEREVM_WSS=wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
 ```
 
-Then, restart the server.&#x20;
+Then, restart the server.
 
 ```bash
 node index.js
@@ -872,6 +872,3 @@ node index.js
 In this guide, you have successfully learn and built a **Hyperliquid Whale Tracker Bot** that monitors and alerts all whale trade activities — from major buys to large sell-offs — and even detects whale walls in the order book.
 
 By integrating the **GetBlock WebSocket API**, you can rest assured of **fast, reliable, and real-time data delivery**, ensuring you never miss significant market movements.
-
-
-

@@ -11,9 +11,9 @@ description: >-
 1. Log in to your [GetBlock account](https://account.getblock.io/)
 2. Under Products, select **Solana Market Data**
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
-3. To subscribe, select any payment option best for you: &#x20;
+3. To subscribe, select any payment option best for you:
 
 * **Card**
 * **Crypto**
@@ -22,7 +22,7 @@ description: >-
 {% hint style="success" %}
 Click the **side drawer** to select your preferred payment method, then complete the purchase.
 
-![](<../.gitbook/assets/image (3).png>)
+<img src="../.gitbook/assets/image (45).png" alt="" data-size="original">
 {% endhint %}
 
 4. Once the subscription is active, your API key will be enabled for **Solana Market Data**.
@@ -42,7 +42,7 @@ To choose the market you want to track, provide the mint addresses for:
 
 For example, to receive market data for **SOL/USDC**, select the corresponding **SOL** and **USDC** mint addresses as your base and quote assets.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt="Solana market data parameter on playground"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (46).png" alt="Solana market data parameter on playground"><figcaption></figcaption></figure>
 
 The selected pair is then applied across the available methods, including **Trades, Blocks,** [**VWAP**](#user-content-fn-1)[^1]**,** [**TWAP**](#user-content-fn-2)[^2]**, Volume, and** [**OHLCV**](#user-content-fn-3)[^3].
 
