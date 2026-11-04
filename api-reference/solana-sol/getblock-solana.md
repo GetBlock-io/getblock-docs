@@ -17,13 +17,13 @@ This method returns identity and transaction information for a confirmed block a
 
 ### Config Object
 
-| Field                          | Type    | Required | Description                                                                            |
-| ------------------------------ | ------- | -------- | -------------------------------------------------------------------------------------- |
-| encoding                       | string  | No       | Transaction encoding: json, jsonParsed, base58, or base64                              |
-| transactionDetails             | string  | No       | Level of detail: full, accounts, signatures, or none                                   |
-| rewards                        | boolean | No       | Include the block rewards array. Defaults to true                                      |
-| commitment                     | string  | No       | Commitment level: confirmed or finalized. The processed level is not supported         |
-| maxSupportedTransactionVersion | number  | No       | Highest transaction version the client can decode. Set to 0 for versioned transactions |
+| Field                          | Type    | Required | Description                                                                                                              |
+| ------------------------------ | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| encoding                       | string  | No       | Transaction encoding: json, jsonParsed, base58, or base64                                                                |
+| transactionDetails             | string  | No       | Level of detail: full, accounts, signatures, or none                                                                     |
+| rewards                        | boolean | No       | Include the block rewards array. Defaults to true                                                                        |
+| commitment                     | string  | No       | Commitment level: confirmed or finalized. The processed level is not supported                                           |
+| maxSupportedTransactionVersion | number  | No       | Highest transaction version the client can decode. Set to 1: a request capped at 0 fails with -32015 on a v1 transaction |
 
 ## Request
 
@@ -36,7 +36,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 --data-raw '{
     "jsonrpc": "2.0",
     "method": "getBlock",
-    "params": [397234561, {"encoding": "jsonParsed", "transactionDetails": "signatures", "rewards": false, "maxSupportedTransactionVersion": 0}],
+    "params": [397234561, {"encoding": "jsonParsed", "transactionDetails": "signatures", "rewards": false, "maxSupportedTransactionVersion": 1}],
     "id": "getblock.io"
 }'
 ```
@@ -53,7 +53,7 @@ const connection = new Connection('https://shared.eu-central-1.getblock.io/<ACCE
 const block = await connection.getBlock(397234561, {
   transactionDetails: 'signatures',
   rewards: false,
-  maxSupportedTransactionVersion: 0
+  maxSupportedTransactionVersion: 1
 });
 
 console.log(block?.blockhash, block?.signatures?.length);
@@ -72,7 +72,7 @@ response = requests.post(
     json={
         'jsonrpc': '2.0',
         'method': 'getBlock',
-        'params': [397234561, {"encoding": "jsonParsed", "transactionDetails": "signatures", "rewards": false, "maxSupportedTransactionVersion": 0}],
+        'params': [397234561, {"encoding": "jsonParsed", "transactionDetails": "signatures", "rewards": false, "maxSupportedTransactionVersion": 1}],
         'id': 'getblock.io'
     }
 )
@@ -98,7 +98,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .json(&json!({
             "jsonrpc": "2.0",
             "method": "getBlock",
-            "params": [397234561, {"encoding": "jsonParsed", "transactionDetails": "signatures", "rewards": false, "maxSupportedTransactionVersion": 0}],
+            "params": [397234561, {"encoding": "jsonParsed", "transactionDetails": "signatures", "rewards": false, "maxSupportedTransactionVersion": 1}],
             "id": "getblock.io"
         }))
         .send()
@@ -166,10 +166,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Error Handling
 
-| Error Code | Message                                                            | Description                                                                              |
-| ---------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| -32007     | Slot was skipped, or missing due to ledger jump to recent snapshot | The slot was skipped by the leader or predates the node's snapshot                       |
-| -32009     | Slot was skipped, or missing in long-term storage                  | The slot is absent from the node's long-term ledger storage                              |
-| -32602     | Invalid params                                                     | Slot is negative or an unsupported transactionDetails value was supplied                 |
-| -32015     | Transaction version (0) is not supported by the requesting client  | maxSupportedTransactionVersion was omitted for a block containing versioned transactions |
-| -32004     | Block not available for slot                                       | The node has not yet produced or received the block                                      |
+| Error Code | Message                                                            | Description                                                                                           |
+| ---------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| -32007     | Slot was skipped, or missing due to ledger jump to recent snapshot | The slot was skipped by the leader or predates the node's snapshot                                    |
+| -32009     | Slot was skipped, or missing in long-term storage                  | The slot is absent from the node's long-term ledger storage                                           |
+| -32602     | Invalid params                                                     | Slot is negative or an unsupported transactionDetails value was supplied                              |
+| -32015     | Transaction version (1) is not supported by the requesting client  | maxSupportedTransactionVersion was omitted or is lower than the version of a transaction in the block |
+| -32004     | Block not available for slot                                       | The node has not yet produced or received the block                                                   |

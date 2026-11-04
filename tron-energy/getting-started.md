@@ -1,194 +1,172 @@
 ---
 description: >-
-  Learn how to access Tron energy, top your balance, delegate resources, check
-  prices and manage API key from your dashboard.
+  Learn how to open Tron Energy, rent Energy and Bandwidth, activate addresses,
+  review your order history, and get an API key from your GetBlock dashboard.
 ---
 
 # Getting Started
 
-The Dashboard tab gives you a comprehensive overview of your activity:
+In this guide, you will learn how to use Tron Energy from your GetBlock dashboard:
 
-* USD Balance: your current balance with a quick Top Up button
-* Usage: bar chart showing delegation activity (filter by 24h, 7 days, month, or all time)
-* Deposit History: table of all top-ups with date, method, and amount
-* TRON Energy Activity: full order history with address, type, volume, duration, price, status, and date
-* Export: download order history as XLS or PDF
+1. Open Tron Energy
+2. Fund your Credits balance
+3. Rent Energy
+4. Rent Bandwidth
+5. Activate an address
+6. Review your history
+7. Get an API key
 
-In this guide, you will learn how to easily navigate through the dashboard to get the following:
-
-1. How to gain access to Tron energy
-2. How to top up your balanace
-3. Delegate Resources
-4. Check Prices
-5. Manage API Keys
-
-### How to Access Dashboard
+### How to Open Tron Energy
 
 {% stepper %}
 {% step %}
-Create an account on [GetBlock](https://account.getblock.io) using Gmail, Metamask, or GitHub
+Sign in to your [GetBlock account](https://account.getblock.io) using Gmail, MetaMask, or GitHub
 {% endstep %}
 
 {% step %}
-Under **products**, click on **Tron energy**. The system will automatically sync your GetBlock account with the Energy service.
+In the sidebar, open **Payments** and click **Tron Energy**.
 
-The dashboard consists of three main tabs:
+The page has three tabs:
 
-1. Dashboard — view your balance, usage charts, deposit history, and order activity
-2. Delegate — delegate Energy or Bandwidth to TRON addresses, manage API keys
-3. API Docs — reference documentation with cURL examples for all endpoints
+1. **Rent** — rent Energy or Bandwidth, or activate an address
+2. **History** — usage and a list of all your orders
+3. **API** — how to call Tron Energy from your own code
+
+Your **Credits** balance is shown in the top-right corner of the page.
 {% endstep %}
 {% endstepper %}
 
-### How to Top Up Your Balance
+### How to Fund Your Balance
 
-Before you can delegate resources, you need to fund your USD balance:
+Rentals and activations are paid from your **Credits** balance — prepaid service credits used to pay for premium features.
 
 {% stepper %}
 {% step %}
-Click the "Top Up" button in the balance bar at the top of the dashboard
+Click the **Credits** balance in the top-right corner of the Tron Energy page
 {% endstep %}
 
 {% step %}
-Select a preset amount ($50, $100, $500) or enter a custom amount (minimum $10)
+In the panel that opens, click **Top up** and complete the payment
 {% endstep %}
-
-{% step %}
-Choose your payment method: Card or Crypto
-{% endstep %}
-
-{% step %}
-Complete the payment — your balance updates instantly
+{% endstepper %}
 
 {% hint style="info" %}
-Your USD balance is shared across all GetBlock products.
+Your Credits balance is shared across all GetBlock products.
 {% endhint %}
-{% endstep %}
-{% endstepper %}
 
-### How to Delegate Resources
+### How to Rent Energy
 
-Go to the Delegate tab and select Manual mode.
-
-#### 1. Delegate Energy
+<figure><img src="../.gitbook/assets/tron-energy-rent-energy.png" alt="Rent Energy form with TRON wallet address, Energy, Duration, and estimated cost"><figcaption><p>Rent → Energy</p></figcaption></figure>
 
 {% stepper %}
 {% step %}
-Select the Energy sub-tab
+Go to **Rent** and select the **Energy** sub-tab
 {% endstep %}
 
 {% step %}
-Enter the target TRON address (starts with T, 34 characters)
+Enter the target **TRON wallet address** (starts with T, 34 characters)
 {% endstep %}
 
 {% step %}
-Set the Energy amount (30,000–5,000,000)
+Enter the **Energy** amount. A typical USDT transfer needs about 65,000 Energy, or about 131,000 if the recipient has never held USDT.
 {% endstep %}
 
 {% step %}
-Choose the duration: 1h, 3h, 6h, 12h, or 1 day
+Choose the **Duration**: 1 hour, 1 day, or 3 days
 {% endstep %}
 
 {% step %}
-Click "Delegate Energy"
-{% endstep %}
-{% endstepper %}
-
-#### 2. Delegate Bandwidth
-
-{% stepper %}
-{% step %}
-Select the Bandwidth sub-tab
-{% endstep %}
-
-{% step %}
-Enter the target TRON address
-{% endstep %}
-
-{% step %}
-Set the Bandwidth amount (1,000–200,000)
-{% endstep %}
-
-{% step %}
-Duration is fixed at 1 hour for Bandwidth
-{% endstep %}
-
-{% step %}
-Click "Delegate Bandwidth"
+Check the **Estimated cost** under the form, then click **Rent Energy**
 {% endstep %}
 {% endstepper %}
 
-#### 3. Activate Address
-
-If you need to delegate to a brand-new TRON address that has never been used, you must activate it first:
-
-{% stepper %}
-{% step %}
-Select the Activate sub-tab
-{% endstep %}
-
-{% step %}
-Enter the target TRON address
-{% endstep %}
-
-{% step %}
-Click "Activate Address
-
-{% hint style="info" %}
-Activation costs a fixed 1.87 TRX, charged in USD at the current TRX/USD rate.
+{% hint style="warning" %}
+The price grows with duration. For a single USDT transfer, 1 hour is usually enough — a 1-day rental can cost more than paying the network fee in TRX. See [Pricing](api-reference/#pricing).
 {% endhint %}
-{% endstep %}
-{% endstepper %}
 
-### How to Check Price
+### How to Rent Bandwidth
 
-The Check Price panel is available on the right side of the Delegate form (Manual mode). Use it to get a real-time estimate before placing an order:
+<figure><img src="../.gitbook/assets/tron-energy-rent-bandwidth.png" alt="Rent Bandwidth form with TRON wallet address, Bandwidth Amount, Duration, and estimated cost"><figcaption><p>Rent → Bandwidth</p></figcaption></figure>
 
 {% stepper %}
 {% step %}
-Enter Energy amount (30,000–5,000,000)
+Go to **Rent** and select the **Bandwidth** sub-tab
 {% endstep %}
 
 {% step %}
-Select duration: 1 hour, 1 day, 3 days, 7 days, or 14 days
+Enter the target **TRON wallet address**
 {% endstep %}
 
 {% step %}
-Click "Check Price"
+Enter the **Bandwidth Amount** (the form shows the allowed minimum and maximum)
 {% endstep %}
 
 {% step %}
-The result shows: price in SUN per unit, total TRX, and total USD
+Leave **Duration** at **1 hour** — the only option in the dashboard
+{% endstep %}
+
+{% step %}
+Check the **Estimated cost**, then click **Rent Bandwidth**
 {% endstep %}
 {% endstepper %}
 
-### How to Manage API Keys
+### How to Activate an Address
 
-To use the API, you need an API key:
+A brand-new TRON address that has never received TRX must be activated before it can receive Energy or Bandwidth.
+
+<figure><img src="../.gitbook/assets/tron-energy-activate.png" alt="Activate Address form with TRON wallet address and estimated cost"><figcaption><p>Rent → Activate</p></figcaption></figure>
 
 {% stepper %}
 {% step %}
-Go to Delegate → API mode
+Go to **Rent** and select the **Activate** sub-tab
 {% endstep %}
 
 {% step %}
-Click "+ Add Key" (requires a funded balance)
+Enter the target **TRON wallet address**
 {% endstep %}
 
 {% step %}
-Copy and securely store the key immediately — it is shown only once
+Check the **Estimated cost**, then click **Activate Address**
+{% endstep %}
+{% endstepper %}
+
+### How to Review Your History
+
+Open the **History** tab to see:
+
+* **Usage** — the number of successful rentals, filtered by 24 hours, 7 days, Month, or All time
+* **History** — every order with its date, type (Energy rental, Bandwidth rental, or Wallet activation), target address, volume, price in SUN, and amount charged
+
+### How to Get an API Key
+
+Tron Energy endpoints accept any GetBlock API key. Keys are managed in your account settings and work across every GetBlock service that supports API key authentication.
+
+<figure><img src="../.gitbook/assets/tron-energy-api-tab.png" alt="API tab with steps to create a key, authenticate requests, and rotate or revoke keys"><figcaption><p>API tab</p></figcaption></figure>
+
+{% stepper %}
+{% step %}
+Open the **API** tab and click **Manage API keys in Settings**, or go to **Settings → API Keys**
 {% endstep %}
 
 {% step %}
-You can create up to 5 API keys
+Generate a new key. The full key is shown only once — copy and store it securely right away.
 {% endstep %}
 
 {% step %}
-To revoke a key, click "Revoke" next to it — the key stops working immediately
+Send the key as a Bearer token in the `Authorization` header of every Tron Energy request:
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+{% endstep %}
+
+{% step %}
+To revoke a key you no longer use, return to **Settings → API Keys**. Revocation takes effect immediately.
 {% endstep %}
 {% endstepper %}
 
 ### Next Steps
 
-1. [Tron Fee Mode](tron-fee-model.md)
+1. [TRON Fee Model](tron-fee-model.md)
 2. [API Reference](api-reference/)
+3. [How to Cut USDT Transfer Fees on TRON by Renting Energy with GetBlock](../guides/how-to-cut-usdt-transfer-fees-on-tron-by-renting-energy-with-getblock.md)

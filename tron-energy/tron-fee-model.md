@@ -7,7 +7,7 @@ description: Learn how to calculate transaction fees in TRON
 In Bitcoin and Ethereum, transaction fees are paid in the network’s native asset — in its smallest unit (satoshi, wei). TRON works differently; every transaction consumes two types of resources:
 
 1. Bandwidth
-2. Energy.
+2. Energy.&#x20;
 
 If these resources are insufficient, TRX is burned to cover the costs.
 
@@ -123,5 +123,5 @@ After being used, Energy on an account recovers linearly over 24 hours. This mea
 
 ### Next Steps
 
-1. [Pricing](/broken/pages/e7LJxCH0Sl7Chxp5lyqW)
+1. [Pricing](api-reference/#pricing)
 2. [API Reference](api-reference/)
