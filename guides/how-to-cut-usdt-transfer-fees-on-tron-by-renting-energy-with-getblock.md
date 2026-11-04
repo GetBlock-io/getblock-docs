@@ -8,6 +8,7 @@ description: >-
 
 Every USDT transfer on TRON executes a smart contract, and smart contracts consume Energy. A wallet with no Energy pays by burning TRX: about 6.5 TRX when the recipient already holds USDT, and about 13 TRX when it never has. That is often more than the transfer itself e.g sending 1 USDT to an empty wallet can cost 4 USDT in fees. Staking TRX to earn your own Energy locks up thousands of TRX and takes 14 days to unwind. For exchanges, payment services, and wallets that move USDT all day, burning TRX on every transfer is the single largest operating cost on TRON.
 
+
 The **GetBlock TRON Energy API** rents Energy to any TRON address for a USD fee, delivered on-chain in seconds. A 1-hour rental that covers one USDT transfer costs about 1.2–1.4 TRX instead of the 6.5 TRX you would burn.
 
 In this guide, you'll build a **Node.js tool that plans a USDT transfer, compares the burn cost against a live rental quote, rents only the Energy that's missing, and then sends the USDT** with no TRX burned for Energy.
