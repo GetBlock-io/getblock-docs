@@ -167,5 +167,5 @@ func main() {
 | reserve\_usd | string | Reserve amount in USD returned with the quote                                                |
 
 {% hint style="warning" %}
-`price_sun` covers the **whole rental period**, so it rises steeply with `duration`. For 65,000 Energy, a `1h` rental costs about 1.2 TRX while a `1d` rental costs about 8.6 TRX — more than the \~6.5 TRX burned by a USDT transfer without rented Energy. Prices are live and change throughout the day.
+`price_sun` covers the **whole rental period**, so it rises steeply with `duration`. For 65,000 Energy, a `1h` rental cost 1.2–1.9 TRX at the time of writing (November 2026), while a `1d` rental cost about 8.6 TRX — more than the \~6.5 TRX burned by a USDT transfer without rented Energy. Prices are live and change throughout the day.
 {% endhint %}

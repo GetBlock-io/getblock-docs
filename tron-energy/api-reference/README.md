@@ -105,6 +105,6 @@ Orders are paid from your GetBlock **Credits** balance and priced in USD. Prices
 Your balance is charged when an order reaches status `charged`; the order's `charged_at` and `price_usd` show when and how much. The final charge can differ from the `price-estimate` quote — for example, a $0.23 quote charged $0.30 — so leave some margin on your balance.
 
 {% hint style="warning" %}
-**Longer rentals cost much more.** The price is per unit of Energy for the whole rental period, so it grows with duration. For a single USDT transfer (\~65,000 Energy), a 1-hour rental costs about 1.2 TRX, while a 1-day rental costs about 8.6 TRX — more than the \~6.5 TRX you would burn without renting. Pick the shortest duration that covers your transactions and always check [`price-estimate`](price-estimate-tron-energy.md) first.
+**Longer rentals cost much more.** The price is per unit of Energy for the whole rental period, so it grows with duration. For a single USDT transfer (\~65,000 Energy), a 1-hour rental cost 1.2–1.9 TRX at the time of writing (November 2026), while a 1-day rental cost about 8.6 TRX — more than the \~6.5 TRX you would burn without renting. Pick the shortest duration that covers your transactions and always check [`price-estimate`](price-estimate-tron-energy.md) first.
 {% endhint %}
 
