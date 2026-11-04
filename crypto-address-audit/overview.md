@@ -35,7 +35,7 @@ A predictive check for smart contract and liquidity pool addresses. Analyzes the
 Two ways to use Crypto Address Audit, depending on the workflow.
 
 1. Via the [Dashboard](https://account.getblock.io/products/address-audit): This runs a check on the wallet/contract address through the UI. Paste an address, and run the check. **No code required.** Best for ad-hoc analysis, manual due diligence, and trying the service before integrating it.
-2. [**Via the API** ](https://account.getblock.io/products/address-audit#api-keys)— one `POST` request per address, JSON response. Best for production integration into a DeFi protocol, wallet, launchpad, or any product that needs to screen addresses programmatically. [Access the available endpoints here](api-reference/).
+2. [**Via the API** ](https://account.getblock.io/products/address-audit#api-keys)— one `POST` request per address, JSON response. Best for production integration into a DeFi protocol, wallet, launchpad, or any product that needs to screen addresses programmatically. [Access the available endpoints here](api-reference.md).
 
 ### Pricing & Limits
 
@@ -53,20 +53,20 @@ Each user gets 5 free requests per day. After the free quota is used, each reque
 
 1. On your [account dashboard](https://account.getblock.io/), click on the credit balance as seen below:
 
-<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 2. Click on **Top Up**
 
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 3. Select the amount you want to pay or enter the amount:
 
-<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 4. After that, click on **Proceed to checkout**
 5. You'll be routed to another page to complete your payment
 
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 6. Once you've completed your payment, go back to your dashboard to see it reflected.
 
@@ -79,7 +79,7 @@ Each user gets 5 free requests per day. After the free quota is used, each reque
 1. [Wallet Audit Doc](wallet-audit.md)
 2. [Wallet Risk Doc](wallet-risk.md)
 3. [Rug Pull Checker Doc](rug-pull-checker.md)
-4. [Address Audit API Reference](api-reference/)
+4. [Address Audit API Reference](api-reference.md)
 5. [Wallet Audit Homepage](https://getblock.io/wallet-audit-check/)
 6. [Wallet Risk Homepage](https://getblock.io/wallet-risk-check/)
 7. [Rug Pull Checker Homepage](https://getblock.io/rug-pull-check/)

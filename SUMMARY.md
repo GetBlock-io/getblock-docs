@@ -4,7 +4,7 @@
 
 ## GETTING STARTED
 
-* [How to set up an account](getting-started/how-to-set-up-an-account/README.md)
+* [How to set up an account](getting-started/how-to-set-up-an-account.md)
   * [Team accounts setup](getting-started/how-to-set-up-an-account/team-accounts-setup.md)
 * [Access token management](getting-started/authentication-with-access-tokens.md)
 * [Plans and limits](getting-started/plans-and-limits/README.md)
@@ -88,10 +88,10 @@
 * [BSC Accelerated Dedicated Node](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/README.md)
   * [How to Subscribe to Stream](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-subscribe-to-stream.md)
   * [How to Submit Transactions to Public Mempool](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-submit-transactions-to-public-mempool.md)
-  * [How to Submit a Transaction to Private Mempool](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md)
-  * [Sending Transactions to Private Mempool (Priority Fee)](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/README.md)
-    * [How to Use Multicall3](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-multicall3.md)
-    * [How to use Bundle](bsc-advanced-tooling/bsc-chain-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-bundle.md)
+  * [How to Submit a Transaction to Private Mempool](bsc-advanced-tooling/bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md)
+  * [Sending Transactions to Private Mempool (Priority Fee)](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/README.md)
+    * [How to Use Multicall3](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-multicall3.md)
+    * [How to use Bundle](bsc-advanced-tooling/bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/how-to-use-bundle.md)
 
 ## Crypto AML
 
@@ -107,7 +107,7 @@
 * [Wallet Audit](crypto-address-audit/wallet-audit.md)
 * [Wallet Risk](crypto-address-audit/wallet-risk.md)
 * [Rug Pull Checker](crypto-address-audit/rug-pull-checker.md)
-* [API Reference](crypto-address-audit/api-reference/README.md)
+* [API Reference](crypto-address-audit/api-reference.md)
   * [Wallet Audit Endpoint](crypto-address-audit/api-reference/wallet-audit-endpoint.md)
   * [Wallet Risk Endpoint](crypto-address-audit/api-reference/wallet-risk-endpoint.md)
   * [Rug Pull Checker Endpoint](crypto-address-audit/api-reference/rug-pull-checker-endpoint.md)

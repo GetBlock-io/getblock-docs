@@ -37,7 +37,7 @@ Once logged in:
 1. Click **"Shared Nodes"** in the left sidebar
 2. Click **"Create New Endpoint"** or the **"+"** button
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Select:
    * **Protocol:** TON
@@ -45,7 +45,7 @@ Once logged in:
    * **API Interface:** JSON-RPC or JSON-RPC(v3) or HTTP API(v4)
    *   **Region:** Frankfurt (EU)
 
-       <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 4. Click **"Create":** Your endpoint URL will be generated immediately.
 {% endstep %}
 

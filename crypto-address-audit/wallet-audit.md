@@ -114,23 +114,23 @@ Example:
 
 1. Go to your [GetBlock Account Dashboard](https://account.getblock.io/products/address-audit#check)
 
-<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 2. Select the network you want to work with:
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 3. Enter the wallet address you want to analyze:
 
-<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 4. Click on **Run Check:**<br>
 
-<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 5. Scroll down to see the analysis:
 
-<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 <details>
 
@@ -174,7 +174,7 @@ If you want to interact with or integrate this service via API, check the [Walle
 
 1. [Wallet Risk Doc](wallet-risk.md)
 2. [Rug Pull Checker Doc](https://app.gitbook.com/s/FOeg95CadVyFvyLi70Bh/crypto-address-audit)
-3. [Address Audit API Reference](api-reference/)
+3. [Address Audit API Reference](api-reference.md)
 4. [Wallet Audit Homepage](https://getblock.io/wallet-audit-check/)
 5. [Wallet Risk Homepage](https://getblock.io/wallet-risk-check/)
 6. [Rug Pull Checker Homepage](https://getblock.io/rug-pull-check/)

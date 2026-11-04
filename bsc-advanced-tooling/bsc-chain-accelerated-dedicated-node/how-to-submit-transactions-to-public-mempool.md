@@ -17,7 +17,7 @@ Use public mempool submission when:
 * You're competing on speed rather than privacy
 * You need broad validator visibility quickly
 
-_For MEV-sensitive transactions, see_ [_Private Transactions_](sending-transactions-to-private-mempool-priority-fee/) _instead._
+_For MEV-sensitive transactions, see_ [_Private Transactions_](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/) _instead._
 
 ### Sample Request
 
@@ -406,5 +406,5 @@ const newGasPrice = existingGasPrice * 110n / 100n;
 
 For transactions that need MEV protection, see:
 
-* [Private Transactions](how-to-submit-transaction-to-private-mempool.md) — Hidden from public mempool
-* [Private Transactions with Tips](sending-transactions-to-private-mempool-priority-fee/) — Prioritized private submission
+* [Private Transactions](../bsc-accelerated-dedicated-node/how-to-submit-transaction-to-private-mempool.md) — Hidden from public mempool
+* [Private Transactions with Tips](../bsc-accelerated-dedicated-node/sending-transactions-to-private-mempool-priority-fee/) — Prioritized private submission
