@@ -13,6 +13,7 @@ Flashblocks break the limitation of traditional blocks by creating mini-blocks e
 
 _**In this guide, you'll learn what base flashblocks are, their importance, data structure and step-by-step instructions on how to build a base flashblocks listener.**_&#x20;
 
+
 ### What Are Flashblocks?
 
 Flashblocks are sub-blocks (or "mini-blocks") streamed every **200 milliseconds** — that's 10x faster than Base's standard 2-second block time. Developed in collaboration with Flashbots and launched on Base Mainnet in July 2025, Flashblocks provide **preconfirmations**: ultra-fast signals that arrive before the next full block is sealed.
