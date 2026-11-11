@@ -1,0 +1,12 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: getblock.io
+  structure:
+    - type: space
+      key: space-1
+      title: GitHub sync
+      path: github-sync-1
+      default: true
+      content:
+        directory: ./github-sync-1
+        language: en
