@@ -1,10 +1,11 @@
 ---
 description: >-
-  GetBlock provides fast and reliable access to Robinhood nodes via the JSON-RPC
-  API. Connect to the Robinhood network without running your own infrastructure.
+  GetBlock provides fast and reliable access to Robinhood Chain nodes via the
+  JSON-RPC API. Connect to the Robinhood network without running your own
+  infrastructure.
 ---
 
-# Robinhood
+# Robinhood Chain
 
 Robinhood Chain is a permissionless, AI-native Ethereum Layer 2 built on **Arbitrum Orbit** and operated by Robinhood. It launched its public mainnet on July 1, 2026, in London at Robinhood's "The World is Flat" keynote, following a public testnet that opened February 10, 2026, and recorded \~4 million transactions in its first week.
 

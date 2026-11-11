@@ -8,13 +8,13 @@ description: >-
 
 Every USDT transfer on TRON executes a smart contract, and smart contracts consume Energy. A wallet with no Energy pays by burning TRX: about 6.5 TRX when the recipient already holds USDT, and about 13 TRX when it never has. That is often more than the transfer itself e.g sending 1 USDT to an empty wallet can cost 4 USDT in fees. Staking TRX to earn your own Energy locks up thousands of TRX and takes 14 days to unwind. For exchanges, payment services, and wallets that move USDT all day, burning TRX on every transfer is the single largest operating cost on TRON.
 
-The **GetBlock TRON Energy API** rents Energy to any TRON address for a USD fee, delivered on-chain in seconds. A 1-hour rental that covers one USDT transfer costs about 1.2–1.4 TRX instead of the 6.5 TRX you would burn.
+The **GetBlock TRON Energy API** rents Energy to any TRON address for a USD fee, delivered on-chain in seconds. A 1-hour rental that covers one USDT transfer cost 1.2–1.9 TRX at the time of writing (November 2026), instead of the 6.5 TRX you would burn — roughly 70–80% less.
 
 In this guide, you'll build a **Node.js tool that plans a USDT transfer, compares the burn cost against a live rental quote, rents only the Energy that's missing, and then sends the USDT** with no TRX burned for Energy.
 
 | Burning TRX                                           | Renting Energy with GetBlock               |
 | ----------------------------------------------------- | ------------------------------------------ |
-| \~6.5 TRX per USDT transfer (\~13 TRX to new holders) | \~1.2–1.4 TRX for a 1-hour rental          |
+| \~6.5 TRX per USDT transfer (\~13 TRX to new holders) | \~1.2–1.9 TRX for a 1-hour rental          |
 | Wallet must hold TRX for fees                         | Pay from your GetBlock Credits balance     |
 | Staking locks TRX for 14 days                         | No TRX locked — Energy is delegated to you |
 | Fee is only known after the transaction               | Free `price-estimate` before you commit    |
@@ -30,17 +30,17 @@ A `planUsdtTransfer(from, to, amount)` function and CLI that:
 5. With `--send`, sends the USDT and prints the fee receipt.
 
 {% hint style="warning" %}
-**Rent for the shortest duration that covers your transfers.** The price is per unit of Energy for the whole rental period, so it grows fast. For 65,000 Energy, a `1h` rental costs about 1.2 TRX, but a `1d` rental costs about 8.6 TRX — more than the 6.5 TRX you'd burn. This guide always rents for `1h`.
+**Rent for the shortest duration that covers your transfers.** The price is per unit of Energy for the entire rental period, so it increases quickly over the whole rental period. For 65,000 Energy, a `1h` rental cost 1.2–1.9 TRX at the time of writing, but a `1d` rental cost about 8.6 TRX — more than the 6.5 TRX you'd burn. This guide always rents for `1h`.
 {% endhint %}
 
 {% hint style="info" %}
-Rented Energy is added on top of what the address already has, and it recovers over 24 hours like staked Energy. The tool only rents the shortfall, plus a 1,000-unit buffer because a delegation can land 1 unit short (65,000 ordered shows as 64,999 on-chain).
+Rented Energy is added on top of what the address already has and recovers over 24 hours, like staked Energy. The tool only rents the shortfall, plus a 1,000-unit buffer because a delegation can land 1 unit short (65,000 ordered shows as 64,999 on-chain).
 {% endhint %}
 
 ## Prerequisites
 
 * **Node.js 18+**
-* A [**GetBlock account**](https://account.getblock.io) with Credits on your balance (click **Credits** in the dashboard header, then **Top up**)
+* A [**GetBlock account**](https://account.getblock.io/) with Credits on your balance (click **Credits** in the dashboard header, then **Top up**)
 * A **GetBlock API key** — generate one under **Settings → API Keys** (Tron Energy accepts any GetBlock API key)
 * A **GetBlock TRON Mainnet endpoint** — **RPC → Shared Node**, create an endpoint with Protocol **TRON**, Network **Mainnet**, API Interface **Full Node REST**
 * A **TRON wallet** holding some USDT (and its private key) — only needed to actually send
@@ -50,7 +50,7 @@ Rented Energy is added on top of what the address already has, and it recovers o
 
 {% stepper %}
 {% step %}
-#### Create the project and install dependencies
+### Create the project and install dependencies
 
 ```bash
 mkdir tron-energy-fee-saver && cd tron-energy-fee-saver
@@ -59,11 +59,13 @@ npm pkg set type=module
 npm install tronweb dotenv
 ```
 
+{% hint style="info" %}
 [TronWeb](https://tronweb.network/) talks to your GetBlock TRON node; `dotenv` loads your keys.
+{% endhint %}
 {% endstep %}
 
 {% step %}
-#### Configure your keys
+### Configure your keys
 
 Create a `.env` file in the project root:
 
@@ -86,7 +88,7 @@ Your API key spends your GetBlock Credits, and the private key controls your fun
 {% endstep %}
 
 {% step %}
-#### Build the TRON Energy API client
+### Build the TRON Energy API client
 
 This module wraps the five endpoints. Every write request carries an `Idempotency-Key`, so retrying after a timeout replays the original response instead of charging you twice.
 
@@ -171,9 +173,11 @@ export async function waitForOrder(orderId, { timeoutMs = 60_000, intervalMs = 3
 {% endstep %}
 
 {% step %}
-#### Read on-chain state through your GetBlock TRON node
+### Read on-chain state through your GetBlock TRON node
 
 This module answers three questions — how much Energy the transfer needs, how much the sender has, and what burning costs — and sends the USDT.
+
+Every read goes to the full node's `wallet/*` API. Some TronWeb helpers, such as `trx.getAccount()` and `trx.getTransactionInfo()`, read from `walletsolidity/*` instead, which a Full Node REST endpoint doesn't serve (it returns `405`). That's why `isActivated()` and `sendUsdt()` call `tronWeb.fullNode.request()` directly.
 
 The Energy estimate simulates the transfer with `triggerconstantcontract`. If the sender doesn't hold enough USDT to simulate, it falls back to the known costs: \~65K to an address that already holds USDT, \~131K to one that never has (the recipient's balance slot has to be created).
 
@@ -203,7 +207,8 @@ export async function getBurnPrices() {
 
 /** An address exists on-chain once it has been activated (received TRX or been created). */
 export async function isActivated(address) {
-  const account = await tronWeb.trx.getAccount(address);
+  // trx.getAccount() reads from walletsolidity; ask the full node so one Full Node REST endpoint is enough.
+  const account = await tronWeb.fullNode.request("wallet/getaccount", { address, visible: true }, "post");
   return Boolean(account.address);
 }
 
@@ -219,14 +224,18 @@ export async function getResources(address) {
 
 /** USDT balance in whole tokens (6 decimals). */
 export async function usdtBalance(address) {
-  const { constant_result } = await tronWeb.transactionBuilder.triggerConstantContract(
+  const res = await tronWeb.transactionBuilder.triggerConstantContract(
     USDT,
     "balanceOf(address)",
     {},
     [{ type: "address", value: address }],
     address
   );
-  return Number(BigInt("0x" + constant_result[0])) / 1e6;
+  if (!res.constant_result) {
+    // A JSON-RPC endpoint answers REST calls with { jsonrpc, error } — TronWeb needs Full Node REST.
+    throw new Error(`TRON node returned no result: ${JSON.stringify(res)}. Is TRON_RPC_URL a Full Node REST endpoint?`);
+  }
+  return Number(BigInt("0x" + res.constant_result[0])) / 1e6;
 }
 
 /**
@@ -281,7 +290,7 @@ export async function sendUsdt(to, amount) {
 {% endstep %}
 
 {% step %}
-#### Decide whether to rent or burn
+### Decide whether to rent or burn
 
 The planner combines both modules. It only calls `price-estimate`, so planning is always free.
 
@@ -352,7 +361,7 @@ export async function planUsdtTransfer(from, to, amount, duration = "1h") {
 {% endstep %}
 
 {% step %}
-#### Wire it into a CLI
+### Wire it into a CLI
 
 The entry point is a dry run by default. `--rent` spends your GetBlock balance; `--send` moves real USDT.
 
@@ -424,7 +433,7 @@ if (send) {
 {% endstep %}
 
 {% step %}
-#### Run it
+### Run it
 
 Start with a free dry run:
 
@@ -491,30 +500,11 @@ Rented Energy stays on the address for the full hour. If you send several USDT t
 }
 ```
 
-| Field           | Type    | What it tells you                                                              |
-| --------------- | ------- | ------------------------------------------------------------------------------ |
-| orderId         | string  | ID to pass to `GET /orders/{order_id}`                                         |
-| status          | string  | `success` (200, delivered) or `accepted` (202, pending); `charged` once billed |
-| target\_address | string  | Address that received the Energy                                               |
-| resource\_type  | string  | `energy` or `bandwidth`                                                        |
-| volume          | integer | Energy delegated (on-chain it can show 1 unit less)                            |
-| duration        | string  | Rental period — Energy returns to GetBlock when it ends                        |
-| price\_usd      | string  | What was charged — can differ from the `price-estimate` quote                  |
-| trx\_spent      | number  | TRX spent on the delegation; `0` while `accepted`                              |
-| txid            | string  | The delegation transaction — look it up on [Tronscan](https://tronscan.org)    |
+<table data-search="false"><thead><tr><th>Field</th><th>Type</th><th>What it tells you</th></tr></thead><tbody><tr><td>orderId</td><td>string</td><td>ID to pass to <code>GET /orders/{order_id}</code></td></tr><tr><td>status</td><td>string</td><td><code>success</code> (200, delivered) or <code>accepted</code> (202, pending); <code>charged</code> once billed</td></tr><tr><td>target_address</td><td>string</td><td>Address that received the Energy</td></tr><tr><td>resource_type</td><td>string</td><td><code>energy</code> or <code>bandwidth</code></td></tr><tr><td>volume</td><td>integer</td><td>Energy delegated (on-chain it can show 1 unit less)</td></tr><tr><td>duration</td><td>string</td><td>Rental period — Energy returns to GetBlock when it ends</td></tr><tr><td>price_usd</td><td>string</td><td>What was charged — can differ from the <code>price-estimate</code> quote</td></tr><tr><td>trx_spent</td><td>number</td><td>TRX spent on the delegation; <code>0</code> while <code>accepted</code></td></tr><tr><td>txid</td><td>string</td><td>The delegation transaction — look it up on <a href="https://tronscan.org/">Tronscan</a></td></tr></tbody></table>
 
 ## Troubleshooting
 
-| Symptom                                                          | Likely cause                                            | Fix                                                                                         |
-| ---------------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `HTTP 401` `Missing or invalid Authorization header`             | Missing, mistyped, or revoked Energy API key            | Check `GETBLOCK_ENERGY_KEY`; create a new key under **Settings → API Keys**                 |
-| `HTTP 400` `energy volume must be between 32000 and 5000000`     | Rental below the 32,000 minimum                         | The planner rounds up to 32,000 — check you didn't lower `MIN_ENERGY_ORDER`                 |
-| `HTTP 400` `invalid duration, allowed: 15m, 1h, 1d, 3d, 7d, 14d` | Unsupported duration such as `3h` or `12h`              | Use one of the listed values                                                                |
-| `HTTP 400` `Invalid target_address`                              | Address isn't valid base58 TRON (`T…`, 34 characters)   | Copy the address again; hex (`41…`) addresses aren't accepted                               |
-| `HTTP 429` from the TRON node                                    | Too many requests per second on a public or shared node | Use your GetBlock endpoint in `TRON_RPC_URL`; the planner already sends calls one at a time |
-| Decision is `BURN`                                               | Rental quote is higher than the burn cost right now     | Prices follow network demand — retry later, or send without renting                         |
-| Transfer still burns TRX for Energy                              | Recipient never held USDT, so it used \~131K, not \~65K | The simulation handles this when the sender holds USDT; otherwise rent 131,000              |
-| `SENDER_PRIVATE_KEY does not match <from>`                       | The key in `.env` belongs to a different address        | Use the private key of the `<from>` address                                                 |
+<table data-search="false"><thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead><tbody><tr><td><code>HTTP 401</code> <code>Missing or invalid Authorization header</code></td><td>Missing, mistyped, or revoked Energy API key</td><td>Check <code>GETBLOCK_ENERGY_KEY</code>; create a new key under <strong>Settings → API Keys</strong></td></tr><tr><td><code>HTTP 400</code> <code>energy volume must be between 32000 and 5000000</code></td><td>Rental below the 32,000 minimum</td><td>The planner rounds up to 32,000 — check you didn't lower <code>MIN_ENERGY_ORDER</code></td></tr><tr><td><code>HTTP 400</code> <code>invalid duration, allowed: 15m, 1h, 1d, 3d, 7d, 14d</code></td><td>Unsupported duration such as <code>3h</code> or <code>12h</code></td><td>Use one of the listed values</td></tr><tr><td><code>HTTP 400</code> <code>Invalid target_address</code></td><td>Address isn't valid base58 TRON (<code>T…</code>, 34 characters)</td><td>Copy the address again; hex (<code>41…</code>) addresses aren't accepted</td></tr><tr><td><code>TRON node returned no result: {"jsonrpc":"2.0","error":{"code":-32600,"message":"Invalid Request"}}</code></td><td><code>TRON_RPC_URL</code> is a JSON-RPC endpoint; TronWeb calls the REST API (<code>/wallet/...</code>)</td><td>In <strong>RPC → Shared Node</strong>, create a TRON Mainnet endpoint with API Interface <strong>Full Node REST</strong> and use that URL</td></tr><tr><td><code>Request failed with status code 405</code> on <code>walletsolidity/...</code></td><td>A Full Node REST endpoint doesn't serve Solidity paths, and some TronWeb helpers (<code>trx.getAccount</code>, <code>trx.getTransactionInfo</code>) call them</td><td>Read through the full node with <code>tronWeb.fullNode.request("wallet/...")</code>, as <code>tron.js</code> does</td></tr><tr><td><code>HTTP 429</code> from the TRON node</td><td>Too many requests per second on a public or shared node</td><td>Use your GetBlock endpoint in <code>TRON_RPC_URL</code>; the planner already sends calls one at a time</td></tr><tr><td>Decision is <code>BURN</code></td><td>Rental quote is higher than the burn cost right now</td><td>Prices follow network demand — retry later, or send without renting</td></tr><tr><td>Transfer still burns TRX for Energy</td><td>Recipient never held USDT, so it used ~131K, not ~65K</td><td>The simulation handles this when the sender holds USDT; otherwise rent 131,000</td></tr><tr><td><code>SENDER_PRIVATE_KEY does not match &#x3C;from></code></td><td>The key in <code>.env</code> belongs to a different address</td><td>Use the private key of the <code>&#x3C;from></code> address</td></tr></tbody></table>
 
 ## Conclusion
 
@@ -526,5 +516,5 @@ You built a tool that prices a USDT transfer before sending it, rents only the E
 * [TRON Fee Model](https://docs.getblock.io/tron-energy/tron-fee-model)
 * [TRON Energy API reference](https://docs.getblock.io/tron-energy/api-reference)
 * [GetBlock TRON API reference](https://docs.getblock.io/api-reference/tron-trx)
-* [Get an API key](https://account.getblock.io)
+* [Get an API key](https://account.getblock.io/)
 * [Project Repo](https://github.com/GetBlock-io/guides/tree/main/tron-energy-fee-saver)

@@ -20,8 +20,8 @@ GetBlock Tron Energy is a service that lets you rent TRON Energy and Bandwidth v
 ### **How It Works**
 
 1. **You top up** your GetBlock Credits balance
-2. **You request delegation** via API or dashboard — specifying target address, Energy amount, and duration
-3. **GetBlock delegates Energy** from their staked TRX pool to your target address instantly
+2. **You request delegation** via API or dashboard — specifying target address, Energy amount, and duration.
+3. **GetBlock delegates Energy** from their staked TRX pool to your target address instantly.
 4. **Your target address transacts** using the delegated Energy (no TRX burning)
 5. **Energy recovers** over 24 hours if partially used
 6. **Delegation expires** at the end of the rental period — resources return to GetBlock

@@ -214,7 +214,7 @@ curl --location 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/api/v2/u
 ```
 {% endcode %}
 
-Sending a `bb_`-prefixed method to a standard Bitcoin JSON-RPC endpoint returns `-32603 Internal error`, because that endpoint has no address index and does not know the method. The Bitcoin Core wallet RPCs, including `listunspent`, are disabled on shared nodes and return `405 Method Not Allowed`; use `/api/v2/utxo/{address}` instead. Full reference: [Bitcoin Blockbook REST API](../api-reference/bitcoin-btc/bitcoin-blockbook-rest-api/).
+Sending a `bb_`-prefixed method to a standard Bitcoin JSON-RPC endpoint returns `-32603 Internal error`, because that endpoint has no address index and does not know the method. The Bitcoin Core wallet RPCs, including `listunspent`, are disabled on shared nodes and return `405 Method Not Allowed`; use `/api/v2/utxo/{address}` instead. Full reference: [Bitcoin Blockbook REST API](/broken/pages/b8bae9b324693e0ff05766e3e963fdacde340aed).
 
 ### What You Gain
 
