@@ -39,8 +39,6 @@ With our tools and services, you can focus on building your dApp without worryin
 
 From DeFi apps and NFT platforms to analytics tools, AppChains, and more, GetBlock provides the infrastructure you need to build, test, and scale your blockchain-powered solutions.
 
-hsxhhxxshhshsjsjjsj
-
 {% embed url="https://www.youtube.com/watch?v=fl3NwMBIxOQ" %}
 GetBlock Product Demo
 {% endembed %}
