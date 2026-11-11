@@ -1,0 +1,111 @@
+---
+description: >-
+  Example code for the eth_getLogs JSON-RPC method. Complete guide on how to use
+  eth_getLogs JSON-RPC in GetBlock Web3 documentation.
+---
+
+# eth\_getLogs - Peaq
+
+Returns event logs matching an address/topics filter over a block range.
+
+## Parameters
+
+| # | Example                                                        | Description            |
+| - | -------------------------------------------------------------- | ---------------------- |
+| 0 | `{"fromBlock": "0x1a4b00", "toBlock": "latest", "topics": ...` | Positional parameter 0 |
+
+## Request
+
+{% tabs %}
+{% tab title="cURL" %}
+{% code overflow="wrap" %}
+```bash
+curl --location --request POST 'https://shared.us-east-1.getblock.io/<ACCESS-TOKEN>/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "method": "eth_getLogs",
+    "params": [{"fromBlock": "0x1a4b00", "toBlock": "latest", "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}]
+}'
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Axios" %}
+{% code title="example.js" %}
+```javascript
+const axios = require('axios');
+const response = await axios.post('https://shared.us-east-1.getblock.io/<ACCESS-TOKEN>/', { jsonrpc: '2.0', id: 'getblock.io', method: 'eth_getLogs', params: [{"fromBlock": "0x1a4b00", "toBlock": "latest", "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}] }, { headers: { 'Content-Type': 'application/json' } });
+console.log(response.data.result);
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Request" %}
+{% code title="example.py" %}
+```python
+import requests
+response = requests.post('https://shared.us-east-1.getblock.io/<ACCESS-TOKEN>/', headers={'Content-Type': 'application/json'}, json={'jsonrpc': '2.0', 'id': 'getblock.io', 'method': 'eth_getLogs', 'params': [{"fromBlock": "0x1a4b00", "toBlock": "latest", "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}]})
+print(response.json())
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rust" %}
+{% code title="example.rs" %}
+```rust
+use reqwest::Client;
+use serde_json::{json, Value};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = Client::new();
+    let res = client.post("https://shared.us-east-1.getblock.io/<ACCESS-TOKEN>/").json(&json!({"jsonrpc":"2.0","id":"getblock.io","method":"eth_getLogs","params":[{"fromBlock": "0x1a4b00", "toBlock": "latest", "topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]}]})).send().await?.json::<Value>().await?;
+    println!("{}", res["result"]);
+    Ok(())
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": "getblock.io",
+    "result": [
+        {
+            "address": "0x...",
+            "topics": [
+                "0xddf2..."
+            ],
+            "data": "0x...",
+            "blockNumber": "0x1a4b7c"
+        }
+    ]
+}
+```
+
+## Response Parameters
+
+| Field   | Type   | Description                           |
+| ------- | ------ | ------------------------------------- |
+| jsonrpc | string | JSON-RPC version ("2.0")              |
+| id      | string | Request identifier ("getblock.io")    |
+| result  | varies | The method result (see example above) |
+
+## Use Cases
+
+* Programmatic access to the `eth_getLogs` method on peaq
+* Integrations, indexing, and tooling built on the peaq node API
+
+## Error Handling
+
+| Error                     | Message          | Description                                       |
+| ------------------------- | ---------------- | ------------------------------------------------- |
+| -32602                    | Invalid params   | A parameter was missing or malformed              |
+| -32601                    | Method not found | The method name is not exposed by the node        |
+| 403 / RBAC: access denied | Access denied    | The GetBlock access token is missing or incorrect |
