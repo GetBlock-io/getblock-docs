@@ -169,4 +169,4 @@ To revoke a key you no longer use, return to **Settings → API Keys**. Revocati
 
 1. [TRON Fee Model](tron-fee-model.md)
 2. [API Reference](api-reference/)
-3. [How to Cut USDT Transfer Fees on TRON by Renting Energy with GetBlock](../../guides/how-to-cut-usdt-transfer-fees-on-tron-by-renting-energy-with-getblock.md)
+3. [How to Cut USDT Transfer Fees on TRON by Renting Energy with GetBlock](https://github.com/GetBlock-io/getblock-docs/tree/main/guides/how-to-cut-usdt-transfer-fees-on-tron-by-renting-energy-with-getblock.md)
