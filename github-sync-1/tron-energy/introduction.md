@@ -10,7 +10,7 @@ GetBlock Tron Energy is a service that lets you rent TRON Energy and Bandwidth v
 
 ### Key Benefits
 
-* Save roughly 70–80% compared to burning TRX for fees: 65,000 Energy for 1 hour cost 1.2–1.9 TRX at the time of writing (November 2026), versus 6.5 TRX burned
+* Save about 80% compared to burning TRX for fees: 65,000 Energy for 1 hour costs about 1.2–1.4 TRX versus 6.5 TRX burned
 * Pay in USD: no need to hold or stake TRX
 * Instant delegation: resources are available immediately
 * Flexible durations: 15 minutes to 14 days

@@ -8,13 +8,13 @@ description: >-
 
 Every USDT transfer on TRON executes a smart contract, and smart contracts consume Energy. A wallet with no Energy pays by burning TRX: about 6.5 TRX when the recipient already holds USDT, and about 13 TRX when it never has. That is often more than the transfer itself e.g sending 1 USDT to an empty wallet can cost 4 USDT in fees. Staking TRX to earn your own Energy locks up thousands of TRX and takes 14 days to unwind. For exchanges, payment services, and wallets that move USDT all day, burning TRX on every transfer is the single largest operating cost on TRON.
 
-The **GetBlock TRON Energy API** rents Energy to any TRON address for a USD fee, delivered on-chain in seconds. A 1-hour rental that covers one USDT transfer cost 1.2–1.9 TRX at the time of writing (November 2026), instead of the 6.5 TRX you would burn — roughly 70–80% less.
+The **GetBlock TRON Energy API** rents Energy to any TRON address for a USD fee, delivered on-chain in seconds. A 1-hour rental that covers one USDT transfer costs about 1.2–1.4 TRX instead of the 6.5 TRX you would burn.
 
 In this guide, you'll build a **Node.js tool that plans a USDT transfer, compares the burn cost against a live rental quote, rents only the Energy that's missing, and then sends the USDT** with no TRX burned for Energy.
 
 | Burning TRX                                           | Renting Energy with GetBlock               |
 | ----------------------------------------------------- | ------------------------------------------ |
-| \~6.5 TRX per USDT transfer (\~13 TRX to new holders) | \~1.2–1.9 TRX for a 1-hour rental             |
+| \~6.5 TRX per USDT transfer (\~13 TRX to new holders) | \~1.2–1.4 TRX for a 1-hour rental          |
 | Wallet must hold TRX for fees                         | Pay from your GetBlock Credits balance     |
 | Staking locks TRX for 14 days                         | No TRX locked — Energy is delegated to you |
 | Fee is only known after the transaction               | Free `price-estimate` before you commit    |
@@ -30,7 +30,7 @@ A `planUsdtTransfer(from, to, amount)` function and CLI that:
 5. With `--send`, sends the USDT and prints the fee receipt.
 
 {% hint style="warning" %}
-**Rent for the shortest duration that covers your transfers.** The price is per unit of Energy for the whole rental period, so it grows fast. For 65,000 Energy, a `1h` rental cost 1.2–1.9 TRX at the time of writing, but a `1d` rental cost about 8.6 TRX — more than the 6.5 TRX you'd burn. This guide always rents for `1h`.
+**Rent for the shortest duration that covers your transfers.** The price is per unit of Energy for the whole rental period, so it grows fast. For 65,000 Energy, a `1h` rental costs about 1.2 TRX, but a `1d` rental costs about 8.6 TRX — more than the 6.5 TRX you'd burn. This guide always rents for `1h`.
 {% endhint %}
 
 {% hint style="info" %}
@@ -175,8 +175,6 @@ export async function waitForOrder(orderId, { timeoutMs = 60_000, intervalMs = 3
 
 This module answers three questions — how much Energy the transfer needs, how much the sender has, and what burning costs — and sends the USDT.
 
-Every read goes to the full node's `wallet/*` API. Some TronWeb helpers, such as `trx.getAccount()` and `trx.getTransactionInfo()`, read from `walletsolidity/*` instead, which a Full Node REST endpoint doesn't serve (it returns `405`). That's why `isActivated()` and `sendUsdt()` call `tronWeb.fullNode.request()` directly.
-
 The Energy estimate simulates the transfer with `triggerconstantcontract`. If the sender doesn't hold enough USDT to simulate, it falls back to the known costs: \~65K to an address that already holds USDT, \~131K to one that never has (the recipient's balance slot has to be created).
 
 {% code title="tron.js" overflow="wrap" %}
@@ -205,8 +203,7 @@ export async function getBurnPrices() {
 
 /** An address exists on-chain once it has been activated (received TRX or been created). */
 export async function isActivated(address) {
-  // trx.getAccount() reads from walletsolidity; ask the full node so one Full Node REST endpoint is enough.
-  const account = await tronWeb.fullNode.request("wallet/getaccount", { address, visible: true }, "post");
+  const account = await tronWeb.trx.getAccount(address);
   return Boolean(account.address);
 }
 
@@ -222,18 +219,14 @@ export async function getResources(address) {
 
 /** USDT balance in whole tokens (6 decimals). */
 export async function usdtBalance(address) {
-  const res = await tronWeb.transactionBuilder.triggerConstantContract(
+  const { constant_result } = await tronWeb.transactionBuilder.triggerConstantContract(
     USDT,
     "balanceOf(address)",
     {},
     [{ type: "address", value: address }],
     address
   );
-  if (!res.constant_result) {
-    // A JSON-RPC endpoint answers REST calls with { jsonrpc, error } — TronWeb needs Full Node REST.
-    throw new Error(`TRON node returned no result: ${JSON.stringify(res)}. Is TRON_RPC_URL a Full Node REST endpoint?`);
-  }
-  return Number(BigInt("0x" + res.constant_result[0])) / 1e6;
+  return Number(BigInt("0x" + constant_result[0])) / 1e6;
 }
 
 /**
@@ -518,8 +511,6 @@ Rented Energy stays on the address for the full hour. If you send several USDT t
 | `HTTP 400` `energy volume must be between 32000 and 5000000`     | Rental below the 32,000 minimum                         | The planner rounds up to 32,000 — check you didn't lower `MIN_ENERGY_ORDER`                 |
 | `HTTP 400` `invalid duration, allowed: 15m, 1h, 1d, 3d, 7d, 14d` | Unsupported duration such as `3h` or `12h`              | Use one of the listed values                                                                |
 | `HTTP 400` `Invalid target_address`                              | Address isn't valid base58 TRON (`T…`, 34 characters)   | Copy the address again; hex (`41…`) addresses aren't accepted                               |
-| `TRON node returned no result: {"jsonrpc":"2.0","error":{"code":-32600,"message":"Invalid Request"}}` | `TRON_RPC_URL` is a JSON-RPC endpoint; TronWeb calls the REST API (`/wallet/...`) | In **RPC → Shared Node**, create a TRON Mainnet endpoint with API Interface **Full Node REST** and use that URL |
-| `Request failed with status code 405` on `walletsolidity/...`  | A Full Node REST endpoint doesn't serve Solidity paths, and some TronWeb helpers (`trx.getAccount`, `trx.getTransactionInfo`) call them | Read through the full node with `tronWeb.fullNode.request("wallet/...")`, as `tron.js` does |
 | `HTTP 429` from the TRON node                                    | Too many requests per second on a public or shared node | Use your GetBlock endpoint in `TRON_RPC_URL`; the planner already sends calls one at a time |
 | Decision is `BURN`                                               | Rental quote is higher than the burn cost right now     | Prices follow network demand — retry later, or send without renting                         |
 | Transfer still burns TRX for Energy                              | Recipient never held USDT, so it used \~131K, not \~65K | The simulation handles this when the sender holds USDT; otherwise rent 131,000              |
