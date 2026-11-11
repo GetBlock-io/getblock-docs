@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150" role="img" aria-labelledby="title desc">
+  <title id="title">Lime feather pen icon</title>
+  <desc id="desc">A black stylized feather pen on a bright lime circular background.</desc>
+
+  <circle id="background" cx="75" cy="75" r="75" fill="#CCFF00"/>
+
+  <g id="feather" fill="#111111">
+    <!-- Rounded crown and upper-right vane -->
+    <path id="upper-vane" d="M69.5 46 81.4 33.6A10.7 10.7 0 0 1 89.1 30H95c8.3 0 15 6.7 15 15v2.8a17 17 0 0 1-4 10.9L93.5 73.8V50.5a4.5 4.5 0 0 0-4.5-4.5Z"/>
+
+    <!-- Left vane and the writing tip -->
+    <path id="left-vane" d="M65.2 49.5h20.9L54.3 96.2a15.5 15.5 0 0 1-5.3 4.7V72.7a14 14 0 0 1 3.2-8.9Zm-16.2 42 5.3 4.7-11.2 23.1a1.7 1.7 0 0 1-3.1-1.4Z"/>
+
+    <!-- Lower-right vane, separated by the lime central channel -->
+    <path id="lower-vane" d="m90 50.8-.9 28.1A18.5 18.5 0 0 1 77 95.8l-20.7 7.3Z"/>
+  </g>
+</svg>
+
