@@ -195,6 +195,10 @@
   * [Replace address list entries - Webhooks](webhooks/api-reference/replace-address-list-entries.md)
   * [Remove address list entries - Webhooks](webhooks/api-reference/remove-address-list-entries.md)
 
+## SUI Product
+
+* [Sui Indexed Archive](sui-product/sui-indexed-archive.md)
+
 ## Solana Market Data
 
 * [Overview](solana-market-data/overview.md)
