@@ -38,28 +38,3 @@ All data is displayed through infographics, including:
 * Response statuses
 * Method call distribution
 * Rate limit rejections
-
-***
-
-### Notifications and email communication
-
-GetBlock provides automated email updates for key account and subscription events:
-
-* Account registration
-* Successful order payments (Shared, Dedicated services, and Top-Ups)
-* Start of grace period
-* Subscription expiration&#x20;
-* Dedicated node deployed and activated
-* Recurring payment cancelled
-
-{% hint style="warning" %}
-Email notifications are **delivered only to** **accounts** with a **verified email address** provided during registration.
-
-Users who registered using third-party authentication methods, such as MetaMask login, may not receive email notifications.
-{% endhint %}
-
-<figure><img src="../.gitbook/assets/email_notifs_1.webp" alt="Managing your blockchain RPC node usage with notifications" width="375"><figcaption></figcaption></figure>
-
-
-
-Users can also choose whether to receive marketing communications from GetBlock. This preference can be managed in Account Settings → General by enabling or disabling the “I want to receive marketing offers” option.
