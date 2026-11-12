@@ -1,3 +1,10 @@
+---
+description: >-
+  Sui Indexed Archive gives you the full history of Sui mainnet from genesis,
+  indexed and served over the same gRPC calls as live data on your GetBlock  
+  Dedicated Node.
+---
+
 # Sui Indexed Archive
 
 Sui Indexed Archive is a managed archive of Sui mainnet history, from the genesis checkpoint on May 3, 2023 to the present. GetBlock indexes that history and runs it alongside your Sui Dedicated Node, so a transaction from 2023 is returned by the same gRPC call you use for one from a minute ago.
