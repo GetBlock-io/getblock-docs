@@ -47,7 +47,7 @@ Users can also choose whether to receive marketing communications from GetBlock.
 
 ### Low CU balance notifications
 
-Low CU balance alerts give you time to [top up CUs](app://-/getting-started/plans-and-limits/top-up-cus-and-boost-limits) or change your plan before running out of Compute Units (CUs) interrupts your API usage.
+Low CU balance alerts give you time to top up CUs or change your plan before running out of Compute Units (CUs) interrupts your API usage.
 
 Alerts arrive **by email** and under the **notification bell** <img src="../.gitbook/assets/notification-bell 1.svg" alt="" data-size="line"> in the GetBlock console. Each alert shows your plan, remaining CU balance, and the threshold that triggered it.&#x20;
 
@@ -79,5 +79,5 @@ Alerts stop when your subscription ends. When you activate another eligible subs
 
 #### What should I do after an alert?
 
-Check your remaining CU balance and recent usage. If you expect to run out, [top up CUs](app://-/getting-started/plans-and-limits/top-up-cus-and-boost-limits) or [choose a different plan](app://-/getting-started/plans-and-limits/choosing-your-plan).
+Check your remaining CU balance and recent usage. If you expect to run out, [top up CUs](plans-and-limits/top-up-cus-and-boost-limits.md) or choose a different plan.
 
