@@ -26,6 +26,7 @@
   * [Postman Collection](getting-started/testing-rpc-connection/postman-collection.md)
   * [Errors and troubleshooting](getting-started/testing-rpc-connection/errors-and-troubleshooting.md)
 * [Monitoring and analytics](getting-started/monitoring-and-analytics.md)
+* [Notifications and Alerts](getting-started/notifications-and-alerts.md)
 * [Connect to GetBlock with MetaMask](getting-started/connect-to-getblock-with-metamask.md)
 * [Connect Brave Wallet to GetBlock](getting-started/connect-brave-wallet-to-getblock.md)
 * [GetBlock Docs MCP server](getting-started/getblock-docs-mcp-server.md)

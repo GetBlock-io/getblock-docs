@@ -50,7 +50,7 @@ To increase usage limits, choose between the higher-tier options.
 {% endtab %}
 
 {% tab title="Starter" %}
-For use cases that are growing beyond the free tier — a first production app or side project. Offers a **significant increase in CU** and **RPS** compared to the Free plan.&#x20;
+For use cases that are growing beyond the free tier — a first production app or side project. Offers a **significant increase in CU** and **RPS** compared to the Free plan.
 
 <figure><img src="../../.gitbook/assets/Starter_widget_jul26.svg" alt="Starter plan limits for Shared RPC nodes by GetBlock"><figcaption></figcaption></figure>
 
@@ -136,9 +136,9 @@ Your monthly plan CUs (main balance) are **valid for the current billing cycle**
 Extra CUs (extra balance) — anything on top of your plan allocation — do **carry over to the next month**, as long as your subscription stays active and renews on time.
 
 {% hint style="success" %}
-If your demand exceeds the included limits, you can **purchase extra CU packages**. This means that even within a given plan, there’s room for scaling without an immediate need to move to a higher tier.
+[**Low CU balance notifications**](../notifications-and-alerts.md) warn you when your balance reaches an enabled threshold. The default alert is set at 10% of your plan's included CU allowance.
 
-* [Top up CUs and boost limits](top-up-cus-and-boost-limits.md)
+If your demand exceeds the included limits, you can [**purchase extra CU packages**](top-up-cus-and-boost-limits.md). This means that even within a given plan, there’s room for scaling without an immediate need to move to a higher tier.
 {% endhint %}
 
 ***
@@ -149,7 +149,7 @@ Limitless Node removes Compute Unit limits entirely. You can send unlimited requ
 
 <figure><img src="../../.gitbook/assets/limitless_widget_2.webp" alt="GetBlock&#x27;s Limitless Node with fixed RPS and unlimited requests"><figcaption></figcaption></figure>
 
-* **CU**: No limit&#x20;
+* **CU**: No limit
 * **Rate limit**: Capped at selected RPS tier
 
 {% hint style="info" %}
