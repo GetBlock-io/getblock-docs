@@ -4,14 +4,22 @@ description: >-
   infrastructure stream schema for Base pre-confirmations.
 ---
 
-# Base Flashblocks
+# Base Flashblocks (Deprecated)
+
+{% hint style="danger" %}
+### Base retired Flashblocks when it moved to 200ms blocks (the Denim upgrade).
+
+Base stopped producing Flashblocks on both networks at activation. Flashblocks subscriptions, the Flashblocks WebSocket streams, and Flashblocks pending state no longer return data. The `"pending"` block tag still works, but it resolves to the latest canonical block.
+
+For example, use `eth_subscribe("newHeads")` in place of `newFlashblocks`
+{% endhint %}
 
 Flashblocks deliver \~200ms transaction preconfirmations on Base by streaming partial blocks before the next full block is sealed. Each 2-second Base block is divided into ten Flashblocks streamed at 200ms intervals, exposing preconfirmed state through the standard JSON-RPC `pending` block tag.
 
 ### Endpoints
 
-| Transport | URL                                      |
-| --------- | ---------------------------------------- |
+| Transport | URL                                                       |
+| --------- | --------------------------------------------------------- |
 | HTTP      | `https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/` |
 | WebSocket | `wss://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/`   |
 
@@ -21,7 +29,7 @@ The `pending` tag works over HTTP. Flashblocks subscriptions require the WebSock
 
 ### Flashblocks-Aware Methods
 
-<table data-search="false"><thead><tr><th>Method</th><th>Usage</th></tr></thead><tbody><tr><td><code>eth_getTransactionCount</code></td><td>Pass <code>"pending"</code> for a nonce that accounts for Flashblock transactions</td></tr><tr><td><code>eth_getStorageAt</code></td><td>Pass <code>"pending"</code> for storage at preconfirmed state</td></tr><tr><td><code>eth_getBalance</code></td><td>Pass <code>"pending"</code> for the balance at the latest Flashblock state</td></tr><tr><td><code>eth_getBlockByNumber</code></td><td>Pass <code>"pending"</code> to retrieve the current Flashblock</td></tr><tr><td><code>eth_getBlockReceipt</code></td><td>Pass <code>"pending"</code> to get receipts for all pre-confirmed transactions in the current Flashblock.</td></tr><tr><td><code>eth_getBlockTransactionCountByNumber</code></td><td>Pass <code>"pending"</code> to get the count of pre-confirmed transactions in the current Flashblock.</td></tr><tr><td><code>eth_estimateGas</code></td><td>Pass <code>"pending"</code> to estimate gas against preconfirmed state</td></tr><tr><td><code>eth_call</code></td><td>Pass <code>"pending"</code> to execute against preconfirmed state</td></tr><tr><td><code>eth_simulateV1</code></td><td>Simulates against the latest preconfirmed state</td></tr><tr><td><code>eth_getLogs</code></td><td>Pass  <code>"fromBlock": "pending"</code> and <code>"toBlock": "pending"</code> to query logs from pre-confirmed transactions, updated every ~200ms.</td></tr><tr><td><code>eth_getCode</code></td><td>Pass <code>"pending"</code> for contract code at preconfirmed state</td></tr><tr><td><code>base_transactionStatus</code></td><td>Reports whether a transaction hash is present in the mempool</td></tr><tr><td><code>eth_subscribe</code></td><td>Opens a Flashblocks WebSocket subscription</td></tr><tr><td><code>eth_unsubscribe</code></td><td>Cancels an active Flashblocks subscription</td></tr></tbody></table>
+<table data-search="false"><thead><tr><th>Method</th><th>Usage</th></tr></thead><tbody><tr><td><code>eth_getTransactionCount</code></td><td>Pass <code>"pending"</code> for a nonce that accounts for Flashblock transactions</td></tr><tr><td><code>eth_getStorageAt</code></td><td>Pass <code>"pending"</code> for storage at preconfirmed state</td></tr><tr><td><code>eth_getBalance</code></td><td>Pass <code>"pending"</code> for the balance at the latest Flashblock state</td></tr><tr><td><code>eth_getBlockByNumber</code></td><td>Pass <code>"pending"</code> to retrieve the current Flashblock</td></tr><tr><td><code>eth_getBlockReceipt</code></td><td>Pass <code>"pending"</code> to get receipts for all pre-confirmed transactions in the current Flashblock.</td></tr><tr><td><code>eth_getBlockTransactionCountByNumber</code></td><td>Pass <code>"pending"</code> to get the count of pre-confirmed transactions in the current Flashblock.</td></tr><tr><td><code>eth_estimateGas</code></td><td>Pass <code>"pending"</code> to estimate gas against preconfirmed state</td></tr><tr><td><code>eth_call</code></td><td>Pass <code>"pending"</code> to execute against preconfirmed state</td></tr><tr><td><code>eth_simulateV1</code></td><td>Simulates against the latest preconfirmed state</td></tr><tr><td><code>eth_getLogs</code></td><td>Pass <code>"fromBlock": "pending"</code> and <code>"toBlock": "pending"</code> to query logs from pre-confirmed transactions, updated every ~200ms.</td></tr><tr><td><code>eth_getCode</code></td><td>Pass <code>"pending"</code> for contract code at preconfirmed state</td></tr><tr><td><code>base_transactionStatus</code></td><td>Reports whether a transaction hash is present in the mempool</td></tr><tr><td><code>eth_subscribe</code></td><td>Opens a Flashblocks WebSocket subscription</td></tr><tr><td><code>eth_unsubscribe</code></td><td>Cancels an active Flashblocks subscription</td></tr></tbody></table>
 
 ### Example
 

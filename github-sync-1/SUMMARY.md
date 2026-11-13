@@ -116,7 +116,7 @@
 ## Flashblocks
 
 * [Overview](flashblocks/overview.md)
-* [Base Flashblocks](flashblocks/base-flashblocks.md)
+* [Base Flashblocks (Deprecated)](flashblocks/base-flashblocks.md)
 * [Optimism Flashblocks.](flashblocks/optimism-flashblocks..md)
 * [Flashblocks API](flashblocks/flashblocks-api/README.md)
   * [eth\_getTransactionCount - Flashblocks](flashblocks/flashblocks-api/eth_gettransactioncount-flashblocks.md)
@@ -195,10 +195,6 @@
   * [Add address list entries - Webhooks](webhooks/api-reference/add-address-list-entries.md)
   * [Replace address list entries - Webhooks](webhooks/api-reference/replace-address-list-entries.md)
   * [Remove address list entries - Webhooks](webhooks/api-reference/remove-address-list-entries.md)
-
-## SUI Product
-
-* [Sui Indexed Archive](sui-product/sui-indexed-archive.md)
 
 ## Solana Market Data
 
@@ -4451,6 +4447,7 @@
   * [debug\_traceCall - Story](api-reference/story-data/debug_tracecall-story.md)
   * [debug\_traceTransaction - Story](api-reference/story-data/debug_tracetransaction-story.md)
 * [Sui (SUI)](api-reference/sui-sui/README.md)
+  * [Sui Indexed Archive](api-reference/sui-sui/sui-indexed-archive.md)
   * [ledgerService\_batchGetObjects - SUI](api-reference/sui-sui/ledgerservice_batchgetobjects-sui.md)
   * [LedgerService/BatchGetTransactions - SUI](api-reference/sui-sui/ledgerservice-batchgettransactions-sui.md)
   * [LedgerService/GetCheckpoint - SUI](api-reference/sui-sui/ledgerservice-getcheckpoint-sui.md)

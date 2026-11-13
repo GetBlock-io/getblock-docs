@@ -21,11 +21,11 @@ A regular Sui full node prunes old data and keeps only recent epochs. Sui Indexe
 
 You can query:
 
-| Data                           | How you look it up       | gRPC method                                                                                                                                                                                                |
-| ------------------------------ | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Any transaction since genesis  | By transaction digest    | [`LedgerService/GetTransaction`](../api-reference/sui-sui/ledgerservice-gettransaction-sui.md), [`LedgerService/BatchGetTransactions`](../api-reference/sui-sui/ledgerservice-batchgettransactions-sui.md) |
-| Any object at any past version | By object ID and version | [`LedgerService/GetObject`](../api-reference/sui-sui/ledgerservice-getobject-sui.md)                                                                                                                       |
-| Any checkpoint since genesis   | By sequence number       | [`LedgerService/GetCheckpoint`](../api-reference/sui-sui/ledgerservice-getcheckpoint-sui.md)                                                                                                               |
+| Data                           | How you look it up       | gRPC method                                                                                                                                              |
+| ------------------------------ | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Any transaction since genesis  | By transaction digest    | [`LedgerService/GetTransaction`](ledgerservice-gettransaction-sui.md), [`LedgerService/BatchGetTransactions`](ledgerservice-batchgettransactions-sui.md) |
+| Any object at any past version | By object ID and version | [`LedgerService/GetObject`](ledgerservice-getobject-sui.md)                                                                                              |
+| Any checkpoint since genesis   | By sequence number       | [`LedgerService/GetCheckpoint`](ledgerservice-getcheckpoint-sui.md)                                                                                      |
 
 Archive reads use Sui's standard `LedgerService` gRPC methods. They go to the same endpoint as live reads on your Dedicated Node, so your application needs no second URL and no fallback logic for old data. If your code already calls `LedgerService`, it works without changes.
 
@@ -90,12 +90,12 @@ GetBlock replies with a node configuration, the SOC 2 Type II report, and a star
 {% step %}
 #### Start querying
 
-Once your Dedicated Node is deployed, the archive is already indexed. Call the `LedgerService` methods on your node's endpoint as you would for live data. See the [Sui API reference](../api-reference/sui-sui/) for request and response formats.
+Once your Dedicated Node is deployed, the archive is already indexed. Call the `LedgerService` methods on your node's endpoint as you would for live data. See the [Sui API reference](./) for request and response formats.
 {% endstep %}
 {% endstepper %}
 
 ## Related pages
 
-* [Sui API reference](../api-reference/sui-sui/)
+* [Sui API reference](./)
 * [Sui Indexed Archive overview and pricing](https://getblock.io/sui-indexed-archive/)
 * [Sui nodes on GetBlock](https://getblock.io/nodes/sui/)
