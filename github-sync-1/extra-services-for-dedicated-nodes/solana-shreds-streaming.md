@@ -30,7 +30,7 @@ That head start is the entire point. In latency-sensitive strategies, seeing a t
 ### Two ways to use it
 
 1. **As a dedicated node add-on:** You attach shreds streaming to your Solana dedicated node, giving your node and your workloads a faster, steadier source of block data.
-2. **As a standalone service — no node needed:** You top up credits, open a UDP[^1] port, and start receiving shreds. You do not run or rent a Solana node at all. Decoding the shreds gives you the transaction data directly, and your credit balance meters the usage.
+2. **As a standalone service — no node needed:** This comes at a fixed price (see [pricing](solana-shreds-streaming.md#pricing)), opens a UDP port, and starts receiving shreds. You do not run or rent a Solana node at all. Decoding the shreds gives you the transaction data directly, and your credit balance meters the usage.
 
 ### How the standalone service works
 
@@ -41,7 +41,7 @@ The service connects to validators and forwards their shreds to your listener ov
 * **The earliest view of the chain:** You act on transaction intent before a standard feed reports it.
 * **Lower tail latency:** Shreds arrive with less timing variance, so the feed stays steady slot after slot.
 * **A redundant data path:** Direct shreds add a second source next to Turbine, which helps in remote or less-peered regions.
-* **No node required:** In standalone mode you receive data without the cost and the operations of a full Solana node.
+* **No node required:** In standalone mode, you receive data without the cost and the operations of a full Solana node.
 
 ### When to use it
 
@@ -50,12 +50,22 @@ The service connects to validators and forwards their shreds to your listener ov
 * You run a liquidation bot where a few milliseconds decide the outcome.
 * You run high-frequency analytics that need the earliest possible data.
 
+### Pricing
+
+You have access to a two-hour free trial; once the trial ends:&#x20;
+
+| Plan          | Price          |
+| ------------- | -------------- |
+| 24-hour trial | $20            |
+| Monthly       | $300           |
+| Annual        | $3000(17% off) |
+
 ### Limitations
 
 * **Pre-execution data only:** Shreds show intent, not results. You do not get success or failure, balance changes, logs, or compute usage, so some transactions you observe will later fail. Treat the stream as a signal, and confirm outcomes through a normal feed.
 * **Possible packet loss:** UDP trades reliability for speed, so a raw stream may drop packets. This is acceptable for speed-critical work, but you design for it.
 * **You decode the stream:** Raw shreds need a listener that decodes them. This is a low-level integration, not a single RPC call.
-* **Solana only:** Shreds are a Solana concept; the service does not apply to other chains.
+* **Solana-only:** Shreds is a Solana concept; the service does not apply to other chains.
 
 ### Delivery
 
@@ -63,7 +73,7 @@ The service connects to validators and forwards their shreds to your listener ov
 | ----------------- | ------------------------------------------------------- |
 | Protocol          | UDP (raw shreds)                                        |
 | Access modes      | Dedicated node add-on · standalone credit-based service |
-| Available Regions | `eu-central-1`, `us-east-1`, `ap-southeast-1`           |
+| Available Regions | `eu-central-1`                                          |
 
 [^1]: _UDP_ is a connectionless protocol, meaning that messages are sent without negotiating a connection and that _UDP_ does not keep track of what it has sent.
 
