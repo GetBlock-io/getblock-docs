@@ -192,7 +192,7 @@ const client = createPublicClient({
 const proof = await client.getProof({
     address: '0x742d35Cc6634C0532925a3b844Bc9e7595f7bD5e',
     storageKeys: ['0x0'],
-    latest
+    blockTag: 'latest'
 });
 console.log(proof);
 ```

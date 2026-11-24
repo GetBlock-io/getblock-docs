@@ -36,7 +36,7 @@ let data = JSON.stringify({
     "method": "rpc_modules",
     "params": [],
     "id": "getblock.io"
-};
+});
 
 let config = {
   method: "post",
@@ -65,12 +65,12 @@ axios
 import requests
 import json
 
-url = "https://shared.us-east-1.getblock.io/<ACESS_TOKEN>"
+url = "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>"
 
 payload = json.dumps({
-   jsonrpc": "2.0",
+   "jsonrpc": "2.0",
     "method": "rpc_modules",
-    "params": []
+    "params": [],
     "id": "getblock.io"
 })
 headers = {
@@ -95,9 +95,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     headers.insert("Content-Type", "application/json".parse()?);
 
     let data = r#"{
-   jsonrpc": "2.0",
+   "jsonrpc": "2.0",
     "method": "rpc_modules",
-    "params": []
+    "params": [],
     "id": "getblock.io"
 }"#;
 
@@ -193,7 +193,7 @@ import { optimism } from 'viem/chains';
 // Create Viem client with GetBlock
 const client = createPublicClient({
   chain: optimism,
-  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>'
+  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>')
 });
 
 // Using the method through Viem

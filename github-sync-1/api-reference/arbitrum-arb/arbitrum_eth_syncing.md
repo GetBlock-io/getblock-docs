@@ -178,7 +178,7 @@ import { arbitrum } from 'viem/chains';
 // Create Viem client with GetBlock
 const client = createPublicClient({
   chain: arbitrum,
-  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>'
+  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>')
 });
 
 // Using the method through Viem

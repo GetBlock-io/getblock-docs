@@ -6,17 +6,16 @@ title: const { ethers } = require(...
 {% tab title="Ether.js" %}
 {% code overflow="wrap" %}
 ```javascript
-import  ethers from 'ethers';
+import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io//');
+const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
-async function getCode() {
-    const code = await provider.getCode('0xContractAddress');
-    console.log('Contract Code Length:', code.length);
-    console.log('Is Contract:', code !== '0x');
+async function getBlockNumber() {
+    const blockNumber = await provider.getBlockNumber();
+    console.log('Latest block:', blockNumber);
 }
 
-getCode();
+getBlockNumber();
 
 ```
 {% endcode %}
@@ -38,9 +37,9 @@ async function Call() {
   try {
     // Method-specific Viem implementation
     const result = await client.request({
-    "method": "eth_getBlockByNumber",
-    "params": ["latest", true],
-};
+      method: "eth_blockNumber",
+      params: [],
+    });
     return result;
   } catch (error) {
     console.error("Viem Error:", error);

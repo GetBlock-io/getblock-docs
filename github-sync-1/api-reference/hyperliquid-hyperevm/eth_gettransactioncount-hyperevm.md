@@ -70,7 +70,7 @@ import json
 
 url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
-payload = json.dumps(
+payload = json.dumps({
     "jsonrpc": "2.0",
     "method": "eth_getTransactionCount",
     "params": ["0x742d35Cc6634C0532925a3b844Bc9e7595f5bE21", "latest"],

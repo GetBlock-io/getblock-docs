@@ -51,9 +51,9 @@ let data = JSON.stringify({
             "fromBlock": "earliest",
             "toBlock": "latest",
             "topics": []
-        }]
+        }],
     "id": "getblock.io"
-};
+});
 
 let config = {
   method: "post",
@@ -82,7 +82,7 @@ axios
 import requests
 import json
 
-url = "https://shared.us-east-1.getblock.io/<ACESS_TOKEN>"
+url = "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>"
 
 payload = json.dumps({
    "jsonrpc": "2.0",
@@ -92,7 +92,7 @@ payload = json.dumps({
             "fromBlock": "earliest",
             "toBlock": "latest",
             "topics": []
-        }]
+        }],
     "id": "getblock.io"
 })
 headers = {
@@ -124,7 +124,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "fromBlock": "earliest",
             "toBlock": "latest",
             "topics": []
-        }]
+        }],
     "id": "getblock.io"
 }"#;
 
@@ -223,7 +223,7 @@ import { arbitrum } from 'viem/chains';
 // Create Viem client with GetBlock
 const client = createPublicClient({
   chain: arbitrum,
-  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>'
+  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>')
 });
 
 // Using the method through Viem

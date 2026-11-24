@@ -36,7 +36,7 @@ let data = JSON.stringify({
     "method": "net_version,
     "params": [],
     "id": "getblock.io"
-};
+});
 
 let config = {
   method: "post",
@@ -65,12 +65,12 @@ axios
 import requests
 import json
 
-url = "https://shared.us-east-1.getblock.io/<ACESS_TOKEN>"
+url = "https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>"
 
 payload = json.dumps({
-   jsonrpc": "2.0",
-    "method": "net_version,
-    "params": []
+   "jsonrpc": "2.0",
+    "method": "net_version",
+    "params": [],
     "id": "getblock.io"
 })
 headers = {
@@ -95,9 +95,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     headers.insert("Content-Type", "application/json".parse()?);
 
     let data = r#"{
-   jsonrpc": "2.0",
-    "method": "net_version,
-    "params": []
+   "jsonrpc": "2.0",
+    "method": "net_version",
+    "params": [],
     "id": "getblock.io"
 }"#;
 
@@ -130,9 +130,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 #### Reponse Parameter Definition
 
-| Field  | Description                                                     | Data Type |
-| ------ | --------------------------------------------------------------- | --------- |
-| result | A hexadecimal string representing the ID of the created filter. | String    |
+| Field  | Description                                                               | Data Type |
+| ------ | ------------------------------------------------------------------------- | --------- |
+| result | The network ID as a decimal string, for example "42161" for Arbitrum One. | String    |
 
 #### Use case
 
@@ -185,7 +185,7 @@ import { arbitrum } from 'viem/chains';
 // Create Viem client with GetBlock
 const client = createPublicClient({
   chain: arbitrum,
-  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>'
+  transport: http('https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>')
 });
 
 // Using the method through Viem

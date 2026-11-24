@@ -41,7 +41,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 ```javascript
 import axios from 'axios';
 
-const data = JSON.stringify(
+const data = JSON.stringify({
   "jsonrpc": "2.0",
   "id": "getblock.io",
   "method": "eth_blockNumber",
@@ -72,7 +72,7 @@ import json
 
 url = "https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/"
 
-payload = json.dumps(
+payload = json.dumps({
   "jsonrpc": "2.0",
   "id": "getblock.io",
   "method": "eth_blockNumber",
@@ -101,7 +101,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let response = client
         .post("https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/")
         .header(header::CONTENT_TYPE, "application/json")
-        .body(r#"
+        .body(r#"{ 
           "jsonrpc": "2.0",
           "id": "getblock.io",
           "method": "eth_blockNumber",

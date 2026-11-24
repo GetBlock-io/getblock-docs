@@ -160,7 +160,7 @@ getCurrentLedger();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import LedgerCurrent
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/")
 request = LedgerCurrent()
 response = client.request(request)
 print(response.result)

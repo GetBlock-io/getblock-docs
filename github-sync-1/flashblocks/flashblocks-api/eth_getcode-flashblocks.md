@@ -159,7 +159,7 @@ import { ethers } from 'ethers';
 const provider = new ethers.JsonRpcProvider('https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/');
 
 // Generic JSON-RPC call — 'pending' returns Flashblocks-preconfirmed state:
-const result = await provider.send('eth_code', [
+const result = await provider.send('eth_getCode', [
     "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
     "pending"]);
 console.log(result);
@@ -178,7 +178,7 @@ const client = createPublicClient({
 
 // viem's read methods accept blockTag: 'pending' for Flashblocks-preconfirmed state:
 const result = await client.request({
-    method: 'eth_code',
+    method: 'eth_getCode',
     params: [
     "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
     "pending"]
