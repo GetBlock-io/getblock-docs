@@ -186,7 +186,7 @@ Invalid parameters
 const xrpl = require('xrpl');
 
 async function norippleCheck() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     const response = await client.request({
@@ -210,7 +210,7 @@ norippleCheck();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import NoRippleCheck
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 request = NoRippleCheck(
     account="rN7n7otQDd6FczFgLdSqtcsAUxDkw6fzRH",
     role="gateway"

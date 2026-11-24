@@ -162,7 +162,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 const xrpl = require('xrpl');
 
 async function subscribe() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     client.on('ledgerClosed', ledger => {
@@ -184,7 +184,7 @@ subscribe();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import Subscribe
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 request = Subscribe(streams=["ledger"])
 response = client.request(request)
 print(response.result)

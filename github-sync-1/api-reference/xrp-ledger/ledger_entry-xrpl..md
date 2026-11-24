@@ -54,7 +54,6 @@ const axios = require('axios');
 
 const url = 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/';
 const headers = {
-    'x-api-key': 'YOUR-API-KEY',
     'Content-Type': 'application/json'
 };
 
@@ -196,7 +195,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 const xrpl = require('xrpl');
 
 async function getEntry() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     const response = await client.request({
@@ -219,7 +218,7 @@ getEntry();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import LedgerEntry
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 request = LedgerEntry(account_root="rN7n7otQDd6FczFgLdSqtcsAUxDkw6fzRH")
 response = client.request(request)
 print(response.result)

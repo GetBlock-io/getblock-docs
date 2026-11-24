@@ -164,7 +164,7 @@ Note: channel\_authorize requires admin or local signing. Use local signing (cli
 const xrpl = require('xrpl');
 
 async function authorizeChannel() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     // Note: channel_authorize requires admin or local signing

@@ -323,7 +323,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 const xrpl = require('xrpl');
 
 async function getLedger() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     const response = await client.request({
@@ -346,7 +346,7 @@ getLedger();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import Ledger
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 request = Ledger(ledger_index="validated")
 response = client.request(request)
 print(response.result)

@@ -111,7 +111,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let response = client
         .post("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/")
-        .header("x-api-key", "YOUR-API-KEY")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -172,7 +171,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 const xrpl = require('xrpl');
 
 async function checkAuth() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     const response = await client.request({
@@ -196,7 +195,7 @@ checkAuth();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import DepositAuthorized
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 request = DepositAuthorized(
     source_account="rN7n7otQDd6FczFgLdSqtcsAUxDkw6fzRH",
     destination_account="ra5nK24KXen9AHvsdFTKHSANinZseWnPcX"

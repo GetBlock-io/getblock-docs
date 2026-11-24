@@ -188,7 +188,7 @@ Invalid parameters
 const xrpl = require('xrpl');
 
 async function getGatewayBalances() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     const response = await client.request({
@@ -211,7 +211,7 @@ getGatewayBalances();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import GatewayBalances
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 request = GatewayBalances(account="rN7n7otQDd6FczFgLdSqtcsAUxDkw6fzRH")
 response = client.request(request)
 print(response.result)

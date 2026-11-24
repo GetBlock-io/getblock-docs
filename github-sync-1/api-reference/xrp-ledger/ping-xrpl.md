@@ -18,8 +18,7 @@ This method returns an acknowledgement, so that clients can test the connection 
 {% tab title="cURL" %}
 {% code title="curl" %}
 ```bash
-curl --location --request POST 'https://xrp.getblock.io/mainnet/' \
---header 'x-api-key: YOUR-API-KEY' \
+curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -36,9 +35,8 @@ curl --location --request POST 'https://xrp.getblock.io/mainnet/' \
 ```javascript
 const axios = require('axios');
 
-const url = 'https://xrp.getblock.io/mainnet/';
+const url = 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>';
 const headers = {
-    'x-api-key': 'YOUR-API-KEY',
     'Content-Type': 'application/json'
 };
 
@@ -61,9 +59,8 @@ axios.post(url, payload, { headers })
 ```python
 import requests
 
-url = "https://xrp.getblock.io/mainnet/"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
 headers = {
-    "x-api-key": "YOUR-API-KEY",
     "Content-Type": "application/json"
 }
 
@@ -98,8 +95,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://xrp.getblock.io/mainnet/")
-        .header("x-api-key", "YOUR-API-KEY")
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -152,7 +148,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 const xrpl = require('xrpl');
 
 async function ping() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     const response = await client.request({
@@ -174,7 +170,7 @@ ping();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import Ping
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 request = Ping()
 response = client.request(request)
 print(response.result)

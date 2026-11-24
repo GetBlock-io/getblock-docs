@@ -163,7 +163,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 const xrpl = require('xrpl');
 
 async function getOffers() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     const response = await client.request({
@@ -184,7 +184,7 @@ getOffers();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import AccountOffers
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 request = AccountOffers(account="rN7n7otQDd6FczFgLdSqtcsAUxDkw6fzRH")
 response = client.request(request)
 print(response.result)

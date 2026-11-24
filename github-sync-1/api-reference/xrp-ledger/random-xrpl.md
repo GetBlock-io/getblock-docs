@@ -62,7 +62,6 @@ import requests
 
 url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/"
 headers = {
-    "x-api-key": "YOUR-API-KEY",
     "Content-Type": "application/json"
 }
 
@@ -96,7 +95,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let response = client
         .post("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/")
-        .header("x-api-key", "YOUR-API-KEY")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()
@@ -151,7 +149,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 const xrpl = require('xrpl');
 
 async function getRandom() {
-    const client = new xrpl.Client('wss://xrplcluster.com');
+    const client = new xrpl.Client('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
     await client.connect();
     
     const response = await client.request({
@@ -171,7 +169,7 @@ getRandom();
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import Random
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 request = Random()
 response = client.request(request)
 print(response.result)

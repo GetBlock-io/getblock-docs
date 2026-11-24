@@ -209,7 +209,7 @@ const xrpl = require('xrpl');
 from xrpl.clients import JsonRpcClient
 from xrpl.models.requests import SubmitMultisigned
 
-client = JsonRpcClient("https://xrp.getblock.io/mainnet/")
+client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
 # Collect signatures and submit
 ```
 {% endcode %}
