@@ -220,6 +220,6 @@ Corn's defining feature is BTCN, its Bitcoin-backed gas token. If your applicati
 
 ## After Deploying
 
-* Read contract state through the [eth\_call](/broken/pages/f6e68ce43521bb08e12c6334cec4b2d557eb4576) method against your GetBlock endpoint
-* Watch contract events with [eth\_getLogs](/broken/pages/05036408b150af0a10d2f533d3daaf53a0827ad5)
+* Read contract state through the `eth_call` method against your GetBlock endpoint
+* Watch contract events with `eth_getLogs`
 * Explore your contract and transactions on [CornScan](https://cornscan.io/)

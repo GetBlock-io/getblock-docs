@@ -222,6 +222,6 @@ Core's distinctive feature is non-custodial Bitcoin staking and Satoshi Plus. If
 
 ## After Deploying
 
-* Read contract state through the [eth\_call](/broken/pages/3890116fe0f31d7e7bc09b55e9f4ef45c1255c0c) method against your GetBlock endpoint.
-* Watch contract events with [eth\_getLogs](/broken/pages/fd2a6713b76763c0fbafd2a99835f4cdac23806c).
+* Read contract state through the `eth_call` method against your GetBlock endpoint.
+* Watch contract events with `eth_getLogs`.
 * Explore your contract and transactions on [Core Scan](https://scan.coredao.org/).

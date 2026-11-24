@@ -14,9 +14,7 @@ A team account is **a shared workspace** **where multiple users can collaborate*
 * **Enhanced security:** Role-based access limits each member to only the features they need.
 * **Efficient management:** Easily switch between personal and team accounts.
 
-A **team account user** is a regular GetBlock user. When invited to a team, they can work on company resources, manage service plans or team settings, provided the corresponding permissions are granted.
-
-***
+A **team account user** is a regular GetBlock user. When invited to a team, they can work with company resources and manage service plans or team settings, provided the corresponding permissions are granted.
 
 ### Creating a team account on GetBlock
 
@@ -27,15 +25,13 @@ This part covers a step-by-step guide to setting up your team workspace.
 
 <figure><img src="../../.gitbook/assets/team_create_new.svg" alt="How to create a team account on GetBlock"><figcaption></figcaption></figure>
 
-3. A popup window will appear. Assign a team name and click the "**Create team**" button.
+3. A pop-up window will appear. Assign a team name and click the "**Create team**" button.
 
 <figure><img src="../../.gitbook/assets/team_create_step1.svg" alt="Creating an enterprise account with RPC node provider GetBlock"><figcaption></figcaption></figure>
 
 3. Once the space is created, navigate to **Account Settings** > **Team** to manage team settings or add teammates.
 
 <figure><img src="../../.gitbook/assets/team_view.svg" alt="Collaboration feature for GetBlock enterprise users"><figcaption></figcaption></figure>
-
-***
 
 ### Adding teammates
 
@@ -51,8 +47,8 @@ The creator of the team account controls who gets invited and manages user roles
 
 You can invite team members to join your team account using either their email address or GetBlock User ID.
 
-* **If the teammate has a GetBlock account**: You can invite them using their **ID**. Since they are already registered, they just need to accept the invitation.
-* **If the teammate is not registered on GetBlock**: Invite them via **email** so they can first create an account before joining the team.
+* **If the teammate has a GetBlock account**, you can invite them using their **ID**. Since they are already registered, they just need to accept the invitation.
+* **If the teammate is not registered on GetBlock**, invite them via email so they can create an account before joining the team.
 
 {% tabs %}
 {% tab title="The teammate has a GetBlock account" %}
@@ -86,8 +82,6 @@ A team member is marked as ![Active](<../../.gitbook/assets/Component 20.svg>) w
 
 If the invitation has been sent but not yet accepted, their status remains ![Pending](<../../.gitbook/assets/Component 21.svg>).
 
-***
-
 ### Managing roles & permissions
 
 Once the user has joined, the team owner or an admin can update their permissions:
@@ -98,7 +92,7 @@ Once the user has joined, the team owner or an admin can update their permission
 4. Assign **permissions**:
    * **Endpoints:** Create and manage node endpoints, access tokens, and view statistics.
    * **Subscriptions & payments:** Handle payments and plans.
-   * **Admin:** Includes all the above permissions, plus the access to manage team settings and member roles.
+   * **Admin:** Includes all the above permissions, plus access to manage team settings and member roles.
 5. Save changes.
 
 <figure><img src="../../.gitbook/assets/Access level (2).svg" alt="Managing team account user permissions and roles"><figcaption></figcaption></figure>
@@ -107,7 +101,7 @@ Once the user has joined, the team owner or an admin can update their permission
 If a Member has no permissions assigned, they will have **View-Only access** by default.
 {% endhint %}
 
-#### **Roles-based permissions**
+#### **Role-based permissions**
 
 This table provides a breakdown of actions team account users can perform based on their role.
 
@@ -117,23 +111,19 @@ This table provides a breakdown of actions team account users can perform based 
 If you need someone to help manage other team members, be sure to give them **Admin** status.
 {% endhint %}
 
-***
-
 ### Revoking team access
 
 To remove a user from your team account:
 
 1. Navigate to **Team** in the **Account Settings**.
-2. Click the **three-dot menu** (⋮) next to the team member name.
+2. Click the **three-dot menu** (⋮) next to the team member's name.
 3. Select **"Remove"** from the dropdown menu.
 
 <figure><img src="../../.gitbook/assets/team_revoke.svg" alt="Instructions to remove a team user from the GetBlock team account"><figcaption></figcaption></figure>
 
 {% hint style="success" %}
-When removed from a team, users lose access to that team workspace but keep their personal account.
+When removed from a team, users lose access to that team's workspace but retain their personal accounts.
 {% endhint %}
-
-***
 
 ### How to join a team account
 
@@ -181,8 +171,6 @@ Now that you’ve joined a team, here are a few useful resources to help you get
 {% endtab %}
 {% endtabs %}
 
-***
-
 ### **Switching between personal & team accounts**
 
 {% hint style="success" %}
@@ -199,16 +187,12 @@ To switch between your personal account and any team accounts you are part of:
 
 The teams list is sorted by recent activity, with the most recently accessed accounts at the top.
 
-***
-
 ### **Best practices for team security**
 
 * Regularly review and **audit permissions**. Revoke access for users who are no longer active.
 * Grant admin privileges only to **trusted team members**.
 * Give Members **only the necessary permissions** (e.g., endpoints access or subscriptions management).
 * Never **share login credentials**—use team accounts instead.
-
-***
 
 ### **Need help?**
 

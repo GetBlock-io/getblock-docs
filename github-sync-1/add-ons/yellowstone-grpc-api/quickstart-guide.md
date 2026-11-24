@@ -2,7 +2,7 @@
 description: Follow these steps to activate the Solana Yellowstone gRPC add-on on GetBlock
 ---
 
-# Quickstart guide
+# Quickstart
 
 GetBlock offers[ SOL nodes](https://getblock.io/nodes/sol/) with the Solana Geyser gRPC plugin, so you can start using it immediately, without any node setup and maintenance — simply enable the add-on and point your gRPC client at our endpoints.
 
@@ -74,8 +74,6 @@ TOKEN = 'YOUR_GETBLOCK_ACCESS_TOKEN';
 GetBlock provides a single TLS endpoint – you don’t need to open or configure a different port for gRPC access.
 {% endhint %}
 
-***
-
 ### Subscribing to Data Streams: Code examples
 
 Dragon’s Mouth uses **gRPC over HTTP/2** for all communication. Its message schemas are defined in Protocol Buffer (`.proto`) files, included in the [Yellowstone repository](https://github.com/rpcpool/yellowstone-grpc/tree/master), which specify all the RPC methods and data types.
@@ -101,22 +99,27 @@ Developers can integrate Yellowstone streams using standard gRPC client librarie
 
 The part below will show common ways to initialize your **connection to the GetBlock gRPC endpoint** and open a bidirectional subscription stream (`Subscribe`) with filters.
 
-***
-
 #### 1. CLI (using `grpcurl`)
 
 A generic tool like grpcurl is perfect to just poke at the API and explore method calls:
 
+{% tabs %}
+{% tab title="List services and methods " %}
+{% code overflow="wrap" %}
 ```bash
-# 1) List services and methods 
 grpcurl \
   -insecure \
   -authority shared.eu-central-1.getblock.io \
   -H "x-access-token: YOUR_ACCESS_TOKEN" \
   shared.eu-central-1.getblock.io:443 \
   list
+```
+{% endcode %}
+{% endtab %}
 
-# 2) Subscribe to slots
+{% tab title="Subscribe to slots" %}
+{% code overflow="wrap" %}
+```bash
 grpcurl \
   -insecure \
   -authority shared.eu-central-1.getblock.io \
@@ -124,10 +127,10 @@ grpcurl \
   shared.eu-central-1.getblock.io:443 \
   geyser.Geyser/Subscribe \
   -d '{ "slots": { "slots": []{} } }'
-
 ```
-
-***
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 #### 2. Using a high‑level SDK (Node.js / TypeScript)
 
@@ -189,8 +192,6 @@ async function main() {
 main().catch(console.error);
 
 ```
-
-***
 
 #### 3. Python, Rust, and Go streaming examples
 
@@ -358,8 +359,6 @@ async fn main() {
 {% endtab %}
 {% endtabs %}
 
-***
-
 ### Unary RPC methods
 
 In addition to streaming subscriptions, the same gRPC interface also provides unary RPCs for quick, one-off queries:
@@ -372,14 +371,12 @@ In addition to streaming subscriptions, the same gRPC interface also provides un
 
 You can call these methods directly on the gRPC client without opening a streaming connection.
 
-***
-
 ### Yellowstone gRPC best practices
 
 Before you start streaming data with the Yellowstone Geyser plugin, consider these recommendations:
 
-* **Filtering is crucial**: Always narrow your subscription to only the `accounts` or `programs` you need. Excessive or empty filters can overwhelm clients and hit rate limits.
-* **Combine with JSON‑RPC**: Use gRPC for real‑time streaming. Continue to use GetBlock’s JSON‑RPC Solana endpoints for on‑demand calls like [`getBlock`](/broken/pages/qfijVOnnvj0tmM2T2mDt), [`sendTransaction`](/broken/pages/164SGSO9dftxQ39PHwbH), or historical queries.
+* **Filtering is crucial**: Always narrow your subscription to only the `accounts` or `programs` you need. Excessive or empty filters can overwhelm clients and cause rate limits to be hit.
+* **Combine with JSON‑RPC**: Use gRPC for real‑time streaming. Continue to use GetBlock’s JSON‑RPC Solana endpoints for on‑demand calls like `getBlock`, `sendTransaction`, or historical queries.
 * **Keeping your stream alive**: gRPC streams may time out if idle. The Yellowstone plugin can handle keep-alive pings. In your `SubscribeRequest`, you can set `ping: true` to respond to server pings (or send a minimal ping message periodically) to keep the stream alive.
 * **Selecting the right commitment levels**: Choose **`processed`**, **`confirmed`**, or **`finalized`** in your `SubscribeRequest` to balance between lowest latency (`processed`) and highest certainty (`finalized`). For most real‑time use cases (dashboards, bots), use `processed` to see intra‑slot updates.
 
@@ -395,10 +392,8 @@ In Solana’s commitment hierarchy, you have _processed_, _confirmed_, and _fina
 _Streaming at “processed” gives you every transaction and account write the moment the leader executes it, well before it appears in a confirmed block._
 {% endhint %}
 
-***
-
 With these examples and notes, you should be able to jump right into using GetBlock’s Yellowstone gRPC API in the language of your choice.
 
-### 💬 Need help?
+### Need help?
 
 Check out the [Yellowstone gRPC docs](https://github.com/rpcpool/yellowstone-grpc) or reach out via [GetBlock support](https://getblock.io/contact/).

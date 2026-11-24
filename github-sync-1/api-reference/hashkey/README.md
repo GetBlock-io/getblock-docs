@@ -58,11 +58,11 @@ HashKey Chain is served from the **New York** region only — use the New York b
 
 HashKey Chain is served over three interfaces, each provisioned as its own endpoint in the GetBlock dashboard:
 
-| Interface       | Protocol                             | Use it for                                                                                                                                    |
-| --------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| JSON-RPC (HTTP) | Ethereum JSON-RPC 2.0 over HTTP      | Contract calls, transactions, and reads — the `eth_*` surface documented below                                                                |
-| WebSocket       | Ethereum JSON-RPC 2.0 over WebSocket | `eth_subscribe` streams (newHeads, logs) and live data                                                                                        |
-| GraphQL         | EIP-1767 GraphQL over HTTP           | Precise, nested reads of blocks, transactions, accounts, and logs — see [GraphQL API](/broken/pages/72d3fe92ba1e1850ebd36b27109d03a519274ad0) |
+| Interface       | Protocol                             | Use it for                                                                                             |
+| --------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| JSON-RPC (HTTP) | Ethereum JSON-RPC 2.0 over HTTP      | Contract calls, transactions, and reads — the `eth_*` surface documented below                         |
+| WebSocket       | Ethereum JSON-RPC 2.0 over WebSocket | `eth_subscribe` streams (newHeads, logs) and live data                                                 |
+| GraphQL         | EIP-1767 GraphQL over HTTP           | Precise, nested reads of blocks, transactions, accounts, and logs –– see [GraphQL API](./#graphql-api) |
 
 ## Quickstart
 

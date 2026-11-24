@@ -68,8 +68,7 @@
 * [Overlay Methods](add-ons/overlay-methods.md)
 * [MEV Protection](add-ons/mev-protection.md)
 * [Yellowstone gRPC API](add-ons/yellowstone-grpc-api/README.md)
-  * [Overview](add-ons/yellowstone-grpc-api/overview.md)
-  * [Quickstart guide](add-ons/yellowstone-grpc-api/quickstart-guide.md)
+  * [Quickstart](add-ons/yellowstone-grpc-api/quickstart-guide.md)
 
 ## Extra Services For Dedicated Nodes
 

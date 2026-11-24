@@ -221,6 +221,6 @@ Flare's distinctive feature is its enshrined data protocols. If your contract co
 
 ## After Deploying
 
-* Read contract state through the [eth\_call](/broken/pages/cc516dce1062ba0b50df1a06980154df17d84c4f) method against your GetBlock endpoint.
-* Watch contract events with [eth\_getLogs](/broken/pages/6cf1b284f5d5e5dbdcb2318120d3c094163aa6bd).
+* Read contract state through the `eth_call` method against your GetBlock endpoint.
+* Watch contract events with `eth_getLogs`.
 * Explore your contract and transactions on the [Flare Explorer](https://flare-explorer.flare.network/).

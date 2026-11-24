@@ -1,123 +1,73 @@
 ---
 description: >-
-  Power your Solana dApps and backends with the fastest, most reliable streaming
-  data available. Yellowstone gRPC add-on is for apps that need every live event
-  as fast as the network can deliver.
+  Yellowstone gRPC is a Solana Geyser plugin developed by Triton One that feeds
+  your application a continuous, low-latency stream of on-chain data
 ---
 
 # Yellowstone gRPC API
 
-## Overview
+Yellowstone gRPC is the name given to the Dragon’s Mouth Geyser plugin’s gRPC interface in Triton One’s “Yellowstone” suite for Solana. It allows opening streams and subscribing to native Solana on-chain events, receiving every new update in real time, with millisecond-level latency.
 
-**Yellowstone gRPC** is a high-performance Solana Geyser plugin that provides real-time streaming access to on-chain data. Built by Triton One, it delivers blocks, transactions, and account updates with millisecond-level latency directly from Solana validators.
+By plugging directly into validators, it pushes new **blocks**, **transactions**, and **account** updates to your backend the moment they occur.
 
-GetBlock offers **managed Yellowstone gRPC endpoints** as an add-on to Dedicated Solana Node subscriptions, eliminating the need for infrastructure setup and maintenance.
+### How Yellowstone gRPC Geyser works
 
-***
+The Geyser Plugin hooks into validator callbacks for ledger events and publishes them to its internal queues. A gRPC server then streams the queued events over the network to subscribed clients.
 
-## Key Features
+#### **Supported data streams & subscriptions**
 
-* **Near-zero latency**: Streams data directly from validators, often hundreds of milliseconds faster than standard RPC/WebSocket APIs
-* **High throughput**: Handles millions of events per minute under load
-* **Comprehensive streaming**: Monitor accounts, transactions, blocks, slots, and program interactions in real-time
-* **Rich filtering**: Subscribe only to relevant updates using account keys, owner programs, or commitment levels
-* **Protobuf encoding**: Receive parsed, typed messages instead of raw base64 data
-* **Bidirectional streaming**: Maintain long-lived connections with built-in keep-alives
+Geyser gRPC supports streaming the full range of common **Solana events**:
 
-***
+* **Account updates** (writes): Every time an account’s data changes, a notification is emitted.
+* **Transactions**: Each transaction processed by the leader generates a stream event with all associated account changes.
+* **Ledger entries**: Low‑level entry/shred events (raw blocks of ledger data) can also be streamed.
+* **Block notifications**: Clients can subscribe to be notified when a new block is completed.
+* **Slot notifications**: New slot boundaries (leaders or votes) can trigger slot events.
 
-## Supported Data Streams
+Every update stream can include full transaction metadata, instruction details, and parsed logs – essentially everything you’d see in a `getTransaction` or `getProgramAccounts` call, but pushed in real time.
 
-Yellowstone gRPC supports streaming the full range of Solana events:
+In addition to streaming methods, Dragon’s Mouth also exposes several **unary RPCs** via the same gRPC interface for quick queries about:
 
-| Stream Type      | Description                                                      |
-| ---------------- | ---------------------------------------------------------------- |
-| **Accounts**     | Real-time account updates including lamports, owner, and data    |
-| **Transactions** | Full transaction data with metadata and instruction details      |
-| **Blocks**       | Block metadata including slot, parent slot, and timestamp        |
-| **Slots**        | Slot notifications as they're processed by the leader            |
-| **Block Meta**   | Block metadata with transaction counts and execution status      |
+* The Slot;
+* Block height;
+* Latest blockhash;
+* Valid blockhash.
 
-***
+Together, this provides a way to both fetch state on demand and receive real-time updates.
 
-## Use Cases
+### Yellowstone gRPC API features
 
-Yellowstone gRPC is ideal for time-sensitive applications that need to react instantly to on-chain state changes:
+* **Near-zero latency**: By streaming directly from leaders, Dragon’s Mouth delivers updates often hundreds of milliseconds faster than standard RPC/WebSocket APIs.
+* **High throughput**: The plugin can handle millions of events per minute under load, built for Solana’s high transaction volume. Optional compression can be applied for even more efficiency.
+* **Built-in support for bi-directional streaming**: Keep-alives and ping/pong frames help maintain long-lived connections.
+* **Comprehensive streaming**: Clients can monitor virtually anything: token mints, program interactions, votes, etc.
+* **Protobuf/binary encoding**: Each message arrives **parsed** and **typed**, not raw base64. Clients get structured fields (account diffs, token balance changes, parsed logs, etc.) instead of raw blobs.
+* **Rich filtering**: You can apply filters (by account key, owner program, data patterns, commitment level, etc.) so only matching updates are streamed.
 
-* High-frequency trading and MEV bots
-* On-chain indexers and data archives
-* Real-time analytics dashboards
-* DEX monitors and price feeds
-* DeFi strategy engines
-* Alerting and notification systems
-* NFT marketplace trackers
-* Wallet activity monitors
+Overall, applications can keep pace with Solana’s peak TPS without data loss, receive only relevant updates, save bandwidth, and react faster.
+
+### Solana Geyser gRPC plugin use cases
+
+Solana gRPC streaming capabilities are crucial for **time-sensitive** applications, apps that need to **react to on-chain state changes the moment they occur** without manual refreshes.
+
+gRPC API ideal use cases include:
+
+* High-frequency trading or arbitrage systems (e.g. MEV bots);
+* On-chain indexers & archives;
+* Live analytics;
+* Real-time monitors for DEXes, NFTs, wallets, etc.;
+* Alerting & notification systems;
+* DeFi strategy engines;
+* ..and any app that needs push‑style updates.
 
 {% hint style="info" %}
-**Note**: gRPC is not supported in browsers. Yellowstone is designed for backend services and server-side applications.
+Note that gRPC is not supported in browsers, so Yellowstone is intended for backend services.
 {% endhint %}
 
-***
+### Why use Yellowstone gRPC API?
 
-## Getting Started
+Using Yellowstone gRPC for your Solana data means you get a **high-throughput**, **low-latency**, **bidirectional streaming** channel.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;"><strong>Overview</strong></mark></td><td>Learn how Yellowstone gRPC works and why it's essential for real-time Solana applications</td><td><a href="overview.md">overview.md</a></td></tr><tr><td><mark style="color:blue;"><strong>Quickstart Guide</strong></mark></td><td>Enable the add-on and start streaming data with code examples in TypeScript, Python, Go, and Rust</td><td><a href="quickstart-guide.md">quickstart-guide.md</a></td></tr></tbody></table>
+Instead of polling REST endpoints every few seconds or using Solana’s WebSocket API (which typically updates only after a block finalizes), the gRPC interface allows tracking of every new event as it happens.
 
-***
-
-## Prerequisites
-
-To use Yellowstone gRPC on GetBlock:
-
-* A GetBlock account (sign up at [getblock.io](https://getblock.io))
-* A [Dedicated Solana Node](https://docs.getblock.io/getting-started/plans-and-limits/choosing-your-plan) subscription
-* Yellowstone gRPC add-on enabled (included at no extra cost with Dedicated Nodes)
-
-***
-
-## Quick Example
-
-Here's a minimal TypeScript example to start streaming account updates:
-
-```typescript
-import Client, {
-  SubscribeRequest,
-  CommitmentLevel
-} from "@triton-one/yellowstone-grpc";
-
-const client = new Client("https://shared.eu-central-1.getblock.io/", "YOUR_ACCESS_TOKEN");
-const stream = await client.subscribe();
-
-stream.write({
-  accounts: ["YourWalletPubkeyHere"],
-  commitment: CommitmentLevel.PROCESSED,
-} as SubscribeRequest);
-
-stream.on("data", (msg) => {
-  if (msg.accountChange) {
-    console.log(`Account updated: ${msg.accountChange.pubkey}`);
-  }
-});
-```
-
-***
-
-## Additional Resources
-
-* [Yellowstone gRPC GitHub Repository](https://github.com/rpcpool/yellowstone-grpc)
-* [GetBlock Solana Nodes](https://getblock.io/nodes/sol/)
-* [GetBlock Support](https://getblock.io/contact/)
-
-***
-
-## Need Help?
-
-Our support team is available 24/7 to assist with:
-
-* Add-on activation and endpoint setup
-* Integration guidance and troubleshooting
-* Performance optimization
-* Custom solutions for enterprise needs
-
-Contact us through the [GetBlock dashboard](https://getblock.io) or visit our [support page](https://getblock.io/contact/).
-
+Overall, it removes much of the boilerplate: your backend code subscribes once, then simply reacts to incoming messages

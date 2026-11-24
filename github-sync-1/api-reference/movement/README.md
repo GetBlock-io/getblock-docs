@@ -210,64 +210,62 @@ python main.py
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Available REST Endpoints
 
 ### Ledger & Node
 
-| Endpoint                                                                     | Method | Description                                                                                                                                         |
-| ---------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ledger-info](/broken/pages/56d50e9b521a1238ce99e4a01a8286961ea14b7a)        | GET    | Returns the current ledger information for the node: chain ID, current epoch, ledger version, oldest retained version, and current block height     |
-| [healthy](/broken/pages/5491fa9722f6014a3842f6a3280f0b2cb5127a3f)            | GET    | Returns a health check for the node                                                                                                                 |
-| [spec](/broken/pages/cbd62d8ddde0c072ff214f73c82a34319d7e37ea) _(dedicated)_ | GET    | Returns the node's own OpenAPI specification                                                                                                        |
-| [estimate-gas-price](/broken/pages/efc229d6caf353485c95b119ed2ff27d487341dd) | GET    | Returns the network's current gas unit price estimate, with deprioritized and prioritized tiers, so a client can set a competitive gas\_unit\_price |
+| Endpoint           | Method | Description                                                                                                                                         |
+| ------------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ledger-info        | GET    | Returns the current ledger information for the node: chain ID, current epoch, ledger version, oldest retained version, and current block height     |
+| healthy            | GET    | Returns a health check for the node                                                                                                                 |
+| spec _(dedicated)_ | GET    | Returns the node's own OpenAPI specification                                                                                                        |
+| estimate-gas-price | GET    | Returns the network's current gas unit price estimate, with deprioritized and prioritized tiers, so a client can set a competitive gas\_unit\_price |
 
 ### Accounts
 
-| Endpoint                                                                       | Method | Description                                                                                                                                                              |
-| ------------------------------------------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [account](/broken/pages/41104e17259686896dcf9471ee0c7f538826b232)              | GET    | Returns the core on-chain data of an account: its current sequence number (used as the nonce for the next transaction) and its authentication key                        |
-| [account-resources](/broken/pages/8512e6aff2625dda271caa72893f72ba5118a932)    | GET    | Returns all Move resources stored under an account, each with its fully-qualified type and decoded data — including the coin store that holds the account's MOVE balance |
-| [account-resource](/broken/pages/d7ec0020767e7078a1312b535d812ec01e6b2279)     | GET    | Returns a single Move resource under an account, addressed by its fully-qualified type                                                                                   |
-| [account-modules](/broken/pages/0f3ec6aa97bbfc40e4d4570fbccdcd28894d3717)      | GET    | Returns all Move modules published under an account, each with its bytecode and ABI                                                                                      |
-| [account-module](/broken/pages/a3ca749facf7ddd0c4bb2a85ff2a41ef29d420e0)       | GET    | Returns a single Move module published under an account, by module name, with its bytecode and ABI                                                                       |
-| [account-transactions](/broken/pages/3e15c0b656fde2808765f2ed377522c61def2466) | GET    | Returns the transactions sent by an account (by its sequence numbers), paginated — an account's outbound transaction history                                             |
+| Endpoint             | Method | Description                                                                                                                                                              |
+| -------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| account              | GET    | Returns the core on-chain data of an account: its current sequence number (used as the nonce for the next transaction) and its authentication key                        |
+| account-resources    | GET    | Returns all Move resources stored under an account, each with its fully-qualified type and decoded data — including the coin store that holds the account's MOVE balance |
+| account-resource     | GET    | Returns a single Move resource under an account, addressed by its fully-qualified type                                                                                   |
+| account-modules      | GET    | Returns all Move modules published under an account, each with its bytecode and ABI                                                                                      |
+| account-module       | GET    | Returns a single Move module published under an account, by module name, with its bytecode and ABI                                                                       |
+| account-transactions | GET    | Returns the transactions sent by an account (by its sequence numbers), paginated — an account's outbound transaction history                                             |
 
 ### Blocks
 
-| Endpoint                                                                   | Method | Description                                                                                                                                     |
-| -------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| [block-by-height](/broken/pages/cd24a1eb8c3faf17c6a6514cc5ba22bb7efd368d)  | GET    | Returns a block by its height, including its first and last transaction versions, timestamp, and (optionally) the full transactions it contains |
-| [block-by-version](/broken/pages/b9f180147ada0353b566a8543a2e73f26e9381b9) | GET    | Returns the block that contains a given ledger (transaction) version                                                                            |
+| Endpoint         | Method | Description                                                                                                                                     |
+| ---------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| block-by-height  | GET    | Returns a block by its height, including its first and last transaction versions, timestamp, and (optionally) the full transactions it contains |
+| block-by-version | GET    | Returns the block that contains a given ledger (transaction) version                                                                            |
 
 ### Transactions
 
-| Endpoint                                                                            | Method | Description                                                                                                                                |
-| ----------------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| [transactions](/broken/pages/6dc86f9faa107c54e4ae97f1d1555ab0c2ec750c)              | GET    | Returns a paginated list of committed transactions, newest-relative to a starting ledger version, with their payloads, events, and effects |
-| [transaction-by-hash](/broken/pages/8af36030ec7f1c5005e9ad947a0d94b08d8a6d4a)       | GET    | Returns a single transaction by its hash, including its payload, events, state changes, and VM status                                      |
-| [wait-transaction-by-hash](/broken/pages/15d1178b419f7820d64153c289fa5e936f74235a)  | GET    | Returns a transaction by hash, blocking until it is committed (or a timeout)                                                               |
-| [transaction-by-version](/broken/pages/dbc7970f4e07ba5449d91895ccfa8f72568bf094)    | GET    | Returns a single committed transaction by its ledger version                                                                               |
-| [submit-transaction](/broken/pages/1d6d614277fb0c4bbe89947952aec18d8ac50e74)        | POST   | Submits a signed transaction for execution and returns the pending transaction (including its hash)                                        |
-| [submit-batch-transactions](/broken/pages/e3953ba762897515a25001e1e2a5e04eb7679b2e) | POST   | Submits a batch of signed transactions in one call                                                                                         |
-| [simulate-transaction](/broken/pages/a1f2a0367949988e39f2395267f475814485dbd4)      | POST   | Simulates a transaction without committing it and returns its predicted effects, gas usage, and success status                             |
-| [encode-submission](/broken/pages/4c683d1e165032d7fc31a03a6b55b82f512779b2)         | POST   | Returns the BCS-encoded signing message for a transaction, the bytes a client signs before submitting                                      |
+| Endpoint                  | Method | Description                                                                                                                                |
+| ------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| transactions              | GET    | Returns a paginated list of committed transactions, newest-relative to a starting ledger version, with their payloads, events, and effects |
+| transaction-by-hash       | GET    | Returns a single transaction by its hash, including its payload, events, state changes, and VM status                                      |
+| wait-transaction-by-hash  | GET    | Returns a transaction by hash, blocking until it is committed (or a timeout)                                                               |
+| transaction-by-version    | GET    | Returns a single committed transaction by its ledger version                                                                               |
+| submit-transaction        | POST   | Submits a signed transaction for execution and returns the pending transaction (including its hash)                                        |
+| submit-batch-transactions | POST   | Submits a batch of signed transactions in one call                                                                                         |
+| simulate-transaction      | POST   | Simulates a transaction without committing it and returns its predicted effects, gas usage, and success status                             |
+| encode-submission         | POST   | Returns the BCS-encoded signing message for a transaction, the bytes a client signs before submitting                                      |
 
 ### Execution & State
 
-| Endpoint                                                                 | Method | Description                                                                                                                                       |
-| ------------------------------------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [view-function](/broken/pages/1b9b36ba5ebbd4c19a14db6aee9fdfb6d47e03e8)  | POST   | Executes a read-only Move view function against the current (or a historical) ledger state and returns its result, without creating a transaction |
-| [table-item](/broken/pages/04d7de7460abf3398772ac8172dbe2f60fa62f8f)     | POST   | Returns a single item from a Move table by its key                                                                                                |
-| [raw-table-item](/broken/pages/2ca6d7ec412eace82c0ae111391282bb70396d9a) | POST   | Returns a single table item by its raw (BCS-encoded) key — the lower-level counterpart to get table item, used when the key is already serialized |
+| Endpoint       | Method | Description                                                                                                                                       |
+| -------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| view-function  | POST   | Executes a read-only Move view function against the current (or a historical) ledger state and returns its result, without creating a transaction |
+| table-item     | POST   | Returns a single item from a Move table by its key                                                                                                |
+| raw-table-item | POST   | Returns a single table item by its raw (BCS-encoded) key — the lower-level counterpart to get table item, used when the key is already serialized |
 
 ### Events
 
-| Endpoint                                                                            | Method | Description                                                                                                                                  |
-| ----------------------------------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [events-by-creation-number](/broken/pages/c5a038907871c88d71e781e30ad2d219d690be76) | GET    | Returns events from an event stream identified by the account address and the stream's creation number, paginated                            |
-| [events-by-handle](/broken/pages/e9384d2f3536f44a580ab76c03829bca23dccf52)          | GET    | Returns events from an event handle addressed by the account, the handle's resource struct type, and the field within that struct, paginated |
+| Endpoint                  | Method | Description                                                                                                                                  |
+| ------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| events-by-creation-number | GET    | Returns events from an event stream identified by the account address and the stream's creation number, paginated                            |
+| events-by-handle          | GET    | Returns events from an event handle addressed by the account, the handle's resource struct type, and the field within that struct, paginated |
 
 ## Support
 

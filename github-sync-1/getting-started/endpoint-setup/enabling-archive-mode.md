@@ -12,14 +12,12 @@ This page covers **Archive Mode** – a setting that turns on archive-node acces
 
 Common RPC use cases enabled by Archive Mode:
 
-* Read contract/account state at any past block, not just `latest` , using methods like [`eth_getBalance`](/broken/pages/OvREWedjZcQXOfAINKFw)`(address, blockNumber)`, [`eth_getStorageAt`](/broken/pages/Z0x91Xd7rpVHeey1bVlX)`(contract, slot, blockNumber)`, [`eth_getCode`](/broken/pages/7DySAS1tp87clonhiSNK)`(address, blockNumber)`, etc.
-* Call view functions against historical state: e.g. [`eth_call`](/broken/pages/wdvTR5ND1nsYC5wFdcMi)`(..., blockNumber)`.
+* Read contract/account state at any past block, not just `latest` , using methods like `eth_getBalance(address, blockNumber)`, `eth_getStorageAt(contract, slot, blockNumber)`, `eth_getCode(address, blockNumber)`, etc.
+* Call view functions against historical state: e.g. `eth_call(..., blockNumber)`.
 * Run historical queries and debugging that rely on old state: forensics, audits, explorers, indexing, and retroactive analytics.
 * Support tracing and higher-fidelity debugging that may require historical state.
 
-This feature removes the need to run a dedicated archive infrastructure for some use cases, letting developers perform on-demand historical queries via GetBlock RPC API.
-
-***
+This feature removes the need to run a dedicated archive infrastructure for some use cases, letting developers perform on-demand historical queries via the GetBlock RPC API.
 
 ### Archive mode availability & coverage
 
@@ -32,23 +30,21 @@ Look for the small history icon ( <img src="../../.gitbook/assets/Archive_Icon.s
 <figure><img src="../../.gitbook/assets/Archive_shared_icon.svg" alt="Archive blockchain data access via GetBlock RPC endpoints"><figcaption></figcaption></figure>
 
 {% hint style="success" %}
-If you need an archive data for a chain not covered by shared Archive mode, request a [Dedicated Node](configuring-dedicated-nodes/). **Dedicated Nodes** can be deployed in archive mode for **any supported blockchain** and come with additional benefits like:
+If you need archive data for a chain not covered by shared Archive mode, request a [Dedicated Node](configuring-dedicated-nodes/). **Dedicated Nodes** can be deployed in archive mode for **any supported blockchain** and come with additional benefits like:
 
 1. Full blockchain history at the highest throughput
 2. Unlimited query capacity
 3. Custom node builds & tooling
 {% endhint %}
 
-***
-
-### How to enable the Archive mode
+### How to enable Archive mode
 
 1. Sign in to your GetBlock **dashboard** and make sure you’re on the **Shared Node** tab.
-2. Click **Get endpoint** and choose a required blockchain protocol.
+2. Click **Get endpoint**, then choose the required blockchain protocol.
 
 <figure><img src="../../.gitbook/assets/Get_button.svg" alt="Get RPC endpoint button on GetBlock&#x27;s dashboard"><figcaption></figcaption></figure>
 
-3. Find the Mode toggle and switch the **Archive** **mode** on.
+3. Find the Mode toggle and switch **Archive** **mode** on.
 
 <figure><img src="../../.gitbook/assets/Archive_config.svg" alt=""><figcaption></figcaption></figure>
 
@@ -56,28 +52,26 @@ If you need an archive data for a chain not covered by shared Archive mode, requ
 
 After clicking **Get**, the new Archive endpoint appears in your Endpoints list. The endpoint URLs will follow the existing GetBlock format but point to archive nodes.
 
-***
-
 ### CU billing for Shared Archive endpoints
 
 Archive endpoints usage remains subject to your plan’s [CU limits and performance characteristics](https://docs.getblock.io/getting-started/plans-and-limits/cu-and-rate-limits).
 
-However, serving requests from archive infrastructure involves heavier storage and compute power compared to regular full nodes.
+However, serving requests from the archive infrastructure requires more storage and compute resources than regular full nodes.
 
-Therefore, enabling the Archive mode affects how CU usage is calculated:
+Therefore, enabling Archive mode affects how CU usage is calculated:
 
 * GetBlock applies a **2× Compute Unit (CU) multiplier** to all requests made through the Archive endpoint.
 * The multiplier is applied to **all requests made to an archive endpoint**, even if the invoked RPC call does not require a historical state.
 
 You can review the per-chain CU values for each method on our [Compute Units](https://getblock.io/pricing/compute-units/) page.
 
-> Example:
->
-> If `eth_getBalance` costs 20 CU on a standard shared endpoint for a given chain, the same call to an Archive-enabled shared endpoint will cost 40 CU.
+{% hint style="info" %}
+#### Example:
+
+If `eth_getBalance` costs 20 CU on a standard shared endpoint for a given chain, the same call to an Archive-enabled shared endpoint will cost 40 CU.
+{% endhint %}
 
 Plan accordingly and consider using standard **Full mode** endpoints for non-archive traffic to avoid unnecessary CU consumption.
-
-***
 
 ### Best practices
 
@@ -85,8 +79,6 @@ Plan accordingly and consider using standard **Full mode** endpoints for non-arc
 * Monitor CU consumption on the dashboard and set alerts for spikes or when usage nears your plan limit.
 * If you run sustained, high-volume archive queries, consider using a Dedicated Node.
 
-***
-
 #### 💬 Need help with archive blockchain data?
 
-[Tell us](https://getblock.io/contact/) what you’re building — our team can guide you to the most efficient archive node setup.
+[Reach out to us ](mailto:support@getblock.io)with what you’re building; our team can guide you to the most efficient archive node setup.
