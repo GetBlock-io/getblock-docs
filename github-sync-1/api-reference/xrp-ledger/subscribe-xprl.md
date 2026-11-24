@@ -23,7 +23,6 @@ This method requests periodic notifications from the server when certain events 
 {% tab title="cURL" %}
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
-
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",

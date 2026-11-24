@@ -106,7 +106,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     });
 
     let response = client
-        .post("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/"
+        .post("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/")
         .header("Content-Type", "application/json")
         .json(&payload)
         .send()

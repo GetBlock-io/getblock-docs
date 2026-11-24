@@ -24,7 +24,6 @@ This method tells the server to stop sending messages for a particular subscript
 {% code title="cURL" %}
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
-
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",

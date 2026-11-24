@@ -32,7 +32,6 @@ This method returns a single ledger entry from the XRP Ledger in its raw format.
 {% code title="curl" %}
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
-
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
@@ -79,7 +78,7 @@ axios.post(url, payload, { headers })
 ```python
 import requests
 
-url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/\"
+url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/"
 headers = {
    
     "Content-Type": "application/json"

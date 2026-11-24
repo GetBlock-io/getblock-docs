@@ -31,7 +31,6 @@ Note: This method is not available on public RPC endpoints. Use local multi-sign
 {% code title="curl" %}
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
-
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
