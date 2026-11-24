@@ -19,100 +19,37 @@ This method requests periodic notifications from the server when certain events 
 
 ## Request Example
 
+{% hint style="info" %}
+`subscribe` works over WebSocket only. Connect to `wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>` and keep the connection open to receive updates.
+{% endhint %}
+
 {% tabs %}
-{% tab title="cURL" %}
+{% tab title="wscat" %}
 ```bash
-curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "subscribe",
-    "params": [{
-        "streams": ["ledger"]
-    }],
-    "id": "getblock.io"
-}'
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
+
+# After it connects, send:
+{"id": 1, "command": "subscribe", "streams": ["ledger"]}
 ```
 {% endtab %}
 
-{% tab title="JavaScript (Axios)" %}
+{% tab title="JavaScript (ws)" %}
 ```javascript
-const axios = require('axios');
+const WebSocket = require('ws');
 
-const url = 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/';
-const headers = {
-    'Content-Type': 'application/json'
-};
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
 
-const payload = {
-    jsonrpc: '2.0',
-    method: 'subscribe',
-    params: [{
+ws.on('open', () => {
+    ws.send(JSON.stringify({
+        id: 1,
+        command: 'subscribe',
         streams: ['ledger']
-    }],
-    id: 'getblock.io'
-};
+    }));
+});
 
-axios.post(url, payload, { headers })
-    .then(response => console.log(response.data))
-    .catch(error => console.error(error));
-```
-{% endtab %}
-
-{% tab title="Python" %}
-```python
-import requests
-
-url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/"
-headers = {
-    "Content-Type": "application/json"
-}
-
-payload = {
-    "jsonrpc": "2.0",
-    "method": "subscribe",
-    "params": [{
-        "streams": ["ledger"]
-    }],
-    "id": "getblock.io"
-}
-
-response = requests.post(url, headers=headers, json=payload)
-print(response.json())
-```
-{% endtab %}
-
-{% tab title="Rust" %}
-```rust
-use reqwest::Client;
-use serde_json::json;
-
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = Client::new();
-    
-    let payload = json!({
-        "jsonrpc": "2.0",
-        "method": "subscribe",
-        "params": [{
-            "streams": ["ledger"]
-        }],
-        "id": "getblock.io"
-    });
-
-    let response = client
-        .post("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/")
-    
-        .header("Content-Type", "application/json")
-        .json(&payload)
-        .send()
-        .await?;
-
-    let result: serde_json::Value = response.json().await?;
-    println!("{:#?}", result);
-    
-    Ok(())
-}
+ws.on('message', (data) => {
+    console.log(JSON.parse(data));
+});
 ```
 {% endtab %}
 {% endtabs %}
@@ -180,13 +117,15 @@ subscribe();
 
 {% tab title="xrpl-py" %}
 ```python
-from xrpl.clients import JsonRpcClient
-from xrpl.models.requests import Subscribe
+from xrpl.clients import WebsocketClient
+from xrpl.models.requests import Subscribe, StreamParameter
 
-client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
-request = Subscribe(streams=["ledger"])
-response = client.request(request)
-print(response.result)
+url = "wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
+
+with WebsocketClient(url) as client:
+    client.send(Subscribe(streams=[StreamParameter.LEDGER]))
+    for message in client:
+        print(message)
 ```
 {% endtab %}
 {% endtabs %}

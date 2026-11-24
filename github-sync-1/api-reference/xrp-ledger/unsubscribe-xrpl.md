@@ -19,109 +19,46 @@ This method tells the server to stop sending messages for a particular subscript
 
 ## Request Example
 
+{% hint style="info" %}
+`unsubscribe` works over WebSocket only, on the same connection that made the subscription. Connect to `wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>`.
+{% endhint %}
+
 {% tabs %}
-{% tab title="cURL" %}
-{% code title="cURL" %}
+{% tab title="wscat" %}
 ```bash
-curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "unsubscribe",
-    "params": [{
-        "streams": ["ledger"]
-    }],
-    "id": "getblock.io"
-}'
+wscat -c wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>
+
+# After it connects, subscribe:
+{"id": 1, "command": "subscribe", "streams": ["ledger"]}
+
+# Then, on the same connection, unsubscribe:
+{"id": 2, "command": "unsubscribe", "streams": ["ledger"]}
 ```
-{% endcode %}
 {% endtab %}
 
-{% tab title="JavaScript (Axios)" %}
-{% code title="unsubscribe.js" %}
+{% tab title="JavaScript (ws)" %}
 ```javascript
-const axios = require('axios');
+const WebSocket = require('ws');
 
-const url = 'https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/';
-const headers = {
-    'Content-Type': 'application/json'
-};
+const ws = new WebSocket('wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>');
 
-const payload = {
-    jsonrpc: '2.0',
-    method: 'unsubscribe',
-    params: [{
-        streams: ['ledger']
-    }],
-    id: 'getblock.io'
-};
+ws.on('open', () => {
+    ws.send(JSON.stringify({ id: 1, command: 'subscribe', streams: ['ledger'] }));
+});
 
-axios.post(url, payload, { headers })
-    .then(response => console.log(response.data))
-    .catch(error => console.error(error));
+ws.on('message', (data) => {
+    const message = JSON.parse(data);
+    console.log(message);
+
+    // After the first ledger update, stop the subscription and close.
+    if (message.type === 'ledgerClosed') {
+        ws.send(JSON.stringify({ id: 2, command: 'unsubscribe', streams: ['ledger'] }));
+    }
+    if (message.id === 2) {
+        ws.close();
+    }
+});
 ```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Python" %}
-{% code title="unsubscribe.py" %}
-```python
-import requests
-
-url = "https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/"
-headers = {
-    "Content-Type": "application/json"
-}
-
-payload = {
-    "jsonrpc": "2.0",
-    "method": "unsubscribe",
-    "params": [{
-        "streams": ["ledger"]
-    }],
-    "id": "getblock.io"
-}
-
-response = requests.post(url, headers=headers, json=payload)
-print(response.json())
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Rust" %}
-{% code title="main.rs" %}
-```rust
-use reqwest::Client;
-use serde_json::json;
-
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = Client::new();
-    
-    let payload = json!({
-        "jsonrpc": "2.0",
-        "method": "unsubscribe",
-        "params": [{
-            "streams": ["ledger"]
-        }],
-        "id": "getblock.io"
-    });
-
-    let response = client
-        .post("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>/")
-      
-        .header("Content-Type", "application/json")
-        .json(&payload)
-        .send()
-        .await?;
-
-    let result: serde_json::Value = response.json().await?;
-    println!("{:#?}", result);
-    
-    Ok(())
-}
-```
-{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -180,16 +117,16 @@ unsubscribe();
 {% endtab %}
 
 {% tab title="xrpl-py" %}
-{% code title="xrpl-py (Python)" %}
 ```python
-from xrpl.clients import JsonRpcClient
-from xrpl.models.requests import Unsubscribe
+from xrpl.clients import WebsocketClient
+from xrpl.models.requests import Subscribe, Unsubscribe, StreamParameter
 
-client = JsonRpcClient("https://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>")
-request = Unsubscribe(streams=["ledger"])
-response = client.request(request)
-print(response.result)
+url = "wss://shared.eu-central-1.getblock.io/<ACCESS_TOKEN>"
+
+with WebsocketClient(url) as client:
+    client.request(Subscribe(streams=[StreamParameter.LEDGER]))
+    response = client.request(Unsubscribe(streams=[StreamParameter.LEDGER]))
+    print(response.result)
 ```
-{% endcode %}
 {% endtab %}
 {% endtabs %}
