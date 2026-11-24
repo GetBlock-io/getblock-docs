@@ -29,7 +29,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "jsonrpc": "2.0",
     "id": "getblock.io",
     "method": "tx_search",
-    "params": {"query": "message.sender='akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p'", "page": "1", "per_page": "30", "order_by": "desc"}
+    "params": {"query": "message.sender=\u0027akash1nl7dg3xj9j2y6q7z0v4w8c2b5d1f3g6h9k2m4p\u0027", "page": "1", "per_page": "30", "order_by": "desc"}
 }'
 ```
 {% endcode %}

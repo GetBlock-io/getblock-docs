@@ -24,7 +24,7 @@ This method returns the number of transactions sent from an address (nonce).
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '
+--data-raw '{
     "jsonrpc": "2.0",
     "method": "eth_getTransactionCount",
     "params": ["0x742d35Cc6634C0532925a3b844Bc9e7595f5bE21", "latest"],
@@ -274,6 +274,3 @@ async function Call() {
 ```
 {% endtab %}
 {% endtabs %}
-
-
-

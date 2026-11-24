@@ -8,7 +8,7 @@ description: >-
 
 This methods get the number of the most recent block.
 
-#### Paramaters&#x20;
+#### Paramaters
 
 * None
 
@@ -22,7 +22,7 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
 --header 'Content-Type: application/json' \
 --data-raw '{
     "jsonrpc": "2.0",
-    ""method": "eth_blockNumber",
+    "method": "eth_blockNumber",
     "params": [],
     "id": "getblock.io"
 }'

@@ -24,7 +24,7 @@ curl --location 'https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>' \
     "method": "eth_syncing",
     "params": [],
     "id": "getblock.io"
-}
+}'
 ```
 {% endtab %}
 

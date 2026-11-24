@@ -6,7 +6,7 @@ description: >-
 
 # rpc\_modules - Arbitrum
 
-This method returns the current network ID of the connected Ethereum-compatible chain. Each network has a unique numeric identifier, and this method helps applications determine which chain they are interacting with.&#x20;
+This method returns the current network ID of the connected Ethereum-compatible chain. Each network has a unique numeric identifier, and this method helps applications determine which chain they are interacting with.
 
 #### Parameters
 
@@ -22,7 +22,7 @@ curl --location 'https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>' \
 --data '{
    "jsonrpc": "2.0",
     "method": "rpc_modules",
-    "params": []
+    "params": [],
     "id": "getblock.io"
 }'
 ```

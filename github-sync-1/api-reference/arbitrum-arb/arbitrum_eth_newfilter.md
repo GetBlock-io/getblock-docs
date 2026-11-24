@@ -34,7 +34,7 @@ curl --location 'https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>' \
             "fromBlock": "earliest",
             "toBlock": "latest",
             "topics": []
-        }]
+        }],
     "id": "getblock.io"
 }'
 ```

@@ -26,7 +26,7 @@ This method returns the number of the most recent block on the Somnia network. T
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '
+--data-raw '{
   "jsonrpc": "2.0",
   "id": "getblock.io",
   "method": "eth_blockNumber",

@@ -27,8 +27,8 @@ curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-
     "method": "eth_getCode",
     "params": [
     "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-    "pending",
-    ]
+        "pending"
+    ],
     "id": "getblock.io"
 }'
 ```

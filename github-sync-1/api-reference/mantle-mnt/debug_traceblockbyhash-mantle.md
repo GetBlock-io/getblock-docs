@@ -31,7 +31,7 @@ Trace Options:
 ```bash
 curl --location --request POST 'https://shared.eu-central-1.getblock.io/<ACCESS-TOKEN>/' \
 --header 'Content-Type: application/json' \
---data-raw '
+--data-raw '{
     "jsonrpc": "2.0",
     "method": "debug_traceBlockByHash",
     "params": [

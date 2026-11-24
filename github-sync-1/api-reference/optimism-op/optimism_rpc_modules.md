@@ -22,7 +22,7 @@ curl --location 'https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>' \
 --data '{
    "jsonrpc": "2.0",
     "method": "rpc_modules",
-    "params": []
+    "params": [],
     "id": "getblock.io"
 }'
 ```

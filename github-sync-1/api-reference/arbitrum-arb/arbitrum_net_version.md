@@ -6,7 +6,7 @@ description: >-
 
 # net\_version - Arbitrum
 
-This method returns the current network ID of the connected Ethereum-compatible chain. Each network has a unique numeric identifier, and this method helps applications determine which chain they are interacting with.&#x20;
+This method returns the current network ID of the connected Ethereum-compatible chain. Each network has a unique numeric identifier, and this method helps applications determine which chain they are interacting with.
 
 #### Parameters
 
@@ -21,8 +21,8 @@ curl --location 'https://shared.us-east-1.getblock.io/<ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
    "jsonrpc": "2.0",
-    "method": "net_version,
-    "params": []
+    "method": "net_version",
+    "params": [],
     "id": "getblock.io"
 }'
 ```
