@@ -45,7 +45,7 @@ const rows = await client.query({
   format: 'JSONEachRow'
 })
 
-console.log(await rows.json())
+console.log(await rows.json())import os
 ```
 {% endcode %}
 {% endtab %}
@@ -53,19 +53,17 @@ console.log(await rows.json())
 {% tab title="Python" %}
 {% code overflow="wrap" %}
 ```python
-import os
-import clickhouse_connect
+import requests
 
-client = clickhouse_connect.get_client(
-    host='market-sql.eu-central-1.getblock.io',
-    port=443,
-    username=os.environ['GETBLOCK_USER_ID'],
-    password=os.environ['GETBLOCK_API_KEY'],
-    database='hyperliquid',
-    secure=True,
+response = requests.post(
+    "https://market-sql.eu-central-1.getblock.io",
+    params={"database": "hyperliquid", "default_format": "JSONEachRow"},
+    auth=(os.environ["GETBLOCK_USER_ID"], os.environ["GETBLOCK_API_KEY"]),
+    data="SELECT * FROM view_perpetual_wallet LIMIT 5",
+    timeout=60,
 )
-
-print(client.query_df('SELECT * FROM view_perpetual_wallet LIMIT 5))
+response.raise_for_status()
+print(response.text)
 ```
 {% endcode %}
 {% endtab %}

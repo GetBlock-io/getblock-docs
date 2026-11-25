@@ -90,26 +90,20 @@ console.log(await rows.json())
 
 {% tab title="Python" %}
 ```python
-# pip install clickhouse-connect
+# pip install requests
 
 import os
-import clickhouse_connect
+import requests
 
-client = clickhouse_connect.get_client(
-    host='market-sql.eu-central-1.getblock.io',
-    port=443,
-    username=os.environ['GETBLOCK_USER_ID'],
-    password=os.environ['GETBLOCK_API_KEY'],
-    database='solana',
-    secure=True,
+response = requests.post(
+    "https://market-sql.eu-central-1.getblock.io",
+    params={"database": "solana", "default_format": "JSONEachRow"},
+    auth=(os.environ["GETBLOCK_USER_ID"], os.environ["GETBLOCK_API_KEY"]),
+    data="SELECT block_time, direction, base_token, quote_token FROM pumpswap_all_swaps LIMIT 5",
+    timeout=60,
 )
-
-df = client.query_df("""
-    SELECT block_time, direction, base_token, quote_token
-    FROM pumpswap_all_swaps
-    LIMIT 5
-""")
-print(df)
+response.raise_for_status()
+print(response.text)
 ```
 {% endtab %}
 {% endtabs %}
@@ -119,56 +113,44 @@ From there, you can filter, aggregate, and join tables to test a hypothesis with
 ### 5. Response
 
 {% code overflow="wrap" %}
-```bash
+```json
 {
-    "block_time": "2025-10-13 04:54:17",
-    "block_date_utc": "2025-10-13",
-    "slot": 373090867,
-    "tx_idx": 3,
-    "swap_idx": 9,
-    "signature": "4BnrYwrNqVsbMQvdXrsjJAZCo24gmSDoU8tw13hgZm5u1P69HrYP4WT9FkfC4yF5EbCUoCteyeCQXK9o6LtDcPCL",
-    "fee_payer": "2BhC9q2cdKUehmtJXoHtMvyhQ1vxodUHm3fsDuMfZAHJ",
-    "provided_gas_fee": "10000",
-    "provided_gas_limit": "120000",
-    "fee": "6200",
-    "consumed_gas": "75291",
-    "pool_id": "D2izdr62stAqqmj7T9zJAJbX2oTRDAaYuap1zVHWMBCA",
-    "signer": "2BhC9q2cdKUehmtJXoHtMvyhQ1vxodUHm3fsDuMfZAHJ",
-    "direction": "B",
-    "base_coin": "7MLMicE9WaY1BT6UxTkSTPSbKMwL3QtxXqXQLastXNgQ",
-    "quote_coin": "So11111111111111111111111111111111111111112",
-    "base_coin_amount": "35725002561",
-    "quote_coin_amount": "502228929",
-    "base_coin_slippage": "-175076707",
-    "quote_coin_slippage": "0",
-    "parent_program": "",
-    "top_level_transfers_json": "[{\"from\":\"2BhC9q2cdKUehmtJXoHtMvyhQ1vxodUHm3fsDuMfZAHJ\",\"to\":\"7Ji8r5SrWQsGfAGgG1yckD4EzHwhcBwXhHEkK92EDc8T\",\"lamports\":\"502228929\"}]",
-    "orig_base_coin_amount": "35725002561",
-    "orig_quote_coin_amount": "502228929",
-    "config": "HcuvFfW3aHLgQA2c31bHEMWjV8Xxtphaeq84SKarssUh",
-    "trade_direction": "1",
-    "has_referral": 1,
-    "swap_amount0": "502228929",
-    "swap_amount1": "35549925854",
-    "swap_mode": "0",
-    "input_amount": "502228929",
-    "output_amount": "35725002561",
-    "base_mint": "7MLMicE9WaY1BT6UxTkSTPSbKMwL3QtxXqXQLastXNgQ",
-    "quote_mint": "So11111111111111111111111111111111111111112",
-    "referral": "dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN",
-    "blockhash_prefix": "",
-    "cu_price_ix_index": 0,
-    "cu_limit_ix_index": 0,
-    "num_signatures": 0,
-    "transaction_version": 0,
-    "lookup_tables": "",
-    "curve_complete": 0,
-    "base_reserve_after": "0",
-    "quote_reserve_after": "0",
-    "signers": []
+"block_time":"2025-11-25 16:00:00",
+"direction":"S",
+"base_token":"J7Dx5yPbPD5e5BmrSvJyi4n4XRUR2kWqWYaxaSWdpump",
+"quote_token":"So11111111111111111111111111111111111111112"
 }
+{
+"block_time":"2025-11-25 16:00:00",
+"direction":"B",
+"base_token":"So11111111111111111111111111111111111111112",
+"quote_token":"4qwCcewR4ewD6GDrJTiNJqezLDQYtGdxcLCT1AQNC11p"
+}
+{
+"block_time":"2025-11-25 16:00:00",
+"direction":"B",
+"base_token":"So11111111111111111111111111111111111111112",
+"quote_token":"D9Bm7bGSzPkqeKibu1adssv753Uy7j1NVbpYC3V9wfzp"
+}
+{
+"block_time":"2025-11-25 16:00:00",
+"direction":"B",
+"base_token":"So11111111111111111111111111111111111111112",
+"quote_token":"H7dbqcgExJY34kDrRqQrrXVYqodBreQz3mfDtHbV9NCf"
+}
+{
+"block_time":"2025-11-25 16:00:00",
+"direction":"B",
+"base_token":"So11111111111111111111111111111111111111112",
+"quote_token":"C1uSTAyKRb9Zt2ESsGYqQvB2y2armUwo2ctjr9AKWDS1"
+}
+.
 ```
 {% endcode %}
+
+{% hint style="info" %}
+Each line is one row. The token can appear on either side of a pool: check which of `base_token` and `quote_token` is wrapped SOL (`So111…112`)
+{% endhint %}
 
 ### Explore the catalog in the dashboard
 
@@ -181,7 +163,7 @@ Use it to:
 3. read each table's description;
 4. copy the table name into your query.
 
-### 5. Integrate it into your application
+### Integrate it into your application
 
 Once you know which tables you need, query them from your application, notebook, or data pipeline.
 

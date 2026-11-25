@@ -42,9 +42,23 @@ Every query runs within the execution limit of your access plan:
 
 <table data-search="false"><thead><tr><th>Plan</th><th>Concurrent queries</th><th>Execution limit</th></tr></thead><tbody><tr><td>Free trial</td><td>1</td><td>10 seconds</td></tr><tr><td>24-hour trial</td><td>1</td><td>10 seconds</td></tr><tr><td>Monthly</td><td>Higher query limits</td><td>60 seconds</td></tr><tr><td>Custom</td><td>Custom query capacity</td><td>Custom</td></tr></tbody></table>
 
-{% hint style="warning" %}
-A query that runs longer than the execution limit is stopped. Filter on time or key columns, select only the columns you need, and add `LIMIT` while exploring.
+{% hint style="info" %}
+1. A query that runs longer than the execution limit is stopped. Filter on time or key columns, select only the columns you need, and add `LIMIT` while exploring.
+2. On the trial plans, only one query can run at a time. A second request returns `TOO_MANY_SIMULTANEOUS_QUERIES`. A query keeps running on the server even if your client stops waiting for it, so a slow query can block the next one: wait for it to finish, then retry. Filtering on `block_time` keeps queries short.
 {% endhint %}
+
+#### Query parameters
+
+Pass values separately from the SQL with ClickHouse query parameters instead of building the query string yourself. Write a placeholder as `{name:Type}` in the SQL, and send its value as a `param_<name>` URL parameter:
+
+{% code overflow="wrap" %}
+```bash
+curl --fail-with-body \
+  --user "<USER-ID>:<API-KEY>" \
+  "https://market-sql.eu-central-1.getblock.io?database=solana&default_format=JSONEachRow&param_start=2026-11-22%2000:00:00&param_end=2026-11-23%2000:00:00" \
+  --data-binary "SELECT count() AS migrations FROM pfamm_migrations WHERE block_time >= {start:DateTime} AND block_time < {end:DateTime}"
+```
+{% endcode %}
 
 ### 3. The result format
 
@@ -60,7 +74,7 @@ The `default_format` parameter sets how rows are returned. All examples in this 
 ```
 {% endcode %}
 
-A `FORMAT` clause at the end of the SQL statement takes precedence over `default_format`. The official ClickHouse clients set the format for you: `@clickhouse/client` through its `format` option, and `clickhouse-connect` through methods such as `query_df`.
+A `FORMAT` clause at the end of the SQL statement takes precedence over `default_format`.  The JavaScript client `@clickhouse/client` sets the format through its `format` option. In Python, pass `default_format` as a URL parameter, as in the examples.
 
 {% hint style="warning" %}
 ### Research, not live delivery
@@ -72,6 +86,6 @@ Applications that need continuously updated Solana prices, trades, or candles sh
 
 ## Next steps
 
-* [**API Reference**](api-reference/) — endpoint, authentication, parameters, and every table
+* [**API Reference**](api-reference/) — endpoints, authentication, parameters, and every table
 * [**Getting Started**](getting-started.md) — activating a dataset and running a first query
 * [**Dashboard**](https://account.getblock.io/products/sql) — browse datasets and tables before you query
