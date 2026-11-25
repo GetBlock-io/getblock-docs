@@ -1,16 +1,16 @@
 ---
 description: >-
   Use Notification Center and Action Center to view alerts in the GetBlock
-  console. You can also receive email updates about your account, subscriptions,
-  and usage.
+  console. You also receive email updates about your account, subscriptions, and
+  usage.
 icon: message-dot
 ---
 
 # Notifications and Alerts
 
-GetBlock sends notifications about your account, usage, payments, and subscriptions – delivered **by** **email** and in the Account dashboard’s **Notification Center**.&#x20;
+GetBlock sends notifications about your account, usage, payments, and subscriptions. Open **Notification Center** using the notification bell, available throughout the GetBlock console. You can also receive service notifications **by email**.
 
-<figure><img src="../.gitbook/assets/email-&#x26;-notifications.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/email&#x26;notiffs.webp" alt="GetBlock Email and Console Service Notifications"><figcaption></figcaption></figure>
 
 #### Account and security
 
@@ -35,7 +35,21 @@ GetBlock sends notifications about your account, usage, payments, and subscripti
 * Subscription expiration
 * Recurring payment cancellation
 
-These notifications apply to the relevant Shared Node, Dedicated Node, Limitless Node, and other product subscriptions.
+#### Services covered
+
+Service notifications are available for:
+
+* Shared Nodes
+* Limitless Nodes
+* Dedicated Nodes
+* Solana Shred Streaming
+* Market SQL
+* Solana Market Data
+* Crypto AML
+
+Depending on the service and subscription type, notifications cover purchases, renewal reminders four days before the paid period ends, grace periods, and subscription expiration.
+
+Additional service events include Dedicated Node activation, Credits balance top-ups, CU top-ups, and AML usage.
 
 {% hint style="warning" %}
 Email notifications are **delivered only to** **accounts** with a **verified email address** provided during registration.
@@ -67,7 +81,7 @@ Open **Settings → Notifications** in the GetBlock console to manage your low C
 
 * Turn the default 10% alert on or off.
 * Configure up to **five thresholds**, each between **1% and 50%** of your plan’s included CU allowance.
-* Add **one extra email address** so a teammate or billing team can also receive alerts.
+* Optinally, add **one extra email address** so a teammate or billing team can also receive alerts.
 
 If you save or enable a threshold while your balance is already at or below it, you may receive an alert immediately.
 
